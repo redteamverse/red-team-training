@@ -1,0 +1,370 @@
+  <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Course Levels</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Our comprehensive red team training program is structured into three distinct levels, 
+                        allowing you to progress at your own pace and focus on the skills most relevant to your career goals.
+                    </p>
+                </div>
+                
+                <!-- Course Level Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Basic Level -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-r from-gray-100 to-gray-200 h-2"></div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold">Basic</h3>
+                                <div class="flex">
+                                    <div class="w-3 h-3 bg-brand-red rounded-full level-indicator"></div>
+                                    <div class="w-3 h-3 bg-gray-300 rounded-full ml-1"></div>
+                                    <div class="w-3 h-3 bg-gray-300 rounded-full ml-1"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-8 h-8 rounded-full bg-brand-red bg-opacity-10 flex items-center justify-center mr-3">
+                                        <svg class="w-4 h-4 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Foundational Knowledge</span>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="w-8 h-8 rounded-full bg-brand-red bg-opacity-10 flex items-center justify-center mr-3">
+                                        <svg class="w-4 h-4 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Core Security Concepts</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-brand-red bg-opacity-10 flex items-center justify-center mr-3">
+                                        <svg class="w-4 h-4 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Essential Tools & Techniques</span>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 mb-6">
+                                Perfect for beginners and those new to offensive security. Build a solid foundation in red team methodologies, reconnaissance techniques, and basic vulnerability identification.
+                            </p>
+                            
+                            <div class="flex items-center text-sm text-gray-500">
+                                <svg class="w-5 h-5 mr-2 text-brand-blue" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
+                                </svg>
+                                <span>No prior experience required</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+                            <a href="#basic-details" class="text-brand-blue font-medium hover:text-brand-red transition-colors flex items-center">
+                                View Course Details
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Intermediate Level -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-r from-brand-blue to-blue-500 h-2"></div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold">Intermediate</h3>
+                                <div class="flex">
+                                    <div class="w-3 h-3 bg-brand-blue rounded-full level-indicator"></div>
+                                    <div class="w-3 h-3 bg-brand-blue rounded-full ml-1 level-indicator"></div>
+                                    <div class="w-3 h-3 bg-gray-300 rounded-full ml-1"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-8 h-8 rounded-full bg-brand-blue bg-opacity-10 flex items-center justify-center mr-3">
+                                        <svg class="w-4 h-4 text-brand-blue" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Advanced Attack Vectors</span>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="w-8 h-8 rounded-full bg-brand-blue bg-opacity-10 flex items-center justify-center mr-3">
+                                        <svg class="w-4 h-4 text-brand-blue" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Exploitation Techniques</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-brand-blue bg-opacity-10 flex items-center justify-center mr-3">
+                                        <svg class="w-4 h-4 text-brand-blue" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Post-Exploitation & Pivoting</span>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 mb-6">
+                                For security professionals with basic knowledge seeking to enhance their offensive skills. Learn practical exploitation techniques, lateral movement strategies, and evasion tactics.
+                            </p>
+                            
+                            <div class="flex items-center text-sm text-gray-500">
+                                <svg class="w-5 h-5 mr-2 text-brand-blue" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Basic security knowledge required</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+                            <a href="#intermediate-details" class="text-brand-blue font-medium hover:text-brand-red transition-colors flex items-center">
+                                View Course Details
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Advanced Level -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-r from-brand-red to-red-600 h-2"></div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold">Advanced</h3>
+                                <div class="flex">
+                                    <div class="w-3 h-3 bg-brand-red rounded-full level-indicator"></div>
+                                    <div class="w-3 h-3 bg-brand-red rounded-full ml-1 level-indicator"></div>
+                                    <div class="w-3 h-3 bg-brand-red rounded-full ml-1 level-indicator"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-8 h-8 rounded-full bg-brand-red bg-opacity-10 flex items-center justify-center mr-3">
+                                        <svg class="w-4 h-4 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Custom Exploit Development</span>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="w-8 h-8 rounded-full bg-brand-red bg-opacity-10 flex items-center justify-center mr-3">
+                                        <svg class="w-4 h-4 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Advanced Persistence</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-brand-red bg-opacity-10 flex items-center justify-center mr-3">
+                                        <svg class="w-4 h-4 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Red Team Operations</span>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 mb-6">
+                                For experienced security professionals. Master advanced adversary simulation, custom exploit development, and sophisticated evasion techniques used in real-world targeted attacks.
+                            </p>
+                            
+                            <div class="flex items-center text-sm text-gray-500">
+                                <svg class="w-5 h-5 mr-2 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                                </svg>
+                                <span>Significant security experience required</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+                            <a href="#advanced-details" class="text-brand-blue font-medium hover:text-brand-red transition-colors flex items-center">
+                                View Course Details
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Learning Path Information -->
+                <div class="mt-16 bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="flex flex-col md:flex-row items-start md:items-center">
+                        <div class="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                            <div class="w-16 h-16 bg-brand-blue bg-opacity-10 rounded-full flex items-center justify-center">
+                                <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Flexible Learning Paths</h3>
+                            <p class="text-gray-600 mb-4">
+                                Our courses are designed to accommodate different learning paths based on your experience and career goals. 
+                                You can progress sequentially through all levels or focus on specific areas relevant to your needs.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                                <div class="bg-white p-4 rounded-lg border border-gray-200">
+                                    <h4 class="font-bold text-sm text-brand-blue mb-2">Complete Path</h4>
+                                    <p class="text-sm text-gray-600">Progress from Basic to Advanced for comprehensive skill development</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-gray-200">
+                                    <h4 class="font-bold text-sm text-brand-blue mb-2">Specialized Focus</h4>
+                                    <p class="text-sm text-gray-600">Select specific modules across levels based on your interests</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-gray-200">
+                                    <h4 class="font-bold text-sm text-brand-blue mb-2">Team Training</h4>
+                                    <p class="text-sm text-gray-600">Custom paths for organizations training multiple team members</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA -->
+                <div class="mt-12 text-center">
+                    <a href="#assessment" class="inline-flex items-center justify-center px-6 py-3 bg-brand-red text-white font-medium rounded-md transition-all duration-300 hover:bg-red-700">
+                        <span>Take Skill Assessment</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                    <p class="text-sm text-gray-500 mt-2">Not sure which level is right for you? Take our free assessment.</p>
+                </div>
+            </div>
+        </div>
+    </section>    
+    
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">Featured Training Programs</h2>
+                    <p class="text-gray-600">Industry-recognized cybersecurity courses and certifications</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-as-red font-medium flex items-center hover:underline">
+                        View all courses
+                        <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border border-gray-200">
+                    <div class="relative">
+                        <div class="h-48 bg-as-gray flex items-center justify-center">
+                            <svg class="w-24 h-24 text-as-red" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-as-red text-white text-xs font-bold px-2 py-1 rounded">BESTSELLER</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium bg-blue-100 text-blue-800 px-2 py-1 rounded">Beginner</span>
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <span class="ml-1 text-sm font-medium">4.9</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Certified Red Team Professional (CRTP)</h3>
+                        <p class="text-gray-600 mb-4">Master Active Directory attacks and defense strategies with hands-on labs.</p>
+                        <div class="flex items-center mb-4">
+                            <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-sm text-gray-600">40 hours of content</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold">$799</span>
+                            <a href="#" class="px-4 py-2 bg-as-red text-white rounded-md font-medium hover:bg-red-700 transition">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border border-gray-200">
+                    <div class="relative">
+                        <div class="h-48 bg-as-gray flex items-center justify-center">
+                            <svg class="w-24 h-24 text-as-red" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Intermediate</span>
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <span class="ml-1 text-sm font-medium">4.8</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Certified Red Team Expert (CRTE)</h3>
+                        <p class="text-gray-600 mb-4">Advanced techniques for enterprise domain attacks and lateral movement.</p>
+                        <div class="flex items-center mb-4">
+                            <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-sm text-gray-600">50 hours of content</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold">$999</span>
+                            <a href="#" class="px-4 py-2 bg-as-red text-white rounded-md font-medium hover:bg-red-700 transition">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border border-gray-200">
+                    <div class="relative">
+                        <div class="h-48 bg-as-gray flex items-center justify-center">
+                            <svg class="w-24 h-24 text-as-red" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded">NEW</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium bg-green-100 text-green-800 px-2 py-1 rounded">Advanced</span>
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <span class="ml-1 text-sm font-medium">5.0</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Red Team Expert for Azure (CARTE)</h3>
+                        <p class="text-gray-600 mb-4">Advanced hands-on Azure Red Team certification</p>
+                        <div class="flex items-center mb-4">
+                            <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-sm text-gray-600">60 hours of content</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold">$1,199</span>
+                            <a href="#" class="px-4 py-2 bg-as-red text-white rounded-md font-medium hover:bg-red-700 transition">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

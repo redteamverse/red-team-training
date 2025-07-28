@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Team Training - FAQs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-red': '#ed3237',
+                        'brand-blue': '#1c4690',
+                        'brand-dark': '#1a1a2e',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out, opacity 0.35s ease-out, padding 0.35s ease;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        
+        .faq-content.active {
+            max-height: 500px;
+            opacity: 1;
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem;
+        }
+        
+        .faq-icon {
+            transition: transform 0.35s ease, background-color 0.35s ease, color 0.35s ease;
+        }
+        
+        .faq-icon.active {
+            transform: rotate(45deg);
+            background-color: #ed3237;
+            color: white;
+        }
+        
+        .faq-item {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .faq-item:hover {
+            border-left-color: #ed3237;
+        }
+        
+        .faq-item.active {
+            border-left-color: #ed3237;
+            background-color: #fef2f2;
+        }
+        
+        .faq-number {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover .faq-number {
+            color: #ed3237;
+        }
+        
+        .faq-item.active .faq-number {
+            color: #ed3237;
+        }
+    </style>
+</head>
+<body>
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-12">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class="fas fa-question-circle text-4xl text-brand-red mr-3"></i>
+                        <h2 class="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
+                    </div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Get answers to the most common questions about our Red Team Training programs.
+                    </p>
+                </div>
+                
+                <!-- FAQ Search -->
+                <div class="mb-10">
+                    <div class="relative">
+                        <input type="text" id="faq-search" placeholder="Search FAQs..." class="w-full px-5 py-4 pr-12 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent shadow-sm">
+                        <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                            <i class="fas fa-search text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Categories -->
+                <div class="flex flex-wrap gap-3 mb-8 justify-center">
+                    <button class="px-4 py-2 bg-brand-red text-white rounded-full text-sm font-medium transition hover:bg-red-700 active">All Questions</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium transition hover:bg-gray-200">Training</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium transition hover:bg-gray-200">Certification</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium transition hover:bg-gray-200">Labs</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium transition hover:bg-gray-200">Pricing</button>
+                </div>
+                
+                <!-- FAQ Accordion -->
+                <div class="space-y-4" id="faq-container">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100" data-faq="1">
+                        <button class="faq-header w-full px-6 py-5 flex items-center justify-between focus:outline-none" data-accordion="faq1">
+                            <div class="flex items-center">
+                                <span class="faq-number text-xl font-bold text-gray-300 mr-4">01</span>
+                                <h3 class="text-lg font-semibold text-gray-900">What is Red Team Training?</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center faq-icon" data-icon="faq1">
+                                <i class="fas fa-plus text-gray-500"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content px-6 border-t border-gray-100" data-content="faq1">
+                            <p class="text-gray-600">
+                                Red Team Training focuses on simulating real-world attacks to test and improve an organization's defenses. It involves advanced offensive techniques across on-prem and cloud environments. Our training programs teach you how to think like an attacker, identify vulnerabilities, and exploit weaknesses in security systems using the same methodologies as sophisticated threat actors.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100" data-faq="2">
+                        <button class="faq-header w-full px-6 py-5 flex items-center justify-between focus:outline-none" data-accordion="faq2">
+                            <div class="flex items-center">
+                                <span class="faq-number text-xl font-bold text-gray-300 mr-4">02</span>
+                                <h3 class="text-lg font-semibold text-gray-900">Do I need prior experience in cybersecurity?</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center faq-icon" data-icon="faq2">
+                                <i class="fas fa-plus text-gray-500"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content px-6 border-t border-gray-100" data-content="faq2">
+                            <p class="text-gray-600">
+                                Basic knowledge of Windows environments and networking helps, but our courses are structured from beginner to advanced — you can start at your level. We provide comprehensive learning paths that allow you to progress at your own pace, with foundational courses available for those new to the field.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100" data-faq="3">
+                        <button class="faq-header w-full px-6 py-5 flex items-center justify-between focus:outline-none" data-accordion="faq3">
+                            <div class="flex items-center">
+                                <span class="faq-number text-xl font-bold text-gray-300 mr-4">03</span>
+                                <h3 class="text-lg font-semibold text-gray-900">What kind of labs are included?</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center faq-icon" data-icon="faq3">
+                                <i class="fas fa-plus text-gray-500"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content px-6 border-t border-gray-100" data-content="faq3">
+                            <p class="text-gray-600">
+                                Our courses come with 100% hands-on labs replicating enterprise-grade infrastructure — including Active Directory, Azure, and hybrid setups. You'll work in real attack scenarios, not simulations. These labs are designed to provide practical experience with the tools and techniques used in actual red team engagements, allowing you to develop and refine your skills in a controlled environment.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100" data-faq="4">
+                        <button class="faq-header w-full px-6 py-5 flex items-center justify-between focus:outline-none" data-accordion="faq4">
+                            <div class="flex items-center">
+                                <span class="faq-number text-xl font-bold text-gray-300 mr-4">04</span>
+                                <h3 class="text-lg font-semibold text-gray-900">Is this training up-to-date with modern threats?</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center faq-icon" data-icon="faq4">
+                                <i class="fas fa-plus text-gray-500"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content px-6 border-t border-gray-100" data-content="faq4">
+                            <p class="text-gray-600">
+                                Yes. The training covers the latest attacker techniques, post-exploitation tactics, and bypass methods aligned with evolving TTPs used by APTs and red teams. Our curriculum is regularly updated to reflect emerging threats and new attack vectors, ensuring that you're learning the most current and relevant skills in the field.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100" data-faq="5">
+                        <button class="faq-header w-full px-6 py-5 flex items-center justify-between focus:outline-none" data-accordion="faq5">
+                            <div class="flex items-center">
+                                <span class="faq-number text-xl font-bold text-gray-300 mr-4">05</span>
+                                <h3 class="text-lg font-semibold text-gray-900">Do I get a certificate after completing the course?</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center faq-icon" data-icon="faq5">
+                                <i class="fas fa-plus text-gray-500"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content px-6 border-t border-gray-100" data-content="faq5">
+                            <p class="text-gray-600">
+                                Yes. On successful completion, you'll receive our CARTE (Certified by Altered Security Red Team Expert) certification — a recognized hands-on proof of your skills. This certification demonstrates your proficiency in red team methodologies and can enhance your professional credentials in the cybersecurity field.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100" data-faq="6">
+                        <button class="faq-header w-full px-6 py-5 flex items-center justify-between focus:outline-none" data-accordion="faq6">
+                            <div class="flex items-center">
+                                <span class="faq-number text-xl font-bold text-gray-300 mr-4">06</span>
+                                <h3 class="text-lg font-semibold text-gray-900">How long do I have access to the course and labs?</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center faq-icon" data-icon="faq6">
+                                <i class="fas fa-plus text-gray-500"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content px-6 border-t border-gray-100" data-content="faq6">
+                            <p class="text-gray-600">
+                                You'll have on-demand access for the duration you select (1, 3, or 6 months). Lab access matches the subscription period and is fully self-paced. This flexibility allows you to learn at your own speed and revisit course materials as needed to reinforce your understanding of key concepts.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 7 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100" data-faq="7">
+                        <button class="faq-header w-full px-6 py-5 flex items-center justify-between focus:outline-none" data-accordion="faq7">
+                            <div class="flex items-center">
+                                <span class="faq-number text-xl font-bold text-gray-300 mr-4">07</span>
+                                <h3 class="text-lg font-semibold text-gray-900">Can I take the course while working full-time?</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center faq-icon" data-icon="faq7">
+                                <i class="fas fa-plus text-gray-500"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content px-6 border-t border-gray-100" data-content="faq7">
+                            <p class="text-gray-600">
+                                Absolutely. All materials are on-demand and self-paced, allowing you to learn evenings, weekends, or whenever it fits your schedule. Our platform is designed to accommodate busy professionals, with course content accessible 24/7 so you can balance your training with work and personal commitments.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 8 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100" data-faq="8">
+                        <button class="faq-header w-full px-6 py-5 flex items-center justify-between focus:outline-none" data-accordion="faq8">
+                            <div class="flex items-center">
+                                <span class="faq-number text-xl font-bold text-gray-300 mr-4">08</span>
+                                <h3 class="text-lg font-semibold text-gray-900">How is this different from other Red Team courses?</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center faq-icon" data-icon="faq8">
+                                <i class="fas fa-plus text-gray-500"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content px-6 border-t border-gray-100" data-content="faq8">
+                            <p class="text-gray-600">
+                                Our training is 100% hands-on, built by red teamers, and used by Fortune 500 internal teams. We go beyond theory — you attack, evade, and adapt like a real adversary. Our instructors are active practitioners in the field, bringing real-world experience and insights to the curriculum that you won't find in purely academic courses.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 9 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100" data-faq="9">
+                        <button class="faq-header w-full px-6 py-5 flex items-center justify-between focus:outline-none" data-accordion="faq9">
+                            <div class="flex items-center">
+                                <span class="faq-number text-xl font-bold text-gray-300 mr-4">09</span>
+                                <h3 class="text-lg font-semibold text-gray-900">Is this course useful for Blue Teamers or Defenders?</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center faq-icon" data-icon="faq9">
+                                <i class="fas fa-plus text-gray-500"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content px-6 border-t border-gray-100" data-content="faq9">
+                            <p class="text-gray-600">
+                                Yes. Understanding offensive tactics is crucial for blue teams. Many SOC analysts and DFIR professionals take our courses to improve detection and prevention. By learning how attackers operate, defenders can better anticipate threats, identify vulnerabilities before they're exploited, and develop more effective security controls and incident response procedures.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 10 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100" data-faq="10">
+                        <button class="faq-header w-full px-6 py-5 flex items-center justify-between focus:outline-none" data-accordion="faq10">
+                            <div class="flex items-center">
+                                <span class="faq-number text-xl font-bold text-gray-300 mr-4">10</span>
+                                <h3 class="text-lg font-semibold text-gray-900">Do you offer team licenses or bulk discounts?</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center faq-icon" data-icon="faq10">
+                                <i class="fas fa-plus text-gray-500"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content px-6 border-t border-gray-100" data-content="faq10">
+                            <p class="text-gray-600">
+                                Yes, we offer enterprise training packages and bulk licenses. Contact us for a tailored quote. Our team can work with you to develop customized training programs that address your organization's specific security needs and objectives, with flexible pricing options based on team size and training requirements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Still Have Questions -->
+                <div class="mt-12 bg-gradient-to-r from-brand-blue to-brand-dark rounded-xl p-8 text-white">
+                    <div class="flex flex-col md:flex-row items-center justify-between">
+                        <div class="mb-6 md:mb-0">
+                            <h3 class="text-2xl font-bold mb-2">Still Have Questions?</h3>
+                            <p class="text-white text-opacity-90">
+                                Our team is here to help you find the right training solution.
+                            </p>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 bg-white text-brand-blue font-bold rounded-md transition-all duration-300 hover:bg-gray-100 shadow-lg">
+                                <i class="fas fa-envelope mr-2"></i>
+                                <span>Contact Us</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Accordion functionality
+            const faqHeaders = document.querySelectorAll('.faq-header');
+            
+            faqHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const contentId = this.getAttribute('data-accordion');
+                    const content = document.querySelector(`[data-content="${contentId}"]`);
+                    const icon = document.querySelector(`[data-icon="${contentId}"]`);
+                    const faqItem = this.closest('.faq-item');
+                    
+                    // Toggle current accordion
+                    content.classList.toggle('active');
+                    icon.classList.toggle('active');
+                    faqItem.classList.toggle('active');
+                    
+                    // Close other accordions (optional - for single open accordion)
+                    document.querySelectorAll('.faq-content').forEach(item => {
+                        if (item.getAttribute('data-content') !== contentId) {
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    document.querySelectorAll('.faq-icon').forEach(iconItem => {
+                        if (iconItem.getAttribute('data-icon') !== contentId) {
+                            iconItem.classList.remove('active');
+                        }
+                    });
+                    
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item.getAttribute('data-faq') !== faqItem.getAttribute('data-faq')) {
+                            item.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.getElementById('faq-search');
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                faqItems.forEach(item => {
+                    const question = item.querySelector('h3').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-content p').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Show "no results" message if needed
+                const visibleItems = document.querySelectorAll('.faq-item[style="display: block"]');
+                const noResultsMsg = document.getElementById('no-results');
+                
+                if (visibleItems.length === 0 && searchTerm !== '') {
+                    if (!noResultsMsg) {
+                        const msg = document.createElement('div');
+                        msg.id = 'no-results';
+                        msg.className = 'text-center py-8 text-gray-500';
+                        msg.innerHTML = `
+                            <i class="fas fa-search text-4xl mb-3 text-gray-300"></i>
+                            <p>No FAQs match your search for "${searchTerm}"</p>
+                            <button class="mt-3 px-4 py-2 bg-brand-red text-white rounded-full text-sm font-medium transition hover:bg-red-700">
+                                Clear Search
+                            </button>
+                        `;
+                        document.getElementById('faq-container').appendChild(msg);
+                        
+                        msg.querySelector('button').addEventListener('click', function() {
+                            searchInput.value = '';
+                            searchInput.dispatchEvent(new Event('input'));
+                        });
+                    }
+                } else if (noResultsMsg) {
+                    noResultsMsg.remove();
+                }
+            });
+            
+            // Category filter functionality
+            const categoryButtons = document.querySelectorAll('.flex.flex-wrap.gap-3.mb-8 button');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active state
+                    categoryButtons.forEach(btn => {
+                        btn.classList.remove('bg-brand-red', 'text-white');
+                        btn.classList.add('bg-gray-100', 'text-gray-700');
+                    });
+                    
+                    this.classList.remove('bg-gray-100', 'text-gray-700');
+                    this.classList.add('bg-brand-red', 'text-white');
+                    
+                    // Filter functionality would go here in a real implementation
+                    // This is just a UI demo
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9663cff7d2e5db32',t:'MTc1MzY5OTc5Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

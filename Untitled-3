@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altered Security - Brand Style Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'as-red': '#e31937',
+                        'as-dark': '#1a1a1a',
+                        'as-gray': '#2d2d2d',
+                        'as-light': '#f5f5f5',
+                        'as-accent': '#0078d4',
+                        'as-success': '#2e7d32',
+                        'as-warning': '#ff9800',
+                        'as-danger': '#d32f2f',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Montserrat', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .color-box {
+            width: 100%;
+            height: 80px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .font-sample {
+            margin-bottom: 24px;
+        }
+        
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, #e31937 0%, #1a1a1a 100%);
+            margin: 40px 0;
+            border-radius: 2px;
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .example-box {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .code-block {
+            background-color: #1a1a1a;
+            color: #f5f5f5;
+            border-radius: 6px;
+            padding: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        
+        .spacing-example {
+            background-color: rgba(227, 25, 55, 0.1);
+            border: 1px dashed #e31937;
+        }
+    </style>
+</head>
+<body class="bg-white text-as-dark">
+    <!-- Header -->
+    <header class="bg-as-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <svg class="h-10 w-10 text-as-red" viewBox="0 0 40 40" fill="currentColor">
+                        <path d="M20 5L5 20L20 35L35 20L20 5ZM20 12L28 20L20 28L12 20L20 12Z"></path>
+                    </svg>
+                    <div class="ml-4">
+                        <h1 class="text-2xl font-bold">ALTERED SECURITY</h1>
+                        <p class="text-sm text-gray-400">Brand Style Guide</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-sm bg-as-red px-3 py-1 rounded-full">Official Reference</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 font-display">Brand Overview</h2>
+            <p class="text-lg mb-4">This comprehensive style guide defines the visual identity of Altered Security, ensuring consistency across all digital platforms. The brand identity reflects our focus on advanced cybersecurity training with a professional, modern, and trustworthy aesthetic.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div class="bg-as-light p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Brand Personality</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span><strong>Professional</strong> - Authoritative and trustworthy</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span><strong>Technical</strong> - Expert and precise</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span><strong>Modern</strong> - Contemporary and innovative</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span><strong>Bold</strong> - Confident and impactful</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-as-light p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Brand Voice</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span><strong>Authoritative</strong> - Expert but accessible</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span><strong>Clear</strong> - Direct and jargon-free when possible</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span><strong>Confident</strong> - Assured without being arrogant</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span><strong>Educational</strong> - Informative and helpful</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Color Scheme Section -->
+        <section id="colors" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 font-display">Color Scheme</h2>
+            <p class="text-lg mb-8">Our color palette reflects our brand's technical expertise and professionalism while maintaining visual impact. The primary red accent provides energy and urgency appropriate for cybersecurity.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Primary Colors -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Primary Colors</h3>
+                    
+                    <div class="mb-6">
+                        <div class="color-box bg-as-red"></div>
+                        <div class="flex justify-between">
+                            <span class="font-bold">Altered Red</span>
+                            <span class="font-mono text-sm">#e31937</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Primary accent color for CTAs, highlights, and important elements</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="color-box bg-as-dark"></div>
+                        <div class="flex justify-between">
+                            <span class="font-bold">Altered Dark</span>
+                            <span class="font-mono text-sm">#1a1a1a</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Primary background for dark sections and text</p>
+                    </div>
+                </div>
+                
+                <!-- Secondary Colors -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Secondary Colors</h3>
+                    
+                    <div class="mb-6">
+                        <div class="color-box bg-as-gray"></div>
+                        <div class="flex justify-between">
+                            <span class="font-bold">Altered Gray</span>
+                            <span class="font-mono text-sm">#2d2d2d</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Secondary dark color for cards and backgrounds</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="color-box bg-as-light"></div>
+                        <div class="flex justify-between">
+                            <span class="font-bold">Altered Light</span>
+                            <span class="font-mono text-sm">#f5f5f5</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Light background for sections and cards</p>
+                    </div>
+                </div>
+                
+                <!-- Accent Colors -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Accent Colors</h3>
+                    
+                    <div class="mb-6">
+                        <div class="color-box bg-as-accent"></div>
+                        <div class="flex justify-between">
+                            <span class="font-bold">Accent Blue</span>
+                            <span class="font-mono text-sm">#0078d4</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Secondary accent for links and interactive elements</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="color-box bg-white border border-gray-200"></div>
+                        <div class="flex justify-between">
+                            <span class="font-bold">White</span>
+                            <span class="font-mono text-sm">#ffffff</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Text on dark backgrounds and clean content areas</p>
+                    </div>
+                </div>
+                
+                <!-- Functional Colors -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Functional Colors</h3>
+                    
+                    <div class="mb-6">
+                        <div class="color-box bg-as-success"></div>
+                        <div class="flex justify-between">
+                            <span class="font-bold">Success</span>
+                            <span class="font-mono text-sm">#2e7d32</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Positive actions and confirmations</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="color-box bg-as-warning"></div>
+                        <div class="flex justify-between">
+                            <span class="font-bold">Warning</span>
+                            <span class="font-mono text-sm">#ff9800</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Caution and important notices</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="color-box bg-as-danger"></div>
+                        <div class="flex justify-between">
+                            <span class="font-bold">Danger</span>
+                            <span class="font-mono text-sm">#d32f2f</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Errors and critical warnings</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white p-6 rounded-lg border border-gray-200">
+                <h3 class="text-xl font-bold mb-4">Color Usage Guidelines</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold mb-2">Do's</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-as-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Use Altered Red for primary CTAs and important highlights</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-as-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Maintain sufficient contrast for text readability</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-as-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Use gradients sparingly for visual interest</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-2">Don'ts</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-as-danger mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Avoid using too many accent colors in one section</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-as-danger mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Don't place red text on dark backgrounds</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-as-danger mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Avoid using colors not in the official palette</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Typography Section -->
+        <section id="typography" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 font-display">Typography</h2>
+            <p class="text-lg mb-8">Our typography system uses a carefully selected combination of fonts that balance professionalism with readability across all devices and platforms.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Primary Font -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Primary Font: Inter</h3>
+                    <p class="mb-4">Inter is our primary font for body text and most UI elements. It offers excellent readability at all sizes and works well across digital platforms.</p>
+                    
+                    <div class="font-sample">
+                        <p class="text-sm text-gray-600 mb-1">Light (300)</p>
+                        <p class="font-light text-xl">The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                    
+                    <div class="font-sample">
+                        <p class="text-sm text-gray-600 mb-1">Regular (400)</p>
+                        <p class="font-normal text-xl">The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                    
+                    <div class="font-sample">
+                        <p class="text-sm text-gray-600 mb-1">Medium (500)</p>
+                        <p class="font-medium text-xl">The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                    
+                    <div class="font-sample">
+                        <p class="text-sm text-gray-600 mb-1">Semibold (600)</p>
+                        <p class="font-semibold text-xl">The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                    
+                    <div class="font-sample">
+                        <p class="text-sm text-gray-600 mb-1">Bold (700)</p>
+                        <p class="font-bold text-xl">The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-600">Font Import:</p>
+                        <div class="code-block mt-2">
+                            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Secondary Font -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Display Font: Montserrat</h3>
+                    <p class="mb-4">Montserrat is used for headings, titles, and display text. It provides a modern, professional appearance with excellent visual hierarchy.</p>
+                    
+                    <div class="font-sample">
+                        <p class="text-sm text-gray-600 mb-1">Regular (400)</p>
+                        <p class="font-display font-normal text-xl">The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                    
+                    <div class="font-sample">
+                        <p class="text-sm text-gray-600 mb-1">Medium (500)</p>
+                        <p class="font-display font-medium text-xl">The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                    
+                    <div class="font-sample">
+                        <p class="text-sm text-gray-600 mb-1">Semibold (600)</p>
+                        <p class="font-display font-semibold text-xl">The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                    
+                    <div class="font-sample">
+                        <p class="text-sm text-gray-600 mb-1">Bold (700)</p>
+                        <p class="font-display font-bold text-xl">The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-600">Font Import:</p>
+                        <div class="code-block mt-2">
+                            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Monospace Font -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Monospace Font: JetBrains Mono</h3>
+                    <p class="mb-4">JetBrains Mono is used for code snippets, technical content, and terminal displays. It provides excellent readability for technical information.</p>
+                    
+                    <div class="font-sample">
+                        <p class="text-sm text-gray-600 mb-1">Regular (400)</p>
+                        <p class="font-mono font-normal text-xl">The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                    
+                    <div class="font-sample">
+                        <p class="text-sm text-gray-600 mb-1">Medium (500)</p>
+                        <p class="font-mono font-medium text-xl">The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-600">Font Import:</p>
+                        <div class="code-block mt-2">
+                            @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Typography Scale -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Typography Scale</h3>
+                    <p class="mb-4">Our typography scale ensures consistent sizing across the platform.</p>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Display (H1)</p>
+                            <h1 class="text-4xl md:text-5xl font-bold font-display">Display Heading</h1>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Heading 2</p>
+                            <h2 class="text-3xl font-bold font-display">Section Heading</h2>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Heading 3</p>
+                            <h3 class="text-2xl font-bold">Subsection Heading</h3>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Heading 4</p>
+                            <h4 class="text-xl font-bold">Component Heading</h4>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Body Large</p>
+                            <p class="text-lg">Large paragraph text for important content.</p>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Body</p>
+                            <p>Standard paragraph text for general content.</p>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Small / Caption</p>
+                            <p class="text-sm">Small text for captions, footnotes, and secondary information.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                <h3 class="text-xl font-bold mb-4">Typography Guidelines</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold mb-2">Do's</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-as-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Use Montserrat for headings and Inter for body text</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-as-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Maintain proper hierarchy with consistent heading levels</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-as-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Use JetBrains Mono for code and technical content</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-2">Don'ts</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-as-danger mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Don't mix too many font weights in one section</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-as-danger mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Avoid using fonts not specified in this guide</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-as-danger mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Don't use text smaller than 14px for body content</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Visual Hierarchy & Layout -->
+        <section id="visual-hierarchy" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 font-display">Visual Hierarchy & Layout</h2>
+            <p class="text-lg mb-8">Our visual hierarchy principles ensure content is organized in a way that guides users through the interface intuitively and emphasizes the most important information.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Spacing System -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Spacing System</h3>
+                    <p class="mb-6">We use a consistent spacing system based on 4px increments to create rhythm and balance throughout the interface.</p>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Extra Small (4px)</p>
+                            <div class="spacing-example h-1 w-1"></div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Small (8px)</p>
+                            <div class="spacing-example h-2 w-2"></div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Medium (16px)</p>
+                            <div class="spacing-example h-4 w-4"></div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Large (24px)</p>
+                            <div class="spacing-example h-6 w-6"></div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Extra Large (32px)</p>
+                            <div class="spacing-example h-8 w-8"></div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">2XL (48px)</p>
+                            <div class="spacing-example h-12 w-12"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Grid System -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Grid System</h3>
+                    <p class="mb-6">We use a 12-column responsive grid system that adapts to different screen sizes.</p>
+                    
+                    <div class="grid grid-cols-12 gap-2 mb-6">
+                        <div class="col-span-12 bg-as-red bg-opacity-20 h-8 flex items-center justify-center text-xs">12 columns</div>
+                    </div>
+                    
+                    <div class="grid grid-cols-12 gap-2 mb-6">
+                        <div class="col-span-6 bg-as-red bg-opacity-20 h-8 flex items-center justify-center text-xs">6 columns</div>
+                        <div class="col-span-6 bg-as-red bg-opacity-20 h-8 flex items-center justify-center text-xs">6 columns</div>
+                    </div>
+                    
+                    <div class="grid grid-cols-12 gap-2 mb-6">
+                        <div class="col-span-4 bg-as-red bg-opacity-20 h-8 flex items-center justify-center text-xs">4 columns</div>
+                        <div class="col-span-4 bg-as-red bg-opacity-20 h-8 flex items-center justify-center text-xs">4 columns</div>
+                        <div class="col-span-4 bg-as-red bg-opacity-20 h-8 flex items-center justify-center text-xs">4 columns</div>
+                    </div>
+                    
+                    <div class="grid grid-cols-12 gap-2">
+                        <div class="col-span-3 bg-as-red bg-opacity-20 h-8 flex items-center justify-center text-xs">3 cols</div>
+                        <div class="col-span-3 bg-as-red bg-opacity-20 h-8 flex items-center justify-center text-xs">3 cols</div>
+                        <div class="col-span-3 bg-as-red bg-opacity-20 h-8 flex items-center justify-center text-xs">3 cols</div>
+                        <div class="col-span-3 bg-as-red bg-opacity-20 h-8 flex items-center justify-center text-xs">3 cols</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Content Hierarchy -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Content Hierarchy</h3>
+                    <p class="mb-6">Our content follows a clear hierarchy to guide users through the page:</p>
+                    
+                    <ol class="space-y-4">
+                        <li class="flex">
+                            <span class="bg-as-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                            <div>
+                                <p class="font-bold">Primary Heading</p>
+                                <p class="text-sm text-gray-600">Clear, descriptive page title that communicates the main purpose</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <span class="bg-as-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                            <div>
+                                <p class="font-bold">Supporting Information</p>
+                                <p class="text-sm text-gray-600">Brief description or context that supports the main heading</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <span class="bg-as-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                            <div>
+                                <p class="font-bold">Primary Call to Action</p>
+                                <p class="text-sm text-gray-600">The main action we want users to take</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <span class="bg-as-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">4</span>
+                            <div>
+                                <p class="font-bold">Secondary Content</p>
+                                <p class="text-sm text-gray-600">Supporting content organized in sections with clear headings</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <span class="bg-as-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">5</span>
+                            <div>
+                                <p class="font-bold">Secondary CTAs</p>
+                                <p class="text-sm text-gray-600">Alternative actions or next steps for users</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                
+                <!-- Layout Principles -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Layout Principles</h3>
+                    <p class="mb-6">Key principles that guide our layout decisions:</p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex">
+                            <svg class="w-6 h-6 text-as-red mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-bold">Consistency</p>
+                                <p class="text-sm text-gray-600">Maintain consistent spacing, alignment, and component usage across all pages</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <svg class="w-6 h-6 text-as-red mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-bold">White Space</p>
+                                <p class="text-sm text-gray-600">Use generous white space to improve readability and focus attention</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <svg class="w-6 h-6 text-as-red mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-bold">Responsive Design</p>
+                                <p class="text-sm text-gray-600">All layouts adapt gracefully to different screen sizes and devices</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <svg class="w-6 h-6 text-as-red mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-bold">F-Pattern Reading</p>
+                                <p class="text-sm text-gray-600">Organize content to follow natural reading patterns (F-pattern for text-heavy pages)</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <svg class="w-6 h-6 text-as-red mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-bold">Visual Balance</p>
+                                <p class="text-sm text-gray-600">Create visual balance through symmetry or intentional asymmetry</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Navigation & Structure -->
+        <section id="navigation" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 font-display">Navigation & Structure</h2>
+            <p class="text-lg mb-8">Our navigation system is designed to help users find information quickly and understand their current location within the site.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Primary Navigation -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Primary Navigation</h3>
+                    <p class="mb-6">The main navigation provides access to key sections of the site.</p>
+                    
+                    <div class="example-box mb-6">
+                        <div class="bg-as-dark text-white p-4">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <svg class="h-8 w-8 text-as-red" viewBox="0 0 40 40" fill="currentColor">
+                                        <path d="M20 5L5 20L20 35L35 20L20 5ZM20 12L28 20L20 28L12 20L20 12Z"></path>
+                                    </svg>
+                                    <span class="ml-2 text-lg font-bold">ALTERED SECURITY</span>
+                                </div>
+                                
+                                <div class="hidden md:flex items-center space-x-6">
+                                    <a href="#" class="font-medium">Training</a>
+                                    <a href="#" class="font-medium">Certifications</a>
+                                    <a href="#" class="font-medium">Resources</a>
+                                    <a href="#" class="font-medium">About Us</a>
+                                </div>
+                                
+                                <div class="hidden md:flex items-center space-x-4">
+                                    <a href="#" class="text-as-red font-medium">Sign In</a>
+                                    <a href="#" class="px-4 py-2 bg-as-red text-white rounded-md font-medium">Get Started</a>
+                                </div>
+                                
+                                <div class="md:hidden">
+                                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-2">Key Features:</h4>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Clear, concise labels for main sections</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Prominent call-to-action button</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Responsive design with mobile menu</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Dropdown Navigation -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Dropdown Navigation</h3>
+                    <p class="mb-6">Dropdown menus provide access to subsections while keeping the main navigation clean.</p>
+                    
+                    <div class="example-box mb-6">
+                        <div class="bg-white p-4 border-b border-gray-200">
+                            <div class="flex items-center space-x-6">
+                                <div class="relative">
+                                    <button class="flex items-center font-medium">
+                                        Training
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div class="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-md p-4 z-10">
+                                        <div class="grid grid-cols-1 gap-2">
+                                            <a href="#" class="block p-2 hover:bg-gray-100 rounded-md">
+                                                <span class="font-medium">Red Team Labs</span>
+                                                <p class="text-sm text-gray-600">Hands-on attack simulation</p>
+                                            </a>
+                                            <a href="#" class="block p-2 hover:bg-gray-100 rounded-md">
+                                                <span class="font-medium">Online Courses</span>
+                                                <p class="text-sm text-gray-600">Self-paced learning</p>
+                                            </a>
+                                            <a href="#" class="block p-2 hover:bg-gray-100 rounded-md">
+                                                <span class="font-medium">Live Training</span>
+                                                <p class="text-sm text-gray-600">Instructor-led sessions</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="font-medium">Certifications</a>
+                                <a href="#" class="font-medium">Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-2">Key Features:</h4>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Descriptive labels with supporting text</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Visual indicators for dropdown menus</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Hover interactions for improved usability</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Breadcrumbs -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Breadcrumbs</h3>
+                    <p class="mb-6">Breadcrumbs help users understand their location and navigate back to parent pages.</p>
+                    
+                    <div class="example-box mb-6">
+                        <div class="bg-white p-4">
+                            <nav class="flex" aria-label="Breadcrumb">
+                                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                                    <li class="inline-flex items-center">
+                                        <a href="#" class="text-gray-700 hover:text-as-red">
+                                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                                            </svg>
+                                            Home
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="flex items-center">
+                                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <a href="#" class="ml-1 text-gray-700 hover:text-as-red md:ml-2">Training</a>
+                                        </div>
+                                    </li>
+                                    <li aria-current="page">
+                                        <div class="flex items-center">
+                                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span class="ml-1 text-as-red font-medium md:ml-2">Red Team Labs</span>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-2">Usage Guidelines:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Use on all pages except the homepage</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Keep breadcrumb paths short (3-4 levels max)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Current page should be highlighted but not clickable</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Page Structure -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Page Structure</h3>
+                    <p class="mb-6">Our standard page structure ensures consistency across the site.</p>
+                    
+                    <div class="example-box mb-6">
+                        <div class="bg-gray-100 p-2">
+                            <div class="bg-as-dark text-white p-2 text-center text-xs">Header & Navigation</div>
+                            <div class="bg-as-red bg-opacity-20 p-2 text-center text-xs mt-2">Hero / Page Header</div>
+                            <div class="bg-white p-2 text-center text-xs mt-2">Main Content Area</div>
+                            <div class="grid grid-cols-3 gap-2 mt-2">
+                                <div class="bg-white p-2 text-center text-xs">Section 1</div>
+                                <div class="bg-white p-2 text-center text-xs">Section 2</div>
+                                <div class="bg-white p-2 text-center text-xs">Section 3</div>
+                            </div>
+                            <div class="bg-as-red bg-opacity-20 p-2 text-center text-xs mt-2">Call to Action</div>
+                            <div class="bg-as-dark text-white p-2 text-center text-xs mt-2">Footer</div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-2">Key Components:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Consistent header and footer across all pages</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Clear page headers that establish context</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Logical content sections with clear headings</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Strategic CTAs that guide users to next steps</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Visual Design & Branding -->
+        <section id="visual-design" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 font-display">Visual Design & Branding</h2>
+            <p class="text-lg mb-8">Our visual design elements create a cohesive brand identity that communicates professionalism, expertise, and innovation.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Logo Usage -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Logo Usage</h3>
+                    <p class="mb-6">Our logo represents the Altered Security brand and should be used consistently.</p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white p-4 flex items-center justify-center border border-gray-200 rounded">
+                            <div class="flex items-center">
+                                <svg class="h-12 w-12 text-as-red" viewBox="0 0 40 40" fill="currentColor">
+                                    <path d="M20 5L5 20L20 35L35 20L20 5ZM20 12L28 20L20 28L12 20L20 12Z"></path>
+                                </svg>
+                                <span class="ml-2 text-xl font-bold">ALTERED SECURITY</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-as-dark p-4 flex items-center justify-center rounded">
+                            <div class="flex items-center">
+                                <svg class="h-12 w-12 text-as-red" viewBox="0 0 40 40" fill="currentColor">
+                                    <path d="M20 5L5 20L20 35L35 20L20 5ZM20 12L28 20L20 28L12 20L20 12Z"></path>
+                                </svg>
+                                <span class="ml-2 text-xl font-bold text-white">ALTERED SECURITY</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-2">Logo Guidelines:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Maintain clear space around the logo</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Never distort or change the logo proportions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Use only approved color variations</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Iconography -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Iconography</h3>
+                    <p class="mb-6">Our icon system uses clean, modern line icons that complement our brand aesthetic.</p>
+                    
+                    <div class="grid grid-cols-4 gap-4 mb-6">
+                        <div class="flex flex-col items-center">
+                            <div class="bg-as-light p-3 rounded-full">
+                                <svg class="w-6 h-6 text-as-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs mt-2">Security</span>
+                        </div>
+                        
+                        <div class="flex flex-col items-center">
+                            <div class="bg-as-light p-3 rounded-full">
+                                <svg class="w-6 h-6 text-as-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs mt-2">Labs</span>
+                        </div>
+                        
+                        <div class="flex flex-col items-center">
+                            <div class="bg-as-light p-3 rounded-full">
+                                <svg class="w-6 h-6 text-as-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs mt-2">Courses</span>
+                        </div>
+                        
+                        <div class="flex flex-col items-center">
+                            <div class="bg-as-light p-3 rounded-full">
+                                <svg class="w-6 h-6 text-as-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs mt-2">Career</span>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-2">Icon Guidelines:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Use consistent stroke weight (2px)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Maintain consistent sizing within context</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Use icons to enhance, not replace, text labels</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Imagery Style -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Imagery Style</h3>
+                    <p class="mb-6">Our imagery style reflects our technical focus with a modern, professional aesthetic.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-as-gray h-40 rounded flex items-center justify-center">
+                            <svg class="w-16 h-16 text-as-red" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+                            </svg>
+                        </div>
+                        
+                        <div class="bg-as-gray h-40 rounded flex items-center justify-center">
+                            <svg class="w-16 h-16 text-as-red" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-2">Imagery Guidelines:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Use high-quality, professional imagery</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Prefer abstract tech imagery over generic stock photos</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Maintain consistent color treatment across images</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- UI Components -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">UI Components</h3>
+                    <p class="mb-6">Our UI components are designed for consistency, usability, and brand alignment.</p>
+                    
+                    <div class="space-y-6 mb-6">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Buttons</p>
+                            <div class="flex flex-wrap gap-4">
+                                <button class="px-4 py-2 bg-as-red text-white rounded-md font-medium">Primary Button</button>
+                                <button class="px-4 py-2 border border-as-red text-as-red rounded-md font-medium">Secondary Button</button>
+                                <button class="px-4 py-2 text-as-red font-medium">Text Button</button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Cards</p>
+                            <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4">
+                                <h4 class="font-bold mb-2">Card Title</h4>
+                                <p class="text-sm text-gray-600 mb-4">Card description text goes here, providing context and information.</p>
+                                <a href="#" class="text-as-red font-medium">Learn More</a>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Form Elements</p>
+                            <div class="space-y-2">
+                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-as-red focus:border-as-red" placeholder="Input field">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="checkbox" class="h-4 w-4 text-as-red focus:ring-as-red border-gray-300 rounded">
+                                    <label for="checkbox" class="ml-2 text-sm">Checkbox label</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-2">Component Guidelines:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Maintain consistent styling across components</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Use appropriate visual hierarchy within components</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Ensure all components have appropriate states (hover, focus, etc.)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Accessibility & Usability -->
+        <section id="accessibility" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 font-display">Accessibility & Usability</h2>
+            <p class="text-lg mb-8">Our platform is designed to be accessible to all users, including those with disabilities, and to provide an intuitive, user-friendly experience.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Color Contrast -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Color Contrast</h3>
+                    <p class="mb-6">We maintain sufficient color contrast to ensure readability for all users, including those with visual impairments.</p>
+                    
+                    <div class="space-y-6 mb-6">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Text on Light Backgrounds</p>
+                            <div class="bg-white p-4 border border-gray-200 rounded">
+                                <p class="text-as-dark font-bold">Dark text on white (Ratio: 12:1) ✓</p>
+                                <p class="text-as-red font-bold mt-2">Red accent on white (Ratio: 4.5:1) ✓</p>
+                                <p class="text-gray-600 mt-2">Gray text on white (Ratio: 4.5:1) ✓</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Text on Dark Backgrounds</p>
+                            <div class="bg-as-dark p-4 rounded">
+                                <p class="text-white font-bold">White text on dark (Ratio: 12:1) ✓</p>
+                                <p class="text-as-red font-bold mt-2">Red accent on dark (Ratio: 3:1) ✓</p>
+                                <p class="text-gray-400 mt-2">Light gray on dark (Ratio: 4:1) ✓</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-2">Contrast Guidelines:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Maintain at least 4.5:1 contrast for normal text</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Maintain at least 3:1 contrast for large text</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Don't rely on color alone to convey information</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Interactive Elements -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Interactive Elements</h3>
+                    <p class="mb-6">Our interactive elements are designed to be easily identifiable and usable by all users.</p>
+                    
+                    <div class="space-y-6 mb-6">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Button States</p>
+                            <div class="flex flex-wrap gap-4">
+                                <button class="px-4 py-2 bg-as-red text-white rounded-md font-medium">Default</button>
+                                <button class="px-4 py-2 bg-red-700 text-white rounded-md font-medium">Hover</button>
+                                <button class="px-4 py-2 bg-as-red text-white rounded-md font-medium ring-2 ring-offset-2 ring-as-red">Focus</button>
+                                <button class="px-4 py-2 bg-gray-400 text-white rounded-md font-medium cursor-not-allowed">Disabled</button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Form Field States</p>
+                            <div class="space-y-2">
+                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="Default">
+                                <input type="text" class="w-full px-3 py-2 border border-as-red rounded-md ring-2 ring-as-red" placeholder="Focus/Error">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="checkbox2" class="h-4 w-4 text-as-red focus:ring-as-red border-gray-300 rounded">
+                                    <label for="checkbox2" class="ml-2">Checkbox with visible focus state</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-2">Interaction Guidelines:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Provide clear visual feedback for all interactions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Ensure all interactive elements are keyboard accessible</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Use appropriate ARIA attributes for complex interactions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Responsive Design -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Responsive Design</h3>
+                    <p class="mb-6">Our platform is designed to provide an optimal experience across all devices and screen sizes.</p>
+                    
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+                        <div class="border border-gray-200 p-2 rounded">
+                            <div class="bg-as-gray h-24 rounded mb-2"></div>
+                            <div class="h-2 bg-gray-300 rounded mb-1"></div>
+                            <div class="h-2 bg-gray-300 rounded w-2/3"></div>
+                            <p class="text-xs text-center mt-2">Mobile</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 p-2 rounded">
+                            <div class="bg-as-gray h-24 rounded mb-2"></div>
+                            <div class="h-2 bg-gray-300 rounded mb-1"></div>
+                            <div class="h-2 bg-gray-300 rounded w-2/3"></div>
+                            <p class="text-xs text-center mt-2">Tablet</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 p-2 rounded">
+                            <div class="bg-as-gray h-24 rounded mb-2"></div>
+                            <div class="h-2 bg-gray-300 rounded mb-1"></div>
+                            <div class="h-2 bg-gray-300 rounded w-2/3"></div>
+                            <p class="text-xs text-center mt-2">Desktop</p>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-2">Responsive Guidelines:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Design mobile-first, then enhance for larger screens</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Use flexible layouts that adapt to different screen sizes</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Ensure touch targets are at least 44x44px on mobile</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Content Accessibility -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Content Accessibility</h3>
+                    <p class="mb-6">Our content is structured to be accessible to all users, including those using assistive technologies.</p>
+                    
+                    <div class="space-y-6 mb-6">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Semantic HTML Example</p>
+                            <div class="code-block">
+&lt;article&gt;
+  &lt;h2&gt;Article Title&lt;/h2&gt;
+  &lt;p&gt;Introduction paragraph...&lt;/p&gt;
+  &lt;section&gt;
+    &lt;h3&gt;Section Heading&lt;/h3&gt;
+    &lt;p&gt;Section content...&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/article&gt;
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Image with Alt Text</p>
+                            <div class="code-block">
+&lt;img 
+  src="security-diagram.jpg" 
+  alt="Active Directory attack path diagram showing lateral movement techniques"
+&gt;
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-2">Content Guidelines:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Use semantic HTML elements for proper document structure</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Provide descriptive alt text for all images</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Ensure content is navigable via keyboard</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-as-red mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Use clear, concise language for all content</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Conversion Elements -->
+        <section id="conversion" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 font-display">Conversion Elements</h2>
+            <p class="text-lg mb-8">Our conversion elements are designed to guide users toward key actions while maintaining a positive user experience.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Call to Action Buttons -->
+                <div class="bg-white<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9641676207314732',t:'MTc1MzMzODk5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>

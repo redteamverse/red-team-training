@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Team Training - Course Content</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-red': '#ed3237',
+                        'brand-blue': '#1c4690',
+                        'brand-dark': '#1a1a2e',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+            opacity: 1;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-icon.active {
+            transform: rotate(180deg);
+        }
+        
+        .course-module {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .course-module:hover {
+            border-left-color: #ed3237;
+        }
+        
+        .module-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .course-module:hover .module-icon {
+            transform: scale(1.1);
+            color: #ed3237;
+        }
+    </style>
+</head>
+<body>
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-12">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class="fas fa-book-open text-4xl text-brand-red mr-3"></i>
+                        <h2 class="text-3xl md:text-4xl font-bold">Course Content</h2>
+                    </div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Explore our comprehensive curriculum covering all aspects of Active Directory and cloud security for red team operations.
+                    </p>
+                </div>
+                
+                <!-- Course Modules Accordion -->
+                <div class="space-y-4">
+                    <!-- Module 1 -->
+                    <div class="course-module bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="accordion-header w-full px-6 py-4 flex items-center justify-between focus:outline-none" data-accordion="module1">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mr-4 module-icon">
+                                    <i class="fas fa-search text-xl text-gray-700"></i>
+                                </div>
+                                <div class="text-left">
+                                    <h3 class="text-xl font-bold text-gray-900">Enumeration & Discovery</h3>
+                                    <p class="text-sm text-gray-500 mt-1">Mapping the attack surface</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-400 accordion-icon" data-icon="module1"></i>
+                        </button>
+                        <div class="accordion-content px-6" data-content="module1">
+                            <div class="border-t border-gray-100 pt-4">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">Extensive Active Directory enumeration</h4>
+                                            <p class="text-gray-600 text-sm mt-1">
+                                                Learn advanced techniques to map out Active Directory environments, identify security weaknesses, and discover potential attack paths using both built-in and custom tools.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">Active Directory trust mapping and abuse</h4>
+                                            <p class="text-gray-600 text-sm mt-1">
+                                                Discover how to identify, map, and exploit trust relationships between domains and forests to expand access and move laterally through complex environments.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="mt-4 flex justify-end">
+                                    <a href="#enumeration-details" class="inline-flex items-center text-brand-red font-medium hover:underline">
+                                        <span>View full module details</span>
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Module 2 -->
+                    <div class="course-module bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="accordion-header w-full px-6 py-4 flex items-center justify-between focus:outline-none" data-accordion="module2">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mr-4 module-icon">
+                                    <i class="fas fa-level-up-alt text-xl text-gray-700"></i>
+                                </div>
+                                <div class="text-left">
+                                    <h3 class="text-xl font-bold text-gray-900">Privilege Escalation & Delegation</h3>
+                                    <p class="text-sm text-gray-500 mt-1">Gaining higher access</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-400 accordion-icon" data-icon="module2"></i>
+                        </button>
+                        <div class="accordion-content px-6" data-content="module2">
+                            <div class="border-t border-gray-100 pt-4">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">Privilege escalation via user hunting and misconfigurations</h4>
+                                            <p class="text-gray-600 text-sm mt-1">
+                                                Master techniques to identify and exploit common privilege escalation paths through user hunting, group membership analysis, and security misconfigurations in Active Directory.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">Abusing delegation issues (Unconstrained, Constrained, RBCD)</h4>
+                                            <p class="text-gray-600 text-sm mt-1">
+                                                Learn how to identify and exploit various delegation models including unconstrained delegation, constrained delegation, and resource-based constrained delegation to elevate privileges.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="mt-4 flex justify-end">
+                                    <a href="#privilege-escalation-details" class="inline-flex items-center text-brand-red font-medium hover:underline">
+                                        <span>View full module details</span>
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Module 3 -->
+                    <div class="course-module bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="accordion-header w-full px-6 py-4 flex items-center justify-between focus:outline-none" data-accordion="module3">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center mr-4 module-icon">
+                                    <i class="fas fa-key text-xl text-gray-700"></i>
+                                </div>
+                                <div class="text-left">
+                                    <h3 class="text-xl font-bold text-gray-900">Credential & Ticket Attacks</h3>
+                                    <p class="text-sm text-gray-500 mt-1">Authentication exploitation</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-400 accordion-icon" data-icon="module3"></i>
+                        </button>
+                        <div class="accordion-content px-6" data-content="module3">
+                            <div class="border-t border-gray-100 pt-4">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">Kerberos attacks: Golden ticket, Silver ticket, Kerberoasting</h4>
+                                            <p class="text-gray-600 text-sm mt-1">
+                                                Understand and execute advanced Kerberos-based attacks including golden tickets, silver tickets, kerberoasting, and AS-REP roasting to compromise authentication systems.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">Credential replay: Over-PTH, token replay, and more</h4>
+                                            <p class="text-gray-600 text-sm mt-1">
+                                                Master various credential replay techniques including Pass-the-Hash, Pass-the-Ticket, token impersonation, and other methods to reuse compromised credentials for lateral movement.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="mt-4 flex justify-end">
+                                    <a href="#credential-attacks-details" class="inline-flex items-center text-brand-red font-medium hover:underline">
+                                        <span>View full module details</span>
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Module 4 -->
+                    <div class="course-module bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="accordion-header w-full px-6 py-4 flex items-center justify-between focus:outline-none" data-accordion="module4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center mr-4 module-icon">
+                                    <i class="fas fa-project-diagram text-xl text-gray-700"></i>
+                                </div>
+                                <div class="text-left">
+                                    <h3 class="text-xl font-bold text-gray-900">Cross-Forest & Trust Exploits</h3>
+                                    <p class="text-sm text-gray-500 mt-1">Expanding access across boundaries</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-400 accordion-icon" data-icon="module4"></i>
+                        </button>
+                        <div class="accordion-content px-6" data-content="module4">
+                            <div class="border-t border-gray-100 pt-4">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">Lateral movement and privilege escalation across forest trusts</h4>
+                                            <p class="text-gray-600 text-sm mt-1">
+                                                Learn techniques to identify and exploit trust relationships between forests, enabling lateral movement and privilege escalation across organizational boundaries.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">Exploiting trusts in Microsoft Exchange, SQL Server, etc.</h4>
+                                            <p class="text-gray-600 text-sm mt-1">
+                                                Discover how to leverage trust relationships in enterprise applications like Microsoft Exchange and SQL Server to gain unauthorized access and escalate privileges.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="mt-4 flex justify-end">
+                                    <a href="#cross-forest-details" class="inline-flex items-center text-brand-red font-medium hover:underline">
+                                        <span>View full module details</span>
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Module 5 -->
+                    <div class="course-module bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="accordion-header w-full px-6 py-4 flex items-center justify-between focus:outline-none" data-accordion="module5">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-yellow-50 flex items-center justify-center mr-4 module-icon">
+                                    <i class="fas fa-door-open text-xl text-gray-700"></i>
+                                </div>
+                                <div class="text-left">
+                                    <h3 class="text-xl font-bold text-gray-900">Persistence Techniques</h3>
+                                    <p class="text-sm text-gray-500 mt-1">Maintaining long-term access</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-400 accordion-icon" data-icon="module5"></i>
+                        </button>
+                        <div class="accordion-content px-6" data-content="module5">
+                            <div class="border-t border-gray-100 pt-4">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">DCShadow, WMI, GPO, Domain/Host ACLs and more</h4>
+                                            <p class="text-gray-600 text-sm mt-1">
+                                                Master advanced persistence techniques including DCShadow for stealthy directory modifications, WMI event subscriptions, Group Policy Object manipulation, and access control list modifications.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="mt-4 flex justify-end">
+                                    <a href="#persistence-details" class="inline-flex items-center text-brand-red font-medium hover:underline">
+                                        <span>View full module details</span>
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Module 6 -->
+                    <div class="course-module bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="accordion-header w-full px-6 py-4 flex items-center justify-between focus:outline-none" data-accordion="module6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-indigo-50 flex items-center justify-center mr-4 module-icon">
+                                    <i class="fas fa-user-secret text-xl text-gray-700"></i>
+                                </div>
+                                <div class="text-left">
+                                    <h3 class="text-xl font-bold text-gray-900">Detection & Defense Evasion</h3>
+                                    <p class="text-sm text-gray-500 mt-1">Staying under the radar</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-400 accordion-icon" data-icon="module6"></i>
+                        </button>
+                        <div class="accordion-content px-6" data-content="module6">
+                            <div class="border-t border-gray-100 pt-4">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">Monitoring AD activities and deception tactics</h4>
+                                            <p class="text-gray-600 text-sm mt-1">
+                                                Learn how to monitor Active Directory for suspicious activities and implement deception tactics to detect and mislead attackers while maintaining operational security.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">Defense bypassing: Red Forest, JEA, LAPS, ATA, App Whitelisting, and more</h4>
+                                            <p class="text-gray-600 text-sm mt-1">
+                                                Master techniques to bypass modern defensive controls including Red Forest architecture, Just Enough Administration, Local Administrator Password Solution, Advanced Threat Analytics, and application whitelisting.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="mt-4 flex justify-end">
+                                    <a href="#evasion-details" class="inline-flex items-center text-brand-red font-medium hover:underline">
+                                        <span>View full module details</span>
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course Overview -->
+                <div class="mt-12 bg-gray-50 rounded-xl p-8">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold mb-4 md:mb-0">Course Overview</h3>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-brand-blue mr-2"></i>
+                                <span class="text-gray-700">40+ Hours</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-laptop-code text-brand-blue mr-2"></i>
+                                <span class="text-gray-700">Hands-on Labs</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-certificate text-brand-blue mr-2"></i>
+                                <span class="text-gray-700">Certification</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Our comprehensive curriculum is designed to provide you with both theoretical knowledge and practical skills needed to conduct effective red team operations in modern enterprise environments. Each module includes hands-on labs and real-world scenarios to reinforce learning.
+                    </p>
+                    <div class="flex justify-center">
+                        <a href="#course-details" class="inline-flex items-center justify-center px-6 py-3 bg-brand-red text-white font-bold rounded-md transition-all duration-300 hover:bg-red-700 shadow-lg">
+                            <span>View Full Course Details</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const contentId = this.getAttribute('data-accordion');
+                    const content = document.querySelector(`[data-content="${contentId}"]`);
+                    const icon = document.querySelector(`[data-icon="${contentId}"]`);
+                    
+                    // Toggle current accordion
+                    content.classList.toggle('active');
+                    icon.classList.toggle('active');
+                    
+                    // Close other accordions (optional - for single open accordion)
+                    // document.querySelectorAll('.accordion-content').forEach(item => {
+                    //     if (item.getAttribute('data-content') !== contentId) {
+                    //         item.classList.remove('active');
+                    //     }
+                    // });
+                    
+                    // document.querySelectorAll('.accordion-icon').forEach(iconItem => {
+                    //     if (iconItem.getAttribute('data-icon') !== contentId) {
+                    //         iconItem.classList.remove('active');
+                    //     }
+                    // });
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9663b15f646d2965',t:'MTc1MzY5ODU0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
