@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altered Security - Red Team Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F4F4;
+        }
+        
+        .brand-navy { color: #1A2732; }
+        .brand-red { color: #E63946; }
+        .brand-charcoal { color: #333333; }
+        .bg-brand-navy { background-color: #1A2732; }
+        .bg-brand-red { background-color: #E63946; }
+        
+        .primary-cta {
+            background-color: #E63946;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .primary-cta:hover {
+            background-color: #d12a37;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+        }
+        
+        .secondary-cta {
+            background: transparent;
+            color: #1A2732;
+            border: 2px solid #1A2732;
+            transition: all 0.3s ease;
+        }
+        
+        .secondary-cta:hover {
+            background-color: #1A2732;
+            color: white;
+        }
+        
+        .course-card {
+            background: white;
+            box-shadow: 0 10px 25px rgba(26, 39, 50, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .course-card:hover {
+            box-shadow: 0 20px 40px rgba(26, 39, 50, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .cta-button {
+            background-color: #E63946;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #1A2732;
+            outline: 2px solid #E63946;
+            outline-offset: 2px;
+        }
+        
+        .popular-badge {
+            background-color: #E63946;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            
+            <!-- Left Column - Hero Content -->
+            <div class="space-y-8">
+                <h1 class="text-4xl lg:text-5xl font-bold brand-navy leading-tight">
+                    Master Advanced Red Team Skills
+                </h1>
+                <p class="text-lg brand-charcoal leading-relaxed">
+                    Hands-on labs and expert-led training in red teaming, Active Directory, and adversary simulation techniques
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="primary-cta px-8 py-4 rounded-lg font-semibold text-lg shadow-lg">
+                        <i class="fas fa-terminal mr-2"></i>
+                        Explore Lab
+                    </button>
+                    <button class="secondary-cta px-8 py-4 rounded-lg font-semibold text-lg">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        View Course
+                    </button>
+                </div>
+                
+                <!-- Review Section -->
+                <div class="flex flex-col space-y-3">
+                    <div class="flex text-yellow-400 text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="brand-charcoal">
+                        Trusted by <span class="brand-red font-semibold">5,000+</span> security professionals
+                    </p>
+                </div>
+                
+                <!-- Altered Security Branding -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-brand-navy rounded text-white font-bold text-sm mr-3 flex items-center justify-center">
+                        AS
+                    </div>
+                    <span class="text-xl font-bold brand-navy">Altered Security</span>
+                </div>
+            </div>
+            
+            <!-- Right Column - Course Card -->
+            <div class="flex justify-center">
+                <div class="course-card rounded-2xl p-6 relative w-full max-w-md">
+                    <!-- Bestseller Badge -->
+                    <div class="absolute -top-2 -right-2 bg-brand-red text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
+                        🏆 Bestseller
+                    </div>
+                    
+                    <!-- Course Title -->
+                    <div class="mt-4 mb-4">
+                        <h2 class="text-2xl font-bold brand-navy mb-2">Red Team Fundamentals</h2>
+                        
+                        <!-- Rating -->
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="brand-charcoal text-sm">(487 reviews)</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Course Details -->
+                    <div class="grid grid-cols-3 gap-4 mb-6 bg-brand-light rounded-lg p-4 border border-gray-200">
+                        <div class="text-center">
+                            <div class="brand-navy mb-1">
+                                <i class="fas fa-clock text-lg"></i>
+                            </div>
+                            <div class="text-xs brand-charcoal font-medium">Duration</div>
+                            <div class="text-sm font-semibold brand-navy">5 weeks</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="brand-red mb-1">
+                                <i class="fas fa-book text-lg"></i>
+                            </div>
+                            <div class="text-xs brand-charcoal font-medium">Modules</div>
+                            <div class="text-sm font-semibold brand-navy">12</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="brand-navy mb-1">
+                                <i class="fas fa-signal text-lg"></i>
+                            </div>
+                            <div class="text-xs brand-charcoal font-medium">Level</div>
+                            <div class="text-sm font-semibold brand-navy">Beginner–Intermediate</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Key Features -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold brand-navy mb-3">What You'll Learn:</h4>
+                        <ul class="space-y-2 brand-charcoal text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                Network reconnaissance techniques
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                Basic exploitation methods
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                Red team fundamentals
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Pricing -->
+                    <div class="mb-6">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-3xl font-bold brand-red">$999</span>
+                            <span class="text-xl brand-charcoal line-through">$1,299</span>
+                        </div>
+                        <div class="bg-green-600 text-white text-sm font-semibold px-3 py-1 rounded-full inline-block">
+                            Save $300
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <button class="cta-button w-full py-3 px-6 rounded-lg font-semibold">
+                        <i class="fas fa-lock-open mr-2"></i>
+                        Enroll Now
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Trusted By Leading Organizations Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center text-3xl font-bold brand-navy mb-12">Trusted By Leading Organizations</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center max-w-6xl mx-auto">
+                
+                <!-- Google -->
+                <div class="flex justify-center group">
+                    <div class="p-4 rounded-lg bg-gray-50 hover:bg-brand-navy transition-all duration-300 group-hover:shadow-lg">
+                        <svg class="h-10 w-10 fill-current brand-charcoal group-hover:fill-white transition-colors duration-300" viewBox="0 0 24 24">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Microsoft -->
+                <div class="flex justify-center group">
+                    <div class="p-4 rounded-lg bg-gray-50 hover:bg-brand-navy transition-all duration-300 group-hover:shadow-lg">
+                        <svg class="h-10 w-10 fill-current brand-charcoal group-hover:fill-white transition-colors duration-300" viewBox="0 0 24 24">
+                            <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6 0H12.6V0H24v11.4z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Amazon -->
+                <div class="flex justify-center group">
+                    <div class="p-4 rounded-lg bg-gray-50 hover:bg-brand-navy transition-all duration-300 group-hover:shadow-lg">
+                        <svg class="h-10 w-10 fill-current brand-charcoal group-hover:fill-white transition-colors duration-300" viewBox="0 0 24 24">
+                            <path d="M13.527 14.165c-1.134.902-2.78 1.383-4.196 1.383-1.987 0-3.775-.735-5.13-1.956-.106-.096-.011-.227.117-.152 1.463.852 3.274 1.365 5.144 1.365 1.26 0 2.647-.261 3.92-.804.192-.082.354.127.145.164zm.465-.53c-.145-.186-.961-.088-1.326-.044-.111.013-.128-.083-.028-.153.65-.458 1.717-.326 1.841-.172.125.154-.033 1.224-.691 1.735-.1.078-.196.037-.151-.067.137-.342.444-1.108.355-1.299z"/>
+                            <path d="M13.527 14.165c-1.134.902-2.78 1.383-4.196 1.383-1.987 0-3.775-.735-5.13-1.956-.106-.096-.011-.227.117-.152 1.463.852 3.274 1.365 5.144 1.365 1.26 0 2.647-.261 3.92-.804.192-.082.354.127.145.164zm.465-.53c-.145-.186-.961-.088-1.326-.044-.111.013-.128-.083-.028-.153.65-.458 1.717-.326 1.841-.172.125.154-.033 1.224-.691 1.735-.1.078-.196.037-.151-.067.137-.342.444-1.108.355-1.299z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- IBM -->
+                <div class="flex justify-center group">
+                    <div class="p-4 rounded-lg bg-gray-50 hover:bg-brand-navy transition-all duration-300 group-hover:shadow-lg">
+                        <svg class="h-10 w-10 fill-current brand-charcoal group-hover:fill-white transition-colors duration-300" viewBox="0 0 24 24">
+                            <path d="M0 9.036h4.632v.833H0v-.833zm0 1.667h4.632v.833H0v-.833zm0 1.667h4.632v.833H0v-.833zm5.466-4.167h7.935v.833H5.466v-.833zm0 1.667h7.935v.833H5.466v-.833zm0 1.667h7.935v.833H5.466v-.833zm0 1.667h7.935v.833H5.466v-.833zm8.769-5h9.765v.833h-9.765v-.833zm0 1.667h9.765v.833h-9.765v-.833zm0 1.667h9.765v.833h-9.765v-.833zm0 1.667h9.765v.833h-9.765v-.833z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Cisco -->
+                <div class="flex justify-center group">
+                    <div class="p-4 rounded-lg bg-gray-50 hover:bg-brand-navy transition-all duration-300 group-hover:shadow-lg">
+                        <svg class="h-10 w-10 fill-current brand-charcoal group-hover:fill-white transition-colors duration-300" viewBox="0 0 24 24">
+                            <path d="M.832 8.662v6.676h1.154v-2.292h.462c1.077 0 1.846-.77 1.846-2.046 0-1.277-.77-2.338-1.846-2.338H.832zm1.154.923h.462c.615 0 .923.462.923 1.415 0 .954-.308 1.123-.923 1.123h-.462V9.585zm3.692-.923v6.676h1.154v-2.292h.462c1.077 0 1.846-.77 1.846-2.046 0-1.277-.77-2.338-1.846-2.338H5.678zm1.154.923h.462c.615 0 .923.462.923 1.415 0 .954-.308 1.123-.923 1.123h-.462V9.585zm3.692-.923v6.676h1.154v-2.292h.462c1.077 0 1.846-.77 1.846-2.046 0-1.277-.77-2.338-1.846-2.338h-1.616zm1.154.923h.462c.615 0 .923.462.923 1.415 0 .954-.308 1.123-.923 1.123h-.462V9.585zm3.692-.923v6.676h1.154v-2.292h.462c1.077 0 1.846-.77 1.846-2.046 0-1.277-.77-2.338-1.846-2.338h-1.616zm1.154.923h.462c.615 0 .923.462.923 1.415 0 .954-.308 1.123-.923 1.123h-.462V9.585zm3.692-.923v6.676h1.154v-2.292h.462c1.077 0 1.846-.77 1.846-2.046 0-1.277-.77-2.338-1.846-2.338h-1.616zm1.154.923h.462c.615 0 .923.462.923 1.415 0 .954-.308 1.123-.923 1.123h-.462V9.585z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Intel -->
+                <div class="flex justify-center group">
+                    <div class="p-4 rounded-lg bg-gray-50 hover:bg-brand-navy transition-all duration-300 group-hover:shadow-lg">
+                        <svg class="h-10 w-10 fill-current brand-charcoal group-hover:fill-white transition-colors duration-300" viewBox="0 0 24 24">
+                            <path d="M7.94 0L0 7.94v8.12L7.94 24h8.12L24 16.06V7.94L16.06 0H7.94zm4.06 4.8c3.54 0 6.4 2.86 6.4 6.4s-2.86 6.4-6.4 6.4-6.4-2.86-6.4-6.4 2.86-6.4 6.4-6.4z"/>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certification Path Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold brand-navy mb-4">Certification Path</h2>
+                <p class="text-xl brand-charcoal max-w-3xl mx-auto">
+                    Red Team Training Certification<br>
+                    Choose the training path that best fits your career goals and current skill level.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                
+                <!-- Red Team Fundamentals Card -->
+                <div class="course-card rounded-2xl p-6 relative">
+                    <!-- Course Title -->
+                    <div class="mt-4 mb-4">
+                        <h3 class="text-2xl font-bold brand-navy mb-2">Red Team Fundamentals</h3>
+                        
+                        <!-- Rating -->
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="brand-charcoal text-sm">(487 reviews)</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Course Details -->
+                    <div class="grid grid-cols-3 gap-4 mb-6 bg-brand-light rounded-lg p-4 border border-gray-200">
+                        <div class="text-center">
+                            <div class="brand-navy mb-1">
+                                <i class="fas fa-clock text-lg"></i>
+                            </div>
+                            <div class="text-xs brand-charcoal font-medium">Duration</div>
+                            <div class="text-sm font-semibold brand-navy">5 weeks</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="brand-red mb-1">
+                                <i class="fas fa-book text-lg"></i>
+                            </div>
+                            <div class="text-xs brand-charcoal font-medium">Modules</div>
+                            <div class="text-sm font-semibold brand-navy">12</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="brand-navy mb-1">
+                                <i class="fas fa-signal text-lg"></i>
+                            </div>
+                            <div class="text-xs brand-charcoal font-medium">Level</div>
+                            <div class="text-sm font-semibold brand-navy">Beginner</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Key Features -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold brand-navy mb-3">What You'll Learn:</h4>
+                        <ul class="space-y-2 brand-charcoal text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                Network reconnaissance techniques
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                Basic exploitation methods
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                Red team fundamentals
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Pricing -->
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold brand-red mb-2">$1,499</div>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <button class="cta-button w-full py-3 px-6 rounded-lg font-semibold">
+                        <i class="fas fa-lock-open mr-2"></i>
+                        Enroll Now
+                    </button>
+                </div>
+                
+                <!-- Advanced Red Team Operations Card -->
+                <div class="course-card rounded-2xl p-6 relative">
+                    <!-- Bestseller Badge -->
+                    <div class="absolute -top-2 -right-2 bg-brand-red text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
+                        🔥 Most Popular
+                    </div>
+                    
+                    <!-- Course Title -->
+                    <div class="mt-4 mb-4">
+                        <h3 class="text-2xl font-bold brand-navy mb-2">Advanced Red Team Operations</h3>
+                        
+                        <!-- Rating -->
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="brand-charcoal text-sm">(342 reviews)</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Course Details -->
+                    <div class="grid grid-cols-3 gap-4 mb-6 bg-brand-light rounded-lg p-4 border border-gray-200">
+                        <div class="text-center">
+                            <div class="brand-navy mb-1">
+                                <i class="fas fa-clock text-lg"></i>
+                            </div>
+                            <div class="text-xs brand-charcoal font-medium">Duration</div>
+                            <div class="text-sm font-semibold brand-navy">8 weeks</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="brand-red mb-1">
+                                <i class="fas fa-book text-lg"></i>
+                            </div>
+                            <div class="text-xs brand-charcoal font-medium">Modules</div>
+                            <div class="text-sm font-semibold brand-navy">18</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="brand-navy mb-1">
+                                <i class="fas fa-signal text-lg"></i>
+                            </div>
+                            <div class="text-xs brand-charcoal font-medium">Level</div>
+                            <div class="text-sm font-semibold brand-navy">Advanced</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Key Features -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold brand-navy mb-3">What You'll Learn:</h4>
+                        <ul class="space-y-2 brand-charcoal text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                Advanced persistence techniques
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                EDR evasion methods
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                Complex attack scenarios
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Pricing -->
+                    <div class="mb-6">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-3xl font-bold brand-red">$2,799</span>
+                            <span class="text-xl brand-charcoal line-through">$3,299</span>
+                        </div>
+                        <div class="bg-green-600 text-white text-sm font-semibold px-3 py-1 rounded-full inline-block">
+                            Save $500
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <button class="cta-button w-full py-3 px-6 rounded-lg font-semibold">
+                        <i class="fas fa-lock-open mr-2"></i>
+                        Enroll Now
+                    </button>
+                </div>
+                
+                <!-- Cloud Red Teaming Card -->
+                <div class="course-card rounded-2xl p-6 relative">
+                    <!-- Course Title -->
+                    <div class="mt-4 mb-4">
+                        <h3 class="text-2xl font-bold brand-navy mb-2">Cloud Red Teaming</h3>
+                        
+                        <!-- Rating -->
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="brand-charcoal text-sm">(215 reviews)</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Course Details -->
+                    <div class="grid grid-cols-3 gap-4 mb-6 bg-brand-light rounded-lg p-4 border border-gray-200">
+                        <div class="text-center">
+                            <div class="brand-navy mb-1">
+                                <i class="fas fa-clock text-lg"></i>
+                            </div>
+                            <div class="text-xs brand-charcoal font-medium">Duration</div>
+                            <div class="text-sm font-semibold brand-navy">6 weeks</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="brand-red mb-1">
+                                <i class="fas fa-book text-lg"></i>
+                            </div>
+                            <div class="text-xs brand-charcoal font-medium">Modules</div>
+                            <div class="text-sm font-semibold brand-navy">15</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="brand-navy mb-1">
+                                <i class="fas fa-signal text-lg"></i>
+                            </div>
+                            <div class="text-xs brand-charcoal font-medium">Level</div>
+                            <div class="text-sm font-semibold brand-navy">Intermediate</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Key Features -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold brand-navy mb-3">What You'll Learn:</h4>
+                        <ul class="space-y-2 brand-charcoal text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                AWS, Azure, GCP attacks
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                Container escape techniques
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                Cloud infrastructure attacks
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Pricing -->
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold brand-red mb-2">$2,299</div>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <button class="cta-button w-full py-3 px-6 rounded-lg font-semibold">
+                        <i class="fas fa-lock-open mr-2"></i>
+                        Enroll Now
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <!-- Why Choose Altered Security Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold brand-navy mb-4">Why Choose Altered Security</h2>
+                <p class="text-xl brand-charcoal max-w-4xl mx-auto">
+                    Our training programs are designed by industry experts with real-world experience to provide you with practical, hands-on skills that are immediately applicable.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                
+                <!-- Industry-Leading Expertise -->
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-graduate text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold brand-navy mb-3">Industry-Leading Expertise</h3>
+                    <p class="brand-charcoal text-sm leading-relaxed">
+                        Our instructors are active security professionals with extensive experience in the field, ensuring you learn current, relevant techniques.
+                    </p>
+                </div>
+                
+                <!-- Hands-On Lab Environment -->
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-flask text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold brand-navy mb-3">Hands-On Lab Environment</h3>
+                    <p class="brand-charcoal text-sm leading-relaxed">
+                        Practice in realistic environments that simulate actual enterprise networks, allowing you to apply techniques in safe, controlled settings.
+                    </p>
+                </div>
+                
+                <!-- Recognized Certifications -->
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold brand-navy mb-3">Recognized Certifications</h3>
+                    <p class="brand-charcoal text-sm leading-relaxed">
+                        Our certifications are respected in the industry and demonstrate your practical skills and knowledge to potential employers.
+                    </p>
+                </div>
+                
+                <!-- Flexible Learning Options -->
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold brand-navy mb-3">Flexible Learning Options</h3>
+                    <p class="brand-charcoal text-sm leading-relaxed">
+                        Choose from self-paced online courses, live instructor-led sessions, or corporate training tailored to your team's needs.
+                    </p>
+                </div>
+                
+                <!-- Community Support -->
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold brand-navy mb-3">Community Support</h3>
+                    <p class="brand-charcoal text-sm leading-relaxed">
+                        Join our community of security professionals for networking, ongoing support, and continuous learning opportunities.
+                    </p>
+                </div>
+                
+                <!-- Continuous Updates -->
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-sync-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold brand-navy mb-3">Continuous Updates</h3>
+                    <p class="brand-charcoal text-sm leading-relaxed">
+                        Our courses are regularly updated to reflect the latest threats, techniques, and countermeasures in the rapidly evolving security landscape.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Labs & Infrastructure Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold brand-navy mb-4">Labs & Infrastructure</h2>
+                <p class="text-xl brand-charcoal max-w-4xl mx-auto">
+                    Train in our state-of-the-art lab environments designed to simulate real-world enterprise networks and security challenges.
+                </p>
+            </div>
+            
+            <!-- Lab Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+                
+                <!-- CRTP Lab -->
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Beginner</span>
+                        <span class="text-2xl font-bold brand-navy">CRTP</span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold brand-navy mb-2">Active Directory Lab (Beginner Edition)</h3>
+                    
+                    <ul class="space-y-2 mb-6 brand-charcoal text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-server brand-red mr-2 mt-1"></i>
+                            Domain controller setup
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-desktop brand-red mr-2 mt-1"></i>
+                            Multiple workstations
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle brand-red mr-2 mt-1"></i>
+                            Common misconfigurations
+                        </li>
+                    </ul>
+                    
+                    <button class="secondary-cta w-full py-2 px-4 rounded-lg font-semibold text-sm">
+                        Learn more
+                    </button>
+                </div>
+                
+                <!-- CRTE Lab -->
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Intermediate/Advanced</span>
+                        <span class="text-2xl font-bold brand-navy">CRTE</span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold brand-navy mb-2">Advanced Red Team Lab</h3>
+                    
+                    <ul class="space-y-2 mb-6 brand-charcoal text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-network-wired brand-red mr-2 mt-1"></i>
+                            Multi-forest environment
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-link brand-red mr-2 mt-1"></i>
+                            Trust relationships
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-shield-alt brand-red mr-2 mt-1"></i>
+                            Advanced defensive controls
+                        </li>
+                    </ul>
+                    
+                    <button class="secondary-cta w-full py-2 px-4 rounded-lg font-semibold text-sm">
+                        Learn more
+                    </button>
+                </div>
+                
+                <!-- CARTP Lab -->
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Beginner</span>
+                        <span class="text-2xl font-bold brand-navy">CARTP</span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold brand-navy mb-2">Azure AD Lab (Beginner Edition)</h3>
+                    
+                    <ul class="space-y-2 mb-6 brand-charcoal text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-cloud brand-red mr-2 mt-1"></i>
+                            Azure AD tenant
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-cogs brand-red mr-2 mt-1"></i>
+                            Basic cloud services
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle brand-red mr-2 mt-1"></i>
+                            Common cloud misconfigurations
+                        </li>
+                    </ul>
+                    
+                    <button class="secondary-cta w-full py-2 px-4 rounded-lg font-semibold text-sm">
+                        Learn more
+                    </button>
+                </div>
+                
+                <!-- CARTE Lab -->
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 rounded-full">Advanced</span>
+                        <span class="text-2xl font-bold brand-navy">CARTE</span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold brand-navy mb-2">Azure Red Team Lab (Advanced Level)</h3>
+                    
+                    <ul class="space-y-2 mb-6 brand-charcoal text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-cloud-upload-alt brand-red mr-2 mt-1"></i>
+                            Complex Azure environment
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-users-cog brand-red mr-2 mt-1"></i>
+                            Hybrid identity scenarios
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-lock brand-red mr-2 mt-1"></i>
+                            Advanced cloud security controls
+                        </li>
+                    </ul>
+                    
+                    <button class="secondary-cta w-full py-2 px-4 rounded-lg font-semibold text-sm">
+                        Learn more
+                    </button>
+                </div>
+                
+                <!-- CRTM Lab -->
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 lg:col-span-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Enterprise</span>
+                        <span class="text-2xl font-bold brand-navy">CRTM</span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold brand-navy mb-2">Global Central Bank (Enterprise Cyber Range)</h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-building brand-red mr-2 mt-1"></i>
+                            <span class="brand-charcoal text-sm">Enterprise-scale environment</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-cloud-download-alt brand-red mr-2 mt-1"></i>
+                            <span class="brand-charcoal text-sm">Hybrid cloud architecture</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-shield-virus brand-red mr-2 mt-1"></i>
+                            <span class="brand-charcoal text-sm">Realistic security operations</span>
+                        </div>
+                    </div>
+                    
+                    <button class="secondary-cta w-full py-2 px-4 rounded-lg font-semibold text-sm">
+                        Learn more
+                    </button>
+                </div>
+                
+            </div>
+            
+            <!-- Lab Environment Features -->
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold brand-navy text-center mb-8">Lab Environment Features</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    
+                    <!-- Feature 1 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-clock text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold brand-navy mb-3">24/7 Access</h4>
+                        <p class="brand-charcoal text-sm">Train on your schedule with unlimited access during your subscription period.</p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-lock text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold brand-navy mb-3">Isolated Environment</h4>
+                        <p class="brand-charcoal text-sm">Practice offensive techniques safely in our contained lab environments.</p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-redo text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold brand-navy mb-3">Reset Capability</h4>
+                        <p class="brand-charcoal text-sm">Reset labs to their initial state to practice techniques multiple times.</p>
+                    </div>
+                    
+                    <!-- Feature 4 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-headset text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold brand-navy mb-3">Technical Support</h4>
+                        <p class="brand-charcoal text-sm">Get help when you need it with our dedicated lab support team.</p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Ready to Start Training CTA -->
+            <div class="text-center bg-gray-50 rounded-2xl p-8 max-w-4xl mx-auto">
+                <h3 class="text-3xl font-bold brand-navy mb-4">Ready to Start Training?</h3>
+                <p class="text-lg brand-charcoal mb-6">
+                    Get access to our state-of-the-art lab environments and start your hands-on training today.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="primary-cta px-8 py-3 rounded-lg font-semibold">
+                        <i class="fas fa-play mr-2"></i>
+                        Get Lab Access
+                    </button>
+                    <button class="secondary-cta px-8 py-3 rounded-lg font-semibold">
+                        <i class="fas fa-eye mr-2"></i>
+                        Request Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold brand-navy mb-4">Course Content</h2>
+                <p class="text-xl brand-charcoal max-w-4xl mx-auto">
+                    Explore our comprehensive curriculum covering all aspects of Active Directory and cloud security for red team operations.
+                </p>
+            </div>
+            
+            <!-- Course Modules Accordion -->
+            <div class="max-w-4xl mx-auto mb-16 space-y-4">
+                
+                <!-- Module 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleModule('module1')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-search text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold brand-navy">Enumeration & Discovery</h3>
+                                    <p class="brand-charcoal text-sm">Mapping the attack surface</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="module1-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="module1-content">
+                        <div class="border-t pt-4">
+                            <h4 class="font-bold brand-navy mb-3">What You'll Learn:</h4>
+                            <ul class="space-y-2 brand-charcoal text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Network reconnaissance techniques and tools
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Active Directory enumeration methods
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Service discovery and port scanning
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    User and group enumeration strategies
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    LDAP queries and PowerShell enumeration
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleModule('module2')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-arrow-up text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold brand-navy">Privilege Escalation & Delegation</h3>
+                                    <p class="brand-charcoal text-sm">Gaining higher access</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="module2-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="module2-content">
+                        <div class="border-t pt-4">
+                            <h4 class="font-bold brand-navy mb-3">What You'll Learn:</h4>
+                            <ul class="space-y-2 brand-charcoal text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Local privilege escalation techniques
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Kerberos delegation abuse methods
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Service account exploitation strategies
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    ACL and permission abuse techniques
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Token manipulation and impersonation
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleModule('module3')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-key text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold brand-navy">Credential & Ticket Attacks</h3>
+                                    <p class="brand-charcoal text-sm">Authentication exploitation</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="module3-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="module3-content">
+                        <div class="border-t pt-4">
+                            <h4 class="font-bold brand-navy mb-3">What You'll Learn:</h4>
+                            <ul class="space-y-2 brand-charcoal text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Kerberos ticket attacks (Kerberoasting, ASREPRoasting)
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Password spraying and credential stuffing
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Hash dumping and NTLM relay attacks
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Golden and silver ticket generation
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    DCSync and DCShadow attacks
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 4 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleModule('module4')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-network-wired text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold brand-navy">Cross-Forest & Trust Exploits</h3>
+                                    <p class="brand-charcoal text-sm">Expanding access across boundaries</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="module4-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="module4-content">
+                        <div class="border-t pt-4">
+                            <h4 class="font-bold brand-navy mb-3">What You'll Learn:</h4>
+                            <ul class="space-y-2 brand-charcoal text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Trust relationship mapping and enumeration
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Cross-forest attack techniques
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Foreign security principal abuse
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Inter-forest privilege escalation methods
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Trust key extraction and manipulation
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 5 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleModule('module5')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-anchor text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold brand-navy">Persistence Techniques</h3>
+                                    <p class="brand-charcoal text-sm">Maintaining long-term access</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="module5-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="module5-content">
+                        <div class="border-t pt-4">
+                            <h4 class="font-bold brand-navy mb-3">What You'll Learn:</h4>
+                            <ul class="space-y-2 brand-charcoal text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Registry and file system persistence methods
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Service and scheduled task abuse
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    WMI event subscriptions and COM hijacking
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Domain controller persistence techniques
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Skeleton key and directory service restore mode
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 6 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleModule('module6')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-user-ninja text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold brand-navy">Detection & Defense Evasion</h3>
+                                    <p class="brand-charcoal text-sm">Staying under the radar</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="module6-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="module6-content">
+                        <div class="border-t pt-4">
+                            <h4 class="font-bold brand-navy mb-3">What You'll Learn:</h4>
+                            <ul class="space-y-2 brand-charcoal text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    EDR and antivirus evasion techniques
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Living off the land binaries (LOLBins)
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Process injection and hollowing methods
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    Anti-forensics and log evasion techniques
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check brand-red mr-2 mt-1"></i>
+                                    AMSI bypass and PowerShell obfuscation
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Course Overview -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+                <h3 class="text-3xl font-bold brand-navy text-center mb-8">Course Overview</h3>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-clock text-white text-3xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold brand-navy mb-2">40+ Hours</h4>
+                        <p class="brand-charcoal">Comprehensive training content</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-flask text-white text-3xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold brand-navy mb-2">Hands-on Labs</h4>
+                        <p class="brand-charcoal">Practical exercises and scenarios</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-certificate text-white text-3xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold brand-navy mb-2">Certification</h4>
+                        <p class="brand-charcoal">Industry-recognized credential</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mb-8">
+                    <p class="text-lg brand-charcoal max-w-3xl mx-auto">
+                        Our comprehensive curriculum is designed to provide you with both theoretical knowledge and practical skills needed to conduct effective red team operations in modern enterprise environments. Each module includes hands-on labs and real-world scenarios to reinforce learning.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <button class="secondary-cta px-8 py-3 rounded-lg font-semibold">
+                        <i class="fas fa-list mr-2"></i>
+                        View Full Course Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Our Students Say Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold brand-navy mb-4">What Our Students Say</h2>
+                <p class="text-xl brand-charcoal max-w-4xl mx-auto">
+                    Hear from security professionals who have transformed their careers with our training programs.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    
+                    <p class="brand-charcoal text-sm leading-relaxed mb-6 italic">
+                        "The CRTP course completely transformed my understanding of Active Directory security. The hands-on labs were incredibly realistic and the instructors were always available to help."
+                    </p>
+                    
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-brand-navy rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-sm">MJ</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold brand-navy text-sm">Michael Johnson</h4>
+                            <p class="brand-charcoal text-xs">Security Engineer at TechCorp</p>
+                            <p class="brand-red text-xs font-semibold mt-1">Completed CRTP Certification</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    
+                    <p class="brand-charcoal text-sm leading-relaxed mb-6 italic">
+                        "After completing the CRTE course, I was able to immediately apply the advanced techniques in my penetration testing engagements. The ROI was immediate and my career has accelerated."
+                    </p>
+                    
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-brand-navy rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-sm">SW</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold brand-navy text-sm">Sarah Williams</h4>
+                            <p class="brand-charcoal text-xs">Penetration Tester at SecureNet</p>
+                            <p class="brand-red text-xs font-semibold mt-1">Completed CRTE Certification</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    
+                    <p class="brand-charcoal text-sm leading-relaxed mb-6 italic">
+                        "We enrolled our entire security team in Altered Security's corporate training program. The customized curriculum addressed our specific needs and significantly improved our security posture."
+                    </p>
+                    
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-brand-navy rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-sm">DC</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold brand-navy text-sm">David Chen</h4>
+                            <p class="brand-charcoal text-xs">CISO at FinTech Solutions</p>
+                            <p class="brand-red text-xs font-semibold mt-1">Corporate Training Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold brand-navy mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl brand-charcoal max-w-4xl mx-auto">
+                    Get answers to the most common questions about our Red Team Training programs.
+                </p>
+            </div>
+            
+            <!-- Search and Filter Section -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <!-- Search Bar -->
+                    <div class="relative mb-6">
+                        <input type="text" placeholder="Search FAQs..." class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent">
+                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 brand-charcoal"></i>
+                    </div>
+                    
+                    <!-- Filter Buttons -->
+                    <div class="flex flex-wrap gap-2">
+                        <button class="px-4 py-2 bg-brand-red text-white rounded-lg font-semibold text-sm hover:bg-red-700 transition-colors duration-200">
+                            All Questions
+                        </button>
+                        <button class="px-4 py-2 bg-gray-200 brand-charcoal rounded-lg font-semibold text-sm hover:bg-gray-300 transition-colors duration-200">
+                            Training
+                        </button>
+                        <button class="px-4 py-2 bg-gray-200 brand-charcoal rounded-lg font-semibold text-sm hover:bg-gray-300 transition-colors duration-200">
+                            Certification
+                        </button>
+                        <button class="px-4 py-2 bg-gray-200 brand-charcoal rounded-lg font-semibold text-sm hover:bg-gray-300 transition-colors duration-200">
+                            Labs
+                        </button>
+                        <button class="px-4 py-2 bg-gray-200 brand-charcoal rounded-lg font-semibold text-sm hover:bg-gray-300 transition-colors duration-200">
+                            Pricing
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Items -->
+            <div class="max-w-4xl mx-auto space-y-4">
+                
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleFAQ('faq1')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-brand-red rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm">01</span>
+                                </div>
+                                <h3 class="text-lg font-bold brand-navy">What is Red Team Training?</h3>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="faq1-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="faq1-content">
+                        <div class="border-t pt-4 ml-12">
+                            <p class="brand-charcoal leading-relaxed">
+                                Red Team Training focuses on simulating real-world attacks to test and improve an organization's defenses. It involves advanced offensive techniques across on-prem and cloud environments. Our training programs teach you how to think like an attacker, identify vulnerabilities, and exploit weaknesses in security systems using the same methodologies as sophisticated threat actors.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleFAQ('faq2')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-brand-red rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm">02</span>
+                                </div>
+                                <h3 class="text-lg font-bold brand-navy">Do I need prior experience in cybersecurity?</h3>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="faq2-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="faq2-content">
+                        <div class="border-t pt-4 ml-12">
+                            <p class="brand-charcoal leading-relaxed">
+                                Basic knowledge of Windows environments and networking helps, but our courses are structured from beginner to advanced — you can start at your level. We provide comprehensive learning paths that allow you to progress at your own pace, with foundational courses available for those new to the field.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleFAQ('faq3')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-brand-red rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm">03</span>
+                                </div>
+                                <h3 class="text-lg font-bold brand-navy">What kind of labs are included?</h3>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="faq3-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="faq3-content">
+                        <div class="border-t pt-4 ml-12">
+                            <p class="brand-charcoal leading-relaxed">
+                                Our courses come with 100% hands-on labs replicating enterprise-grade infrastructure — including Active Directory, Azure, and hybrid setups. You'll work in real attack scenarios, not simulations. These labs are designed to provide practical experience with the tools and techniques used in actual red team engagements, allowing you to develop and refine your skills in a controlled environment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleFAQ('faq4')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-brand-red rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm">04</span>
+                                </div>
+                                <h3 class="text-lg font-bold brand-navy">Is this training up-to-date with modern threats?</h3>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="faq4-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="faq4-content">
+                        <div class="border-t pt-4 ml-12">
+                            <p class="brand-charcoal leading-relaxed">
+                                Yes. The training covers the latest attacker techniques, post-exploitation tactics, and bypass methods aligned with evolving TTPs used by APTs and red teams. Our curriculum is regularly updated to reflect emerging threats and new attack vectors, ensuring that you're learning the most current and relevant skills in the field.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleFAQ('faq5')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-brand-red rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm">05</span>
+                                </div>
+                                <h3 class="text-lg font-bold brand-navy">Do I get a certificate after completing the course?</h3>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="faq5-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="faq5-content">
+                        <div class="border-t pt-4 ml-12">
+                            <p class="brand-charcoal leading-relaxed">
+                                Yes. Upon completing the course, you'll get the opportunity to take the certification exam. Our certifications are industry-recognized and demonstrate your practical skills and knowledge to potential employers. The certification process includes both theoretical knowledge assessment and practical hands-on challenges.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 6 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleFAQ('faq6')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-brand-red rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm">06</span>
+                                </div>
+                                <h3 class="text-lg font-bold brand-navy">How long do I have access to the course and labs?</h3>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="faq6-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="faq6-content">
+                        <div class="border-t pt-4 ml-12">
+                            <p class="brand-charcoal leading-relaxed">
+                                You'll have on-demand access for the duration you select (1, 3, or 6 months). Lab access matches the subscription period and is fully self-paced. This flexibility allows you to learn at your own speed and revisit course materials as needed to reinforce your understanding of key concepts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 7 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleFAQ('faq7')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-brand-red rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm">07</span>
+                                </div>
+                                <h3 class="text-lg font-bold brand-navy">Can I take the course while working full-time?</h3>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="faq7-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="faq7-content">
+                        <div class="border-t pt-4 ml-12">
+                            <p class="brand-charcoal leading-relaxed">
+                                Absolutely. All materials are on-demand and self-paced, allowing you to learn evenings, weekends, or whenever it fits your schedule. Our platform is designed to accommodate busy professionals, with course content accessible 24/7 so you can balance your training with work and personal commitments.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 8 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleFAQ('faq8')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-brand-red rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm">08</span>
+                                </div>
+                                <h3 class="text-lg font-bold brand-navy">How is this different from other Red Team courses?</h3>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="faq8-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="faq8-content">
+                        <div class="border-t pt-4 ml-12">
+                            <p class="brand-charcoal leading-relaxed">
+                                Our training is 100% hands-on, built by red teamers, and used by Fortune 500 internal teams. We go beyond theory — you attack, evade, and adapt like a real adversary. Our instructors are active practitioners in the field, bringing real-world experience and insights to the curriculum that you won't find in purely academic courses.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 9 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleFAQ('faq9')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-brand-red rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm">09</span>
+                                </div>
+                                <h3 class="text-lg font-bold brand-navy">Is this course useful for Blue Teamers or Defenders?</h3>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="faq9-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="faq9-content">
+                        <div class="border-t pt-4 ml-12">
+                            <p class="brand-charcoal leading-relaxed">
+                                Yes. Understanding offensive tactics is crucial for blue teams. Many SOC analysts and DFIR professionals take our courses to improve detection and prevention. By learning how attackers operate, defenders can better anticipate threats, identify vulnerabilities before they're exploited, and develop more effective security controls and incident response procedures.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 10 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" onclick="toggleFAQ('faq10')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-brand-red rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm">10</span>
+                                </div>
+                                <h3 class="text-lg font-bold brand-navy">Do you offer team licenses or bulk discounts?</h3>
+                            </div>
+                            <i class="fas fa-chevron-down brand-charcoal transition-transform duration-200" id="faq10-icon"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6" id="faq10-content">
+                        <div class="border-t pt-4 ml-12">
+                            <p class="brand-charcoal leading-relaxed">
+                                Yes, we offer enterprise training packages and bulk licenses. Contact us for a tailored quote. Our team can work with you to develop customized training programs that address your organization's specific security needs and objectives, with flexible pricing options based on team size and training requirements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Still Have Questions CTA -->
+            <div class="text-center mt-12 bg-white rounded-2xl p-8 max-w-4xl mx-auto shadow-lg">
+                <h3 class="text-2xl font-bold brand-navy mb-4">Still Have Questions?</h3>
+                <p class="brand-charcoal mb-6">
+                    Can't find what you're looking for? Our team is here to help you choose the right training path.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="secondary-cta px-6 py-3 rounded-lg font-semibold">
+                        <i class="fas fa-comments mr-2"></i>
+                        Live Chat Support
+                    </button>
+                    <button class="secondary-cta px-6 py-3 rounded-lg font-semibold">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-brand-navy">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-white mb-4">Ready to Start Your Red Team Journey?</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Join thousands of security professionals who have advanced their careers with Altered Security training
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <button class="primary-cta px-8 py-4 rounded-lg font-semibold text-lg shadow-lg">
+                    <i class="fas fa-rocket mr-2"></i>
+                    Start Learning Today
+                </button>
+                <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-brand-navy transition-all duration-300">
+                    <i class="fas fa-phone mr-2"></i>
+                    Talk to an Expert
+                </button>
+            </div>
+            
+            <div class="flex items-center justify-center space-x-8 text-gray-300">
+                <div class="flex items-center">
+                    <i class="fas fa-shield-alt brand-red mr-2"></i>
+                    <span>30-Day Money Back Guarantee</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-users brand-red mr-2"></i>
+                    <span>24/7 Student Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
+                
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-brand-red rounded text-white font-bold text-lg mr-3 flex items-center justify-center">
+                            AS
+                        </div>
+                        <span class="text-2xl font-bold">ALTERED SECURITY</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Advanced cybersecurity training and certification for security professionals.
+                    </p>
+                    
+                    <!-- Contact Info -->
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope brand-red mr-3 w-5"></i>
+                            <a href="mailto:info@alteredsecurity.com" class="text-gray-300 hover:text-white transition-colors duration-200">
+                                info@alteredsecurity.com
+                            </a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone brand-red mr-3 w-5"></i>
+                            <a href="tel:+15551234567" class="text-gray-300 hover:text-white transition-colors duration-200">
+                                +1 (555) 123-4567
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Training Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Training</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Red Team Labs</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Online Courses</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Live Training</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Corporate Training</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Training Calendar</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Certifications Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Certifications</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">CRTP</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">CRTE</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">AACE</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Certification Process</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Verify Certification</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Support Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Live Chat</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Documentation</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">System Status</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-700 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-300 mb-4 md:mb-0">
+                        © 2025 Altered Security. All rights reserved.
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-6 text-sm">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Privacy Policy</a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Terms of Service</a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleModule(moduleId) {
+            const content = document.getElementById(moduleId + '-content');
+            const icon = document.getElementById(moduleId + '-icon');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+        
+        function toggleFAQ(faqId) {
+            const content = document.getElementById(faqId + '-content');
+            const icon = document.getElementById(faqId + '-icon');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96744d0f50573806',t:'MTc1Mzg3MjY4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
