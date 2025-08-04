@@ -81,6 +81,161 @@
             transform: rotate(180deg);
         }
     </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #333333;
+        }
+        
+        /* Brand Colors */
+        .text-navy { color: #1A2732; }
+        .text-red { color: #E63946; }
+        .text-charcoal { color: #333333; }
+        
+        .bg-navy { background-color: #1A2732; }
+        .bg-red { background-color: #E63946; }
+        .bg-charcoal { background-color: #333333; }
+        
+        .border-navy { border-color: #1A2732; }
+        .border-red { border-color: #E63946; }
+        
+        /* Gradients */
+        .bg-gradient-navy {
+            background: linear-gradient(135deg, #1A2732 0%, #0F1419 100%);
+        }
+        
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #E63946 0%, #B91C1C 100%);
+        }
+        
+        /* Mode Cards */
+        .mode-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mode-card:hover {
+            border-color: #1A2732;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(26, 39, 50, 0.1), 0 10px 10px -5px rgba(26, 39, 50, 0.04);
+        }
+        
+        .mode-card.featured {
+            border-color: #E63946;
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.02) 0%, rgba(230, 57, 70, 0.05) 100%);
+        }
+        
+        .mode-card.coming-soon {
+            opacity: 0.7;
+            background: linear-gradient(135deg, rgba(26, 39, 50, 0.02) 0%, rgba(26, 39, 50, 0.05) 100%);
+        }
+        
+        /* Badge */
+        .badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .badge-popular {
+            background: #E63946;
+            color: white;
+        }
+        
+        .badge-coming-soon {
+            background: #1A2732;
+            color: white;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            background: linear-gradient(135deg, #E63946 0%, #B91C1C 100%);
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+        }
+        
+        .cta-button-outline {
+            border: 2px solid #E63946;
+            color: #E63946;
+            background: transparent;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button-outline:hover {
+            background: #E63946;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Table Styles */
+        .comparison-table {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .table-header {
+            background: #1A2732;
+            color: white;
+        }
+        
+        .table-row:nth-child(even) {
+            background: #f8fafc;
+        }
+        
+        .table-row:hover {
+            background: rgba(26, 39, 50, 0.02);
+        }
+        
+        /* Icons */
+        .icon-circle {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        
+        .icon-navy {
+            background: linear-gradient(135deg, #1A2732 0%, #0F1419 100%);
+            color: white;
+        }
+        
+        .icon-red {
+            background: linear-gradient(135deg, #E63946 0%, #B91C1C 100%);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mode-card {
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body class="min-h-screen">
     <!-- Hero Section -->
@@ -1186,6 +1341,350 @@
             </div>
         </div>
     </section>
+ <!-- Learning Modes Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-navy mb-6">Learning Modes</h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto leading-relaxed">
+                    Choose the learning format that best fits your schedule, learning style, and career goals
+                </p>
+            </div>
+            
+            <!-- Mode Cards -->
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <!-- Self-Paced -->
+                <div class="mode-card rounded-2xl p-8">
+                    <div class="icon-circle icon-navy">
+                        <i class="fas fa-clock text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-4 text-center">Self-Paced</h3>
+                    <p class="text-charcoal mb-6 text-center leading-relaxed">
+                        Learn on your schedule with lifetime access to pre-recorded videos, guided labs, and downloadable resources.
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-check text-red mr-3"></i>
+                            <span>Lifetime access to content</span>
+                        </div>
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-check text-red mr-3"></i>
+                            <span>Pre-recorded video lessons</span>
+                        </div>
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-check text-red mr-3"></i>
+                            <span>Guided lab challenges</span>
+                        </div>
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-check text-red mr-3"></i>
+                            <span>Downloadable resources</span>
+                        </div>
+                    </div>
+                    <button class="cta-button-outline w-full py-3 px-6 rounded-lg">
+                        Learn More
+                    </button>
+                </div>
+                
+                <!-- Virtual Training -->
+                <div class="mode-card featured rounded-2xl p-8">
+                    <div class="badge badge-popular">Most Popular</div>
+                    <div class="icon-circle icon-red">
+                        <i class="fas fa-video text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-4 text-center">Virtual Training</h3>
+                    <p class="text-charcoal mb-6 text-center leading-relaxed">
+                        Join live online sessions with expert instructors. Includes hands-on practice, structured learning, and Q&A.
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-check text-red mr-3"></i>
+                            <span>Live instructor-led sessions</span>
+                        </div>
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-check text-red mr-3"></i>
+                            <span>Real-time Q&A support</span>
+                        </div>
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-check text-red mr-3"></i>
+                            <span>Hands-on lab practice</span>
+                        </div>
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-check text-red mr-3"></i>
+                            <span>Session recordings</span>
+                        </div>
+                    </div>
+                    <button class="cta-button w-full py-3 px-6 rounded-lg">
+                        Get Started
+                    </button>
+                </div>
+                
+                <!-- In-Person Training -->
+                <div class="mode-card coming-soon rounded-2xl p-8">
+                    <div class="badge badge-coming-soon">Coming Soon</div>
+                    <div class="icon-circle icon-navy">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-4 text-center">In-Person Training</h3>
+                    <p class="text-charcoal mb-6 text-center leading-relaxed">
+                        Classroom-based training for immersive, face-to-face learning.
+                    </p>
+                    <div class="bg-gray-100 rounded-lg p-4 mb-6">
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-envelope text-red mr-3"></i>
+                            <span><strong>Interested?</strong> Contact Us for early access updates.</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-check text-red mr-3"></i>
+                            <span>Face-to-face instruction</span>
+                        </div>
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-check text-red mr-3"></i>
+                            <span>Immersive learning environment</span>
+                        </div>
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-check text-red mr-3"></i>
+                            <span>Networking opportunities</span>
+                        </div>
+                        <div class="flex items-center text-sm text-charcoal">
+                            <i class="fas fa-check text-red mr-3"></i>
+                            <span>Hands-on lab equipment</span>
+                        </div>
+                    </div>
+                    <button class="cta-button-outline w-full py-3 px-6 rounded-lg">
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Who It's For Section -->
+            <div class="bg-white rounded-2xl p-8 mb-16 shadow-lg">
+                <h3 class="text-3xl font-bold text-navy mb-8 text-center">Who It's For</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="icon-circle icon-navy">
+                            <i class="fas fa-user-clock text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-navy mb-3">Self-Paced</h4>
+                        <p class="text-charcoal text-sm leading-relaxed">
+                            Flexible learners, professionals, or students who prefer independent study
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="icon-circle icon-red">
+                            <i class="fas fa-users-cog text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-navy mb-3">Virtual Training</h4>
+                        <p class="text-charcoal text-sm leading-relaxed">
+                            Learners who value structure, interaction, and real-time guidance
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="icon-circle icon-navy">
+                            <i class="fas fa-chalkboard-teacher text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-navy mb-3">In-Person</h4>
+                        <p class="text-charcoal text-sm leading-relaxed">
+                            For those who thrive in classroom environments (available soon)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- What You Get Table -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-navy mb-8 text-center">What You Get</h3>
+                <div class="comparison-table overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="table-header">
+                                <tr>
+                                    <th class="px-6 py-4 text-left font-semibold">Mode</th>
+                                    <th class="px-6 py-4 text-left font-semibold">Includes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-row border-b border-gray-200">
+                                    <td class="px-6 py-4 font-semibold text-navy">Self-Paced</td>
+                                    <td class="px-6 py-4 text-charcoal">
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-gray-100 text-charcoal">
+                                                <i class="fas fa-infinity mr-1 text-red"></i>
+                                                Lifetime access
+                                            </span>
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-gray-100 text-charcoal">
+                                                <i class="fas fa-flask mr-1 text-red"></i>
+                                                Lab challenges
+                                            </span>
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-gray-100 text-charcoal">
+                                                <i class="fas fa-file-alt mr-1 text-red"></i>
+                                                Notes & resources
+                                            </span>
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-gray-100 text-charcoal">
+                                                <i class="fas fa-certificate mr-1 text-red"></i>
+                                                Completion certificate
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="table-row border-b border-gray-200">
+                                    <td class="px-6 py-4 font-semibold text-navy">Virtual Training</td>
+                                    <td class="px-6 py-4 text-charcoal">
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-gray-100 text-charcoal">
+                                                <i class="fas fa-video mr-1 text-red"></i>
+                                                Live sessions
+                                            </span>
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-gray-100 text-charcoal">
+                                                <i class="fas fa-question-circle mr-1 text-red"></i>
+                                                Instructor Q&A
+                                            </span>
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-gray-100 text-charcoal">
+                                                <i class="fas fa-flask mr-1 text-red"></i>
+                                                Labs
+                                            </span>
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-gray-100 text-charcoal">
+                                                <i class="fas fa-record-vinyl mr-1 text-red"></i>
+                                                Session recordings
+                                            </span>
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-gray-100 text-charcoal">
+                                                <i class="fas fa-certificate mr-1 text-red"></i>
+                                                Completion certificate
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="px-6 py-4 font-semibold text-navy">In-Person</td>
+                                    <td class="px-6 py-4 text-charcoal">
+                                        <div class="flex items-center">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-gray-100 text-charcoal mr-2">
+                                                <i class="fas fa-clock mr-1 text-red"></i>
+                                                Coming soon
+                                            </span>
+                                            <span class="text-sm">Contact us for availability</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certification Policy -->
+            <div class="bg-white rounded-2xl p-8 mb-16 shadow-lg">
+                <h3 class="text-3xl font-bold text-navy mb-8 text-center">Certification & Recognition</h3>
+                <div class="max-w-5xl mx-auto">
+                    <!-- Two-column layout for certifications -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <!-- Professional Certification -->
+                        <div class="bg-gradient-red rounded-xl p-6 text-white relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-white bg-opacity-10 rounded-full -mr-10 -mt-10"></div>
+                            <div class="relative z-10">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-award text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Professional Certification</h4>
+                                </div>
+                                <p class="text-white text-opacity-90 mb-4 leading-relaxed">
+                                    Industry-recognized certification awarded upon successfully passing the comprehensive final assessment with a minimum score of 80%.
+                                </p>
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check-circle mr-2"></i>
+                                    <span>Validates professional competency</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Certificate of Completion -->
+                        <div class="bg-gradient-navy rounded-xl p-6 text-white relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-white bg-opacity-10 rounded-full -mr-10 -mt-10"></div>
+                            <div class="relative z-10">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-certificate text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Certificate of Completion</h4>
+                                </div>
+                                <p class="text-white text-opacity-90 mb-4 leading-relaxed">
+                                    Awarded to all participants who complete the full course curriculum, regardless of final assessment results.
+                                </p>
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check-circle mr-2"></i>
+                                    <span>Demonstrates course completion</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                  
+                   
+                    
+                    <!-- Digital Credentials -->
+                    <div class="mt-8 text-center">
+                        <div class="inline-flex items-center bg-gray-100 border-2 border-navy rounded-full px-6 py-3 shadow-sm">
+                            <i class="fas fa-shield-alt text-navy mr-3 text-lg"></i>
+                            <span class="text-navy font-semibold">All certificates are issued as verifiable digital credentials</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Duration & Flexibility -->
+            <div class="bg-gradient-navy rounded-2xl p-8 text-white">
+                <h3 class="text-3xl font-bold mb-8 text-center">Duration & Flexibility</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-infinity text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Self-Paced</h4>
+                        <p class="text-gray-200">
+                            100% flexible, learn at your own pace
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red bg-opacity-80 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-calendar-alt text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Virtual Training</h4>
+                        <p class="text-gray-200">
+                            Scheduled batches (weekday/weekend)
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-clock text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">In-Person</h4>
+                        <p class="text-gray-200">
+                            Fixed calendar dates (Coming Soon)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add smooth hover animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.mode-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'969ba72163ee3a2a',t:'MTc1NDI4NTMyMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 
     <!-- What Our Students Say Section -->
     <section class="py-16 bg-white">
@@ -1264,7 +1763,7 @@
                     </div>
                     
                     <p class="brand-charcoal text-sm leading-relaxed mb-6 italic">
-                        "We enrolled our entire security team in Altered Security's corporate training program. The customized curriculum addressed our specific needs and significantly improved our security posture."
+                        "I enrolled in Altered Security’s training to sharpen my red teaming skills. The hands-on labs and focused curriculum helped me level up quickly and confidently tackle real-world security challenges."
                     </p>
                     
                     <div class="flex items-center">
