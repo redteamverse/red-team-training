@@ -1,157 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikhil Mittal - Elite Red Team Leader & Trainer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { box-sizing: border-box; }
-        .gradient-bg {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 30%, #f1f5f9 70%, #ffffff 100%);
-            position: relative;
-        }
-        .gradient-bg::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(45deg, rgba(220, 38, 127, 0.03) 0%, rgba(59, 130, 246, 0.05) 100%);
-            pointer-events: none;
-        }
-        .tech-grid {
-            background-image: 
-                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
-                radial-gradient(circle at 25% 25%, rgba(220, 38, 127, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
-            background-size: 60px 60px, 60px 60px, 400px 400px, 400px 400px;
-            background-position: 0 0, 0 0, 0 0, 200px 200px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nikhil Mittal - Elite Red Team Leader & Trainer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body {
+  box-sizing: border-box;
+}
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f8fafc 30%,
+    #f1f5f9 70%,
+    #ffffff 100%
+  );
+  position: relative;
+}
+.gradient-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(220, 38, 127, 0.03) 0%,
+    rgba(59, 130, 246, 0.05) 100%
+  );
+  pointer-events: none;
+}
+.tech-grid {
+  background-image: linear-gradient(
+      rgba(255,255,255,0.02) 1px, transparent 1px
+    ),
+    linear-gradient(
+      90deg, rgba(255,255,255,0.02) 1px, transparent 1px
+    ),
+    radial-gradient(
+      circle at 25% 25%, rgba(220, 38, 127, 0.05) 0%, transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%, rgba(59, 130, 246, 0.05) 0%, transparent 50%
+    );
+  background-size: 60px 60px, 60px 60px, 400px 400px, 400px 400px;
+  background-position: 0 0, 0 0, 0 0, 200px 200px;
+}
+</style>
 </head>
 <body class="bg-white text-slate-900">
-    <div class="gradient-bg tech-grid min-h-screen flex items-center relative overflow-x-hidden">
-        <div class="w-full px-2 sm:px-4 lg:px-8 relative z-10">
-            <div class="max-w-5xl mx-auto">
-                <div class="flex flex-col lg:grid lg:grid-cols-2 gap-10 items-stretch pt-8 pb-8">
-                    <!-- Content Section -->
-                    <div class="order-2 lg:order-1 flex flex-col justify-center space-y-8">
-                        <div class="space-y-4">
-                            <div class="inline-flex items-center bg-red-500/10 border border-red-500/30 rounded-full px-4 py-2 text-sm">
-                                <svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span class="ml-2 text-red-300">Meet Your Instructor</span>
-                            </div>
-                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                                <span class="text-red-600">Nikhil Mittal</span>
-                                <span class="text-slate-900 block text-2xl md:text-3xl lg:text-4xl mt-2">Elite Red Team Leader</span>
-                            </h1>
-                            <p class="text-lg md:text-xl text-slate-700 leading-relaxed">
-                                Nikhil Mittal is the founder of Altered Security and a red team expert with over 15 years of experience specializing in Active Directory, Azure, and offensive security. He trains professionals worldwide and speaks at top security conferences.
-                            </p>
-                        </div>
-                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-3 w-full">
-                            <h3 class="text-base font-semibold text-red-600 mb-2">Why Train with Nikhil?</h3>
-                            <div class="space-y-2">
-                                <div class="flex items-center">
-                                    <svg class="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    <span>15+ years in red team operations.</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <svg class="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    <span>10+ international conference talks, including BlackHat & DEF CON.</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <svg class="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    <span>20+ tools, scripts & open-source projects created.</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <svg class="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    <span>40,000+ professionals trained globally.</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <svg class="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    <span>Led hands-on bootcamps for Fortune 500 organizations.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 pl-4 py-3 text-slate-700 italic text-base">
-                            "Nikhil doesn't just teach red teaming - he lives it. His training transformed our entire security posture."
-                            <div class="text-sm text-red-600 font-medium mt-2">- Sarah Chen, CISO at TechCorp</div>
-                        </div>
-                        <div class="flex pt-2">
-                            <button onclick="trainWithNikhil()" class="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 text-base w-full md:w-auto">
-                                Start Your Journey
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Trainer Profile Section -->
-                    <div class="order-1 lg:order-2 flex flex-col justify-between items-center h-full">
-                        <div class="trainer-spotlight rounded-2xl p-6 sm:p-8 w-full sm:w-auto mx-auto mt-8 md:mt-16">
-                            <div class="relative flex flex-col items-center">
-                                <div class="w-48 h-48 sm:w-64 sm:h-64 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl border-2 border-red-500/30 flex items-center justify-center overflow-hidden">
-                                    <!-- Replace below with: <img src="your_image_path.jpg" alt="Nikhil Mittal Photo" class="object-cover w-full h-full rounded-2xl"/> -->
-                                    <img src="images/trainer.jpg" class="object-cover w-full h-full rounded-2xl" alt="Nikhil Mittal photo" />
-                                </div>
-                                <!-- Badges (responsive adjustment) -->
-                                <div class="absolute top-2 left-2 bg-blue-500/20 border border-blue-500/40 rounded-lg px-2 py-1 text-left">
-                                    <div class="text-xs font-bold text-blue-800">40K+ students</div>
-                                    <div class="text-xs text-blue-700">130+ countries</div>
-                                </div>
-                                <div class="absolute bottom-2 right-2 bg-amber-100/90 border border-amber-300 rounded-lg px-2 py-1">
-                                    <div class="flex space-x-0.5 mb-1">
-                                        <!-- star icons ... -->
-                                        <svg class="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292..."></path></svg>
-                                        <svg class="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="..."></path></svg>
-                                        <svg class="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="..."></path></svg>
-                                        <svg class="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="..."></path></svg>
-                                        <svg class="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="..."></path></svg>
-                                    </div>
-                                    <div class="text-xs font-semibold text-amber-800">(487 reviews)</div>
-                                </div>
-                            </div>
-                            <!-- Trainer Stats Below Photo -->
-                            <div class="grid grid-cols-3 gap-1 sm:gap-2 text-center mt-6">
-                                <div class="bg-slate-50 rounded-lg p-2 sm:p-3 border border-slate-200">
-                                    <div class="text-base sm:text-lg font-bold text-red-600">15+</div>
-                                    <div class="text-xs text-slate-600">years experience</div>
-                                </div>
-                                <div class="bg-slate-50 rounded-lg p-2 sm:p-3 border border-slate-200">
-                                    <div class="text-base sm:text-lg font-bold text-red-600">10+</div>
-                                    <div class="text-xs text-slate-600">global conferences</div>
-                                </div>
-                                <div class="bg-slate-50 rounded-lg p-2 sm:p-3 border border-slate-200">
-                                    <div class="text-base sm:text-lg font-bold text-red-600">40,000+</div>
-                                    <div class="text-xs text-slate-600">trained worldwide</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="gradient-bg tech-grid min-h-screen flex items-center relative overflow-x-hidden">
+    <div class="w-full px-2 sm:px-4 lg:px-8 relative z-10">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col lg:grid lg:grid-cols-2 gap-6 pt-4 pb-4 lg:gap-10 lg:pt-8 lg:pb-8 items-stretch">
+          <!-- LEFT: MAIN CONTENT -->
+          <div class="order-2 lg:order-1 flex flex-col justify-center space-y-7">
+            <div class="space-y-4">
+              <div class="inline-flex items-center bg-red-500/10 border border-red-500/30 rounded-full px-4 py-2 text-sm">
+                <svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="ml-2 text-red-300">Meet Your Instructor</span>
+              </div>
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <span class="text-red-600">Nikhil Mittal</span>
+                <span class="text-slate-900 block text-2xl md:text-3xl lg:text-4xl mt-2">Elite Red Team Leader</span>
+              </h1>
+              <p class="text-lg md:text-xl text-slate-700 leading-relaxed">
+                Nikhil Mittal is the founder of Altered Security and a red team expert with over 15 years of experience specializing in Active Directory, Azure, and offensive security. He trains professionals worldwide and speaks at top security conferences.
+              </p>
             </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2 w-full">
+              <h3 class="text-base font-semibold text-red-600 mb-2">Why Train with Nikhil?</h3>
+              <div class="space-y-1.5">
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span>15+ years in red team operations.</span>
+                </div>
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span>10+ international conference talks, including BlackHat & DEF CON.</span>
+                </div>
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span>20+ tools, scripts & open-source projects created.</span>
+                </div>
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span>40,000+ professionals trained globally.</span>
+                </div>
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Led hands-on bootcamps for Fortune 500 organizations.</span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 pl-4 py-3 text-slate-700 italic text-base">
+              "Nikhil doesn't just teach red teaming - he lives it. His training transformed our entire security posture."
+              <div class="text-sm text-red-600 font-medium mt-2">- Sarah Chen, CISO at TechCorp</div>
+            </div>
+            <div class="flex pt-2">
+              <button onclick="trainWithNikhil()" class="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 text-base w-full md:w-auto">
+                Start Your Journey
+              </button>
+            </div>
+          </div>
+          <!-- RIGHT COLUMN: Profile Photo Card with Social Bar, Logos, Stats -->
+          <div class="relative order-1 lg:order-2 flex flex-col items-center justify-center min-h-[360px] lg:min-h-[600px]">
+            <div class="hidden lg:block absolute inset-0 z-0">
+              <div class="w-full h-full rounded-3xl bg-red-50"></div>
+            </div>
+            <div class="relative z-10 flex flex-col items-center w-full">
+              <!-- Photo Card -->
+              <div class="relative rounded-2xl shadow-lg bg-white mx-auto w-56 lg:w-64 mb-4 overflow-hidden">
+                <img src="images/trainer.jpg" class="object-cover w-full h-56 lg:h-64" alt="Nikhil Mittal Photo" />
+                <!-- Social Icon Bar under image -->
+                <div class="flex items-center justify-center space-x-8 bg-slate-100 py-3 w-full">
+                  <a href="https://x.com/nikhil_mittal" target="_blank" rel="noopener" class="flex-1 flex justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 hover:scale-110 transition" fill="currentColor" viewBox="0 0 48 48"><path d="M34.754 8.03H40.36l-12.315 14.09L43 40.4h-9.753l-8.064-10.036-9.239 10.036H7.33l13.024-14.744L5 8.03h9.951l7.191 8.933 8.612-8.933Zm-1.695 29.48h2.694L15.13 10.84h-2.89l20.819 26.67Z"/></svg>
+                  </a>
+                  <a href="https://linkedin.com/in/nikhil_mittal" target="_blank" rel="noopener" class="flex-1 flex justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 hover:scale-110 transition" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.271c-.966 0-1.75-.788-1.75-1.757 0-.969.784-1.757 1.75-1.757s1.75.788 1.75 1.757c0 .969-.784 1.757-1.75 1.757zm13.5 10.271h-3v-4.604c0-1.098-.021-2.509-1.528-2.509-1.529 0-1.764 1.196-1.764 2.431v4.682h-3v-9h2.881v1.229h.041c.402-.761 1.386-1.563 2.854-1.563 3.052 0 3.616 2.008 3.616 4.621v4.713z"/></svg>
+                  </a>
+                </div>
+              </div>
+              <!-- Logo Title/Spacing -->
+              <div class="py-2"></div>
+              <div class="text-xs text-slate-500 text-center font-medium tracking-wide mb-3">As Featured On</div>
+              <!-- Logo Bar -->
+              <div class="flex items-center justify-center gap-6 bg-slate-800 rounded-xl py-4 px-5 mb-6 w-full max-w-xs lg:max-w-sm">
+                <img src="images/blackhat.png" alt="Black Hat" class="h-7 w-auto object-contain" />
+                <img src="images/defcon.webp" alt="DEF CON" class="h-7 w-auto object-contain" />
+                <img src="images/bruecon.avif" alt="BruCON" class="h-7 w-auto object-contain" />
+                <img src="images/44con.webp" alt="44CON" class="h-7 w-auto object-contain" />
+              </div>
+              <!-- Stats Cards -->
+              <div class="grid grid-cols-3 gap-3 w-full mb-3 lg:mb-6 max-w-md">
+                <div class="bg-slate-50 rounded-lg p-3 border border-slate-200 flex flex-col items-center">
+                  <svg class="w-6 h-6 text-slate-700 mb-1" fill="currentColor" viewBox="0 0 20 20">
+                    <circle cx="10" cy="7" r="4"/>
+                    <path d="M2 18c0-3.3137 3.5817-6 8-6s8 2.6863 8 6"/>
+                  </svg>
+                  <div class="text-base font-bold text-slate-700 mt-1">15+</div>
+                  <div class="text-xs text-slate-600 mt-0.5 text-center">years experience</div>
+                </div>
+                <div class="bg-slate-50 rounded-lg p-3 border border-slate-200 flex flex-col items-center">
+                  <svg class="w-6 h-6 text-slate-700 mb-1" fill="currentColor" viewBox="0 0 20 20">
+                    <circle cx="10" cy="10" r="8"/>
+                    <path d="M2 10h16M10 2a17.9 17.9 0 010 16M10 2a17.9 17.9 0 000 16"/>
+                  </svg>
+                  <div class="text-base font-bold text-slate-700 mt-1">10+</div>
+                  <div class="text-xs text-slate-600 mt-0.5 text-center">global conferences</div>
+                </div>
+                <div class="bg-slate-50 rounded-lg p-3 border border-slate-200 flex flex-col items-center">
+                  <svg class="w-6 h-6 text-slate-700 mb-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 2L2 6l8 4 8-4-8-4zm0 7.752L3.364 6.416m0 0L10 11l6.636-4.584M3.364 6.416V14a1 1 0 001 1h11.272a1 1 0 001-1V6.416"/>
+                  </svg>
+                  <div class="text-base font-bold text-slate-700 mt-1">40,000+</div>
+                  <div class="text-xs text-slate-600 mt-0.5 text-center">
+                    Student trained worldwide
+                  </div>
+                </div>
+              </div>
+              <!-- Desktop-only Reviews CTA -->
+              <a href="#reviews" class="hidden lg:inline-flex items-center px-5 py-3 mb-3 rounded-lg bg-amber-400 hover:bg-amber-500 transition font-semibold text-amber-900 text-md shadow cursor-pointer">
+                <span class="mr-2 flex">
+                  <svg class="w-5 h-5 text-amber-800" fill="currentColor" viewBox="0 0 20 20"><polygon points="10,1 12.59,6.34 18.51,7.24 14.02,11.47 15.18,17.34 10,14.38 4.82,17.34 5.98,11.47 1.49,7.24 7.41,6.34"/></svg>
+                  <svg class="w-5 h-5 text-amber-800" fill="currentColor" viewBox="0 0 20 20"><polygon points="10,1 12.59,6.34 18.51,7.24 14.02,11.47 15.18,17.34 10,14.38 4.82,17.34 5.98,11.47 1.49,7.24 7.41,6.34"/></svg>
+                  <svg class="w-5 h-5 text-amber-800" fill="currentColor" viewBox="0 0 20 20"><polygon points="10,1 12.59,6.34 18.51,7.24 14.02,11.47 15.18,17.34 10,14.38 4.82,17.34 5.98,11.47 1.49,7.24 7.41,6.34"/></svg>
+                  <svg class="w-5 h-5 text-amber-800" fill="currentColor" viewBox="0 0 20 20"><polygon points="10,1 12.59,6.34 18.51,7.24 14.02,11.47 15.18,17.34 10,14.38 4.82,17.34 5.98,11.47 1.49,7.24 7.41,6.34"/></svg>
+                  <svg class="w-5 h-5 text-amber-800" fill="currentColor" viewBox="0 0 20 20"><polygon points="10,1 12.59,6.34 18.51,7.24 14.02,11.47 15.18,17.34 10,14.38 4.82,17.34 5.98,11.47 1.49,7.24 7.41,6.34"/></svg>
+                </span>
+                1487 Reviews
+              </a>
+            </div>
+          </div>
         </div>
-        <!-- Animated Particles / Decorative Shapes should use hidden md:block for large screens only -->
-        <div class="hidden md:block particles">
-            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
-            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
-            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
-            <div class="particle" style="left: 40%; animation-delay: 1s;"></div>
-            <div class="particle" style="left: 50%; animation-delay: 3s;"></div>
-            <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
-            <div class="particle" style="left: 70%; animation-delay: 2.5s;"></div>
-            <div class="particle" style="left: 80%; animation-delay: 4.5s;"></div>
-            <div class="particle" style="left: 90%; animation-delay: 1.5s;"></div>
-        </div>
-        <div class="hidden md:block absolute top-20 right-20 w-32 h-32 border border-slate-200 rounded-full"></div>
-        <div class="hidden md:block absolute bottom-32 left-16 w-24 h-24 border border-red-500/30 rounded-lg rotate-45"></div>
-        <div class="hidden md:block absolute top-1/3 left-1/4 w-16 h-16 bg-blue-500/10 rounded-full blur-xl"></div>
-        <div class="hidden md:block absolute bottom-1/3 right-1/3 w-20 h-20 bg-red-500/10 rounded-full blur-xl"></div>
+      </div>
     </div>
     <script>
-        function trainWithNikhil() {
-            alert('Connecting you directly with Nikhil Mittal...\n\nYou\'ll be redirected to schedule a personal consultation to discuss your training needs and see if you qualify for his elite program.');
-        }
+      function trainWithNikhil() {
+        alert(
+          "Connecting you directly with Nikhil Mittal...\n\nYou'll be redirected to schedule a personal consultation to discuss your training needs and see if you qualify for his elite program."
+        );
+      }
     </script>
 </body>
 </html>
