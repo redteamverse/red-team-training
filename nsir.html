@@ -168,45 +168,64 @@
             <img src="images/44con.webp" alt="44CON" class="h-7 max-w-[90px] w-auto object-contain" />
           </div>
           <div class="flex flex-nowrap gap-3 overflow-x-auto py-8 px-2">
-            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
-              <svg class="w-6 h-6 text-red-400 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z"/>
-                <path d="M9 12l2 2 4-4"/>
-              </svg>
-              <div class="text-base font-bold text-white">15+</div>
-              <div class="text-xs text-slate-200 text-center mt-1">years<br>experience</div>
-            </div>
-            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
-              <svg class="w-6 h-6 text-yellow-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <rect x="4" y="11" width="16" height="8" rx="2"/>
-                <path d="M8 11V8a4 4 0 0 1 8 0v3"/>
-              </svg>
-              <div class="text-base font-bold text-white">10+</div>
-              <div class="text-xs text-slate-200 text-center mt-1">global<br>conferences</div>
-            </div>
-            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
-              <svg class="w-6 h-6 text-indigo-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                ircle cx="12" cy="12" r r="10"/>
-                <ellipse cx="12" cy="12" rx="4.2" ry="10"/>
-                <path d="M2 12h20"/>
-              </svg>
-              <div class="text-base font-bold text-white">40,000+</div>
-              <div class="text-xs text-slate-200 text-center mt-1">students<br>trained</div>
-            </div>
-          </div>
+  <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
+    <svg class="w-6 h-6 text-red-400 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z"/>
+      <path d="M9 12l2 2 4-4"/>
+    </svg>
+    <div class="text-base font-bold text-white">15+</div>
+    <div class="text-xs text-slate-200 text-center mt-1">years<br>experience</div>
+  </div>
+  <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
+    <svg class="w-6 h-6 text-yellow-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <rect x="4" y="11" width="16" height="8" rx="2"/>
+      <path d="M8 11V8a4 4 0 0 1 8 0v3"/>
+    </svg>
+    <div class="text-base font-bold text-white">10+</div>
+    <div class="text-xs text-slate-200 text-center mt-1">global<br>conferences</div>
+  </div>
+  <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
+    <svg class="w-6 h-6 text-indigo-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      ircle cx="12" cy="12" r="10" strokeke="currentColor"/>
+      <ellipse cx="12" cy="12" rx="4.2" ry="10" stroke="currentColor"/>
+      <path d="M2 12h20"/>
+    </svg>
+    <div class="text-base font-bold text-white">40,000+</div>
+    <div class="text-xs text-slate-200 text-center mt-1">students<br>trained</div>
+  </div>
+</div>
+<!-- Desktop-only CTA button below stats -->
+<button
+  onclick="trainWithNikhil()"
+  class="hidden lg:block bg-red-500/20 border-2 border-red-500 text-red-600 hover:bg-red-500 hover:text-white font-semibold px-8 py-3 mt-6 rounded-xl shadow-lg transition-all duration-200 text-lg w-auto"
+>
+  Start Your Journey
+</button>
+
+         
         </div>
       </div>
     </div>
   </div>
 </div>
+    <!-- Desktop-only inline CTA below stats -->
+
 <!-- Fixed CTA Button (bottom right) -->
-<div class="fixed-cta">
-  <button onclick="trainWithNikhil()" class="bg-red-700/80 hover:bg-red-700 hover:text-white text-white font-bold px-8 py-3 rounded-xl shadow-lg transition-all duration-200 text-lg w-full sm:w-auto">
+<!-- Below your stats row, in the right hero column: -->
+
+
+<!-- Mobile-only fixed CTA at bottom right -->
+<div class="fixed-cta block lg:hidden">
+ <!-- Right Column – after stats div -->
+<button
+  onclick="trainWithNikhil()"
+  class="hidden lg:block bg-red-500/20 border-2 border-red-500 text-red-600 hover:bg-red-500 hover:text-white font-semibold px-8 py-3 mt-6 rounded-xl shadow-lg transition-all duration-200 text-lg w-auto"
+>
   Start Your Journey
 </button>
 
-
 </div>
+
 <script>
   // Drawer logic
   const drawerMenu = document.getElementById('mobile-menu');
