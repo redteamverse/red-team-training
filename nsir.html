@@ -49,10 +49,10 @@
 #typewriter {
   position: relative;
   font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 0.03em;
-  color: #232424;
+  color: #22439a;
   padding-right: .2em;
   background: transparent;
   min-width: 17ch;
@@ -63,10 +63,19 @@
   animation: revealCenter 2s forwards;
   transform-origin: center;
   overflow: hidden;
-  white-space: nowrap;
+  white-space: pre;
+  text-align: center;
   border-right: none;
   margin: 0;
   vertical-align: middle;
+  text-shadow:
+    0 0 5px  #ec3036,
+    0 0 0px #ec3036,
+    0 0 5px #ec3036,
+    0 0 0px #ec3036,
+    0 0 5px #ec3036,
+    0 0 10px #ec3036,
+    0 0 15px #ec3036;
 }
 
 /* Use separate blinking cursor via pseudo element */
@@ -77,7 +86,7 @@
   top: 0;
   height: 70%;         /* matches text height, adjust as required */
   width: 3px;
-  background-color: black;
+  background-color: #ec3036;
   animation: blink 1s step-start infinite;
   /* align the cursor with the middle of the text */
   transform: translateY(15%); /* adjust vertical alignment visually */
@@ -170,46 +179,53 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Typewriter logic
   const words = [
-    "Hacker",
-    "Infosec Researcher",
-    "Speaker",
-    "Enthusiast",
-    "Lead Trainer"
-  ];
-  let w = 0, i = 0, del = false;
-  const el = document.getElementById('typewriter');
-  const longest = words.reduce((a, b) => a.length > b.length ? a : b, "");
-  if (el) {
-    el.style.minWidth = (longest.length + 1) + "ch";
-    el.textContent = "";
+  "Hacker",
+  "Infosec Researcher",
+  "Speaker",
+  "Lead Trainer"
+];
+let w = 0, i = 0, del = false;
+const el = document.getElementById('typewriter');
+const longest = words.reduce((a, b) => a.length > b.length ? a : b, "");
+if (el) {
+  el.style.minWidth = (longest.length + 1) + "ch";
+  el.textContent = "";
 
-    function typer() {
-      const word = words[w];
-      if (!del) {
-        el.textContent = word.substring(0, i);
-        i++;
-        if (i > word.length) {
-          setTimeout(() => { del = true; typer(); }, 1100);
-        } else {
-          setTimeout(typer, 55);
-        }
+  function typer() {
+    const word = words[w];
+    const mid = Math.floor(word.length/2);
+    if (!del) {
+      // Center-out logic
+      const left = Math.max(mid - i, 0);
+      const right = Math.min(mid + i + (word.length % 2 === 0 ? 1 : 0), word.length);
+      el.textContent = " ".repeat(left) + word.slice(left, right);
+      i++;
+      if (left === 0 && right === word.length) {
+        setTimeout(() => { del = true; typer(); }, 1100);
       } else {
-        el.textContent = word.substring(0, i);
-        i--;
-        if (i < 0) {
-          del = false;
-          w = (w+1) % words.length;
-          setTimeout(typer, 410);
-        } else {
-          setTimeout(typer, 28);
-        }
+        setTimeout(typer, 55);
+      }
+    } else {
+      // Delete from edges inward
+      const left = Math.max(mid - i, 0);
+      const right = Math.min(mid + i + (word.length % 2 === 0 ? 1 : 0), word.length);
+      el.textContent = " ".repeat(left) + word.slice(left, right);
+      i--;
+      if (left === mid && right === mid + (word.length % 2 === 0 ? 1 : 0)) {
+        del = false;
+        w = (w + 1) % words.length;
+        setTimeout(typer, 410);
+      } else {
+        setTimeout(typer, 28);
       }
     }
-    typer();
-    setInterval(() => {
-      el.style.borderRightColor = el.style.borderRightColor === "transparent" ? "#26c8ff" : "transparent";
-    }, 425);
   }
+  typer();
+  setInterval(() => {
+    el.style.borderRightColor = el.style.borderRightColor === "transparent" ? "#26c8ff" : "transparent";
+  }, 425);
+}
+
 
   // Optional: trainWithNikhil alert
   window.trainWithNikhil = function() {
