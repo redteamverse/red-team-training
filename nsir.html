@@ -32,6 +32,71 @@
   .drawer-backdrop.open {
     display:block;
   }
+  /* Typewriter custom styles */
+  .typewriter-top {
+  background: #fff;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 2.7em;
+  width: 100vw;
+  /* the next line ensures height is fixed and content doesn't push/pull this row */
+  height: 3.2em; /* or adjust as you want */
+}
+
+#typewriter {
+  position: relative;
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #232424;
+  padding-right: .2em;
+  background: transparent;
+  min-width: 17ch;
+  height: 2.4em;      /* FIXED HEIGHT so animation doesn't resize */
+  line-height: 2.4em; /* match height for vertical centering */
+  display: inline-block;
+  text-shadow: none;
+  animation: revealCenter 2s forwards;
+  transform-origin: center;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: none;
+  margin: 0;
+  vertical-align: middle;
+}
+
+/* Use separate blinking cursor via pseudo element */
+#typewriter::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 70%;         /* matches text height, adjust as required */
+  width: 3px;
+  background-color: black;
+  animation: blink 1s step-start infinite;
+  /* align the cursor with the middle of the text */
+  transform: translateY(15%); /* adjust vertical alignment visually */
+}
+
+@keyframes revealCenter {
+  0% {
+    clip-path: inset(0 50% 0 50%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 </style>
 </head>
 <body class="bg-white text-slate-900">
