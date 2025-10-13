@@ -138,6 +138,87 @@
   </nav>
 </div>
 
+<!-- TYPEWRITER EFFECT SECTION: TOP OF MAIN -->
+<div class="typewriter-top">
+  <h2 id="typewriter"></h2>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Drawer logic
+  const drawerMenu = document.getElementById('mobile-menu');
+  const backdrop = document.getElementById('drawer-backdrop');
+  const menuOpen = document.getElementById('menu-open');
+  const menuClose = document.getElementById('menu-close');
+
+  if (menuOpen && menuClose && drawerMenu && backdrop) {
+    menuOpen.onclick = function() {
+      drawerMenu.classList.add('drawer-open');
+      backdrop.classList.add('open');
+      document.body.style.overflow = "hidden";
+    };
+    menuClose.onclick = function() {
+      drawerMenu.classList.remove('drawer-open');
+      backdrop.classList.remove('open');
+      document.body.style.overflow = "";
+    };
+    backdrop.onclick = function() {
+      drawerMenu.classList.remove('drawer-open');
+      backdrop.classList.remove('open');
+      document.body.style.overflow = "";
+    };
+  }
+
+  // Typewriter logic
+  const words = [
+    "Hacker",
+    "Infosec Researcher",
+    "Speaker",
+    "Enthusiast",
+    "Lead Trainer"
+  ];
+  let w = 0, i = 0, del = false;
+  const el = document.getElementById('typewriter');
+  const longest = words.reduce((a, b) => a.length > b.length ? a : b, "");
+  if (el) {
+    el.style.minWidth = (longest.length + 1) + "ch";
+    el.textContent = "";
+
+    function typer() {
+      const word = words[w];
+      if (!del) {
+        el.textContent = word.substring(0, i);
+        i++;
+        if (i > word.length) {
+          setTimeout(() => { del = true; typer(); }, 1100);
+        } else {
+          setTimeout(typer, 55);
+        }
+      } else {
+        el.textContent = word.substring(0, i);
+        i--;
+        if (i < 0) {
+          del = false;
+          w = (w+1) % words.length;
+          setTimeout(typer, 410);
+        } else {
+          setTimeout(typer, 28);
+        }
+      }
+    }
+    typer();
+    setInterval(() => {
+      el.style.borderRightColor = el.style.borderRightColor === "transparent" ? "#26c8ff" : "transparent";
+    }, 425);
+  }
+
+  // Optional: trainWithNikhil alert
+  window.trainWithNikhil = function() {
+    alert("Connecting you directly with Nikhil Mittal...\n\nYou'll be redirected to schedule a personal consultation to discuss your training needs and see if you qualify for his elite program.");
+  }
+});
+</script>
+<!-- END TYPEWRITER SECTION -->
+
 <!-- HERO + RIGHT BAR -->
 <div class="gradient-bg tech-grid min-h-screen flex items-center relative overflow-x-hidden">
   <div class="w-full px-2 sm:px-4 lg:px-8 relative z-10">
@@ -217,8 +298,6 @@
     <path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20" />
   </svg>
 </a>
-
-
               <a href="https://linkedin.com/in/nikhil_mittal" target="_blank" rel="noopener" class="flex-1 flex justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 hover:scale-110 transition" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.271c-.966 0-1.75-.788-1.75-1.757 0-.969.784-1.757 1.75-1.757s1.75.788 1.75 1.757c0 .969-.784 1.757-1.75 1.757zm13.5 10.271h-3v-4.604c0-1.098-.021-2.509-1.528-2.509-1.529 0-1.764 1.196-1.764 2.431v4.682h-3v-9h2.881v1.229h.041c.402-.761 1.386-1.563 2.854-1.563 3.052 0 3.616 2.008 3.616 4.621v4.713z"/></svg>
               </a>
@@ -266,8 +345,6 @@
 >
   Start Your Journey
 </button>
-
-         
         </div>
       </div>
     </div>
@@ -277,7 +354,6 @@
 
 <!-- Fixed CTA Button (bottom right) -->
 <!-- Below your stats row, in the right hero column: -->
-
 
 <!-- Mobile-only fixed CTA at bottom right -->
 <div class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs flex justify-center lg:hidden z-40">
@@ -289,29 +365,5 @@
   </button>
 </div>
 
-<script>
-  // Drawer logic
-  const drawerMenu = document.getElementById('mobile-menu');
-  const backdrop = document.getElementById('drawer-backdrop');
-  document.getElementById('menu-open').onclick = function() {
-    drawerMenu.classList.add('drawer-open');
-    backdrop.classList.add('open');
-    document.body.style.overflow = "hidden";
-  };
-  document.getElementById('menu-close').onclick = function() {
-    drawerMenu.classList.remove('drawer-open');
-    backdrop.classList.remove('open');
-    document.body.style.overflow = "";
-  };
-  backdrop.onclick = function() {
-    drawerMenu.classList.remove('drawer-open');
-    backdrop.classList.remove('open');
-    document.body.style.overflow = "";
-  };
-
-  function trainWithNikhil() {
-    alert("Connecting you directly with Nikhil Mittal...\n\nYou'll be redirected to schedule a personal consultation to discuss your training needs and see if you qualify for his elite program.");
-  }
-</script>
 </body>
 </html>
