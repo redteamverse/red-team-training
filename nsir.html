@@ -5,35 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Nikhil Mittal - Elite Red Team Leader & Trainer</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<!-- DOTTED HACKER FONT FOR TYPEWRITER -->
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 <style>
-  body { box-sizing: border-box; }
-  .fixed-cta {
-    position: fixed;
-    bottom: 1.2em;
-    right: 1.2em;
-    left: auto;
-    z-index: 30;
-  }
-  @media (max-width: 640px) {
-    .fixed-cta { left: 1em; right: 1em; width: unset; }
-  }
-  .drawer-menu {
-    transition: transform .3s cubic-bezier(.4,0,.2,1);
-    transform: translateX(-100%);
-    z-index:51;
-  }
-  .drawer-open {
-    transform: translateX(0) !important;
-  }
-  .drawer-backdrop {
-    background-color: rgba(0,0,0,0.55);
-    position: fixed; inset: 0; z-index:50; display:none;
-  }
-  .drawer-backdrop.open {
-    display:block;
-  }
-  /* Typewriter custom styles */
-  .typewriter-top {
+body { box-sizing: border-box; }
+.fixed-cta {
+  position: fixed;
+  bottom: 1.2em;
+  right: 1.2em;
+  left: auto;
+  z-index: 30;
+}
+@media (max-width: 640px) {
+  .fixed-cta { left: 1em; right: 1em; width: unset; }
+}
+.drawer-menu {
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+  transform: translateX(-100%);
+  z-index:51;
+}
+.drawer-open {
+  transform: translateX(0) !important;
+}
+.drawer-backdrop {
+  background-color: rgba(0,0,0,0.55);
+  position: fixed; inset: 0; z-index:50; display:none;
+}
+.drawer-backdrop.open {
+  display:block;
+}
+/* Typewriter custom styles */
+.typewriter-top {
   background: #fff;
   padding-top: 2rem;
   padding-bottom: 1.5rem;
@@ -42,67 +44,30 @@
   align-items: center;
   min-height: 2.7em;
   width: 100vw;
-  /* the next line ensures height is fixed and content doesn't push/pull this row */
-  height: 3.2em; /* or adjust as you want */
+  height: 3.2em;
 }
-
 #typewriter {
   position: relative;
-  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  color: #1e3a8a;
-  padding-right: .2em;
+  font-family: 'DotGothic16', monospace, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: 0.07em;
+  color: #111;
   background: transparent;
   min-width: 17ch;
-  height: 2.4em;      /* FIXED HEIGHT so animation doesn't resize */
-  line-height: 2.4em; /* match height for vertical centering */
+  height: 2.4em;
+  line-height: 2.4em;
   display: inline-block;
-  text-shadow: none;
-  animation: revealCenter 2s forwards;
-  transform-origin: center;
   overflow: hidden;
   white-space: pre;
   text-align: center;
-  border-right: none;
+  border-right: 2px solid #111;
   margin: 0;
   vertical-align: middle;
-  text-shadow:
-    0 0 5px #eb4034,
-    0 0 10px #ff4b3e,
-    0 0 15px #eb4034,
-    0 0 20px #ff4b3e;
 }
-
-/* Use separate blinking cursor via pseudo element */
 #typewriter::after {
   content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 70%;         /* matches text height, adjust as required */
-  width: 3px;
-  background-color: #ec3036;
-  animation: blink 1s step-start infinite;
-  /* align the cursor with the middle of the text */
-  transform: translateY(15%); /* adjust vertical alignment visually */
 }
-
-@keyframes revealCenter {
-  0% {
-    clip-path: inset(0 50% 0 50%);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 </style>
 </head>
 <body class="bg-white text-slate-900">
@@ -145,7 +110,7 @@
 </div>
 
 <!-- TYPEWRITER EFFECT SECTION: TOP OF MAIN -->
-<div class="typewriter-top">
+<div class="typewriter-top">  
   <h2 id="typewriter"></h2>
 </div>
 <script>
@@ -174,55 +139,51 @@ document.addEventListener("DOMContentLoaded", function() {
     };
   }
 
-  // Typewriter logic
+  // TYPEWRITER LOGIC WITH DOTTED FONT
   const words = [
-  "Hacker",
-  "Infosec Researcher",
-  "Speaker",
-  "Lead Trainer"
-];
-let w = 0, i = 0, del = false;
-const el = document.getElementById('typewriter');
-const longest = words.reduce((a, b) => a.length > b.length ? a : b, "");
-if (el) {
-  el.style.minWidth = (longest.length + 1) + "ch";
-  el.textContent = "";
+    "Hacker",
+    "Infosec Researcher",
+    "Speaker",
+    "Lead Trainer"
+  ];
+  let w = 0, i = 0, del = false;
+  const el = document.getElementById('typewriter');
+  const longest = words.reduce((a, b) => a.length > b.length ? a : b, "");
+  if (el) {
+    el.style.minWidth = (longest.length + 1) + "ch";
+    el.textContent = "";
 
-  function typer() {
-    const word = words[w];
-    const mid = Math.floor(word.length/2);
-    if (!del) {
-      // Center-out logic
-      const left = Math.max(mid - i, 0);
-      const right = Math.min(mid + i + (word.length % 2 === 0 ? 1 : 0), word.length);
-      el.textContent = " ".repeat(left) + word.slice(left, right);
-      i++;
-      if (left === 0 && right === word.length) {
-        setTimeout(() => { del = true; typer(); }, 1100);
+    function typer() {
+      const word = words[w];
+      const mid = Math.floor(word.length/2);
+      if (!del) {
+        // Center-out logic
+        const left = Math.max(mid - i, 0);
+        const right = Math.min(mid + i + (word.length % 2 === 0 ? 1 : 0), word.length);
+        el.textContent = " ".repeat(left) + word.slice(left, right);
+        i++;
+        if (left === 0 && right === word.length) {
+          setTimeout(() => { del = true; typer(); }, 1100);
+        } else {
+          setTimeout(typer, 55);
+        }
       } else {
-        setTimeout(typer, 55);
-      }
-    } else {
-      // Delete from edges inward
-      const left = Math.max(mid - i, 0);
-      const right = Math.min(mid + i + (word.length % 2 === 0 ? 1 : 0), word.length);
-      el.textContent = " ".repeat(left) + word.slice(left, right);
-      i--;
-      if (left === mid && right === mid + (word.length % 2 === 0 ? 1 : 0)) {
-        del = false;
-        w = (w + 1) % words.length;
-        setTimeout(typer, 410);
-      } else {
-        setTimeout(typer, 28);
+        // Delete from edges inward
+        const left = Math.max(mid - i, 0);
+        const right = Math.min(mid + i + (word.length % 2 === 0 ? 1 : 0), word.length);
+        el.textContent = " ".repeat(left) + word.slice(left, right);
+        i--;
+        if (left === mid && right === mid + (word.length % 2 === 0 ? 1 : 0)) {
+          del = false;
+          w = (w + 1) % words.length;
+          setTimeout(typer, 410);
+        } else {
+          setTimeout(typer, 28);
+        }
       }
     }
+    typer();
   }
-  typer();
-  setInterval(() => {
-    el.style.borderRightColor = el.style.borderRightColor === "transparent" ? "#26c8ff" : "transparent";
-  }, 425);
-}
-
 
   // Optional: trainWithNikhil alert
   window.trainWithNikhil = function() {
@@ -304,13 +265,13 @@ if (el) {
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 hover:scale-110 transition" fill="currentColor" viewBox="0 0 48 48"><path d="M34.754 8.03H40.36l-12.315 14.09L43 40.4h-9.753l-8.064-10.036-9.239 10.036H7.33l13.024-14.744L5 8.03h9.951l7.191 8.933 8.612-8.933Zm-1.695 29.48h2.694L15.13 10.84h-2.89l20.819 26.67Z"/></svg>
               </a>
               <a href="https://www.alteredsecurity.com/" target="_blank" rel="noopener" class="flex-1 flex justify-center">
-  <!-- Globe (Website) SVG -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-slate-900 hover:text-blue-600 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-    <circle cx="12" cy="12" r="10" stroke="currentColor"/>
-    <ellipse cx="12" cy="12" rx="5" ry="10" stroke="currentColor"/>
-    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20" />
-  </svg>
-</a>
+                <!-- Globe (Website) SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-slate-900 hover:text-blue-600 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  ircle cx="12" cy="12" r="10" stroke="="currentColor"/>
+                  <ellipse cx="12" cy="12" rx="5" ry="10" stroke="currentColor"/>
+                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20" />
+                </svg>
+              </a>
               <a href="https://linkedin.com/in/nikhil_mittal" target="_blank" rel="noopener" class="flex-1 flex justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 hover:scale-110 transition" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.271c-.966 0-1.75-.788-1.75-1.757 0-.969.784-1.757 1.75-1.757s1.75.788 1.75 1.757c0 .969-.784 1.757-1.75 1.757zm13.5 10.271h-3v-4.604c0-1.098-.021-2.509-1.528-2.509-1.529 0-1.764 1.196-1.764 2.431v4.682h-3v-9h2.881v1.229h.041c.402-.761 1.386-1.563 2.854-1.563 3.052 0 3.616 2.008 3.616 4.621v4.713z"/></svg>
               </a>
@@ -325,50 +286,43 @@ if (el) {
             <img src="images/44con.webp" alt="44CON" class="h-7 max-w-[90px] w-auto object-contain" />
           </div>
           <div class="flex flex-nowrap gap-3 overflow-x-auto py-8 px-2">
-  <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
-    <svg class="w-6 h-6 text-red-400 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z"/>
-      <path d="M9 12l2 2 4-4"/>
-    </svg>
-    <div class="text-base font-bold text-white">15+</div>
-    <div class="text-xs text-slate-200 text-center mt-1">years<br>experience</div>
-  </div>
-  <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
-    <svg class="w-6 h-6 text-yellow-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <rect x="4" y="11" width="16" height="8" rx="2"/>
-      <path d="M8 11V8a4 4 0 0 1 8 0v3"/>
-    </svg>
-    <div class="text-base font-bold text-white">10+</div>
-    <div class="text-xs text-slate-200 text-center mt-1">global<br>conferences</div>
-  </div>
-  <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
-    <svg class="w-6 h-6 text-indigo-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      ircle cx="12" cy="12" r="10" strokeke="currentColor"/>
-      <ellipse cx="12" cy="12" rx="4.2" ry="10" stroke="currentColor"/>
-      <path d="M2 12h20"/>
-    </svg>
-    <div class="text-base font-bold text-white">40,000+</div>
-    <div class="text-xs text-slate-200 text-center mt-1">students<br>trained</div>
-  </div>
-</div>
-<!-- Desktop-only CTA button below stats -->
-<button
-  onclick="trainWithNikhil()"
-  class="hidden lg:block bg-red-500/20 border-2 border-red-500 text-red-600 hover:bg-red-500 hover:text-white font-semibold px-8 py-3 mt-6 rounded-xl shadow-lg transition-all duration-200 text-lg w-auto"
->
-  Start Your Journey
-</button>
+            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
+              <svg class="w-6 h-6 text-red-400 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+              <div class="text-base font-bold text-white">15+</div>
+              <div class="text-xs text-slate-200 text-center mt-1">years<br>experience</div>
+            </div>
+            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
+              <svg class="w-6 h-6 text-yellow-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="4" y="11" width="16" height="8" rx="2"/>
+                <path d="M8 11V8a4 4 0 0 1 8 0v3"/>
+              </svg>
+              <div class="text-base font-bold text-white">10+</div>
+              <div class="text-xs text-slate-200 text-center mt-1">global<br>conferences</div>
+            </div>
+            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
+              <svg class="w-6 h-6 text-indigo-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <ellipse cx="12" cy="12" rx="4.2" ry="10" stroke="currentColor"/>
+                <path d="M2 12h20"/>
+              </svg>
+              <div class="text-base font-bold text-white">40,000+</div>
+              <div class="text-xs text-slate-200 text-center mt-1">students<br>trained</div>
+            </div>
+          </div>
+          <button
+            onclick="trainWithNikhil()"
+            class="hidden lg:block bg-red-500/20 border-2 border-red-500 text-red-600 hover:bg-red-500 hover:text-white font-semibold px-8 py-3 mt-6 rounded-xl shadow-lg transition-all duration-200 text-lg w-auto"
+          >
+            Start Your Journey
+          </button>
         </div>
       </div>
     </div>
   </div>
 </div>
-    <!-- Desktop-only inline CTA below stats -->
-
 <!-- Fixed CTA Button (bottom right) -->
-<!-- Below your stats row, in the right hero column: -->
-
-<!-- Mobile-only fixed CTA at bottom right -->
 <div class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs flex justify-center lg:hidden z-40">
   <button
     onclick="trainWithNikhil()"
@@ -377,6 +331,5 @@ if (el) {
     Start Your Journey
   </button>
 </div>
-
 </body>
 </html>
