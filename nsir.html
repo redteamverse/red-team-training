@@ -1,335 +1,531 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Nikhil Mittal - Elite Red Team Leader & Trainer</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- DOTTED HACKER FONT FOR TYPEWRITER -->
-<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-<style>
-body { box-sizing: border-box; }
-.fixed-cta {
-  position: fixed;
-  bottom: 1.2em;
-  right: 1.2em;
-  left: auto;
-  z-index: 30;
-}
-@media (max-width: 640px) {
-  .fixed-cta { left: 1em; right: 1em; width: unset; }
-}
-.drawer-menu {
-  transition: transform .3s cubic-bezier(.4,0,.2,1);
-  transform: translateX(-100%);
-  z-index:51;
-}
-.drawer-open {
-  transform: translateX(0) !important;
-}
-.drawer-backdrop {
-  background-color: rgba(0,0,0,0.55);
-  position: fixed; inset: 0; z-index:50; display:none;
-}
-.drawer-backdrop.open {
-  display:block;
-}
-/* Typewriter custom styles */
-.typewriter-top {
-  background: #fff;
-  padding-top: 2rem;
-  padding-bottom: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 2.7em;
-  width: 100vw;
-  height: 3.2em;
-}
-#typewriter {
-  position: relative;
-  font-family: 'DotGothic16', monospace, Arial, sans-serif;
-  font-size: 2rem;
-  font-weight: normal;
-  letter-spacing: 0.07em;
-  color: #111;
-  background: transparent;
-  min-width: 17ch;
-  height: 2.4em;
-  line-height: 2.4em;
-  display: inline-block;
-  overflow: hidden;
-  white-space: pre;
-  text-align: center;
-  border-right: 2px solid #111;
-  margin: 0;
-  vertical-align: middle;
-}
-#typewriter::after {
-  content: "";
-}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nikhil Mittal - Elite Red Team Leader & Trainer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <style>
+        body { box-sizing: border-box; }
+        .fixed-cta {
+            position: fixed;
+            bottom: 1.2em;
+            right: 1.2em;
+            left: auto;
+            z-index: 30;
+        }
+        @media (max-width: 640px) {
+            .fixed-cta { left: 1em; right: 1em; width: unset; }
+        }
+        .drawer-menu {
+            transition: transform .3s cubic-bezier(.4,0,.2,1);
+            transform: translateX(-100%);
+            z-index:51;
+        }
+        .drawer-open {
+            transform: translateX(0) !important;
+        }
+        .drawer-backdrop {
+            background-color: rgba(0,0,0,0.55);
+            position: fixed; inset: 0; z-index:50; display:none;
+        }
+        .drawer-backdrop.open {
+            display:block;
+        }
+        /* Typewriter styles */
+        .typewriter-top {
+            background: #fff;
+            padding-top: 2rem;
+            padding-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 2.7em;
+            width: 100vw;
+            height: 3.2em;
+        }
+        #typewriter {
+            position: relative;
+            font-family: 'DotGothic16', monospace, Arial, sans-serif;
+            font-size: 2rem;
+            font-weight: normal;
+            letter-spacing: 0.07em;
+            color: #111;
+            background: transparent;
+            min-width: 17ch;
+            height: 2.4em;
+            line-height: 2.4em;
+            display: inline-block;
+            overflow: hidden;
+            white-space: pre;
+            text-align: center;
+            border-right: 2px solid #111;
+            margin: 0;
+            vertical-align: middle;
+        }
+        #typewriter::after {
+            content: "";
+        }
+        /* Featured Section */
+        .featured-section {
+            max-width: 430px;
+            margin: 65px auto 34px;
+            text-align: center;
+        }
+        .featured-label {
+            color: #556079;
+            font-size: 1.07rem;
+            margin-bottom: 17px;
+            font-weight: 500;
+            letter-spacing: .01em;
+        }
+        .featured-card {
+            background: #232b39;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            padding: 24px 14px 14px 14px;
+            align-items: center;
+        }
+        .logo-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 10px;
+        }
+        .featured-logo {
+            max-height: 38px;
+            object-fit: contain;
+            background: none;
+        }
+        .featured-44con {
+            font-size: 2.1rem;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 0.06em;
+            margin-top: 7px;
+            margin-bottom: 3px;
+        }
+        /* Creator of Section */
+        /* Tighter spacing adjustments */
+        .section-top {
+            text-align: center;
+            padding-top: 10px; /* Reduced from 20px */
+            margin-bottom: 8px; 
+        }
+        .tools-label {
+            color: #aab2c8;
+            font-size: 1.02rem;
+            font-weight: 500;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .tools-row {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 36px;
+            padding-bottom: 5px; /* Significantly reduced */
+            margin: 0 auto 5px auto; /* Significantly reduced */
+            max-width: 800px;
+            width: 94vw;
+            box-sizing: border-box;
+        }
+        .tool-card {
+            background: #23252c;
+            border-radius: 22px;
+            width: 110px;
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.09);
+            transition: transform 0.2s;
+            margin-bottom: 14px;
+        }
+        .tool-card:hover {
+            transform: translateY(-7px) scale(1.06);
+            box-shadow: 0 18px 48px rgba(0,0,0,0.13);
+        }
+        .tool-icon {
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        .tool-icon.n { background: linear-gradient(135deg,#ef4444,#f59e42);}
+        .tool-icon.k { background: linear-gradient(135deg,#14b8a6,#38bdf8);}
+        .tool-icon.r { background: linear-gradient(135deg,#8b5cf6,#6366f1);}
+        .tool-icon.d { background: linear-gradient(135deg,#22c55e,#eab308);}
+        .tool-name {
+            margin-top: 1px;
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: .05em;
+            text-align: center;
+        }
+        @media (max-width: 700px) {
+            .tools-row { gap: 12px; }
+            .tool-card { width: 72px; height: 82px; }
+            .tool-icon { width: 23px; height: 23px; font-size: 1.02rem; margin-bottom: 7px; }
+            .tool-name { font-size: 0.68rem; }
+            .featured-section { max-width: 99vw; }
+            .featured-44con { font-size: 1.3rem; }
+            .featured-card { padding: 14px 5px 12px 5px; }
+            .logo-row { gap: 16px; }
+            .featured-logo { max-height: 22px; }
+        }
+        html, body { overflow-x: hidden; }
+        .bg-white { background-color: #fff; }
+        .text-slate-900 { color: #111827; }
+        .text-red-600 { color: #dc2626; }
+        .border-red-500 { border-color: #ef4444; }
+        .bg-red-500\/10 { background-color: rgba(239, 68, 68, 0.1); }
+        .border-slate-100 { border-color: #f3f4f6; }
+        .font-extrabold { font-weight: 800; }
+        .leading-tight { line-height: 1.2; }
+        .font-semibold { font-weight: 600; }
+        .text-slate-700 { color: #374151; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1); }
+        .rounded-full { border-radius: 9999px; }
+        .inline-flex { display: inline-flex; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .ml-2 { margin-left: 0.5rem; }
+        .w-full { width: 100%; }
+        .border { border-width: 1px; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .text-base { font-size: 1rem; }
+        .italic { font-style: italic; }
+        .text-red-500 { color: #ef4444; }
+        .text-sm { font-size: 0.875rem; }
+        .text-white { color: #fff; }
+        .font-bold { font-weight: 700; }
+        .text-xs { font-size: 0.75rem; }
+        .text-center { text-align: center; }
+        .tracking-wide { letter-spacing: 0.05em; }
+        .shadow { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+        .overflow-x-hidden { overflow-x: hidden; }
+        .fixed { position: fixed; }
+        .bottom-4 { bottom: 1rem; }
+        .left-1\/2 { left: 50%; }
+        .-translate-x-1\/2 { transform: translateX(-50%); }
+        .max-w-xs { max-width: 20rem; }
+        .flex-nowrap { flex-wrap: nowrap; }
+        .gap-3 { gap: 0.75rem; }
+        .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+        .bg-red-500\/60 { background-color: rgba(239, 68, 68, 0.6); }
+        .border-2 { border-width: 2px; }
+        .hover\:bg-red-500:hover { background-color: #ef4444; }
+        .hover\:text-white:hover { color: #fff; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .transition-all { transition-property: all; }
+        .duration-200 { transition-duration: 200ms; }
+
+        /* Custom adjustments for closer spacing - applied directly to elements for override */
+        .featured-on-section {
+            margin-bottom: 1.5rem; /* Reduced from mb-6 */
+        }
+        .milestones-section {
+            margin-top: 1rem; /* Adjusted slightly to connect to title */
+            padding-bottom: 0rem; /* Ensures the whole block is tight */
+        }
+    </style>
 </head>
 <body class="bg-white text-slate-900">
 
-<!-- Sticky Header with Sidebar Drawer Nav -->
+    
 <header class="w-full bg-white/95 backdrop-blur border-b border-slate-100 sticky top-0 z-40">
-  <nav class="max-w-5xl mx-auto flex items-center justify-between px-4 py-3 lg:py-4">
-    <span class="font-extrabold text-xl tracking-wide text-red-600"><img src="images/AS2.avif"/> </span>
-    <ul class="hidden lg:flex space-x-6 font-semibold text-base">
-      <li><a href="#about" class="hover:text-red-500">About</a></li>
-      <li><a href="#expertise" class="hover:text-red-500">Expertise</a></li>
-      <li><a href="#awards" class="hover:text-red-500">Awards</a></li>
-      <li><a href="#conference" class="hover:text-red-500">Conference</a></li>
-      <li><a href="#event" class="hover:text-red-500">Event</a></li>
-      <li><a href="#testimonials" class="hover:text-red-500">Testimonials</a></li>
-      <li><a href="#services" class="hover:text-red-500">Services</a></li>
-      <li><a href="#contact" class="hover:text-red-500">Contact</a></li>
-    </ul>
-    <button id="menu-open" class="block lg:hidden focus:outline-none" aria-label="Open menu">
-      <svg class="w-8 h-8 text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
-      </svg>
-    </button>
-  </nav>
-</header>
-<!-- Drawer & Backdrop -->
+        <nav class="max-w-5xl mx-auto flex items-center justify-between px-4 py-3 lg:py-4">
+            <span class="font-extrabold text-xl tracking-wide text-red-600"><img src="images/AS2.avif"/> </span>
+            <ul class="hidden lg:flex space-x-6 font-semibold text-base">
+                <li><a href="#about" class="hover:text-red-500">About</a></li>
+                <li><a href="#expertise" class="hover:text-red-500">Expertise</a></li>
+                <li><a href="#awards" class="hover:text-red-500">Awards</a></li>
+                <li><a href="#conference" class="hover:text-red-500">Conference</a></li>
+                <li><a href="#event" class="hover:text-red-500">Event</a></li>
+                <li><a href="#testimonials" class="hover:text-red-500">Testimonials</a></li>
+                <li><a href="#services" class="hover:text-red-500">Services</a></li>
+                <li><a href="#contact" class="hover:text-red-500">Contact</a></li>
+            </ul>
+            <button id="menu-open" class="block lg:hidden focus:outline-none" aria-label="Open menu">
+                <svg class="w-8 h-8 text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    
 <div id="drawer-backdrop" class="drawer-backdrop"></div>
-<div id="mobile-menu" class="drawer-menu fixed top-0 left-0 bottom-0 w-4/5 max-w-xs bg-white px-6 py-10 flex flex-col space-y-7 shadow-2xl overflow-y-auto">
-  <button id="menu-close" class="absolute top-3 right-4 text-3xl font-bold text-slate-700">&times;</button>
-  <nav class="flex flex-col space-y-6 text-lg font-semibold text-slate-800 mt-5">
-    <a href="#about" class="hover:text-red-500">About</a>
-    <a href="#expertise" class="hover:text-red-500">Expertise</a>
-    <a href="#awards" class="hover:text-red-500">Awards</a>
-    <a href="#conference" class="hover:text-red-500">Conference</a>
-    <a href="#event" class="hover:text-red-500">Event</a>
-    <a href="#testimonials" class="hover:text-red-500">Testimonials</a>
-    <a href="#services" class="hover:text-red-500">Services</a>
-    <a href="#contact" class="hover:text-red-500">Contact</a>
-  </nav>
-</div>
-
-<!-- TYPEWRITER EFFECT SECTION: TOP OF MAIN -->
-<div class="typewriter-top">  
-  <h2 id="typewriter"></h2>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Drawer logic
-  const drawerMenu = document.getElementById('mobile-menu');
-  const backdrop = document.getElementById('drawer-backdrop');
-  const menuOpen = document.getElementById('menu-open');
-  const menuClose = document.getElementById('menu-close');
-
-  if (menuOpen && menuClose && drawerMenu && backdrop) {
-    menuOpen.onclick = function() {
-      drawerMenu.classList.add('drawer-open');
-      backdrop.classList.add('open');
-      document.body.style.overflow = "hidden";
-    };
-    menuClose.onclick = function() {
-      drawerMenu.classList.remove('drawer-open');
-      backdrop.classList.remove('open');
-      document.body.style.overflow = "";
-    };
-    backdrop.onclick = function() {
-      drawerMenu.classList.remove('drawer-open');
-      backdrop.classList.remove('open');
-      document.body.style.overflow = "";
-    };
-  }
-
-  // TYPEWRITER LOGIC WITH DOTTED FONT
-  const words = [
-    "Hacker",
-    "Infosec Researcher",
-    "Speaker",
-    "Lead Trainer"
-  ];
-  let w = 0, i = 0, del = false;
-  const el = document.getElementById('typewriter');
-  const longest = words.reduce((a, b) => a.length > b.length ? a : b, "");
-  if (el) {
-    el.style.minWidth = (longest.length + 1) + "ch";
-    el.textContent = "";
-
-    function typer() {
-      const word = words[w];
-      const mid = Math.floor(word.length/2);
-      if (!del) {
-        // Center-out logic
-        const left = Math.max(mid - i, 0);
-        const right = Math.min(mid + i + (word.length % 2 === 0 ? 1 : 0), word.length);
-        el.textContent = " ".repeat(left) + word.slice(left, right);
-        i++;
-        if (left === 0 && right === word.length) {
-          setTimeout(() => { del = true; typer(); }, 1100);
-        } else {
-          setTimeout(typer, 55);
-        }
-      } else {
-        // Delete from edges inward
-        const left = Math.max(mid - i, 0);
-        const right = Math.min(mid + i + (word.length % 2 === 0 ? 1 : 0), word.length);
-        el.textContent = " ".repeat(left) + word.slice(left, right);
-        i--;
-        if (left === mid && right === mid + (word.length % 2 === 0 ? 1 : 0)) {
-          del = false;
-          w = (w + 1) % words.length;
-          setTimeout(typer, 410);
-        } else {
-          setTimeout(typer, 28);
-        }
-      }
-    }
-    typer();
-  }
-
-  // Optional: trainWithNikhil alert
-  window.trainWithNikhil = function() {
-    alert("Connecting you directly with Nikhil Mittal...\n\nYou'll be redirected to schedule a personal consultation to discuss your training needs and see if you qualify for his elite program.");
-  }
-});
-</script>
-<!-- END TYPEWRITER SECTION -->
-
-<!-- HERO + RIGHT BAR -->
-<div class="gradient-bg tech-grid min-h-screen flex items-center relative overflow-x-hidden">
-  <div class="w-full px-2 sm:px-4 lg:px-8 relative z-10">
-    <div class="max-w-5xl mx-auto">
-      <div class="flex flex-col lg:grid lg:grid-cols-2 gap-6 pt-4 pb-4 lg:gap-10 lg:pt-8 lg:pb-8 items-stretch">
-        <!-- LEFT HERO -->
-        <div class="order-2 lg:order-1 flex flex-col justify-center space-y-7">
-          <div class="space-y-4">
-            <div class="inline-flex items-center bg-red-500/10 border border-red-500/30 rounded-full px-4 py-2 text-sm">
-              <svg class="w-4 h-4 text-slate-700" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <span class="ml-2 text-slate-700">Meet Your Instructor</span>
-            </div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span class="text-red-600">Nikhil Mittal</span>
-              <span class="text-slate-900 block text-2xl md:text-3xl lg:text-4xl mt-2">Elite Red Team Leader</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-700 leading-relaxed">
-              Nikhil Mittal is the founder of Altered Security and a red team expert with over 15 years of experience specializing in Active Directory, Azure, and offensive security. He trains professionals worldwide and speaks at top security conferences.
-            </p>
-          </div>          
-             <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2 w-full">
-              <h3 class="text-base font-semibold text-red-600 mb-2">Why Train with Nikhil?</h3>
-              <div class="space-y-1.5">
-                <div class="flex items-center">
-                  <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                  <span>15+ years in red team operations.</span>
-                </div>
-                <div class="flex items-center">
-                  <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>10+ international conference talks, including BlackHat & DEF CON.</span>
-                </div>
-                <div class="flex items-center">
-                  <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>20+ tools, scripts & open-source projects created.</span>
-                </div>
-                <div class="flex items-center">
-                  <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>40,000+ professionals trained globally.</span>
-                </div>
-                <div class="flex items-center">
-                  <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Led hands-on bootcamps for Fortune 500 organizations.</span>
-                </div>
-              </div>
-            </div>
-          <div class="bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 pl-4 py-3 text-slate-700 italic text-base">
-            "Nikhil doesn't just teach red teaming - he lives it. His training transformed our entire security posture."
-            <div class="text-sm text-red-600 font-medium mt-2">- Sarah Chen, CISO at TechCorp</div>
-          </div>
-        </div>
-        <!-- RIGHT HERO PROFILE/SOCIAL/CARDS -->
-        <div class="relative order-1 lg:order-2 flex flex-col items-center justify-center min-h-[360px] lg:min-h-[600px]">
-          <div class="relative rounded-2xl shadow-lg bg-white mx-auto w-56 lg:w-64 mb-4 overflow-hidden">
-            <img src="images/nikhil.jpg" class="object-cover object-center w-full h-60 lg:h-64 rounded-t-2xl" alt="Nikhil Mittal Photo" />
-            <!-- Social Bar -->
-            <div class="flex items-center justify-center space-x-8 bg-slate-100 py-3 w-full">
-              <a href="https://x.com/nikhil_mittal" target="_blank" rel="noopener" class="flex-1 flex justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 hover:scale-110 transition" fill="currentColor" viewBox="0 0 48 48"><path d="M34.754 8.03H40.36l-12.315 14.09L43 40.4h-9.753l-8.064-10.036-9.239 10.036H7.33l13.024-14.744L5 8.03h9.951l7.191 8.933 8.612-8.933Zm-1.695 29.48h2.694L15.13 10.84h-2.89l20.819 26.67Z"/></svg>
-              </a>
-              <a href="https://www.alteredsecurity.com/" target="_blank" rel="noopener" class="flex-1 flex justify-center">
-                <!-- Globe (Website) SVG -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-slate-900 hover:text-blue-600 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  ircle cx="12" cy="12" r="10" stroke="="currentColor"/>
-                  <ellipse cx="12" cy="12" rx="5" ry="10" stroke="currentColor"/>
-                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20" />
-                </svg>
-              </a>
-              <a href="https://linkedin.com/in/nikhil_mittal" target="_blank" rel="noopener" class="flex-1 flex justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 hover:scale-110 transition" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.271c-.966 0-1.75-.788-1.75-1.757 0-.969.784-1.757 1.75-1.757s1.75.788 1.75 1.757c0 .969-.784 1.757-1.75 1.757zm13.5 10.271h-3v-4.604c0-1.098-.021-2.509-1.528-2.509-1.529 0-1.764 1.196-1.764 2.431v4.682h-3v-9h2.881v1.229h.041c.402-.761 1.386-1.563 2.854-1.563 3.052 0 3.616 2.008 3.616 4.621v4.713z"/></svg>
-              </a>
-            </div>
-          </div>
-          <div class="pt-2"></div>
-          <div class="text-xs text-slate-500 text-center font-medium tracking-wide mb-3">As Featured On</div>
-          <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 bg-slate-800 rounded-xl py-4 px-5 mb-6 w-full max-w-xs lg:max-w-sm overflow-hidden">
-            <img src="images/blackhat.png" alt="Black Hat" class="h-7 max-w-[90px] w-auto object-contain" />
-            <img src="images/defcon.webp" alt="DEF CON" class="h-7 max-w-[90px] w-auto object-contain" />
-            <img src="images/bruecon.avif" alt="BruCON" class="h-7 max-w-[90px] w-auto object-contain" />
-            <img src="images/44con.webp" alt="44CON" class="h-7 max-w-[90px] w-auto object-contain" />
-          </div>
-          <div class="flex flex-nowrap gap-3 overflow-x-auto py-8 px-2">
-            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
-              <svg class="w-6 h-6 text-red-400 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z"/>
-                <path d="M9 12l2 2 4-4"/>
-              </svg>
-              <div class="text-base font-bold text-white">15+</div>
-              <div class="text-xs text-slate-200 text-center mt-1">years<br>experience</div>
-            </div>
-            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
-              <svg class="w-6 h-6 text-yellow-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <rect x="4" y="11" width="16" height="8" rx="2"/>
-                <path d="M8 11V8a4 4 0 0 1 8 0v3"/>
-              </svg>
-              <div class="text-base font-bold text-white">10+</div>
-              <div class="text-xs text-slate-200 text-center mt-1">global<br>conferences</div>
-            </div>
-            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
-              <svg class="w-6 h-6 text-indigo-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <ellipse cx="12" cy="12" rx="4.2" ry="10" stroke="currentColor"/>
-                <path d="M2 12h20"/>
-              </svg>
-              <div class="text-base font-bold text-white">40,000+</div>
-              <div class="text-xs text-slate-200 text-center mt-1">students<br>trained</div>
-            </div>
-          </div>
-          <button
-            onclick="trainWithNikhil()"
-            class="hidden lg:block bg-red-500/20 border-2 border-red-500 text-red-600 hover:bg-red-500 hover:text-white font-semibold px-8 py-3 mt-6 rounded-xl shadow-lg transition-all duration-200 text-lg w-auto"
-          >
-            Start Your Journey
-          </button>
-        </div>
-      </div>
+    <div id="mobile-menu" class="drawer-menu fixed top-0 left-0 bottom-0 w-4/5 max-w-xs bg-white px-6 py-10 flex flex-col space-y-7 shadow-2xl overflow-y-auto">
+        <button id="menu-close" class="absolute top-3 right-4 text-3xl font-bold text-slate-700">&times;</button>
+        <nav class="flex flex-col space-y-6 text-lg font-semibold text-slate-800 mt-5">
+            <a href="#about" class="hover:text-red-500">About</a>
+            <a href="#expertise" class="hover:text-red-500">Expertise</a>
+            <a href="#awards" class="hover:text-red-500">Awards</a>
+            <a href="#conference" class="hover:text-red-500">Conference</a>
+            <a href="#event" class="hover:text-red-500">Event</a>
+            <a href="#testimonials" class="hover:text-red-500">Testimonials</a>
+            <a href="#services" class="hover:text-red-500">Services</a>
+            <a href="#contact" class="hover:text-red-500">Contact</a>
+        </nav>
     </div>
-  </div>
-</div>
-<!-- Fixed CTA Button (bottom right) -->
-<div class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs flex justify-center lg:hidden z-40">
-  <button
-    onclick="trainWithNikhil()"
-    class="bg-red-500/60 border-2 border-red-500 text-white hover:bg-red-500 hover:text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition-all duration-200 text-lg w-full"
-  >
-    Start Your Journey
-  </button>
-</div>
+
+    
+<div class="typewriter-top">
+        <h2 id="typewriter"></h2>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Drawer logic
+            const drawerMenu = document.getElementById('mobile-menu');
+            const backdrop = document.getElementById('drawer-backdrop');
+            const menuOpen = document.getElementById('menu-open');
+            const menuClose = document.getElementById('menu-close');
+
+            if (menuOpen && menuClose && drawerMenu && backdrop) {
+                menuOpen.onclick = function() {
+                    drawerMenu.classList.add('drawer-open');
+                    backdrop.classList.add('open');
+                    document.body.style.overflow = "hidden";
+                };
+                menuClose.onclick = function() {
+                    drawerMenu.classList.remove('drawer-open');
+                    backdrop.classList.remove('open');
+                    document.body.style.overflow = "";
+                };
+                backdrop.onclick = function() {
+                    drawerMenu.classList.remove('drawer-open');
+                    backdrop.classList.remove('open');
+                    document.body.style.overflow = "";
+                };
+            }
+
+            // TYPEWRITER LOGIC WITH DOTTED FONT
+            const words = [
+                "Hacker",
+                "Infosec Researcher",
+                "Speaker",
+                "Lead Trainer"
+            ];
+            let w = 0, i = 0, del = false;
+            const el = document.getElementById('typewriter');
+            const longest = words.reduce((a, b) => a.length > b.length ? a : b, "");
+            if (el) {
+                el.style.minWidth = (longest.length + 1) + "ch";
+                el.textContent = "";
+
+                function typer() {
+                    const word = words[w];
+                    const mid = Math.floor(word.length/2);
+                    if (!del) {
+                        // Center-out logic
+                        const left = Math.max(mid - i, 0);
+                        const right = Math.min(mid + i + (word.length % 2 === 0 ? 1 : 0), word.length);
+                        el.textContent = " ".repeat(left) + word.slice(left, right);
+                        i++;
+                        if (left === 0 && right === word.length) {
+                            setTimeout(() => { del = true; typer(); }, 1100);
+                        } else {
+                            setTimeout(typer, 55);
+                        }
+                    } else {
+                        // Delete from edges inward
+                        const left = Math.max(mid - i, 0);
+                        const right = Math.min(mid + i + (word.length % 2 === 0 ? 1 : 0), word.length);
+                        el.textContent = " ".repeat(left) + word.slice(left, right);
+                        i--;
+                        if (left === mid && right === mid + (word.length % 2 === 0 ? 1 : 0)) {
+                            del = false;
+                            w = (w + 1) % words.length;
+                            setTimeout(typer, 410);
+                        } else {
+                            setTimeout(typer, 28);
+                        }
+                    }
+                }
+                typer();
+            }
+
+            // Optional: trainWithNikhil alert
+            window.trainWithNikhil = function() {
+                alert("Connecting you directly with Nikhil Mittal...\n\nYou'll be redirected to schedule a personal consultation to discuss your training needs and see if you qualify for his elite program.");
+            }
+        });
+    </script>
+    
+<div class="gradient-bg tech-grid min-h-screen flex items-center relative overflow-x-hidden">
+        <div class="w-full px-2 sm:px-4 lg:px-8 relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex flex-col lg:grid lg:grid-cols-2 gap-6 pt-4 pb-4 lg:gap-10 lg:pt-8 lg:pb-8 items-stretch">
+                    
+<div class="order-2 lg:order-1 flex flex-col justify-center space-y-7">
+                        <div class="space-y-4">
+                            <div class="inline-flex items-center bg-red-500/10 border border-red-500/30 rounded-full px-4 py-2 text-sm">
+                                <svg class="w-4 h-4 text-slate-700" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="ml-2 text-slate-700">Meet Your Instructor</span>
+                            </div>
+                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                                <span class="text-red-600">Nikhil Mittal</span>
+                                <span class="text-slate-900 block text-2xl md:text-3xl lg:text-4xl mt-2">Elite Red Team Leader</span>
+                            </h1>
+                            <p class="text-lg md:text-xl text-slate-700 leading-relaxed">
+                                Nikhil Mittal is the founder of Altered Security and a red team expert with over 15 years of experience specializing in Active Directory, Azure, and offensive security. He trains professionals worldwide and speaks at top security conferences.
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2 w-full">
+                            <h3 class="text-base font-semibold text-red-600 mb-2">Why Train with Nikhil?</h3>
+                            <div class="space-y-1.5">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>15+ years in red team operations.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>10+ international conference talks, including BlackHat & DEF CON.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>20+ tools, scripts & open-source projects created.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>40,000+ professionals trained globally.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Led hands-on bootcamps for Fortune 500 organizations.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 pl-4 py-3 text-slate-700 italic text-base">
+                            "Nikhil doesn't just teach red teaming - he lives it. His training transformed our entire security posture."
+                            <div class="text-sm text-red-600 font-medium mt-2">- Sarah Chen, CISO at TechCorp</div>
+                        </div>
+                    </div>
+
+                    
+<div class="relative order-1 lg:order-2 flex flex-col items-center justify-center min-h-[360px] lg:min-h-[600px]">
+                        <div class="relative rounded-2xl shadow-lg bg-white mx-auto w-56 lg:w-64 mb-4 overflow-hidden">
+                            <img src="images/nikhil.jpg" class="object-cover object-center w-full h-60 lg:h-64 rounded-t-2xl" alt="Nikhil Mittal Photo" />
+                            
+<div class="flex items-center justify-center space-x-8 bg-slate-100 py-3 w-full">
+                                <a href="https://x.com/nikhil_mittal" target="_blank" rel="noopener" class="flex-1 flex justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 hover:scale-110 transition" fill="currentColor" viewBox="0 0 48 48"><path d="M34.754 8.03H40.36l-12.315 14.09L43 40.4h-9.753l-8.064-10.036-9.239 10.036H7.33l13.024-14.744L5 8.03h9.951l7.191 8.933 8.612-8.933Zm-1.695 29.48h2.694L15.13 10.84h-2.89l20.819 26.67Z"/></svg>
+                                </a>
+                                <a href="https://www.alteredsecurity.com/" target="_blank" rel="noopener" class="flex-1 flex justify-center">
+                                    
+<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-slate-900 hover:text-blue-600 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor"/>
+                                        <ellipse cx="12" cy="12" rx="5" ry="10" stroke="currentColor"/>
+                                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20" />
+                                    </svg>
+                                </a>
+                                <a href="https://linkedin.com/in/nikhil_mittal" target="_blank" rel="noopener" class="flex-1 flex justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 hover:scale-110 transition" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.271c-.966 0-1.75-.788-1.75-1.757 0-.969.784-1.757 1.75-1.757s1.75.788 1.75 1.757c0 .969-.784 1.757-1.75 1.757zm13.5 10.271h-3v-4.604c0-1.098-.021-2.509-1.528-2.509-1.529 0-1.764 1.196-1.764 2.431v4.682h-3v-9h2.881v1.229h.041c.402-.761 1.386-1.563 2.854-1.563 3.052 0 3.616 2.008 3.616 4.621v4.713z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="pt-2"></div>
+                        <div class="text-xs text-slate-500 text-center font-medium tracking-wide mb-3">As Featured On</div>
+                        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 bg-slate-800 rounded-xl py-4 px-5 featured-on-section w-full max-w-xs lg:max-w-sm overflow-hidden">
+                            <img src="images/blackhat.png" alt="Black Hat" class="h-7 max-w-[90px] w-auto object-contain" />
+                            <img src="images/defcon.webp" alt="DEF CON" class="h-7 max-w-[90px] w-auto object-contain" />
+                            <img src="images/bruecon.avif" alt="BruCON" class="h-7 max-w-[90px] w-auto object-contain" />
+                            <img src="images/44con.webp" alt="44CON" class="h-7 max-w-[90px] w-auto object-contain" />
+                        </div>
+
+                        
+<section>
+                            <div class="section-top">
+                                <div class="text-xs text-slate-500 text-center font-medium tracking-wide mb-3">Creator OF</div>
+                            </div>
+                            <div class="tools-row">
+                                <div class="tool-card">
+                                    <div class="tool-icon n">N</div>
+                                    <div class="tool-name">Nishang</div>
+                                </div>
+                                <div class="tool-card">
+                                    <div class="tool-icon k">K</div>
+                                    <div class="tool-name">Kausalya</div>
+                                </div>
+                                <div class="tool-card">
+                                    <div class="tool-icon r">R</div>
+                                    <div class="tool-name">RACE</div>
+                                </div>
+                                <div class="tool-card">
+                                    <div class="tool-icon d">D</div>
+                                    <div class="tool-name">Deploy-Deception</div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="text-xs text-slate-500 text-center font-medium tracking-wide mb-3">Key Milestones</div>
+                        <div class="flex flex-nowrap gap-3 overflow-x-auto py-1 px-2 milestones-section">
+                            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
+                                <svg class="w-6 h-6 text-red-400 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z"/>
+                                    <path d="M9 12l2 2 4-4"/>
+                                </svg>
+                                <div class="text-base font-bold text-white">15+</div>
+                                <div class="text-xs text-slate-200 text-center mt-1">years<br>experience</div>
+                            </div>
+                            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
+                                <svg class="w-6 h-6 text-yellow-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <rect x="4" y="11" width="16" height="8" rx="2"/>
+                                    <path d="M8 11V8a4 4 0 0 1 8 0v3"/>
+                                </svg>
+                                <div class="text-base font-bold text-white">10+</div>
+                                <div class="text-xs text-slate-200 text-center mt-1">global<br>conferences</div>
+                            </div>
+                            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
+                                <svg class="w-6 h-6 text-indigo-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <ellipse cx="12" cy="12" rx="4.2" ry="10" stroke="currentColor"/>
+                                    <path d="M2 12h20"/>
+                                </svg>
+                                <div class="text-base font-bold text-white">40,000+</div>
+                                <div class="text-xs text-slate-200 text-center mt-1">students<br>trained</div>
+                            </div>
+                        </div>
+                        <button
+                            onclick="trainWithNikhil()"
+                            class="hidden lg:block bg-red-500/20 border-2 border-red-500 text-red-600 hover:bg-red-500 hover:text-white font-semibold px-8 py-3 mt-6 rounded-xl shadow-lg transition-all duration-200 text-lg w-auto"
+                        >
+                            Start Your Journey
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
