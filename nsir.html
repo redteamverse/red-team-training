@@ -1,398 +1,939 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nikhil Mittal - Elite Red Team Leader & Trainer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- SEO Meta Tags -->
+    <title>Nikhil Mittal | Red Team Expert - Offensive Security & Adversary Simulation</title>
+    <meta name="description" content="Nikhil Mittal is a Red Team Expert and founder of Altered Security, specializing in Active Directory, Azure, and advanced adversary simulation training. Trusted by 50K+ students globally.">
+    <meta name="keywords" content="Red Team, Offensive Security, Adversary Simulation, Azure Security, Active Directory, Nikhil Mittal, Altered Security, Penetration Testing, CRTP">
+    <meta name="author" content="Nikhil Mittal">
+    
+    <!-- Open Graph/Social Meta Tags -->
+    <meta property="og:title" content="Nikhil Mittal - Red Team Expert">
+    <meta property="og:description" content="Train with a Red Team specialist. Build practical skills and certifications to accelerate your career.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.example.com">
+    <meta property="og:image" content="https://picsum.photos/id/1/1200/630">
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#EA3037',      // Red (10%)
+                        secondary: '#2B2B50',    // Blue (10%)
+                        'hero-bg': '#0E0F22',    // Specific Hero Background
+                        neutral: {
+                            white: '#FFFFFF',
+                            offWhite: '#F9FAFB',
+                            border: '#E5E7EB',
+                            paragraph: '#6B7280',
+                            heading: '#111827'
+                        },
+                        accent: {
+                            trust: '#1E3A8A',
+                            success: '#10B981',
+                            warning: '#F59E0B',
+                            error: '#EF4444'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
     <style>
-        /* BASE & LAYOUT STYLES */
-        body { box-sizing: border-box; }
-        html, body { overflow-x: hidden; }
-
-        /* FIXED CTA BUTTON (Mobile) */
-        .fixed-cta {
-            position: fixed;
-            bottom: 1.2em;
-            right: 1.2em;
-            left: auto;
-            z-index: 30;
-        }
-        @media (max-width: 640px) {
-            .fixed-cta { left: 1em; right: 1em; width: unset; }
+        /* General Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF; /* Explicit White Body */
+            color: #111827;
         }
 
-        /* DRAWER MENU STYLES */
-        .drawer-menu {
-            transition: transform .3s cubic-bezier(.4,0,.2,1);
-            transform: translateX(-100%);
-            z-index:51;
+        /* Dark Mode Overrides */
+        .dark body {
+            background-color: #111827;
+            color: #F9FAFB;
         }
-        .drawer-open {
-            transform: translateX(0) !important;
-        }
-        .drawer-backdrop {
-            background-color: rgba(0,0,0,0.55);
-            position: fixed; inset: 0; z-index:50; display:none;
-        }
-        .drawer-backdrop.open {
-            display:block;
+        .dark .bg-white { background-color: #1F2937; }
+        .dark .bg-neutral-offWhite { background-color: #111827; }
+        .dark .text-neutral-heading { color: #FFFFFF; }
+        .dark .text-neutral-paragraph { color: #D1D5DB; }
+        .dark .border-neutral-border { border-color: #374151; }
+
+        /* Smooth Scroll Padding for Sticky Header */
+        html {
+            scroll-padding-top: 80px;
         }
 
-        /* TYPEWRITER STYLES (Adjusted for responsiveness) */
-        .typewriter-top {
-            background: #fff;
-            padding-top: 2rem;
-            padding-bottom: 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 2.7em;
-            width: 100vw;
-            height: 3.2em;
+        /* Print Styles */
+        @media print {
+            nav, .no-print, #contact, footer { display: none; }
+            body { color: black; background: white; }
+            a { text-decoration: underline; color: #1E3A8A; }
         }
-        #typewriter {
-            position: relative;
-            font-family: 'DotGothic16', monospace, Arial, sans-serif;
-            font-size: 2rem;
-            font-weight: normal;
-            letter-spacing: 0.07em;
-            color: #111;
-            background: transparent;
-            min-width: 17ch;
-            height: 2.4em;
-            line-height: 2.4em;
-            display: inline-block;
-            overflow: hidden;
-            white-space: pre;
-            text-align: center;
-            border-right: 2px solid #111;
-            margin: 0;
-            vertical-align: middle;
+        
+        /* Modal Transition */
+        .modal {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
         }
-        #typewriter::after { content: ""; }
-
-        /* CREATOR OF TOOLS SECTION - Custom Sizing for Mobile/Desktop */
-        .section-top {
-            text-align: center;
-            padding-top: 10px;
-            margin-bottom: 8px; 
-        }
-        .tools-row {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            gap: 36px;
-            padding-bottom: 5px;
-            margin: 0 auto 5px auto;
-            max-width: 800px;
-            width: 94vw;
-            box-sizing: border-box;
-        }
-        .tool-card {
-            background: #23252c;
-            border-radius: 22px;
-            width: 110px;
-            height: 140px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 22px rgba(0,0,0,0.09);
-            transition: transform 0.2s;
-            margin-bottom: 14px;
-        }
-        .tool-card:hover {
-            transform: translateY(-7px) scale(1.06);
-            box-shadow: 0 18px 48px rgba(0,0,0,0.13);
-        }
-        .tool-icon {
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: #fff;
-        }
-        /* Tool Icon Gradients */
-        .tool-icon.n { background: linear-gradient(135deg,#ef4444,#f59e42);}
-        .tool-icon.k { background: linear-gradient(135deg,#14b8a6,#38bdf8);}
-        .tool-icon.r { background: linear-gradient(135deg,#8b5cf6,#6366f1);}
-        .tool-icon.d { background: linear-gradient(135deg,#22c55e,#eab308);}
-        .tool-name {
-            margin-top: 1px;
-            font-size: 1.08rem;
-            font-weight: 600;
-            color: #fff;
-            letter-spacing: .05em;
-            text-align: center;
-        }
-
-        /* Responsive adjustments for Tools/Featured section */
-        @media (max-width: 700px) {
-            .tools-row { gap: 12px; }
-            .tool-card { width: 72px; height: 82px; }
-            .tool-icon { width: 23px; height: 23px; font-size: 1.02rem; margin-bottom: 7px; }
-            .tool-name { font-size: 0.68rem; }
-            .featured-section { max-width: 99vw; }
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
         }
     </style>
 </head>
-<body class="bg-white text-slate-900">
+<body class="antialiased transition-colors duration-300">
 
-    <header class="w-full bg-white/95 backdrop-blur border-b border-slate-100 sticky top-0 z-40">
-        <nav class="max-w-5xl mx-auto flex items-center justify-between px-4 py-3 lg:py-4">
-            <span class="font-extrabold text-xl tracking-wide text-red-600">
-                <img src="images/AS2.avif" alt="Altered Security Logo" class="h-8 w-auto inline-block" />
-            </span>
-            <ul class="hidden lg:flex space-x-6 font-semibold text-base">
-                <li><a href="#about" class="hover:text-red-500">About</a></li>
-                <li><a href="#expertise" class="hover:text-red-500">Expertise</a></li>
-                <li><a href="#awards" class="hover:text-red-500">Awards</a></li>
-                <li><a href="#conference" class="hover:text-red-500">Conference</a></li>
-                <li><a href="#event" class="hover:text-red-500">Event</a></li>
-                <li><a href="#testimonials" class="hover:text-red-500">Testimonials</a></li>
-                <li><a href="#services" class="hover:text-red-500">Services</a></li>
-                <li><a href="#contact" class="hover:text-red-500">Contact</a></li>
-            </ul>
-            <button id="menu-open" class="block lg:hidden focus:outline-none" aria-label="Open menu">
-                <svg class="w-8 h-8 text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
-                </svg>
-            </button>
-        </nav>
+    <!-- 1) Header / Nav -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary tracking-tight">
+                        Nikhil<span class="text-secondary dark:text-white">Mittal</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#hero" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Hero</a>
+                    <a href="#profile" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Profile</a>
+                    <a href="#expertise" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Expertise</a>
+                    <a href="#events" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Events</a>
+                    <a href="#testimonials" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Testimonials</a>
+                    <a href="#services" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Services</a>
+                    <a href="#contact" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Contact</a>
+                </nav>
+
+                <!-- Controls -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition" aria-label="Toggle Dark Mode">
+                        <!-- Sun Icon -->
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+                        <!-- Moon Icon -->
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#hero" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Hero</a>
+                <a href="#profile" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Profile</a>
+                <a href="#expertise" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Expertise</a>
+                <a href="#events" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Events</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Testimonials</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Services</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Contact</a>
+            </div>
+        </div>
     </header>
 
-    <div id="drawer-backdrop" class="drawer-backdrop"></div>
-    <div id="mobile-menu" class="drawer-menu fixed top-0 left-0 bottom-0 w-4/5 max-w-xs bg-white px-6 py-10 flex flex-col space-y-7 shadow-2xl overflow-y-auto">
-        <button id="menu-close" class="absolute top-3 right-4 text-3xl font-bold text-slate-700">&times;</button>
-        <nav class="flex flex-col space-y-6 text-lg font-semibold text-slate-800 mt-5">
-            <a href="#about" class="hover:text-red-500">About</a>
-            <a href="#expertise" class="hover:text-red-500">Expertise</a>
-            <a href="#awards" class="hover:text-red-500">Awards</a>
-            <a href="#conference" class="hover:text-red-500">Conference</a>
-            <a href="#event" class="hover:text-red-500">Event</a>
-            <a href="#testimonials" class="hover:text-red-500">Testimonials</a>
-            <a href="#services" class="hover:text-red-500">Services</a>
-            <a href="#contact" class="hover:text-red-500">Contact</a>
-        </nav>
-    </div>
+    <!-- 2) Hero Section -->
+    <section id="hero" class="relative bg-hero-bg text-white py-20 lg:py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            
+            <!-- Animated Badge (Layout Fixed: Added h-8 to prevent jump) -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-gray-600 mb-6 animate-fade-in-up h-8">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                <span id="typing-text" class="text-sm font-medium tracking-wide">DEF CON / Black Hat Speaker</span>
+            </div>
 
-    <div class="typewriter-top">
-       <span class="text-white font-bold tracking-wider uppercase text-sm px-2 py-2 rounded-full bg-red-600/80">Red Team Expert</span>
-    </div>
+            <!-- Heading -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                Advance Red Team skills.<br class="hidden md:block" /> Taught by the pioneer.
+            </h1>
 
-    <div class="gradient-bg tech-grid min-h-screen flex items-center relative overflow-x-hidden">
-        <div class="w-full px-2 sm:px-4 lg:px-8 relative z-10">
-            <div class="max-w-5xl mx-auto">
-                
-                <div id="about" class="flex flex-col lg:grid lg:grid-cols-2 gap-6 pt-4 pb-4 lg:gap-10 lg:pt-8 lg:pb-8 items-stretch">
+            <!-- Rating / Social Proof (Updated with Avatars) -->
+            <div class="flex flex-col items-center justify-center gap-2 mb-8">
+                <div class="flex items-center gap-4 bg-secondary/30 px-6 py-2 rounded-full border border-gray-700 backdrop-blur-sm">
+                    <!-- Rating Star -->
+                    <div class="flex items-center gap-2 text-white font-bold text-lg">
+                        <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <span>4.8 rating</span>
+                    </div>
                     
-                    <div class="order-2 lg:order-1 flex flex-col justify-center space-y-7">
-                        
-                        <div class="space-y-4">
-                            <div class="inline-flex items-center bg-red-500/10 border border-red-500/30 rounded-full px-4 py-2 text-sm">
-                                <svg class="w-4 h-4 text-slate-700" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span class="ml-2 text-slate-700 font-semibold">15+ Years Red Team Veteran</span>
-                            </div>
-                            
-                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-                                <span class="text-red-600">Nikhil Mittal</span>
-                                <span class="text-slate-900 block text-2xl md:text-3xl lg:text-4xl mt-2 font-bold">Elite Red Team Master</span>
-                            </h1>
-                            
-                            <p class="text-lg md:text-xl text-slate-700 leading-relaxed">
-                                Nikhil Mittal is the founder of Altered Security and a Red Team expert with over <strong>15 years of experience</strong> specializing in <strong>Active Directory, Azure, Offensive PowerShell, and C2 Operations</strong>. As a global leader in cybersecurity education, he is renowned for creating open-source tools used by practitioners worldwide.
-                            </p>
-                        </div>
-                        
-                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2 w-full shadow-lg">
-                            <h3 class="text-base font-bold text-red-700 mb-2">Why Train with Nikhil?</h3>
-                            <div class="space-y-1.5">
-                                <div class="flex items-center">
-                                    <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    <span><strong>15+</strong> years in Red Team operations .</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    <span>Pioneer of affordable <strong>Red Team courses</strong></span>
-                                </div>
-                                <div class="flex items-center">
-                                    <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    <span>Multiple international conference talks, including <strong>BlackHat USA & DEF CON</strong>.</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    <span><strong>50,000+</strong> professionals trained globally.</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <svg class="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    <span>Led hands-on bootcamps for <strong>Fortune 500 organizations.</strong></span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 pl-4 py-3 text-slate-700 italic text-base">
-                            "Nikhil doesn't just teach red teaming - he lives it. His training transformed our entire security posture."
-                            <div class="text-sm text-red-600 font-medium mt-2">- Sarah Chen, CISO at TechCorp</div>
-                        </div>
+                    <div class="h-6 w-px bg-gray-500 mx-2"></div>
 
-                        <div class="hidden lg:block pt-4">
-                            <button
-                                onclick="trainWithNikhil()"
-                                class="bg-red-500/20 border-2 border-red-500 text-red-600 hover:bg-red-500 hover:text-white font-bold px-8 py-3 rounded-xl shadow-lg transition-all duration-200 text-lg w-auto"
-                            >
-                                Start Your Elite Journey
-                            </button>
-                        </div>
+                    <!-- Avatar Group -->
+                    <div class="flex -space-x-3">
+                        <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/64/100/100" alt="Student">
+                        <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/65/100/100" alt="Student">
+                        <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/91/100/100" alt="Student">
+                        <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/177/100/100" alt="Student">
+                    </div>
+                </div>
+                
+                <div class="text-gray-300 text-sm mt-2">
+                    Trusted by <span class="text-white font-bold">50K+</span> students from <span class="text-white font-bold">130+</span> countries
+                </div>
+            </div>
+
+            <!-- Subheading -->
+            <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
+                Learn from a Red Team specialist who builds real offensive skills and industry-ready certifications—so you can advance faster, deliver real impact, and lead sophisticated Red Team assessments.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#services" class="px-8 py-3.5 bg-primary hover:bg-red-700 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                    Explore Services
+                </a>
+                <a href="#contact" class="px-8 py-3.5 border-2 border-gray-500 hover:border-white text-white font-bold rounded-lg transition hover:bg-white hover:text-black">
+                    Contact Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3) Profile Section -->
+    <section id="profile" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div class="order-2 lg:order-1 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-primary rounded-full blur-2xl opacity-20"></div>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Nikhil Mittal" class="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl">
+                    </div>
+                </div>
+
+                <!-- Bio -->
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-3xl font-bold text-neutral-heading mb-2">Nikhil Mittal</h2>
+                    <p class="text-lg text-primary font-medium mb-6">Red Team Lead / Altered Security Founder</p>
+                    
+                    <div class="prose dark:prose-invert text-neutral-paragraph mb-8">
+                        <p class="mb-4">
+                            Nikhil Mittal is the founder of Altered Security and a Red Team expert with over 15 years of experience specializing in Active Directory, Azure, Offensive PowerShell, and Red Teaming.
+                        </p>
+                        <p>
+                            As a global leader in cybersecurity education, he has nurtured the field, helping bring it from niche groups to the mainstream.
+                        </p>
                     </div>
 
-                    <div class="relative order-1 lg:order-2 flex flex-col items-center justify-center min-h-[360px] lg:min-h-[600px]">
-                        
-                        <div class="relative rounded-2xl shadow-lg bg-white mx-auto w-56 lg:w-64 mb-4 overflow-hidden">
-                            <img src="images/nikhil.jpg" class="object-cover object-center w-full h-60 lg:h-64 rounded-t-2xl" alt="Nikhil Mittal Photo" />
-                            <div class="flex items-center justify-center space-x-8 bg-slate-100 py-3 w-full">
-                                <a href="https://x.com/nikhil_mittal" target="_blank" rel="noopener" class="flex-1 flex justify-center text-slate-700 hover:text-red-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 hover:scale-110 transition" fill="currentColor" viewBox="0 0 48 48"><path d="M34.754 8.03H40.36l-12.315 14.09L43 40.4h-9.753l-8.064-10.036-9.239 10.036H7.33l13.024-14.744L5 8.03h9.951l7.191 8.933 8.612-8.933Zm-1.695 29.48h2.694L15.13 10.84h-2.89l20.819 26.67Z"/></svg></a>
-                                <a href="https://www.alteredsecurity.com/" target="_blank" rel="noopener" class="flex-1 flex justify-center text-slate-700 hover:text-red-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke="currentColor"/><ellipse cx="12" cy="12" rx="5" ry="10" stroke="currentColor"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20" /></svg></a>
-                                <a href="https://linkedin.com/in/nikhil_mittal" target="_blank" rel="noopener" class="flex-1 flex justify-center text-slate-700 hover:text-red-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 hover:scale-110 transition" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.271c-.966 0-1.75-.788-1.75-1.757 0-.969.784-1.757 1.75-1.757s1.75.788 1.75 1.757c0 .969-.784 1.757-1.75 1.757zm13.5 10.271h-3v-4.604c0-1.098-.021-2.509-1.528-2.509-1.529 0-1.764 1.196-1.764 2.431v4.682h-3v-9h2.881v1.229h.041c.402-.761 1.386-1.563 2.854-1.563 3.052 0 3.616 2.008 3.616 4.621v4.713z"/></svg></a>
-                            </div>
-                        </div>
-                        
-                        <div class="space-y-4">
-                            <div class="text-xs text-slate-500 text-center font-medium tracking-wide">As Featured On</div>
-                            <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 bg-slate-800 rounded-xl py-4 px-5 featured-on-section mx-auto shadow-lg">
-                                <span class="text-white font-bold tracking-wider uppercase text-sm px-2 py-1 rounded-sm bg-red-600/20">BlackHat</span>
-                                <span class="text-white font-bold tracking-wider uppercase text-sm px-2 py-1 rounded-sm bg-red-600/20">DEF CON</span>
-                                <span class="text-white font-bold tracking-wider uppercase text-sm px-2 py-1 rounded-sm bg-red-600/20">BruCON</span>
-                            </div>
-                        </div>
+                    <!-- Socials -->
+                    <div class="flex space-x-6 mb-10">
+                        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-accent-trust transition transform hover:scale-110">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.518-4 0v5.604h-3v-11h3v1.765c1.398-2.603 7-2.784 7 2.628v6.607z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-accent-trust transition transform hover:scale-110">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.791-1.574 2.162-2.722-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.592 0-6.492 2.901-6.492 6.493 0 .513.057 1.012.167 1.496-5.404-.271-10.21-2.868-13.425-6.839-.564.974-.887 2.11-.887 3.324 0 2.278 1.159 4.286 2.919 5.464-.854-.027-1.656-.261-2.36-.648-.002.028-.002.056-.002.085 0 3.15 2.24 5.786 5.211 6.384-.544.148-1.117.217-1.702.217-.417 0-.822-.041-1.22-.116.827 2.571 3.235 4.45 6.092 4.493-2.227 1.748-5.041 2.808-8.082 2.808-.521 0-1.042-.03-1.551-.087 2.895 1.879 6.306 2.969 9.983 2.969 12.155 0 18.783-10.027 18.783-18.783 0-.317-.008-.633-.02-.947.818-.592 1.534-1.334 2.096-2.173z"/></svg>
+                        </a>
+                        <a href="#" aria-label="GitHub" class="text-gray-400 hover:text-accent-trust transition transform hover:scale-110">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.08-.731.084-.716.084-.716 1.192.084 1.816 1.233 1.816 1.233 1.06 1.815 2.784 1.294 3.488.992.107-.775.418-1.294.762-1.593-2.651-.309-5.438-1.325-5.438-5.926 0-1.31.467-2.381 1.233-3.221-.124-.309-.533-1.524.114-3.178 0 0 1.007-.323 3.303 1.233.959-.266 1.96-.399 2.959-.399 1 0 2.001.133 2.96.399 2.294-1.556 3.301-1.233 3.301-1.233.648 1.654.238 2.869.115 3.178.765.84 1.232 1.911 1.232 3.221 0 4.61-2.791 5.613-5.441 5.923.427.365.818 1.08.818 2.182v3.232c0 .315.192.693.8.576 4.765-1.589 8.2-6.089 8.2-11.385 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                    </div>
 
-                        <section class="lg:hidden">
-                            <div class="section-top">
-                                <div class="text-xs text-slate-500 text-center font-medium tracking-wide mb-3">Creator OF</div>
-                            </div>
-                            <div class="tools-row">
-                                <div class="tool-card"><div class="tool-icon n">N</div><div class="tool-name">Nishang</div></div>
-                                <div class="tool-card"><div class="tool-icon k">K</div><div class="tool-name">Kausalya</div></div>
-                                <div class="tool-card"><div class="tool-icon r">R</div><div class="tool-name">RACE</div></div>
-                                <div class="tool-card"><div class="tool-icon d">D</div><div class="tool-name">Deploy-Deception</div></div>
-                            </div>
-                        </section>
-
-                        <div class="text-xs text-slate-500 text-center font-medium tracking-wide hidden lg:flex mt-6">Key Milestones</div>
-                        <div class="flex flex-nowrap gap-3 overflow-x-auto py-1 px-2 milestones-section hidden lg:flex justify-center">
-                            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
-                                <svg class="w-6 h-6 text-red-400 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg>
-                                <div class="text-base font-bold text-white">15+</div>
-                                <div class="text-xs text-slate-200 text-center mt-1">years<br>experience</div>
-                            </div>
-                            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
-                                <svg class="w-6 h-6 text-yellow-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="8" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-                                <div class="text-base font-bold text-white">10+</div>
-                                <div class="text-xs text-slate-200 text-center mt-1">global<br>conferences</div>
-                            </div>
-                            <div class="flex-none w-28 bg-[#1e293b] rounded-xl shadow flex flex-col items-center justify-center px-2 py-4">
-                                <svg class="w-6 h-6 text-indigo-300 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="4.2" ry="10" stroke="currentColor"/><path d="M2 12h20"/></svg>
-                                <div class="text-base font-bold text-white">40,000+</div>
-                                <div class="text-xs text-slate-200 text-center mt-1">students<br>trained</div>
-                            </div>
+                    <!-- Trust Indicators (Moved Here & Interactive) -->
+                    <div id="stats-section" class="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-neutral-border pt-8">
+                        <div>
+                            <span class="block text-3xl font-bold text-primary stat-counter" data-target="15" data-suffix="+">0</span>
+                            <span class="text-sm text-neutral-paragraph">Years in Red Team operations</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-primary stat-counter" data-target="50000" data-suffix="+">0</span>
+                            <span class="text-sm text-neutral-paragraph">professionals trained globally</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-primary stat-counter" data-target="500" data-suffix="+">0</span>
+                            <span class="text-sm text-neutral-paragraph">Fortune 500 bootcamps led</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <button
-        onclick="trainWithNikhil()"
-        class="fixed-cta bg-red-500 text-white font-bold py-3 px-4 rounded-full shadow-xl hover:bg-red-600 transition duration-200 w-full max-w-xs sm:max-w-none opacity-90 lg:hidden"
-    >
-        Get Elite Training
-    </button>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // --- Mobile Drawer Menu Logic ---
-            const drawerMenu = document.getElementById('mobile-menu');
-            const backdrop = document.getElementById('drawer-backdrop');
-            const menuOpen = document.getElementById('menu-open');
-            const menuClose = document.getElementById('menu-close');
+    </section>
 
-            if (menuOpen && menuClose && drawerMenu && backdrop) {
-                const toggleDrawer = (open) => {
-                    drawerMenu.classList.toggle('drawer-open', open);
-                    backdrop.classList.toggle('open', open);
-                    document.body.style.overflow = open ? "hidden" : "";
-                };
-                menuOpen.onclick = () => toggleDrawer(true);
-                menuClose.onclick = () => toggleDrawer(false);
-                backdrop.onclick = () => toggleDrawer(false);
-                // Close menu when a link is clicked
-                document.querySelectorAll('#mobile-menu a').forEach(link => {
-                    link.addEventListener('click', () => toggleDrawer(false));
-                });
-            }
-
-            // --- Typewriter Logic ---
-            const words = ["Hacker", "Infosec Researcher", "Speaker", "Lead Trainer"];
-            let w = 0, i = 0, del = false;
-            const el = document.getElementById('typewriter');
-            const longest = words.reduce((a, b) => a.length > b.length ? a : b, "");
+    <!-- 4) Expertise Section -->
+    <section id="expertise" class="py-20 bg-neutral-offWhite dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-neutral-heading mb-12">Expertise</h2>
             
-            if (el) {
-                el.style.minWidth = (longest.length + 1) + "ch";
-                el.textContent = "";
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Active Directory -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center text-secondary dark:text-blue-300 mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-heading mb-3">Active Directory</h3>
+                    <p class="text-neutral-paragraph text-sm mb-4">Deep understanding of AD architecture, forest trusts, and lateral movement paths.</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
 
-                function typer() {
-                    const word = words[w];
-                    const mid = Math.floor(word.length / 2);
-                    
-                    if (!del) {
-                        // Type/Expand from Center-Out
-                        const left = Math.max(mid - i, 0);
-                        const right = Math.min(mid + i + (word.length % 2 === 0 ? 1 : 0), word.length);
-                        el.textContent = " ".repeat(left) + word.slice(left, right);
-                        i++;
+                <!-- Card 2: Azure -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-blue-50 dark:bg-blue-800 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-200 mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-heading mb-3">Azure</h3>
+                    <p class="text-neutral-paragraph text-sm mb-4">Securing and exploiting hybrid cloud identities and cloud-native infrastructure.</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
 
-                        if (left === 0 && right === word.length) {
-                            setTimeout(() => { del = true; typer(); }, 1100);
-                        } else {
-                            setTimeout(typer, 55);
-                        }
-                    } else {
-                        // Delete/Contract from Edges Inward
-                        const left = Math.max(mid - i, 0);
-                        const right = Math.min(mid + i + (word.length % 2 === 0 ? 1 : 0), word.length);
-                        el.textContent = " ".repeat(left) + word.slice(left, right);
-                        i--;
+                <!-- Card 3: Offensive PowerShell -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-300 mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-heading mb-3">Offensive PowerShell</h3>
+                    <p class="text-neutral-paragraph text-sm mb-4">Developing custom tooling and weaponizing scripts for post-exploitation success.</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 92%"></div>
+                    </div>
+                </div>
 
-                        if (left === mid && right === mid + (word.length % 2 === 0 ? 1 : 0)) {
-                            del = false;
-                            w = (w + 1) % words.length;
-                            setTimeout(typer, 410);
-                        } else {
-                            setTimeout(typer, 28);
-                        }
-                    }
+                <!-- Card 4: Red Teaming -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center text-primary mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.131A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.2-2.85.56-4.161m1.968-3.04a11.97 11.97 0 011.69-2.071"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-heading mb-3">Red Teaming</h3>
+                    <p class="text-neutral-paragraph text-sm mb-4">Full-scope adversary simulation to test detection and response capabilities.</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5) Conference & Events -->
+    <section id="events" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-neutral-heading mb-8">Conferences & Events</h2>
+            
+            <!-- Filter -->
+            <div class="flex justify-center gap-4 mb-12">
+                <button onclick="filterEvents('all')" class="filter-btn active px-6 py-2 rounded-full text-sm font-medium transition bg-primary text-white">All</button>
+                <button onclick="filterEvents('talk')" class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200">Talks</button>
+                <button onclick="filterEvents('workshop')" class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200">Workshops</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="event-grid">
+                
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2022</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">BruCON</h3>
+                    <p class="text-sm text-primary font-medium">0wn-premises: Bypassing Microsoft Defender for Identity</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2017</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">44CON</h3>
+                    <p class="text-sm text-primary font-medium">Red Team Revenge - Attacking Microsoft ATA</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2015</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">BlackHat Europe & DeepSec</h3>
+                    <p class="text-sm text-primary font-medium">Continuous Intrusion: Why CI tools are an Attacker's Best Friends</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2013</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">BlackHat Europe</h3>
+                    <p class="text-sm text-primary font-medium">PowerShell for Penetration Testers</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2019</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">DEF CON</h3>
+                    <p class="text-sm text-primary font-medium">RACE - Minimal Rights and ACE for Active Directory Dominance</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2017</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">BlackHat USA & BruCON</h3>
+                    <p class="text-sm text-primary font-medium">Evading Microsoft ATA for Active Directory Domination</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card workshop bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-secondary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2015</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">HITB, Amsterdam</h3>
+                    <p class="text-sm text-primary font-medium">Workshop: PowerShell for Penetration Testers</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2012</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">EuSec West'12</h3>
+                    <p class="text-sm text-primary font-medium">Owning Windows 8 with Human Interface Devices</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2018</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">BruCON</h3>
+                    <p class="text-sm text-primary font-medium">Forging Trusts for Deception in Active Directory</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2017</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">x33fcon</h3>
+                    <p class="text-sm text-primary font-medium">PowerShell for Practical Purple Teaming</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2014</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">DeepSec</h3>
+                    <p class="text-sm text-primary font-medium">Lethal Client Side Attacks using PowerShell</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2012</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">RSA China'12</h3>
+                    <p class="text-sm text-primary font-medium">Hacking the future with USB HID</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2018</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">IT Defense</h3>
+                    <p class="text-sm text-primary font-medium">Hacked? Pray that the Attacker used PowerShell</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+                
+                 <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2016</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">BlackHat USA</h3>
+                    <p class="text-sm text-primary font-medium">AMSI: How Windows 10 Plans to Stop Script-Based Attacks</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                 <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2013</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">DEF CON 21</h3>
+                    <p class="text-sm text-primary font-medium">Powerpreter: Post Exploitation like a Boss</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6) Testimonials -->
+    <section id="testimonials" class="py-20 bg-neutral-offWhite dark:bg-gray-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-neutral-heading mb-12">What People Say</h2>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Carousel Container -->
+                <div id="carousel-track" class="flex transition-transform duration-500 ease-out">
+                    <!-- Slide 1 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center">
+                            <img src="https://picsum.photos/id/1005/100/100" class="w-16 h-16 rounded-full mx-auto mb-4 object-cover" alt="Student">
+                            <p class="text-lg text-neutral-paragraph italic mb-6">"Overall, I found the course to be very comprehensive and satisfying. Although I had some knowledge of Microsoft Azure, the course surprised me with several new insights....The content of the course is very complete and covers a lot of commonly used Azure services and how they can be exploited."</p>
+                            <h4 class="font-bold text-neutral-heading">CRTP Student</h4>
+                            <span class="text-xs text-primary">Self-paced Course</span>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center">
+                            <img src="https://picsum.photos/id/1025/100/100" class="w-16 h-16 rounded-full mx-auto mb-4 object-cover" alt="Attendee">
+                            <p class="text-lg text-neutral-paragraph italic mb-6">"The bootcamp is led by experienced instructors who have real-world experience in dealing with cyber threats. The instructors will provide hands-on training and practical examples to help participants understand how to analyze and practice threats and attacks in a multi-forest Active Directory environment."</p>
+                            <h4 class="font-bold text-neutral-heading">Security Analyst</h4>
+                            <span class="text-xs text-primary">Bootcamp Attendee</span>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center">
+                            <img src="https://picsum.photos/id/1011/100/100" class="w-16 h-16 rounded-full mx-auto mb-4 object-cover" alt="CISO">
+                            <p class="text-lg text-neutral-paragraph italic mb-6">"A valuable credential for individuals looking to specialize in Azure cloud security. It helps demonstrate proficiency in red teaming."</p>
+                            <h4 class="font-bold text-neutral-heading">Cloud Architect</h4>
+                            <span class="text-xs text-primary">Azure Certification</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button id="prev-slide" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-700 p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none" aria-label="Previous">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button id="next-slide" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-700 p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none" aria-label="Next">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7) Services Section -->
+    <section id="services" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-neutral-heading mb-12">Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="flex flex-col bg-neutral-offWhite dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 dark:border-gray-700">
+                    <img src="https://picsum.photos/id/3/800/400" alt="Bootcamp" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-neutral-heading mb-2">Live Red Teaming Bootcamp</h3>
+                        <p class="text-neutral-paragraph text-sm mb-4 flex-1">A 4-week live Red Teaming Bootcamp for security professionals looking to advance their offensive skill set through realistic enterprise lab exercises and expert-led instruction from an experienced Red Team operator</p>
+                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                            <li class="flex items-center"><span class="text-accent-success mr-2">✔</span> 4 Weeks Live</li>
+                            <li class="flex items-center"><span class="text-accent-success mr-2">✔</span> Enterprise Labs</li>
+                        </ul>
+                        <button onclick="openModal('Live Red Teaming Bootcamp')" class="w-full py-2 bg-primary text-white font-bold rounded hover:bg-red-700 transition">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="flex flex-col bg-neutral-offWhite dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 dark:border-gray-700">
+                    <img src="https://picsum.photos/id/60/800/400" alt="Training" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-neutral-heading mb-2">Beginner to Advance Red Team Training</h3>
+                        <p class="text-neutral-paragraph text-sm mb-4 flex-1">Our training is fully hands-on and delivered by world-renowned experts who regularly speak and teach at DEF CON, Black Hat, and other leading security conferences. All programs are available both on-site and virtually.</p>
+                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                            <li class="flex items-center"><span class="text-accent-success mr-2">✔</span> On-site / Virtual</li>
+                            <li class="flex items-center"><span class="text-accent-success mr-2">✔</span> Expert Instructors</li>
+                        </ul>
+                        <button onclick="openModal('Beginner to Advance Red Team Training')" class="w-full py-2 bg-secondary text-white font-bold rounded hover:bg-blue-900 transition">Contact Now</button>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="flex flex-col bg-neutral-offWhite dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 dark:border-gray-700">
+                    <img src="https://picsum.photos/id/4/800/400" alt="Courses" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-neutral-heading mb-2">Red Team Certification - Beginner to Pro</h3>
+                        <p class="text-neutral-paragraph text-sm mb-4 flex-1">Advanced Red Team courses and hands-on labs designed to help security professionals build real offensive capabilities. Learn structured attack workflows, practice in enterprise-grade lab environments, and develop the technical depth required to execute and lead Red Team operations.</p>
+                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                            <li class="flex items-center"><span class="text-accent-success mr-2">✔</span> Self-Paced</li>
+                            <li class="flex items-center"><span class="text-accent-success mr-2">✔</span> Certification Track</li>
+                        </ul>
+                        <button onclick="openModal('Red Team Certification - Beginner to Pro')" class="w-full py-2 bg-primary text-white font-bold rounded hover:bg-red-700 transition">Start Learning Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8) Contact Section -->
+    <section id="contact" class="py-20 bg-neutral-offWhite dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-neutral-heading mb-12">Get in Touch</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Card -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md h-full">
+                    <h3 class="text-xl font-bold text-neutral-heading mb-6">Contact Information</h3>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="text-primary mt-1 mr-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-neutral-heading font-medium">Email</p>
+                                <a href="mailto:contact@alteredsecurity.com" class="text-accent-trust hover:underline">contact@alteredsecurity.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-primary mt-1 mr-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-neutral-heading font-medium">Location</p>
+                                <p class="text-neutral-paragraph">Global / Remote</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Map Placeholder -->
+                    <div class="w-full h-48 bg-gray-200 rounded-lg overflow-hidden relative">
+                         <img src="https://picsum.photos/id/122/600/300" alt="Map Location" class="w-full h-full object-cover opacity-80">
+                         <div class="absolute inset-0 flex items-center justify-center">
+                             <span class="bg-white/80 px-3 py-1 rounded text-sm font-bold text-gray-800">Global Operations</span>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="contact-form" class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-neutral-paragraph mb-1">Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-neutral-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-neutral-paragraph mb-1">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-neutral-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition">
+                    </div>
+                    <div class="mb-4">
+                        <label for="subject" class="block text-sm font-medium text-neutral-paragraph mb-1">Subject</label>
+                        <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-neutral-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-neutral-paragraph mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-neutral-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition"></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-red-700 transition disabled:opacity-50 disabled:cursor-not-allowed">
+                        Send Message
+                    </button>
+                    <p id="form-status" class="mt-4 text-center text-sm hidden"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9) Footer -->
+    <footer class="bg-secondary text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p>&copy; <span id="year"></span> Nikhil Mittal. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Proposal Modal -->
+    <div id="proposal-modal" class="modal fixed inset-0 z-[100] flex items-center justify-center">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="closeModal()"></div>
+        
+        <!-- Content -->
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-2xl p-8 w-full max-w-md relative z-10 transform transition-all scale-100">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            
+            <h3 class="text-2xl font-bold text-neutral-heading mb-2">Request Proposal</h3>
+            <p class="text-sm text-neutral-paragraph mb-6">Interested in: <span id="modal-interest" class="font-bold text-primary">General</span></p>
+            
+            <form id="modal-form">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-neutral-paragraph mb-1">Name</label>
+                    <input type="text" required class="w-full px-4 py-2 border border-neutral-border rounded focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-neutral-paragraph mb-1">Work Email</label>
+                    <input type="email" required class="w-full px-4 py-2 border border-neutral-border rounded focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white">
+                </div>
+                <button type="submit" class="w-full py-2 bg-primary text-white font-bold rounded hover:bg-red-700 transition">Request Info</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // --- 1. Dark Mode Logic ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const html = document.documentElement;
+
+        // Check local storage or system preference
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            lightIcon.classList.remove('hidden');
+        } else {
+            html.classList.remove('dark');
+            darkIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            lightIcon.classList.toggle('hidden');
+            darkIcon.classList.toggle('hidden');
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    html.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    html.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
                 }
-                typer();
-            }
-
-            // --- CTA Functionality ---
-            window.trainWithNikhil = function() {
-                alert("Connecting you directly with Nikhil Mittal...\n\nYou'll be redirected to schedule a personal consultation to discuss your training needs and see if you qualify for his elite program.");
-                // In a real application, you would replace the alert with:
-                // window.location.href = "your_booking_link_here";
+            } else {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    html.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
             }
         });
+
+        // --- 2. Mobile Menu ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // --- 3. Typing Effect (Hero) ---
+        const textElement = document.getElementById('typing-text');
+        const phrases = ["DEF CON Speaker", "Black Hat Speaker", "Security Pioneer"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true;
+                setTimeout(type, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', type);
+
+        // --- 4. Event Filtering ---
+        function filterEvents(category) {
+            const cards = document.querySelectorAll('.event-card');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            // Update buttons
+            btns.forEach(b => {
+                b.classList.remove('bg-primary', 'text-white');
+                b.classList.add('bg-gray-100', 'text-gray-600', 'dark:bg-gray-800', 'dark:text-gray-300');
+                if((category === 'all' && b.innerText === 'All') || (b.innerText.toLowerCase().includes(category))) {
+                    b.classList.remove('bg-gray-100', 'text-gray-600', 'dark:bg-gray-800', 'dark:text-gray-300');
+                    b.classList.add('bg-primary', 'text-white');
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    card.classList.contains(category) ? card.style.display = 'block' : card.style.display = 'none';
+                }
+            });
+        }
+
+        // --- 5. Testimonial Carousel ---
+        const track = document.getElementById('carousel-track');
+        const nextBtn = document.getElementById('next-slide');
+        const prevBtn = document.getElementById('prev-slide');
+        let index = 0;
+        const totalSlides = 3;
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            index = (index + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            index = (index - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        // Auto play
+        let autoPlay = setInterval(() => {
+            index = (index + 1) % totalSlides;
+            updateCarousel();
+        }, 6000);
+
+        track.parentElement.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        track.parentElement.addEventListener('mouseleave', () => {
+            autoPlay = setInterval(() => {
+                index = (index + 1) % totalSlides;
+                updateCarousel();
+            }, 6000);
+        });
+
+        // --- 6. Modal Logic ---
+        const modal = document.getElementById('proposal-modal');
+        const interestSpan = document.getElementById('modal-interest');
+        const firstInput = modal.querySelector('input');
+
+        function openModal(interest) {
+            interestSpan.textContent = interest;
+            modal.classList.remove('hidden');
+            // Trigger reflow
+            void modal.offsetWidth; 
+            modal.classList.add('active');
+            firstInput.focus();
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Trap focus
+        modal.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Mock Modal Submit
+        document.getElementById('modal-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.innerText = 'Request Sent!';
+                setTimeout(() => {
+                    closeModal();
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    e.target.reset();
+                }, 1000);
+            }, 1000);
+        });
+
+        // --- 7. Contact Form Logic ---
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const statusMsg = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Basic validation
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(email)) {
+                statusMsg.textContent = "Please enter a valid email.";
+                statusMsg.className = "mt-4 text-center text-sm text-accent-error";
+                statusMsg.classList.remove('hidden');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            statusMsg.classList.add('hidden');
+
+            // Mock Fetch
+            setTimeout(() => {
+                // Success state
+                statusMsg.textContent = "Message sent successfully!";
+                statusMsg.className = "mt-4 text-center text-sm text-accent-success";
+                statusMsg.classList.remove('hidden');
+                submitBtn.textContent = 'Sent';
+                contactForm.reset();
+                
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                    statusMsg.classList.add('hidden');
+                }, 3000);
+            }, 1500);
+        });
+
+        // --- 8. Footer Year ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- 9. Image Lazy Loading ---
+        // Native loading="lazy" used in HTML tags, but ensuring JS support if needed
+        document.querySelectorAll('img').forEach(img => img.setAttribute('loading', 'lazy'));
+
+        // --- 10. Interactive Stats (New Logic) ---
+        const statsSection = document.getElementById('stats-section');
+        const statCounters = document.querySelectorAll('.stat-counter');
+        let statsAnimated = false;
+
+        function animateStats() {
+            statCounters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const suffix = counter.getAttribute('data-suffix');
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps
+
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.innerText = Math.floor(current).toLocaleString() + suffix;
+                }, 16);
+            });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !statsAnimated) {
+                    animateStats();
+                    statsAnimated = true;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
     </script>
 </body>
 </html>
