@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -21,7 +22,87 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com">
+        // --- 11. Active Tab Sync + Scroll Spy ---
+        const sections = document.querySelectorAll("section[id]");
+        const tabLinks = document.querySelectorAll(".tab-link, nav a[href^='#']");
+
+        function activateTab(id) {
+            tabLinks.forEach(link => {
+                link.classList.remove("bg-primary", "text-white");
+                link.classList.add("text-neutral-heading", "dark:text-gray-300");
+                if (link.getAttribute("href") === "#" + id) {
+                    link.classList.add("bg-primary", "text-white");
+                }
+            });
+        }
+
+        window.addEventListener("hashchange", () => {
+            const id = location.hash.replace("#", "");
+            if (id) activateTab(id);
+        });
+
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    history.replaceState(null, "", "#" + entry.target.id);
+                    activateTab(entry.target.id);
+                }
+            });
+        }, { threshold: 0.6 });
+
+        sections.forEach(section => spy.observe(section));
+
+    
+        // --- 12. Animated Tab Indicator + ARIA + Section Progress ---
+        const indicator = document.getElementById("tab-indicator");
+        const allTabs = document.querySelectorAll(".tab-link");
+
+        function moveIndicator(tab) {
+            if (!indicator || !tab) return;
+            const rect = tab.getBoundingClientRect();
+            const parentRect = tab.parentElement.getBoundingClientRect();
+            indicator.style.width = rect.width + "px";
+            indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;
+        }
+
+        function updateAria(activeTab) {
+            allTabs.forEach(t => t.setAttribute("aria-selected", "false"));
+            if (activeTab) activeTab.setAttribute("aria-selected", "true");
+        }
+
+        allTabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                moveIndicator(tab);
+                updateAria(tab);
+            });
+        });
+
+        // Initial indicator position
+        window.addEventListener("load", () => {
+            const active = document.querySelector(".tab-link[href='" + location.hash + "']") || allTabs[0];
+            moveIndicator(active);
+            updateAria(active);
+        });
+
+        // Section scroll progress bar
+        const progressBar = document.createElement("div");
+        progressBar.style.position = "fixed";
+        progressBar.style.top = "0";
+        progressBar.style.left = "0";
+        progressBar.style.height = "3px";
+        progressBar.style.background = "#EA3037";
+        progressBar.style.zIndex = "100";
+        document.body.appendChild(progressBar);
+
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + "%";
+        });
+
+    </script>
 
     <!-- Custom Tailwind Config -->
     <script>
@@ -62,6 +143,86 @@
                 }
             }
         }
+    
+        // --- 11. Active Tab Sync + Scroll Spy ---
+        const sections = document.querySelectorAll("section[id]");
+        const tabLinks = document.querySelectorAll(".tab-link, nav a[href^='#']");
+
+        function activateTab(id) {
+            tabLinks.forEach(link => {
+                link.classList.remove("bg-primary", "text-white");
+                link.classList.add("text-neutral-heading", "dark:text-gray-300");
+                if (link.getAttribute("href") === "#" + id) {
+                    link.classList.add("bg-primary", "text-white");
+                }
+            });
+        }
+
+        window.addEventListener("hashchange", () => {
+            const id = location.hash.replace("#", "");
+            if (id) activateTab(id);
+        });
+
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    history.replaceState(null, "", "#" + entry.target.id);
+                    activateTab(entry.target.id);
+                }
+            });
+        }, { threshold: 0.6 });
+
+        sections.forEach(section => spy.observe(section));
+
+    
+        // --- 12. Animated Tab Indicator + ARIA + Section Progress ---
+        const indicator = document.getElementById("tab-indicator");
+        const allTabs = document.querySelectorAll(".tab-link");
+
+        function moveIndicator(tab) {
+            if (!indicator || !tab) return;
+            const rect = tab.getBoundingClientRect();
+            const parentRect = tab.parentElement.getBoundingClientRect();
+            indicator.style.width = rect.width + "px";
+            indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;
+        }
+
+        function updateAria(activeTab) {
+            allTabs.forEach(t => t.setAttribute("aria-selected", "false"));
+            if (activeTab) activeTab.setAttribute("aria-selected", "true");
+        }
+
+        allTabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                moveIndicator(tab);
+                updateAria(tab);
+            });
+        });
+
+        // Initial indicator position
+        window.addEventListener("load", () => {
+            const active = document.querySelector(".tab-link[href='" + location.hash + "']") || allTabs[0];
+            moveIndicator(active);
+            updateAria(active);
+        });
+
+        // Section scroll progress bar
+        const progressBar = document.createElement("div");
+        progressBar.style.position = "fixed";
+        progressBar.style.top = "0";
+        progressBar.style.left = "0";
+        progressBar.style.height = "3px";
+        progressBar.style.background = "#EA3037";
+        progressBar.style.zIndex = "100";
+        document.body.appendChild(progressBar);
+
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + "%";
+        });
+
     </script>
 
     <!-- Custom CSS -->
@@ -121,15 +282,18 @@
                     </a>
                 </div>
 
-                <!-- Desktop Nav -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#hero" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Hero</a>
-                    <a href="#profile" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Profile</a>
-                    <a href="#expertise" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Expertise</a>
-                    <a href="#events" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Events</a>
-                    <a href="#testimonials" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Testimonials</a>
-                    <a href="#services" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Services</a>
-                    <a href="#contact" class="text-neutral-heading dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition">Contact</a>
+                <!-- Desktop Tab Navigation -->
+                <nav role="tablist" aria-label="Main Navigation" class="hidden md:flex relative bg-neutral-offWhite dark:bg-gray-800 rounded-full p-1 border border-neutral-border">
+                    <a href="#hero" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Hero</a>
+                    <a href="#profile" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Profile</a>
+                    <a href="#expertise" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Expertise</a>
+                    <a href="#events" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Events</a>
+                    <a href="#testimonials" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Testimonials</a>
+                    <a href="#services" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Services</a>
+                    <a href="#contact" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Contact</a>
+                
+                    <span id="tab-indicator" class="absolute bottom-0 h-1 bg-primary rounded-full transition-all duration-300"></span>
+
                 </nav>
 
                 <!-- Controls -->
@@ -143,7 +307,7 @@
                     </button>
 
                     <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <button id="mobile-menu-btn" class="hidden">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -152,77 +316,98 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#hero" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Hero</a>
-                <a href="#profile" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Profile</a>
-                <a href="#expertise" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Expertise</a>
-                <a href="#events" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Events</a>
-                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Testimonials</a>
-                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Services</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Contact</a>
+        <!-- Mobile Horizontal Swipe Tabs -->
+        <div id="mobile-menu" class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+            <div class="flex overflow-x-auto no-scrollbar gap-2 px-4 py-3">
+                <a href="#hero" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Overview</a>
+                <a href="#profile" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Profile</a>
+                <a href="#expertise" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Expertise</a>
+                <a href="#events" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Events</a>
+                <a href="#testimonials" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Testimonials</a>
+                <a href="#services" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Services</a>
+                <a href="#contact" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Contact</a>
             </div>
         </div>
     </header>
 
     <!-- 2) Hero Section -->
     <section id="hero" class="relative bg-hero-bg text-white py-20 lg:py-28 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <!-- The container now uses a responsive grid for 2 columns on desktop -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-24">
             
-            <!-- Animated Badge (Layout Fixed: Added h-8 to prevent jump) -->
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-gray-600 mb-6 animate-fade-in-up h-8">
-                <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                </span>
-                <span id="typing-text" class="text-sm font-medium tracking-wide">DEF CON / Black Hat Speaker</span>
-            </div>
+            <!-- === COLUMN 1: Content (Left Side) === -->
+            <div class="text-center md:text-left mb-10 md:mb-0">
+                
+                <!-- Animated Badge (Layout Fixed: Added h-8 to prevent jump) -->
+                <!-- Alignment adjusted: center on mobile, left on desktop -->
+                <div class="inline-flex md:justify-start items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-gray-600 mb-6 animate-fade-in-up h-8">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    <span id="typing-text" class="text-sm font-medium tracking-wide">DEF CON / Black Hat Speaker</span>
+                </div>
 
-            <!-- Heading -->
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-                Advance Red Team skills.<br class="hidden md:block" /> Taught by the pioneer.
-            </h1>
+                <!-- Heading -->
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Advance Red Team skills.<br class="hidden md:block" /> Taught by the pioneer.
+                </h1>
 
-            <!-- Rating / Social Proof (Updated with Avatars) -->
-            <div class="flex flex-col items-center justify-center gap-2 mb-8">
-                <div class="flex items-center gap-4 bg-secondary/30 px-6 py-2 rounded-full border border-gray-700 backdrop-blur-sm">
-                    <!-- Rating Star -->
-                    <div class="flex items-center gap-2 text-white font-bold text-lg">
-                        <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <span>4.8 rating</span>
+                <!-- Rating / Social Proof (Updated with Avatars) -->
+                <!-- Alignment adjusted: center on mobile, left on desktop -->
+                <div class="flex flex-col items-center md:items-start justify-center gap-2 mb-8">
+                    <div class="flex items-center gap-4 bg-secondary/30 px-6 py-2 rounded-full border border-gray-700 backdrop-blur-sm">
+                        <!-- Rating Star -->
+                        <div class="flex items-center gap-2 text-white font-bold text-lg">
+                            <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <span>4.8 rating</span>
+                        </div>
+                        
+                        <div class="h-6 w-px bg-gray-500 mx-2"></div>
+
+                        <!-- Avatar Group -->
+                        <div class="flex -space-x-3">
+                            <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/64/100/100" alt="Student">
+                            <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/65/100/100" alt="Student">
+                            <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/91/100/100" alt="Student">
+                            <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/177/100/100" alt="Student">
+                        </div>
                     </div>
                     
-                    <div class="h-6 w-px bg-gray-500 mx-2"></div>
-
-                    <!-- Avatar Group -->
-                    <div class="flex -space-x-3">
-                        <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/64/100/100" alt="Student">
-                        <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/65/100/100" alt="Student">
-                        <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/91/100/100" alt="Student">
-                        <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/177/100/100" alt="Student">
+                    <div class="text-gray-300 text-sm mt-2">
+                        Trusted by <span class="text-white font-bold">50K+</span> students from <span class="text-white font-bold">130+</span> countries
                     </div>
                 </div>
-                
-                <div class="text-gray-300 text-sm mt-2">
-                    Trusted by <span class="text-white font-bold">50K+</span> students from <span class="text-white font-bold">130+</span> countries
+
+                <!-- Subheading -->
+                <p class="max-w-3xl mx-auto md:mx-0 text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
+                    Learn from a Red Team specialist who builds real offensive skills and industry-ready certifications—so you can advance faster, deliver real impact, and lead sophisticated Red Team assessments.
+                </p>
+
+                <!-- CTAs -->
+                <!-- Alignment adjusted: center on mobile, left on desktop -->
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                    <a href="#services" class="px-8 py-3.5 bg-primary hover:bg-red-700 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                        Explore Services
+                    </a>
+                    <a href="#contact" class="px-8 py-3.5 border-2 border-gray-500 hover:border-white text-white font-bold rounded-lg transition hover:bg-white hover:text-black">
+                        Contact Now
+                    </a>
                 </div>
             </div>
 
-            <!-- Subheading -->
-            <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
-                Learn from a Red Team specialist who builds real offensive skills and industry-ready certifications—so you can advance faster, deliver real impact, and lead sophisticated Red Team assessments.
-            </p>
-
-            <!-- CTAs -->
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#services" class="px-8 py-3.5 bg-primary hover:bg-red-700 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-                    Explore Services
-                </a>
-                <a href="#contact" class="px-8 py-3.5 border-2 border-gray-500 hover:border-white text-white font-bold rounded-lg transition hover:bg-white hover:text-black">
-                    Contact Now
-                </a>
+             <!-- === COLUMN 2: Author Profile Photo (Right Side) === -->
+            <!-- Replaced custom SVG with a real human placeholder photo (image ID 451) -->
+            <div class="order-first md:order-last flex justify-center p-6 md:p-0">
+                <div class="w-full max-w-sm md:max-w-none aspect-[4/5] rounded-xl shadow-2xl border-4 border-primary/50 transform hover:scale-[1.02] transition-transform duration-500 overflow-hidden bg-secondary/50 flex items-center justify-center">
+                    <img src="https://static.wixstatic.com/media/470c31_f5cd02f8e548433c84b440f39bdabf9c~mv2.png/v1/crop/x_153,y_350,w_367,h_554/fill/w_231,h_366,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/BruCON-2022-66.png" 
+                         alt="Nikhil Mittal - Red Team Expert Portrait" 
+                         class="object-c w-full h-full"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x500/111827/F9FAFB?text=N.Mittal+Photo+Fallback';"
+                    >
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -710,12 +895,7 @@
         });
 
         // --- 2. Mobile Menu ---
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        // Mobile uses always-visible horizontal tab navigation
 
         // --- 3. Typing Effect (Hero) ---
         const textElement = document.getElementById('typing-text');
@@ -933,6 +1113,86 @@
         if (statsSection) {
             observer.observe(statsSection);
         }
+
+    
+        // --- 11. Active Tab Sync + Scroll Spy ---
+        const sections = document.querySelectorAll("section[id]");
+        const tabLinks = document.querySelectorAll(".tab-link, nav a[href^='#']");
+
+        function activateTab(id) {
+            tabLinks.forEach(link => {
+                link.classList.remove("bg-primary", "text-white");
+                link.classList.add("text-neutral-heading", "dark:text-gray-300");
+                if (link.getAttribute("href") === "#" + id) {
+                    link.classList.add("bg-primary", "text-white");
+                }
+            });
+        }
+
+        window.addEventListener("hashchange", () => {
+            const id = location.hash.replace("#", "");
+            if (id) activateTab(id);
+        });
+
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    history.replaceState(null, "", "#" + entry.target.id);
+                    activateTab(entry.target.id);
+                }
+            });
+        }, { threshold: 0.6 });
+
+        sections.forEach(section => spy.observe(section));
+
+    
+        // --- 12. Animated Tab Indicator + ARIA + Section Progress ---
+        const indicator = document.getElementById("tab-indicator");
+        const allTabs = document.querySelectorAll(".tab-link");
+
+        function moveIndicator(tab) {
+            if (!indicator || !tab) return;
+            const rect = tab.getBoundingClientRect();
+            const parentRect = tab.parentElement.getBoundingClientRect();
+            indicator.style.width = rect.width + "px";
+            indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;
+        }
+
+        function updateAria(activeTab) {
+            allTabs.forEach(t => t.setAttribute("aria-selected", "false"));
+            if (activeTab) activeTab.setAttribute("aria-selected", "true");
+        }
+
+        allTabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                moveIndicator(tab);
+                updateAria(tab);
+            });
+        });
+
+        // Initial indicator position
+        window.addEventListener("load", () => {
+            const active = document.querySelector(".tab-link[href='" + location.hash + "']") || allTabs[0];
+            moveIndicator(active);
+            updateAria(active);
+        });
+
+        // Section scroll progress bar
+        const progressBar = document.createElement("div");
+        progressBar.style.position = "fixed";
+        progressBar.style.top = "0";
+        progressBar.style.left = "0";
+        progressBar.style.height = "3px";
+        progressBar.style.background = "#EA3037";
+        progressBar.style.zIndex = "100";
+        document.body.appendChild(progressBar);
+
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + "%";
+        });
 
     </script>
 </body>
