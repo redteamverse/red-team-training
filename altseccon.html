@@ -8,6 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
+/* =====================
+   RESET & TOKENS
+===================== */
 * {
     margin: 0;
     padding: 0;
@@ -21,6 +24,8 @@
     --primary: #B91C1C;
     --primary-hover: #EA3037;
     --dark: #111827;
+    --offwhite: #F9FAFB;
+    --border: #E5E7EB;
 }
 
 body {
@@ -41,7 +46,6 @@ body {
     justify-content: center;
 }
 
-/* VIDEO */
 .hero video {
     position: absolute;
     inset: 0;
@@ -49,10 +53,8 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    filter: saturate(1.1) contrast(1.05);
 }
 
-/* OVERLAY */
 .hero::before {
     content: "";
     position: absolute;
@@ -66,7 +68,6 @@ body {
     );
 }
 
-/* CONTENT */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -75,7 +76,6 @@ body {
     text-align: center;
 }
 
-/* META */
 .meta-pill {
     display: inline-block;
     padding: 10px 22px;
@@ -89,28 +89,22 @@ body {
     background: rgba(255,255,255,0.08);
 }
 
-/* TITLE */
 .hero h1 {
     font-size: clamp(3rem, 7vw, 5rem);
     font-weight: 800;
     margin-bottom: 0.8rem;
 }
 
-/* EDITION */
 .edition {
     display: inline-block;
     padding: 8px 18px;
     margin-bottom: 2rem;
     font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
     background: var(--dark);
     border-radius: 999px;
 }
 
-/* =====================
-   AUTHORITY BLOCK
-===================== */
 .authority {
     max-width: 640px;
     margin: 0 auto 2.8rem;
@@ -118,13 +112,11 @@ body {
     background: rgba(17,24,39,0.55);
     border: 1px solid rgba(255,255,255,0.18);
     border-radius: 10px;
-    text-align: center;
 }
 
 .authority strong {
     display: block;
     font-size: 0.95rem;
-    margin-bottom: 4px;
 }
 
 .authority .meta {
@@ -132,15 +124,12 @@ body {
     color: var(--muted);
 }
 
-/* DIVIDER */
 .authority-divider {
     height: 1px;
-    width: 100%;
     background: rgba(255,255,255,0.25);
     margin: 14px 0 16px;
 }
 
-/* CAPABILITIES — RESPONSIVE */
 .authority-capabilities {
     display: flex;
     justify-content: center;
@@ -150,20 +139,6 @@ body {
     color: var(--muted);
 }
 
-/* Each capability item */
-.authority-capabilities div {
-    white-space: nowrap;
-}
-
-/* Mobile: stack vertically */
-@media (max-width: 640px) {
-    .authority-capabilities {
-        flex-direction: column;
-        gap: 8px;
-    }
-}
-
-/* CTA */
 .actions {
     display: flex;
     gap: 20px;
@@ -175,7 +150,6 @@ body {
     padding: 16px 34px;
     font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.6px;
     text-transform: uppercase;
     border-radius: 4px;
     text-decoration: none;
@@ -183,74 +157,268 @@ body {
 
 .btn-primary {
     background: var(--primary);
-    color: white;
-}
-
-.btn-primary:hover {
-    background: var(--primary-hover);
+    color: var(--white);
 }
 
 .btn-secondary {
-    border: 2px solid white;
-    color: white;
+    border: 2px solid var(--white);
+    color: var(--white);
 }
 
-/* SCROLL CUE */
-.scroll {
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    font-size: 0.7rem;
-    letter-spacing: 0.5px;
+/* =====================
+   SECTION 2: DELIVERED
+===================== */
+.delivered-section {
+    background: var(--offwhite);
+    color: var(--dark);
+    padding: 96px 24px;
+}
+
+.delivered-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.delivered-section h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+}
+
+.delivered-intro {
+    font-size: 1.05rem;
+    color: #374151;
+    max-width: 720px;
+    margin-bottom: 3.2rem;
+}
+
+.delivered-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.delivered-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+}
+
+.delivered-card h3 {
+    font-size: 0.85rem;
     text-transform: uppercase;
-    opacity: 0.85;
+    margin-bottom: 10px;
 }
 
-.scroll-line {
-    width: 2px;
-    height: 26px;
-    background: white;
-    margin: 8px auto 0;
-    animation: scrollPulse 1.8s infinite;
+.delivered-card p {
+    font-size: 0.95rem;
+    color: #374151;
 }
 
-@keyframes scrollPulse {
-    0% { opacity: 0.2; transform: translateY(0); }
-    50% { opacity: 1; transform: translateY(8px); }
-    100% { opacity: 0.2; transform: translateY(0); }
+/* =====================
+   SECTION 3: COMMUNITY TRUST
+===================== */
+.trust-section {
+    background: var(--white);
+    color: var(--dark);
+    padding: 88px 24px;
+}
+
+.trust-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.trust-section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.trust-intro {
+    font-size: 1rem;
+    color: #374151;
+    max-width: 720px;
+    margin-bottom: 3.2rem;
+}
+
+.trust-logos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 48px;
+    align-items: center;
+}
+
+.trust-logos img {
+    max-height: 42px;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+    filter: grayscale(100%);
+    opacity: 0.8;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 1024px) {
+    .delivered-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .trust-logos {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 640px) {
-    .actions { flex-direction: column; }
+    .authority-capabilities {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .actions {
+        flex-direction: column;
+    }
+    .delivered-grid {
+        grid-template-columns: 1fr;
+    }
+    .trust-logos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
 }
+    /* =====================
+   SECTION 4: TRAINING PROGRAMS
+===================== */
+.course-grid-section {
+  background: #F9FAFB;
+  color: #111827;
+  padding: 96px 24px;
+}
+
+
+.course-grid-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.course-grid-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.course-grid-intro {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #374151;
+  max-width: 760px;
+  margin-bottom: 3.6rem;
+}
+
+/* GRID */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* CARD */
+.course-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.course-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.course-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4B5563;
+  margin-bottom: 10px;
+}
+
+.course-card a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E3A8A;
+  text-decoration: none;
+}
+
+.course-card a:hover {
+  text-decoration: underline;
+}
+
+/* CENTER SECOND ROW 
+.center-card:nth-of-type(4) {
+  grid-column: 2 / 3;
+}
+
+.center-card:nth-of-type(5) {
+  grid-column: 3 / 4;
+}*/
+
+/* CTA */
+.course-grid-cta {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .center-card {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-grid-section {
+    padding: 72px 20px;
+  }
+
+  .course-grid-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+
+
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
-
     <video autoplay muted loop playsinline>
         <source src="https://darling-dolphin-3ff53c.netlify.app/images/altseccon-hero.mp4" type="video/mp4">
     </video>
 
     <div class="hero-content">
-
         <div class="meta-pill">In-Person Red Team Training</div>
-
         <h1>AltsecCON</h1>
-
         <div class="edition">Bengaluru Edition 2025</div>
 
-        <!-- AUTHORITY BLOCK -->
         <div class="authority">
             <strong>Led by Nikhil Mittal</strong>
             <div class="meta">Red Team expert · Trained 50,000+ professionals worldwide</div>
-
             <div class="authority-divider"></div>
-
             <div class="authority-capabilities">
                 <div>Instructor-led Training</div>
                 <div>Enterprise Active Directory</div>
@@ -262,15 +430,101 @@ body {
             <a href="#" class="btn btn-primary">Explore Training Programs</a>
             <a href="#" class="btn btn-secondary">Join AltsecCON 2026</a>
         </div>
-
     </div>
-
-    <div class="scroll">
-        Scroll
-        <div class="scroll-line"></div>
-    </div>
-
 </section>
+
+<!-- SECTION 2 -->
+<section class="delivered-section">
+    <div class="delivered-container">
+        <h2>What AltsecCON Delivered</h2>
+        <p class="delivered-intro">
+            A three-day, in-person training event designed around depth,
+            realism, and practical Red Team skill development.
+        </p>
+
+        <div class="delivered-grid">
+            <div class="delivered-card"><h3>Training Format</h3><p>Full-length, instructor-led Red Team training courses.</p></div>
+            <div class="delivered-card"><h3>Technical Depth</h3><p>Enterprise Active Directory and Azure cloud attack scenarios.</p></div>
+            <div class="delivered-card"><h3>Practical Execution</h3><p>Hands-on labs reflecting real organizational environments.</p></div>
+            <div class="delivered-card"><h3>Certification</h3><p>Course completion certificates issued for each program.</p></div>
+            <div class="delivered-card"><h3>Continuity</h3><p>Post-training reference material for continued learning.</p></div>
+            <div class="delivered-card"><h3>Community</h3><p>Direct interaction with instructors and peers in person.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="trust-section">
+    <div class="trust-container">
+        <h2>Trusted by the Security Community</h2>
+        <p class="trust-intro">
+            Participants from the following organizations attended AltsecCON training programs.
+        </p>
+
+        <div class="trust-logos">
+            <img src="https://redteamverse.github.io/red-team-training/images/microsoft.png" alt="Microsoft">
+            <img src="https://redteamverse.github.io/red-team-training/images/security.png" alt="Security">
+            <img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg" alt="TCS">
+            <img src="https://redteamverse.github.io/red-team-training/images/wipro.png" alt="Wipro">
+            <img src="https://redteamverse.github.io/red-team-training/images/RS.jpg" alt="RS">
+            <img src="https://redteamverse.github.io/red-team-training/images/SST.png" alt="SST">
+        </div>
+    </div>
+</section>
+<section class="course-grid-section">
+  <div class="course-grid-container">
+
+    <h2>Training Programs Offered</h2>
+
+    <p class="course-grid-intro">
+      AltsecCON featured instructor-led Red Team certification programs
+      covering enterprise Active Directory, evasion techniques, and Azure
+      cloud attack tradecraft.
+    </p>
+
+    <div class="course-grid">
+
+      <!-- Row 1 -->
+      <div class="course-card">
+        <h3>Certified Red Team Professional (CRTP)</h3>
+        <p>Foundational Active Directory Red Team tradecraft and attack paths.</p>
+        <a href="#">View course details</a>
+      </div>
+
+      <div class="course-card">
+        <h3>Certified Red Team Expert (CRTE)</h3>
+        <p>Advanced enterprise Active Directory attack simulation and tradecraft.</p>
+        <a href="#">View course details</a>
+      </div>
+
+      <div class="course-card">
+        <h3>Certified Evasion Techniques Professional (CETP)</h3>
+        <p>Offensive evasion techniques targeting modern defensive controls.</p>
+        <a href="#">View course details</a>
+      </div>
+
+      <!-- Row 2 (centered) -->
+      <div class="course-card center-card">
+        <h3>Certified Red Team Professional for Azure (CARTP)</h3>
+        <p>Azure identity, access control, and cloud-based Red Team operations.</p>
+        <a href="#">View course details</a>
+      </div>
+
+      <div class="course-card center-card">
+        <h3>Certified Red Team Expert for Azure (CARTE)</h3>
+        <p>Advanced Azure Red Team attack paths and cloud-native tradecraft.</p>
+        <a href="#">View course details</a>
+      </div>
+
+    </div>
+
+    <div class="course-grid-cta">
+      <a href="#" class="btn btn-primary">View All Training Programs</a>
+    </div>
+
+  </div>
+</section>
+
 
 </body>
 </html>
