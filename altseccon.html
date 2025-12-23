@@ -26,7 +26,6 @@
   --border: #E5E7EB;
   --primary: #B91C1C;
 
-  /* Rhythm */
   --space-xs: 48px;
   --space-md: 72px;
   --space-lg: 96px;
@@ -166,8 +165,15 @@ body {
 /* =====================
    VISUAL PROOF STRIP
 ===================== */
+.proof-strip {
+  background: linear-gradient(
+    to bottom,
+    rgba(43,43,80,0.9),
+    rgba(43,43,80,1)
+  );
+  padding: var(--space-md) 24px var(--space-xs);
+}
 
-/* Proof strip label */
 .proof-label {
   max-width: 1100px;
   margin: 0 auto 24px;
@@ -176,16 +182,6 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.55);
-}
-
-    
-.proof-strip {
-  background: linear-gradient(
-    to bottom,
-    rgba(43,43,80,0.9),
-    rgba(43,43,80,1)
-  );
-  padding: var(--space-md) 24px var(--space-xs);
 }
 
 .proof-grid {
@@ -201,31 +197,16 @@ body {
   height: 260px;
   object-fit: cover;
   border-radius: 12px;
-  filter: saturate(0.85) contrast(0.92) brightness(0.95) hue-rotate(-6deg);
   opacity: 0.92;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* Desktop hover affordance */
 @media (hover: hover) and (pointer: fine) {
   .proof-grid img:hover {
     transform: translateY(-3px);
     opacity: 1;
   }
 }
-
-/* Slightly mute laptop close-up */
-.proof-grid img:last-child {
-  filter: saturate(0.75) contrast(0.9) brightness(0.92);
-}
-
-@media (max-width: 640px) {
-  .proof-label {
-    margin-bottom: 16px;
-    font-size: 0.65rem;
-  }
-}
-
 
 /* =====================
    SECTION DIVIDER
@@ -278,6 +259,8 @@ body {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 22px;
+  display: flex;
+  flex-direction: column;
 }
 
 .delivered-card h3 {
@@ -289,10 +272,11 @@ body {
 .delivered-card p {
   font-size: 0.95rem;
   color: var(--muted);
+  margin-top: auto;
 }
 
 /* =====================
-   COMMUNITY TRUST
+   TRUST SECTION
 ===================== */
 .trust-section {
   background: var(--white);
@@ -401,30 +385,20 @@ body {
 ===================== */
 @media (max-width: 1024px) {
   .proof-grid,
-  .delivered-grid {
+  .delivered-grid,
+  .course-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .trust-logos {
     grid-template-columns: repeat(3, 1fr);
   }
-
-  .course-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 640px) {
   .proof-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .proof-grid img {
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
-    background: #1F2937;
-    padding: 6px;
+    gap: 16px;
   }
 
   .delivered-grid,
@@ -436,6 +410,516 @@ body {
     flex-direction: column;
   }
 }
+  /* =====================
+   EVENT STRUCTURE (CARD-BASED)
+===================== */
+
+.event-structure-section {
+  background: #FFFFFF;
+  padding: var(--space-lg) 24px;
+}
+
+.event-structure-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.event-structure-text h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.event-structure-summary {
+  font-size: 1.05rem;
+  color: #374151;
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
+/* STRUCTURE CARDS */
+.event-structure-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.structure-card {
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 18px 20px;
+  background: #FFFFFF;
+}
+
+.structure-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.structure-card p {
+  font-size: 0.9rem;
+  color: #4B5563;
+  line-height: 1.5;
+}
+
+/* CTA */
+.event-structure-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E3A8A;
+  text-decoration: none;
+}
+
+/* IMAGE */
+.event-structure-image {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.event-structure-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.9) contrast(0.95);
+}
+
+/* Hover affordance */
+@media (hover: hover) and (pointer: fine) {
+  .event-structure-link:hover {
+    text-decoration: underline;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .event-structure-container {
+    grid-template-columns: 1fr;
+  }
+
+  .event-structure-cards {
+    grid-template-columns: 1fr;
+  }
+}
+/* Operational details (time & breaks) */
+.event-structure-ops {
+  margin-bottom: 28px;
+  font-size: 0.9rem;
+  color: #374151;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 32px;
+}
+
+.event-structure-ops strong {
+  font-weight: 600;
+  color: #111827;
+}
+  /* Section eyebrow / label */
+.section-eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6B7280;
+  margin-bottom: 8px;
+}
+
+/* =====================
+CERTIFICATION & OUTCOMES
+===================== */
+.certification-section {
+  background: var(--offwhite);
+  color: var(--dark);
+  padding: var(--space-lg) 24px;
+}
+
+.certification-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.certification-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.certification-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 720px;
+  margin-bottom: var(--space-md);
+}
+
+.certification-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.certification-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px;
+}
+
+.certification-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--dark);
+  text-transform: uppercase;
+}
+
+.certification-card p {
+  font-size: 0.95rem;
+  color: #4B5563;
+  line-height: 1.6;
+}
+
+.certification-cta {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.certification-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E3A8A;
+  text-decoration: none;
+}
+
+/* Hover affordance */
+@media (hover: hover) and (pointer: fine) {
+  .certification-link:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .certification-points {
+    grid-template-columns: 1fr;
+  }
+}
+  /* =====================
+GALLERY PREVIEW
+===================== */
+.gallery-section {
+  background: var(--offwhite);
+  color: var(--dark);
+  padding: var(--space-lg) 24px;
+}
+
+.gallery-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gallery-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.gallery-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 720px;
+  margin-bottom: var(--space-md);
+}
+
+/* GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  opacity: 0.95;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Hover affordance */
+@media (hover: hover) and (pointer: fine) {
+  .gallery-grid img:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+/* Caption */
+.gallery-caption {
+  font-size: 0.85rem;
+  color: #6B7280;
+  margin-bottom: 24px;
+}
+
+/* CTA */
+.gallery-cta {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.gallery-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E3A8A;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 200px;
+  }
+}
+/* =====================
+ALTSECCON 2026 TEASER
+===================== */
+.teaser-section {
+  background: var(--offwhite);
+  color: var(--dark);
+  padding: var(--space-lg) 24px var(--space-md);
+}
+
+.teaser-container {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.teaser-section h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.teaser-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+/* FORM */
+.teaser-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.teaser-form input {
+  min-width: 280px;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-family: inherit;
+}
+
+.teaser-form input::placeholder {
+  color: #9CA3AF;
+}
+
+.teaser-form button {
+  padding: 14px 28px;
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .teaser-section h2 {
+    font-size: 2rem;
+  }
+
+  .teaser-form {
+    flex-direction: column;
+  }
+
+  .teaser-form input,
+  .teaser-form button {
+    width: 100%;
+  }
+}
+
+/* =====================
+THANK YOU SECTION
+===================== */
+.thankyou-section {
+  background: var(--white);
+  color: var(--dark);
+  padding: var(--space-lg) 24px var(--space-lg);
+}
+
+.thankyou-container {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.thankyou-section h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.thankyou-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.thankyou-image {
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  border: 1px solid var(--border);
+}
+
+.thankyou-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.thankyou-note {
+  font-size: 0.95rem;
+  color: #374151;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .thankyou-section h2 {
+    font-size: 2rem;
+  }
+}
+/* Feedback CTA inside Thank You */
+.thankyou-feedback {
+  margin-top: 32px;
+}
+
+.thankyou-feedback p {
+  font-size: 0.85rem;
+  color: #6B7280;
+  margin-bottom: 6px;
+}
+
+.thankyou-feedback-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E3A8A;
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .thankyou-feedback-link:hover {
+    text-decoration: underline;
+  }
+}
+/* =====================
+CONTACT US
+===================== */
+.contact-section {
+  background: var(--offwhite);
+  color: var(--dark);
+  padding: var(--space-lg) 24px var(--space-lg);
+}
+
+.contact-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.contact-intro {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+/* FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #9CA3AF;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  padding: 14px 30px;
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+}
+
 </style>
 </head>
 
@@ -444,7 +928,7 @@ body {
 <!-- HERO -->
 <section class="hero">
   <video autoplay muted loop playsinline>
-    <source src="https://darling-dolphin-3ff53c.netlify.app/images/altseccon-hero.mp4" type="video/mp4">
+    <source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm" type="video/webm">
   </video>
 
   <div class="hero-content">
@@ -473,15 +957,13 @@ body {
 <!-- VISUAL PROOF STRIP -->
 <section class="proof-strip">
   <div class="proof-label">Instructor-led training in practice</div>
-
   <div class="proof-grid">
-    <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9150.jpg" alt="Instructor explaining Red Team concepts">
-    <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-1747.jpg" alt="Instructor engaging with students">
-    <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9219.jpg" alt="Classroom Red Team training session">
-    <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9141.jpg" alt="Red Team training documentation on laptop">
+    <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9150.jpg" alt="">
+    <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-1747.jpg" alt="">
+    <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9219.jpg" alt="">
+    <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9141.jpg" alt="">
   </div>
 </section>
-
 
 <div class="section-divider"></div>
 
@@ -491,18 +973,21 @@ body {
     <h2>What AltsecCON Delivered</h2>
     <p class="delivered-intro">
       A three-day, in-person training event designed around depth, realism,
-      and practical Red Team skill development.
+      and long-term skill development.
     </p>
 
     <div class="delivered-grid">
-      <div class="delivered-card"><h3>Training Format</h3><p>Full-length instructor-led Red Team courses.</p></div>
-      <div class="delivered-card"><h3>Technical Depth</h3><p>Enterprise Active Directory and Azure attack scenarios.</p></div>
-      <div class="delivered-card"><h3>Hands-on Labs</h3><p>Real organizational lab environments.</p></div>
+      <div class="delivered-card"><h3>Instructor-Led Training</h3><p>Full-length Red Team courses delivered in person.</p></div>
+      <div class="delivered-card"><h3>Enterprise Lab Access</h3><p>One-month access to enterprise-aligned labs.</p></div>
+      <div class="delivered-card"><h3>Lifetime Study Material</h3><p>Course material available for long-term learning.</p></div>
+      <div class="delivered-card"><h3>Course Certificates</h3><p>Completion certificates for each training.</p></div>
+      <div class="delivered-card"><h3>Post-Training References</h3><p>Reference material for continued practice.</p></div>
+      <div class="delivered-card"><h3>Peer & Instructor Interaction</h3><p>Direct engagement in an in-person setting.</p></div>
     </div>
   </div>
 </section>
 
-<!-- COMMUNITY TRUST -->
+<!-- TRUST -->
 <section class="trust-section">
   <div class="trust-container">
     <h2>Trusted by the Security Community</h2>
@@ -544,6 +1029,262 @@ body {
     </div>
   </div>
 </section>
+<!-- Event Overview-->
+  <section class="event-structure-section">
+  <div class="event-structure-container">
+
+    <div class="event-structure-text">
+      <span class="section-eyebrow">Event Format</span>
+      <h2>Event Structure Overview</h2>
+
+      <p class="event-structure-summary">
+        AltsecCON was conducted as a focused, in-person Red Team training event
+        structured for depth, continuity, and practical execution.
+      </p>
+
+      <div class="event-structure-cards">
+        <div class="structure-card">
+          <h3>Multi-Day Format</h3>
+          <p>Training was delivered across multiple consecutive days to allow uninterrupted learning.</p>
+        </div>
+
+        <div class="structure-card">
+          <h3>Full-Length Courses</h3>
+          <p>Each program was taught end-to-end rather than split into short sessions.</p>
+        </div>
+
+        <div class="structure-card">
+          <h3>Parallel Training Tracks</h3>
+          <p>Multiple courses ran simultaneously to support different experience levels.</p>
+        </div>
+
+        <div class="structure-card">
+          <h3>In-Person Delivery</h3>
+          <p>All sessions were conducted on-site with direct instructor interaction.</p>
+        </div>
+      </div>
+
+      <!-- Operational details -->
+      <div class="event-structure-ops">
+        <div><strong>Daily training hours:</strong> 9:00 AM – 5:00 PM</div>
+        <div><strong>Scheduled breaks:</strong> Tea breaks and lunch included</div>
+      </div>
+
+      <a href="/event" class="event-structure-link">
+        View full event details →
+      </a>
+    </div>
+
+    <div class="event-structure-image">
+      <img
+        src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9212.jpg"
+        alt="Instructor-led Red Team training session"
+      >
+    </div>
+
+  </div>
+</section>
+ 
+  <!-- CERTIFICATION & OUTCOMES -->
+<section class="certification-section">
+  <div class="certification-container">
+
+    <span class="section-eyebrow">Certification & Outcomes</span>
+    <h2>Course Completion Certification</h2>
+
+    <p class="certification-intro">
+      Participants who successfully complete the full instructor-led training
+      receive an official course completion certificate issued by Altered Security.
+      This certification validates hands-on participation and successful completion
+      of the program.
+    </p>
+
+    <div class="certification-points">
+      <div class="certification-card">
+        <h3>Issued After Full Training</h3>
+        <p>
+          Certificates are issued only after attending the complete training
+          duration, including all practical and instructor-led sessions.
+        </p>
+      </div>
+
+      <div class="certification-card">
+        <h3>Completion-Based Validation</h3>
+        <p>
+          The certification reflects successful course completion
+          and learning outcomes — not just attendance.
+        </p>
+      </div>
+    </div>
+
+    <div class="certification-cta">
+      <a href="#" class="certification-link">
+        View Certification Details →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALLERY PREVIEW -->
+<section class="gallery-section">
+  <div class="gallery-container">
+
+    <span class="section-eyebrow">Gallery</span>
+    <h2>In-Person Training, Real Classrooms</h2>
+
+    <p class="gallery-intro">
+      A glimpse into the instructor-led, in-person Red Team training sessions
+      conducted during AltsecCON.
+    </p>
+
+    <div class="gallery-grid">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-1.jpg" alt="AltsecCON classroom training">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-2.jpg" alt="Instructor-led Red Team session">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-3.jpg" alt="Hands-on Red Team training">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-4.jpg" alt="AltsecCON live training environment">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-5.jpg" alt="Enterprise Red Team classroom">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-6.jpg" alt="Participants during Red Team training">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-7.jpg" alt="AltsecCON instructor interaction">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.jpg" alt="In-person Red Team workshop">
+    </div>
+
+    <div class="gallery-caption">
+      In-person training, real classrooms
+    </div>
+
+    <div class="gallery-cta">
+      <a href="/gallery" class="gallery-link">
+        View Full Gallery →
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- ALTSECCON 2026 TEASER -->
+<section class="teaser-section">
+  <div class="teaser-container">
+
+    <span class="section-eyebrow">What’s Next</span>
+    <h2>AltsecCON 2026</h2>
+
+    <p class="teaser-intro">
+      AltsecCON returns in 2026 as a focused, in-person Red Team training
+      program built for security professionals who value depth, realism,
+      and instructor-led execution.
+      The next edition will continue the same training-first approach
+      that defines AltsecCON.
+    </p>
+
+    <form class="teaser-form" action="#" method="post">
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your work email"
+        required
+        aria-label="Email address"
+      >
+      <button type="submit" class="btn btn-primary">
+        Join Interest List
+      </button>
+    </form>
+
+  </div>
+</section>
+<!-- THANK YOU SECTION -->
+<section class="thankyou-section">
+  <div class="thankyou-container">
+
+    <h2>Thank You for Joining AltsecCON</h2>
+
+    <p class="thankyou-intro">
+      AltsecCON was built around one principle — serious, in-person
+      Red Team training delivered with depth, realism, and intent.
+      Your participation helped shape an environment focused on learning,
+      collaboration, and execution.
+    </p>
+
+    <div class="thankyou-image">
+      <img
+        src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.jpg"
+        alt="AltsecCON in-person Red Team training session"
+      >
+    </div>
+
+    <p class="thankyou-note">
+      We appreciate the time, effort, and commitment you brought to the classroom.
+      We look forward to continuing this journey with the security community
+      through future AltsecCON editions.
+    </p>
+
+  <div class="thankyou-feedback">
+  <p>
+    Your feedback helps us maintain the depth and quality of
+    AltsecCON training.
+  </p>
+  <a href="/feedback" class="thankyou-feedback-link">
+    Share feedback →
+  </a>
+</div>
+</div>
+  
+</section>
+<!-- CONTACT US -->
+<section class="contact-section">
+  <div class="contact-container">
+
+    <h2>Contact Us</h2>
+
+    <p class="contact-intro">
+      For training inquiries, group participation, or general questions
+      related to AltsecCON, you can reach us using the form below.
+    </p>
+
+    <form class="contact-form" action="#" method="post">
+
+      <div class="form-row">
+        <input
+          type="text"
+          name="name"
+          placeholder="Full name"
+          required
+          aria-label="Full name"
+        >
+        <input
+          type="email"
+          name="email"
+          placeholder="Work email"
+          required
+          aria-label="Email address"
+        >
+      </div>
+
+      <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+        aria-label="Subject"
+      >
+
+      <textarea
+        name="message"
+        rows="4"
+        placeholder="Your message"
+        required
+        aria-label="Message"
+      ></textarea>
+
+      <button type="submit" class="btn btn-primary">
+        Send Message
+      </button>
+
+    </form>
+
+  </div>
+</section>
+
+
+
 
 </body>
 </html>
