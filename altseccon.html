@@ -919,6 +919,179 @@ CONTACT US
     width: 100%;
   }
 }
+  /* =====================
+INSTRUCTOR SECTION
+===================== */
+.instructor-section {
+  background: var(--offwhite);
+  color: var(--dark);
+  padding: var(--space-lg) 24px var(--space-lg);
+}
+
+.instructor-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.instructor-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.instructor-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 800px;
+  margin: 0 auto 32px;
+}
+
+/* Instructor Grid */
+.instructor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-bottom: 32px;
+}
+
+.instructor-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+}
+
+.instructor-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+.instructor-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--dark);
+}
+
+.instructor-card p {
+  font-size: 0.9rem;
+  color: #4B5563;
+}
+
+/* Supporting images */
+.instructor-support {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.instructor-support img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  opacity: 0.96;
+  transition: transform 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .instructor-support img:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .instructor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instructor-support {
+    grid-template-columns: 1fr;
+  }
+}
+/* =====================
+/* =====================
+TESTIMONIALS (ROTATING)
+===================== */
+.testimonial-section {
+  background: var(--white);
+  color: var(--dark);
+  padding: var(--space-lg) 24px;
+}
+
+.testimonial-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonial-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.testimonial-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 720px;
+  margin-bottom: var(--space-md);
+}
+
+/* Viewport */
+.testimonial-viewport {
+  overflow: hidden;
+}
+
+/* Track */
+.testimonial-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.6s ease;
+}
+
+/* Card */
+.testimonial-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  background: var(--offwhite);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* Text */
+.testimonial-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 18px;
+}
+
+.testimonial-author strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--dark);
+}
+
+.testimonial-author span {
+  font-size: 0.8rem;
+  color: #6B7280;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .testimonial-card {
+    flex: 0 0 100%;
+  }
+}
+
 
 </style>
 </head>
@@ -970,7 +1143,7 @@ CONTACT US
 <!-- WHAT ALTSECCON DELIVERED -->
 <section class="delivered-section">
   <div class="delivered-container">
-   <span class="section-eyebrow">Outcome</span>
+    <span class="section-eyebrow">Outcome</span>
     <h2>What AltsecCON Delivered</h2>
     <p class="delivered-intro">
       A three-day, in-person training event designed around depth, realism,
@@ -991,7 +1164,7 @@ CONTACT US
 <!-- TRUST -->
 <section class="trust-section">
   <div class="trust-container">
-     <span class="section-eyebrow">Community trust</span
+    <span class="section-eyebrow">Community trust</span>
     <h2>Trusted by the Security Community</h2>
     <p class="trust-intro">
       Participants from the following organizations attended AltsecCON.
@@ -1007,11 +1180,15 @@ CONTACT US
     </div>
   </div>
 </section>
+  
+  
+
 
 <!-- TRAINING PROGRAMS -->
 <section class="course-grid-section">
   <div class="course-grid-container">
-     <span class="section-eyebrow">Course Offered </span>
+    <span class="section-eyebrow">Course Offered 
+    </span>
     <h2>Training Programs Offered</h2>
 
     <p class="course-grid-intro">
@@ -1030,6 +1207,48 @@ CONTACT US
     <div class="course-grid-cta">
       <a href="#" class="btn btn-primary">View All Training Programs</a>
     </div>
+  </div>
+</section>
+  
+  <!-- INSTRUCTOR SECTION -->
+<section class="instructor-section">
+  <div class="instructor-container">
+
+    <span class="section-eyebrow">Instructors</span>
+    <h2>Meet Your Instructors</h2>
+
+    <p class="instructor-intro">
+      Our instructors bring deep Red Team experience from enterprise operations,
+      real-world engagements, and advanced adversary simulation.
+    </p>
+
+    <div class="instructor-grid">
+      <!-- Primary Instructors -->
+      <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" alt="Nikhil Mittal">
+        <h3>Nikhil Mittal</h3>
+        <p>Lead Red Team Instructor</p>
+      </div>
+
+      <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/Shaunak.webp" alt="Shaunak">
+        <h3>Shaunak</h3>
+        <p>Senior Red Team Specialist</p>
+      </div>
+
+      <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/Manthan.webp" alt="Manthan">
+        <h3>Manthan</h3>
+        <p>Red Team Practitioner</p>
+      </div>
+    </div>
+
+    <!-- Supporting Images -->
+    <div class="instructor-support">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="AltsecCON instruction scene">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Hands-on teaching moment">
+    </div>
+
   </div>
 </section>
 <!-- Event Overview-->
@@ -1164,6 +1383,150 @@ CONTACT US
 
   </div>
 </section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonial-section">
+  <div class="testimonial-container">
+
+    <span class="section-eyebrow">Testimonials</span>
+    <h2>What Participants Said</h2>
+
+    <p class="testimonial-intro">
+      Feedback from security professionals who attended AltsecCON
+      and participated in the in-person Red Team training.
+    </p>
+
+    <div class="testimonial-viewport">
+
+      <div class="testimonial-track">
+
+        <!-- TESTIMONIAL 1 -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            “This was hands-on Red Team training, not a surface-level conference.
+            The depth and execution were exactly what I was looking for.”
+          </p>
+          <div class="testimonial-author">
+            <strong>Senior Security Engineer</strong>
+            <span>Enterprise Technology Firm</span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 2 -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            “The instructor-led format made a big difference.
+            Real scenarios, real discussion, real learning.”
+          </p>
+          <div class="testimonial-author">
+            <strong>Red Team Practitioner</strong>
+            <span>Financial Services Organization</span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 3 -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            “AltsecCON felt closer to an internal Red Team workshop
+            than an external event.”
+          </p>
+          <div class="testimonial-author">
+            <strong>Offensive Security Consultant</strong>
+            <span>Security Consulting Firm</span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 4 -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            “Clear instruction, strong lab alignment,
+            and meaningful interaction with instructors.”
+          </p>
+          <div class="testimonial-author">
+            <strong>Security Analyst</strong>
+            <span>Global Services Company</span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 5 -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            “The in-person delivery added a level of clarity
+            that online training rarely achieves.”
+          </p>
+          <div class="testimonial-author">
+            <strong>Blue Team Lead</strong>
+            <span>Enterprise SOC</span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 6 -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            “This was practical Red Team instruction
+            grounded in real enterprise environments.”
+          </p>
+          <div class="testimonial-author">
+            <strong>Penetration Tester</strong>
+            <span>Consulting Organization</span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 7 -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            “The pace, depth, and structure were very well balanced.”
+          </p>
+          <div class="testimonial-author">
+            <strong>Security Architect</strong>
+            <span>Technology Company</span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 8 -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            “AltsecCON is clearly designed for professionals
+            who want real skill development.”
+          </p>
+          <div class="testimonial-author">
+            <strong>Red Team Operator</strong>
+            <span>Enterprise Security Group</span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 9 -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            “The ability to discuss scenarios directly with instructors
+            was extremely valuable.”
+          </p>
+          <div class="testimonial-author">
+            <strong>Incident Response Specialist</strong>
+            <span>Critical Infrastructure Org</span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 10 -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            “A focused training environment with no distractions.
+            Exactly what serious practitioners need.”
+          </p>
+          <div class="testimonial-author">
+            <strong>Offensive Security Engineer</strong>
+            <span>Enterprise Security Team</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
 <!-- ALTSECCON 2026 TEASER -->
 <section class="teaser-section">
   <div class="teaser-container">
@@ -1287,6 +1650,23 @@ CONTACT US
 </section>
 
 
+<script>
+  (function () {
+    const track = document.querySelector('.testimonial-track');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const visible = 3;
+    let index = 0;
+
+    if (!track || cards.length <= visible) return;
+
+    const totalSteps = cards.length - visible + 1;
+
+    setInterval(() => {
+      index = (index + 1) % totalSteps;
+      track.style.transform = `translateX(-${index * (100 / visible)}%)`;
+    }, 5000); // rotate every 7s
+  })();
+</script>
 
 
 </body>
