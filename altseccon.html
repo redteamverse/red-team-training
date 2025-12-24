@@ -14,8 +14,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;  
 }
+/* Kill all native + border-based underlines */
+a {
+  text-decoration: none !important;
+  
+}
+
 
 :root {
   --navy: #2B2B50;
@@ -30,7 +36,7 @@
   --space-md: 72px;
   --space-lg: 96px;
 }
-
+ 
 body {
   font-family: 'Inter', sans-serif;
   background: var(--navy);
@@ -524,12 +530,116 @@ body {
 }
   /* Section eyebrow / label */
 .section-eyebrow {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #6B7280;
   margin-bottom: 8px;
+  position: relative;
+}
+
+/* Brand accent */
+.section-eyebrow::before {
+  content: "";
+  width: 10px;
+  height: 2px;
+  background-color: #B91C1C; /* brand red */
+  display: inline-block;
+}
+/* Brand interaction for links */
+/* Brand interaction for text links ONLY */
+/* Text links only (not buttons) */
+  /* Text links only (not buttons) */
+a:not(.btn) {
+  color: #1E3A8A;
+  position: relative;
+}
+
+/* Brand underline */
+a:not(.btn)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: #B91C1C;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+a:not(.btn):hover::after,
+a:not(.btn):focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* FULLY isolate buttons from link underline system */
+a.btn,
+a.btn::after,
+.btn::after {
+  content: none !important;
+ 
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 36px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  border-radius: 6px;
+  border: 2px solid transparent;
+
+  cursor: pointer;
+  text-decoration: none !important;
+
+  transition: background-color 0.2s ease,
+              border-color 0.2s ease,
+              transform 0.15s ease;
+}
+.btn-primary {
+  background-color: #B91C1C;
+  color: #FFFFFF;
+  border-color: #B91C1C;
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: #EA3037;   /* bright red */
+  border-color: #EA3037;
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background-color: #FFFFFF;
+  color: #2B2B50;
+  border-color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-tertiary {
+  background: transparent;
+  border: none;
+  color: #1E3A8A;
+  font-weight: 600;
+  padding: 12px 0;
+}
+
+.btn-tertiary:hover {
+  color: #EA3037;
 }
 
 /* =====================
@@ -571,6 +681,8 @@ CERTIFICATION & OUTCOMES
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 22px;
+  border-left: 3px solid #B91C1C; /* brand red */
+  padding-left: 22px; /* compensate for border */
 }
 
 .certification-card h3 {
@@ -1091,6 +1203,7 @@ TESTIMONIALS (ROTATING)
     flex: 0 0 100%;
   }
 }
+
 /* =====================
 FOOTER
 ===================== */
@@ -1158,6 +1271,12 @@ FOOTER
   font-size: 0.75rem;
   color: #9CA3AF;
 }
+  footer a,
+.footer a {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -1178,7 +1297,6 @@ FOOTER
 </head>
 
 <body>
-
 <!-- HERO -->
 <section class="hero">
   <video autoplay muted loop playsinline>
@@ -1286,7 +1404,7 @@ FOOTER
     </div>
 
     <div class="course-grid-cta">
-      <a href="#" class="btn btn-primary">View All Training Programs</a>
+      <a href="#" class="btn btn-tertiary">View All Training Programs →</a>
     </div>
   </div>
 </section>
@@ -1373,7 +1491,7 @@ FOOTER
         <div><strong>Scheduled breaks:</strong> Tea breaks and lunch included</div>
       </div>
 
-      <a href="/event" class="event-structure-link">
+      <a href="/event" class="btn btn-tertiary">
         View full event details →
       </a>
     </div>
@@ -1421,7 +1539,7 @@ FOOTER
     </div>
 
     <div class="certification-cta">
-      <a href="#" class="certification-link">
+      <a href="#" class="btn btn-tertiary">
         View Certification Details →
       </a>
     </div>
@@ -1456,8 +1574,8 @@ FOOTER
       In-person training, real classrooms
     </div>
 
-    <div class="gallery-cta">
-      <a href="/gallery" class="gallery-link">
+    <div class="gallery-cta btn-tertiary">
+      <a href="/gallery" class="btn btn-tertiary">
         View Full Gallery →
       </a>
     </div>
@@ -1669,7 +1787,7 @@ FOOTER
     Your feedback helps us maintain the depth and quality of
     AltsecCON training.
   </p>
-  <a href="/feedback" class="thankyou-feedback-link">
+  <a href="/feedback" class="btn btn-tertiary">
     Share feedback →
   </a>
 </div>
@@ -1729,6 +1847,7 @@ FOOTER
 
   </div>
 </section>
+
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-container">
@@ -1804,9 +1923,10 @@ FOOTER
     }, 5000); // rotate every 7s
   })();
 </script>
-   <script>
+<script>
   document.getElementById('footerYear').textContent = new Date().getFullYear();
 </script>
+
 
 
 </body>
