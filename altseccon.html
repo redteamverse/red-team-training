@@ -27,7 +27,7 @@ a {
   --navy: #2B2B50;
   --white: #FFFFFF;
   --offwhite: #F9FAFB;
-  --dark: #111827;
+  --dark: #111827; 
   --muted: #374151;
   --border: #E5E7EB;
   --primary: #B91C1C;
@@ -44,82 +44,116 @@ body {
 }
 
 /* =====================
-   HERO
+   HERO SECTION (FINAL)
 ===================== */
+
 .hero {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  isolation: isolate; /* important: clean stacking context */
 }
 
+/* Background video */
 .hero video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  z-index: 0;
 }
 
+/* Gradient overlay */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     to bottom,
-    rgba(43,43,80,0.45),
-    rgba(43,43,80,0.8)
+    rgba(43, 43, 80, 0.45),
+    rgba(43, 43, 80, 0.8)
   );
+
+  z-index: 1; /* FIX: ensure overlay stays below content */
+  pointer-events: none;
 }
 
+/* Hero content */
 .hero-content {
   position: relative;
   z-index: 2;
+
   max-width: 900px;
   text-align: center;
   padding: var(--space-lg) 24px;
 }
 
+/* Top meta pill */
 .meta-pill {
   display: inline-block;
   padding: 10px 22px;
+
   font-size: 0.75rem;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.35);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
+
+  color: #FFFFFF;
   margin-bottom: 24px;
 }
 
+/* Main heading */
 .hero h1 {
   font-size: clamp(3rem, 7vw, 5rem);
   font-weight: 800;
   margin-bottom: 12px;
+
+  color: #FFFFFF;
 }
 
+/* Edition pill */
 .edition {
   display: inline-block;
   padding: 8px 18px;
+
   background: #111827;
+  color: #FFFFFF;
+
   border-radius: 999px;
   font-size: 0.85rem;
+
   margin-bottom: 40px;
 }
 
+/* Authority block */
 .authority {
-  background: rgba(17,24,39,0.55);
-  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(17, 24, 39, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
   border-radius: 10px;
   padding: 18px 22px;
+
   max-width: 640px;
   margin: 0 auto 40px;
+
+  backdrop-filter: blur(2px); /* subtle, safe */
 }
 
+/* Authority text */
 .authority strong {
   display: block;
   font-size: 0.95rem;
+  color: #FFFFFF;
 }
 
 .authority span {
@@ -127,21 +161,26 @@ body {
   color: #E5E7EB;
 }
 
+/* Divider */
 .authority-divider {
   height: 1px;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   margin: 14px 0;
 }
 
+/* Capabilities */
 .authority-capabilities {
   display: flex;
   justify-content: center;
   gap: 18px;
+
   font-size: 0.85rem;
   color: #E5E7EB;
+
   flex-wrap: wrap;
 }
 
+/* CTA buttons wrapper */
 .actions {
   display: flex;
   justify-content: center;
@@ -149,23 +188,12 @@ body {
   flex-wrap: wrap;
 }
 
-.btn {
-  padding: 16px 34px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 4px;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.btn-secondary {
-  border: 2px solid var(--white);
-  color: var(--white);
+/* 🔐 Button safety guard */
+.hero .btn {
+  position: relative;
+  z-index: 3;
+  opacity: 1 !important;
+  background-clip: padding-box;
 }
 
 /* =====================
@@ -187,11 +215,12 @@ body {
 .delivered-section {
   background: var(--offwhite);
   color: var(--dark);
-  padding: var(--space-lg) 24px;
+  padding: calc(var(--space-lg) * 1.15) 24px; /* more chapter weight */
 }
 
+
 .delivered-container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -205,8 +234,9 @@ body {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 720px;
-  margin-bottom: var(--space-md);
+  margin-bottom: calc(var(--space-md) * 1.2);
 }
+
 
 .delivered-grid {
   display: grid;
@@ -218,22 +248,29 @@ body {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 22px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
+  min-height: 160px; /* subtle normalization */
 }
 
+
 .delivered-card h3 {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
   margin-bottom: 8px;
 }
+
 
 .delivered-card p {
   font-size: 0.95rem;
   color: var(--muted);
   margin-top: auto;
+  line-height: 1.5;
 }
+
 
 /* =====================
    TRUST SECTION
@@ -313,6 +350,8 @@ body {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .course-card h3 {
@@ -330,14 +369,28 @@ body {
 .course-card a {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #1E3A8A;
-  text-decoration: none;
+  color: #1E3A8A; 
+  position: relative; 
+  margin-top: auto;
 }
+/* Disable animated underline inside course cards */
+.course-card a::after {
+  display: none;
+}
+.course-card a:hover {
+  color: #B91C1C; /* brand red */
+}
+
 
 .course-grid-cta {
   margin-top: var(--space-md);
   display: flex;
   justify-content: center;
+}
+@media (max-width: 640px) {
+  .delivered-section {
+    padding-bottom: 48px; /* tighten section-to-section gap */
+  }
 }
 
 /* =====================
@@ -507,12 +560,13 @@ body {
 /* Brand interaction for text links ONLY */
 /* Text links only (not buttons) */
   /* Text links only (not buttons) */
+/* CONTENT LINKS ONLY */
 a:not(.btn) {
   color: #1E3A8A;
   position: relative;
+  text-decoration: none;
 }
 
-/* Brand underline */
 a:not(.btn)::after {
   content: "";
   position: absolute;
@@ -531,6 +585,7 @@ a:not(.btn):focus-visible::after {
   transform: scaleX(1);
 }
 
+
 /* FULLY isolate buttons from link underline system */
 a.btn,
 a.btn::after,
@@ -542,10 +597,11 @@ a.btn::after,
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
 
   padding: 16px 36px;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
@@ -557,19 +613,23 @@ a.btn::after,
 
   transition: background-color 0.2s ease,
               border-color 0.2s ease,
+              color 0.2s ease,
               transform 0.15s ease;
 }
+
 .btn-primary {
   background-color: #B91C1C;
   color: #FFFFFF;
   border-color: #B91C1C;
 }
+
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background-color: #EA3037;   /* bright red */
+  background-color: #EA3037;
   border-color: #EA3037;
   transform: translateY(-1px);
 }
+
 .btn-secondary {
   background-color: transparent;
   color: #FFFFFF;
@@ -584,17 +644,23 @@ a.btn::after,
   transform: translateY(-1px);
 }
 
+
 .btn-tertiary {
   background: transparent;
-  border: none;
   color: #1E3A8A;
+  border: 1px solid var(--border);
+  padding: 12px 22px;
+  border-radius: 6px;
   font-weight: 600;
-  padding: 12px 0;
+  font-size: 0.85rem;
 }
 
 .btn-tertiary:hover {
-  color: #EA3037;
+  background: #F9FAFB;
+  border-color: #1E3A8A;
 }
+
+
 
 /* =====================
 CERTIFICATION & OUTCOMES
@@ -1279,6 +1345,7 @@ FOOTER
     </div>
   </div>
 </section>
+
 <!-- WHAT ALTSECCON DELIVERED -->
 <section class="delivered-section">
   <div class="delivered-container">
@@ -1298,12 +1365,11 @@ FOOTER
       <div class="delivered-card"><h3>Peer & Instructor Interaction</h3><p>Direct engagement in an in-person setting.</p></div>
     </div>
   </div>
-</section>
-
+</section> 
 <!-- TRAINING PROGRAMS -->
 <section class="course-grid-section">
   <div class="course-grid-container">
-    <span class="section-eyebrow">Course Offered 
+    <span class="section-eyebrow">Curriculum 
     </span>
     <h2>Training Programs Offered</h2>
 
@@ -1324,7 +1390,7 @@ FOOTER
       <a href="#" class="btn btn-tertiary">View All Training Programs →</a>
     </div>
   </div>
-</section>
+</section>  
   <!-- TRUST -->
 <section class="trust-section">
   <div class="trust-container">
@@ -1343,7 +1409,7 @@ FOOTER
       <img src="https://redteamverse.github.io/red-team-training/images/SST.png">
     </div>
   </div>
-</section>
+</section>  
   <!-- INSTRUCTOR SECTION -->
 <section class="instructor-section">
   <div class="instructor-container">
@@ -1426,7 +1492,7 @@ FOOTER
         <div><strong>Scheduled breaks:</strong> Tea breaks and lunch included</div>
       </div>
 
-      <a href="/event" class="btn btn-tertiary">
+      <a href="/event" class="btn-secondary">
         View full event details →
       </a>
     </div>
@@ -1474,7 +1540,7 @@ FOOTER
     </div>
 
     <div class="certification-cta">
-      <a href="#" class="btn btn-tertiary">
+      <a href="#" class="btn-secondary">
         View Certification Details →
       </a>
     </div>
@@ -1509,8 +1575,8 @@ FOOTER
       In-person training, real classrooms
     </div>
 
-    <div class="gallery-cta btn-tertiary">
-      <a href="/gallery" class="btn btn-tertiary">
+    <div class="gallery-cta ">
+      <a href="/gallery" class="btn-secondary">
         View Full Gallery →
       </a>
     </div>
@@ -1722,7 +1788,7 @@ FOOTER
     Your feedback helps us maintain the depth and quality of
     AltsecCON training.
   </p>
-  <a href="/feedback" class="btn btn-tertiary">
+  <a href="/feedback" class="btn-secondary">
     Share feedback →
   </a>
 </div>
