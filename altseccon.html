@@ -1091,7 +1091,88 @@ TESTIMONIALS (ROTATING)
     flex: 0 0 100%;
   }
 }
+/* =====================
+FOOTER
+===================== */
+.site-footer {
+  background: var(--navy);
+  color: #E5E7EB;
+  padding: var(--space-lg) 24px 32px;
+}
 
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+/* Footer blocks */
+.footer-block h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--white);
+}
+
+.footer-block p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #D1D5DB;
+  max-width: 360px;
+}
+
+.footer-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-block li {
+  margin-bottom: 8px;
+}
+
+.footer-block a {
+  font-size: 0.85rem;
+  color: #D1D5DB;
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer-block a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Footer bottom */
+.footer-bottom {
+  max-width: 1100px;
+  margin: 48px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* =====================
 
 </style>
 </head>
@@ -1648,7 +1729,63 @@ TESTIMONIALS (ROTATING)
 
   </div>
 </section>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-container">
 
+    <!-- Brand / About -->
+    <div class="footer-block">
+      <h4>About AltsecCON</h4>
+      <p>
+        AltsecCON is an in-person Red Team training initiative focused on
+        instructor-led delivery, enterprise-aligned labs, and practical
+        offensive security execution.
+      </p>
+    </div>
+
+    <!-- Training Programs -->
+    <div class="footer-block">
+      <h4>Training Programs</h4>
+      <ul>
+        <li><a href="/training/crtp">CRTP</a></li>
+        <li><a href="/training/crte">CRTE</a></li>
+        <li><a href="/training/cetp">CETP</a></li>
+        <li><a href="/training/cartp">CARTP</a></li>
+        <li><a href="/training/carte">CARTE</a></li>
+      </ul>
+    </div>
+
+    <!-- Event -->
+    <div class="footer-block">
+      <h4>Event</h4>
+      <ul>
+        <li><a href="/instructors">Instructors</a></li>
+        <li><a href="/event-structure">Event Structure</a></li>
+        <li><a href="/certification">Certification & Outcomes</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/2026">AltsecCON 2026</a></li>
+      </ul>
+    </div>
+
+    <!-- Policies & Contact -->
+    <div class="footer-block">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="/code-of-conduct">Code of Conduct</a></li>
+        <li><a href="/policy">Policy</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>
+      © <span id="footerYear"></span> AltsecCON. All rights reserved.
+    </p>
+  </div>
+</footer>
 
 <script>
   (function () {
