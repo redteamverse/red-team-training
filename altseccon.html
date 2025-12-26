@@ -358,13 +358,13 @@ body {
 .course-card h3 {
   font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .course-card p {
   font-size: 0.95rem;
   color: #4B5563;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .course-card a {
@@ -1353,6 +1353,32 @@ max-width: 1100px;
   background-color: rgba(255,255,255,0.28);
 }
 
+.course-meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;   
+  flex-wrap: wrap;
+}
+
+.course-meta span {
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: transparent;
+}
+@media (min-width: 1024px) {
+  .course-card h3 {
+    margin-bottom: 14px;
+  }
+
+  .course-meta {
+    margin-bottom: 14px;
+  }
+}
 
 
 </style>
@@ -1390,7 +1416,9 @@ max-width: 1100px;
 
 <!-- WHAT ALTSECCON DELIVERED -->
 <section class="delivered-section">
+  
   <div class="delivered-container">
+    
     <span class="section-eyebrow">Outcome</span>
     <h2>What AltsecCON Delivered</h2>
     <p class="delivered-intro">
@@ -1421,11 +1449,30 @@ max-width: 1100px;
     </p>
 
     <div class="course-grid">
-      <div class="course-card"><h3>CRTP</h3><p>Foundational AD Red Team tradecraft.</p><a href="#">View course details</a></div>
-      <div class="course-card"><h3>CRTE</h3><p>Advanced enterprise AD attack simulation.</p><a href="#">View course details</a></div>
-      <div class="course-card"><h3>CETP</h3><p>Offensive evasion techniques.</p><a href="#">View course details</a></div>
-      <div class="course-card"><h3>CARTP</h3><p>Azure identity and access attacks.</p><a href="#">View course details</a></div>
-      <div class="course-card"><h3>CARTE</h3><p>Advanced Azure Red Team operations.</p><a href="#">View course details</a></div>
+      <div class="course-card"><h3>CRTP</h3><div class="course-meta">
+  <span>Active Directory</span>
+  <span>FOUNDATIONAL</span>
+</div>
+<p>Foundational AD Red Team tradecraft.</p><a href="#">View course details</a></div>
+      <div class="course-card"><h3>CRTE</h3><div class="course-meta">
+  <span>Active Directory</span>
+  <span>ENTERPRISE</span>
+</div><p>Simulated enterprise-scale Active Directory attack scenarios.
+</p><a href="#">View course details</a></div>
+      <div class="course-card"><h3>CETP</h3><div class="course-meta">
+  <span>EVASION </span>
+  <span>OFFENSIVE</span>
+</div><p>Evasion methods for bypassing modern detection and security controls.
+</p><a href="#">View course details</a></div>
+      <div class="course-card"><h3>CARTP</h3><div class="course-meta">
+  <span>AZURE</span>
+  <span>IDENTITY</span>
+</div><p>Azure identity and access attacks.</p><a href="#">View course details</a></div>
+      <div class="course-card"><h3>CARTE</h3><div class="course-meta">
+  <span>AZURE </span>
+  <span>ADVANCED</span>
+</div><p>Complex Azure Red Team operations across identity, access, and cloud infrastructure.
+</p><a href="#">View course details</a></div>
     </div>
 
     <div class="course-grid-cta">
