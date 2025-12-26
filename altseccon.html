@@ -34,7 +34,8 @@ a {
 
   --space-xs: 48px;
   --space-md: 72px;
-  --space-lg: 96px;
+  --space-lg: 96px; 
+
 }
  
 body {
@@ -213,7 +214,7 @@ body {
    WHAT ALTSECCON DELIVERED
 ===================== */
 .delivered-section {
-  background: var(--offwhite);
+  background: var(--white);
   color: var(--dark);
   padding: calc(var(--space-lg) * 1.15) 24px; /* more chapter weight */
 }
@@ -245,7 +246,7 @@ body {
 }
 
 .delivered-card {
-  background: var(--white);
+  background: var(--offwhite);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 24px;
@@ -276,7 +277,7 @@ body {
    TRUST SECTION
 ===================== */
 .trust-section {
-  background: var(--white);
+  background: var(--offwhite);
   color: var(--dark);
   padding: var(--space-md) 24px;
 }
@@ -316,7 +317,7 @@ body {
    TRAINING PROGRAMS
 ===================== */
 .course-grid-section {
-  background: var(--offwhite);
+  background: var(--white);
   color: var(--dark);
   padding: var(--space-lg) 24px;
 }
@@ -346,7 +347,7 @@ body {
 }
 
 .course-card {
-  background: var(--white);
+  background: var(--offwhite);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 24px;
@@ -428,7 +429,7 @@ body {
 ===================== */
 
 .event-structure-section {
-  background: #FFFFFF;
+  background: var(--white);
   padding: var(--space-lg) 24px;
 }
 
@@ -467,7 +468,7 @@ body {
   border: 1px solid #E5E7EB;
   border-radius: 10px;
   padding: 18px 20px;
-  background: #FFFFFF;
+  background: var(--offwhite);
 }
 
 .structure-card h3 {
@@ -638,7 +639,7 @@ a.btn::after,
 
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
-  background-color: none;
+  background-color: none; 
   border-color: #FFFFFF;
   transform: translateY(-1px);
 }
@@ -665,7 +666,7 @@ a.btn::after,
 CERTIFICATION & OUTCOMES
 ===================== */
 .certification-section {
-  background: var(--offwhite);
+  background: var(--white);
   color: var(--dark);
   padding: var(--space-lg) 24px;
 }
@@ -696,7 +697,7 @@ CERTIFICATION & OUTCOMES
 }
 
 .certification-card {
-  background: var(--white);
+  background: var(--offwhite);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 22px;
@@ -836,8 +837,8 @@ GALLERY PREVIEW
 ALTSECCON 2026 TEASER
 ===================== */
 .teaser-section {
-  background: var(--offwhite);
-  color: var(--dark);
+  background: var(--blue);
+  color: var(--offwhite);
   padding: var(--space-lg) 24px var(--space-md);
 }
 
@@ -855,7 +856,7 @@ ALTSECCON 2026 TEASER
 
 .teaser-intro {
   font-size: 1.05rem;
-  color: var(--muted);
+  color: var(--white);
   margin-bottom: 32px;
 }
 
@@ -905,7 +906,7 @@ ALTSECCON 2026 TEASER
 THANK YOU SECTION
 ===================== */
 .thankyou-section {
-  background: var(--white);
+  background: var(--offwhite);
   color: var(--dark);
   padding: var(--space-lg) 24px var(--space-lg);
 }
@@ -924,7 +925,7 @@ THANK YOU SECTION
 
 .thankyou-intro {
   font-size: 1.05rem;
-  color: var(--muted);
+  color: var(--dark);
   margin-bottom: 32px;
 }
 
@@ -943,7 +944,7 @@ THANK YOU SECTION
 
 .thankyou-note {
   font-size: 0.95rem;
-  color: #374151;
+  color: var(--dark);
   max-width: 640px;
   margin: 0 auto;
 }
@@ -961,14 +962,13 @@ THANK YOU SECTION
 
 .thankyou-feedback p {
   font-size: 0.85rem;
-  color: #6B7280;
+  color: var(--muted);
   margin-bottom: 6px;
 }
 
 .thankyou-feedback-link {
   font-size: 0.85rem;
-  font-weight: 600;
-  color: #1E3A8A;
+  font-weight: 600; 
   text-decoration: none;
 }
 
@@ -981,7 +981,7 @@ THANK YOU SECTION
 CONTACT US
 ===================== */
 .contact-section {
-  background: var(--offwhite);
+  background: var(--white);
   color: var(--dark);
   padding: var(--space-lg) 24px var(--space-lg);
 }
@@ -999,7 +999,7 @@ CONTACT US
 
 .contact-intro {
   font-size: 1rem;
-  color: var(--muted);
+  color: var(--dark);
   margin-bottom: 32px;
 }
 
@@ -1050,6 +1050,7 @@ CONTACT US
     width: 100%;
   }
 }
+  
   /* =====================
 INSTRUCTOR SECTION
 ===================== */
@@ -1079,12 +1080,7 @@ INSTRUCTOR SECTION
 }
 
 /* Instructor Grid */
-.instructor-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
-  margin-bottom: 32px;
-}
+
 
 .instructor-card {
   background: var(--white);
@@ -1092,15 +1088,19 @@ INSTRUCTOR SECTION
   border-radius: 12px;
   padding: 22px;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .instructor-card img {
   width: 100%;
-  height: 250px;
+  aspect-ratio: 4 / 3;   
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 14px;
 }
+
 
 .instructor-card h3 {
   font-size: 1.1rem;
@@ -1113,6 +1113,12 @@ INSTRUCTOR SECTION
   font-size: 0.9rem;
   color: #4B5563;
 }
+  
+.instructor-card-cta {
+  margin-top: var(--space-md);
+  display: flex;
+  justify-content: center;
+}  
 
 /* Supporting images */
 .instructor-support {
@@ -1137,25 +1143,46 @@ INSTRUCTOR SECTION
     opacity: 1;
   }
 }
+/* Desktop */
+.instructor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 1024px) {
+  .instructor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
   .instructor-grid {
     grid-template-columns: 1fr;
   }
+}
+
 
   .instructor-support {
     grid-template-columns: 1fr;
   }
 }
-/* =====================
-/* =====================
-TESTIMONIALS (ROTATING)
-===================== */
+
+/* Testimonial */
+  .testimonial-section {
+  background: var(--offwhite);
+  color: var(--dark);
+}
+
+
 .testimonial-section {
-  background: var(--white);
+  background: var(--offwhite);
   color: var(--dark);
   padding: var(--space-lg) 24px;
+  position: relative;
+  isolation: isolate;
 }
 
 .testimonial-container {
@@ -1176,28 +1203,24 @@ TESTIMONIALS (ROTATING)
   margin-bottom: var(--space-md);
 }
 
-/* Viewport */
 .testimonial-viewport {
   overflow: hidden;
 }
 
-/* Track */
 .testimonial-track {
   display: flex;
   gap: 24px;
   transition: transform 0.6s ease;
 }
 
-/* Card */
 .testimonial-card {
   flex: 0 0 calc((100% - 48px) / 3);
-  background: var(--offwhite);
+  background: var(--white);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 24px;
 }
 
-/* Text */
 .testimonial-text {
   font-size: 0.95rem;
   line-height: 1.6;
@@ -1216,11 +1239,11 @@ TESTIMONIALS (ROTATING)
   color: #6B7280;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .testimonial-card {
     flex: 0 0 100%;
   }
+}
 }
 
 /* =====================
@@ -1230,12 +1253,14 @@ FOOTER
   background: var(--navy);
   color: #E5E7EB;
   padding: var(--space-lg) 24px 32px;
+  margin-top: 96px; /* space-lg */
 }
 
 .footer-container {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
+  padding: var(--space-lg) 24px 32px;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 48px;
 }
@@ -1310,7 +1335,25 @@ FOOTER
     grid-template-columns: 1fr;
   }
 }
-/* =====================
+
+.section-divider {
+  height: 1px;
+  margin: 96px 0; /* controls breathing space */
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+}
+.authority-divider-band {
+max-width: 1100px;
+  height: 2px;
+  margin: 96px auto;
+  background-color: rgba(255,255,255,0.28);
+}
+
+
 
 </style>
 </head>
@@ -1428,27 +1471,45 @@ FOOTER
         <h3>Nikhil Mittal</h3>
         <p>Lead Red Team Instructor</p>
       </div>
-
+    
       <div class="instructor-card">
         <img src="https://redteamverse.github.io/red-team-training/images/Shaunak.webp" alt="Shaunak">
         <h3>Shaunak</h3>
         <p>Senior Red Team Specialist</p>
       </div>
-
+  
+    
       <div class="instructor-card">
         <img src="https://redteamverse.github.io/red-team-training/images/Manthan.webp" alt="Manthan">
         <h3>Manthan</h3>
         <p>Red Team Practitioner</p>
+      </div>    
+   
+     <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Manthan">
+        <h3>Red Team</h3>
+        <p>Red Team Practitioner</p>
+    </div>     
+   
+  
+      <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="Manthan">
+        <h3>Red Team</h3>
+        <p>Red Team Practitioner</p>
       </div>
+    </div>     
+  
+    <div class="instructor-card-cta">
+      <a href="#" class="btn btn-tertiary">View All Red Team Expert →</a>
     </div>
 
-    <!-- Supporting Images -->
+    <!-- Supporting Images 
     <div class="instructor-support">
       <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="AltsecCON instruction scene">
       <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Hands-on teaching moment">
-    </div>
-
+    </div>-->
   </div>
+  
 </section>
 <!-- Event Overview-->
   <section class="event-structure-section">
@@ -1726,6 +1787,7 @@ FOOTER
 
 
 
+
 <!-- ALTSECCON 2026 TEASER -->
 <section class="teaser-section">
   <div class="teaser-container">
@@ -1755,7 +1817,7 @@ FOOTER
     </form>
 
   </div>
-</section>
+</section> 
 <!-- THANK YOU SECTION -->
 <section class="thankyou-section">
   <div class="thankyou-container">
