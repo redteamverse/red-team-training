@@ -32,7 +32,7 @@ a {
   --border: #E5E7EB;
   --primary: #B91C1C;
 
-  --space-xs: 48px;
+  --space-xs: 48px; 
   --space-md: 72px;
   --space-lg: 96px; 
 
@@ -1381,9 +1381,12 @@ max-width: 1100px;
 }
 
 .producer-attribution {
-  margin-top: 32px;
+  margin-top: 64px;
+  font-size: 0.75rem;
+  color: var(--muted);
   text-align: center;
 }
+
 
 .producer-attribution p {
   max-width: 560px;
@@ -1398,6 +1401,58 @@ max-width: 1100px;
   font-weight: 600;          /* emphasis via weight */
   color: var(--dark);        /* NOT red */
 }
+  .community-caption {
+  max-width: 880px;
+  margin-top: 6px; 
+  margin-bottom: 6px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  opacity: 0.8;
+  text-align: center;
+}
+.community-governance {
+  margin: 20px auto 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+  max-width: 640px;
+
+}
+.community-logos {
+  margin-bottom: 12px;   /* reduced */
+}
+
+.community-image {
+  margin-top: 16px;      /* reduced gap */
+}
+.community-image {
+  max-width: 880px;          /* smaller than content container */
+  margin: 32px auto 24px;    /* tighter vertical rhythm */
+}
+
+.community-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+.instructor-role {
+  font-size: 0.85rem;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.instructor-authority {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 240px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+
 </style>
 </head>
 
@@ -1503,10 +1558,11 @@ max-width: 1100px;
     <span class="section-eyebrow">Community trust</span>
     <h2>Trusted by the Security Community</h2>
     <p class="trust-intro">
-      Participants from the following organizations attended AltsecCON.
+       AltsecCON is built with and shaped by security professionals who value serious, in-person Red Team training.
+The community that attended helped define the depth, realism, and execution standard we continue to build on.
     </p>
 
-    <div class="trust-logos">
+    <div class="trust-logos community-logos">
       <img src="https://redteamverse.github.io/red-team-training/images/microsoft.png">
       <img src="https://redteamverse.github.io/red-team-training/images/security.png">
       <img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg">
@@ -1515,7 +1571,30 @@ max-width: 1100px;
       <img src="https://redteamverse.github.io/red-team-training/images/SST.png">
     </div>
   </div>
-</section>  
+</section>
+  <!-- THANK YOU SECTION -->
+<section class="thankyou-section">
+  <div class="thankyou-container">  
+    <p class="community-caption">
+  In-person Red Team training participants at AltsecCON
+</p>
+
+    <div class="thankyou-image community-image">
+      <img
+        src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp"
+        alt="AltsecCON in-person Red Team training session"
+      >
+    </div> 
+
+  <div class="community-governance">
+  <p>
+  Participation from the security community helps uphold the depth and execution standards of AltsecCON training
+  </p>
+
+</div>
+</div>
+  
+</section>
   <!-- INSTRUCTOR SECTION -->
 <section class="instructor-section">
   <div class="instructor-container">
@@ -1533,7 +1612,10 @@ max-width: 1100px;
       <div class="instructor-card">
         <img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" alt="Nikhil Mittal">
         <h3>Nikhil Mittal</h3>
-        <p>Lead Red Team Instructor</p>
+        <p class="instructor-role">Lead Red Team Instructor</p>
+         <p class="instructor-authority">
+    Delivered Red Team training and spoken at DEF CON, Black Hat, and Nullcon.
+  </p>
       </div>
     
       <div class="instructor-card">
@@ -1884,35 +1966,6 @@ max-width: 1100px;
 
   </div>
 </section> 
-<!-- THANK YOU SECTION -->
-<section class="thankyou-section">
-  <div class="thankyou-container">
-      <span class="section-eyebrow">Community</span>
-    <h2>The AltsecCON Community</h2>
-
-    <p class="thankyou-intro">
-      AltsecCON is built with and shaped by security professionals who value serious, in-person Red Team training.
-The community that attended helped define the depth, realism, and execution standard we continue to build on
-    </p>
-
-    <div class="thankyou-image">
-      <img
-        src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp"
-        alt="AltsecCON in-person Red Team training session"
-      >
-    </div> 
-
-  <div class="thankyou-feedback">
-  <p>
-   Community feedback plays a key role in maintaining the quality and rigor of AltsecCON training
-  </p>
-  <a href="/feedback" class="btn-secondary">
-    Share feedback →
-  </a>
-</div>
-</div>
-  
-</section>
 <!-- CONTACT US -->
 <section class="contact-section">
   <div class="contact-container">
