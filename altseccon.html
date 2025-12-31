@@ -1451,12 +1451,170 @@ max-width: 1100px;
   text-align: center;
 }
 
+:root {
+  --primary-red: #B91C1C;
+  --structural-blue: #2B2B50;
+  --white: #FFFFFF;
+}
+
+/* =========================
+   DESKTOP HEADER
+========================= */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: none;
+  background: transparent;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease, background 0.25s ease;
+}
+
+.site-header.is-visible {
+  display: block;
+  transform: translateY(0);
+}
+
+.site-header.is-solid {
+  background: rgba(43, 43, 80, 0.95);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.nav a {
+  margin-left: 28px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  text-decoration: none;
+  position: relative;
+  opacity: 0.85;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-red);
+  transition: width 0.25s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Disable desktop header on mobile */
+@media (max-width: 768px) {
+  .site-header {
+    display: none !important;
+  }
+}
+
+/* =========================
+   MOBILE BOTTOM NAV
+========================= */
+
+.mobile-tabs {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-tabs {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+
+    background: var(--structural-blue);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    z-index: 1000;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .mobile-tabs a {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: #FFFFFF !important;
+
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  /* ACTIVE INDICATOR (INSIDE BAR) */
+  .mobile-tabs a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 2px;
+    background: var(--primary-red);
+    border-radius: 2px;
+  }
+
+  body {
+    padding-bottom: 64px;
+  }
+}
 
 
 </style>
 </head>
 
 <body>
+<!-- DESKTOP STICKY HEADER -->
+<header id="stickyHeader" class="site-header">
+  <div class="header-inner">
+    <div class="logo">AltSecCON</div>
+
+    <nav class="nav">
+      <a href="#programs">Programs</a>
+      <a href="#instructors">Instructors</a>
+      <a href="#event">Event</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#altseccon-2026">AltSecCON 2026</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>  
 <!-- HERO -->
 <section class="hero">
   <video autoplay muted loop playsinline>
@@ -1509,7 +1667,7 @@ max-width: 1100px;
   </div>
 </section> 
 <!-- TRAINING PROGRAMS -->
-<section class="course-grid-section">
+<section id="programs" class="course-grid-section">
   <div class="course-grid-container">
     <span class="section-eyebrow">Curriculum 
     </span>
@@ -1596,7 +1754,7 @@ The community that attended helped define the depth, realism, and execution stan
   
 </section>
   <!-- INSTRUCTOR SECTION -->
-<section class="instructor-section">
+<section id="instructors" class="instructor-section">
   <div class="instructor-container">
 
     <span class="section-eyebrow">Instructors</span>
@@ -1654,7 +1812,7 @@ The community that attended helped define the depth, realism, and execution stan
       <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="AltsecCON instruction scene">
       <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Hands-on teaching moment">
     </div>-->
-  </div>
+  </div> 
 </section>
 <!-- Event Overview-->
   <section class="event-structure-section">
@@ -2097,8 +2255,57 @@ The community that attended helped define the depth, realism, and execution stan
 <script>
   document.getElementById('footerYear').textContent = new Date().getFullYear();
 </script>
+<script>
+  const header = document.getElementById("stickyHeader");
+  const tabs = document.querySelectorAll(".mobile-tabs a");
 
+  const sections = Array.from(tabs)
+    .map(tab => document.querySelector(tab.getAttribute("href")))
+    .filter(Boolean);
 
+  function handleScroll() {
+    const scrollY = window.scrollY;
+    const isMobile = window.innerWidth <= 768;
+
+    /* Desktop header */
+    if (!isMobile) {
+      if (scrollY > 80) {
+        header.classList.add("is-visible", "is-solid");
+      } else {
+        header.classList.remove("is-visible", "is-solid");
+      }
+    }
+
+    /* Mobile ScrollSpy */
+    if (isMobile) {
+      let activeIndex = -1;
+
+      sections.forEach((section, index) => {
+        if (scrollY >= section.offsetTop - 160) {
+          activeIndex = index;
+        }
+      });
+
+      tabs.forEach(tab => tab.classList.remove("active"));
+      if (activeIndex >= 0) {
+        tabs[activeIndex].classList.add("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleScroll);
+</script>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-tabs">
+  <a href="#programs">Programs</a>
+  <a href="#instructors">Instructors</a>
+  <a href="#event">Event</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#altseccon-2026">2026</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 </body>
 </html>
