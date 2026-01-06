@@ -881,6 +881,42 @@
   height: 1px;
   background-color: #B91C1C; /* underline = learning */
 }
+/* =========================
+   GLOBAL EYEBROW SYSTEM
+   ========================= */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* shared text style */
+.eyebrow-text {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6B7280;
+}
+
+/* red rule (sections only) */
+.eyebrow-rule {
+  width: 28px;
+  height: 1px;
+  background-color: #B91C1C;
+  flex-shrink: 0;
+}
+
+/* hero variant */
+.eyebrow--hero {
+  margin-bottom: 16px;
+}
+
+/* section variant */
+.eyebrow--section {
+  margin-bottom: 12px;
+}
 
   </style>
 </head>
@@ -890,8 +926,8 @@
   <section class="hero">
     <div class="hero-container">
 
-      <div class="hero-eyebrow">
-        HANDS-ON RED LABS FOR PRACTITIONERS
+      <div class="eyebrow eyebrow--hero">
+        <span class="eyebrow-text">HANDS-ON RED LABS FOR PRACTITIONERS</span>
       </div>
 
       <h1 class="hero-title">
@@ -947,8 +983,9 @@
   <div class="section-container">
 
     <!-- Meta -->
-    <div class="section-meta">
-      LEARNER QUALIFICATION
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">LEARNER QUALIFICATION</span>
     </div>
 
     <!-- H2 -->
@@ -1030,8 +1067,9 @@
   <div class="section-container">
 
     <!-- Meta -->
-    <div class="section-meta">
-      LAB-FIRST APPROACH
+     <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">LAB-FIRST APPROACH</span>
     </div>
 
     <!-- H2 -->
@@ -1105,9 +1143,10 @@
   <div class="section-container">
 
     <!-- Meta -->
-    <div class="section-meta">
-      PROGRESSION MODEL
-    </div>
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">PROGRESSION MODEL</span>
+    </div> 
 
     <!-- H2 -->
     <h2 class="section-title">
@@ -1197,9 +1236,10 @@
   <div class="section-container">
 
     <!-- Meta -->
-    <div class="section-meta">
-      FOUNDATION LABS
-    </div>
+     <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">FOUNDATION LABS</span>
+    </div>   
 
     <!-- H2 -->
     <h2 class="section-title">
@@ -1283,9 +1323,10 @@
   <div class="section-container">
 
     <!-- Meta -->
-    <div class="section-meta">
-      OPERATIONAL MOVEMENT
-    </div>
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">OPERATIONAL MOVEMENT</span>
+    </div>   
 
     <!-- H2 -->
     <h2 class="section-title">
@@ -1373,9 +1414,10 @@
   <div class="section-container">
 
     <!-- Meta -->
-    <div class="section-meta">
-      ENTERPRISE-SCALE OPERATIONS
-    </div>
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">ENTERPRISE-SCALE OPERATIONS</span>
+    </div>   
 
     <!-- H2 -->
     <h2 class="section-title">
@@ -1462,10 +1504,11 @@
 <section class="environment-evolution">
   <div class="section-container">
 
-    <!-- Meta -->
-    <div class="section-meta">
-      ENVIRONMENT PROGRESSION
-    </div>
+    <!-- Meta -->  
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">ENVIRONMENT PROGRESSION</span>
+    </div>   
 
     <!-- H2 -->
     <h2 class="section-title">
@@ -1550,10 +1593,11 @@
 <section class="outcomes-readiness">
   <div class="section-container">
 
-    <!-- Meta -->
-    <div class="section-meta">
-      CAPABILITY OUTCOMES
-    </div>
+    <!-- Meta -->   
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">CAPABILITY OUTCOMES</span>
+    </div>  
 
     <!-- H2 -->
     <h2 class="section-title">
@@ -1632,10 +1676,11 @@
 <section class="cert-training-alignment">
   <div class="section-container">
 
-    <!-- Meta -->
-    <div class="section-meta">
-      LEARNING CONTEXT
-    </div>
+    <!-- Meta --> 
+     <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">LEARNING CONTEXT</span>
+    </div>  
 
     <!-- H2 -->
     <h2 class="section-title">
@@ -1725,9 +1770,10 @@
 <section class="learning-journey">
   <div class="section-container">
 
-    <!-- Meta -->
-    <div class="section-meta">
-      GETTING STARTED
+    <!-- Meta -->   
+     <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">GETTING STARTED</span>
     </div>
 
     <!-- H2 -->
@@ -1796,9 +1842,10 @@
 <section class="practicalities">
   <div class="section-container">
 
-    <!-- Meta -->
-    <div class="section-meta">
-      ACCESS & SETUP
+    <!-- Meta --> 
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">ACCESS & SETUP</span>
     </div>
 
     <!-- H2 -->
@@ -1903,9 +1950,10 @@
 <section class="faqs">
   <div class="section-container">
 
-    <!-- Meta -->
-    <div class="section-meta">
-      PRACTICAL DETAILS
+    <!-- Meta -->  
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">PRACTICAL DETAILS</span>
     </div>
 
     <!-- H2 -->
@@ -1999,9 +2047,10 @@
 <section class="next-steps">
   <div class="section-container">
 
-    <!-- Meta -->
-    <div class="section-meta">
-      PATH CONTINUATION
+    <!-- Meta -->  
+     <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">PATH CONTINUATION</span>
     </div>
 
     <!-- H2 -->
