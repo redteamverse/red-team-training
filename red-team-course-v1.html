@@ -8,7 +8,7 @@
   <style>
     /* =========================================================
        DESIGN TOKENS — LOCKED (UI SYSTEM AUTHORITY)
-    ========================================================= */ 
+    ========================================================= */
 
     :root {
       /* Brand & Action */
@@ -30,7 +30,7 @@
       --color-error: #EF4444;
 
       /* Spacing */
-      --space-xs: 48px;
+      --space-xs: 48px; 
       --space-md: 72px; 
       --space-lg: 96px;
     }
@@ -215,8 +215,23 @@
     }
 
     .grid-3 {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+    
+    @media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+   @media (max-width: 640px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
 
   .card {
       border: 1px solid var(--color-border);
@@ -383,10 +398,7 @@
   border-radius: 50%;
   opacity: 0.7;
 }
-.card-narrow {
-  max-width: 720px;
-  padding: 32px 40px;
-}
+
 /* Mobile tightening (no custom margins) */
 @media (max-width: 768px) {
   .hero-authority {
@@ -572,6 +584,11 @@
   opacity: 0.95;
   border-radius: 10px;
 }
+    
+.card-narrow {
+  max-width: 720px;
+  padding: 32px 40px;
+}
 
 /* -------------------------------
    RESPONSIVE
@@ -591,9 +608,55 @@
     position: relative;
     top: 0;
     left: 0;
+  }
+    }
+/* Card stays vertical */
+.cert-card {
+  display: flex;
+  flex-direction: column;
+}
 
+/* Diagram preview */
+.diagram-preview {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
 
+  height: 190px;
+  padding: 6px;
+  margin-bottom: 16px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.diagram-preview img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  display: block;
+}
+
+/* Simulates list */
+.cert-simulates {
+  font-size: 14px;
+  color: #6B7280;
+  margin: 8px 0 14px;
+  padding-left: 18px;
+}
+
+.cert-simulates li {
+  margin-bottom: 4px;
+}
+
+/* CTA always at bottom */
+.card-link {
+  margin-top: auto;
+}
 
     
   </style>
@@ -646,10 +709,10 @@ SECTION 1 — HERO (2-COLUMN, ENTERPRISE)
 
         <div class="cta-row">
           <a href="#training-curriculum" class="btn btn-primary">
-            Get Red Team Certifications
+           Get Red Team Certifications
           </a>
           <a href="#labs-structure" class="btn btn-secondary-hero">
-            Start Red Team Training 
+            Start Red Team Programs
           </a>
         </div>
 
@@ -848,115 +911,193 @@ SECTION 4 — LEARNING PATHS
   </div>
 </section>
 
-<!-- =========================================================
-SECTION 5 — CERTIFICATION OVERVIEW
-========================================================= -->
+
 <section class="bg-light" id="certifications">
   <div class="container">
+
     <div class="section-eyebrow">
-     <span class="eyebrow-line"></span>  
-     <span class="eyebrow-text">CERTIFICATION PORTFOLIO</span>
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">CERTIFICATION PORTFOLIO</span>
     </div>
+
     <h2>Enterprise-Focused Red Team Certifications</h2>
+
     <p class="lead">
-      Each certification validates practical Red Team capability through hands-on scenarios aligned with real enterprise attack behavior.
+      Each certification validates practical Red Team capability through hands-on
+      scenarios aligned with real enterprise attack behavior.
     </p>
 
     <div class="grid grid-3">
 
-  <div class="card card-white">
-    <p class="cert-title"><strong>CRTP</strong></p>
+      <!-- ================= CRTP ================= -->
+      <div class="card card-white cert-card">
+        <div class="diagram-preview">
+          <img
+            src="https://redteamverse.github.io/red-team-training/images/activedirectorylab.avif"
+            alt="CRTP Active Directory lab architecture"
+            loading="lazy"
+          />
+        </div>
 
-    <div class="cert-tags">
-      <span class="cert-tag">Foundation</span>
-      <span class="cert-tag">On-Prem</span>
+        <p class="cert-title"><strong>CRTP</strong></p>
+
+        <div class="cert-tags">
+          <span class="cert-tag">Foundation</span>
+          <span class="cert-tag">On-Prem</span>
+        </div>
+
+        <ul class="cert-simulates">
+          <li>Multi-domain Active Directory environment</li>
+          <li>Enterprise trust relationships</li>
+          <li>Realistic lateral movement paths</li>
+        </ul>
+
+        <p class="muted">
+          Enterprise-focused introduction to Active Directory Red Team attack paths.
+        </p>
+
+        <div class="card-link">
+          <a class="link-tertiary" href="#">View Certification →</a>
+        </div>
+      </div>
+
+      <!-- ================= CRTE ================= -->
+      <div class="card card-white cert-card">
+        <div class="diagram-preview">
+          <img
+            src="https://redteamverse.github.io/red-team-training/images/ads.avif"
+            alt="CRTE advanced Active Directory lab architecture"
+            loading="lazy"
+          />
+        </div>
+
+        <p class="cert-title"><strong>CRTE</strong></p>
+
+        <div class="cert-tags">
+          <span class="cert-tag">Advanced</span>
+          <span class="cert-tag">On-Prem</span>
+        </div>
+
+        <ul class="cert-simulates">
+          <li>Hardened enterprise AD infrastructure</li>
+          <li>Advanced detection and evasion controls</li>
+          <li>Stealth-focused Red Team operations</li>
+        </ul>
+
+        <p class="muted">
+          Advanced Red Team operations emphasizing stealth and evasion in enterprise AD environments.
+        </p>
+
+        <div class="card-link">
+          <a class="link-tertiary" href="#">View Certification →</a>
+        </div>
+      </div>
+
+      <!-- ================= CETP ================= -->
+      <div class="card card-white cert-card">
+        <div class="diagram-preview">
+          <img
+            src="https://redteamverse.github.io/red-team-training/images/gcb.avif"
+            alt="CETP enterprise adversary simulation architecture"
+            loading="lazy"
+          />
+        </div>
+
+        <p class="cert-title"><strong>CRTM</strong></p>
+
+        <div class="cert-tags">
+          <span class="cert-tag">Expert</span>
+          <span class="cert-tag">Enterprise</span>
+        </div>
+
+        <ul class="cert-simulates">
+          <li>Enterprise-scale adversary campaigns</li>
+          <li>Multi-forest and multi-network environments</li>
+          <li>Long-duration attack simulation</li>
+        </ul>
+
+        <p class="muted">
+          Campaign-driven adversary simulation at enterprise scale.
+        </p>
+
+        <div class="card-link">
+          <a class="link-tertiary" href="#">View Certification →</a>
+        </div>
+      </div>
+
+      <!-- ================= CARTP ================= -->
+      <div class="card card-white cert-card">
+        <div class="diagram-preview">
+          <img
+            src="https://redteamverse.github.io/red-team-training/images/5232.avif"
+            alt="CARTP Azure Active Directory lab architecture"
+            loading="lazy"
+          />
+        </div>
+
+        <p class="cert-title"><strong>CARTP</strong></p>
+
+        <div class="cert-tags">
+          <span class="cert-tag">Foundation</span>
+          <span class="cert-tag">Azure</span>
+        </div>
+
+        <ul class="cert-simulates">
+          <li>Azure AD identity and access environments</li>
+          <li>Cloud authentication abuse scenarios</li>
+          <li>Hybrid identity attack paths</li>
+        </ul>
+
+        <p class="muted">
+          Azure Red Team fundamentals focused on identity and access abuse.
+        </p>
+
+        <div class="card-link">
+          <a class="link-tertiary" href="#">View Certification →</a>
+        </div>
+      </div>
+
+      <!-- ================= CARTE ================= -->
+      <div class="card card-white cert-card">
+        <div class="diagram-preview">
+          <img
+            src="https://redteamverse.github.io/red-team-training/images/LabDiagram_edited.avif"
+            alt="CARTE advanced Azure Red Team lab architecture"
+            loading="lazy"
+          />
+        </div>
+
+        <p class="cert-title"><strong>CARTE</strong></p>
+
+        <div class="cert-tags">
+          <span class="cert-tag">Advanced</span>
+          <span class="cert-tag">Azure</span>
+        </div>
+
+        <ul class="cert-simulates">
+          <li>Enterprise Azure cloud environments</li>
+          <li>Advanced identity, persistence, and evasion</li>
+          <li>Cloud-scale Red Team operations</li>
+        </ul>
+
+        <p class="muted">
+          Advanced Azure Red Team operations in enterprise cloud environments.
+        </p>
+
+        <div class="card-link">
+          <a class="link-tertiary" href="#">View Certification →</a>
+        </div>
+      </div>
+
     </div>
-
-    <p class="muted">
-      Enterprise-focused introduction to Active Directory Red Team attack paths.
-    </p>
-
-    <div class="card-link">
-      <a class="link-tertiary" href="#">View Certification →</a>
-    </div>
-  </div>
-
-  <div class="card card-white">
-    <p class="cert-title"><strong>CRTE</strong></p>
-
-    <div class="cert-tags">
-      <span class="cert-tag">Advanced</span>
-      <span class="cert-tag">On-Prem</span>
-    </div>
-
-    <p class="muted">
-      Advanced Red Team operations emphasizing stealth and evasion in enterprise AD environments.
-    </p>
-
-    <div class="card-link">
-      <a class="link-tertiary" href="#">View Certification →</a>
-    </div>
-  </div>
-
-  <div class="card card-white">
-    <p class="cert-title"><strong>CETP</strong></p>
-
-    <div class="cert-tags">
-      <span class="cert-tag">Expert</span>
-      <span class="cert-tag">Enterprise</span>
-    </div>
-
-    <p class="muted">
-      Campaign-driven adversary simulation at enterprise scale.
-    </p>
-
-    <div class="card-link">
-      <a class="link-tertiary" href="#">View Certification →</a>
-    </div>
-  </div>
-
-  <div class="card card-white">
-    <p class="cert-title"><strong>CARTP</strong></p>
-
-    <div class="cert-tags">
-      <span class="cert-tag">Foundation</span>
-      <span class="cert-tag">Azure</span>
-    </div>
-
-    <p class="muted">
-      Azure Red Team fundamentals focused on identity and access abuse.
-    </p>
-
-    <div class="card-link">
-      <a class="link-tertiary" href="#">View Certification →</a>
-    </div>
-  </div>
-
-  <div class="card card-white">
-    <p class="cert-title"><strong>CARTE</strong></p>
-
-    <div class="cert-tags">
-      <span class="cert-tag">Advanced</span>
-      <span class="cert-tag">Azure</span>
-    </div>
-
-    <p class="muted">
-      Advanced Azure Red Team operations in enterprise cloud environments.
-    </p>
-
-    <div class="card-link">
-      <a class="link-tertiary" href="#">View Certification →</a>
-    </div>
-  </div>
-
-</div>
-
 
     <div class="cta-row">
       <a class="btn btn-secondary" href="#">View All Certifications</a>
     </div>
+
   </div>
 </section>
+
 <!-- =========================================================
 SECTION — TESTIMONIALS / OUTCOME VALIDATION
 ========================================================= -->
@@ -1148,6 +1289,9 @@ SECTION — INSTRUCTORS & CREATION AUTHORITY
 <!-- =========================================================
 SECTION 7 — AUDIENCE FIT
 ========================================================= -->
+<!-- =========================================================
+SECTION 7 — AUDIENCE FIT
+========================================================= -->
 <section class="bg-white">
   <div class="container">
     <div class="section-eyebrow">
@@ -1174,6 +1318,7 @@ SECTION 7 — AUDIENCE FIT
     </div>
   </div>
 </section>
+
 
 <!-- =========================================================
 SECTION 8 — FINAL DECISION CTA
