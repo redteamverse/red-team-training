@@ -383,7 +383,10 @@
   border-radius: 50%;
   opacity: 0.7;
 }
-
+.card-narrow {
+  max-width: 720px;
+  padding: 32px 40px;
+}
 /* Mobile tightening (no custom margins) */
 @media (max-width: 768px) {
   .hero-authority {
@@ -1147,32 +1150,25 @@ SECTION 7 — AUDIENCE FIT
 ========================================================= -->
 <section class="bg-white">
   <div class="container">
-        <div class="section-eyebrow">
-     <span class="eyebrow-line"></span>  
-     <span class="eyebrow-text">INTENDED AUDIENCE</span>
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>  
+      <span class="eyebrow-text">INTENDED AUDIENCE</span>
     </div>
+
     <h2>Who This Training Is Built For</h2>
+
     <p class="lead">
       This training is designed for professionals responsible for executing, validating, or leading offensive security operations in enterprise environments.
     </p>
 
-    <div class="grid grid-2">
-      <div class="card" style="background:#F9FAFB;">
+    <div class="grid grid-1">
+      <div class="card card-narrow" style="background:#F9FAFB;">
         <p class="card-title"><strong>Designed For</strong></p>
         <ul class="muted">
-          <li>Working security professionals</li>
-          <li>Red Team and penetration testing practitioners</li>
-          <li>Security engineers expanding into adversary simulation</li>
-          <li>Enterprise security teams and internal Red Teams</li>
-        </ul>
-      </div>
-
-      <div class="card" style="background:#F9FAFB;">
-        <p class="card-title"><strong>Not Designed For</strong></p>
-        <ul class="muted">
-          <li>Beginners without foundational security experience</li>
-          <li>Students seeking introductory cybersecurity courses</li>
-          <li>Hobby or casual learners</li>
+          <li>Working security professionals involved in offensive or adversary simulation roles</li>
+          <li>Red Team and penetration testing practitioners operating in enterprise contexts</li>
+          <li>Security engineers expanding into adversary simulation and threat emulation</li>
+          <li>Enterprise security teams and internal Red Teams building realistic attack capability</li>
         </ul>
       </div>
     </div>
