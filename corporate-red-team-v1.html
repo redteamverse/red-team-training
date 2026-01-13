@@ -327,6 +327,76 @@
   stroke-width: 1.5;
   fill: none;
 }
+  
+/* ===== PROFESSIONAL STEWARDSHIP ===== */
+/* ===== PROFESSIONAL STEWARDSHIP (WITH PHOTO) ===== */
+
+.stewardship-layout {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 32px;
+  align-items: flex-start;
+  max-width: 900px;
+}
+
+.stewardship-photo img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+
+  /* Authority treatment */
+  filter: grayscale(100%) contrast(1.05);
+}
+    
+.stewardship-content {
+  max-width: 720px;
+}
+
+.stewardship-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.stewardship-role {
+  font-size: 14px;
+  color: #6B7280;
+  margin-bottom: 20px;
+}
+
+.stewardship-points p {
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: #374151;
+}
+
+.stewardship-link a {
+  font-size: 14px;
+  color: #1E3A8A;
+  text-decoration: none;
+  border-bottom: 1px solid #CBD5E1;
+}
+
+.stewardship-link a:hover {
+  border-bottom-color: #1E3A8A;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stewardship-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .stewardship-photo img {
+    width: 112px;
+    height: 112px;
+  }
+}
+
+
+    
 
   </style>
 </head>
@@ -335,8 +405,8 @@
 
 <!-- ================= HERO ================= -->
 <section class="section-navy">
-  <div class="section-container">    
-    <h1>Red Team Capability Is an Enterprise Discipline</h1>
+  <div class="section-container">
+      <h1>Red Team Capability Is an Enterprise Discipline</h1>
     <p class="lead">
       Red team effectiveness is not static. It depends on how intentionally capability evolves
       alongside enterprise environments and adversary behavior.
@@ -885,6 +955,81 @@
     </div>
   </div>
 </section>
+
+<!-- ================= PROFESSIONAL STEWARDSHIP ================= -->
+<!-- ================= PROFESSIONAL STEWARDSHIP ================= -->
+<section>
+  <div class="section-container">
+
+    <div class="section-eyebrow">
+      PROFESSIONAL STEWARDSHIP
+    </div>
+
+    <h2>
+      Oversight, Accountability, and Program Direction
+    </h2>
+
+    <p class="lead">
+      The training and certification framework is shaped and overseen by an
+      identifiable professional authority to ensure realism, rigor, and
+      defensible standards in enterprise security contexts.
+    </p>
+
+    <div class="stewardship-layout">
+
+      <!-- Profile Image -->
+      <div class="stewardship-photo">
+        <img
+          src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp"
+          alt="Nikhil Mittal – Program Architect and Professional Steward"
+        />
+      </div>
+
+      <!-- Stewardship Content -->
+      <div class="stewardship-content">
+
+        <div class="stewardship-name">
+          Nikhil Mittal
+        </div>
+
+        <div class="stewardship-role">
+          Program Architect & Professional Steward
+        </div>
+
+        <div class="stewardship-points">
+          <p>
+            Responsible for defining the capability framework, assessment
+            expectations, and overall direction of the red team training and
+            certification model.
+          </p>
+
+          <p>
+            Oversees alignment between training scenarios, adversary simulation,
+            and real-world enterprise environments to ensure relevance beyond
+            theoretical instruction.
+          </p>
+
+          <p>
+            Ensures that certification outcomes are based on demonstrated
+            capability and defensible evaluation criteria, rather than
+            attendance or exposure alone.
+          </p>
+        </div>
+
+        <div class="stewardship-link">
+          <a href="#" target="_blank" rel="noopener">
+            View professional background
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  
 
 <!-- ================= SECTION 9 ================= -->
 <section class="section-navy">
