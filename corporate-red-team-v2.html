@@ -31,7 +31,7 @@
   align-items: flex-start;
   margin-top: 4px; /* locks baseline visually */
 }
-
+ 
 .item-icon svg {
   width: 16px;
   height: 16px;
@@ -818,22 +818,7 @@
   font-size: 14px;
   color: #6B7280;
 }
-.item-with-icon {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-
-.item-icon svg {
-  width: 16px;
-  height: 16px;
-  stroke: #6B7280;
-  stroke-width: 1.8;
-  fill: none;
-  margin-top: 3px;
-  flex-shrink: 0;
-}
-
+    
 .training-model {
   margin-top: 48px;
 }
@@ -882,7 +867,151 @@
   font-size: 15px;
   color: #374151;
 }
+}
+
+.item-content h4 {
+  margin: 0 0 6px 0;
+}
+
+.item-content p {
+  margin: 0 0 6px 0;
+}
     
+
+.validation-framing {
+  margin-top: 32px;
+  max-width: 720px;
+}
+
+.framing-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+    
+.item-with-icon {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.item-icon {
+  width: 18px;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 4px;
+}
+
+.item-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: #6B7280;
+  stroke-width: 1.8;
+  fill: none;
+  flex-shrink: 0;
+}
+    
+/* ================= SECTION NAVY ================= */
+
+.section-navy {
+  background-color: #2B2B50; /* your structural navy */
+  color: #FFFFFF;
+}
+
+.section-navy .section-eyebrow {
+  color: #FCA5A5; /* muted red tint, not loud */
+}
+
+.section-navy h2,
+.section-navy h3 {
+  color: #FFFFFF;
+}
+
+.section-navy .lead {
+  color: #E5E7EB;
+}
+
+/* Conversation scope */
+
+.conversation-scope {
+  margin-top: 48px;
+  max-width: 720px;
+}
+
+.conversation-scope h3 {
+  margin-bottom: 16px;
+}
+
+.conversation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.conversation-grid p {
+  color: #E5E7EB;
+  font-size: 15px;
+}
+
+.conversation-grid strong {
+  color: #FFFFFF;
+}
+
+/* CTA area */
+
+.conversation-cta {
+  margin-top: 48px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Primary stays your system red */
+.section-navy .btn-primary {
+  background-color: #B91C1C;
+  color: #FFFFFF;
+}
+
+.section-navy .btn-primary:hover {
+  background-color: #EA3037;
+}
+
+/* Secondary button — NAVY LOGIC */
+.btn-secondary-navy {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+
+.btn-secondary-navy:hover {
+  background-color: #FFFFFF;
+  color: #2B2B50; /* navy text on hover */
+}
+
+/* Clarifier */
+
+.conversation-clarifier {
+  margin-top: 32px;
+  max-width: 640px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 16px;
+}
+
+.conversation-clarifier p {
+  color: #D1D5DB;
+  font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .conversation-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
   </style>
 </head>
@@ -1079,7 +1208,7 @@
 
   </div>
 </section>
-  
+
 <section class="section-muted">
   <div class="section-container">
 
@@ -1100,17 +1229,17 @@
     <div class="training-model">
 
       <div class="training-model-block">
-  <h3>Core Training Model</h3>
-  <p>
-    Skill development is anchored in practical execution rather than abstract
-    instruction, with training structured around how real-world red team
-    operations unfold.
-  </p>
-</div>
-      
+        <h3>Core Training Model</h3>
+        <p>
+          Skill development is anchored in practical execution rather than
+          abstract instruction, with training structured around how real-world
+          red team operations unfold.
+        </p>
+      </div>
 
       <div class="training-model-items">
 
+        <!-- Item 1 -->
         <div class="training-item item-with-icon">
           <span class="item-icon">
             <!-- terminal -->
@@ -1122,13 +1251,14 @@
           <div class="item-content">
             <h4>Lab-first execution</h4>
             <p>
-              Capability development starts inside controlled lab environments,
+              Capability development begins inside controlled lab environments
               where practitioners engage directly with systems, identities, and
               infrastructure rather than consuming theory-heavy material.
             </p>
           </div>
         </div>
 
+        <!-- Item 2 -->
         <div class="training-item item-with-icon">
           <span class="item-icon">
             <!-- git-branch -->
@@ -1139,18 +1269,58 @@
               <path d="M18 9a9 9 0 0 1-9 9"/>
             </svg>
           </span>
-           <div class="item-content">
+          <div class="item-content">
             <h4>Scenario-driven design</h4>
             <p>
-              Training follows realistic attack narratives that mirror adversary
+              Training follows realistic attack narratives that reflect adversary
               behavior and operational decision points instead of isolated
               technical tasks.
             </p>
           </div>
         </div>
 
-      </div>
+        <!-- Item 3 -->
+        <div class="training-item item-with-icon">
+          <span class="item-icon">
+            <!-- layers -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="12 2 22 8 12 14 2 8 12 2"/>
+              <polyline points="2 12 12 18 22 12"/>
+              <polyline points="2 16 12 22 22 16"/>
+            </svg>
+          </span>
+          <div class="item-content">
+            <h4>Contextual environment modeling</h4>
+            <p>
+              Lab environments are structured to resemble enterprise conditions,
+              including identity boundaries, trust relationships, and operational
+              constraints.
+            </p>
+          </div>
+        </div>
 
+        <!-- Item 4 -->
+        <div class="training-item item-with-icon">
+          <span class="item-icon">
+            <!-- shuffle / decision flow -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <polyline points="16 3 21 3 21 8"/>
+              <line x1="4" y1="20" x2="21" y2="3"/>
+              <polyline points="21 16 21 21 16 21"/>
+              <line x1="15" y1="15" x2="21" y2="21"/>
+              <line x1="4" y1="4" x2="9" y2="9"/>
+            </svg>
+          </span>
+          <div class="item-content">
+            <h4>Decision-based execution flow</h4>
+            <p>
+              Exercises require practitioners to make trade-offs and sequencing
+              decisions similar to those encountered during real intrusions.
+            </p>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <!-- Execution Depth -->
@@ -1193,168 +1363,10 @@
         </p>
 
       </div>
-
     </div>
 
   </div>
 </section>
-
-<!-- ================= SECTION 4 ================= -->
-<!-- ================= SECTION 4 — CAPABILITY DEVELOPMENT (TEST VARIANT) ================= -->
-<section class="section-muted">
-  <div class="section-container">
-
-    <div class="section-eyebrow">
-      CAPABILITY DEVELOPMENT
-    </div>
-
-    <h2>
-      How Red Team Skills Are Built in Practice
-    </h2>
-
-    <p class="lead">
-      Capability is developed through execution-first training that reflects how
-      real attacks progress in professional environments.
-    </p>
-
-    <!-- Core Training Model -->
-    <div class="training-model">
-
-      <div class="training-model-intro">
-        <h3>Core Training Model</h3>
-        <p>
-          Skill development is anchored in practical execution rather than
-          abstract instruction, with training structured around how real-world
-          red team operations unfold.
-        </p>
-      </div>
-
-      <div class="training-model-items">
-
-        <div class="training-item">
-          <h4>Lab-first execution</h4>
-          <p>
-            Capability development starts inside controlled lab environments,
-            where practitioners engage directly with systems, identities, and
-            infrastructure rather than consuming theory-heavy material.
-          </p>
-        </div>
-
-        <div class="training-item">
-          <h4>Scenario-driven design</h4>
-          <p>
-            Training follows realistic attack narratives that mirror adversary
-            behavior and operational decision points instead of isolated
-            technical tasks.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- Execution Depth -->
-    <div class="execution-depth">
-
-      <h3>Execution Depth & Practitioner Signals</h3>
-
-      <div class="execution-points">
-
-        <p>
-          <strong>Practitioner-level expectations.</strong>
-          Training assumes prior experience with enterprise security
-          environments and offensive operations, focusing on refinement rather
-          than introduction.
-        </p>
-
-        <p>
-          <strong>Attack progression focus.</strong>
-          Emphasis is placed on how compromises unfold over time, including
-          sequencing, decision-making, and trade-offs encountered during real
-          intrusions.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ================= SECTION 5 ================= -->
-<section>
-  <div class="section-container">
-    <div class="section-eyebrow">DELIVERY CONTROLS</div>
-    <h2>Enterprise-Safe Training Execution</h2>
-    <p class="lead">
-      Training is delivered through controlled environments designed to avoid operational risk.
-    </p>
-   <div class="grid">
-
-  <div class="item-with-icon">
-    <span class="item-icon">
-      <!-- shield-check -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/>
-        <polyline points="9 12 11 14 15 10"/>
-      </svg>
-    </span>
-    <div>
-      <h3>Controlled lab environments</h3>
-      <p>All activity occurs within isolated training infrastructure, not production systems.</p>
-    </div>
-  </div>
-
-  <div class="item-with-icon">
-    <span class="item-icon">
-      <!-- shield-check -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/>
-        <polyline points="9 12 11 14 15 10"/>
-      </svg>
-    </span>
-    <div>
-      <h3>Ethical delivery model</h3>
-      <p>Exercises are designed and delivered within clear professional and legal boundaries.</p>
-    </div>
-  </div>
-
-  <div class="item-with-icon">
-    <span class="item-icon">
-      <!-- shield-check -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/>
-        <polyline points="9 12 11 14 15 10"/>
-      </svg>
-    </span>
-    <div>
-      <h3>No live system interaction</h3>
-      <p>Training does not involve testing, scanning, or interacting with real enterprise environments.</p>
-    </div>
-  </div>
-
-  <div class="item-with-icon">
-    <span class="item-icon">
-      <!-- shield-check -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/>
-        <polyline points="9 12 11 14 15 10"/>
-      </svg>
-    </span>
-    <div>
-      <h3>Operational safety by design</h3>
-      <p>Execution is structured to align with enterprise governance and risk expectations.</p>
-    </div>
-  </div>
-
-</div>
-
-    
-
-  </div>
-</section>
-<!-- ================= SECTION 5 — DELIVERY CONTROLS (TEST VARIANT) ================= -->
 <section class="section-muted">
   <div class="section-container">
 
@@ -1376,15 +1388,25 @@
 
       <h3>Non-Negotiable Execution Boundary</h3>
 
-      <div class="boundary-statement">
-        <p>
-          <strong>No training activity interacts with live enterprise or client
-          systems.</strong>
-        </p>
-        <p>
-          All execution occurs within isolated environments designed solely for
-          capability development.
-        </p>
+      <div class="boundary-statement item-with-icon">
+        <span class="item-icon">
+          <!-- alert-triangle -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </span>
+        <div class="item-content">
+          <p>
+            <strong>No training activity interacts with live enterprise or client
+            systems.</strong>
+          </p>
+          <p>
+            All execution occurs within isolated environments designed solely for
+            capability development.
+          </p>
+        </div>
       </div>
 
     </div>
@@ -1396,28 +1418,60 @@
 
       <div class="control-points-list">
 
-        <div class="control-point">
-          <h4>Isolated lab infrastructure</h4>
-          <p>
-            Training is conducted entirely within controlled environments that
-            are separate from production, customer, or operational systems.
-          </p>
+        <div class="control-point item-with-icon">
+          <span class="item-icon">
+            <!-- server -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="8" rx="2"/>
+              <rect x="2" y="13" width="20" height="8" rx="2"/>
+              <line x1="6" y1="7" x2="6.01" y2="7"/>
+              <line x1="6" y1="17" x2="6.01" y2="17"/>
+            </svg>
+          </span>
+          <div class="item-content">
+            <h4>Isolated lab infrastructure</h4>
+            <p>
+              Training is conducted entirely within controlled environments that
+              are separate from production, customer, or operational systems.
+            </p>
+          </div>
         </div>
 
-        <div class="control-point">
-          <h4>Ethical and professional boundaries</h4>
-          <p>
-            Delivery follows defined rules of engagement aligned with
-            professional security standards and legal expectations.
-          </p>
+        <div class="control-point item-with-icon">
+          <span class="item-icon">
+            <!-- scale -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="12" y1="3" x2="12" y2="21"/>
+              <line x1="5" y1="7" x2="19" y2="7"/>
+              <path d="M7 7l-4 7h8l-4-7z"/>
+              <path d="M17 7l-4 7h8l-4-7z"/>
+            </svg>
+          </span>
+          <div class="item-content">
+            <h4>Ethical and professional boundaries</h4>
+            <p>
+              Delivery follows defined rules of engagement aligned with
+              professional security standards and legal expectations.
+            </p>
+          </div>
         </div>
 
-        <div class="control-point">
-          <h4>Predictable execution model</h4>
-          <p>
-            Training structure aligns with enterprise governance and risk
-            management requirements to ensure consistent, reviewable execution.
-          </p>
+        <div class="control-point item-with-icon">
+          <span class="item-icon">
+            <!-- clipboard-check -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="9" y="2" width="6" height="4" rx="1"/>
+              <path d="M9 4H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/>
+              <polyline points="9 14 11 16 15 12"/>
+            </svg>
+          </span>
+          <div class="item-content">
+            <h4>Predictable execution model</h4>
+            <p>
+              Training structure aligns with enterprise governance and risk
+              management requirements to ensure consistent, reviewable execution.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -1426,8 +1480,6 @@
 
   </div>
 </section>
-
-<!-- ================= SECTION 6 — SKILL VALIDATION (TEST VARIANT) ================= -->
 <section>
   <div class="section-container">
 
@@ -1440,26 +1492,30 @@
     </h2>
 
     <p class="lead">
-      Certification exists to provide defensible evidence of demonstrated
-      capability, not to signal participation, status, or prestige.
-    </p>
+  Certification exists to provide defensible evidence of demonstrated
+  capability, not to signal participation, status, or prestige.
+</p>
 
-    <!-- Validation Framing -->
-    <div class="validation-framing">
+<div class="validation-framing">
 
-      <p>
-        Certification is treated as a professional control mechanism rather than
-        a reward or credentialing signal. Its purpose is to support internal
-        confidence and withstand external scrutiny in professional security
-        contexts.
-      </p>
+  <p class="framing-label">Certification purpose</p>
 
-      <p>
-        Outcomes are designed to be reviewable by clients, auditors, and peers,
-        rather than optimized for individual signaling or resume value.
-      </p>
+  <p>
+    Certification is treated as a professional control mechanism rather than
+    a reward or credentialing signal. Its purpose is to support internal
+    confidence and withstand external scrutiny in professional security
+    contexts.
+  </p>
 
-    </div>
+  <p>
+    Outcomes are designed to be reviewable by clients, auditors, and peers,
+    rather than optimized for individual signaling or resume value.
+  </p>
+
+</div>
+
+
+   
 
     <!-- Validation Characteristics -->
     <div class="validation-characteristics">
@@ -1468,28 +1524,70 @@
 
       <div class="validation-points">
 
-        <p>
-          <strong>Assessment-based issuance.</strong>
-          Certification is granted only after formal evaluation of applied
-          skills, judgment, and execution within defined scenarios.
+        <p class="item-with-icon">
+          <span class="item-icon">
+            <!-- clipboard-check -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="9" y="2" width="6" height="4" rx="1"/>
+              <path d="M9 4H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/>
+              <polyline points="9 14 11 16 15 12"/>
+            </svg>
+          </span>
+          <span>
+            <strong>Assessment-based issuance.</strong>
+            Certification is granted only after formal evaluation of applied
+            skills, judgment, and execution within defined scenarios.
+          </span>
         </p>
 
-        <p>
-          <strong>Capability-focused criteria.</strong>
-          Evaluation emphasizes practical execution and understanding rather
-          than memorization, tool familiarity, or static checklists.
+        <p class="item-with-icon">
+          <span class="item-icon">
+            <!-- target -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="8"/>
+              <circle cx="12" cy="12" r="4"/>
+              <line x1="12" y1="2" x2="12" y2="6"/>
+              <line x1="12" y1="18" x2="12" y2="22"/>
+              <line x1="2" y1="12" x2="6" y2="12"/>
+              <line x1="18" y1="12" x2="22" y2="12"/>
+            </svg>
+          </span>
+          <span>
+            <strong>Capability-focused criteria.</strong>
+            Evaluation emphasizes practical execution and understanding rather
+            than memorization, tool familiarity, or static checklists.
+          </span>
         </p>
 
-        <p>
-          <strong>Professionally defensible outcomes.</strong>
-          Certification artifacts are designed to withstand client review,
-          audit requirements, and peer scrutiny.
+        <p class="item-with-icon">
+          <span class="item-icon">
+            <!-- shield-check -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </span>
+          <span>
+            <strong>Professionally defensible outcomes.</strong>
+            Certification artifacts are designed to withstand client review,
+            audit requirements, and peer scrutiny.
+          </span>
         </p>
 
-        <p>
-          <strong>Certification ≠ attendance.</strong>
-          Participation in training alone does not result in certification
-          without demonstrated capability and assessment completion.
+        <p class="item-with-icon">
+          <span class="item-icon">
+            <!-- x-circle -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="15" y1="9" x2="9" y2="15"/>
+              <line x1="9" y1="9" x2="15" y2="15"/>
+            </svg>
+          </span>
+          <span>
+            <strong>Certification ≠ attendance.</strong>
+            Participation in training alone does not result in certification
+            without demonstrated capability and assessment completion.
+          </span>
         </p>
 
       </div>
@@ -1499,82 +1597,6 @@
   </div>
 </section>
   
-
-<!-- ================= SECTION 6 ================= -->
-<section>
-  <div class="section-container">
-    <div class="section-eyebrow">SKILL VALIDATION</div>
-    <h2>Certifications as Professional Signals</h2>
-    <p class="lead">
-      Certification validates demonstrated capability, not attendance or exposure.
-    </p>
-
-   <div class="grid">
-
-  <div class="item-with-icon">
-    <span class="item-icon">
-      <!-- check-circle -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-        <polyline points="9 12 12 15 16 9"/>
-      </svg>
-    </span>
-    <div>
-      <h3>Assessment-based validation</h3>
-      <p>Certification is issued only after formal evaluation of applied skills and decision-making.</p>
-    </div>
-  </div>
-
-  <div class="item-with-icon">
-    <span class="item-icon">
-      <!-- check-circle -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-        <polyline points="9 12 12 15 16 9"/>
-      </svg>
-    </span>
-    <div>
-      <h3>Capability-focused criteria</h3>
-      <p>Emphasis is placed on practical execution and understanding, not memorization or tool familiarity.</p>
-    </div>
-  </div>
-
-  <div class="item-with-icon">
-    <span class="item-icon">
-      <!-- check-circle -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-        <polyline points="9 12 12 15 16 9"/>
-      </svg>
-    </span>
-    <div>
-      <h3>Professionally defensible outcomes</h3>
-      <p>Certification outcomes are designed to withstand internal review and external client scrutiny.</p>
-    </div>
-  </div>
-
-  <div class="item-with-icon">
-    <span class="item-icon">
-      <!-- check-circle -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-        <polyline points="9 12 12 15 16 9"/>
-      </svg>
-    </span>
-    <div>
-      <h3>Certification is not attendance</h3>
-      <p>Completion of training alone does not result in certification without assessment.</p>
-    </div>
-  </div>
-
-</div>
-
-
-  </div>
-</section>
-
-<!-- ================= SECTION 7 ================= -->
-<!-- ================= SECTION 7 — ORGANIZATIONAL VALUE (TEST VARIANT) ================= -->
 <section>
   <div class="section-container">
 
@@ -1596,13 +1618,21 @@
 
       <h3>Primary Organizational Outcome</h3>
 
-      <div class="primary-outcome-block">
-        <h4>Organizational Security Readiness</h4>
-        <p>
-          Structured capability development strengthens how consistently and
-          realistically adversary behavior is assessed across the organization,
-          improving confidence in defensive posture and decision-making.
-        </p>
+      <div class="primary-outcome-block item-with-icon">
+        <span class="item-icon">
+          <!-- shield -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/>
+          </svg>
+        </span>
+        <div class="item-content">
+          <h4>Organizational Security Readiness</h4>
+          <p>
+            Structured capability development strengthens how consistently and
+            realistically adversary behavior is assessed across the organization,
+            improving confidence in defensive posture and decision-making.
+          </p>
+        </div>
       </div>
 
     </div>
@@ -1614,38 +1644,67 @@
 
       <div class="implications-grid">
 
-        <div class="implication-item">
-          <h4>Client and stakeholder confidence</h4>
-          <p>
-            Demonstrable red team capability supports trust in security programs
-            and professional service delivery.
-          </p>
+        <div class="implication-item item-with-icon">
+          <span class="item-icon">
+            <!-- users -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="9" cy="7" r="4"/>
+              <circle cx="17" cy="7" r="3"/>
+              <path d="M2 21v-2a4 4 0 0 1 4-4h6"/>
+              <path d="M17 21v-2a3 3 0 0 0-3-3"/>
+            </svg>
+          </span>
+          <div class="item-content">
+            <h4>Client and stakeholder confidence</h4>
+            <p>
+              Demonstrable red team capability supports trust in security programs
+              and professional service delivery.
+            </p>
+          </div>
         </div>
 
-        <div class="implication-item">
-          <h4>Audit and RFP credibility</h4>
-          <p>
-            Validated training and assessment align with expectations during
-            audits, evaluations, and procurement processes.
-          </p>
+        <div class="implication-item item-with-icon">
+          <span class="item-icon">
+            <!-- file-check -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <polyline points="9 15 11 17 15 13"/>
+            </svg>
+          </span>
+          <div class="item-content">
+            <h4>Audit and RFP credibility</h4>
+            <p>
+              Validated training and assessment align with expectations during
+              audits, evaluations, and procurement processes.
+            </p>
+          </div>
         </div>
 
-        <div class="implication-item">
-          <h4>Sustainable capability investment</h4>
-          <p>
-            Training functions as an enablement mechanism rather than a one-time
-            technical activity, supporting long-term organizational readiness.
-          </p>
+        <div class="implication-item item-with-icon">
+          <span class="item-icon">
+            <!-- layers -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="12 2 22 8 12 14 2 8 12 2"/>
+              <polyline points="2 12 12 18 22 12"/>
+              <polyline points="2 16 12 22 22 16"/>
+            </svg>
+          </span>
+          <div class="item-content">
+            <h4>Sustainable capability investment</h4>
+            <p>
+              Training functions as an enablement mechanism rather than a one-time
+              technical activity, supporting long-term organizational readiness.
+            </p>
+          </div>
         </div>
 
       </div>
 
-    </div>   
+    </div>
 
   </div>
 </section>
-
-
 <!-- ================= SECTION — TRUSTED BY ================= -->
 <section>
   <div class="section-container">
@@ -1685,24 +1744,66 @@
   </div>
 </section>
     
-
-<!-- ================= SECTION 8 ================= -->
 <section>
   <div class="section-container">
+
     <div class="section-eyebrow">PROFESSIONAL ADOPTION</div>
+
     <h2>Established Use in Professional Contexts</h2>
+
     <p class="lead">
       Adoption provides contextual validation after structure and capability are understood.
     </p>
 
     <div class="grid">
-      <div><h3>Active professional usage</h3><p>Used within real security operations.</p></div>
-      <div><h3>Adoption by security organizations</h3><p>Employed by professional red teams.</p></div>
-      <div><h3>Industry relevance</h3><p>Aligned with modern enterprise security practice.</p></div>
+
+      <div class="item-with-icon">
+        <span class="item-icon">
+          <!-- activity -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </span>
+        <div class="item-content">
+          <h3>Active professional usage</h3>
+          <p>Used within real security operations.</p>
+        </div>
+      </div>
+
+      <div class="item-with-icon">
+        <span class="item-icon">
+          <!-- briefcase -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+          </svg>
+        </span>
+        <div class="item-content">
+          <h3>Adoption by security organizations</h3>
+          <p>Employed by professional red teams.</p>
+        </div>
+      </div>
+
+      <div class="item-with-icon">
+        <span class="item-icon">
+          <!-- check-circle -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </span>
+        <div class="item-content">
+          <h3>Industry relevance</h3>
+          <p>Aligned with modern enterprise security practice.</p>
+        </div>
+      </div>
+
     </div>
+
   </div>
 </section>
-<!-- ================= SECTION — PROFESSIONAL STEWARDSHIP (TEST VARIANT) ================= -->
+  
 <section>
   <div class="section-container">
 
@@ -1725,14 +1826,26 @@
 
       <h3>Stewardship Role</h3>
 
-      <p class="stewardship-role-title">
-        Program Architect &amp; Professional Steward
-      </p>
-
-      <p>
-        Responsible for maintaining the integrity, structure, and evolution of
-        the red team capability framework across training, labs, and validation.
-      </p>
+      <div class="item-with-icon">
+        <span class="item-icon">
+          <!-- user-check -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5"/>
+            <circle cx="8.5" cy="7" r="4"/>
+            <polyline points="17 11 19 13 23 9"/>
+          </svg>
+        </span>
+        <div class="item-content">
+          <p class="stewardship-role-title">
+            Program Architect &amp; Professional Steward
+          </p>
+          <p>
+            Responsible for maintaining the integrity, structure, and evolution
+            of the red team capability framework across training, labs, and
+            validation.
+          </p>
+        </div>
+      </div>
 
     </div>
 
@@ -1743,22 +1856,53 @@
 
       <div class="stewardship-points">
 
-        <p>
-          <strong>Capability framework ownership.</strong>
-          Defines capability progression, assessment expectations, and overall
-          program structure.
+        <p class="item-with-icon">
+          <span class="item-icon">
+            <!-- layers -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="12 2 22 8 12 14 2 8 12 2"/>
+              <polyline points="2 12 12 18 22 12"/>
+              <polyline points="2 16 12 22 22 16"/>
+            </svg>
+          </span>
+          <span>
+            <strong>Capability framework ownership.</strong>
+            Defines capability progression, assessment expectations, and overall
+            program structure.
+          </span>
         </p>
 
-        <p>
-          <strong>Scenario and realism oversight.</strong>
-          Ensures alignment between training scenarios, adversary simulation,
-          and real-world enterprise environments.
+        <p class="item-with-icon">
+          <span class="item-icon">
+            <!-- crosshair -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="8"/>
+              <line x1="12" y1="2" x2="12" y2="6"/>
+              <line x1="12" y1="18" x2="12" y2="22"/>
+              <line x1="2" y1="12" x2="6" y2="12"/>
+              <line x1="18" y1="12" x2="22" y2="12"/>
+            </svg>
+          </span>
+          <span>
+            <strong>Scenario and realism oversight.</strong>
+            Ensures alignment between training scenarios, adversary simulation,
+            and real-world enterprise environments.
+          </span>
         </p>
 
-        <p>
-          <strong>Certification integrity.</strong>
-          Maintains evaluation criteria so certification reflects demonstrated
-          capability rather than attendance or participation.
+        <p class="item-with-icon">
+          <span class="item-icon">
+            <!-- shield-check -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </span>
+          <span>
+            <strong>Certification integrity.</strong>
+            Maintains evaluation criteria so certification reflects demonstrated
+            capability rather than attendance or participation.
+          </span>
         </p>
 
       </div>
@@ -1782,80 +1926,6 @@
 
   </div>
 </section>
-
-<!-- ================= PROFESSIONAL STEWARDSHIP ================= -->
-<!-- ================= PROFESSIONAL STEWARDSHIP ================= -->
-<section>
-  <div class="section-container">
-
-    <div class="section-eyebrow">
-      PROFESSIONAL STEWARDSHIP
-    </div>
-
-    <h2>
-      Oversight, Accountability, and Program Direction
-    </h2>
-
-    <p class="lead">
-      The training and certification framework is shaped and overseen by an
-      identifiable professional authority to ensure realism, rigor, and
-      defensible standards in enterprise security contexts.
-    </p>
-
-    <div class="stewardship-layout">
-
-      <!-- Profile Image -->
-      <div class="stewardship-photo">
-        <img
-          src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp"
-          alt="Nikhil Mittal – Program Architect and Professional Steward"
-        />
-      </div>
-
-      <!-- Stewardship Content -->
-      <div class="stewardship-content">
-
-        <div class="stewardship-name">
-          Nikhil Mittal
-        </div>
-
-        <div class="stewardship-role">
-          Program Architect & Professional Steward
-        </div>
-
-        <div class="stewardship-points">
-          <p>
-            Responsible for defining the capability framework, assessment
-            expectations, and overall direction of the red team training and
-            certification model.
-          </p>
-
-          <p>
-            Oversees alignment between training scenarios, adversary simulation,
-            and real-world enterprise environments to ensure relevance beyond
-            theoretical instruction.
-          </p>
-
-          <p>
-            Ensures that certification outcomes are based on demonstrated
-            capability and defensible evaluation criteria, rather than
-            attendance or exposure alone.
-          </p>
-        </div>
-
-        <div class="stewardship-link">
-          <a href="#" target="_blank" rel="noopener">
-            View professional background
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-<!-- ================= SECTION — PROFESSIONAL PRACTICE (TEST VARIANT) ================= -->
 <section>
   <div class="section-container">
 
@@ -1873,13 +1943,21 @@
     </p>
 
     <!-- Practice Anchor -->
-    <div class="practice-anchor">
-      <p>
-        Training and capability development are shaped by practitioners who
-        actively operate within the professional red team community. Programs
-        and labs are designed from real-world operational context, not abstract
-        or disconnected models.
-      </p>
+    <div class="practice-anchor item-with-icon">
+      <span class="item-icon">
+        <!-- activity -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+      </span>
+      <div class="item-content">
+        <p>
+          Training and capability development are shaped by practitioners who
+          actively operate within the professional red team community. Programs
+          and labs are designed from real-world operational context, not abstract
+          or disconnected models.
+        </p>
+      </div>
     </div>
 
     <!-- Practice Evidence -->
@@ -1889,31 +1967,62 @@
 
       <div class="practice-items">
 
-        <div class="practice-item">
-          <h4>AltSecCON — Professional Training Environment</h4>
-          <p>
-            A recurring hands-on training event where practitioners engage with
-            realistic enterprise scenarios and structured red team lab execution
-            under controlled conditions.
-          </p>
+        <div class="practice-item item-with-icon">
+          <span class="item-icon">
+            <!-- terminal -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <polyline points="4 17 10 11 4 5"/>
+              <line x1="12" y1="19" x2="20" y2="19"/>
+            </svg>
+          </span>
+          <div class="item-content">
+            <h4>AltSecCON — Professional Training Environment</h4>
+            <p>
+              A recurring hands-on training event where practitioners engage
+              with realistic enterprise scenarios and structured red team lab
+              execution under controlled conditions.
+            </p>
+          </div>
         </div>
 
-        <div class="practice-item">
-          <h4>External Conference Participation</h4>
-          <p>
-            Ongoing involvement in established security conferences and
-            professional forums such as Nullcon and BruCON, supporting alignment
-            with current adversary tradecraft and industry practice.
-          </p>
+        <div class="practice-item item-with-icon">
+          <span class="item-icon">
+            <!-- users -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="9" cy="7" r="4"/>
+              <circle cx="17" cy="7" r="3"/>
+              <path d="M2 21v-2a4 4 0 0 1 4-4h6"/>
+              <path d="M17 21v-2a3 3 0 0 0-3-3"/>
+            </svg>
+          </span>
+          <div class="item-content">
+            <h4>External Conference Participation</h4>
+            <p>
+              Ongoing involvement in established security conferences and
+              professional forums such as Nullcon and BruCON, supporting
+              alignment with current adversary tradecraft and industry practice.
+            </p>
+          </div>
         </div>
 
-        <div class="practice-item">
-          <h4>Continuous Practice Feedback Loop</h4>
-          <p>
-            Insights from professional engagement inform lab design, scenario
-            development, and assessment expectations across training and
-            validation programs.
-          </p>
+        <div class="practice-item item-with-icon">
+          <span class="item-icon">
+            <!-- refresh-cw -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <polyline points="23 4 23 10 17 10"/>
+              <polyline points="1 20 1 14 7 14"/>
+              <path d="M3.51 9a9 9 0 0 1 14.13-3.36L23 10"/>
+              <path d="M20.49 15a9 9 0 0 1-14.13 3.36L1 14"/>
+            </svg>
+          </span>
+          <div class="item-content">
+            <h4>Continuous Practice Feedback Loop</h4>
+            <p>
+              Insights from professional engagement inform lab design, scenario
+              development, and assessment expectations across training and
+              validation programs.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -1931,77 +2040,10 @@
   </div>
 </section>
 
-<!-- ================= PROFESSIONAL ECOSYSTEM ENGAGEMENT ================= -->
-<!-- ================= PROFESSIONAL PRACTICE & COMMUNITY ENGAGEMENT ================= -->
-<section>
-  <div class="section-container">
 
-    <div class="section-eyebrow">
-      PROFESSIONAL PRACTICE
-    </div>
-
-    <h2>
-      Operating Within the Professional Red Team Community
-    </h2>
-
-    <p class="lead">
-      Red team training and capability development must remain grounded in
-      real-world practice. The programs and labs are designed and delivered by
-      practitioners who operate within the broader professional security
-      community, rather than in isolation.
-    </p>
-
-    <div class="ecosystem-content">
-
-      <h3>
-        AltSecCON — Professional Training & Lab Environment
-      </h3>
-
-      <p>
-        AltSecCON is a recurring professional training event focused on hands-on
-        red team labs and capability development. It provides a structured
-        environment where practitioners engage with realistic enterprise
-        scenarios, apply offensive techniques, and build practical skills under
-        controlled conditions.
-      </p>
-
-      <p>
-        Training delivered through AltSecCON reflects the same lab-first,
-        scenario-driven approach used across the broader red team training and
-        certification programs.
-      </p>
-
-      <h3>
-        Engagement With External Security Conferences
-      </h3>
-
-      <p>
-        Trainers and program leadership also participate in established security
-        conferences and professional forums such as Nullcon and BruCON. This
-        involvement supports continuous exposure to evolving adversary
-        techniques, tooling, and tradecraft discussed within the global security
-        community.
-      </p>
-
-      <p>
-        Ongoing participation in external forums helps ensure that training
-        content, lab scenarios, and assessment expectations remain aligned with
-        current professional red team practice.
-      </p>
-
-    </div>
-
-  </div>
-</section>
-
-  
-<!-- ================= SECTION 9 — PROFESSIONAL DIALOGUE (TEST VARIANT) ================= -->
-<section class="section-muted">
-  <div class="section-container">
-
-    <div class="section-eyebrow">
-      PROFESSIONAL DIALOGUE
-    </div>
+<!-- ================= SECTION 9 — PROFESSIONAL DIALOGUE ================= -->
+<section class="section-navy">
+  <div class="section-container">  
 
     <h2>
       A Structured Conversation, Not a Commitment
@@ -2017,7 +2059,7 @@
 
       <h3>What the Conversation Covers</h3>
 
-      <div class="conversation-points">
+      <div class="conversation-grid">
 
         <p>
           <strong>Context alignment.</strong>
@@ -2048,7 +2090,7 @@
         Start a Capability Conversation
       </a>
 
-      <a href="#contact" class="btn btn-secondary">
+      <a href="#contact" class="btn btn-secondary btn-secondary-navy">
         Request an Alignment Review
       </a>
 
@@ -2065,27 +2107,6 @@
   </div>
 </section>
 
-<!-- ================= SECTION 9 ================= -->
-<section class="section-navy">
-  <div class="section-container">
-    <div class="section-eyebrow">PROFESSIONAL DIALOGUE</div>
-    <h2>Explore Fit and Alignment</h2>
-    <p class="lead">
-      The next step is a structured conversation to assess relevance and engagement.
-    </p>
-
-    <div class="grid">
-      <div><h3>Capability alignment discussion</h3><p>Review alignment with organizational needs.</p></div>
-      <div><h3>Use-case exploration</h3><p>Examine applicability across delivery models.</p></div>
-      <div><h3>Partnership assessment</h3><p>Determine suitability for long-term engagement.</p></div>
-    </div>
-
-    <div class="actions">
-      <a class="btn btn-primary">Initiate a Capability Discussion</a>
-      <a class="btn btn-secondary">Request a Fit Assessment</a>
-    </div>
-  </div>
-</section>
 
 </body>
 </html>
