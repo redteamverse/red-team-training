@@ -1174,101 +1174,141 @@
   }
 
 }
-/* ===== SITE HEADER ===== */
+/* ===== GLOBAL ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #111827;
+}
+
+/* ===== HEADER ===== */
 
 .site-header {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 64px; /* STANDARD ENTERPRISE HEIGHT */
   background: #0B1E3B;
   z-index: 1000;
-  box-shadow: none;
-  transition: transform 0.25s ease;
-}
-
-.site-header.hidden {
-  transform: translateY(-100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
 .header-container {
   max-width: 1280px;
+  height: 100%;
   margin: 0 auto;
-  padding: 12px 16px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
-  gap: 24px;
+  justify-content: space-between;
 }
 
-.site-logo a {
-  color: #fff;
+.site-logo {
+  font-size: 15px;
   font-weight: 600;
-  text-decoration: none;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
 }
 
 .primary-nav {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
 .primary-nav a {
-  color: #E5E7EB;
   font-size: 13px;
+  color: #E5E7EB;
   text-decoration: none;
 }
 
 .primary-nav a:hover {
-  color: #fff;
+  color: #FFFFFF;
 }
 
-/* Desktop More */
-.more-toggle {
-  background: none;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #fff;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 4px;
-  cursor: pointer;
+/* ===== HERO ===== */
+
+.hero {
+  padding-top: 64px; /* offset header */
+  background: #2B2B50;
+  color: #FFFFFF;
 }
 
-.more-menu {
-  display: none;
-  position: absolute;
-  right: 16px;
-  top: 52px;
-  background: #0B1E3B;
-  border: 1px solid rgba(255,255,255,0.15);
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 96px 24px;
 }
 
-.more-menu a {
-  display: block;
-  padding: 10px 14px;
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  max-width: 640px;
+  font-size: 16px;
   color: #E5E7EB;
+}
+
+/* ===== PAGE NAV ===== */
+
+.page-nav {
+  position: sticky;
+  top: 64px; /* HEADER HEIGHT */
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+  z-index: 900;
+}
+
+.page-nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.page-nav-inner a {
+  font-size: 13px;
+  color: #6B7280;
   text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
 }
 
-.more-menu a:hover {
-  background: rgba(255,255,255,0.05);
-  color: #fff;
+.page-nav-inner a.active {
+  color: #111827;
+  border-color: #B91C1C;
 }
 
-.more-menu.open {
-  display: block;
-}
+/* ===== CONTENT PLACEHOLDER ===== */
 
-/* Hamburger */
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+/* ===== MOBILE HAMBURGER ===== */
+
 .menu-toggle {
-  margin-left: auto;
   display: none;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .menu-toggle span {
-  width: 20px;
-  height: 2px;
-  background: #fff;
   display: block;
+  width: 22px;
+  height: 2px;
+  background: #FFFFFF;
   margin: 4px 0;
 }
 
@@ -1276,63 +1316,29 @@
 .mobile-menu {
   display: none;
   background: #0B1E3B;
+  border-top: 1px solid rgba(255,255,255,0.12);
 }
 
 .mobile-menu a {
   display: block;
-  padding: 14px 16px;
+  padding: 14px 24px;
+  font-size: 14px;
   color: #E5E7EB;
   text-decoration: none;
+}
+
+.mobile-menu a:hover {
+  background: rgba(255,255,255,0.06);
+  color: #FFFFFF;
 }
 
 .mobile-menu.open {
   display: block;
 }
-
-/* ===== PAGE NAV ===== */
-
-.page-nav {
-  position: sticky;
-  top: 0;
-  z-index: 900;
-  background: #fff;
-  border-bottom: 1px solid #E5E7EB;
-  box-shadow: none;
-  transition: box-shadow 0.2s ease;
-}
-.site-header:not(.hidden) {
-  box-shadow: var(--nav-shadow);
-}
-.page-nav.is-sticky {
-  box-shadow: var(--nav-shadow);
-}
-
-.page-nav-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 10px 16px;
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-}
-
-.page-nav a {
-  font-size: 13px;
-  text-decoration: none;
-  color: #6B7280;
-  border-bottom: 2px solid transparent;
-}
-
-.page-nav a.active {
-  color: #111827;
-  border-color: #B91C1C;
-}
-
 /* ===== RESPONSIVE ===== */
 
-@media (max-width: 768px) {
-  .primary-nav,
-  .more-toggle {
+@media (max-width: 1023px) {
+  .primary-nav {
     display: none;
   }
 
@@ -1340,89 +1346,51 @@
     display: block;
   }
 }
-
-.site-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: #0B1E3B;
-  transition: transform 0.25s ease;
-}
-
-.site-header.hidden {
-  transform: translateY(-100%);
-}
-#hero {
-  padding-top: 64px; /* header height */
-}
-.page-nav {
-  position: sticky;
-  top: 64px; /* SAME as header height */
-  z-index: 900;
-  background: #FFFFFF;
-  border-bottom: 1px solid #E5E7EB;
-}
-
-.page-nav-inner {
-  display: flex;
-  gap: 20px;
-  padding: 10px 16px;
-  overflow-x: auto;
-}
-
   </style>
 </head>
 
 <body>
-<!-- ===== SITE HEADER ===== -->
-<header class="site-header" id="siteHeader">
+<header class="site-header">
   <div class="header-container">
 
     <div class="site-logo">
-      <a href="/">Altered Security</a>
+      Altered Security
     </div>
 
-    <!-- Desktop primary nav -->
+    <!-- Desktop Nav -->
     <nav class="primary-nav">
-      <a href="/red-team-labs.html">Red Team Labs</a>
-      <a href="/bootcamps.html">Bootcamps</a>
-      <a href="/certifications.html">Certifications</a>
-      <a href="/trainings.html">Trainings</a>
+      <a href="#">Red Team Labs</a>
+      <a href="#">Bootcamps</a>
+      <a href="#">Certifications</a>
+      <a href="#">Trainings</a>
+      <a href="#">Blog</a>
+      <a href="#">Resources</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
     </nav>
 
-    <!-- Desktop "More" trigger -->
-    <button class="more-toggle" id="moreToggle" aria-label="More">
-      More ▾
-    </button>
-
-    <!-- Hamburger (Mobile) -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
+    <!-- Mobile Hamburger -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
   </div>
 
-  <!-- More menu (Desktop) -->
-  <div class="more-menu" id="moreMenu">
-    <a href="/blog.html">Blog</a>
-    <a href="/resources.html">Resources</a>
-    <a href="/about.html">About Us</a>
-    <a href="/contact.html">Contact</a>
-  </div>
-
-  <!-- Mobile menu -->
+  <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="/red-team-labs.html">Red Team Labs</a>
-    <a href="/bootcamps.html">Bootcamps</a>
-    <a href="/certifications.html">Certifications</a>
-    <a href="/trainings.html">Trainings</a>
-    <a href="/blog.html">Blog</a>
-    <a href="/resources.html">Resources</a>
-    <a href="/about.html">About Us</a>
-    <a href="/contact.html">Contact</a>
+    <a href="#">Red Team Labs</a>
+    <a href="#">Bootcamps</a>
+    <a href="#">Certifications</a>
+    <a href="#">Trainings</a>
+    <a href="#">Blog</a>
+    <a href="#">Resources</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact</a>
   </div>
 </header>
+
 
 
 <section class="hero hero-navy">
@@ -2561,85 +2529,38 @@
 
   </div>
 </section>
+
 <script>
-  // Header hide/show
-  let lastScrollY = window.scrollY;
-  const header = document.getElementById('siteHeader');
+  // Mobile menu toggle
+  const toggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('mobileMenu');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > lastScrollY && window.scrollY > 80) {
-      header.classList.add('hidden');
-    } else {
-      header.classList.remove('hidden');
-    }
-    lastScrollY = window.scrollY;
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
   });
 
-  // Desktop More menu
-  const moreToggle = document.getElementById('moreToggle');
-  const moreMenu = document.getElementById('moreMenu');
-
-  moreToggle.addEventListener('click', () => {
-    moreMenu.classList.toggle('open');
-  });
-
-  // Mobile menu
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-  });
-
-  // Page nav active state
+  // Page-nav active state
   const navLinks = document.querySelectorAll('.page-nav a');
-  const sections = [...navLinks].map(l => document.querySelector(l.getAttribute('href')));
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        const active = document.querySelector(`.page-nav a[href="#${entry.target.id}"]`);
-        if (active) active.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-
-  sections.forEach(s => s && observer.observe(s));
-</script>
-
-<script>
-  let lastScrollY = window.scrollY;
-  const header = document.getElementById('siteHeader');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > lastScrollY && window.scrollY > 80) {
-      header.classList.add('hidden');
-    } else {
-      header.classList.remove('hidden');
-    }
-    lastScrollY = window.scrollY;
-  });
-</script>
-
-<script>
-  const pageNav = document.getElementById('pageNav');
-  const hero = document.getElementById('hero');
-
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (!entry.isIntersecting) {
-        pageNav.classList.add('is-sticky');
-      } else {
-        pageNav.classList.remove('is-sticky');
-      }
-    },
-    {
-      rootMargin: '-64px 0px 0px 0px' // header height
-    }
+  const sections = [...navLinks].map(link =>
+    document.querySelector(link.getAttribute('href'))
   );
 
-  observer.observe(hero);
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(
+            `.page-nav a[href="#${entry.target.id}"]`
+          );
+          if (active) active.classList.add('active');
+        }
+      });
+    },
+    { rootMargin: '-40% 0px -55% 0px' }
+  );
+
+  sections.forEach(section => section && observer.observe(section));
 </script>
 
 
