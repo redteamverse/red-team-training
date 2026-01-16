@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Enterprise Red Team Capability</title>
 
   <!-- ================= RESET ================= -->
@@ -14,8 +14,7 @@
         Roboto, Inter, Helvetica, Arial, sans-serif;
       color: #111827;
       background: #FFFFFF;
-      line-height: 1.5;
-      overflow-x: hidden;
+      line-height: 1.5;     
     }
     
     /* ===== ICON SYSTEM (AUTHORITATIVE) ===== */
@@ -1479,11 +1478,10 @@ body {
 }
   
 /* =========================================================
-   CAPABILITY FRAMEWORK – FULL SECTION CSS
+   HARD SAFETY
    ========================================================= */
 
-/* ---------- Base safety ---------- */
-body {
+html, body {
   overflow-x: hidden;
 }
 
@@ -1492,9 +1490,14 @@ body {
    ========================================================= */
 
 .framework-final {
-  background: #0b0d12;
+  background: radial-gradient(
+    1200px 600px at 10% 0%,
+    #111827 0%,
+    #0b0d12 60%
+  );
   color: #e5e7eb;
   padding: 120px 0;
+  overflow-x: hidden;
 }
 
 .framework-container {
@@ -1509,13 +1512,13 @@ body {
 
 .framework-grid {
   display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
+  grid-template-columns: 1.3fr 0.7fr;
   gap: 64px;
   align-items: start;
 }
 
 /* =========================================================
-   LEFT COLUMN – CONTENT
+   LEFT CONTENT
    ========================================================= */
 
 .section-eyebrow {
@@ -1529,41 +1532,40 @@ body {
 .framework-heading {
   font-size: 36px;
   line-height: 1.2;
-  color: #ffffff;
   margin-bottom: 16px;
+  color: #ffffff;
 }
 
 .framework-lead {
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.6;
   color: #cbd5e1;
-  max-width: 560px;
+  max-width: 600px;
 }
 
 /* =========================================================
-   DIAGRAM – DESKTOP & MOBILE
+   DIAGRAM (DESKTOP)
    ========================================================= */
 
 .framework-diagram-small {
-  margin: 40px 0 48px;
+  margin: 40px 0 32px;
   position: relative;
+  overflow-x: auto;              /* contains wide SVG */
 }
 
-/* Desktop diagram */
 .framework-diagram-small svg {
-  width: auto;
-  min-width: 720px;
+  display: block;
+  width: 1000px;                 /* forces horizontal flow */
+  max-width: none;
   height: auto;
 }
 
-/* Diagram styling */
 .framework-diagram-small rect {
-  fill: #ffffff;
-  stroke: #d1d5db;
+  fill: #000000;
 }
 
 .framework-diagram-small text {
-  fill: #111827;
+  fill: #ffffff;
   font-size: 13px;
   text-anchor: middle;
 }
@@ -1578,122 +1580,130 @@ body {
    ========================================================= */
 
 .execution-block {
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .execution-block h3 {
   font-size: 18px;
-  color: #ffffff;
   margin-bottom: 8px;
+  color: #ffffff;
 }
 
 .execution-block p {
   font-size: 15px;
   line-height: 1.6;
   color: #cbd5e1;
-  max-width: 520px;
-  margin-bottom: 16px;
+  max-width: 560px;
+  margin-bottom: 12px;
 }
 
 .execution-block ul {
-  list-style: disc;
   padding-left: 18px;
-  margin: 0;
 }
 
 .execution-block li {
   font-size: 14px;
-  color: #e5e7eb;
   margin-bottom: 6px;
+  color: #e5e7eb;
 }
 
 /* =========================================================
-   RIGHT COLUMN – VIDEO
+   VIDEO (DESKTOP)
    ========================================================= */
 
 .framework-right {
-  display: flex;
-  justify-content: flex-end;
+  width: 100%;
+  align-self: center;
 }
 
 .video-frame {
   position: relative;
   width: 100%;
-  max-width: 360px;
+  max-width: 420px;
   aspect-ratio: 9 / 16;
+  min-height: 520px;             /* authoritative height */
   background: #000;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.6),
+    0 0 0 1px rgba(255,255,255,0.08);
 }
 
 .video-frame video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 /* Play button */
+
 .play-btn {
   position: absolute;
   inset: 0;
   margin: auto;
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  border: none;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.65);
   color: #ffffff;
-  font-size: 24px;
+  font-size: 22px;
+  border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
 }
 
+/* Hide ONLY while video is actively playing */
 .video-frame.playing .play-btn {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
+
 
 /* =========================================================
-   MOBILE BEHAVIOR
+   MOBILE
    ========================================================= */
 
 @media (max-width: 900px) {
 
-  /* Section spacing */
   .framework-final {
-    padding: 96px 0;
+    padding: 80px 0;
   }
 
-  /* Grid becomes stacked */
+    /* CONTAIN EVERYTHING */
   .framework-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 32px;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
-  /* Heading scale */
   .framework-heading {
     font-size: 26px;
   }
 
-  /* -----------------------------
-     Diagram: horizontal scroll only inside
-     ----------------------------- */
-
+/* DIAGRAM SCROLL — ISOLATED */
   .framework-diagram-small {
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 4px;
     margin: 24px 0 20px;
-  }
+    position: relative;
+  }  
 
   .framework-diagram-small svg {
-    width: auto;
-    min-width: 720px;
+    width: 1000px;
     max-width: none;
-    transform: none;
+    display: block;
   }
 
-  /* Scroll hint (optional but recommended) */
+  /* Optional scroll hint */
   .framework-diagram-small::after {
     content: "";
     position: absolute;
@@ -1708,30 +1718,63 @@ body {
       rgba(11,13,18,0)
     );
   }
-
-  /* -----------------------------
-     Execution block spacing
-     ----------------------------- */
-
-  .execution-block {
-    margin-top: 24px;
-  }
-
-  /* -----------------------------
-     Video sizing (critical)
-     ----------------------------- */
-
+  
   .framework-right {
+    width: 100%;
+    display: flex;
     justify-content: flex-start;
   }
+  /* Video mobile sizing */
+ 
+  /* ================= VIDEO CONTAINER ================= */
 
-  .video-frame {
-    max-width: 100%;
-    aspect-ratio: 3 / 4;
-    max-height: 42vh;
-    margin-top: 16px;
-  }
+.video-frame {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
 }
+
+/* FORCE proper stacking on mobile */
+.video-frame video {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= PLAY BUTTON ================= */
+
+.play-btn {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.7);
+  color: #ffffff;
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 10;              /* ABOVE video */
+  pointer-events: auto;
+}
+
+/* Hide only when playing */
+.video-frame.playing .play-btn {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+}
+
+
 
 
 
@@ -1843,10 +1886,10 @@ body {
     <!-- CTAs -->
     <div class="hero-cta">
       <a href="#framework" class="btn btn-primary">
-        Explore Enterprise Capabilities →
+        Explore the Capability Framework
       </a>
       <a href="#development" class="btn btn-secondary">
-        Book a Capability Discussion
+        Understand the Training Model
       </a>
     </div>
 
@@ -2049,7 +2092,7 @@ body {
 
         <div class="video-frame" id="cfVideoContainer">
           <video id="cfVideo" preload="metadata" playsinline>
-            <source src="images/Mvi 2282.mp4" type="video/mp4">
+            <source src="https://redteamverse.github.io/red-team-training/images/Mvi%202282.mp4" type="video/mp4">
           </video>
 
           <button class="play-btn" aria-label="Play video">▶</button>
@@ -3073,7 +3116,17 @@ body {
     video.play();
     container.classList.add('playing');
   });
+
+  /* Mobile-safe restore */
+  const restorePlay = () => {
+    container.classList.remove('playing');
+  };
+
+  video.addEventListener('pause', restorePlay);
+  video.addEventListener('ended', restorePlay);
 </script>
+
+
 
 
 
