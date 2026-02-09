@@ -33,6 +33,7 @@ font-size:13px;
 margin-bottom:10px;
 }
 
+/* 🔥 INSTRUCTION BOX */
 .instruction{
 font-size:14px;
 font-weight:500;
@@ -44,12 +45,33 @@ border-radius:10px;
 margin-bottom:14px;
 }
 
+/* 🔥 FOCUS TITLE + DIVIDER */
+.focus-title{
+margin-top:6px;
+margin-bottom:4px;
+letter-spacing:0.5px;
+}
+
+.divider{
+width:60%;
+height:1px;
+margin:6px auto 10px auto;
+background:linear-gradient(90deg,transparent,#1f7cff,transparent);
+opacity:0.6;
+}
+
+/* CARDS */
 .card{
 background:#0e1624;
 border:1px solid #182238;
 border-radius:12px;
 padding:18px;
 margin-bottom:15px;
+}
+
+/* tighten tab section */
+#track.card{
+margin-top:6px;
 }
 
 .btn{
@@ -130,25 +152,31 @@ color:#ffffff;
 
 <h2>Red Team Skill Check - Azure & On-Prem</h2>
 
-<!-- WILL HIDE -->
-<div id="focusTitle" class="sub"><b>CHOOSE YOUR FOCUS AREA</b></div>
-
-<!-- WILL HIDE -->
+<!-- INSTRUCTION -->
 <div id="instruction" class="instruction">
 👉 Choose a track • Answer 4 questions • Start practicing on Red Labs
 </div>
 
+<!-- FOCUS TITLE -->
+<div id="focusTitle" class="sub focus-title">
+<b>CHOOSE YOUR FOCUS AREA</b>
+</div>
+
+<!-- 🔥 NEW DIVIDER -->
+<div id="focusDivider" class="divider"></div>
+
+<!-- TABS -->
 <div id="track" class="card">
 <button class="btn" onclick="start()">Azure Red Team</button>
 <button class="btn" onclick="start()">On-Prem AD Red Team</button>
 </div>
 
 <div class="sub">
-🚀 Test Your Red Team Skills. Get Instant Access to Free Hands-On Labs.
+🚀 Test Your Red Team Skills. Get Free access to Red Labs.
 </div>
 
 <div class="sub">
-60-Second Red Team Skill Check — Built by Altered Security
+Red Team Skill Check — Built by Altered Security
 </div>
 
 <!-- QUIZ -->
@@ -207,12 +235,12 @@ let i=0;
 let selected=null;
 let correct=0;
 
-/* START QUIZ */
 function start(){
 
-// 🔥 HIDE FOCUS TEXT + INSTRUCTION
+// hide focus text + instruction + divider
 document.getElementById("focusTitle").classList.add("hidden");
 document.getElementById("instruction").classList.add("hidden");
+document.getElementById("focusDivider").classList.add("hidden");
 
 document.getElementById("track").classList.add("hidden");
 document.getElementById("quiz").classList.remove("hidden");
