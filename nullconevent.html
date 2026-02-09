@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Red Team Skill Check - Azure & On-Prem</title>
+
+<style>
+body{
+margin:0;
+background:#060b14;
+color:#fff;
+font-family:Arial,Helvetica,sans-serif;
+}
+.container{
+max-width:520px;
+margin:auto;
+padding:20px;
+text-align:center;
+}
+.logo img{
+height:34px;
+margin-bottom:6px;
+}
+
+/* BRAND NAME IN WHITE */
+.brand{
+font-size:14px;
+font-weight:600;
+letter-spacing:1px;
+color:#EB3036;
+margin-bottom:12px;
+text-transform:uppercase;
+}
+
+h1{
+font-size:22px;
+margin:5px 0 15px 0;
+}
+.sub{
+color:#9aa4b2;
+font-size:13px;
+margin-bottom:12px;
+}
+.card{
+background:#0e1624;
+border:1px solid #182238;
+border-radius:12px;
+padding:18px;
+margin-bottom:15px;
+}
+.btn{
+width:100%;
+padding:14px;
+margin-top:14px;
+border-radius:8px;
+border:none;
+background:linear-gradient(90deg,#00d1ff,#1f7cff);
+color:#fff;
+font-weight:bold;
+cursor:pointer;
+}
+.hidden{display:none;}
+
+.option{
+border:1px solid #24324d;
+padding:12px;
+border-radius:8px;
+margin:8px 0;
+cursor:pointer;
+text-align:left;
+}
+.option.active{
+border-color:#00d1ff;
+background:#0d2238;
+}
+
+.progress{
+height:6px;
+background:#1b2740;
+border-radius:10px;
+overflow:hidden;
+margin-bottom:12px;
+}
+.bar{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#00d1ff,#1f7cff);
+}
+
+.input{
+width:100%;
+padding:12px;
+margin-top:10px;
+background:#060b14;
+border:1px solid #24324d;
+color:white;
+border-radius:8px;
+}
+
+.score{
+font-size:36px;
+margin:15px 0;
+color:#00d1ff;
+font-weight:bold;
+}
+
+/* FEATURE LIST */
+.features{
+text-align:left;
+font-size:13px;
+margin-top:10px;
+line-height:1.7;
+color:#b5c0d6;
+}
+.features div{
+margin-bottom:6px;
+}
+
+/* FEATURE HEADING */
+.feature-heading{
+margin-top:18px;
+font-weight:bold;
+font-size:14px;
+color:#ffffff;
+}
+
+.usp{
+font-size:15px;
+font-weight:600;
+color:#ffffff;
+background:#0b1c33;
+border:1px solid #1f3b6d;
+padding:12px;
+border-radius:10px;
+margin-bottom:14px;
+}
+    
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LOGO -->
+<div class="logo">
+<img src="https://static.wixstatic.com/media/52db83_dd3dab7bcbdf45609df5faa9c62d9a54~mv2.png/v1/fill/w_48,h_34,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/AS2.png">
+</div>
+
+<div class="brand">Altered Security</div>
+
+<h1>Red Team Skill Check - Azure & On-Prem</h1>
+
+<div class="sub"><b>CHOOSE YOUR FOCUS AREA</b></div>
+
+<!-- TRACK -->
+<div id="track" class="card">
+<button id="azureBtn" class="btn">Azure Red Team</button>
+<button id="onpremBtn" class="btn">On-Prem AD Red Team</button>
+</div>
+
+<div class="usp">🚀 Test Your Red Team Skills. Get Instant Access to Free Hands-On Labs.
+</div>
+<div class="sub">60-Second Red Team Skill Check — Built by Altered Security</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="card hidden">
+<div class="progress"><div id="bar" class="bar"></div></div>
+<div id="qtext"></div>
+<div id="olist"></div>
+<button id="nextBtn" class="btn">Next</button>
+</div>
+
+<!-- FORM -->
+<div id="form" class="card hidden">
+<div class="sub" style="font-size:14px;">
+Enter your details to view your score and unlock free hands-on practice on Red Lab.
+</div>
+
+<input id="name" class="input" placeholder="Name">
+<input id="email" class="input" placeholder="Email">
+
+<button id="submitBtn" class="btn">View My Score & Unlock Lab</button>
+<div id="msg" class="sub"></div>
+</div>
+
+<!-- SCORE SECTION -->
+<div id="scoreBox" class="card hidden">
+
+<div>Your Skill Score</div>
+
+<div id="score" class="score">0%</div>
+
+<div class="sub">
+Nice! You're showing strong red team fundamentals.
+</div>
+
+<div class="feature-heading">
+Why Red Teamers Choose Altered Security
+</div>
+
+<div class="features">
+<div>✔ Trusted by 500+ Fortune & Enterprise Teams Worldwide</div>
+<div>✔ Built by Altered Security Red Team Experts</div>
+<div>✔ Real-World Attack Scenarios Used in Live Trainings</div>
+<div>✔ Hands-On Practice Environments on Red Labs</div>
+</div>
+
+<button class="btn" onclick="goToLab()">
+🚀 Start Your Free Red Lab Practice
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const DATA={
+azure:[
+["Azure privilege escalation often uses?","Owner Role","Reader Role","Billing Role","Guest User"],
+["Token abuse targets which item?","Access Token","NTDS","SAM","LSA"],
+["Azure recon tool?","ROADtools","Nikto","Hydra","Dirbuster"],
+["Persistence via?","App Registration","FTP","DNS Only","SMB Share"],
+["Azure lateral movement?","Run Command","Ping Sweep","ARP Poison","Traceroute"]
+],
+onprem:[
+["Kerberoasting targets?","Service Accounts","Guest","Printer","Local User"],
+["AD attack path tool?","BloodHound","Nikto","Dirsearch","Sqlmap"],
+["Delegation abuse enables?","Privilege Escalation","Sniffing","Phishing","SQLi"],
+["Pass-the-Hash used for?","Lateral Movement","WHOIS","DNS Enum","HTTP Scan"],
+["Credential dumping tool?","Mimikatz","Gobuster","Hydra","Dirsearch"]
+]
+};
+
+let mode="";
+let i=0;
+let answers=[];
+let selected=null;
+
+const track=document.getElementById("track");
+const quiz=document.getElementById("quiz");
+const form=document.getElementById("form");
+const scoreBox=document.getElementById("scoreBox");
+const qtext=document.getElementById("qtext");
+const olist=document.getElementById("olist");
+const bar=document.getElementById("bar");
+
+document.getElementById("azureBtn").onclick=()=>start("azure");
+document.getElementById("onpremBtn").onclick=()=>start("onprem");
+document.getElementById("nextBtn").onclick=next;
+document.getElementById("submitBtn").onclick=submitData;
+
+function start(m){
+mode=m;
+i=0;
+answers=[];
+track.classList.add("hidden");
+quiz.classList.remove("hidden");
+load();
+}
+
+function load(){
+selected=null;
+let q=DATA[mode][i];
+qtext.innerHTML="<b>Question "+(i+1)+"/5</b><br>"+q[0];
+
+let html="";
+for(let x=1;x<q.length;x++){
+html+=`<div class="option" onclick="selectOpt(this,'${q[x]}')">${q[x]}</div>`;
+}
+olist.innerHTML=html;
+bar.style.width=(i/5*100)+"%";
+}
+
+function selectOpt(el,val){
+document.querySelectorAll(".option").forEach(o=>o.classList.remove("active"));
+el.classList.add("active");
+selected=val;
+}
+
+function next(){
+if(!selected){
+alert("Select an option");
+return;
+}
+answers.push(selected);
+i++;
+if(i>=5){
+quiz.classList.add("hidden");
+form.classList.remove("hidden");
+return;
+}
+load();
+}
+
+function submitData(){
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+
+if(!name||!email){
+document.getElementById("msg").innerText="Please enter name and email.";
+return;
+}
+
+form.classList.add("hidden");
+
+let percent=Math.floor(Math.random()*21)+70;
+document.getElementById("score").innerText=percent+"%";
+scoreBox.classList.remove("hidden");
+
+console.log({name,email,mode,answers});
+}
+
+function goToLab(){
+window.location.href="https://www.alteredsecurity.com/redlabs?source=nullcon-skillcheck";
+}
+
+</script>
+
+</body>
+</html>
