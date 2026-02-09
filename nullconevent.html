@@ -2,141 +2,217 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Red Team Skill Check</title>
 
 <style>
+
+/* =========================
+   BRAND TOKENS
+========================= */
+
+:root{
+
+--color-primary:#B91C1C;
+--color-primary-light:#EA3037;
+
+--color-secondary:#2B2B50;
+--color-secondary-light:#1E3A8A;
+
+--color-text-main:#111827;
+--color-text-muted:#6B7280;
+
+--color-bg:#FFFFFF;
+--color-border:#E5E7EB;
+
+--color-success:#10B981;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
 body{
 margin:0;
-background:#060b14;
+background:var(--color-secondary);
 color:white;
 font-family:Arial,Helvetica,sans-serif;
 }
+
 .container{
 max-width:520px;
 margin:auto;
-padding:20px;
+padding:28px 20px;
 text-align:center;
 }
 
-.logo img{height:34px;margin-bottom:6px;}
-
-.brand{
-color:#ffffff;
-font-weight:600;
-margin-bottom:12px;
-letter-spacing:1px;
+.logo img{
+height:40px;
+margin-bottom:8px;
 }
 
-.sub{
-color:#9aa4b2;
-font-size:13px;
+.brand{
+font-size:16px;
+font-weight:600;
+letter-spacing:1px;
+color:white;
 margin-bottom:10px;
 }
 
-/* 🔥 INSTRUCTION BOX */
-.instruction{
-font-size:14px;
-font-weight:500;
-color:#ffffff;
-background:#0b1c33;
-border:1px solid #1f3b6d;
-padding:12px;
-border-radius:10px;
-margin-bottom:14px;
+/* =========================
+   TYPOGRAPHY TOKENS
+========================= */
+
+h1{
+font-size:32px;
+font-weight:600;
+line-height:1.3;
+margin:10px 0 18px;
 }
 
-/* 🔥 FOCUS TITLE + DIVIDER */
-.focus-title{
-margin-top:6px;
+.eyebrow{
+font-size:14px;
+color:#cbd5e1;
 margin-bottom:4px;
-letter-spacing:0.5px;
 }
+
+.lead{
+font-size:18px;
+line-height:1.6;
+margin-bottom:12px;
+}
+
+/* =========================
+   INSTRUCTION
+========================= */
+
+.instruction{
+font-size:16px;
+background:#1e2a5e;
+border:1px solid var(--color-secondary-light);
+padding:14px;
+border-radius:10px;
+margin-bottom:16px;
+}
+
+/* =========================
+   DIVIDER
+========================= */
 
 .divider{
-width:60%;
+width:70%;
 height:1px;
-margin:6px auto 10px auto;
-background:linear-gradient(90deg,transparent,#1f7cff,transparent);
-opacity:0.6;
+margin:6px auto 14px;
+background:var(--color-border);
+opacity:0.5;
 }
 
-/* CARDS */
+/* =========================
+   CARD
+========================= */
+
 .card{
-background:#0e1624;
-border:1px solid #182238;
+background:#1a1a3a;
+border:1px solid rgba(255,255,255,0.08);
 border-radius:12px;
-padding:18px;
-margin-bottom:15px;
+padding:20px;
+margin-bottom:18px;
 }
 
-/* tighten tab section */
-#track.card{
-margin-top:6px;
-}
+/* =========================
+   BUTTON SYSTEM
+========================= */
 
 .btn{
 width:100%;
 padding:14px;
-margin-top:14px;
 border-radius:8px;
 border:none;
-background:linear-gradient(90deg,#00d1ff,#1f7cff);
-color:#fff;
-font-weight:bold;
 cursor:pointer;
+font-weight:600;
+font-size:16px;
+margin-top:12px;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary{
+background:var(--color-primary);
+color:white;
+}
+.btn-primary:hover{
+background:var(--color-primary-light);
+}
+
+/* SECONDARY BUTTON */
+.btn-secondary{
+background:transparent;
+border:1px solid var(--color-secondary-light);
+color:#93c5fd;
+}
+.btn-secondary:hover{
+background:var(--color-secondary-light);
+color:white;
 }
 
 .hidden{display:none;}
 
+/* =========================
+   QUIZ OPTION
+========================= */
+
 .option{
-border:1px solid #24324d;
+border:1px solid rgba(255,255,255,0.15);
 padding:12px;
 border-radius:8px;
 margin:8px 0;
 cursor:pointer;
 text-align:left;
 }
+
 .option.active{
-border-color:#00d1ff;
-background:#0d2238;
+border-color:var(--color-primary);
+background:rgba(185,28,28,0.15);
 }
+
+/* =========================
+   FORM
+========================= */
 
 .input{
 width:100%;
 padding:12px;
 margin-top:10px;
-background:#060b14;
-border:1px solid #24324d;
+background:#0f0f2a;
+border:1px solid var(--color-border);
 color:white;
 border-radius:8px;
 }
 
+/* =========================
+   SCORE
+========================= */
+
 .score{
-font-size:34px;
-color:#00d1ff;
-margin:15px 0;
-font-weight:bold;
-}
-
-.formtext{
-color:#e4ecff;
-font-size:14px;
-}
-
-.features{
-text-align:left;
-font-size:13px;
-margin-top:15px;
-color:#cfd9ff;
-line-height:1.7;
+font-size:36px;
+font-weight:700;
+color:var(--color-success);
+margin:14px 0;
 }
 
 .feature-heading{
 margin-top:18px;
-font-weight:bold;
-font-size:14px;
-color:#ffffff;
+font-weight:600;
+font-size:16px;
 }
+
+.features{
+text-align:left;
+font-size:14px;
+line-height:1.6;
+margin-top:12px;
+color:#d1d5db;
+}
+
 </style>
 </head>
 
@@ -150,32 +226,26 @@ color:#ffffff;
 
 <div class="brand">ALTERED SECURITY</div>
 
-<h2>Red Team Skill Check - Azure & On-Prem</h2>
+<h1>Red Team Skill Check - Azure & On-Prem</h1>
 
-<!-- INSTRUCTION -->
 <div id="instruction" class="instruction">
 👉 Choose a track • Answer 4 questions • Start practicing on Red Labs
 </div>
 
-<!-- FOCUS TITLE -->
-<div id="focusTitle" class="sub focus-title">
-<b>CHOOSE YOUR FOCUS AREA</b>
-</div>
+<div id="focusTitle" class="eyebrow">CHOOSE YOUR FOCUS AREA</div>
 
-<!-- 🔥 NEW DIVIDER -->
 <div id="focusDivider" class="divider"></div>
 
-<!-- TABS -->
 <div id="track" class="card">
-<button class="btn" onclick="start()">Azure Red Team</button>
-<button class="btn" onclick="start()">On-Prem AD Red Team</button>
+<button class="btn btn-primary" onclick="start()">Azure Red Team</button>
+<button class="btn btn-secondary" onclick="start()">On-Prem AD Red Team</button>
 </div>
 
-<div class="sub">
-🚀 Test Your Red Team Skills. Get Free access to Red Labs.
+<div class="lead">
+🚀 Test Your Red Team Skills. Get Free Access to Red Labs.
 </div>
 
-<div class="sub">
+<div class="eyebrow">
 Red Team Skill Check — Built by Altered Security
 </div>
 
@@ -183,28 +253,27 @@ Red Team Skill Check — Built by Altered Security
 <div id="quiz" class="card hidden">
 <div id="qtext"></div>
 <div id="olist"></div>
-<button onclick="next()" class="btn">Next</button>
+<button onclick="next()" class="btn btn-primary">Next</button>
 </div>
 
 <!-- FORM -->
 <div id="form" class="card hidden">
-<div class="formtext">
+<div class="lead">
 Enter your details to view your score and unlock free hands-on practice on Red Lab.
 </div>
-<input id="name" class="input" placeholder="Name">
-<input id="email" class="input" placeholder="Email">
-<button onclick="submitData()" class="btn">View My Result</button>
+<input class="input" placeholder="Name">
+<input class="input" placeholder="Email">
+<button onclick="submitData()" class="btn btn-primary">View My Result</button>
 </div>
 
 <!-- RESULT -->
 <div id="scoreBox" class="card hidden">
-
 <div>Your Result</div>
 <div id="score" class="score"></div>
 
 <div id="resultText"></div>
 
-<button id="labBtn" class="btn"></button>
+<button id="labBtn" class="btn btn-primary"></button>
 
 <div class="feature-heading">
 Why Red Teamers Choose Altered Security
@@ -223,7 +292,6 @@ Why Red Teamers Choose Altered Security
 
 <script>
 
-/* QUESTIONS */
 const QUESTIONS=[
 ["Azure privilege escalation often uses?","Owner Role","Reader Role","Billing Role","Guest User","Owner Role"],
 ["Token abuse targets which item?","Access Token","NTDS","SAM","LSA","Access Token"],
@@ -231,20 +299,15 @@ const QUESTIONS=[
 ["Azure lateral movement?","Run Command","Ping Sweep","ARP Poison","Traceroute","Run Command"]
 ];
 
-let i=0;
-let selected=null;
-let correct=0;
+let i=0,selected=null,correct=0;
 
 function start(){
-
-// hide focus text + instruction + divider
-document.getElementById("focusTitle").classList.add("hidden");
 document.getElementById("instruction").classList.add("hidden");
+document.getElementById("focusTitle").classList.add("hidden");
 document.getElementById("focusDivider").classList.add("hidden");
 
 document.getElementById("track").classList.add("hidden");
 document.getElementById("quiz").classList.remove("hidden");
-
 load();
 }
 
@@ -252,7 +315,6 @@ function load(){
 selected=null;
 let q=QUESTIONS[i];
 document.getElementById("qtext").innerHTML="<b>Question "+(i+1)+"/4</b><br>"+q[0];
-
 let html="";
 for(let x=1;x<=4;x++){
 html+=`<div class="option" onclick="selectOpt(this,'${q[x]}')">${q[x]}</div>`;
@@ -283,40 +345,35 @@ function submitData(){
 document.getElementById("form").classList.add("hidden");
 document.getElementById("scoreBox").classList.remove("hidden");
 
-let resultText="";
-let btnText="";
+let text="",btn="";
 
 if(correct<=1){
-resultText=`You’re at the early exploration stage for these techniques.<br><br>
-The best way to build confidence is hands-on practice.
-Red Labs lets you try the same techniques in real lab environments.`;
-btnText="🚀 Start Practicing on Red Labs";
+text=`You’re at the early exploration stage for these techniques.<br><br>
+The best way to build confidence is hands-on practice.`;
+btn="🚀 Start Practicing on Red Labs";
 }
 else if(correct==2){
-resultText=`You have a working understanding of some techniques.<br><br>
-Hands-on practice will help you connect concepts,
-identify gaps, and build real attack intuition.`;
-btnText="🚀 Practice These Techniques on Red Labs";
+text=`You have a working understanding of some techniques.<br><br>
+Hands-on practice will help you connect concepts.`;
+btn="🚀 Practice These Techniques on Red Labs";
 }
 else if(correct==3){
-resultText=`You show a strong understanding of these techniques.<br><br>
-Practicing them hands-on will help you validate assumptions
-and refine execution in realistic environments.`;
-btnText="🚀 Validate Skills on Red Labs";
+text=`You show a strong understanding of these techniques.<br><br>
+Refine execution in realistic environments.`;
+btn="🚀 Validate Skills on Red Labs";
 }
 else{
-resultText=`You demonstrate strong familiarity with these techniques.<br><br>
-Hands-on labs will help you test edge cases,
-practice execution, and prepare for full attack paths.`;
-btnText="🚀 Explore Advanced Labs on Red Labs";
+text=`You demonstrate strong familiarity with these techniques.<br><br>
+Prepare for full attack paths.`;
+btn="🚀 Explore Advanced Labs on Red Labs";
 }
 
 document.getElementById("score").innerText=correct+" / 4";
-document.getElementById("resultText").innerHTML=resultText;
+document.getElementById("resultText").innerHTML=text;
 
-let btn=document.getElementById("labBtn");
-btn.innerText=btnText;
-btn.onclick=()=>window.location.href="https://redlabs.enterprisesecurity.io/";
+let b=document.getElementById("labBtn");
+b.innerText=btn;
+b.onclick=()=>window.location.href="https://redlabs.enterprisesecurity.io/";
 }
 
 </script>
