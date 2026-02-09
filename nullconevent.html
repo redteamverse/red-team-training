@@ -11,6 +11,7 @@ margin:0;
 background:#2B2B50;
 color:white;
 font-family:Arial,Helvetica,sans-serif;
+overflow-x:hidden; /* MOBILE FIX */
 }
 
 .container{
@@ -35,7 +36,6 @@ font-weight:600;
 margin:10px 0 14px;
 }
 
-/* USP */
 .usp-accent{
 font-size:18px;
 line-height:1.6;
@@ -47,7 +47,6 @@ background:rgba(255,255,255,0.03);
 border-radius:6px;
 }
 
-/* instruction */
 .instruction{
 font-size:16px;
 background:#1e2a5e;
@@ -81,7 +80,7 @@ transition:0.2s ease;
 }
 
 .btn:hover{
-background:#1E3A8A; /* BLUE HOVER */
+background:#1E3A8A;
 }
 
 .btn-secondary{
@@ -147,7 +146,7 @@ margin-bottom:14px;
 line-height:1.5;
 }
 
-/* INPUT FIX */
+/* INPUT ROW */
 .form-row{
 display:flex;
 gap:10px;
@@ -156,11 +155,30 @@ margin-bottom:10px;
 
 .input{
 flex:1;
+width:100%;
+box-sizing:border-box;
 padding:12px;
 background:#0f0f2a;
 border:1px solid #E5E7EB;
 color:white;
 border-radius:6px;
+}
+
+/* 🔥 MOBILE FIX */
+@media (max-width:480px){
+
+.form-row{
+flex-direction:column;
+}
+
+h1{
+font-size:26px;
+}
+
+.usp-accent{
+font-size:16px;
+}
+
 }
 
 /* FIREWORKS */
@@ -207,7 +225,6 @@ animation:explode 1s ease forwards;
 Test Your Red Team Skills. Get Free Access to Red Labs.
 </div>
 
-<!-- HOME -->
 <div id="home">
 
 <div class="instruction">
@@ -225,7 +242,6 @@ Red Team Skill Check — Built by Altered Security
 
 </div>
 
-<!-- QUIZ -->
 <div id="quiz" class="card hidden">
 
 <div class="progress-wrap">
@@ -244,7 +260,6 @@ Red Team Skill Check — Built by Altered Security
 
 </div>
 
-<!-- FORM -->
 <div id="form" class="card hidden">
 
 <div class="form-highlight">
@@ -264,7 +279,6 @@ Red Team Skill Check — Built by Altered Security
 
 </div>
 
-<!-- RESULT -->
 <div id="result" class="card hidden">
 <div class="fireworks" id="fireworks"></div>
 
