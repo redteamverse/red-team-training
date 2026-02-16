@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Red Team Learning Path</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --color-primary: #B91C1C;
+      --color-secondary-light: #1E3A8A;
+
+      --color-text-main: #111827;
+      --color-text-muted: #6B7280;
+
+      --color-bg-white: #FFFFFF;
+      --color-bg-offwhite: #F9FAFB;
+
+      --color-border: #E5E7EB;
+
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--color-text-main);
+      background-color: var(--color-bg-white);
+      line-height: 1.6;
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+    .hero {
+      padding: 96px 24px 88px;
+      background-color: var(--color-bg-white);
+      border-top: 1px solid var(--color-secondary-light); /* ✔ branding */
+    }
+
+    .hero-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1.25;
+      max-width: 900px;
+      margin: 0 0 20px;
+    }
+
+    .hero-description {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      max-width: 820px;
+      margin-bottom: 40px;
+    }
+
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .feature-item {
+      padding: 20px 22px;
+      background-color: var(--color-bg-offwhite);
+      border: 1px solid var(--color-border);
+    }
+
+    .feature-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .feature-text {
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+
+    /* =========================
+       CTA BUTTON (NO UNDERLINE)
+       ========================= */
+    .hero-cta a {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-secondary-light);
+      text-decoration: none;
+      border: 1px solid var(--color-border);
+      background-color: transparent;
+    }
+
+    .hero-cta a:hover {
+      background-color: var(--color-bg-offwhite);
+    }
+
+    /* =========================
+       INLINE LEARNING LINKS ONLY
+       ========================= */
+    .inline-link {
+      color: var(--color-secondary-light);
+      text-decoration: none;
+      position: relative;
+    }
+
+    .inline-link:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 1px;
+      background-color: var(--color-primary); /* red underline = learning */
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 72px 20px 64px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+    }
+    /* =========================
+   SECTION B — LEARNER FIT
+   ========================= */
+.learner-fit {
+  padding: 88px 24px;
+  background-color: #FFFFFF;
+}
+
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-meta {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6B7280;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 16px;
+  color: #111827;
+}
+
+.section-lead {
+  font-size: 16px;
+  color: #6B7280;
+  max-width: 820px;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.fit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* Cards */
+.fit-card {
+  padding: 24px 26px;
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+}
+
+.fit-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* Lists */
+.fit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fit-list li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.fit-list li strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Clarifier */
+.section-clarifier {
+  font-size: 14px;
+  color: #6B7280;
+  max-width: 820px;
+}
+/* =========================
+   SECTION C — LEARNING PHILOSOPHY
+   ========================= */
+.learning-philosophy {
+  padding: 88px 24px;
+  background-color: #FFFFFF;
+}
+
+.principles-list {
+  max-width: 900px;
+  margin-bottom: 32px;
+}
+
+.principle-item {
+  margin-bottom: 24px;
+}
+
+.principle-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.principle-text {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+}
+/* =========================
+   SECTION D — LEARNING PATH STRUCTURE
+   ========================= */
+.learning-path-structure {
+  padding: 88px 24px;
+  background-color: #FFFFFF;
+}
+
+/* Stages layout */
+.path-stages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* Stage cards (STRUCTURAL ONLY) */
+.stage-card {
+  padding: 24px 26px;
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+}
+
+/* Titles */
+.stage-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+/* Focus + Outcome */
+.stage-focus,
+.stage-outcome {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.stage-focus strong,
+.stage-outcome strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Description */
+.stage-description {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+/* =========================
+   SECTION E — FOUNDATION STAGE
+   ========================= */
+.foundation-stage {
+  padding: 88px 24px;
+  background-color: #FFFFFF;
+}
+
+/* Grid */
+.foundation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* Cards */
+.foundation-card {
+  padding: 24px 26px;
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+}
+
+.foundation-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* Lists */
+.foundation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.foundation-list li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.foundation-list li strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Outcome */
+.foundation-outcome {
+  font-size: 14px;
+  color: #374151;
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+.foundation-outcome strong {
+  font-weight: 600;
+  color: #111827;
+}
+/* =========================
+   SECTION F — INTERMEDIATE STAGE
+   ========================= */
+.intermediate-stage {
+  padding: 88px 24px;
+  background-color: #FFFFFF;
+}
+
+/* Grid */
+.intermediate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* Cards */
+.intermediate-card {
+  padding: 24px 26px;
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+}
+
+.intermediate-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* Lists */
+.intermediate-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.intermediate-list li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.intermediate-list li strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Outcome */
+.intermediate-outcome {
+  font-size: 14px;
+  color: #374151;
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+.intermediate-outcome strong {
+  font-weight: 600;
+  color: #111827;
+}
+/* =========================
+   SECTION G — ADVANCED STAGE
+   ========================= */
+.advanced-stage {
+  padding: 88px 24px;
+  background-color: #FFFFFF;
+}
+
+/* Grid */
+.advanced-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* Cards */
+.advanced-card {
+  padding: 24px 26px;
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+}
+
+.advanced-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* Lists */
+.advanced-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.advanced-list li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.advanced-list li strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Outcome */
+.advanced-outcome {
+  font-size: 14px;
+  color: #374151;
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+.advanced-outcome strong {
+  font-weight: 600;
+  color: #111827;
+}
+/* =========================
+   SECTION H — LAB ENVIRONMENT EVOLUTION
+   ========================= */
+.environment-evolution {
+  padding: 88px 24px;
+  background-color: #F9FAFB; /* intentional mode shift per framework */
+}
+
+/* Grid */
+.environment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* Cards */
+.environment-card {
+  padding: 24px 26px;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+}
+
+.environment-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* Lists */
+.environment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.environment-list li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.environment-list li strong {
+  font-weight: 600;
+  color: #111827;
+}
+/* =========================
+   SECTION J — CERTIFICATION & TRAINING ALIGNMENT
+   ========================= */
+.cert-training-alignment {
+  padding: 88px 24px;
+  background-color: #FFFFFF;
+}
+
+/* Grid */
+.alignment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* Cards */
+.alignment-card {
+  padding: 24px 26px;
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+}
+
+.alignment-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* Lists */
+.alignment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.alignment-list li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.alignment-list li strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Context links */
+.alignment-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+/* Inline learning links only */
+.inline-link {
+  font-size: 14px;
+  color: #1E3A8A;
+  text-decoration: none;
+  position: relative;
+}
+
+.inline-link:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background-color: #B91C1C; /* underline = learning */
+}
+/* =========================
+   SECTION K — NEXT STEPS
+   ========================= */
+.next-steps {
+  padding: 88px 24px;
+  background-color: #FFFFFF;
+}
+
+.next-actions {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  max-width: 900px;
+}
+
+.next-actions li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.next-actions li strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* CTA row */
+.next-actions-cta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Secondary button (progression, not conversion) */
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1E3A8A;
+  text-decoration: none;
+  border: 1px solid #E5E7EB;
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: #F9FAFB;
+}
+
+/* Inline learning link */
+.inline-link {
+  font-size: 14px;
+  color: #1E3A8A;
+  text-decoration: none;
+  position: relative;
+}
+
+.inline-link:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background-color: #B91C1C; /* underline = learning */
+}
+/* =========================
+   SECTION I — OUTCOMES & SKILL READINESS
+   ========================= */
+.outcomes-readiness {
+  padding: 88px 24px;
+  background-color: #FFFFFF;
+}
+
+/* Grid */
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* Cards */
+.outcomes-card {
+  padding: 24px 26px;
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+}
+
+.outcomes-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* Lists */
+.outcomes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.outcomes-list li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.outcomes-list li strong {
+  font-weight: 600;
+  color: #111827;
+}
+/* =========================
+   SECTION K — PRACTICALITIES
+   ========================= */
+.practicalities {
+  padding: 88px 24px;
+  background-color: #FFFFFF;
+}
+
+/* Grid */
+.practicalities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* Cards */
+.practicalities-card {
+  padding: 24px 26px;
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+}
+
+.practicalities-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* Lists */
+.practicalities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.practicalities-list li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.practicalities-list li strong {
+  font-weight: 600;
+  color: #111827;
+}
+/* =========================
+   SECTION L — FREQUENTLY ASKED QUESTIONS
+   ========================= */
+.faqs {
+  padding: 88px 24px;
+  background-color: #FFFFFF;
+}
+
+/* FAQ list */
+.faq-list {
+  max-width: 900px;
+  margin-bottom: 32px;
+}
+
+/* FAQ item */
+.faq-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+/* Question */
+.faq-question {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+/* Answer */
+.faq-answer {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+}
+/* =========================
+   SECTION — STARTING THE LEARNING JOURNEY
+   ========================= */
+.learning-journey {
+  padding: 88px 24px;
+  background-color: #FFFFFF;
+}
+
+/* Steps */
+.journey-steps {
+  max-width: 900px;
+  margin: 0 0 32px 18px;
+  padding: 0;
+}
+
+.journey-steps li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.journey-steps li strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Actions */
+.journey-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Secondary button (allowed progression action) */
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1E3A8A;
+  text-decoration: none;
+  border: 1px solid #E5E7EB;
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: #F9FAFB;
+}
+
+/* Inline learning link */
+.inline-link {
+  font-size: 14px;
+  color: #1E3A8A;
+  text-decoration: none;
+  position: relative;
+}
+
+.inline-link:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background-color: #B91C1C; /* underline = learning */
+}
+/* =========================
+   GLOBAL EYEBROW SYSTEM
+   ========================= */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* shared text style */
+.eyebrow-text {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6B7280;
+}
+
+/* red rule (sections only) */
+.eyebrow-rule {
+  width: 28px;
+  height: 1px;
+  background-color: #B91C1C;
+  flex-shrink: 0;
+}
+
+/* hero variant */
+.eyebrow--hero {
+  margin-bottom: 16px;
+}
+
+/* section variant */
+.eyebrow--section {
+  margin-bottom: 12px;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-container">
+
+      <div class="eyebrow eyebrow--hero">
+        <span class="eyebrow-text">HANDS-ON RED LABS FOR PRACTITIONERS</span>
+      </div>
+
+      <h1 class="hero-title">
+        Red Team Learning Path — Progressive, Hands-On Lab-Based Skill Development
+      </h1>
+
+      <p class="hero-description">
+        A structured learning path of hands-on Red Team labs designed to help practitioners
+        build real-world offensive capabilities through progressive, execution-focused environments.
+      </p>
+
+      <div class="hero-features">
+        <div class="feature-item">
+          <div class="feature-title">Structured progression</div>
+          <div class="feature-text">
+            Labs are organized into clear stages, guiding learners from foundational concepts
+            to advanced enterprise attack paths.
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Execution-first learning</div>
+          <div class="feature-text">
+            Skills are developed through direct lab execution, not isolated theory or demonstrations.
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Enterprise-aligned environments</div>
+          <div class="feature-text">
+            Lab setups reflect real-world enterprise systems and realistic operational constraints.
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Capability-driven outcomes</div>
+          <div class="feature-text">
+            Each stage is designed around what a learner can actually do, not which tools were used.
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#labs">View Lab Modules</a>
+      </div>
+
+    </div>
+  </section>
+  <!-- =========================
+     SECTION B — LEARNER FIT & READINESS
+     ========================= -->
+<section class="learner-fit">
+  <div class="section-container">
+
+    <!-- Meta -->
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">LEARNER QUALIFICATION</span>
+    </div>
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      Who This Learning Path Is Designed For
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      This learning path is intended for practitioners who want to develop Red Team skills
+      through structured, hands-on lab execution rather than passive learning.
+    </p>
+
+    <!-- Designed / Not Designed Grid -->
+    <div class="fit-grid">
+
+      <!-- Designed For -->
+      <div class="fit-card">
+        <div class="fit-card-title">Designed For</div>
+
+        <ul class="fit-list">
+          <li>
+            <strong>Aspiring Red Team practitioners</strong> — Learners building offensive
+            skills through guided lab execution.
+          </li>
+
+          <li>
+            <strong>Security professionals transitioning roles</strong> — Blue teamers,
+            analysts, or pentesters moving into Red Team work.
+          </li>
+
+          <li>
+            <strong>Certification candidates</strong> — Learners seeking deeper execution
+            practice alongside assessments.
+          </li>
+
+          <li>
+            <strong>Self-directed learners</strong> — Individuals comfortable progressing
+            independently through complex environments.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Not Designed For -->
+      <div class="fit-card">
+        <div class="fit-card-title">Not Designed For</div>
+
+        <ul class="fit-list">
+          <li>
+            <strong>Complete beginners</strong> — This path assumes basic familiarity with
+            systems, networking, and security concepts.
+          </li>
+
+          <li>
+            <strong>Theory-only learners</strong> — Labs require active execution and
+            problem-solving.
+          </li>
+
+          <li>
+            <strong>Shortcut seekers</strong> — Progression is deliberate and cannot be rushed.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Clarifier -->
+    <p class="section-clarifier">
+      If you prefer live instruction, guided walkthroughs, or classroom-style learning,
+      instructor-led training may be a better starting point.
+    </p>
+
+  </div>
+</section>
+<!-- =========================
+     SECTION C — LEARNING PHILOSOPHY
+     ========================= -->
+<section class="learning-philosophy">
+  <div class="section-container">
+
+    <!-- Meta -->
+     <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">LAB-FIRST APPROACH</span>
+    </div>
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      How Learning Happens in the Labs
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      The learning path is designed around execution-first practice, where understanding
+      is built through direct interaction with realistic environments rather than isolated theory.
+    </p>
+
+    <!-- Principles -->
+    <div class="principles-list">
+
+      <div class="principle-item">
+        <div class="principle-title">Execution before explanation</div>
+        <p class="principle-text">
+          Learners engage with the environment first, then refine understanding through
+          iteration and reflection.
+        </p>
+      </div>
+
+      <div class="principle-item">
+        <div class="principle-title">Failure as a signal</div>
+        <p class="principle-text">
+          Labs are designed to allow mistakes, encouraging analysis, correction, and
+          deeper comprehension.
+        </p>
+      </div>
+
+      <div class="principle-item">
+        <div class="principle-title">Progressive complexity</div>
+        <p class="principle-text">
+          Each stage introduces new constraints, dependencies, and operational
+          considerations.
+        </p>
+      </div>
+
+      <div class="principle-item">
+        <div class="principle-title">Context over tools</div>
+        <p class="principle-text">
+          The focus is on understanding attack paths and decision-making, not memorizing
+          individual tools or commands.
+        </p>
+      </div>
+
+      <div class="principle-item">
+        <div class="principle-title">Repetition with variation</div>
+        <p class="principle-text">
+          Similar concepts reappear across labs in different contexts to reinforce
+          transferable skills.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Clarifier -->
+    <p class="section-clarifier">
+      This approach mirrors how real Red Team skills are developed in practice—through
+      repeated execution, adjustment, and contextual learning rather than linear instruction.
+    </p>
+
+  </div>
+</section>
+<!-- =========================
+     SECTION D — LEARNING PATH STRUCTURE
+     ========================= -->
+<section class="learning-path-structure">
+  <div class="section-container">
+
+    <!-- Meta -->
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">PROGRESSION MODEL</span>
+    </div> 
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      How the Learning Path Is Structured
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      The learning path is organized into progressive stages, each designed to build
+      specific capabilities before introducing additional complexity.
+    </p>
+
+    <!-- Stages -->
+    <div class="path-stages">
+
+      <!-- Foundation -->
+      <div class="stage-card">
+        <div class="stage-title">Foundation Labs</div>
+
+        <div class="stage-focus">
+          <strong>Focus:</strong> Environment understanding and access fundamentals
+        </div>
+
+        <p class="stage-description">
+          Learners begin by working within controlled enterprise-style environments to
+          understand identity structures, system relationships, and common misconfigurations.
+        </p>
+
+        <div class="stage-outcome">
+          <strong>Outcome:</strong>
+          Ability to interpret enterprise environments and establish initial access with intent.
+        </div>
+      </div>
+
+      <!-- Intermediate -->
+      <div class="stage-card">
+        <div class="stage-title">Intermediate Labs</div>
+
+        <div class="stage-focus">
+          <strong>Focus:</strong> Movement, escalation, and persistence
+        </div>
+
+        <p class="stage-description">
+          Labs introduce lateral movement, privilege escalation, and interaction across
+          multiple systems, requiring deliberate planning and execution.
+        </p>
+
+        <div class="stage-outcome">
+          <strong>Outcome:</strong>
+          Ability to move through environments intentionally and maintain access across systems.
+        </div>
+      </div>
+
+      <!-- Advanced -->
+      <div class="stage-card">
+        <div class="stage-title">Advanced Labs</div>
+
+        <div class="stage-focus">
+          <strong>Focus:</strong> Enterprise-scale attack paths
+        </div>
+
+        <p class="stage-description">
+          Complex environments introduce forest-level structures, trust relationships,
+          and operational constraints that reflect real Red Team engagements.
+        </p>
+
+        <div class="stage-outcome">
+          <strong>Outcome:</strong>
+          Ability to plan and execute complete attack paths across enterprise environments.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Clarifier -->
+    <p class="section-clarifier">
+      Each stage assumes completion of the previous one. Progression is designed to be
+      sequential, ensuring skills are developed in context rather than accumulated randomly.
+    </p>
+
+  </div>
+</section>
+<!-- =========================
+     SECTION E — FOUNDATION STAGE
+     ========================= -->
+<section class="foundation-stage">
+  <div class="section-container">
+
+    <!-- Meta -->
+     <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">FOUNDATION LABS</span>
+    </div>   
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      Building Core Understanding of Enterprise Environments
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      Foundation labs establish the baseline skills required to understand how enterprise
+      environments are structured and where attack paths begin.
+    </p>
+
+    <!-- Content Grid -->
+    <div class="foundation-grid">
+
+      <!-- What You Work On -->
+      <div class="foundation-card">
+        <div class="foundation-card-title">What You Work On</div>
+
+        <ul class="foundation-list">
+          <li>
+            <strong>Enterprise identity fundamentals</strong> — Understand how users,
+            groups, and permissions are structured and misconfigured in real environments.
+          </li>
+
+          <li>
+            <strong>Environment enumeration</strong> — Learn to observe and map systems,
+            relationships, and trust boundaries before taking action.
+          </li>
+
+          <li>
+            <strong>Initial access techniques</strong> — Practice gaining access through
+            common weaknesses without relying on automation or shortcuts.
+          </li>
+
+          <li>
+            <strong>Situational awareness</strong> — Develop the ability to interpret what
+            matters in an environment and what does not.
+          </li>
+        </ul>
+      </div>
+
+      <!-- How the Labs Are Designed -->
+      <div class="foundation-card">
+        <div class="foundation-card-title">How the Labs Are Designed</div>
+
+        <ul class="foundation-list">
+          <li>
+            <strong>Controlled environments</strong> — Labs focus on clarity and learning
+            signal rather than scale or noise.
+          </li>
+
+          <li>
+            <strong>Single-domain focus</strong> — Environments are intentionally scoped to
+            reduce complexity while reinforcing fundamentals.
+          </li>
+
+          <li>
+            <strong>Repeatable execution</strong> — Key concepts are practiced multiple
+            times across different scenarios to build confidence.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Capability Outcome -->
+    <div class="foundation-outcome">
+      <strong>Capability Outcome:</strong>
+      After completing the Foundation stage, learners are able to analyze enterprise-style
+      environments, identify meaningful weaknesses, and establish access with intent rather
+      than trial and error.
+    </div>
+
+  </div>
+</section>
+<!-- =========================
+     SECTION F — INTERMEDIATE STAGE
+     ========================= -->
+<section class="intermediate-stage">
+  <div class="section-container">
+
+    <!-- Meta -->
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">OPERATIONAL MOVEMENT</span>
+    </div>   
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      Expanding Access and Control Across Systems
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      Intermediate labs focus on operating across multiple systems, requiring deliberate
+      movement, escalation, and persistence rather than isolated actions.
+    </p>
+
+    <!-- Content Grid -->
+    <div class="intermediate-grid">
+
+      <!-- Learning Focus -->
+      <div class="intermediate-card">
+        <div class="intermediate-card-title">
+          Learning Focus
+        </div>
+
+        <ul class="intermediate-list">
+          <li>
+            <strong>Lateral movement</strong> — Learn to move between systems by leveraging
+            credentials, trust relationships, and environmental weaknesses.
+          </li>
+
+          <li>
+            <strong>Privilege escalation</strong> — Practice identifying and exploiting
+            paths to higher privilege with intent and control.
+          </li>
+
+          <li>
+            <strong>Persistence strategies</strong> — Establish and maintain access while
+            adapting to environmental changes.
+          </li>
+
+          <li>
+            <strong>Multi-system interaction</strong> — Coordinate actions across hosts,
+            services, and identities without breaking operational flow.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Environment Characteristics -->
+      <div class="intermediate-card">
+        <div class="intermediate-card-title">
+          Environment Characteristics
+        </div>
+
+        <ul class="intermediate-list">
+          <li>
+            <strong>Increased interdependency</strong> — Actions in one system affect others,
+            requiring planning and foresight.
+          </li>
+
+          <li>
+            <strong>Reduced guidance</strong> — Labs provide fewer hints, encouraging
+            independent analysis and decision-making.
+          </li>
+
+          <li>
+            <strong>Operational constraints</strong> — Scenarios introduce limitations that
+            mirror real-world conditions.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Capability Outcome -->
+    <div class="intermediate-outcome">
+      <strong>Capability Outcome:</strong>
+      After completing the Intermediate stage, learners can traverse enterprise environments
+      methodically, maintain access across systems, and adapt their approach based on evolving
+      conditions.
+    </div>
+
+  </div>
+</section>
+<!-- =========================
+     SECTION G — ADVANCED STAGE
+     ========================= -->
+<section class="advanced-stage">
+  <div class="section-container">
+
+    <!-- Meta -->
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">ENTERPRISE-SCALE OPERATIONS</span>
+    </div>   
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      Executing Complete Attack Paths in Complex Environments
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      Advanced labs simulate enterprise-scale environments where learners must plan,
+      execute, and adapt full attack paths under realistic operational constraints.
+    </p>
+
+    <!-- Content Grid -->
+    <div class="advanced-grid">
+
+      <!-- What Changes -->
+      <div class="advanced-card">
+        <div class="advanced-card-title">
+          What Changes at This Stage
+        </div>
+
+        <ul class="advanced-list">
+          <li>
+            <strong>Forest-level environments</strong> — Labs introduce multiple domains,
+            trust relationships, and enterprise-wide dependencies.
+          </li>
+
+          <li>
+            <strong>Attack path planning</strong> — Learners must evaluate multiple options
+            and select viable paths based on context and constraints.
+          </li>
+
+          <li>
+            <strong>Defense-aware execution</strong> — Scenarios require awareness of
+            visibility, logging, and operational risk.
+          </li>
+
+          <li>
+            <strong>End-to-end operations</strong> — Activities span initial access through
+            impact, requiring continuity and discipline.
+          </li>
+        </ul>
+      </div>
+
+      <!-- How Advanced Labs Are Experienced -->
+      <div class="advanced-card">
+        <div class="advanced-card-title">
+          How Advanced Labs Are Experienced
+        </div>
+
+        <ul class="advanced-list">
+          <li>
+            <strong>Minimal guidance</strong> — Learners are expected to reason independently
+            and validate assumptions through execution.
+          </li>
+
+          <li>
+            <strong>Increased realism</strong> — Environments reflect how modern enterprises
+            are structured and monitored.
+          </li>
+
+          <li>
+            <strong>Higher consequence actions</strong> — Mistakes have cascading effects,
+            reinforcing careful decision-making.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Capability Outcome -->
+    <div class="advanced-outcome">
+      <strong>Capability Outcome:</strong>
+      After completing the Advanced stage, learners are able to design and execute complete
+      Red Team operations across enterprise environments, adapting to complexity,
+      constraints, and defensive realities.
+    </div>
+
+  </div>
+</section>
+<!-- =========================
+     SECTION H — LAB ENVIRONMENT EVOLUTION
+     ========================= -->
+<section class="environment-evolution">
+  <div class="section-container">
+
+    <!-- Meta -->  
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">ENVIRONMENT PROGRESSION</span>
+    </div>   
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      How Lab Environments Evolve Across Stages
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      Lab environments are designed to evolve alongside skill progression, increasing in
+      realism, dependency, and operational constraint as learners advance.
+    </p>
+
+    <!-- Content Grid -->
+    <div class="environment-grid">
+
+      <!-- How Environments Change -->
+      <div class="environment-card">
+        <div class="environment-card-title">
+          How Environments Change
+        </div>
+
+        <ul class="environment-list">
+          <li>
+            <strong>Scope expansion</strong> — Environments grow from focused, single-domain
+            setups to multi-domain enterprise structures with complex dependencies.
+          </li>
+
+          <li>
+            <strong>Increased realism</strong> — Later labs reflect how modern enterprises are
+            actually configured, including legacy systems, misalignments, and operational debt.
+          </li>
+
+          <li>
+            <strong>Richer context</strong> — Learners encounter more signals, relationships,
+            and decision points rather than isolated vulnerabilities.
+          </li>
+
+          <li>
+            <strong>Operational constraints</strong> — Visibility, logging, and environmental
+            side effects become part of the learning experience.
+          </li>
+        </ul>
+      </div>
+
+      <!-- What This Enables -->
+      <div class="environment-card">
+        <div class="environment-card-title">
+          What This Enables
+        </div>
+
+        <ul class="environment-list">
+          <li>
+            <strong>Contextual decision-making</strong> — Learners must evaluate options based
+            on environment state, not predefined paths.
+          </li>
+
+          <li>
+            <strong>Attack path reasoning</strong> — Skills shift from executing steps to
+            designing and validating end-to-end operations.
+          </li>
+
+          <li>
+            <strong>Transferable understanding</strong> — Concepts learned in labs map
+            directly to real enterprise environments.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Clarifier -->
+    <p class="section-clarifier">
+      Environment progression is intentional. Each stage prepares learners for the
+      structural and operational complexity introduced in the next.
+    </p>
+
+  </div>
+</section>
+<!-- =========================
+     SECTION I — OUTCOMES & SKILL READINESS
+     ========================= -->
+<section class="outcomes-readiness">
+  <div class="section-container">
+
+    <!-- Meta -->   
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">CAPABILITY OUTCOMES</span>
+    </div>  
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      What You Are Able to Do at Each Stage
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      Each stage of the learning path is designed around concrete capabilities, ensuring
+      progression is measured by what you can execute, not what you have completed.
+    </p>
+
+    <!-- Capability Progression -->
+    <div class="outcomes-grid">
+
+      <div class="outcomes-card">
+        <div class="outcomes-card-title">Capability Progression</div>
+
+        <ul class="outcomes-list">
+          <li>
+            <strong>Foundation readiness</strong> — Interpret enterprise environments,
+            identify meaningful weaknesses, and establish initial access with clarity
+            and intent.
+          </li>
+
+          <li>
+            <strong>Intermediate readiness</strong> — Move laterally across systems,
+            escalate privileges deliberately, and maintain access while adapting to
+            changing conditions.
+          </li>
+
+          <li>
+            <strong>Advanced readiness</strong> — Design and execute complete attack
+            paths across enterprise environments, accounting for complexity and
+            defensive visibility.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Practical Skill Development -->
+      <div class="outcomes-card">
+        <div class="outcomes-card-title">Practical Skill Development</div>
+
+        <ul class="outcomes-list">
+          <li>
+            <strong>Operational reasoning</strong> — Make decisions based on environment
+            state rather than predefined steps.
+          </li>
+
+          <li>
+            <strong>Attack path design</strong> — Connect individual actions into cohesive,
+            end-to-end operations.
+          </li>
+
+          <li>
+            <strong>Adaptability</strong> — Adjust techniques and approaches as constraints
+            and signals change.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Clarifier -->
+    <p class="section-clarifier">
+      Progression through the learning path reflects increasing operational responsibility,
+      not just technical exposure.
+    </p>
+
+  </div>
+</section>
+  
+<!-- =========================
+     SECTION J — CERTIFICATION & TRAINING ALIGNMENT
+     ========================= -->
+<section class="cert-training-alignment">
+  <div class="section-container">
+
+    <!-- Meta --> 
+     <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">LEARNING CONTEXT</span>
+    </div>  
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      How Labs Connect to Certifications and Instructor-Led Training
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      Labs function as the execution layer within a broader learning ecosystem,
+      supporting certifications and guided training without replacing either.
+    </p>
+
+    <!-- Content Grid -->
+    <div class="alignment-grid">
+
+      <!-- Certifications -->
+      <div class="alignment-card">
+        <div class="alignment-card-title">
+          How Labs Support Certifications
+        </div>
+
+        <ul class="alignment-list">
+          <li>
+            <strong>Skill reinforcement</strong> — Labs provide hands-on execution that
+            strengthens practical understanding behind assessment objectives.
+          </li>
+
+          <li>
+            <strong>Context building</strong> — Learners practice techniques in realistic
+            environments rather than isolated scenarios.
+          </li>
+
+          <li>
+            <strong>Readiness validation</strong> — Progress through labs helps identify
+            strengths and gaps before formal evaluation.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Instructor-Led Training -->
+      <div class="alignment-card">
+        <div class="alignment-card-title">
+          How Labs Relate to Instructor-Led Training
+        </div>
+
+        <ul class="alignment-list">
+          <li>
+            <strong>Before training</strong> — Labs establish foundational familiarity,
+            allowing learners to engage more effectively during guided sessions.
+          </li>
+
+          <li>
+            <strong>Alongside training</strong> — Labs serve as an execution environment
+            to apply concepts introduced during instruction.
+          </li>
+
+          <li>
+            <strong>After training</strong> — Labs enable continued practice to reinforce
+            and extend learned techniques.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Clarifier -->
+    <p class="section-clarifier">
+      Labs are not a substitute for guided instruction or formal assessment. They provide
+      the execution context where skills are developed, tested, and refined over time.
+    </p>
+
+    <!-- Context Links (Learning Links Only) -->
+    <div class="alignment-links">
+      <a href="#certification-alignment" class="inline-link">
+        See Certification Alignment
+      </a>
+      <a href="#instructor-led-training" class="inline-link">
+        Explore Instructor-Led Training
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- =========================
+     SECTION — STARTING THE LEARNING JOURNEY
+     ========================= -->
+<section class="learning-journey">
+  <div class="section-container">
+
+    <!-- Meta -->   
+     <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">GETTING STARTED</span>
+    </div>
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      Begin with a Free Lab, Then Progress Through the Path
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      The learning path is designed to let you experience hands-on Red Team lab execution
+      first, then deepen capability through structured progression and formal assessment.
+    </p>
+
+    <!-- Journey Steps -->
+    <ol class="journey-steps">
+      <li>
+        <strong>Choose a learning path</strong> — Identify the stage that aligns with your
+        current experience and goals.
+      </li>
+
+      <li>
+        <strong>Start with a free lab</strong> — Explore a foundational lab environment to
+        understand how labs are structured and what execution involves.
+      </li>
+
+      <li>
+        <strong>Deepen skills through structured labs or training</strong> — Progress
+        through paid labs or instructor-led training to build advanced capability.
+      </li>
+
+      <li>
+        <strong>Capture flags through execution</strong> — Demonstrate understanding by
+        completing objectives within realistic environments.
+      </li>
+
+      <li>
+        <strong>Validate skills through certification</strong> — Use demonstrated
+        capability to prepare for and complete formal certification assessments.
+      </li>
+    </ol>
+
+    <!-- Clarifier -->
+    <p class="section-clarifier">
+      The free lab is intended as an entry point to experience the learning approach.
+      Progression beyond this stage requires structured practice and sustained execution
+      across increasingly complex environments.
+    </p>
+
+    <!-- Actions -->
+    <div class="journey-actions">
+      <a href="#free-lab" class="btn-secondary">
+        Start with a Free Lab
+      </a>
+
+      <a href="#learning-path" class="inline-link">
+        Start Red Team Certification
+      </a>
+    </div>
+
+  </div>
+</section>
+  
+<!-- =========================
+     SECTION K — PRACTICALITIES
+     ========================= -->
+<section class="practicalities">
+  <div class="section-container">
+
+    <!-- Meta --> 
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">ACCESS & SETUP</span>
+    </div>
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      Access, Tooling, and Lab Environments
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      Practical details below outline how labs are accessed, what tooling is required,
+      and how environments behave during execution.
+    </p>
+
+    <!-- Practicalities Grid -->
+    <div class="practicalities-grid">
+
+      <!-- Lab Access -->
+      <div class="practicalities-card">
+        <div class="practicalities-card-title">
+          Lab Access
+        </div>
+
+        <ul class="practicalities-list">
+          <li>
+            <strong>Self-paced availability</strong> — Labs are accessible on demand,
+            allowing learners to start, pause, and resume based on their schedule.
+          </li>
+
+          <li>
+            <strong>Session persistence</strong> — Progress within a lab can be preserved
+            to support iterative learning and retries.
+          </li>
+
+          <li>
+            <strong>Isolated environments</strong> — Each lab runs in a dedicated
+            environment to prevent cross-interference and ensure consistency.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tooling Requirements -->
+      <div class="practicalities-card">
+        <div class="practicalities-card-title">
+          Tooling Requirements
+        </div>
+
+        <ul class="practicalities-list">
+          <li>
+            <strong>Standard operating systems</strong> — Labs assume familiarity with
+            commonly used operating systems in offensive security work.
+          </li>
+
+          <li>
+            <strong>Common Red Team tools</strong> — Tool requirements are practical and
+            documented per lab, avoiding unnecessary dependencies.
+          </li>
+
+          <li>
+            <strong>Local setup responsibility</strong> — Learners are expected to manage
+            their own tooling and configurations.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Environment Behavior -->
+      <div class="practicalities-card">
+        <div class="practicalities-card-title">
+          Environment Behavior
+        </div>
+
+        <ul class="practicalities-list">
+          <li>
+            <strong>Realistic constraints</strong> — Environments include dependencies,
+            misconfigurations, and limitations found in real enterprises.
+          </li>
+
+          <li>
+            <strong>Stateful interactions</strong> — Actions taken within a lab can affect
+            subsequent steps, reinforcing careful execution.
+          </li>
+
+          <li>
+            <strong>Repeatable scenarios</strong> — Labs can be revisited to reinforce
+            understanding and test alternative approaches.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Clarifier -->
+    <p class="section-clarifier">
+      Reviewing access requirements and tooling expectations before starting helps ensure
+      a smoother learning experience and minimizes setup friction.
+    </p>
+
+  </div>
+</section>
+<!-- =========================
+     SECTION L — FREQUENTLY ASKED QUESTIONS
+     ========================= -->
+<section class="faqs">
+  <div class="section-container">
+
+    <!-- Meta -->  
+    <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">PRACTICAL DETAILS</span>
+    </div>
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      Common Questions About the Learning Path
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      These questions address practical considerations about lab access, progression,
+      and usage to help you plan your learning effectively.
+    </p>
+
+    <!-- FAQ List -->
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Do I need prior Red Team experience to start?
+        </div>
+        <div class="faq-answer">
+          Basic familiarity with operating systems, networking, and security concepts is
+          expected. The Foundation stage is designed to establish Red Team–specific context.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can labs be completed at my own pace?
+        </div>
+        <div class="faq-answer">
+          Yes. Labs are self-paced and can be revisited as needed to reinforce understanding
+          and execution.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Are labs guided step-by-step?
+        </div>
+        <div class="faq-answer">
+          Labs provide objectives and context, not full walkthroughs. Learners are expected
+          to analyze, experiment, and iterate.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Do I need specific tools or software?
+        </div>
+        <div class="faq-answer">
+          Common offensive security tools and standard operating systems are required.
+          Tool requirements are listed with each lab.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I skip stages and start at a higher level?
+        </div>
+        <div class="faq-answer">
+          Stages are designed to be sequential. Skipping foundational stages may result
+          in gaps that affect later progress.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How is progress measured within labs?
+        </div>
+        <div class="faq-answer">
+          Progress is evaluated through task completion, environment interaction, and
+          demonstrated capability rather than time spent.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Clarifier -->
+    <p class="section-clarifier">
+      Lab expectations increase at each stage. Reviewing prerequisites before starting
+      helps ensure a productive learning experience.
+    </p>
+
+  </div>
+</section>
+  
+<!-- =========================
+     SECTION K — NEXT STEPS
+     ========================= -->
+<section class="next-steps">
+  <div class="section-container">
+
+    <!-- Meta -->  
+     <div class="eyebrow eyebrow--section">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-text">PATH CONTINUATION</span>
+    </div>
+
+    <!-- H2 -->
+    <h2 class="section-title">
+      Where to Go Next
+    </h2>
+
+    <!-- Lead -->
+    <p class="section-lead">
+      Once you understand how the learning path is structured, the next step is to move
+      from orientation to hands-on execution.
+    </p>
+
+    <!-- Next Actions -->
+    <ul class="next-actions">
+      <li>
+        <strong>Explore lab modules</strong> — Review the available labs within each stage
+        and choose where to begin based on your current readiness.
+      </li>
+
+      <li>
+        <strong>Review certification alignment</strong> — Understand how lab execution
+        supports assessment objectives and skill validation.
+      </li>
+
+      <li>
+        <strong>Plan your progression</strong> — Decide how to pace your learning across
+        stages based on available time and experience.
+      </li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="next-actions-cta">
+      <a href="#labs" class="btn-secondary">
+        View Lab Modules
+      </a>
+
+      <a href="#certification-alignment" class="inline-link">
+        See certification alignment
+      </a>
+    </div>
+
+  </div>
+</section>
+
+  <script>
+    // No JS required here by design.
+  </script>
+
+</body>
+</html>
