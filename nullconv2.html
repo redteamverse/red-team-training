@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Red Team Skill Check - Azure & On-Prem</title>
+
+<style>
+body{
+margin:0;
+background:#F4F6FA;
+color:#111827;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+.container{
+max-width:600px;
+margin:auto;
+padding:24px 16px 60px;
+text-align:center;
+}
+
+.logo img{height:40px;margin-bottom:6px;}
+.brand{font-size:16px;font-weight:600;margin-bottom:6px;}
+
+h1{
+font-size:26px;
+margin:10px 0 14px;
+color:#EA3037;
+}
+
+.usp-accent{
+font-size:16px;
+line-height:1.6;
+border-left:4px solid #EA3037;
+padding:12px 14px;
+background:#fff;
+border-radius:8px;
+margin-bottom:18px;
+text-align:left;
+}
+
+.card{
+background:#fff;
+border-radius:12px;
+padding:20px;
+margin-bottom:18px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.instruction{
+font-size:14px;
+background:#EEF2FF;
+border:1px solid #1E3A8A;
+padding:14px;
+border-radius:8px;
+margin-bottom:18px;
+text-align:left;
+line-height:1.7;
+}
+
+.btn{
+width:100%;
+padding:14px;
+border-radius:8px;
+border:none;
+cursor:pointer;
+font-weight:600;
+font-size:14px;
+margin-top:12px;
+transition:.25s;
+color:#fff;
+}
+
+.btn-azure{background:#1E3A8A;}
+.btn-azure:hover{background:#162E6B;}
+.btn-onprem{background:#B91C1C;}
+.btn-onprem:hover{background:#991B1B;}
+
+.track-badge{
+display:inline-block;
+padding:6px 12px;
+border-radius:20px;
+font-size:13px;
+font-weight:600;
+margin-bottom:14px;
+}
+
+.track-azure{background:#DBEAFE;color:#1E3A8A;}
+.track-onprem{background:#FEE2E2;color:#B91C1C;}
+
+.option{
+border:1px solid #E5E7EB;
+padding:10px;
+border-radius:6px;
+margin:6px 0;
+cursor:pointer;
+text-align:left;
+background:#F9FAFB;
+}
+
+.option.active{
+border-color:#EA3037;
+background:#FEE2E2;
+}
+
+.progress-wrap{
+width:100%;
+height:6px;
+background:#E5E7EB;
+border-radius:10px;
+overflow:hidden;
+margin-bottom:12px;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:#EA3037;
+transition:.4s;
+}
+
+.input{
+width:100%;
+padding:10px;
+border:1px solid #D1D5DB;
+border-radius:6px;
+margin-bottom:12px;
+font-size:14px;
+}
+
+/* Certifications */
+
+.cert-section{
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid #E5E7EB;
+text-align:left;
+}
+
+.cert-section h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.path-title{
+font-size:14px;
+margin-top:18px;
+margin-bottom:10px;
+font-weight:600;
+color:#374151;
+}
+
+.course-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(90px,1fr));
+gap:14px;
+}
+
+.course-card{
+text-align:center;
+}
+
+.course-card img{
+width:100%;
+aspect-ratio:1/1;
+object-fit:contain;
+border-radius:10px;
+background:#fff;
+padding:6px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.course-name{
+margin-top:6px;
+font-size:12px;
+font-weight:600;
+}
+
+/* WHY SECTION */
+
+.why-section{
+margin-top:30px;
+text-align:left;
+}
+
+.why-section h3{
+margin-bottom:12px;
+font-size:16px;
+}
+
+.why-section ul{
+padding-left:18px;
+}
+
+.hidden{display:none;}
+
+@media(max-width:480px){
+h1{font-size:28px;}
+.btn{font-size:16px;padding:16px;}
+.course-grid{grid-template-columns:repeat(3,1fr);}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="logo">
+<img src="https://static.wixstatic.com/media/52db83_dd3dab7bcbdf45609df5faa9c62d9a54~mv2.png">
+</div>
+
+<div class="brand">ALTERED SECURITY</div>
+<h1>Red Team Skill Check - Azure & On-Prem</h1>
+
+<div class="usp-accent">
+Prove your Red Team skills. Unlock free hands-on access to Red Labs.
+</div>
+
+<!-- HOME -->
+<div id="home">
+
+<div class="instruction">
+<b>How It Works:</b><br><br>
+
+1. Choose a Track:<br>
+&nbsp;&nbsp;☁ Azure Red Team → CARTP Giveaway<br>
+&nbsp;&nbsp;🖥 On-Prem AD Red Team → CRTP Giveaway<br><br>
+
+2. Answer 5 Technical Questions<br>
+3. Enter your details to view your result<br>
+4. Login to Free Red Labs
+</div>
+
+<div class="card">
+<button class="btn btn-azure" onclick="start('azure')">Azure Red Team</button>
+<button class="btn btn-onprem" onclick="start('onprem')">On-Prem AD Red Team</button>
+</div>
+
+<div id="homeCerts"></div>
+
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="card hidden">
+<div id="trackBadge"></div>
+<div class="progress-wrap">
+<div id="progressBar" class="progress-bar"></div>
+</div>
+<div id="qtext"></div>
+<div id="olist"></div>
+<button onclick="next()" class="btn btn-onprem">Next</button>
+<div id="trackCerts"></div>
+</div>
+
+<!-- FORM -->
+<div id="form" class="card hidden">
+<b>Enter your details to view your result & unlock Red Labs</b><br><br>
+<input class="input" placeholder="Name">
+<input class="input" placeholder="Email">
+<button onclick="showResult()" class="btn btn-onprem">View My Result</button>
+<div id="formCerts"></div>
+</div>
+
+<!-- RESULT -->
+<div id="result" class="card hidden">
+<h3>Thank you for participating!</h3>
+<button class="btn btn-onprem"
+onclick="window.location.href='https://redlabs.enterprisesecurity.io/'">
+Login to Free Red Labs
+</button>
+
+<div id="resultCerts"></div>
+
+<div class="why-section">
+<h3>Why Red Teamers Choose Altered Security</h3>
+<ul>
+<li>Trusted by 500+ Fortune & Enterprise Teams Worldwide</li>
+<li>Built by Altered Security Red Team Experts</li>
+<li>Real-World Attack Scenarios Used in Live Trainings</li>
+<li>Hands-On Practice Environments on Red Labs</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+<script>
+let currentTrack="";
+let QUESTIONS=[];
+let i=0,selected=null;
+
+const AZURE_Q=[
+["Azure privilege escalation often uses?","Owner Role","Reader Role","Billing Role","Guest","Owner Role"],
+["Azure token abuse targets?","Access Token","NTDS","SAM","LSA","Access Token"],
+["Azure recon tool?","ROADtools","Hydra","Nikto","Dirbuster","ROADtools"],
+["Azure lateral movement?","Run Command","ARP","Ping","Traceroute","Run Command"],
+["Azure identity attack technique?","Password Spray","SQLi","XSS","CSRF","Password Spray"]
+];
+
+const ONPREM_Q=[
+["Kerberoasting targets?","Service Accounts","Admin","Guest","DC","Service Accounts"],
+["Golden Ticket abuses?","KRBTGT","SAM","LSA","DNS","KRBTGT"],
+["AD enumeration tool?","BloodHound","Nmap","Nikto","Burp","BloodHound"],
+["Credential dumping tool?","Mimikatz","Wireshark","Hydra","John","Mimikatz"],
+["Lateral movement protocol?","SMB","FTP","HTTP","SMTP","SMB"]
+];
+
+function certCard(file,name){
+return `<div class="course-card">
+<img src="https://redteamverse.github.io/red-team-training/images/${file}">
+<div class="course-name">${name}</div>
+</div>`;
+}
+
+function renderCerts(type){
+let all = `
+<div class="cert-section">
+<h3>Our Courses & Certifications</h3>
+<div class="path-title">Active Directory Learning Path</div>
+<div class="course-grid">
+${certCard("crtp.avif","CRTP®")}
+${certCard("CESP%20%E2%80%93%20ADCS.avif","CESP – ADCS")}
+${certCard("CRTE.avif","CRTE®")}
+${certCard("CETP.avif","CETP")}
+${certCard("crtm.avif","CRTM®")}
+</div>
+<div class="path-title">Azure Learning Path</div>
+<div class="course-grid">
+${certCard("CARTP.avif","CARTP®")}
+${certCard("CARTE.avif","CARTE®")}
+</div>
+</div>`;
+
+let azureOnly = `
+<div class="cert-section">
+<div class="path-title">Azure Learning Path</div>
+<div class="course-grid">
+${certCard("CARTP.avif","CARTP®")}
+${certCard("CARTE.avif","CARTE®")}
+</div>
+</div>`;
+
+let adOnly = `
+<div class="cert-section">
+<div class="path-title">Active Directory Learning Path</div>
+<div class="course-grid">
+${certCard("crtp.avif","CRTP®")}
+${certCard("CESP%20%E2%80%93%20ADCS.avif","CESP – ADCS")}
+${certCard("CRTE.avif","CRTE®")}
+${certCard("CETP.avif","CETP")}
+${certCard("crtm.avif","CRTM®")}
+</div>
+</div>`;
+
+if(type==="all") return all;
+if(type==="azure") return azureOnly;
+if(type==="ad") return adOnly;
+}
+
+document.getElementById("homeCerts").innerHTML = renderCerts("all");
+
+function start(track){
+currentTrack=track;
+QUESTIONS = track==="azure"?AZURE_Q:ONPREM_Q;
+
+document.getElementById("home").classList.add("hidden");
+document.getElementById("quiz").classList.remove("hidden");
+
+document.getElementById("trackBadge").innerHTML =
+track==="azure"
+? '<span class="track-badge track-azure">Track: Azure Red Team</span>'
+: '<span class="track-badge track-onprem">Track: On-Prem AD Red Team</span>';
+
+document.getElementById("trackCerts").innerHTML =
+track==="azure"?renderCerts("azure"):renderCerts("ad");
+
+i=0;
+load();
+}
+
+function load(){
+selected=null;
+document.getElementById("progressBar").style.width=((i)/5)*100+"%";
+let q=QUESTIONS[i];
+document.getElementById("qtext").innerHTML="<b>"+q[0]+"</b>";
+
+let html="";
+for(let x=1;x<=4;x++){
+html+=`<div class="option" onclick="selectOpt(this,'${q[x]}')">${q[x]}</div>`;
+}
+document.getElementById("olist").innerHTML=html;
+}
+
+function selectOpt(el,val){
+document.querySelectorAll(".option").forEach(o=>o.classList.remove("active"));
+el.classList.add("active");
+selected=val;
+}
+
+function next(){
+if(!selected){alert("Please select an option");return;}
+i++;
+if(i>=5){
+document.getElementById("quiz").classList.add("hidden");
+document.getElementById("form").classList.remove("hidden");
+document.getElementById("formCerts").innerHTML =
+currentTrack==="azure"?renderCerts("azure"):renderCerts("ad");
+return;
+}
+load();
+}
+
+function showResult(){
+document.getElementById("form").classList.add("hidden");
+document.getElementById("result").classList.remove("hidden");
+document.getElementById("resultCerts").innerHTML = renderCerts("all");
+}
+</script>
+
+</body>
+</html>
