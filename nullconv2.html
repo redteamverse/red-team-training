@@ -71,10 +71,10 @@ transition:.25s;
 color:#fff;
 }
 
-.btn-azure{background:#1E3A8A;}
-.btn-azure:hover{background:#162E6B;}
-.btn-onprem{background:#B91C1C;}
-.btn-onprem:hover{background:#991B1B;}
+
+    
+.btn-onprem, .btn-azure {background:#B91C1C;}
+.btn-onprem:hover, .btn-azure:hover {background:#991B1B;}
 
 .track-badge{
 display:inline-block;
@@ -222,18 +222,17 @@ Prove your Red Team skills. Unlock free hands-on access to Red Labs.
 <div class="instruction">
 <b>How It Works:</b><br><br>
 
-1. Choose a Track:<br>
-&nbsp;&nbsp;☁ Azure Red Team → CARTP Giveaway<br>
-&nbsp;&nbsp;🖥 On-Prem AD Red Team → CRTP Giveaway<br><br>
+1. Choose a Track:<br>&nbsp;&nbsp;🖥 On-Prem AD Red Team → CRTP Giveaway<br>&nbsp;&nbsp;☁ Azure Red Team → CARTP Giveaway&nbsp; &nbsp;<br>
 
-2. Answer 5 Technical Questions<br>
+2. Answer 5 Red Team Questions<br>
 3. Enter your details to view your result<br>
-4. Login to Free Red Labs
+4. Win Exclusive Red Labs Access
 </div>
 
 <div class="card">
-<button class="btn btn-azure" onclick="start('azure')">Azure Red Team</button>
 <button class="btn btn-onprem" onclick="start('onprem')">On-Prem AD Red Team</button>
+<button class="btn btn-azure" onclick="start('azure')">Azure Red Team</button>
+
 </div>
 
 <div id="homeCerts"></div>
@@ -263,7 +262,7 @@ Prove your Red Team skills. Unlock free hands-on access to Red Labs.
 
 <!-- RESULT -->
 <div id="result" class="card hidden">
-<h3>Thank you for participating!</h3>
+<h3>🔓 Exclusive Red Labs Access Unlocked</h3>
 <button class="btn btn-onprem"
 onclick="window.location.href='https://redlabs.enterprisesecurity.io/'">
 Login to Free Red Labs
@@ -317,7 +316,7 @@ function renderCerts(type){
 let all = `
 <div class="cert-section">
 <h3>Our Courses & Certifications</h3>
-<div class="path-title">Active Directory Learning Path</div>
+<div class="path-title">On-Prem Active Directory Learning Path</div>
 <div class="course-grid">
 ${certCard("crtp.avif","CRTP®")}
 ${certCard("CESP%20%E2%80%93%20ADCS.avif","CESP – ADCS")}
