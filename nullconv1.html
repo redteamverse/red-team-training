@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Red Team Skill Check - Azure & On-Prem</title>
+
+<style>
+body{
+margin:0;
+background:#F4F6FA;
+color:#111827;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+.container{
+max-width:560px;
+margin:auto;
+padding:24px 16px 60px;
+text-align:center;
+}
+
+.logo img{height:40px;margin-bottom:6px;}
+
+.brand{
+font-size:16px;
+font-weight:600;
+margin-bottom:6px;
+}
+
+h1{
+font-size:26px;
+margin:10px 0 14px;
+color:#EA3037;
+}
+
+.usp-accent{
+font-size:16px;
+line-height:1.6;
+border-left:4px solid #EA3037;
+padding:12px 14px;
+background:#ffffff;
+border-radius:8px;
+margin-bottom:18px;
+text-align:left;
+}
+
+.card{
+background:#ffffff;
+border-radius:12px;
+padding:20px;
+margin-bottom:18px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.instruction{
+font-size:14px;
+background:#EEF2FF;
+border:1px solid #1E3A8A;
+padding:14px;
+border-radius:8px;
+margin-bottom:18px;
+text-align:left;
+line-height:1.6;
+}
+
+.track-label{
+font-size:13px;
+font-weight:600;
+color:#B91C1C;
+margin-bottom:10px;
+}
+
+.btn{
+width:100%;
+padding:14px;
+border-radius:8px;
+border:none;
+cursor:pointer;
+font-weight:600;
+font-size:14px;
+margin-top:12px;
+background:#B91C1C;
+color:white;
+transition:.25s;
+}
+
+.btn:hover{background:#1E3A8A;}
+
+.btn-secondary{
+background:transparent;
+border:1px solid #1E3A8A;
+color:#1E3A8A;
+}
+
+.btn-secondary:hover{
+background:#1E3A8A;
+color:white;
+}
+
+.option{
+border:1px solid #E5E7EB;
+padding:10px;
+border-radius:6px;
+margin:6px 0;
+cursor:pointer;
+text-align:left;
+background:#F9FAFB;
+}
+
+.option.active{
+border-color:#EA3037;
+background:#FEE2E2;
+}
+
+.progress-wrap{
+width:100%;
+height:6px;
+background:#E5E7EB;
+border-radius:10px;
+overflow:hidden;
+margin-bottom:8px;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:#EA3037;
+transition:.4s;
+}
+
+.result-progress{
+width:100%;
+height:14px;
+background:#E5E7EB;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:16px;
+}
+
+.result-fill{
+height:100%;
+width:0%;
+background:#EA3037;
+transition:.6s;
+}
+
+.input{
+width:100%;
+padding:8px;
+border:1px solid #D1D5DB;
+border-radius:6px;
+margin-bottom:10px;
+}
+
+.why-section{
+margin-top:20px;
+background:#F9FAFB;
+padding:16px;
+border-radius:10px;
+text-align:left;
+}
+
+.why-section h3{
+margin-top:0;
+font-size:16px;
+}
+
+.why-section ul{
+padding-left:18px;
+margin:0;
+}
+
+.why-section li{
+margin-bottom:8px;
+}
+
+.hidden{display:none;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+<img src="https://static.wixstatic.com/media/52db83_dd3dab7bcbdf45609df5faa9c62d9a54~mv2.png">
+</div>
+
+<div class="brand">ALTERED SECURITY</div>
+
+<h1>Red Team Skill Check - Azure & On-Prem</h1>
+
+<div class="usp-accent">
+Prove your Red Team skills. Unlock free hands-on access to Red Labs.
+</div>
+
+<div id="home">
+
+<div class="instruction">
+<b>How It Works:</b><br><br>
+1️⃣ Choose a Track: <b>Azure (CARTP)</b> or <b>On-Prem AD (CRTP)</b><br>
+2️⃣ Answer 5 Technical Questions<br>
+3️⃣ Enter your details to view your result<br>
+4️⃣ Login to Free Red Labs
+</div>
+
+<div class="card">
+<button class="btn" onclick="start('azure')">
+Azure (CARTP)
+</button>
+
+<button class="btn btn-secondary" onclick="start('onprem')">
+On-Prem AD (CRTP)
+</button>
+</div>
+
+</div>
+
+<div id="quiz" class="card hidden">
+<div class="track-label" id="trackLabel"></div>
+
+<div class="progress-wrap">
+<div id="progressBar" class="progress-bar"></div>
+</div>
+
+<div id="qtext"></div>
+<div id="olist"></div>
+
+<button onclick="next()" class="btn">Next</button>
+</div>
+
+<div id="form" class="card hidden">
+<b>Enter your details to view your result & unlock Red Labs</b><br><br>
+<input class="input" placeholder="Name">
+<input class="input" placeholder="Email">
+<button onclick="submitData()" class="btn">View My Result</button>
+</div>
+
+<div id="result" class="card hidden">
+
+<div class="result-progress">
+<div id="resultFill" class="result-fill"></div>
+</div>
+
+<div id="resultMessage"></div>
+
+<button onclick="goLab()" class="btn">
+Login to Free Red Labs
+</button>
+
+<div class="why-section">
+<h3>Why Red Teamers Choose Altered Security</h3>
+<ul>
+<li>Trusted by 500+ Fortune & Enterprise Teams Worldwide</li>
+<li>Built by Altered Security Red Team Experts</li>
+<li>Real-World Attack Scenarios Used in Live Trainings</li>
+<li>Hands-On Practice Environments on Red Labs</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let currentTrack="";
+let QUESTIONS=[];
+let i=0,selected=null,correct=0;
+
+const AZURE_Q=[
+["Azure privilege escalation often uses?","Owner Role","Reader Role","Billing Role","Guest","Owner Role"],
+["Azure token abuse targets?","Access Token","NTDS","SAM","LSA","Access Token"],
+["Azure recon tool?","ROADtools","Hydra","Nikto","Dirbuster","ROADtools"],
+["Azure lateral movement?","Run Command","ARP","Ping","Traceroute","Run Command"],
+["Azure identity attack technique?","Password Spray","SQLi","XSS","CSRF","Password Spray"]
+];
+
+const ONPREM_Q=[
+["Kerberoasting targets?","Service Accounts","Admin","Guest","DC","Service Accounts"],
+["Golden Ticket abuses?","KRBTGT","SAM","LSA","DNS","KRBTGT"],
+["AD enumeration tool?","BloodHound","Nmap","Nikto","Burp","BloodHound"],
+["Credential dumping tool?","Mimikatz","Wireshark","Hydra","John","Mimikatz"],
+["Lateral movement protocol?","SMB","FTP","HTTP","SMTP","SMB"]
+];
+
+function start(track){
+currentTrack=track;
+QUESTIONS = track==="azure"?AZURE_Q:ONPREM_Q;
+
+document.getElementById("trackLabel").innerText =
+track==="azure"
+? "Track: Azure (CARTP)"
+: "Track: On-Prem AD (CRTP)";
+
+document.getElementById("home").classList.add("hidden");
+document.getElementById("quiz").classList.remove("hidden");
+
+i=0; correct=0;
+load();
+}
+
+function load(){
+selected=null;
+document.getElementById("progressBar").style.width=((i)/5)*100+"%";
+let q=QUESTIONS[i];
+document.getElementById("qtext").innerHTML="<b>"+q[0]+"</b>";
+let html="";
+for(let x=1;x<=4;x++){
+html+=`<div class="option" onclick="selectOpt(this,'${q[x]}')">${q[x]}</div>`;
+}
+document.getElementById("olist").innerHTML=html;
+}
+
+function selectOpt(el,val){
+document.querySelectorAll(".option").forEach(o=>o.classList.remove("active"));
+el.classList.add("active");
+selected=val;
+}
+
+function next(){
+if(!selected){alert("Please select an option");return;}
+if(selected===QUESTIONS[i][5]) correct++;
+i++;
+if(i>=5){
+document.getElementById("quiz").classList.add("hidden");
+document.getElementById("form").classList.remove("hidden");
+return;
+}
+load();
+}
+
+function submitData(){
+document.getElementById("form").classList.add("hidden");
+document.getElementById("result").classList.remove("hidden");
+
+let percentage=(correct/5)*100;
+document.getElementById("resultFill").style.width=percentage+"%";
+
+let message="";
+
+if(currentTrack==="azure"){
+if(correct<=1){
+message="You’re just getting started with Azure attack paths.<br><br>The best way to build confidence is by actually doing it. Start working through the Azure labs on Red Labs.";
+}
+else if(correct==2){
+message="You understand some Azure techniques.<br><br>Now try them inside real lab environments and see how they behave in a tenant setup.";
+}
+else if(correct==3){
+message="Solid Azure knowledge.<br><br>Next step is combining techniques and working through full attack paths.";
+}
+else if(correct==4){
+message="Strong familiarity with Azure techniques.<br><br>Now focus on cleaner execution and handling more complex attack paths.";
+}
+else{
+message="Very strong Azure awareness.<br><br>Time to push yourself inside structured, enterprise-style lab scenarios.";
+}
+}
+
+if(currentTrack==="onprem"){
+if(correct<=1){
+message="You’re at an early stage with on-prem attack concepts.<br><br>Start with Attacking Active Directory with Linux and follow structured domain walkthroughs.";
+}
+else if(correct==2){
+message="You have basic awareness of Active Directory techniques.<br><br>Continue exploring domain attack paths inside structured labs.";
+}
+else if(correct==3){
+message="Solid conceptual knowledge.<br><br>Connect techniques into complete domain attack paths.";
+}
+else if(correct==4){
+message="Strong familiarity shown.<br><br>Refine your understanding of advanced domain attack flows.";
+}
+else{
+message="Excellent awareness of on-prem attack techniques.<br><br>Dive deeper into complex domain scenarios.";
+}
+}
+
+document.getElementById("resultMessage").innerHTML=message;
+}
+
+function goLab(){
+window.location.href="https://redlabs.enterprisesecurity.io/";
+}
+
+</script>
+
+</body>
+</html>
