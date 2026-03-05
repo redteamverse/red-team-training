@@ -258,13 +258,14 @@ body {
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 20px;
+  letter-spacing:-0.01em;
 }
 
 .delivered-intro {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 720px;
-  margin-bottom: calc(var(--space-md) * 1.2);
+  margin-bottom:32px;
 }
 
 
@@ -301,7 +302,56 @@ body {
   line-height: 1.5;
 }
 
+.event-snapshot{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+margin:16px 0 48px;
+font-size:0.85rem;
+color:#6B7280;
+font-weight:500;
+line-height:1.6;  
+border-top:1px solid #E5E7EB;
+border-bottom:1px solid #E5E7EB;
+padding:14px 0;
 
+}
+
+.event-snapshot span{
+position:relative;
+padding-right:14px;
+}
+
+.event-snapshot span:not(:last-child)::after{
+content:"•";
+position:absolute;
+right:0;
+color:#9CA3AF;
+}
+
+@media (max-width:640px){
+
+.delivered-section{
+padding:64px 24px;
+}
+
+.delivered-section h2{
+margin-bottom:16px;
+}
+
+.delivered-intro{
+margin-bottom:24px;
+font-size:0.95rem;
+}
+
+.event-snapshot{
+justify-content:flex-start;
+gap:10px;  
+margin:12px 0 36px;
+font-size:0.8rem;
+}
+
+}  
 /* =====================
    TRUST SECTION
 ===================== */
@@ -417,11 +467,7 @@ body {
   display: flex;
   justify-content: center;
 }
-@media (max-width: 640px) {
-  .delivered-section {
-    padding-bottom: 48px; /* tighten section-to-section gap */
-  }
-}
+
 
 /* =====================
    RESPONSIVE
@@ -1707,19 +1753,23 @@ max-width: 1100px;
   <div class="delivered-container">
     
     <span class="section-eyebrow">Outcome</span>
-    <h2>What AltSecCON Delivered</h2>
+    <h2>What AltSecCON Delivered in Bengaluru</h2>
     <p class="delivered-intro">
-      A three-day, in-person training event designed around depth, realism,
-      and long-term skill development.
+     During our recent in-person training event, security professionals joined AltSecCON for hands-on Red Team training designed around depth, realism, and long-term skill development.
     </p>
-
+    <div class="event-snapshot">
+      <span>3 Days</span>
+      <span>Instructor-Led Training</span>
+      <span>Enterprise Labs</span>
+      <span>Security Community Networking</span>
+    </div>
     <div class="delivered-grid">
       <div class="delivered-card"><h3>Instructor-Led Training</h3><p>Full-length Red Team courses delivered in person.</p></div>
       <div class="delivered-card"><h3>Enterprise Lab Access</h3><p>One-month access to enterprise-aligned labs.</p></div>
       <div class="delivered-card"><h3>Lifetime Study Material</h3><p>Course material available for long-term learning.</p></div>
       <div class="delivered-card"><h3>Course Certificates</h3><p>Completion certificates for each training.</p></div>
       <div class="delivered-card"><h3>Post-Training References</h3><p>Reference material for continued practice.</p></div>
-      <div class="delivered-card"><h3>Peer & Instructor Interaction</h3><p>Direct engagement in an in-person setting.</p></div>
+      <div class="delivered-card"><h3>Peer & Instructor Interaction</h3><p>Direct engagement with instructors and fellow professionals.</p></div>
     </div>
   </div>
 </section> 
