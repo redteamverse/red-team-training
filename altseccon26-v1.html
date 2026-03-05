@@ -461,8 +461,38 @@ font-size:0.7rem;
 /* =====================
    TRAINING PROGRAMS
 ===================== */
+.course-signal{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+font-size:0.72rem;
+color:#6B7280;
+margin-top:12px;
+padding-top:12px;
+border-top:1px solid #E5E7EB;
+margin-bottom:18px;
+}
+
+.course-signal span{
+position:relative;
+padding-right:10px;
+}
+
+.course-signal span:not(:last-child)::after{
+content:"•";
+position:absolute;
+right:-4px;
+color:#9CA3AF;
+}
+.course-card:hover .course-signal{
+color:#4B5563;
+}  
+.course-card:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}  
 .course-grid-section {
-  background: var(--white);
+  background:#F9FAFB;
   color: var(--dark);
   padding: var(--space-lg) 24px;
 }
@@ -493,14 +523,14 @@ font-size:0.7rem;
 }
 
 .course-card {
-  background: var(--offwhite);
-  border: 1px solid var(--border);
+  background:#FFFFFF;
+  border:1px solid #E5E7EB;
   min-height:210px;
   border-radius: 10px;
   padding: 24px;
   display: flex;
   flex-direction: column;
-  transition:transform .25s ease, box-shadow .25s ease;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
 }
   
 @media (hover:hover){
@@ -520,7 +550,7 @@ margin-bottom:14px;
 .course-card p {
   font-size: 0.95rem;
   color: #4B5563;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   line-height:1.6;
 }
 
@@ -1570,7 +1600,7 @@ letter-spacing:0.14em;
 text-transform:uppercase;
 background:#F9FAFB;  
 color:var(--muted);
-border:1px solid var(--border);
+border:1px solid #E5E7EB;
 padding:5px 9px;
 border-radius:5px;
 }
@@ -1920,7 +1950,13 @@ gap:22px;
   <span>Active Directory</span>
   <span>FOUNDATIONAL</span>
 </div>
-<p>Foundational AD Red Team tradecraft.</p><a href="#">View course details</a></div>
+<p>Foundational AD Red Team tradecraft.</p>
+    <div class="course-signal">
+      <span>3 Days</span>
+      <span>Hands-on Labs</span>
+      <span>Certification</span>
+    </div>    
+        <a href="#">View course details</a></div>
       <div class="course-card">
         <span class="course-level">Intermediate
 </span>
@@ -1928,7 +1964,11 @@ gap:22px;
   <span>Active Directory</span>
   <span>ENTERPRISE</span>
 </div><p>Simulated enterprise-scale Active Directory attack scenarios.
-</p><a href="#">View course details</a></div>
+</p><div class="course-signal">
+      <span>3 Days</span>
+      <span>Hands-on Labs</span>
+      <span>Certification</span>
+</div><a href="#">View course details</a></div>
       <div class="course-card">
         <span class="course-level">Intermediate
 </span>
@@ -1936,20 +1976,32 @@ gap:22px;
   <span>EVASION </span>
   <span>OFFENSIVE</span>
 </div><p>Evasion methods for bypassing modern detection and security controls.
-</p><a href="#">View course details</a></div>
+</p><div class="course-signal">
+      <span>3 Days</span>
+      <span>Hands-on Labs</span>
+      <span>Certification</span>
+</div><a href="#">View course details</a></div>
       <div class="course-card">
         <span class="course-level">Beginner</span>
         <h3>CARTP</h3><div class="course-meta">
   <span>AZURE</span>
   <span>IDENTITY</span>
-</div><p>Azure identity and access attacks.</p><a href="#">View course details</a></div>
+</div><p>Azure identity and access attacks.</p><div class="course-signal">
+      <span>3 Days</span>
+      <span>Hands-on Labs</span>
+      <span>Certification</span>
+</div><a href="#">View course details</a></div>
       <div class="course-card">
       <span class="course-level">Advanced</span>  
         <h3>CARTE</h3><div class="course-meta">
   <span>AZURE </span>
   <span>ADVANCED</span>
 </div><p>Complex Azure Red Team operations across identity, access, and cloud infrastructure.
-</p><a href="#">View course details</a></div>
+</p><div class="course-signal">
+      <span>3 Days</span>
+      <span>Hands-on Labs</span>
+      <span>Certification</span>
+</div><a href="#">View course details</a></div>
     </div>
 
     <div class="course-grid-cta">
