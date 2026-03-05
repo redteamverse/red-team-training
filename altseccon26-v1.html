@@ -335,7 +335,7 @@ padding-right:14px;
 }
 
 .event-snapshot span:not(:last-child)::after{
-content:"•";
+content:"~";
 position:absolute;
 right:0;
 color:#9CA3AF;
@@ -370,7 +370,7 @@ font-size:0.8rem;
 .trust-section {
   background: var(--offwhite);
   color: var(--dark);
-  padding: var(--space-md) 24px;
+  padding: 64px 24px;
 }
 
 .trust-container {
@@ -391,10 +391,13 @@ font-size:0.8rem;
   margin-bottom: var(--space-md);
 }
 
-.trust-logos {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 48px;
+.trust-logos{
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:36px;
+margin-top:32px;
+margin-bottom:40px;
+align-items:center;
 }
 
 .trust-logos img {
@@ -1513,39 +1516,38 @@ max-width: 1100px;
   font-weight: 600;          /* emphasis via weight */
   color: var(--dark);        /* NOT red */
 }
-  .community-caption {
-  max-width: 880px;
-  margin-top: 6px; 
-  margin-bottom: 6px;
-  font-size: 0.75rem;
-  color: var(--muted);
-  opacity: 0.8;
-  text-align: center;
+  
+.community-caption{
+font-size:0.85rem;
+font-weight:500;
+color:#374151;
+text-align:center;
+margin-bottom:16px;
 }
-.community-governance {
-  margin: 20px auto 0;
-  font-size: 0.8rem;
-  color: var(--muted);
-  text-align: center;
-  max-width: 640px;
 
+.community-governance{
+font-size:0.8rem;
+color:#6B7280;
+text-align:center;
+max-width:640px;
+margin:18px auto 0;
 }
+  
 .community-logos {
   margin-bottom: 12px;   /* reduced */
 }
 
-.community-image {
-  margin-top: 16px;      /* reduced gap */
-}
-.community-image {
-  max-width: 880px;          /* smaller than content container */
-  margin: 32px auto 24px;    /* tighter vertical rhythm */
+.community-image{
+max-width:880px;
+margin:32px auto;
 }
 
-.community-image img {
-  width: 100%;
-  border-radius: 10px;
+.community-image img{
+width:100%;
+border-radius:12px;
+border:1px solid #E5E7EB;
 }
+  
 .instructor-role {
   font-size: 0.85rem;
   color: var(--dark);
@@ -1563,6 +1565,14 @@ max-width: 1100px;
   text-align: center;
 }
 
+@media (max-width:640px){
+
+.trust-logos{
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+}  
 :root {
   --primary-red: #B91C1C;
   --structural-blue: #2B2B50;
@@ -1766,7 +1776,7 @@ max-width: 1100px;
      During our recent in-person training event, security professionals joined AltSecCON for hands-on Red Team training designed around depth, realism, and long-term skill development.
     </p>
     <div class="event-snapshot">
-      <span>3 Days</span>
+      <span>3 Days </span>
       <span>Instructor-Led Training</span>
       <span>Enterprise Labs</span>
       <span>Security Community Networking</span>
@@ -1786,7 +1796,7 @@ max-width: 1100px;
   <div class="course-grid-container">
     <span class="section-eyebrow">Curriculum 
     </span>
-    <h2>Training Programs Offered</h2>
+    <h2>Training Programs at AltSecCON </h2>
 
     <p class="course-grid-intro">
       Instructor-led Red Team certification programs covering Active Directory,
@@ -1831,8 +1841,7 @@ max-width: 1100px;
     <span class="section-eyebrow">Community trust</span>
     <h2>Trusted by the Security Community</h2>
     <p class="trust-intro">
-       AltSecCON is built with and shaped by security professionals who value serious, in-person Red Team training.
-The community that attended helped define the depth, realism, and execution standard we continue to build on.
+    Security professionals from across India joined AltSecCON for hands-on Red Team training and professional collaboration
     </p>
 
     <div class="trust-logos community-logos">
@@ -1849,7 +1858,7 @@ The community that attended helped define the depth, realism, and execution stan
 <section class="thankyou-section">
   <div class="thankyou-container">  
     <p class="community-caption">
-  In-person Red Team training participants at AltSecCON
+  Participants of the in-person Red Team training at AltSecCON
 </p>
 
     <div class="thankyou-image community-image">
@@ -1861,7 +1870,7 @@ The community that attended helped define the depth, realism, and execution stan
 
   <div class="community-governance">
   <p>
-  Participation from the security community helps uphold the depth and execution standards of AltSecCON training
+  Participation from the security community helps maintain the depth and practical focus of AltSecCON training.
   </p>
 
 </div>
@@ -2031,7 +2040,7 @@ The community that attended helped define the depth, realism, and execution stan
   <div class="gallery-container">
 
     <span class="section-eyebrow">Gallery</span>
-    <h2>In-Person Training, Real Classrooms</h2>
+    <h2>AltSecCON Bengaluru 2025 Highlights</h2>
 
     <p class="gallery-intro">
       A glimpse into the instructor-led, in-person Red Team training sessions
