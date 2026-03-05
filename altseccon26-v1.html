@@ -370,7 +370,7 @@ font-size:0.8rem;
 .trust-section {
   background: var(--offwhite);
   color: var(--dark);
-  padding: 64px 24px;
+  padding: var(--space-md) 24px;
 }
 
 .trust-container {
@@ -387,26 +387,77 @@ font-size:0.8rem;
 .trust-intro {
   font-size: 1rem;
   color: var(--muted);
-  max-width: 720px;
-  margin-bottom: var(--space-md);
+  max-width: 640px;
+  margin-bottom: 28px;
 }
 
 .trust-logos{
 display:grid;
 grid-template-columns:repeat(6,1fr);
-gap:36px;
-margin-top:32px;
-margin-bottom:40px;
+gap:32px;
 align-items:center;
+margin:32px auto 28px; /* adds space below logos */
+max-width:720px;
+}
+  
+.trust-label{
+font-size:0.9rem;
+color:var(--muted);
+margin-top:8px;
+margin-bottom:18px;
+}
+    
+.trust-logos img{
+max-height:38px;
+width:auto;
+object-fit:contain;
+margin:auto;
+filter:grayscale(100%);
+opacity:.75;
+transition:opacity .2s ease;
+}
+  
+@media (hover:hover){
+.trust-logos img:hover{
+opacity:1;
+}
 }
 
-.trust-logos img {
-  max-height: 42px;
-  margin: 0 auto;
-  filter: grayscale(100%);
-  opacity: 0.8;
+/* disclaimer */
+.trust-note{
+font-size:0.72rem;
+color:#6B7280;
+margin-top:16px; /* space above disclaimer */
+max-width:520px;
+line-height:1.5;
+  
 }
 
+@media (max-width:768px){
+
+.trust-logos{
+grid-template-columns:repeat(3,1fr);
+gap:28px;
+}
+
+}
+
+@media (max-width:480px){
+
+.trust-logos{
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+}
+
+.trust-label{
+font-size:0.85rem;
+}
+
+.trust-note{
+font-size:0.7rem;
+}
+
+}  
 /* =====================
    TRAINING PROGRAMS
 ===================== */
@@ -1519,10 +1570,9 @@ max-width: 1100px;
   
 .community-caption{
 font-size:0.85rem;
-font-weight:500;
 color:#374151;
 text-align:center;
-margin-bottom:16px;
+margin-bottom:12px;
 }
 
 .community-governance{
@@ -1533,20 +1583,25 @@ max-width:640px;
 margin:18px auto 0;
 }
   
-.community-logos {
-  margin-bottom: 12px;   /* reduced */
+.community-logos{
+max-width:720px;
+margin:32px auto 18px;
 }
 
 .community-image{
 max-width:880px;
-margin:32px auto;
+margin:36px auto;
+padding:16px;
+background:#F9FAFB;
+border:1px solid #E5E7EB;
+border-radius:14px;
 }
-
 .community-image img{
 width:100%;
-border-radius:12px;
-border:1px solid #E5E7EB;
+border-radius:10px;
+display:block;
 }
+  
   
 .instructor-role {
   font-size: 0.85rem;
@@ -1570,6 +1625,24 @@ border:1px solid #E5E7EB;
 .trust-logos{
 grid-template-columns:repeat(3,1fr);
 gap:24px;
+}
+
+}  
+  
+@media (max-width:768px){
+
+.trust-logos{
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+}
+
+@media (max-width:480px){
+
+.trust-logos{
+grid-template-columns:repeat(2,1fr);
+gap:22px;
 }
 
 }  
@@ -1838,20 +1911,32 @@ gap:24px;
   <!-- TRUST -->
 <section class="trust-section">
   <div class="trust-container">
+
     <span class="section-eyebrow">Community trust</span>
+
     <h2>Trusted by the Security Community</h2>
+
     <p class="trust-intro">
-    Security professionals from across India joined AltSecCON for hands-on Red Team training and professional collaboration
+      Security professionals from across India joined AltSecCON for hands-on Red Team training and professional collaboration.
+    </p>
+
+    <p class="trust-label">
+      Professionals joined AltSecCON from organizations such as
     </p>
 
     <div class="trust-logos community-logos">
-      <img src="https://redteamverse.github.io/red-team-training/images/microsoft.png">
-      <img src="https://redteamverse.github.io/red-team-training/images/security.png">
-      <img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg">
-      <img src="https://redteamverse.github.io/red-team-training/images/wipro.png">
-      <img src="https://redteamverse.github.io/red-team-training/images/RS.jpg">
-      <img src="https://redteamverse.github.io/red-team-training/images/SST.png">
+      <img src="https://redteamverse.github.io/red-team-training/images/microsoft.png" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/security.png" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/wipro.png" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/RS.jpg" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/SST.png" alt="">
     </div>
+
+    <p class="trust-note">
+      Logos represent organizations where attendees work and do not imply sponsorship.
+    </p>
+
   </div>
 </section>
   <!-- THANK YOU SECTION -->
@@ -1928,7 +2013,7 @@ gap:24px;
     </div>     
   
     <div class="instructor-card-cta">
-      <a href="#" class="btn btn-tertiary">View All Red Team Expert →</a>
+      <a href="#" class="btn btn-tertiary">Explore Training Programs →</a>
     </div>
 
     <!-- Supporting Images 
