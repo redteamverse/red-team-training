@@ -243,9 +243,9 @@ body {
    WHAT AltSecCON DELIVERED
 ===================== */
 .delivered-section {
-  background: var(--white);
-  color: var(--dark);
-  padding: calc(var(--space-lg) * 1.15) 24px; /* more chapter weight */
+background: var(--white);
+color: var(--dark);
+padding: var(--space-lg) 24px;
 }
 
 
@@ -269,42 +269,54 @@ body {
 }
 
 
-.delivered-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.delivered-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+align-items:stretch;
 }
 
-.delivered-card {
-  background: var(--offwhite);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  min-height: 160px; /* subtle normalization */
+.delivered-card{
+background:var(--offwhite);
+border:1px solid var(--border);
+border-radius:10px;
+padding:22px;
+display:flex;
+flex-direction:column;
+border-left:3px solid #B91C1C;
+transition: transform .25s ease;
+min-height:160px;
 }
 
-
-.delivered-card h3 {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 700;
-  margin-bottom: 8px;
+.delivered-card h3{
+font-size:0.9rem;
+font-weight:700;
+margin-bottom:8px;
+letter-spacing:0.02em;
+line-height:1.4;
+max-width:240px;
 }
 
-
-.delivered-card p {
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin-top: auto;
-  line-height: 1.5;
+.delivered-card p{
+font-size:0.95rem;
+color:var(--muted);
+line-height:1.6;
 }
 
+.delivered-card{
+transition: transform .25s ease;
+}
+
+@media (hover:hover){
+.delivered-card:hover{
+transform:translateY(-3px);
+}
+}
+  
 .event-snapshot{
 display:flex;
 flex-wrap:wrap;
+align-items:center;  
 gap:14px;
 margin:16px 0 48px;
 font-size:0.85rem;
@@ -504,11 +516,7 @@ font-size:0.8rem;
     gap: 14px;
   }
 
-  .btn .actions {
-    width: auto;
-    min-width: 200px;
-  }
-
+  
 }  
   /* =====================
    EVENT STRUCTURE (CARD-BASED)
@@ -1764,12 +1772,12 @@ max-width: 1100px;
       <span>Security Community Networking</span>
     </div>
     <div class="delivered-grid">
-      <div class="delivered-card"><h3>Instructor-Led Training</h3><p>Full-length Red Team courses delivered in person.</p></div>
-      <div class="delivered-card"><h3>Enterprise Lab Access</h3><p>One-month access to enterprise-aligned labs.</p></div>
-      <div class="delivered-card"><h3>Lifetime Study Material</h3><p>Course material available for long-term learning.</p></div>
-      <div class="delivered-card"><h3>Course Certificates</h3><p>Completion certificates for each training.</p></div>
-      <div class="delivered-card"><h3>Post-Training References</h3><p>Reference material for continued practice.</p></div>
-      <div class="delivered-card"><h3>Peer & Instructor Interaction</h3><p>Direct engagement with instructors and fellow professionals.</p></div>
+      <div class="delivered-card"><h3>Instructor-Led Red Team Training</h3><p>Full-length Red Team courses delivered in person by experienced instructors.</p></div>
+      <div class="delivered-card"><h3>Lifetime Study Resources</h3><p>Course material available for long-term learning and reference.</p></div>
+      <div class="delivered-card"><h3>Course Completion Certificates</h3><p>Certificates awarded to participants after completing the training.</p></div>
+      <div class="delivered-card"><h3>Security Community Networking</h3><p>Opportunities to connect with security professionals and peers during the event.</p></div>
+      <div class="delivered-card"><h3>Peer & Instructor Interaction</h3><p>Direct engagement with instructors and fellow practitioners in an in-person setting  </p></div>
+      <div class="delivered-card"><h3>Post-Training Lab Access & Certification Attempt</h3><p>Participants received one month of enterprise-aligned lab access and one certification exam attempt for the course they attended.</p></div>
     </div>
   </div>
 </section> 
