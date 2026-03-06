@@ -68,26 +68,24 @@ opacity:.95;
 /* ---------------- FEATURES ---------------- */
 
 .hero-features{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:16px;
-margin-bottom:36px;
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-bottom:30px;
 max-width:520px;
 }
-
-.feature-card{
-background:white;
-color:#111827;
-border:1px solid var(--color-border);
-padding:18px;
-border-radius:8px;
+    
+.feature-pill{
+padding:8px 14px;
+border-radius:6px;
 font-size:14px;
-}
+border:1px solid rgba(255,255,255,0.4);
+background:rgba(255,255,255,0.08);
+}    
 
-.feature-title{
-font-weight:600;
-margin-bottom:6px;
-}
+
+
+
 
 /* ---------------- IMAGE ---------------- */
 
@@ -162,7 +160,7 @@ gap:30px;
 }
 
 .hero-title{
-font-size:28px;
+font-size:26px;
 }
 
 .hero-description{
@@ -176,11 +174,22 @@ margin-bottom:24px;
 /* compact features */
 
 .hero-features{
+display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:10px;
-max-width:100%;
+margin-bottom:28px;
+width:100%;
 }
 
+.feature-pill{
+padding:9px 10px;
+font-size:13px;
+text-align:center;
+border-radius:6px;
+border:1px solid rgba(255,255,255,0.35);
+background:rgba(255,255,255,0.08);
+}
+    
 .feature-card{
 padding:10px;
 font-size:13px;
@@ -248,25 +257,10 @@ This 3-days beginner class teaches you how to get started with Red Teaming. It c
 
 <div class="hero-features">
 
-<div class="feature-card">
-<div class="feature-title">Duration &nbsp;&nbsp;&nbsp;&nbsp; 3 Days</div>
-<p>3 days of guided training sessions during AltSecCON.</p>
-</div>
-
-<div class="feature-card">
-<div class="feature-title">Instructor-Led Sessions</div>
-<p>Techniques explained through walkthroughs and demonstrations.</p>
-</div>
-
-<div class="feature-card">
-<div class="feature-title">Enterprise Lab Environment</div>
-<p>Exercises performed inside a simulated AD enterprise network.</p>
-</div>
-
-<div class="feature-card">
-<div class="feature-title">Course Completion Certificate</div>
-<p>Participants receive a certificate and earn the CRTP certification.</p>
-</div>
+<span class="feature-pill">Duration — 3 Days</span>
+<span class="feature-pill">Instructor-Led Sessions</span>
+<span class="feature-pill">Enterprise Lab Environment</span>
+<span class="feature-pill">Course Completion Certificate</span>
 
 </div>
 
