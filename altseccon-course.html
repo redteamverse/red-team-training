@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CRTP Training</title>
+
+<style>
+
+/* -----------------------
+GLOBAL TOKENS
+------------------------*/
+
+:root{
+
+--color-primary:#B91C1C;
+--color-primary-hover:#EA3037;
+--color-secondary:#2B2B50;
+
+--color-border:#E5E7EB;
+--text-main:#111827;
+--text-muted:#6B7280;
+
+}
+
+/* -----------------------
+BASE
+------------------------*/
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:system-ui,-apple-system,BlinkMacSystemFont;
+line-height:1.6;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 24px;
+}
+
+/* -----------------------
+HERO SECTION
+------------------------*/
+
+.course-hero{
+
+background:var(--color-secondary);
+color:white;
+
+padding:110px 0 90px;
+
+}
+
+.hero-layout{
+
+display:grid;
+grid-template-columns:1fr 560px;
+gap:60px;
+align-items:center;
+
+}
+
+.hero-meta{
+
+font-size:13px;
+letter-spacing:.15em;
+text-transform:uppercase;
+opacity:.8;
+margin-bottom:16px;
+
+}
+
+.hero-title{
+
+font-size:40px;
+line-height:1.25;
+font-weight:700;
+
+margin-bottom:18px;
+
+}
+
+.hero-description{
+
+font-size:17px;
+max-width:640px;
+
+margin-bottom:32px;
+
+opacity:.95;
+
+}
+
+/* -----------------------
+FEATURE GRID
+------------------------*/
+
+.hero-features{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:16px;
+margin-bottom:40px;
+max-width:520px;
+}
+
+.feature-card{
+background:white;
+color:var(--text-main);
+border:1px solid var(--color-border);
+padding:18px;
+border-radius:8px;
+font-size:14px;
+line-height:1.5;
+}
+
+.feature-title{
+font-weight:600;
+margin-bottom:6px;
+font-size:14px;
+}
+
+/* -----------------------
+CERTIFICATE IMAGE
+------------------------*/
+
+.hero-image{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-image::before{
+
+content:"";
+
+position:absolute;
+
+width:520px;
+height:520px;
+
+background:radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+
+filter:blur(40px);
+
+z-index:0;
+
+}
+
+.certificate-frame{
+position:relative;
+z-index:1;
+}
+
+.hero-image img{
+width:100%;
+max-width:520px;
+border-radius:10px;
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+    
+.certificate-frame{
+
+background:#ffffff;
+padding:16px;
+
+border-radius:14px;
+
+box-shadow:
+0 30px 70px rgba(0,0,0,0.35),
+0 0 0 1px rgba(255,255,255,0.1);
+
+display:inline-block;
+
+}    
+
+/* -----------------------
+BUTTON
+------------------------*/
+    
+.hero-actions{
+display:flex;
+gap:14px;
+margin-top:10px;
+flex-wrap:wrap;
+}
+
+.btn-primary{
+background:#B91C1C;
+color:#ffffff;
+border:1px solid #B91C1C;
+}
+
+.btn-primary:hover{
+background:#EA3037;
+border-color:#EA3037;
+}
+
+.btn-secondary{
+background:transparent;
+color:#1E3A8A;
+border:1px solid #1E3A8A;
+}
+
+.btn-secondary:hover{
+background:#1E3A8A;
+color:#ffffff;
+}    
+
+.btn{
+
+display:inline-block;
+
+padding:12px 22px;
+
+background:var(--color-primary);
+color:white;
+
+font-weight:600;
+text-decoration:none;
+
+border-radius:8px;
+
+transition:.2s;
+
+}
+
+.btn:hover{
+
+background:var(--color-primary-hover);
+
+}
+
+/* -----------------------
+MOBILE
+------------------------*/
+@media (max-width:900px){
+
+.hero-features{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+    
+.hero-title{
+font-size:30px;
+line-height:1.25;
+}
+    
+.hero-actions{
+flex-direction:column;
+align-items:center;
+}
+
+.hero-actions .btn{
+width:100%;
+max-width:280px;
+text-align:center;
+}
+    
+}    
+
+@media (max-width:900px){
+
+.hero-layout{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-description{
+font-size:15px;
+max-width:90%;
+margin-left:auto;
+margin-right:auto;
+}    
+
+.course-hero{
+padding:70px 0 50px;
+}
+
+.hero-image{
+
+margin-top:30px;
+
+}
+
+.feature-card{
+padding:12px;
+font-size:13px;
+}    
+
+}
+.course-code{
+font-size:14px;
+letter-spacing:.12em;
+text-transform:uppercase;
+margin-bottom:8px;
+opacity:.9;
+}
+</style>
+</head>
+
+
+<body>
+
+
+<section class="course-hero">
+
+<div class="container">
+
+<div class="hero-layout">
+
+
+<!-- LEFT CONTENT -->
+
+<div>
+
+<div class="hero-meta">
+EVENT TRAINING
+</div>
+<div class="course-code">CRTP</div>
+<h1 class="hero-title">
+Active Directory Attacks for Red and Blue Teams (Beginner's Edition)
+</h1>
+
+<p class="hero-description">
+This 3-days beginner class teaches you how to get started with Red Teaming. It covers AD enumeration, trust mapping, Kerberos based attacks, defense bypasses and more! Earn the Certified Red Team Professional (CRTP) certification.
+</p>
+
+<div class="hero-features">
+
+<div class="feature-card">
+<div class="feature-title">Duration</div>
+3 days of guided training sessions during AltSecCON.
+</div>
+
+<div class="feature-card">
+<div class="feature-title">Instructor-Led Sessions</div>
+Techniques explained through walkthroughs and demonstrations.
+</div>
+
+<div class="feature-card">
+<div class="feature-title">Enterprise Lab Environment</div>
+Exercises performed inside a simulated AD enterprise network.
+</div>
+
+<div class="feature-card">
+<div class="feature-title">Course Completion Certificate</div>
+Participants receive a certificate after completing training.
+</div>
+</div>
+
+<div class="hero-actions">
+
+<a href="#" class="btn btn-secondary">
+Explore Training
+</a>
+<a href="#" class="btn btn-primary">
+Register for Training
+</a>
+</div>
+
+</div>
+
+
+<!-- RIGHT IMAGE -->
+
+<div class="hero-image">
+  <div class="certificate-frame">
+    <img src="https://redteamverse.github.io/red-team-training/images/CRTP_Certificate.png" alt="CRTP Certificate">
+  </div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+</body>
+</html>
