@@ -39,7 +39,7 @@ padding:0 24px;
 /* ---------------- HERO ---------------- */
 
 .course-hero{
-background:var(--color-secondary);
+background:linear-gradient(180deg,#2B2B50 0%,#252547 100%);
 color:white;
 padding:110px 0 90px;
 }
@@ -88,19 +88,35 @@ background:rgba(255,255,255,0.08);
 
 
 /* ---------------- IMAGE ---------------- */
-
 .hero-image{
 display:flex;
 justify-content:center;
+position:relative;
 }
 
+.hero-image::before{
+
+content:"";
+position:absolute;
+width:520px;
+height:520px;
+
+background:radial-gradient(circle,
+rgba(255,255,255,0.15),
+transparent 70%);
+filter:blur(40px);
+z-index:0;
+
+}
+    
 .hero-image img{
+position:relative;
+z-index:1;
 width:100%;
 max-width:520px;
 border-radius:12px;
 box-shadow:0 20px 40px rgba(0,0,0,.25);
 }
-
 /* ---------------- BUTTONS ---------------- */
 
 .hero-actions{
@@ -149,6 +165,11 @@ border-color:#1E3A8A;
 
 @media (max-width:900px){
 
+.hero-image::before{
+width:320px;
+height:320px;
+}
+    
 .course-hero{
 padding:70px 0 50px;
 }
@@ -231,7 +252,334 @@ margin-top:10px;
 }
 
 }
+/* ---------------- WHAT YOU WILL LEARN ---------------- */
 
+.learn-section{
+padding:90px 0;
+background:#F8FAFC;
+}
+
+.section-eyebrow{
+display:block;
+text-align:center;
+font-size:12px;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:#6B7280;
+margin-bottom:10px;
+}
+
+.learn-title{
+font-size:36px;
+font-weight:700;
+text-align:center;
+margin-bottom:18px;
+color:#111827;
+}
+
+.learn-intro{
+max-width:720px;
+margin:auto;
+text-align:center;
+font-size:16px;
+line-height:1.7;
+color:#4B5563;
+margin-bottom:60px;
+}
+
+/* layout */
+
+.learn-layout{
+display:grid;
+grid-template-columns:1fr 420px;
+gap:60px;
+align-items:center;
+max-width:1000px;
+margin:auto;
+}
+
+/* image */
+
+.learn-image img{
+width:100%;
+background:white;
+max-width:520px;    
+border-radius:16px;
+box-shadow:0 20px 40px rgba(0,0,0,.12)
+}
+
+/* points */
+
+.learn-points{
+display:flex;
+flex-direction:column;
+gap:22px;
+}
+
+.learn-point{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:16px;
+font-weight:500;
+color:#1F2937;
+}
+
+.point-icon{
+width:30px;
+height:30px;
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:#EF4444;
+
+color:white;
+
+border-radius:50%;
+
+font-size:14px;
+
+flex-shrink:0;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width:900px){
+
+.learn-layout{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.learn-image{
+padding:10px;
+}
+    
+.learn-title{
+font-size:28px;
+}
+
+.learn-intro{
+font-size:15px;
+margin-bottom:40px;
+}
+
+.learn-point{
+font-size:15px;
+}
+
+}
+
+/* --------------------------------
+TRAINING OVERVIEW
+-------------------------------- */
+
+.training-overview{
+padding:90px 0;
+background:#ffffff;
+}
+
+.overview-title{
+text-align:center;
+font-size:36px;
+font-weight:700;
+margin-bottom:18px;
+color:#111827;
+}
+
+.overview-intro{
+max-width:760px;
+margin:auto;
+text-align:center;
+font-size:16px;
+line-height:1.7;
+color:#4B5563;
+margin-bottom:60px;
+}
+
+/* grid */
+
+.overview-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+max-width:1000px;
+margin:auto;
+}
+
+/* card */
+
+.overview-card{
+background:#F9FAFB;
+border:1px solid #E5E7EB;
+border-radius:14px;
+padding:24px;
+transition:.25s;
+}
+
+.overview-card:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 28px rgba(0,0,0,.08);
+}
+
+.overview-card h3{
+font-size:18px;
+font-weight:600;
+margin-bottom:8px;
+color:#111827;
+}
+
+.overview-card p{
+font-size:14px;
+color:#6B7280;
+line-height:1.6;
+}
+
+/* --------------------------------
+MOBILE
+-------------------------------- */
+
+@media (max-width:900px){
+
+.training-overview{
+padding:70px 0;
+}
+
+.overview-title{
+font-size:28px;
+}
+
+.overview-intro{
+font-size:15px;
+margin-bottom:40px;
+}
+
+.overview-card{
+padding:20px;
+}
+
+}    
+
+/* -----------------------------
+CURRICULUM SECTION
+------------------------------*/
+
+.curriculum-section{
+padding:90px 0;
+background:#F9FAFB;
+}
+
+.curriculum-title{
+text-align:center;
+font-size:34px;
+font-weight:700;
+margin-bottom:18px;
+color:#111827;
+}
+
+.curriculum-intro{
+max-width:720px;
+margin:auto;
+text-align:center;
+font-size:16px;
+color:#4B5563;
+line-height:1.7;
+margin-bottom:60px;
+}
+
+/* accordion */
+
+.curriculum-accordion{
+max-width:900px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.accordion-item{
+background:white;
+border:1px solid #E5E7EB;
+border-radius:12px;
+overflow:hidden;
+}
+
+.accordion-header{
+width:100%;
+background:none;
+border:none;
+padding:20px 24px;
+font-size:16px;
+font-weight:600;
+text-align:left;
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+}
+
+.accordion-header:hover{
+background:#F9FAFB;
+}
+
+.accordion-icon{
+font-size:20px;
+color:#B91C1C;
+}
+
+/* content */
+
+.accordion-content{
+max-height:0;
+overflow:hidden;
+transition:max-height .35s ease;
+padding:0 24px;
+}
+
+.accordion-content ul{
+padding:18px 0 22px 18px;
+color:#374151;
+font-size:15px;
+line-height:1.6;
+}
+
+.accordion-content li{
+margin-bottom:8px;
+}
+
+/* open state */
+
+.accordion-item.active .accordion-content{
+max-height:800px;
+}
+
+.accordion-item.active .accordion-icon{
+transform:rotate(45deg);
+}
+
+/* mobile */
+
+@media (max-width:900px){
+
+.curriculum-section{
+padding:70px 0;
+}
+
+.curriculum-title{
+font-size:26px;
+}
+
+.accordion-header{
+font-size:15px;
+padding:18px;
+}
+
+.accordion-content ul{
+font-size:14px;
+}
+
+}    
 </style>
 </head>
 
@@ -267,7 +615,7 @@ This 3-days beginner class teaches you how to get started with Red Teaming. It c
 <div class="hero-actions">
 
 <a href="#" class="btn btn-ghost">
-Explore Training
+Explore Course
 </a>
 
 <a href="#" class="btn btn-primary">
@@ -289,6 +637,270 @@ Register for Training
 </div>
 
 </section>
+<section class="learn-section">
 
+<div class="container">
+
+<span class="section-eyebrow">Course Overview</span>
+
+<h2 class="learn-title">What You Will Learn</h2>
+
+<p class="learn-intro">
+This beginner-friendly training introduces practical Red Team techniques used in modern
+Active Directory environments. Participants learn how attackers enumerate domains,
+map trust relationships, escalate privileges, and bypass common enterprise defenses.
+</p>
+
+<div class="learn-layout">
+
+<div class="learn-image">
+<img src="https://redteamverse.github.io/red-team-training/images/CRTP%20active%20directory%20attacks%20alt.png" alt="Active Directory Attack Techniques">
+</div>
+
+<div class="learn-points">
+
+<div class="learn-point">
+<span class="point-icon">→</span>
+Active Directory Enumeration
+</div>
+
+<div class="learn-point">
+<span class="point-icon">→</span>
+Trust Mapping & Domain Relationships
+</div>
+
+<div class="learn-point">
+<span class="point-icon">→</span>
+Kerberos Based Attacks
+</div>
+
+<div class="learn-point">
+<span class="point-icon">→</span>
+Domain Privilege Escalation
+</div>
+
+<div class="learn-point">
+<span class="point-icon">→</span>
+SQL Server Trust Abuse
+</div>
+
+<div class="learn-point">
+<span class="point-icon">→</span>
+Defenses and Bypass Techniques
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="training-overview">
+
+<div class="container">
+
+<span class="section-eyebrow">Training Overview</span>
+
+<h2 class="overview-title">
+Course Structure & Training Details
+</h2>
+
+<p class="overview-intro">
+The CRTP training at AltSecCON is a hands-on, instructor-led experience designed for practical learning. 
+Participants work through guided attack scenarios, labs, and capture-the-flag challenges inside a simulated enterprise environment.
+</p>
+
+<div class="overview-grid">
+
+<div class="overview-card">
+<h3>3 Day Training</h3>
+<p>Instructor-led sessions delivered during AltSecCON.</p>
+</div>
+
+<div class="overview-card">
+<h3>8 Hours Per Session</h3>
+<p>Full-day guided sessions covering Red Team tradecraft.</p>
+</div>
+
+<div class="overview-card">
+<h3>8 Weeks Lab Access</h3>
+<p>Continue practicing attacks in enterprise-grade labs.</p>
+</div>
+
+<div class="overview-card">
+<h3>40 Capture-the-Flag Challenges</h3>
+<p>Hands-on exercises designed to test attack techniques.</p>
+</div>
+
+<div class="overview-card">
+<h3>23 Practical Lab Exercises</h3>
+<p>Step-by-step labs simulating real enterprise scenarios.</p>
+</div>
+
+<div class="overview-card">
+<h3>1 CRTP Certification Attempt</h3>
+<p>Earn the Certified Red Team Professional credential.</p>
+</div>
+
+<div class="overview-card">
+<h3>Course Completion Certificate</h3>
+<p>course completion certificate after completing Learning Objectives covered during the course.</p>
+</div>    
+
+<div class="overview-card">
+<h3>Video Course Included</h3>
+<p>Access recorded lessons for revision after training.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>    
+<section class="curriculum-section">
+
+<div class="container">
+
+<span class="section-eyebrow">Course Curriculum</span>
+
+<h2 class="curriculum-title">What You'll Cover During Training</h2>
+
+<p class="curriculum-intro">
+The CRTP training is organized into four modules across three days, covering enumeration,
+privilege escalation, persistence, and enterprise attack paths in Active Directory environments.
+</p>
+
+<div class="curriculum-accordion">
+
+<!-- MODULE 1 -->
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+<span>Module I — Enumeration, Offensive PowerShell & .NET Tradecraft</span>
+<span class="accordion-icon">+</span>
+</button>
+
+<div class="accordion-content">
+
+<ul>
+<li>Active Directory enumeration of users, groups, trusts and ACLs</li>
+<li>Mapping attack paths across enterprise environments</li>
+<li>Local privilege escalation techniques on Windows systems</li>
+<li>Discovering machines where domain users have local admin access</li>
+<li>PowerShell based reconnaissance techniques</li>
+<li>Modifying tools to bypass Windows Defender</li>
+<li>Bypassing AMSI, Script Block Logging and CLM</li>
+<li>Using .NET loaders to execute assemblies in memory</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- MODULE 2 -->
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+<span>Module II — Lateral Movement, Domain Privilege Escalation & Persistence</span>
+<span class="accordion-icon">+</span>
+</button>
+
+<div class="accordion-content">
+
+<ul>
+<li>Credential harvesting and session discovery</li>
+<li>Credential replay attacks for privilege escalation</li>
+<li>Extracting credentials in restricted environments</li>
+<li>Kerberoasting attacks and variants</li>
+<li>Exploiting delegation misconfigurations</li>
+<li>Privilege escalation through protected groups</li>
+<li>Persistence using Golden, Silver and Diamond tickets</li>
+<li>Skeleton key and custom SSP persistence techniques</li>
+<li>AdminSDHolder persistence abuse</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- MODULE 3 -->
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+<span>Module III — Domain Dominance & Enterprise Admin Escalation</span>
+<span class="accordion-icon">+</span>
+</button>
+
+<div class="accordion-content">
+
+<ul>
+<li>DCSync attacks through ACL abuse</li>
+<li>Modifying domain controller security descriptors</li>
+<li>Escalating privileges from Domain Admin to Enterprise Admin</li>
+<li>Intra-forest trust exploitation techniques</li>
+<li>Database link abuse for cross-forest execution</li>
+<li>Active Directory Certificate Services attack paths</li>
+<li>Cross-domain trust attacks to escalate privileges</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- MODULE 4 -->
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+<span>Module IV — Monitoring, Architecture Changes & Defender Evasion</span>
+<span class="accordion-icon">+</span>
+</button>
+
+<div class="accordion-content">
+
+<ul>
+<li>Events generated during common Active Directory attacks</li>
+<li>Security architecture improvements and defensive controls</li>
+<li>LAPS, PAW, Tiered Administration and ESAE models</li>
+<li>Credential Guard and WDAC security mechanisms</li>
+<li>Understanding Microsoft Defender for Endpoint telemetry</li>
+<li>Bypassing MDE detection mechanisms</li>
+<li>Microsoft Defender for Identity detection logic</li>
+<li>Evasion techniques against MDI anomaly detection</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>    
+<script>
+const accordionItems = document.querySelectorAll(".accordion-item");
+
+accordionItems.forEach(item => {
+
+const header = item.querySelector(".accordion-header");
+
+header.addEventListener("click", () => {
+
+const openItem = document.querySelector(".accordion-item.active");
+
+if(openItem && openItem !== item){
+openItem.classList.remove("active");
+}
+
+item.classList.toggle("active");
+
+});
+
+});
+    </script>
 </body>
 </html>
