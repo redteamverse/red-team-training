@@ -580,6 +580,1184 @@ font-size:14px;
 }
 
 }    
+    
+.labs-section{
+padding:80px 20px;
+background:#FFFFFF;
+text-align: center;    
+}
+
+.container{
+max-width:1200px;
+margin:0 auto;
+}
+
+.section-header{
+max-width:720px;
+margin-bottom:48px;
+}
+
+.eyebrow{
+font-size:13px;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:#374151;
+margin-bottom:12px;
+}
+
+.section-header h2{
+font-size:32px;
+color:#111827;
+margin-bottom:16px;
+text-align: center;    
+}
+
+.lead{
+font-size:18px;
+color:#374151;
+line-height:1.6;
+}
+
+
+.labs-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+text-align: left;
+}
+
+
+.lab-card{
+border:1px solid #E5E7EB;
+border-radius:8px;
+padding:28px;
+background:#F9FAFB;
+}
+
+.lab-card h3{
+font-size:24px;
+margin-bottom:16px;
+color:#111827;
+}
+
+.lab-card ul{
+padding-left:18px;
+}
+
+.lab-card li{
+margin-bottom:8px;
+font-size:16px;
+color:#374151;
+line-height:1.5;
+}
+
+@media (max-width:768px){
+
+.labs-grid{
+grid-template-columns:1fr;
+}
+
+.section-header{
+text-align: center;
+}    
+
+.section-header h2{
+font-size:28px;
+}
+
+.lead{
+font-size:16px;
+}
+
+.lab-card{
+padding:22px;
+}
+
+}   
+.certification-section{
+padding:100px 20px;
+background:#F9FAFB;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+/* GRID */
+
+.cert-grid{
+display:grid;
+grid-template-columns:1.1fr 1fr;
+grid-template-rows:auto auto;
+gap:48px 70px;
+align-items:start;
+}
+
+/* INTRO */
+
+.cert-intro{
+grid-column:1;
+grid-row:1;
+max-width:620px;    
+}
+
+.eyebrow{
+font-size:12px;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:#374151;
+margin-bottom:10px;
+}
+
+.cert-intro h2{
+font-size:32px;
+color:#111827;
+margin-bottom:14px;
+}
+
+.lead{
+font-size:18px;
+color:#374151;
+line-height:1.6;
+margin-bottom:24px;
+}
+
+/* STATS */
+
+.cert-stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
+}
+
+.stat{
+border:1px solid #E5E7EB;
+background:#FFFFFF;
+padding:16px;
+border-radius:8px;
+text-align:center;
+transition:all 0.2s ease;
+}
+
+.stat-title{
+font-weight:600;
+font-size:18px;
+color:#111827;
+display:block;
+margin-bottom:4px;
+}
+
+.stat-text{
+font-size:13px;
+color:#6B7280;
+white-space:nowrap;    
+}
+
+/* IMAGE */
+
+.certificate-image{
+grid-column:2;
+grid-row:1;
+}
+
+.certificate-image img{
+width:100%;
+border-radius:12px;
+border:1px solid #E5E7EB;
+box-shadow:0 10px 28px rgba(0,0,0,0.06);    
+}
+
+/* CARDS */
+
+.cert-cards{
+grid-column:1 / span 2;
+grid-row:2;
+flex-direction:column;
+display:grid;
+grid-template-columns:1fr 1fr;
+justify-content:center;    
+gap:32px;
+text-align: left;
+}
+.stat:hover{
+border-color:#B91C1C;
+transform:translateY(-2px);
+transition:0.2s ease;
+}
+.cert-card{
+border:1px solid #E5E7EB;
+background:#FFFFFF;
+padding:26px;
+border-radius:8px;
+min-height:220px;
+}
+
+.cert-card h3{
+font-size:20px;
+margin-bottom:12px;
+color:#111827;
+}
+
+.cert-card ul{
+padding-left:18px;
+}
+
+.cert-card li{
+margin-bottom:8px;
+font-size:16px;
+color:#374151;
+}
+
+@media (max-width:768px){
+
+/* STACK GRID */
+
+.cert-grid{
+display:flex;
+flex-direction:column;
+gap:28px;
+}
+
+/* INTRO */
+
+.cert-intro{
+text-align:left;
+}
+
+/* HEADING */
+
+.cert-intro h2{
+font-size:26px;
+line-height:1.3;
+}
+
+/* DESCRIPTION */
+
+.lead{
+font-size:16px;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+/* STATS */
+
+.cert-stats{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+/* IMAGE FULL WIDTH */
+
+.certificate-image{
+width:100%;
+}
+
+.certificate-image img{
+width:100%;
+max-width:100%;
+height:auto;
+border-radius:10px;
+}
+
+/* STACK CARDS */
+
+.cert-cards{
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
+}
+
+}    
+@media (max-width:768px){
+
+/* change grid to single column */
+
+.cert-grid{
+grid-template-columns:1fr;
+grid-template-rows:auto;
+gap:28px;
+}
+
+/* intro full width */
+
+.cert-intro{
+grid-column:1;
+grid-row:auto;
+}
+
+/* stats grid */
+
+.cert-stats{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+/* certificate image */
+
+.certificate-image{
+grid-column:1;
+grid-row:auto;
+}
+
+.certificate-image img{
+width:100%;
+height:auto;
+max-width:100%;
+}
+
+/* cards container */
+
+.cert-cards{
+grid-column:1;
+grid-row:auto;
+grid-template-columns:1fr;
+gap:20px;
+}
+
+/* typography improvements */
+
+.cert-intro h2{
+font-size:26px;
+line-height:1.3;
+}
+
+.lead{
+font-size:16px;
+}
+
+}    
+@media (hover:hover){
+
+.stat:hover{
+border-color:#B91C1C;
+transform:translateY(-2px);
+}
+
+}
+
+.prerequisites-section{
+padding:80px 20px;
+background:#F9FAFB;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.eyebrow{
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:.08em;
+color:#6B7280;
+margin-bottom:10px;
+}
+
+.section-title{
+font-size:32px;
+color:#111827;
+margin-bottom:12px;
+}
+
+.prereq-intro{
+font-size:18px;
+color:#374151;
+margin-bottom:30px;
+}
+
+.prereq-list{
+list-style:none;
+padding:0;
+margin:0 auto;
+max-width:650px;
+text-align:left;
+}
+
+.prereq-list li{
+display:flex;
+align-items:flex-start;
+gap:12px;
+padding:14px 0;
+font-size:17px;
+color:#111827;
+border-bottom:1px solid #E5E7EB;
+}
+
+.check-icon{
+color:#1E3A8A;
+font-weight:600;
+font-size:18px;
+}
+@media (max-width:768px){
+
+.section-title{
+font-size:28px;
+}
+
+.prereq-intro{
+font-size:16px;
+}
+
+.prereq-list li{
+font-size:16px;
+}
+
+}    
+
+/* =========================
+Instructor Authority Section
+========================= */
+
+.instructor-section{
+padding:90px 20px;
+background:#F9FAFB;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+}
+
+/* GRID LAYOUT */
+
+.instructor-grid{
+display:grid;
+grid-template-columns:1fr 340px;
+grid-template-rows:auto auto;
+gap:60px 70px;
+max-width:1100px;
+margin:auto;
+align-items:start;
+}
+
+/* EYEBROW */
+
+.eyebrow{
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:.08em;
+color:#6B7280;
+margin-bottom:8px;
+}
+
+/* TITLE */
+
+.instructor-intro{
+grid-column:1;
+grid-row:1;
+}
+    
+.instructor-intro h2{
+font-size:34px;
+color:#111827;
+margin-bottom:6px;
+}
+
+.role{
+font-size:16px;
+color:#374151;
+margin-bottom:20px;
+}
+
+/* STATS */
+
+.instructor-stats{
+display:flex;
+gap:20px;
+margin-bottom:24px;
+flex-wrap:wrap;
+}
+
+.stat{
+border:1px solid #E5E7EB;
+padding:14px 18px;
+border-radius:8px;
+background:#FFFFFF;
+}
+
+.stat-number{
+font-size:18px;
+font-weight:600;
+color:#111827;
+display:block;
+}
+
+.stat-label{
+font-size:12px;
+color:#6B7280;
+}
+
+/* BIO */
+
+.bio{
+font-size:17px;
+line-height:1.7;
+color:#374151;
+max-width:620px;
+}
+
+/* IMAGE */
+
+.instructor-image img{
+width:100%;
+border-radius:12px;
+border:1px solid #E5E7EB;
+}
+
+/* WHY TRAIN */
+
+.instructor-highlights{
+text-align:left;
+}
+
+.instructor-highlights h3{
+font-size:20px;
+margin-bottom:14px;
+color:#111827;
+}
+
+.instructor-highlights ul{
+padding-left:20px;
+max-width:600px;
+}
+
+.instructor-highlights li{
+margin-bottom:10px;
+font-size:16px;
+color:#374151;
+line-height:1.6;
+}
+
+/* CONFERENCE SECTION */
+
+.conference-section{
+text-align:center;
+border-top:1px solid #E5E7EB;
+padding-top:20px;    
+}
+
+.featured-title{
+font-size:13px;
+color:#6B7280;
+margin-bottom:14px;
+}
+
+/* BADGES */
+
+.conference-logos{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.conf-badge{
+border:1px solid #E5E7EB;
+padding:7px 14px;
+border-radius:6px;
+font-size:13px;
+font-weight:600;
+background:#FFFFFF;
+}
+/* OPTIONAL HOVER */
+
+.conf-badge:hover{
+border-color:#B91C1C;
+}
+
+
+/* =========================
+Mobile Responsive
+========================= */
+
+@media (max-width:768px){
+
+.instructor-grid{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.instructor-image{
+max-width:240px;
+margin:auto;
+}
+
+.instructor-stats{
+justify-content:center;
+}
+
+.bio{
+font-size:16px;
+}
+
+.instructor-intro h2{
+font-size:28px;
+}
+
+.instructor-highlights ul{
+max-width:100%;
+}
+
+} 
+
+/* =========================
+Social Proof Section
+========================= */
+
+.social-proof-section{
+padding:90px 20px;
+background:#F9FAFB;
+text-align:center;
+}
+
+.section-title{
+font-size:32px;
+color:#111827;
+margin-bottom:50px;
+}
+
+/* TRUST METRICS */
+
+/* =========================
+Social Proof Trust Metrics
+========================= */
+
+.trust-metrics{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+margin-bottom:60px;
+border:1px solid #E5E7EB;
+border-radius:10px;
+background:#FFFFFF;
+overflow:hidden;
+}
+
+.metric{
+padding:28px 20px;
+display:flex;
+flex-direction:column;
+align-items:center;
+position:relative;
+}
+    
+@media (max-width:768px){
+
+.trust-metrics{
+grid-template-columns:repeat(2,1fr);
+}
+
+.metric{
+border-right:none;
+border-bottom:1px solid #E5E7EB;
+}
+
+.metric:nth-child(odd){
+border-right:1px solid #E5E7EB;
+}
+
+.metric:nth-last-child(-n+2){
+border-bottom:none;
+}
+
+}
+/* vertical separators */
+
+.metric:not(:last-child){
+border-right:1px solid #E5E7EB;
+}
+
+.metric-number{
+font-size:30px;
+font-weight:700;
+color:#111827;
+}
+
+.metric-label{
+font-size:14px;
+color:#6B7280;
+margin-top:6px;
+text-align:center;
+}
+
+/* =========================
+Testimonials
+========================= */
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.testimonial-card{
+border:1px solid #E5E7EB;
+padding:30px;
+border-radius:10px;
+background:#FFFFFF;
+text-align:left;
+position:relative;
+}
+
+/* quote mark */
+
+.testimonial-card::before{
+content:"“";
+font-size:48px;
+color:#E5E7EB;
+position:absolute;
+top:10px;
+left:18px;
+font-family:serif;
+}
+
+.testimonial-text{
+font-size:16px;
+line-height:1.6;
+color:#374151;
+margin-bottom:18px;
+padding-top:12px;
+}
+
+/* divider */
+
+.testimonial-author{
+font-size:14px;
+font-weight:600;
+color:#111827;
+border-top:1px solid #E5E7EB;
+padding-top:12px;
+}
+@media (max-width:768px){
+
+.testimonial-grid{
+grid-template-columns:1fr;
+gap:24px;
+}
+
+}    
+    
+/* =========================
+Social Proof Mobile
+========================= */
+
+@media (max-width:768px){
+
+.section-title{
+font-size:28px;
+}
+
+.trust-metrics{
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+.metric-number{
+font-size:24px;
+}
+
+.testimonial-grid{
+grid-template-columns:1fr;
+gap:24px;
+}
+
+}    
+/* =========================
+Final CTA Section
+========================= */
+
+.cta-section{
+padding:100px 20px;
+background:#2B2B50;
+color:#FFFFFF;
+text-align:center;
+}
+
+.cta-container{
+max-width:760px;
+margin:auto;
+}
+
+.cta-title{
+font-size:36px;
+margin-bottom:16px;
+}
+
+.cta-description{
+font-size:18px;
+line-height:1.6;
+opacity:.9;
+margin-bottom:40px;
+}
+
+/* PRIMARY BUTTON */
+
+.cta-primary{
+display:inline-block;
+background:#B91C1C;
+color:#FFFFFF;
+padding:14px 28px;
+border-radius:6px;
+font-weight:600;
+text-decoration:none;
+margin-bottom:22px;
+}
+
+.cta-primary:hover{
+background:#EA3037;
+}
+
+/* TRUST STRIP */
+
+.cta-trust{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+font-size:14px;
+opacity:.85;
+margin-bottom:26px;
+}
+
+.cta-trust span{
+position:relative;
+padding:0 8px;
+}
+
+.cta-trust span:not(:last-child)::after{
+content:"•";
+position:absolute;
+right:-12px;
+color:#FFFFFF;
+opacity:.6;
+}
+
+/* SECONDARY CTA */
+
+.cta-secondary-text{
+font-size:14px;
+opacity:.8;
+margin-bottom:12px;
+}
+
+.cta-secondary{
+display:inline-block;
+border:1px solid #FFFFFF;
+color:#FFFFFF;
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+font-weight:500;
+}
+@media (max-width:768px){
+
+.cta-title{
+font-size:28px;
+}
+
+.cta-description{
+font-size:16px;
+}
+
+.cta-trust{
+gap:10px;
+font-size:13px;
+}
+
+}    
+
+
+/* =========================
+Sticky CTA Button
+========================= */
+
+.sticky-cta-button{
+display:inline-flex;
+align-items:center;
+gap:10px;
+
+background:#B91C1C;
+color:#FFFFFF;
+
+padding:12px 20px;
+border-radius:6px;
+
+font-size:15px;
+font-weight:600;
+text-decoration:none;
+
+box-shadow:0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* ICON */
+
+.cta-icon{
+width:18px;
+height:18px;
+flex-shrink:0;
+}
+.sticky-cta{
+position:fixed;
+bottom:24px;
+left:50%;
+transform:translate(-50%, 20px);
+z-index:1000;
+
+opacity:0;
+pointer-events:none;
+
+transition:opacity .3s ease, transform .3s ease;
+}
+
+.sticky-cta.show{
+opacity:1;
+pointer-events:auto;
+transform:translate(-50%, 0);
+}   
+    
+@media (max-width:768px){
+
+.sticky-cta{
+left:0;
+right:0;
+transform:translateY(20px);
+padding:0 16px;
+}
+
+.sticky-cta.show{
+transform:translateY(0);
+}
+
+.sticky-cta-button{
+display:flex;
+justify-content:center;
+width:100%;
+}
+
+}
+/* =========================
+FAQ Section
+========================= */
+
+.faq-section{
+padding:90px 20px;
+background:#F9FAFB;
+}
+
+.section-title{
+font-size:32px;
+margin-bottom:40px;
+}
+
+.faq-list{
+max-width:800px;
+margin:auto;
+}
+
+/* FAQ ITEM */
+
+.faq-item{
+border-bottom:1px solid #E5E7EB;
+}
+
+/* QUESTION */
+
+.faq-question{
+width:100%;
+background:none;
+border:none;
+padding:20px 0;
+
+font-size:18px;
+font-weight:600;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+cursor:pointer;
+text-align:left;
+}
+
+/* ANSWER */
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:max-height .3s ease;
+}
+
+.faq-answer p{
+padding-bottom:18px;
+color:#374151;
+line-height:1.6;
+}
+
+/* ICON */
+
+.faq-icon{
+font-size:22px;
+color:#6B7280;
+}    
+/* =========================
+Final Section
+========================= */
+
+.final-section{
+padding:100px 20px;
+background:#2B2B50;
+color:#FFFFFF;
+text-align:center;
+}
+
+.final-container{
+max-width:720px;
+margin:auto;
+}
+
+.final-title{
+font-size:36px;
+margin-bottom:16px;
+}
+
+.final-description{
+font-size:18px;
+line-height:1.6;
+opacity:.9;
+margin-bottom:36px;
+}
+
+/* CTA */
+
+.final-cta{
+display:inline-block;
+background:#B91C1C;
+color:#FFFFFF;
+padding:14px 28px;
+border-radius:6px;
+font-weight:600;
+text-decoration:none;
+margin-bottom:26px;
+}
+
+.final-cta:hover{
+background:#EA3037;
+}
+
+/* ALT TEXT */
+
+.final-alt{
+font-size:14px;
+opacity:.8;
+margin-bottom:18px;
+}
+
+/* COURSE LINKS */
+
+.course-links{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.course-pill{
+border:1px solid rgba(255,255,255,0.3);
+padding:8px 16px;
+border-radius:20px;
+font-size:14px;
+text-decoration:none;
+color:#FFFFFF;
+}    
+    
+@media (max-width:768px){
+
+.final-title{
+font-size:28px;
+}
+
+.final-description{
+font-size:16px;
+}
+
+.course-links{
+gap:10px;
+}
+
+}    
+    
+/* =========================
+Explore Other Courses
+========================= */
+
+.other-courses-section{
+padding:90px 20px;
+background:#F9FAFB;
+}
+
+.section-title{
+font-size:32px;
+text-align:center;
+margin-bottom:50px;
+}
+
+/* GRID */
+
+.courses-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:28px;
+}
+
+/* CARD */
+
+.course-card{
+border:1px solid #E5E7EB;
+padding:26px;
+border-radius:10px;
+background:#FFFFFF;
+}
+
+.course-card h3{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.course-desc{
+font-size:15px;
+line-height:1.6;
+color:#374151;
+margin-bottom:16px;
+}
+
+.course-link{
+font-size:14px;
+font-weight:600;
+color:#1E3A8A;
+text-decoration:none;
+}
+    
+@media (max-width:900px){
+
+.courses-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media (max-width:600px){
+
+.courses-grid{
+grid-template-columns:1fr;
+}
+
+.section-title{
+font-size:28px;
+}
+
+}    
 </style>
 </head>
 
@@ -880,6 +2058,657 @@ privilege escalation, persistence, and enterprise attack paths in Active Directo
 </div>
 
 </div>
+</section>   
+<section class="labs-section">
+
+<div class="container">
+
+<div class="section-header">
+<p class="eyebrow">Hands-on Training</p>
+<h2>Labs & Training Environment</h2>
+<p class="lead">
+This training is built around a fully hands-on lab environment designed to simulate real enterprise Active Directory infrastructure.
+Participants perform attacks, bypass defenses, and practice Red Team tradecraft inside isolated lab networks.
+</p>
+</div>
+
+
+<div class="labs-grid">
+
+<div class="lab-card">
+<h3>Enterprise Active Directory Lab</h3>
+<ul>
+<li>Multi-domain Active Directory environment</li>
+<li>Realistic enterprise network architecture</li>
+<li>Multiple trust relationships</li>
+<li>Domain users, servers, and privileged accounts</li>
+</ul>
+</div>
+
+
+<div class="lab-card">
+<h3>Offensive Tradecraft Practice</h3>
+<ul>
+<li>Hands-on enumeration exercises</li>
+<li>Kerberos attack scenarios</li>
+<li>Privilege escalation paths</li>
+<li>Defense evasion techniques</li>
+</ul>
+</div>
+
+
+<div class="lab-card">
+<h3>Red Team Tooling</h3>
+<ul>
+<li>PowerShell tradecraft</li>
+<li>.NET offensive tooling</li>
+<li>Custom scripts and automation</li>
+<li>Operational security considerations</li>
+</ul>
+</div>
+
+
+<div class="lab-card">
+<h3>Realistic Attack Paths</h3>
+<ul>
+<li>Privilege escalation chains</li>
+<li>Lateral movement techniques</li>
+<li>Persistence strategies</li>
+<li>Domain dominance scenarios</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+</section>  
+
+    
+<section class="certification-section">
+
+<div class="container cert-grid">
+
+<!-- LEFT CONTENT -->
+<div class="cert-intro">
+
+<p class="eyebrow">CERTIFICATION</p>
+
+<h2>Build Your Red Team Credentials</h2>
+
+<p class="lead">
+Participants who complete the training can attempt the Certified Red Team
+Professional (CRTP) certification — a hands-on exam focused on Active
+Directory attack tradecraft.
+</p>
+
+<div class="cert-stats">
+
+<div class="stat">
+<span class="stat-title">24h</span>
+<span class="stat-text">Hands-on Exam</span>
+</div>
+
+<div class="stat">
+<span class="stat-title">Real AD</span>
+<span class="stat-text">Enterprise Lab</span>
+</div>
+
+<div class="stat">
+<span class="stat-title">Industry</span>
+<span class="stat-text">Recognized</span>
+</div>
+
+<div class="stat">
+<span class="stat-title">Practical</span>
+<span class="stat-text">Red Team Skills</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- IMAGE -->
+<div class="certificate-image">
+<img src="https://redteamverse.github.io/red-team-training/images/CRTP_Certificate.png">
+</div>
+
+
+<!-- CARDS -->
+<div class="cert-cards">
+
+<div class="cert-card">
+
+<h3>CRTP Certification</h3>
+
+<ul>
+<li>Industry recognized Red Team certification</li>
+<li>Hands-on Active Directory attack exam</li>
+<li>Demonstrates practical Red Team skills</li>
+<li>Focus on enumeration, privilege escalation and lateral movement</li>
+</ul>
+
+</div>
+
+
+<div class="cert-card">
+
+<h3>Course Completion Certificate</h3>
+
+<ul>
+<li>Issued after completing the training</li>
+<li>Confirms participation in hands-on labs</li>
+<li>Validates knowledge of Red Team fundamentals</li>
+<li>Shareable credential for professional profiles</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+ 
+<section class="prerequisites-section">
+
+<div class="container">
+
+<p class="eyebrow">Requirements</p>
+
+<h2 class="section-title">Prerequisites</h2>
+
+<p class="prereq-intro">
+Make sure you are comfortable with the following before attending the training.
+</p>
+
+<ul class="prereq-list">
+
+<li>
+<span class="check-icon">✓</span>
+Basic understanding of Active Directory
+</li>
+
+<li>
+<span class="check-icon">✓</span>
+Ability to use Windows command line tools (PowerShell / CMD)
+</li>
+
+<li>
+<span class="check-icon">✓</span>
+Familiarity with Windows administration concepts
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- =========================
+Instructor Authority Section
+========================= -->
+
+<!-- =========================
+Instructor Authority Section
+========================= -->
+
+<section class="instructor-section">
+
+<div class="container instructor-grid">
+
+<!-- Instructor Intro -->
+
+<div class="instructor-intro">
+
+<p class="eyebrow">Instructor</p>
+
+<h2>Nikhil Mittal</h2>
+
+<p class="role">Founder – Altered Security</p>
+
+<!-- Instructor Stats -->
+
+<div class="instructor-stats">
+
+<div class="stat">
+<span class="stat-number">15+</span>
+<span class="stat-label">Years Experience</span>
+</div>
+
+<div class="stat">
+<span class="stat-number">50K+</span>
+<span class="stat-label">Professionals Trained</span>
+</div>
+
+<div class="stat">
+<span class="stat-number">Global</span>
+<span class="stat-label">Conference Speaker</span>
+</div>
+
+</div>
+
+<p class="bio">
+Nikhil Mittal is the founder of Altered Security and a Red Team expert with over
+15 years of experience specializing in Active Directory, Azure, Offensive
+PowerShell and Red Teaming. As a global leader in cybersecurity education,
+he has helped bring hands-on Red Team training to a global audience.
+</p>
+
+</div>
+
+
+<!-- Instructor Image -->
+
+<div class="instructor-image">
+
+<img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" alt="Nikhil Mittal">
+
+</div>
+
+
+<!-- Why Train Section -->
+
+<div class="instructor-highlights">
+
+<h3>Why Train with Nikhil?</h3>
+
+<ul>
+
+<li>15+ years of Red Team operations experience</li>
+
+<li>Pioneer of affordable Red Team training programs</li>
+
+<li>Speaker at major security conferences including BlackHat USA and DEF CON</li>
+
+<li>Trained 50,000+ cybersecurity professionals worldwide</li>
+
+<li>Delivered Red Team bootcamps for Fortune 500 organizations</li>
+
+</ul>
+
+</div>
+
+
+<!-- Conference Logos -->
+
+<div class="conference-section">
+
+<p class="featured-title">As Featured At</p>
+
+<div class="conference-logos">
+
+<span class="conf-badge">BlackHat</span>
+
+<span class="conf-badge">DEF CON</span>
+
+<span class="conf-badge">BruCON</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+Social Proof Section
+========================= -->
+
+<!-- =========================
+Social Proof Section
+========================= -->
+
+<section class="social-proof-section">
+
+<div class="container">
+
+<p class="eyebrow">Social Proof</p>
+
+<h2 class="section-title">
+Trusted by Security Professionals Worldwide
+</h2>
+
+<!-- Trust Metrics -->
+
+<div class="trust-metrics">
+
+<div class="metric">
+<span class="metric-number">50,000+</span>
+<span class="metric-label">Professionals Trained</span>
+</div>
+
+<div class="metric">
+<span class="metric-number">130+</span>
+<span class="metric-label">Countries Served</span>
+</div>
+
+<div class="metric">
+<span class="metric-number">600+</span>
+<span class="metric-label">Organizations Served</span>
+</div>
+
+<div class="metric">
+<span class="metric-number">5000+</span>
+<span class="metric-label">Attacks Practiced Daily</span>
+</div>
+
+</div>
+
+
+<!-- Testimonials -->
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+
+<p class="testimonial-text">
+“The labs simulate real enterprise Active Directory environments.
+One of the most practical Red Team trainings I have attended.”
+</p>
+
+<p class="testimonial-author">
+Senior Security Engineer
+</p>
+
+</div>
+
+
+<div class="testimonial-card">
+
+<p class="testimonial-text">
+“Clear explanations and hands-on labs make this course extremely valuable
+for anyone learning Red Team tradecraft.”
+</p>
+
+<p class="testimonial-author">
+Red Team Operator
+</p>
+
+</div>
+
+
+<div class="testimonial-card">
+
+<p class="testimonial-text">
+“Excellent coverage of Active Directory attacks with practical
+techniques that can be applied in real-world environments.”
+</p>
+
+<p class="testimonial-author">
+Penetration Tester
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>  
+
+
+
+<!-- =========================
+Sticky Schedule CTA
+========================= -->
+
+<div class="sticky-cta" id="stickyCTA">
+
+<a href="#" class="sticky-cta-button">
+
+<svg class="cta-icon" viewBox="0 0 24 24" fill="none">
+<rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+<line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+<line x1="8" y1="3" x2="8" y2="7" stroke="currentColor" stroke-width="2"/>
+<line x1="16" y1="3" x2="16" y2="7" stroke="currentColor" stroke-width="2"/>
+</svg>
+
+Request Upcoming Schedule
+
+</a>
+
+</div>
+</section>
+    
+<!-- =========================
+FAQ Section
+========================= -->
+
+<section class="faq-section">
+
+<div class="container">
+
+<p class="eyebrow">FAQ</p>
+
+<h2 class="section-title">Frequently Asked Questions</h2>
+
+<div class="faq-list">
+
+<div class="faq-item">
+
+<button class="faq-question">
+Who should attend this Red Team training?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+This training is designed for penetration testers, red teamers,
+security engineers, and defenders who want to understand how
+Active Directory attacks work in real enterprise environments.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+Do I need prior Active Directory experience?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+A basic understanding of Active Directory and familiarity with
+Windows command line tools is recommended to get the most
+out of the training.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+Will I get hands-on lab access?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Yes. Participants will practice attacks in a dedicated enterprise
+Active Directory lab environment designed to simulate real-world
+red team scenarios.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+Is certification included with the training?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Participants can attempt the Certified Red Team Professional
+(CRTP) certification exam after completing the training.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+How can I request upcoming training dates?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Use the "Request Upcoming Schedule" button on this page
+to receive notifications when new training dates are released.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>    
+<!-- =========================
+Final CTA + Explore Courses
+========================= -->
+
+<section class="final-section">
+
+<div class="container final-container">
+
+<h2 class="final-title">
+Start Your Red Team Training
+</h2>
+
+<p class="final-description">
+Training schedules are released periodically. Request the
+upcoming schedule and our team will notify you when
+new dates are announced.
+</p>
+
+<a href="#" class="final-cta">
+Register for Training
+</a>
+
+<p class="final-alt">
+or explore other Red Team training programs
+</p>
+
+<div class="course-links">
+
+<a href="#" class="course-pill">CRTE</a>
+<a href="#" class="course-pill">CETP</a>
+<a href="#" class="course-pill">CARTP</a>
+<a href="#" class="course-pill">CARTE</a>
+</div>
+
+</div>
+
+</section>    
+
+<!-- =========================
+Explore Other Red Team Trainings
+========================= -->
+
+<section class="other-courses-section">
+
+<div class="container">
+
+<h2 class="section-title">
+Explore Other Red Team Trainings
+</h2>
+
+<div class="courses-grid">
+
+<!-- CRTE -->
+
+<div class="course-card">
+
+<h3>Active Directory Attacks for Red and Blue Teams - Advanced Edition</h3>
+
+<p class="course-desc">
+Certified Red Team Expert focuses on advanced Active Directory
+attack techniques, privilege escalation paths, and enterprise
+Red Team operations.
+</p>
+
+<a href="#" class="course-link">
+View Course →
+</a>
+
+</div>
+
+
+<!-- CETP -->
+
+<div class="course-card">
+
+<h3>Evasion Techniques for Red Teams</h3>
+
+<p class="course-desc">
+Certified Enterprise Threat Professional teaches modern
+enterprise attack techniques including lateral movement,
+credential theft, and post-exploitation strategies.
+</p>
+
+<a href="#" class="course-link">
+View Course →
+</a>
+
+</div>
+
+
+<!-- CARTP -->
+
+<div class="course-card">
+
+<h3>Cloud Red Team Tactics for Attacking and Defending Azure - Beginner's Edition</h3>
+
+<p class="course-desc">
+Certified Azure Red Team Professional focuses on attacking
+Azure and hybrid environments using realistic Red Team
+techniques and cloud attack paths.
+</p>
+
+<a href="#" class="course-link">
+View Course →
+</a>
+
+</div>
+
+
+<!-- CARTE -->
+
+<div class="course-card">
+
+<h3>Cloud Red Team Tactics for Attacking and Defending Azure - Advanced Edition</h3>
+
+<p class="course-desc">
+Certified Azure Red Team Expert covers advanced Azure
+attack techniques, identity abuse, privilege escalation,
+and cloud persistence mechanisms.
+</p>
+
+<a href="#" class="course-link">
+View Course →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
 </section>    
 <script>
 const accordionItems = document.querySelectorAll(".accordion-item");
@@ -902,5 +2731,50 @@ item.classList.toggle("active");
 
 });
     </script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const stickyCTA = document.getElementById("stickyCTA");
+
+window.addEventListener("scroll", function(){
+
+const scrollPosition = window.scrollY;
+const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+if(scrollPosition > pageHeight * 0.3){
+stickyCTA.classList.add("show");
+}else{
+stickyCTA.classList.remove("show");
+}
+
+});
+
+});
+
+</script>
+<script>
+
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(question => {
+
+question.addEventListener("click", () => {
+
+const answer = question.nextElementSibling;
+
+if(answer.style.maxHeight){
+answer.style.maxHeight = null;
+question.querySelector(".faq-icon").textContent = "+";
+}else{
+answer.style.maxHeight = answer.scrollHeight + "px";
+question.querySelector(".faq-icon").textContent = "−";
+}
+
+});
+
+});
+
+</script>    
 </body>
 </html>
