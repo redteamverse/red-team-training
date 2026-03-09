@@ -77,41 +77,64 @@ font-size:18px;
 line-height:1.6;
 color:#374151;
 max-width:600px;
-margin-bottom:34px;
+margin-bottom:40px;
 }
 
 
 /* =========================
 Hero Module Card
 ========================= */
+/* =========================
+Hero Modules with Icons
+========================= */
 
 .hero-modules{
-background:#F9FAFB;
-border:1px solid #E5E7EB;
-border-radius:12px;
-
-padding:30px;
-
-max-width:520px;
-
-/* premium elevation */
-
-box-shadow:
-0 1px 2px rgba(0,0,0,0.04),
-0 10px 30px rgba(0,0,0,0.06);
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+margin-top:28px;
+max-width:540px;
 }
 
+.hero-module{
+display:flex;
+align-items:center;
+gap:10px;
 
+border:1px solid #E5E7EB;
+padding:12px 16px;
+border-radius:8px;
+
+font-size:14px;
+color:#374151;
+background:#F9FAFB;
+}
+
+.module-icon{
+width:18px;
+height:18px;
+color:#1E3A8A;
+flex-shrink:0;
+}
+@media (max-width:768px){
+
+.hero-modules{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media (max-width:480px){
+
+.hero-modules{
+grid-template-columns:1fr;
+}
+
+}
 /* =========================
 Hero Stats Grid
 ========================= */
 
-.hero-stats{
-display:grid;
-grid-template-columns:repeat(2, minmax(0, 1fr));
-gap:14px;
-margin-bottom:24px;  
-}
 
 /* pills */
 
@@ -302,7 +325,7 @@ text-align:center;
 }
 
 .hero-description{
-margin:auto;
+margin-top: 20px:    
 }
 
 .hero-modules{
@@ -471,66 +494,110 @@ margin-bottom:60px;
 
 /* grid */
 
-.overview-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:22px;
-max-width:1000px;
+/* =========================
+Training Overview Section
+========================= */
+
+.training-overview-section{
+padding:90px 20px;
+background:#FFFFFF;
+}
+
+.container{
+max-width:1200px;
 margin:auto;
 }
 
-/* card */
+/* Header */
+
+.section-header{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-header h2{
+font-size:32px;
+color:#111827;
+margin-top:10px;
+}
+
+/* Grid */
+
+.overview-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:22px;
+}
+
+/* Cards */
 
 .overview-card{
-background:#F9FAFB;
 border:1px solid #E5E7EB;
-border-radius:14px;
+border-radius:10px;
 padding:24px;
-transition:.25s;
+background:#F9FAFB;
+
+display:flex;
+flex-direction:column;
+gap:10px;
 }
 
-.overview-card:hover{
-transform:translateY(-4px);
-box-shadow:0 12px 28px rgba(0,0,0,.08);
+/* Icon */
+
+.overview-icon{
+font-size:22px;
 }
+
+/* Title */
 
 .overview-card h3{
-font-size:18px;
-font-weight:600;
-margin-bottom:8px;
+font-size:17px;
 color:#111827;
 }
 
+/* Description */
+
 .overview-card p{
-font-size:14px;
-color:#6B7280;
+font-size:15px;
+color:#374151;
 line-height:1.6;
+}
+
+
+/* =========================
+Tablet
+========================= */
+
+@media (max-width:900px){
+
+.overview-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+
+/* =========================
+Mobile
+========================= */
+
+@media (max-width:600px){
+
+.overview-grid{
+grid-template-columns:1fr;
+}
+
+.section-header h2{
+font-size:28px;
+}
+
 }
 
 /* --------------------------------
 MOBILE
 -------------------------------- */
 
-@media (max-width:900px){
 
-.training-overview{
-padding:70px 0;
-}
-
-.overview-title{
-font-size:28px;
-}
-
-.overview-intro{
-font-size:15px;
-margin-bottom:40px;
-}
-
-.overview-card{
-padding:20px;
-}
-
-}    
 
 /* -----------------------------
 CURRICULUM SECTION
@@ -2065,26 +2132,68 @@ defense bypasses and more! Earn the Certified Red Team Professional
 
 <!-- HERO MODULES -->
 
+<!-- =========================
+Hero Feature Modules
+========================= -->
+
 <div class="hero-modules">
 
-<div class="hero-stats">
+<div class="hero-module">
 
-<span class="stat-pill">Duration — 3 Days</span>
-<span class="stat-pill">Instructor-Led Sessions</span>
-<span class="stat-pill">Enterprise Lab Environment</span>
-<span class="stat-pill">Course Completion Certificate</span>
-<span class="stat-pill">Video course included!</span>
+<svg class="module-icon" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+<path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/>
+</svg>
+
+<span>Duration — 3 Days</span>
+
 </div>
 
-<div class="hero-buttons">
 
-<a href="#" class="btn-outline">
-Explore Course
-</a>
+<div class="hero-module">
 
-<a href="#" class="btn-primary">
-Register for Training
-</a>
+<svg class="module-icon" viewBox="0 0 24 24">
+<path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" fill="none"/>
+<path d="M4 10h16" stroke="currentColor" stroke-width="2"/>
+</svg>
+
+<span>Instructor-Led Sessions</span>
+
+</div>
+
+
+<div class="hero-module">
+
+<svg class="module-icon" viewBox="0 0 24 24">
+<path d="M3 12h18" stroke="currentColor" stroke-width="2"/>
+<path d="M12 3v18" stroke="currentColor" stroke-width="2"/>
+</svg>
+
+<span>Enterprise Lab Environment</span>
+
+</div>
+
+
+<div class="hero-module">
+
+<svg class="module-icon" viewBox="0 0 24 24">
+<rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"/>
+<path d="M8 12l3 3 5-6" stroke="currentColor" stroke-width="2"/>
+</svg>
+
+<span>Course Completion Certificate</span>
+
+</div>
+
+
+<div class="hero-module">
+
+<svg class="module-icon" viewBox="0 0 24 24">
+<polygon points="10,8 16,12 10,16" fill="currentColor"/>
+<rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"/>
+</svg>
+
+<span>Video course included!</span>
 
 </div>
 
@@ -2180,45 +2289,126 @@ Participants work through guided attack scenarios, labs, and capture-the-flag ch
 
 <div class="overview-grid">
 
+
+<!-- Card 1 -->
+
 <div class="overview-card">
+
+<div class="overview-icon">📅</div>
+
 <h3>3 Day Training</h3>
-<p>Instructor-led sessions delivered during AltSecCON.</p>
+
+<p>
+Instructor-led sessions delivered during AltSecCON.
+</p>
+
 </div>
 
+
+<!-- Card 2 -->
+
 <div class="overview-card">
+
+<div class="overview-icon">⏱</div>
+
 <h3>8 Hours Per Session</h3>
-<p>Full-day guided sessions covering Red Team tradecraft.</p>
+
+<p>
+Full-day guided sessions covering Red Team tradecraft.
+</p>
+
 </div>
 
+
+<!-- Card 3 -->
+
 <div class="overview-card">
+
+<div class="overview-icon">🧪</div>
+
 <h3>8 Weeks Lab Access</h3>
-<p>Continue practicing attacks in enterprise-grade labs.</p>
+
+<p>
+Continue practicing attacks in enterprise-grade labs.
+</p>
+
 </div>
 
+
+<!-- Card 4 -->
+
 <div class="overview-card">
+
+<div class="overview-icon">🎯</div>
+
 <h3>40 Capture-the-Flag Challenges</h3>
-<p>Hands-on exercises designed to test attack techniques.</p>
+
+<p>
+Hands-on exercises designed to test attack techniques.
+</p>
+
 </div>
 
+
+<!-- Card 5 -->
+
 <div class="overview-card">
+
+<div class="overview-icon">🛠</div>
+
 <h3>23 Practical Lab Exercises</h3>
-<p>Step-by-step labs simulating real enterprise scenarios.</p>
+
+<p>
+Step-by-step labs simulating real enterprise scenarios.
+</p>
+
 </div>
 
+
+<!-- Card 6 -->
+
 <div class="overview-card">
+
+<div class="overview-icon">🏅</div>
+
 <h3>1 CRTP Certification Attempt</h3>
-<p>Earn the Certified Red Team Professional credential.</p>
+
+<p>
+Earn the Certified Red Team Professional credential.
+</p>
+
 </div>
 
+
+<!-- Card 7 -->
+
 <div class="overview-card">
+
+<div class="overview-icon">📜</div>
+
 <h3>Course Completion Certificate</h3>
-<p>course completion certificate after completing Learning Objectives covered during the course.</p>
-</div>    
+
+<p>
+Certificate issued after completing all learning objectives.
+</p>
+
+</div>
+
+
+<!-- Card 8 -->
 
 <div class="overview-card">
+
+<div class="overview-icon">🎥</div>
+
 <h3>Video Course Included</h3>
-<p>Access recorded lessons for revision after training.</p>
+
+<p>
+Access recorded lessons for revision after training.
+</p>
+
 </div>
+
 
 </div>
 
