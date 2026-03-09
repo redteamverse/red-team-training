@@ -1692,6 +1692,15 @@ gap:10px;
 Explore Other Courses
 ========================= */
 
+/* =========================
+Container Width
+========================= */
+
+.container{
+max-width:1320px;
+margin:auto;
+}
+    
 .other-courses-section{
 padding:90px 20px;
 background:#F9FAFB;
@@ -1705,24 +1714,27 @@ margin-bottom:50px;
 
 /* GRID */
 
+/* GRID */
+
 .courses-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:28px;
+grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+gap:32px;
 }
 
 /* CARD */
 
 .course-card{
 border:1px solid #E5E7EB;
-padding:26px;
+padding:32px;
 border-radius:10px;
 background:#FFFFFF;
 }
 
 .course-card h3{
 font-size:20px;
-margin-bottom:10px;
+line-height:1.4;
+margin-bottom:14px;
 }
 
 .course-desc{
@@ -1757,6 +1769,23 @@ grid-template-columns:1fr;
 font-size:28px;
 }
 
+}    
+/* =========================
+Course Tag
+========================= */
+
+.course-tag{
+display:inline-block;
+font-size:12px;
+font-weight:600;
+
+color:#1E3A8A;
+background:#EEF2FF;
+
+padding:4px 10px;
+border-radius:6px;
+
+margin-bottom:10px;
 }    
 </style>
 </head>
@@ -2597,22 +2626,7 @@ new dates are announced.
 </p>
 
 <a href="#" class="final-cta">
-Register for Training
-</a>
-
-<p class="final-alt">
-or explore other Red Team training programs
-</p>
-
-<div class="course-links">
-
-<a href="#" class="course-pill">CRTE</a>
-<a href="#" class="course-pill">CETP</a>
-<a href="#" class="course-pill">CARTP</a>
-<a href="#" class="course-pill">CARTE</a>
-</div>
-
-</div>
+Contact for Training</a>
 
 </section>    
 
@@ -2630,79 +2644,44 @@ Explore Other Red Team Trainings
 
 <div class="courses-grid">
 
-<!-- CRTE -->
-
 <div class="course-card">
-
+<span class="course-tag">CRTE</span>
 <h3>Active Directory Attacks for Red and Blue Teams - Advanced Edition</h3>
-
 <p class="course-desc">
-Certified Red Team Expert focuses on advanced Active Directory
-attack techniques, privilege escalation paths, and enterprise
-Red Team operations.
+Certified Red Team Expert focuses on advanced Active Directory attack techniques,
+privilege escalation paths, and enterprise Red Team operations.
 </p>
-
-<a href="#" class="course-link">
-View Course →
-</a>
-
+<a href="#" class="course-link">View Course →</a>
 </div>
 
-
-<!-- CETP -->
-
 <div class="course-card">
-
+<span class="course-tag">CETP</span>
 <h3>Evasion Techniques for Red Teams</h3>
-
 <p class="course-desc">
-Certified Enterprise Threat Professional teaches modern
-enterprise attack techniques including lateral movement,
-credential theft, and post-exploitation strategies.
+Certified Enterprise Threat Professional teaches modern enterprise attack techniques
+including lateral movement, credential theft, and post-exploitation strategies.
 </p>
-
-<a href="#" class="course-link">
-View Course →
-</a>
-
+<a href="#" class="course-link">View Course →</a>
 </div>
 
-
-<!-- CARTP -->
-
 <div class="course-card">
-
+<span class="course-tag">CARTP</span>
 <h3>Cloud Red Team Tactics for Attacking and Defending Azure - Beginner's Edition</h3>
-
 <p class="course-desc">
-Certified Azure Red Team Professional focuses on attacking
-Azure and hybrid environments using realistic Red Team
-techniques and cloud attack paths.
+Certified Azure Red Team Professional focuses on attacking Azure and hybrid environments
+using realistic Red Team techniques and cloud attack paths.
 </p>
-
-<a href="#" class="course-link">
-View Course →
-</a>
-
+<a href="#" class="course-link">View Course →</a>
 </div>
 
-
-<!-- CARTE -->
-
 <div class="course-card">
-
+<span class="course-tag">CARTE</span>
 <h3>Cloud Red Team Tactics for Attacking and Defending Azure - Advanced Edition</h3>
-
 <p class="course-desc">
-Certified Azure Red Team Expert covers advanced Azure
-attack techniques, identity abuse, privilege escalation,
-and cloud persistence mechanisms.
+Certified Azure Red Team Expert covers advanced Azure attack techniques, identity abuse,
+privilege escalation, and cloud persistence mechanisms.
 </p>
-
-<a href="#" class="course-link">
-View Course →
-</a>
-
+<a href="#" class="course-link">View Course →</a>
 </div>
 
 </div>
