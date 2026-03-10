@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Red Team Skill Assessment</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+
+/* ================= GLOBAL ================= */
+
+:root{
+--red:#f93f43;
+--blue:#22439a;
+--border:#e5e8f1;
+--card:#f6f8fc;
+--text:#444;
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#ffffff;
+color:#222;
+line-height:1.6;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:0 20px;
+}
+
+section{
+padding:80px 0;
+}
+
+/* ================= HEADER ================= */
+
+header{
+border-bottom:1px solid var(--border);
+background:white;
+}
+
+.navbar{
+display:flex;
+align-items:center;
+height:70px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:700;
+font-size:18px;
+color:var(--blue);
+}
+
+.logo img{
+height:36px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+padding:90px 0;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 420px;
+gap:50px;
+align-items:center;
+}
+
+.hero-left h1{
+font-size:44px;
+color:var(--blue);
+margin-bottom:15px;
+line-height:1.2;
+}
+
+.hero-left p{
+font-size:17px;
+color:var(--text);
+max-width:520px;
+}
+
+.hero-buttons{
+margin-top:30px;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.btn-primary{
+background:var(--red);
+color:white;
+padding:14px 28px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:0.2s;
+}
+
+.btn-primary:hover{
+opacity:.9;
+}
+
+.btn-outline{
+border:2px solid var(--blue);
+color:var(--blue);
+padding:14px 28px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:0.2s;
+}
+
+.btn-outline:hover{
+background:var(--blue);
+color:white;
+}
+
+/* CERTIFICATE CARD */
+
+.cert-card{
+background:#f4f6fb;
+border:1px solid var(--border);
+border-radius:12px;
+padding:35px;
+text-align:center;
+}
+
+.cert-card h2{
+color:var(--blue);
+font-size:24px;
+margin-bottom:30px;
+}
+
+.badge-grid{
+display:flex;
+justify-content:center;
+gap:40px;
+}
+
+.badge-grid img{
+width:130px;
+}
+
+/* ================= TITLES ================= */
+
+h2.section-title{
+font-size:34px;
+color:var(--blue);
+margin-bottom:20px;
+margin-top: 20px;   
+}
+
+.section-intro{
+max-width:700px;
+margin:0 auto 40px auto;
+text-align:center;
+color:#555;
+font-size:17px;
+line-height:1.6;
+}
+
+/* ================= STEPS ================= */
+
+.steps-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.step-card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:10px;
+padding:25px;
+transition:0.25s;
+}
+
+.step-card:hover{
+border-color:var(--blue);
+transform:translateY(-4px);
+}
+
+.step-card h3{
+color:var(--blue);
+margin-bottom:10px;
+font-size:18px;
+}
+
+/* ================= TRACK ================= */
+
+.track-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.track-card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:12px;
+padding:30px;
+transition:.25s;
+}
+
+.track-card:hover{
+border-color:var(--red);
+transform:translateY(-4px);
+}
+
+.track-card h3{
+color:var(--blue);
+margin-bottom:12px;
+font-size:20px;
+}
+
+/* ================= RED LABS ================= */
+
+.redlabs-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.redlabs-card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:12px;
+padding:30px;
+transition:0.25s;
+}
+
+.redlabs-card:hover{
+border-color:var(--blue);
+transform:translateY(-4px);
+}
+
+.redlabs-card h3{
+color:var(--blue);
+margin-bottom:12px;
+font-size:20px;
+}
+
+.redlabs-card ul{
+padding-left:18px;
+}
+
+.redlabs-card li{
+margin-bottom:8px;
+color:var(--text);
+}
+
+/* ================= SKILLS ================= */
+
+.skills-main-title{
+font-size:34px;
+color:var(--blue);
+text-align:center;
+margin-bottom:50px;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.skills-card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:12px;
+padding:30px;
+transition:.3s;
+}
+
+.skills-card:hover{
+border-color:var(--red);
+transform:translateY(-5px);
+}
+
+.skills-card h3{
+color:var(--blue);
+font-size:20px;
+margin-bottom:15px;
+}
+
+.skills-card ul{
+padding-left:18px;
+}
+
+.skills-card li{
+margin-bottom:10px;
+color:var(--text);
+}
+
+.skills-card p{
+color:var(--text);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.hero-grid{
+grid-template-columns:1fr;
+}
+
+.track-grid{
+grid-template-columns:1fr;
+}
+
+.hero-left h1{
+font-size:36px;
+}
+
+}
+.courses-section{
+padding:90px 0;
+background:#ffffff;
+}
+
+.section-title{
+text-align:center;
+font-size:34px;
+color:#22439a;
+margin-bottom:60px;
+}
+
+.path-title{
+font-size:22px;
+color:#22439a;
+margin:40px 0 20px 0;
+}
+
+.courses-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:25px;
+margin-bottom:30px;
+}
+
+.course-card{
+background:#f6f8fc;
+border:1px solid #e4e8f0;
+border-radius:12px;
+padding:25px;
+text-align:center;
+transition:0.3s;
+}
+
+.course-card:hover{
+border-color:#f93f43;
+transform:translateY(-4px);
+}
+
+.course-card img{
+width:90px;
+margin-bottom:10px;
+}
+
+.course-card.large img{
+width:140px;
+}
+
+.course-card p{
+margin:0;
+font-weight:600;
+color:#22439a;
+}
+
+/* FAQ */
+
+.faq-section{
+padding:80px 0;
+background:#f9fbff;
+}
+
+.faq-item{
+max-width:700px;
+margin:auto;
+border:1px solid #e4e8f0;
+border-radius:8px;
+overflow:hidden;
+}
+
+.faq-question{
+width:100%;
+background:white;
+border:none;
+padding:18px 20px;
+font-size:16px;
+font-weight:600;
+text-align:left;
+display:flex;
+justify-content:space-between;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+padding:20px;
+background:#ffffff;
+border-top:1px solid #e4e8f0;
+}
+
+.faq-answer p{
+margin:0;
+color:#555;
+}
+
+
+/* FOOTER */
+
+.footer{
+padding:30px 0;
+text-align:center;
+border-top:1px solid #e4e8f0;
+background:#ffffff;
+}
+
+.footer p{
+margin:0;
+color:#666;
+}
+   
+/* UNLOCK SECTION */
+
+.unlock-section{
+padding:80px 0;
+background:#ffffff;
+}
+
+.unlock-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.unlock-card{
+background:#f6f8fc;
+border:1px solid #e4e8f0;
+border-radius:12px;
+padding:25px;
+transition:0.3s;
+}
+
+.unlock-card:hover{
+border-color:#f93f43;
+transform:translateY(-4px);
+}
+
+.unlock-card h3{
+color:#22439a;
+margin-bottom:10px;
+}
+
+
+/* LABS SECTION */
+
+.labs-section{
+padding:80px 0;
+background:#f9fbff;
+}
+
+.section-intro{
+max-width:600px;
+margin-bottom:40px;
+color:#555;
+}
+
+.labs-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.lab-card{
+background:#ffffff;
+border:1px solid #e4e8f0;
+border-radius:12px;
+padding:25px;
+transition:0.3s;
+}
+
+.lab-card:hover{
+border-color:#22439a;
+transform:translateY(-4px);
+}
+
+.lab-card h3{
+color:#22439a;
+margin-bottom:10px;
+}   
+.step-icon{
+width:45px;
+height:45px;
+background:#f6f8fc;
+border-radius:8px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:12px;
+border:1px solid #e4e8f0;
+}
+
+.step-icon i{
+color:#22439a;
+font-size:18px;
+}
+
+.step-card:hover .step-icon{
+background:#f93f43;
+border-color:#f93f43;
+}
+
+.step-card:hover .step-icon i{
+color:#ffffff;
+}  
+   
+/* TRACK GRID */
+
+.track-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+/* CARD */
+
+.track-card{
+background:#f6f8fc;
+border:1px solid #e5e8f1;
+border-radius:12px;
+padding:30px;
+transition:.3s;
+}
+
+.track-card:hover{
+border-color:#f93f43;
+transform:translateY(-5px);
+}
+
+/* ICON */
+
+.track-icon{
+width:45px;
+height:45px;
+border-radius:8px;
+background:#f6f8fc;
+border:1px solid #e5e8f1;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:15px;
+}
+
+.track-icon i{
+color:#22439a;
+font-size:18px;
+}
+
+.track-card:hover .track-icon{
+background:#f93f43;
+border-color:#f93f43;
+}
+
+.track-card:hover .track-icon i{
+color:#fff;
+}
+
+/* TITLE */
+
+.track-card h3{
+color:#22439a;
+margin-bottom:10px;
+}
+
+/* TEXT */
+
+.track-card p{
+color:#555;
+line-height:1.6;
+}   
+.card-icon {
+font-size: 32px;
+margin-bottom: 15px;
+color: #ff3c3c;
+}   
+.card-icon img{
+width:50px;
+height:auto;
+margin-bottom:10px;
+}
+.card-icon{
+display:flex;
+margin-bottom:15px;
+}   
+</style>
+
+</head>
+
+<body>
+
+<header>
+<div class="container navbar">
+
+<div class="logo">
+<img src="https://static.wixstatic.com/media/98ad8e_5fe5742cfaf44db197695e76018055d2~mv2.png">
+<span>Altered Security</span>
+</div>
+
+</div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+<div class="container">
+
+<div class="hero-grid">
+
+<div class="hero-left">
+
+<h1>Red Team Skill Assessment</h1>
+
+<p>
+Test your offensive security knowledge with Altered Security’s Red Team Skill Check and unlock hands-on Red Team labs.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#tracks" class="btn-primary">Start Skill Check</a>
+
+<a href="#steps" class="btn-outline">How It Works</a>
+
+</div>
+
+</div>
+
+<div class="cert-card">
+
+<h2>Earn a Red Team Certificates and Badges</h2>
+
+<div class="badge-grid">
+
+<img src="https://redlabs.enterprisesecurity.io/JSP_JS_CSS/assets/images/AzurePenetrationTestingBadgeIcon3.png">
+
+<img src="https://redlabs.enterprisesecurity.io/JSP_JS_CSS/assets/images/dartbadge.png">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- WHAT IS + STEPS -->
+
+<section id="steps">
+
+<div class="container">
+
+<h2 class="section-title">What is a Red Team Skill Assessment?</h2>
+
+<p class="section-intro">
+A Red Team Skill Assessment evaluates your ability to simulate real-world cyberattacks and identify vulnerabilities in enterprise environments such as Active Directory and Azure infrastructures.
+</p>
+
+<h2 class="section-title">How the Red Team Skill Check Works</h2>
+
+<div class="steps-grid">
+
+<div class="step-card">
+
+<div class="step-icon">
+<i class="fa-solid fa-play"></i>
+</div>
+
+<h3>Start Skill Check</h3>
+
+<p>Click the Start Skill Check button to begin the assessment.</p>
+
+</div>
+
+
+<div class="step-card">
+
+<div class="step-icon">
+<i class="fa-solid fa-compass"></i>
+</div>
+
+<h3>Choose Track</h3>
+
+<p>Select Azure or On-Prem Active Directory.</p>
+
+</div>
+
+
+<div class="step-card">
+
+<div class="step-icon">
+<i class="fa-solid fa-question"></i>
+</div>
+
+<h3>Answer Questions</h3>
+
+<p>Solve questions based on real enterprise attack techniques.</p>
+
+</div>
+
+
+<div class="step-card">
+
+<div class="step-icon">
+<i class="fa-solid fa-flask"></i>
+</div>
+
+<h3>Unlock Labs</h3>
+
+<p>Gain access to hands-on Red Team labs.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TRACKS -->
+
+<section id="tracks">
+
+<div class="container">
+
+<h2 class="section-title">Choose Your Red Team Track</h2>
+
+<p class="section-intro">
+Select the environment you want to test your red teaming skills on.
+</p>
+
+<div class="track-grid">
+
+<div class="track-card">
+
+<div class="track-icon">
+<i class="fa-solid fa-network-wired"></i>
+</div>
+
+<h3>On-Prem Active Directory</h3>
+
+<p>
+Test your knowledge of Active Directory enumeration, Kerberos attacks, and enterprise privilege escalation.
+</p>
+
+</div>
+
+
+<div class="track-card">
+
+<div class="track-icon">
+<i class="fa-solid fa-cloud"></i>
+</div>
+
+<h3>Azure Red Team</h3>
+
+<p>
+Evaluate your skills in Azure privilege escalation, identity attacks, and cloud attack paths.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- SKILLS -->
+
+
+<section class="unlock-section">
+
+<div class="container">
+
+<h2 class="section-title">What You Unlock After Completing the Skill Check</h2>
+
+<div class="unlock-grid">
+
+<div class="unlock-card">
+
+<div class="card-icon">
+<i class="fas fa-flask"></i>
+</div>
+
+<h3>Hands-on Red Team Labs</h3>
+<p>Practice real-world attack techniques in enterprise-style environments.</p>
+
+</div>
+
+<div class="unlock-card">
+
+<div class="card-icon">
+<i class="fas fa-building-shield"></i>
+</div>
+
+<h3>Enterprise Attack Scenarios</h3>
+<p>Work through scenarios simulating real corporate Active Directory and Azure environments.</p>
+
+</div>
+
+<div class="unlock-card">
+
+<div class="card-icon">
+<i class="fas fa-server"></i>
+</div>
+
+<h3>Dedicated Challenge Environment</h3>
+<p>Each user receives isolated lab challenges designed for offensive security practice.</p>
+
+</div>
+
+<div class="unlock-card">
+
+<div class="card-icon">
+<i class="fas fa-flag"></i>
+</div>
+
+<h3>Capture the Flag Challenges</h3>
+<p>Find hidden flags during attacks to validate exploitation techniques.</p>
+
+</div>
+
+<div class="unlock-card">
+
+<div class="card-icon">
+<i class="fas fa-terminal"></i>
+</div>
+
+<h3>Red Labs Platform Access</h3>
+<p>Unlock the Red Labs platform and continue improving your red team skills.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>   
+<!-- RED LABS -->
+<section>
+<div class="container">
+
+<h2 class="section-title">About the Red Labs Platform</h2>
+
+<p class="section-intro">
+Welcome to the Red Labs and Challenges Platform (BETA) by Altered Security. 
+This platform helps you sharpen your Red Team skills through hands-on labs 
+and practical challenges focused on Azure security and red teaming.
+</p>
+
+<div class="redlabs-grid">
+
+
+
+<div class="redlabs-card">
+
+<div class="card-icon">
+<i class="fas fa-laptop-code"></i>
+</div>
+
+<h3>Red Labs Platform</h3>
+
+<p>
+Each user gets a dedicated challenge that can be solved in a limited time. 
+Challenges include flags and solutions to help improve offensive security skills.
+</p>
+
+</div>
+
+<div class="redlabs-card">
+
+<div class="card-icon">
+<i class="fas fa-award"></i>
+</div>
+
+<h3>Badges & Certificates</h3>
+
+<p>
+Earn badges for completing milestones and participate in free hands-on classes 
+for the infosec community.
+</p>
+
+</div>
+<div class="redlabs-card">
+
+<div class="card-icon">
+<i class="fas fa-bullseye"></i>
+</div>
+
+<h3>Why Take This Assessment?</h3>
+
+<ul>
+<li>Evaluate real-world red team skills</li>
+<li>Identify knowledge gaps</li>
+<li>Practice offensive techniques</li>
+<li>Unlock enterprise labs</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+
+<section class="labs-section">
+
+<div class="container">
+
+<h2 class="section-title">Red Team Lab Categories</h2>
+
+<p class="section-intro">
+Explore practical lab challenges across multiple enterprise attack surfaces.
+</p>
+
+<div class="labs-grid">
+
+<div class="lab-card">
+
+<div class="card-icon">
+<i class="fas fa-cloud"></i>
+</div>
+
+<h3>Azure AD Attacks</h3>
+<p>Identify misconfigurations and privilege escalation paths in Azure Active Directory.</p>
+
+</div>
+
+<div class="lab-card">
+
+<div class="card-icon">
+<i class="fas fa-gears"></i>
+</div>
+
+<h3>Logic Apps Exploitation</h3>
+<p>Abuse Azure Logic Apps configurations to gain access to sensitive resources.</p>
+
+</div>
+
+<div class="lab-card">
+
+<div class="card-icon">
+<i class="fas fa-key"></i>
+</div>
+
+<h3>Key Vault Attacks</h3>
+<p>Discover secrets and misconfigured permissions in Azure Key Vault.</p>
+
+</div>
+
+<div class="lab-card">
+
+<div class="card-icon">
+<i class="fas fa-database"></i>
+</div>
+
+<h3>Storage Account Misconfigurations</h3>
+<p>Exploit exposed storage containers and insecure permissions.</p>
+
+</div>
+
+<div class="lab-card">
+
+<div class="card-icon">
+<img src="https://redlabs.enterprisesecurity.io/JSP_JS_CSS/assets/images/courses/barkToolIcon.png" alt="Bark Tool Icon">
+</div>
+
+<h3>Bark Tool Challenges</h3>
+<p>Use offensive tools and techniques to simulate real attack chains.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section>
+<div class="container">
+
+<h2 class="skills-main-title">
+Assess, Practice, and Advance Your Red Team Skills
+</h2>
+
+<div class="skills-grid">
+
+<div class="skills-card">
+
+<h3>What Skills Does This Assessment Test?</h3>
+
+<ul>
+<li>Active Directory Enumeration</li>
+<li>Kerberos Attacks</li>
+<li>Credential Access Techniques</li>
+<li>Azure Privilege Escalation</li>
+<li>Lateral Movement</li>
+<li>Post-Exploitation Techniques</li>
+</ul>
+
+</div>
+
+<div class="skills-card">
+
+<h3>Who Should Take This Skill Test?</h3>
+
+<ul>
+<li>Cybersecurity professionals</li>
+<li>Penetration testers</li>
+<li>Security engineers</li>
+<li>SOC analysts</li>
+<li>Students preparing for red team certifications</li>
+</ul>
+
+</div>
+
+<div class="skills-card">
+
+<h3>Practice Red Team Attacks in Enterprise Labs</h3>
+
+<p>
+Explore Red Team labs covering Logic Apps, Azure AD, Key Vaults, Storage Accounts, and Bark Tool challenges.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>   
+<!-- COURSES SECTION -->
+
+<section class="courses-section">
+
+<div class="container">
+
+<h2 class="section-title">Our Courses & Certifications</h2>
+
+<!-- ON PREM PATH -->
+
+<h3 class="path-title">On-Prem Active Directory Learning Path</h3>
+
+<div class="courses-grid">
+
+<div class="course-card">
+<img src="https://static.wixstatic.com/media/470c31_f89db457309f4d3caa31f94458441a8f~mv2.png/v1/fill/w_108,h_108,al_c,q_85/redteamprofessional.png">
+<p>CRTP®</p>
+</div>
+
+<div class="course-card">
+<img src="https://static.wixstatic.com/media/470c31_f89db457309f4d3caa31f94458441a8f~mv2.png/v1/fill/w_108,h_108,al_c,q_85/redteamprofessional.png">
+<p>CESP – ADCS</p>
+</div>
+
+<div class="course-card">
+<img src="https://static.wixstatic.com/media/470c31_7ac13e0fb6034710be19736cd9dd476b~mv2.jpg/v1/fill/w_108,h_108,al_c,q_80/CRTE.jpg">
+<p>CRTE®</p>
+</div>
+
+<div class="course-card">
+<img src="https://static.wixstatic.com/media/98ad8e_b967d6fef61d4d708c4db3846e9c7ec7~mv2.png/v1/fill/w_108,h_108,al_c,q_85/BADGE%20FINAL-01.png">
+<p>CETP</p>
+</div>
+
+<div class="course-card">
+<img src="https://static.wixstatic.com/media/470c31_ba28f3e73da843c2b0664dd02b61f9b9~mv2.png/v1/fill/w_108,h_108,al_c,q_85/crtm.png">
+<p>CRTM®</p>
+</div>
+
+</div>
+
+
+<!-- AZURE PATH -->
+
+<h3 class="path-title">Azure Learning Path</h3>
+
+<div class="courses-grid">
+
+<div class="course-card large">
+
+<img src="https://static.wixstatic.com/media/98ad8e_570457bb69a74296a4c990e4830050ef~mv2.png/v1/fill/w_300,h_279,al_c,q_85/CARTP_shield.png">
+
+<p>CARTP®</p>
+
+</div>
+
+
+<div class="course-card large">
+
+<img src="https://static.wixstatic.com/media/98ad8e_3bf98f1f4385419e84337bfb67ed79ec~mv2.png/v1/fill/w_300,h_279,al_c,q_85/CARTE_Shield.png">
+
+<p>CARTE®</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ SECTION -->
+
+<section class="faq-section">
+
+<div class="container">
+
+<h2 class="section-title">Frequently Asked Questions</h2>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+What is a Red Team Skill Assessment?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+A Red Team Skill Assessment evaluates your ability to simulate real-world cyberattacks and identify vulnerabilities across enterprise environments such as Active Directory and Azure.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="container">
+
+<p>© Altered Security – Red Team Training & Labs</p>
+
+</div>
+
+</footer>
+<script>
+
+/* Smooth Scroll */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+anchor.addEventListener("click", function(e) {
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+});
+document.querySelectorAll(".course-card").forEach(card => {
+
+card.addEventListener("mouseenter",()=>{
+card.style.boxShadow="0 6px 20px rgba(0,0,0,0.08)";
+});
+
+card.addEventListener("mouseleave",()=>{
+card.style.boxShadow="none";
+});
+
+});
+</script>
+
+</body>
+</html>
