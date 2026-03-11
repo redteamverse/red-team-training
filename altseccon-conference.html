@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AltSecCON Practitioner Conference</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+}
+
+/* HERO */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+padding:100px 20px;
+
+background:
+linear-gradient(
+rgba(5,10,25,.90),
+rgba(5,10,25,.90)
+),
+url("https://redteamverse.github.io/red-team-training/images/bg2.webp");
+
+background-size:cover;
+background-position:center;
+
+position:relative;
+
+}
+
+/* GLASS FRAME CARD */
+
+.hero-card{
+
+background:rgba(10,20,40,.55);
+
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,.18);
+
+border-radius:18px;
+
+padding:60px 70px;
+
+max-width:820px;
+
+box-shadow:
+0 25px 70px rgba(0,0,0,.55),
+0 0 40px rgba(59,130,246,.15);
+
+}
+
+/* EYEBROW */
+
+.hero-eyebrow{
+
+letter-spacing:.25em;
+
+text-transform:none;
+
+font-size:.75rem;
+
+color:#93c5fd;
+
+margin-bottom:16px;
+
+}
+
+/* MAIN TITLE */
+
+.hero-title{
+
+font-size:clamp(3rem,6vw,4.6rem);
+
+font-weight:800;
+
+color:white;
+
+line-height:1.05;
+
+}
+
+/* SUBTITLE */
+
+.hero-subtitle{
+
+font-size:1.6rem;
+
+color:#bfdbfe;
+
+margin-top:6px;
+
+margin-bottom:18px;
+
+}
+
+/* HIGHLIGHT LINE */
+
+.hero-highlight{
+
+font-size:1rem;
+
+color:#e5e7eb;
+
+margin-bottom:32px;
+
+}
+
+/* META INFO */
+
+.hero-meta{
+
+display:flex;
+justify-content:center;
+
+gap:26px;
+
+flex-wrap:wrap;
+
+font-size:.9rem;
+
+color:#f1f5f9;
+
+margin-bottom:36px;
+
+}
+
+.hero-meta span{
+
+display:flex;
+align-items:center;
+
+gap:8px;
+
+}
+
+/* BUTTON AREA */
+
+.hero-buttons{
+
+display:flex;
+justify-content:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+/* PRIMARY */
+
+.btn-ticket{
+
+background:#ef4444;
+
+padding:14px 28px;
+
+border-radius:10px;
+
+color:white;
+
+font-weight:600;
+
+text-decoration:none;
+
+box-shadow:0 10px 25px rgba(239,68,68,.4);
+
+transition:.25s;
+
+}
+
+.btn-ticket:hover{
+
+background:#f87171;
+
+transform:translateY(-2px);
+
+}
+
+/* SECONDARY */
+
+.btn-agenda{
+
+border:1px solid rgba(255,255,255,.45);
+
+padding:14px 28px;
+
+border-radius:10px;
+
+color:white;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.btn-agenda:hover{
+
+background:rgba(255,255,255,.08);
+
+}
+
+/* MOBILE */
+
+@media(max-width:640px){
+
+.hero-card{
+padding:40px 26px;
+}
+
+.hero-title{
+font-size:2.6rem;
+}
+
+.hero-subtitle{
+font-size:1.2rem;
+}
+
+.hero-meta{
+flex-direction:column;
+gap:10px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<section class="hero">
+
+<div class="hero-card">
+
+<p class="hero-eyebrow">
+AltSecCON CONFERENCE DAY
+</p>
+
+<h1 class="hero-title">
+AltSecCON
+</h1>
+
+<p class="hero-subtitle">
+Practitioner Conference
+</p>
+
+<p class="hero-highlight">
+Technical talks, practitioner insights, and community discussions.
+</p>
+
+<div class="hero-meta">
+
+<span>
+<i class="fa-solid fa-calendar-days"></i>
+3 November 2026
+</span>
+
+<span>
+<i class="fa-solid fa-location-dot"></i>
+Bengaluru, India
+</span>
+
+<span>
+<i class="fa-solid fa-users"></i>
+Security professionals & researchers
+</span>
+
+</div>
+
+<div class="hero-buttons">
+
+<a href="#" class="btn-ticket">
+🎟 Get Conference Ticket
+</a>
+
+<a href="#" class="btn-agenda">
+📅 View Conference Agenda
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
