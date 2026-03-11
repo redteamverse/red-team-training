@@ -26,230 +26,7 @@ font-family:'Inter',sans-serif;
 
 /* HERO */
 
-.hero{
 
-min-height:100vh;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-text-align:center;
-
-padding:100px 20px;
-
-background:
-linear-gradient(
-rgba(5,10,25,.90),
-rgba(5,10,25,.90)
-),
-url("https://redteamverse.github.io/red-team-training/images/bg2.webp");
-
-background-size:cover;
-background-position:center;
-
-position:relative;
-
-}
-
-/* GLASS FRAME CARD */
-
-.hero-card{
-
-background:rgba(10,20,40,.55);
-
-backdrop-filter:blur(10px);
-
-border:1px solid rgba(255,255,255,.18);
-
-border-radius:18px;
-
-padding:60px 70px;
-
-max-width:820px;
-
-box-shadow:
-0 25px 70px rgba(0,0,0,.55),
-0 0 40px rgba(59,130,246,.15);
-
-}
-
-/* EYEBROW */
-
-.hero-eyebrow{
-
-letter-spacing:.25em;
-
-text-transform:none;
-
-font-size:.75rem;
-
-color:#93c5fd;
-
-margin-bottom:16px;
-
-}
-
-/* MAIN TITLE */
-
-.hero-title{
-
-font-size:clamp(3rem,6vw,4.6rem);
-
-font-weight:800;
-
-color:white;
-
-line-height:1.05;
-
-}
-
-/* SUBTITLE */
-
-.hero-subtitle{
-
-font-size:1.6rem;
-
-color:#bfdbfe;
-
-margin-top:6px;
-
-margin-bottom:18px;
-
-}
-
-/* HIGHLIGHT LINE */
-
-.hero-highlight{
-
-font-size:1rem;
-
-color:#e5e7eb;
-
-margin-bottom:32px;
-
-}
-
-/* META INFO */
-
-.hero-meta{
-
-display:flex;
-justify-content:center;
-
-gap:26px;
-
-flex-wrap:wrap;
-
-font-size:.9rem;
-
-color:#f1f5f9;
-
-margin-bottom:36px;
-
-}
-
-.hero-meta span{
-
-display:flex;
-align-items:center;
-
-gap:8px;
-
-}
-
-/* BUTTON AREA */
-
-.hero-buttons{
-
-display:flex;
-justify-content:center;
-
-gap:18px;
-
-flex-wrap:wrap;
-
-}
-
-/* PRIMARY */
-
-.btn-ticket{
-
-background:#ef4444;
-
-padding:14px 28px;
-
-border-radius:10px;
-
-color:white;
-
-font-weight:600;
-
-text-decoration:none;
-
-box-shadow:0 10px 25px rgba(239,68,68,.4);
-
-transition:.25s;
-
-}
-
-.btn-ticket:hover{
-
-background:#f87171;
-
-transform:translateY(-2px);
-
-}
-
-/* SECONDARY */
-
-.btn-agenda{
-
-border:1px solid rgba(255,255,255,.45);
-
-padding:14px 28px;
-
-border-radius:10px;
-
-color:white;
-
-text-decoration:none;
-
-transition:.25s;
-
-}
-
-.btn-agenda:hover{
-
-background:rgba(255,255,255,.08);
-
-}
-
-/* MOBILE */
-
-@media(max-width:640px){
-
-.hero-card{
-padding:40px 26px;
-}
-
-.hero-title{
-font-size:2.6rem;
-}
-
-.hero-subtitle{
-font-size:1.2rem;
-}
-
-.hero-meta{
-flex-direction:column;
-gap:10px;
-}
-
-}
-/* SECTION */
-
-/* SECTION */
 
 /* =============================
 WHY ATTEND SECTION
@@ -2875,6 +2652,304 @@ font-size:1rem;
 }
 
 }    
+ /* HERO SECTION */
+
+/* HERO SECTION */
+
+.hero{
+
+position:relative;
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:60px 20px;
+
+overflow:hidden;
+
+/* variables for mouse movement */
+
+--moveX:0px;
+--moveY:0px;
+
+}
+
+
+/* BACKGROUND IMAGE */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+inset:-80px;
+
+background-image:url("https://redteamverse.github.io/red-team-training/images/bg2.webp");
+
+background-size:cover;
+
+background-position:center;
+
+z-index:0;
+
+/* combine translate + scale */
+
+transform:
+translate(var(--moveX,0), var(--moveY,0))
+scale(var(--zoom,1.05));
+
+transition:transform .2s ease-out;
+
+animation:heroZoom 30s ease-in-out infinite alternate;
+
+}
+
+/* DARK OVERLAY */
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+180deg,
+rgba(2,6,23,.90),
+rgba(2,6,23,.9)
+);
+
+z-index:1;
+
+}
+
+
+/* ZOOM ANIMATION */
+@keyframes heroZoom{
+
+0%{
+--zoom:1.03;
+}
+
+100%{
+--zoom:1.1;
+}
+
+}
+
+
+/* HERO CARD */
+
+.hero-card{
+
+position:relative;
+
+z-index:2;
+
+max-width:720px;
+
+background:rgba(15,23,42,.65);
+
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:18px;
+
+padding:50px 45px;
+
+text-align:center;
+
+box-shadow:0 30px 60px rgba(0,0,0,.4);
+
+}
+
+
+/* EYEBROW */
+
+.hero-eyebrow{
+
+font-size:.75rem;
+
+letter-spacing:.2em;
+
+text-transform:uppercase;
+
+color:#60a5fa;
+
+margin-bottom:12px;
+
+}
+
+
+/* TITLE */
+
+.hero-title{
+
+font-size:3.6rem;
+
+font-weight:800;
+
+color:white;
+
+margin-bottom:6px;
+
+}
+
+
+/* SUBTITLE */
+
+.hero-subtitle{
+
+font-size:1.4rem;
+
+color:#cbd5f5;
+
+margin-bottom:14px;
+
+}
+
+
+/* HIGHLIGHT */
+
+.hero-highlight{
+
+color:#94a3b8;
+
+font-size:.95rem;
+
+margin-bottom:24px;
+
+}
+
+
+/* META ROW */
+
+.hero-meta{
+
+display:flex;
+
+justify-content:center;
+
+gap:24px;
+
+flex-wrap:wrap;
+
+font-size:.9rem;
+
+color:#cbd5f5;
+
+margin-bottom:28px;
+
+}
+
+.hero-meta span{
+
+display:flex;
+
+align-items:center;
+
+gap:6px;
+
+}
+
+
+/* BUTTONS */
+
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:16px;
+
+flex-wrap:wrap;
+
+}
+
+
+/* PRIMARY BUTTON */
+
+.btn-ticket{
+
+background:#ef4444;
+
+color:white;
+
+padding:12px 22px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.25s;
+
+box-shadow:0 10px 25px rgba(239,68,68,.35);
+
+}
+
+.btn-ticket:hover{
+
+background:#f87171;
+
+transform:translateY(-2px);
+
+}
+
+
+/* SECONDARY BUTTON */
+
+.btn-agenda{
+
+background:transparent;
+
+border:1px solid rgba(255,255,255,.25);
+
+color:white;
+
+padding:12px 22px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.25s;
+
+}
+
+.btn-agenda:hover{
+
+background:rgba(255,255,255,.1);
+
+}
+
+
+/* MOBILE */
+
+@media (max-width:640px){
+
+.hero-title{
+font-size:2.5rem;
+}
+
+.hero-card{
+padding:40px 30px;
+}
+
+}
+    
 </style>
 
 </head>
@@ -3245,19 +3320,6 @@ AltSecCON speakers include experienced Red Team practitioners, security research
 <p class="speakers-note">
 Speakers will share practical insights, research findings, and experiences from real-world offensive security engagements.
 </p>
-
-
-<div class="speakers-cta">
-
-<p class="cta-text">
-Interested in speaking at AltSecCON? Submit your talk proposal.
-</p>
-
-<a href="#" class="btn-speaker">
-Call for Speakers
-</a>
-
-</div>
 
 </div>
 
@@ -3670,19 +3732,12 @@ Security communities and ecosystem partners supporting the event.
 <img src="https://static.wixstatic.com/media/470c31_250e7983cfe34a9eaa7a67587e615af8~mv2.jpg">
 
 </div>
-
 </div>
 
 
 <!-- CTA -->
 
-<div class="sponsor-cta">
 
-<p>Interested in AltSecCON conference sponsorship?</p>
-
-<a href="#" class="btn-sponsor">Become a Sponsor</a>
-
-</div>
 
 </div>
 
@@ -4020,6 +4075,7 @@ Available for early registrations.
 <li>✔ Panel discussions and practitioner sessions</li>
 <li>✔ Coffee breaks and lunch included</li>
 <li>✔ Welcome Kit</li>
+<li>✔ Participation E-Certificate</li>
 
 </ul>
 
@@ -4053,6 +4109,7 @@ Standard conference ticket.
 <li>✔ Panel discussions and practitioner sessions</li>
 <li>✔ Coffee breaks and lunch included</li>
 <li>✔ Welcome Kit</li>
+<li>✔ Participation E-Certificate</li>    
 </ul>
 <button class="ticket-btn disabled" disabled>
 🎟 Buy Conference Ticket
@@ -4359,6 +4416,23 @@ const faqItem = button.parentElement;
 faqItem.classList.toggle("active");
 
 });
+
+});
+
+
+
+</script>    
+<script>
+
+const hero = document.querySelector(".hero");
+
+hero.addEventListener("mousemove", (e) => {
+
+const x = (window.innerWidth / 2 - e.clientX) / 40;
+const y = (window.innerHeight / 2 - e.clientY) / 40;
+
+hero.style.setProperty("--moveX", x + "px");
+hero.style.setProperty("--moveY", y + "px");
 
 });
 
