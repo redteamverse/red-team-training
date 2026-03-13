@@ -199,7 +199,6 @@ body {
   gap: 18px;
   font-size: 0.85rem;
   color: #E5E7EB;
-
   flex-wrap: wrap;
 }
 .authority-capabilities div{
@@ -225,7 +224,115 @@ body {
   opacity: 1 !important;
   background-clip: padding-box;
 }
+/* =====================
+HERO LEAD TEXT
+===================== */
 
+.hero-lead{
+  max-width:760px;
+  margin:18px auto 28px;
+  font-size:1.05rem;
+  line-height:1.6;
+  color:#E5E7EB;
+}
+
+
+/* =====================
+EVENT INFO BAR
+===================== */
+
+.hero-event-info{
+
+  display:flex;
+  justify-content:center;
+  gap:18px;
+
+  flex-wrap:wrap;
+
+  margin-bottom:28px;
+
+}
+
+.hero-info-item{
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-size:0.85rem;
+  color:#F3F4F6;
+
+  background:rgba(17,24,39,0.45);
+
+  border:1px solid rgba(255,255,255,0.18);
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+}
+
+.hero-info-item i{
+  font-size:0.85rem;
+  opacity:0.9;
+}
+
+.hero-info-item strong{
+  font-weight:600;
+}
+
+
+/* =====================
+AUTHORITY CAPABILITY TAGS
+===================== */
+
+.authority-capabilities div{
+
+  border:1px solid rgba(255,255,255,0.25);
+  padding:6px 14px;
+  border-radius:999px;
+
+  font-size:0.75rem;
+
+  background:rgba(255,255,255,0.05);
+
+  transition:all .2s ease;
+
+}
+
+@media (hover:hover){
+
+.authority-capabilities div:hover{
+
+  background:rgba(255,255,255,0.12);
+
+  transform:translateY(-2px);
+
+}
+
+}
+
+
+/* =====================
+RESPONSIVE
+===================== */
+
+@media (max-width:640px){
+
+.hero-lead{
+  font-size:0.95rem;
+}
+
+.hero-event-info{
+  gap:10px;
+}
+
+.hero-info-item{
+  font-size:0.75rem;
+  padding:7px 12px;
+}
+
+}
 /* =====================
    SECTION DIVIDER
 ===================== */
@@ -1979,8 +2086,270 @@ padding:25px;
 }
 
 }
+/* =====================
+CONFERENCE SECTION
+===================== */
+
+.conference-section{
+background: var(--offwhite);
+color: var(--dark);
+padding: var(--space-lg) 24px;
+}
+
+.conference-container{
+max-width:1100px;
+margin:0 auto;
+}
+
+.conference-section h2{
+font-size:2.2rem;
+font-weight:800;
+margin-bottom:16px;
+color:#111827;
+}
+
+.conference-lead{
+font-size:1.05rem;
+color:#374151;
+max-width:760px;
+line-height:1.6;
+margin-bottom:18px;
+}
 
 
+/* =====================
+CONFERENCE INFO BAR
+===================== */
+
+.conference-info{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin:32px 0 40px;
+}
+
+.conference-info-item{
+display:flex;
+align-items:flex-start;
+gap:12px;
+
+background:white;
+border:1px solid #E5E7EB;
+
+padding:18px;
+border-radius:10px;
+}
+
+.conference-info-item i{
+font-size:18px;
+color:#B91C1C;
+margin-top:3px;
+}
+
+.conference-info-item strong{
+display:block;
+font-size:0.85rem;
+font-weight:700;
+margin-bottom:4px;
+color:#111827;
+}
+
+.conference-info-item span{
+font-size:0.9rem;
+color:#4B5563;
+}
+
+
+/* =====================
+HIGHLIGHT CARDS
+===================== */
+
+.conference-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+margin-bottom:40px;
+}
+
+.conference-card{
+background:white;
+border:1px solid #E5E7EB;
+
+border-radius:12px;
+
+padding:24px;
+
+transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.conference-card i{
+font-size:20px;
+color:#B91C1C;
+margin-bottom:12px;
+}
+
+.conference-card h3{
+font-size:1rem;
+font-weight:700;
+margin-bottom:8px;
+}
+
+.conference-card p{
+font-size:0.95rem;
+line-height:1.6;
+color:#4B5563;
+}
+
+@media (hover:hover){
+.conference-card:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 24px rgba(0,0,0,0.06);
+}
+}
+
+
+/* =====================
+CTA
+===================== */
+
+.conference-cta{
+display:flex;
+justify-content:center;
+}
+
+
+/* =====================
+RESPONSIVE
+===================== */
+
+@media (max-width:900px){
+
+.conference-info{
+grid-template-columns:1fr;
+}
+
+.conference-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media (max-width:640px){
+
+.conference-section h2{
+font-size:1.8rem;
+}
+
+.conference-lead{
+font-size:0.95rem;
+}
+
+}
+/* =====================
+CONFERENCE GALLERY
+===================== */
+
+.conference-gallery{
+margin:48px 0 32px;
+}
+
+.gallery-row{
+
+display:grid;
+grid-template-columns:1.4fr 0.6fr;
+
+gap:20px;
+
+margin-bottom:20px;
+
+}
+
+.gallery-large img,
+.gallery-small img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+border-radius:14px;
+
+border:1px solid #E5E7EB;
+
+transition:transform .25s ease, box-shadow .25s ease;
+
+}
+
+/* Height control */
+
+.gallery-large{
+height:340px;
+}
+
+.gallery-small{
+height:340px;
+}
+
+/* Hover */
+
+@media (hover:hover){
+
+.gallery-large img:hover,
+.gallery-small img:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 12px 28px rgba(0,0,0,0.1);
+
+}
+
+}
+
+/* Caption */
+
+.conference-caption{
+
+font-size:0.85rem;
+
+color:#6B7280;
+
+margin-top:10px;
+
+}
+
+/* Tablet */
+
+@media (max-width:900px){
+
+.gallery-row{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.gallery-large,
+.gallery-small{
+height:260px;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:640px){
+
+.gallery-row{
+
+grid-template-columns:1fr;
+
+}
+
+.gallery-large,
+.gallery-small{
+height:220px;
+}
+
+}
 </style>
 </head>
 
@@ -1991,43 +2360,74 @@ padding:25px;
     <div class="logo">AltSecCON</div>
 
     <nav class="nav">
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">Programs</a>
-      <a href="#instructors">Instructors</a>
-      <a href="#event">Event</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#AltSecCON-2026">AltSecCON 2026</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">Training</a>     
+      <a href="#event">Schedule</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>
+      <a href="#AltSecCON-2026">Tickets</a>
+      <a href="#contact">Venue</a>
+      <a href="#contact">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>  
 <!-- HERO -->
+<!-- HERO -->
 <section class="hero">
+
   <video autoplay muted loop playsinline>
     <source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm" type="video/webm">
   </video>
 
   <div class="hero-content">
-    <div class="meta-pill">In-Person Red Team Training</div>
-    <h1>AltSecCON</h1>
-    <div class="edition">Bengaluru</div>
 
-    <div class="authority">
-      
-      <strong>Led by Nikhil Mittal</strong>
-      <span>Trusted by 50,000+ security professionals</span>
-      <div class="authority-divider"></div>
-      <div class="authority-capabilities">    
-        <span>Industry-leading classes and certifications on Red Teaming</span>
-        <div>On-Prem AD</div>
-        <div>Azure Enterprise</div>
+    <div class="meta-pill">In-Person Red Team Training & Practitioner Conference</div>
+
+    <h1>AltSecCON</h1>
+
+    <div class="edition">Bengaluru · 2026</div>    
+
+    <!-- Event Info -->
+    <div class="hero-event-info">
+
+      <div class="hero-info-item">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span><strong>Training</strong> 31 Oct – 2 Nov 2026</span>
       </div>
+
+      <div class="hero-info-item">
+        <i class="fa-solid fa-microphone"></i>
+        <span><strong>Conference</strong> 3 Nov 2026</span>
+      </div>
+
+      <div class="hero-info-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span><strong>Location</strong> Bengaluru, India</span>
+      </div>
+
     </div>
+
+
+    <div class="authority">    
+
+      <div class="authority-capabilities">
+
+        <span>Industry-leading classes and certifications on Red Teaming</span>
+
+        <div>On-Prem AD</div>
+        <div>Azure Red Teaming</div>       
+
+      </div>
+
+    </div>
+
 
     <div class="actions">
-      <a href="#" class="btn btn-primary">Explore Training</a>
-      <a href="#" class="btn btn-secondary">Join AltSecCON</a>
+      <a href="#programs" class="btn btn-primary">Explore Training Programs</a>
+      <a href="#event" class="btn btn-secondary">View Conference Day</a>
     </div>
+
   </div>
+
 </section>
 
 <!-- WHAT AltSecCON DELIVERED -->
@@ -2184,11 +2584,144 @@ padding:25px;
 </div>
   
 </section>
+<!-- =====================
+ALTSECCON CONFERENCE SECTION
+===================== -->
+
+<section class="conference-section">
+
+<div class="conference-container">
+
+<span class="section-eyebrow">Conference Day</span>
+
+<h2>AltSecCON Practitioner Conference</h2>
+
+<p class="conference-lead">
+Alongside the instructor-led Red Team training, AltSecCON also includes a dedicated conference day where security practitioners share technical insights, research discussions, and real-world offensive security experiences with the community.
+</p>
+
+<p class="conference-lead">
+The conference creates a space for professionals working in offensive security, adversary simulation, and enterprise defense to exchange knowledge and connect with peers.
+</p>
+
+
+<!-- Conference Info -->
+
+<div class="conference-info">
+
+<div class="conference-info-item">
+<i class="fa-solid fa-calendar-days"></i>
+<div>
+<strong>Conference Date</strong>
+<span>3 November 2026</span>
+</div>
+</div>
+
+<div class="conference-info-item">
+<i class="fa-solid fa-location-dot"></i>
+<div>
+<strong>Location</strong>
+<span>Bengaluru, India</span>
+</div>
+</div>
+
+<div class="conference-info-item">
+<i class="fa-solid fa-users"></i>
+<div>
+<strong>Audience</strong>
+<span>Security practitioners, Red Team operators, penetration testers, and enterprise security engineers.</span>
+</div>
+</div>
+
+</div>
+
+
+<!-- Highlights -->
+
+<div class="conference-grid">
+
+<div class="conference-card">
+<i class="fa-solid fa-terminal"></i>
+<h3>Technical Talks</h3>
+<p>
+Presentations from experienced security professionals covering offensive security research, Red Team techniques, and real-world attack scenarios.
+</p>
+</div>
+
+<div class="conference-card">
+<i class="fa-solid fa-user-secret"></i>
+<h3>Practitioner Insights</h3>
+<p>
+Discussions from practitioners actively working in Red Team operations, adversary simulation, and enterprise security assessments.
+</p>
+</div>
+
+<div class="conference-card">
+<i class="fa-solid fa-people-group"></i>
+<h3>Security Community</h3>
+<p>
+An opportunity for security professionals to connect with peers, share experiences, and discuss practical security challenges.
+</p>
+</div>
+
+<div class="conference-card">
+<i class="fa-solid fa-brain"></i>
+<h3>Knowledge Exchange</h3>
+<p>
+Focused conversations around modern attack techniques, defensive strategies, and the evolving enterprise threat landscape.
+</p>
+</div>
+
+</div>
+<!-- Conference Images -->
+
+<!-- Conference Gallery -->
+
+<div class="conference-gallery">
+
+<div class="gallery-row">
+
+<div class="gallery-large">
+<img src="https://redteamverse.github.io/red-team-training/images/c1.webp" alt="AltSecCON conference session">
+</div>
+
+<div class="gallery-small">
+<img src="https://redteamverse.github.io/red-team-training/images/c2.webp" alt="AltSecCON practitioner discussion">
+</div>
+
+</div>
+
+
+<div class="gallery-row">
+
+<div class="gallery-small">
+<img src="https://redteamverse.github.io/red-team-training/images/c5.webp" alt="AltSecCON security practitioners">
+</div>
+
+<div class="gallery-large">
+<img src="https://redteamverse.github.io/red-team-training/images/c4.webp" alt="AltSecCON conference presentation">
+</div>
+
+</div>
+
+<p class="conference-caption">
+In-person sessions and practitioner discussions during AltSecCON.
+</p>
+
+</div>
+
+<div class="conference-cta">
+<a href="/conference" class="btn btn-primary">View Conference Details</a>
+</div>
+
+</div>
+
+</section>  
 <section class="justify-section">
 
 <div class="container">
 
-<h2 class="section-title">Need Approval to Attend AltSecCon?</h2>
+<h2 class="section-title">Request Approval to Attend AltSecCON</h2>
 
 <p class="section-intro">
 AltSecCon is an in-person red teaming training event focused on enterprise attack techniques in 
