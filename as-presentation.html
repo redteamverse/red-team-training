@@ -1790,7 +1790,80 @@ grid-template-columns:1fr;
 }
 
 }
- 
+/* SECTION */
+.testimonial-section {
+  background: #f5f5f5;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+/* TITLE */
+.section-title {
+  font-size: 42px;
+  font-weight: 600;
+  color: #111;
+}
+
+.testimonial-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+/* GRID */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.testimonial-img-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+}
+
+/* IMAGE */
+.testimonial-img-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* HOVER EFFECT */
+.testimonial-img-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* FOOTER */
+.testimonial-footer {
+  margin-top: 40px;
+  font-size: 15px;
+  color: #777;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+} 
 </style>
 
 </head>
@@ -1967,7 +2040,7 @@ training programs, hands-on labs, and professional certifications.
 </div>
 
 <div class="stat-card">
-<h3>10*</h3>
+<h3>20+</h3>
 <p>Hands-on Enterprise Labs</p>
 </div>
 
@@ -1977,17 +2050,17 @@ training programs, hands-on labs, and professional certifications.
 </div>
 
 <div class="stat-card">
-<h3>5,500+*</h3>
+<h3>10,000+</h3>
 <p>Certifications Issued</p>
 </div>
 
 <div class="stat-card">
-<h3>300+</h3>
-<p>Organizations Served</p>
+<h3>12000+</h3>
+<p>Free Labs Platform Users</p>
 </div>
 
 <div class="stat-card">
-<h3>50+</h3>
+<h3>100+</h3>
 <p>Enterprise Clients</p>
 </div>
 
@@ -2582,104 +2655,7 @@ techniques used by professional red teams.
 
 </section> 
 
-<section class="services-slide">
 
-<div class="services-container">
-
-<h2 class="section-title">Enterprise Red Team Training Programs</h2>
-
-<p class="services-intro">
-Altered Security delivers hands-on red team training programs for security professionals
-and organizations worldwide through in-person, virtual, and on-demand training formats.
-</p>
-
-
-<div class="services-grid">
-
-<div class="service-card">
-
-<h3>In-Person Training</h3>
-
-<p class="service-desc">
-Instructor-led training delivered at global conferences and corporate training events.
-</p>
-
-<ul>
-<li>Hands-on enterprise lab environments</li>
-<li>Direct interaction with expert instructors</li>
-<li>Intensive multi-day training programs</li>
-</ul>
-
-</div>
-
-
-<div class="service-card">
-
-<h3>Virtual Training</h3>
-
-<p class="service-desc">
-Live remote instructor-led training accessible globally.
-</p>
-
-<ul>
-<li>Interactive lab environments</li>
-<li>Real-time instructor guidance</li>
-<li>Same curriculum as in-person training</li>
-</ul>
-
-</div>
-
-
-<div class="service-card">
-
-<h3>On-Demand Bootcamps</h3>
-
-<p class="service-desc">
-Instructor-led Bootcamps designed for security professionals looking to upskill in red teaming.
-</p>
-
-<ul>
-<li>Live Sessions</li>
-<li>Hands-on labs</li>
-<li>4 Weeks Access</li>
-</ul>
-
-</div>
-
-</div>
-
-
-<h3 class="conference-title">Training Delivered At</h3>
-
-
-<div class="conference-logos">
-
-<img src="https://static.wixstatic.com/media/e81177_b4787026458d43588567101906b819d6~mv2.png/v1/fill/w_161,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/BelgianWhite_edited.png">
-
-</div>
-<div class="conference-logos">
-
-<img src="https://nullcon.net/img/logo.svg">
-
-</div>
- <div class="conference-logos">
-
-<img src="https://redteamverse.github.io/red-team-training/images/blackhatlogo.png">
-
-</div>   
-    
- <div class="conference-logos">
-
-<img src="https://bhconsulting.ie/wp-content/uploads/2023/09/DEFCON2-800x385.jpg">
-
-</div>  
-<p class="conference-note">
-Training delivered at leading global security conferences.
-</p>
-
-</div>
-
-</section> 
 <section class="team-slide">
 
 <div class="team-container">
@@ -2909,94 +2885,54 @@ by experienced red team practitioners.
 </div>
 
 </section> 
-<section class="testimonial-slide">
+<section class="testimonial-section">
 
-<div class="testimonial-container">
+  <div class="testimonial-container">
 
-<h2 class="section-title">Social Buzz</h2>
+    <h2 class="section-title">Social Buzz</h2>
+    <p class="testimonial-subtitle">What Our Students Say</p>
 
-<p class="testimonial-subtitle">What Our Students Say</p>
+    <div class="testimonial-grid">
 
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t1.png" />
+      </div>
 
-<div class="testimonial-grid">
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t2.png" />
+      </div>
 
-<div class="testimonial-card">
-<i data-lucide="quote"></i>
-<p>
-“The CARTP course is an invaluable asset for professionals looking to enhance
-their Azure AD security skills. The live lab environment provides a realistic
-setting to practice Azure attack techniques.”
-</p>
-<h4>Rick Verdoes</h4>
-<span>Student — CARTP®</span>
-</div>
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t3.png" />
+      </div>
 
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t4.png" />
+      </div>
 
-<div class="testimonial-card">
-<i data-lucide="quote"></i>
-<p>
-“Because of this course, I was able to start my new role as a Cloud Security
-Analyst with confidence. The support and guidance throughout the training
-were exceptional.”
-</p>
-<h4>Sabrina Lupsan</h4>
-<span>Cloud Security Analyst — CARTP®</span>
-</div>
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t5.png" />
+      </div>
 
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t6.png" />
+      </div>
 
-<div class="testimonial-card">
-<i data-lucide="quote"></i>
-<p>
-“The bootcamp, labs, and exam were an excellent learning experience.
-The certification is perfect for professionals looking to get started
-with Active Directory attacks.”
-</p>
-<h4>Ibad Altaf</h4>
-<span>Student — CRTP®</span>
-</div>
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t7.png" />
+      </div>
+        
+        <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t8.png" />
+       </div>
+            
+    </div>
 
+  
 
-<div class="testimonial-card">
-<i data-lucide="quote"></i>
-<p>
-“The course is very comprehensive and covers a wide range of Azure services
-and attack techniques with practical demonstrations.”
-</p>
-<h4>LoQ Linoge</h4>
-<span>Student — CARTP®</span>
-</div>
+  </div>
 
-
-<div class="testimonial-card">
-<i data-lucide="quote"></i>
-<p>
-“CRTP opened a new world of opportunities for me. The hands-on labs felt like
-real-world scenarios and helped build practical skills.”
-</p>
-<h4>Heitor Magnani</h4>
-<span>Student — CRTP®</span>
-</div>
-
-</div>
-
-
-<div class="testimonial-footer">
-
-<p>More reviews available on Medium and independent security blogs</p>
-
-<div class="review-platforms">
-
-<span><i data-lucide="book-open"></i> Medium</span>
-<span><i data-lucide="file-text"></i> Blogs</span>
-<span><i data-lucide="users"></i> Community Reviews</span>
-
-</div>
-
-</div>
-
-</div>
-
-</section>  
+</section>    
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
 lucide.createIcons();
