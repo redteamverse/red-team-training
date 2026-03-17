@@ -91,8 +91,52 @@ text-transform:uppercase;
 
 }
 
+.cover-features{
 
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px 30px;
 
+max-width:650px;
+margin:35px auto 40px auto;
+
+border-top:1px solid #e5e7eb;
+padding-top:28px;
+
+}
+
+.feature{
+
+display:flex;
+align-items:center;
+gap:12px;
+
+padding:14px 18px;
+
+background:#ffffff;
+border:1px solid #e5e7eb;
+border-radius:8px;
+
+font-size:16px;
+font-weight:500;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.04);
+
+transition:all .25s ease;
+
+}
+
+.feature:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.feature svg{
+width:22px;
+height:22px;
+color:#ef4444;
+flex-shrink:0;
+}
 /* MISSION SECTION */
 
 .mission-slide{
@@ -1766,16 +1810,41 @@ grid-template-columns:1fr;
 Altered Security
 </h1>
 
-<p class="cover-tagline">
-Red Team Training, Enterprise Security Labs, InfoSec Education Platform & Cyber Ranges
-</p>
 
-<p class="cover-meta">
- Presentation • 2026
-</p>
+<div class="cover-features">
 
+<div class="feature">
+<i data-lucide="award"></i>
+<span>Red Team Certifications</span>
 </div>
 
+<div class="feature">
+<i data-lucide="graduation-cap"></i>
+<span>Red Team Trainings</span>
+</div>
+
+<div class="feature">
+<i data-lucide="server"></i>
+<span>Enterprise Security Labs</span>
+</div>
+
+<div class="feature">
+<i data-lucide="shield"></i>
+<span>InfoSec Education Platform</span>
+</div>
+
+<div class="feature">
+<i data-lucide="globe"></i>
+<span>Cyber Ranges</span>
+</div>
+    
+<div class="feature">
+<i data-lucide="flask-conical"></i>
+<span>Free Red Team Labs</span>
+</div>
+    
+</div>
+    </div>
 </section>
 <section class="about-slide">
 
@@ -1876,6 +1945,57 @@ vulnerabilities in widely used applications, including talks at
 </div>
 
 </section>
+<section class="stats-slide">
+
+<div class="stats-container">
+
+<h2 class="stats-main-title">Altered Security Stats</h2>
+
+<h3 class="stats-subtitle">Impact & Reach</h3>
+
+<p class="stats-intro">
+Altered Security has built a strong global presence through enterprise red team
+training programs, hands-on labs, and professional certifications.
+</p>
+
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<h3>5</h3>
+<p>Enterprise Training Offerings</p>
+</div>
+
+<div class="stat-card">
+<h3>10</h3>
+<p>Hands-on Enterprise Labs</p>
+</div>
+
+<div class="stat-card">
+<h3>50,000+</h3>
+<p>Professionals Trained</p>
+</div>
+
+<div class="stat-card">
+<h3>10,800+</h3>
+<p>Certifications Issued</p>
+</div>
+
+<div class="stat-card">
+<h3>275+</h3>
+<p>Organizations Served</p>
+</div>
+
+<div class="stat-card">
+<h3>50+</h3>
+<p>Enterprise Clients</p>
+</div>
+
+</div>
+
+</div>
+
+</section>    
 <section class="mission-slide">
 
 <div class="mission-container">
@@ -2019,57 +2139,7 @@ guidance at every stage of learning.
 </div>
 
 </section> 
-<section class="stats-slide">
 
-<div class="stats-container">
-
-<h2 class="stats-main-title">Altered Security Stats</h2>
-
-<h3 class="stats-subtitle">Impact & Reach</h3>
-
-<p class="stats-intro">
-Altered Security has built a strong global presence through enterprise red team
-training programs, hands-on labs, and professional certifications.
-</p>
-
-
-<div class="stats-grid">
-
-<div class="stat-card">
-<h3>5</h3>
-<p>Enterprise Training Offerings</p>
-</div>
-
-<div class="stat-card">
-<h3>10</h3>
-<p>Hands-on Enterprise Labs</p>
-</div>
-
-<div class="stat-card">
-<h3>50,000+</h3>
-<p>Professionals Trained</p>
-</div>
-
-<div class="stat-card">
-<h3>10,800+</h3>
-<p>Certifications Issued</p>
-</div>
-
-<div class="stat-card">
-<h3>275+</h3>
-<p>Organizations Served</p>
-</div>
-
-<div class="stat-card">
-<h3>50+</h3>
-<p>Enterprise Clients</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
 <section class="journey-slide">
 
 <div class="journey-container">
@@ -2172,63 +2242,6 @@ red team training and certifications.
 </div>
 
 </section>
-<section class="problem-slide">
-
-<div class="problem-container">
-
-<h2 class="section-title">The Enterprise Security Problem</h2>
-
-<p class="problem-intro">
-Modern enterprise environments rely heavily on Active Directory and Azure, making them
-prime targets for attackers. However, there is a significant gap between theoretical
-security knowledge and practical red team skills required to secure these environments.
-</p>
-
-
-<div class="problem-grid">
-
-<div class="problem-card">
-<i data-lucide="book-open"></i>
-<h4>Limited Hands-On Training</h4>
-<p>Most security education focuses on theory rather than real enterprise attack scenarios.</p>
-</div>
-
-<div class="problem-card">
-<i data-lucide="network"></i>
-<h4>Complex Enterprise Environments</h4>
-<p>Active Directory and Azure infrastructures are large, interconnected and difficult to test securely.</p>
-</div>
-
-<div class="problem-card">
-<i data-lucide="users"></i>
-<h4>Shortage of Skilled Professionals</h4>
-<p>Organizations struggle to find professionals with practical enterprise red team experience.</p>
-</div>
-
-<div class="problem-card">
-<i data-lucide="server"></i>
-<h4>Lack of Realistic Practice Labs</h4>
-<p>Few platforms provide enterprise-scale environments simulating real attack paths.</p>
-</div>
-
-</div>
-
-
-<div class="problem-impact">
-
-<h3>Impact</h3>
-
-<ul>
-<li>Organizations remain vulnerable to identity-based attacks</li>
-<li>Security teams lack practical red team capabilities</li>
-<li>Training programs fail to replicate real enterprise environments</li>
-</ul>
-
-</div>
-
-</div>
-
-</section> 
 <section class="future-slide">
 
 <div class="future-container">
@@ -2298,7 +2311,65 @@ and lead this category globally, with limited specialized competition today.
 
 </div>
 
-</section>  
+</section>      
+<section class="problem-slide">
+
+<div class="problem-container">
+
+<h2 class="section-title">The Enterprise Security Problem</h2>
+
+<p class="problem-intro">
+Modern enterprise environments rely heavily on Active Directory and Azure, making them
+prime targets for attackers. However, there is a significant gap between theoretical
+security knowledge and practical red team skills required to secure these environments.
+</p>
+
+
+<div class="problem-grid">
+
+<div class="problem-card">
+<i data-lucide="book-open"></i>
+<h4>Limited Hands-On Training</h4>
+<p>Most security education focuses on theory rather than real enterprise attack scenarios.</p>
+</div>
+
+<div class="problem-card">
+<i data-lucide="network"></i>
+<h4>Complex Enterprise Environments</h4>
+<p>Active Directory and Azure infrastructures are large, interconnected and difficult to test securely.</p>
+</div>
+
+<div class="problem-card">
+<i data-lucide="users"></i>
+<h4>Shortage of Skilled Professionals</h4>
+<p>Organizations struggle to find professionals with practical enterprise red team experience.</p>
+</div>
+
+<div class="problem-card">
+<i data-lucide="server"></i>
+<h4>Lack of Realistic Practice Labs</h4>
+<p>Few platforms provide enterprise-scale environments simulating real attack paths.</p>
+</div>
+
+</div>
+
+
+<div class="problem-impact">
+
+<h3>Impact</h3>
+
+<ul>
+<li>Organizations remain vulnerable to identity-based attacks</li>
+<li>Security teams lack practical red team capabilities</li>
+<li>Training programs fail to replicate real enterprise environments</li>
+</ul>
+
+</div>
+
+</div>
+
+</section> 
+
  
 <section class="solution-slide">
 
