@@ -91,19 +91,41 @@ text-transform:uppercase;
 
 }
 
-.cover-features{
 
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px 30px;
-
-max-width:650px;
-margin:35px auto 40px auto;
-
-border-top:1px solid #e5e7eb;
-padding-top:28px;
-
+.cover-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 40px auto 0;
 }
+
+/* Feature Card */
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #f3f3f3;
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Icon */
+.feature i {
+  color: #ff3b3b;
+  width: 20px;
+  height: 20px;
+}
+
+/* 👇 MAGIC: Last item spans full width */
+.feature:last-child {
+  grid-column: span 2;
+  justify-content: center;
+  text-align: center;
+}    
+    
 
 .feature{
 
@@ -1915,6 +1937,10 @@ Altered Security
 <i data-lucide="flask-conical"></i>
 <span>Free Red Team Labs</span>
 </div>
+<div class="feature">
+  <i data-lucide="building-2"></i>
+  <span>AltSecCON Training & Conference</span>
+</div>
     
 </div>
     </div>
@@ -2292,11 +2318,12 @@ and certification ecosystem.
 </div>
 
 <div class="journey-card">
-<i data-lucide="building"></i>
+<i data-lucide="building-2"></i>
 <h3>2025</h3>
-<h4>Enterprise Adoption</h4>
+<h4>AltSecCON Training and Conference</h4>
 <p>
-Hundreds of organizations and 50+ enterprise clients served globally.
+Industry-leading classes and certifications on Red Teaming delivered in Bengaluru
+
 </p>
 </div>
 
