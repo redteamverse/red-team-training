@@ -22,7 +22,7 @@
 *{
 box-sizing:border-box;
 }
-
+ 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -786,16 +786,7 @@ margin-bottom:15px;
 }
 
 /* CONNECTING LINE (FIXED ALIGNMENT) */
-.steps-grid::before {
-  content: "";
-  position: absolute;
-  top: -25px; /* moved above cards */
-  left: 12%;
-  width: 76%;
-  height: 2px;
-  background: linear-gradient(to right, #c7d2fe, #6366f1);
-  z-index: 0;
-}
+
 
 /* CARD */
 .step-card {
@@ -857,20 +848,7 @@ margin-bottom:15px;
 }
 
 /* PERFECT DOT ALIGNMENT */
-.step-card::before {
-  content: "";
-  position: absolute;
-  top: -32px; /* perfectly sits on line */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 12px;
-  height: 12px;
-  background: #1e3a8a;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 2px #c7d2fe;
-  z-index: 3;
-}
+
 
 /* REMOVE RED BORDER – MAKE PREMIUM INSTEAD */
 .step-card.highlight {
@@ -1332,7 +1310,7 @@ margin-bottom:15px;
         </p>
 
         <p class="hero-flow">
-          Start skill assessment → Choose your track → Solve real scenarios → Get your score → Unlock labs
+          Start → Choose Track → Solve Scenarios → Unlock Labs
         </p>
 
         <div class="hero-buttons">
@@ -1386,10 +1364,7 @@ margin-bottom:15px;
 
     <!-- HOW IT WORKS -->
     <div class="section-header">
-      <h2>How the Red Team Skill Check Works</h2>
-      <p class="flow-line">
-        Start → Choose Track → Solve Scenarios → Unlock Labs
-      </p>
+      <h2>How the Red Team Skill Check Works</h2>      
     </div>
 
     <div class="steps-grid">
@@ -1465,7 +1440,7 @@ margin-bottom:15px;
 
       <!-- AD TRACK -->
       <div class="track-card">
-        <div class="track-icon">🖥️</div>
+        <div class="track-icon"><i class="fa-solid fa-sitemap"></i></div>
         <h3>Active Directory</h3>
         <p>Test your skills in on-prem enterprise environments including AD attacks, Kerberos abuse, and privilege escalation.</p>
 
@@ -1480,7 +1455,7 @@ margin-bottom:15px;
 
       <!-- AZURE TRACK -->
       <div class="track-card highlight">
-        <div class="track-icon">☁️</div>
+        <div class="track-icon"><i class="fa-solid fa-cloud"></i></div>
         <h3>Azure Red Teaming</h3>
         <p>Evaluate your cloud attack capabilities including Azure AD abuse, token attacks, and privilege escalation.</p>
 
@@ -1542,7 +1517,7 @@ margin-bottom:15px;
       <div class="unlock-card wide">
         <div class="unlock-icon"><i class="fa-solid fa-arrow-right"></i></div>
         <h3>Red Labs Platform Access</h3>
-        <p>Continue practicing and improving your red team skills beyond the assessment.</p>
+        <p>Practice your red team skills anytime, from anywhere.</p>
       </div>
 
     </div>
@@ -1588,16 +1563,11 @@ margin-bottom:15px;
       </div>
 
       <!-- WHY -->
-      <div class="labs-card why-card">
-        <div class="labs-icon"><i class="fa-solid fa-bullseye"></i></div>
-        <h3>Why Take This Assessment?</h3>
+      <div class="labs-card">
+        <div class="labs-icon"><i class="fa-solid fa-route"></i></div>
+        <h3>Guided Attack Scenarios</h3>
 
-        <ul>
-          <li>Evaluate real-world red team skills</li>
-          <li>Identify knowledge gaps</li>
-          <li>Practice offensive techniques</li>
-          <li>Unlock enterprise labs</li>
-        </ul>
+        <p>Work through structured, real-world attack paths designed to simulate enterprise environments and improve your red team execution.</p>
       </div>
 
     </div>
@@ -1683,6 +1653,18 @@ margin-bottom:15px;
           <li>Azure Privilege Escalation</li>
           <li>Lateral Movement</li>
           <li>Post-Exploitation Techniques</li>
+        </ul>
+      </div>
+      
+       <div class="skills-card">
+        <div class="skills-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3> Why Take This Assessment?</h3>
+
+        <ul>
+          <li>Evaluate real-world red team skills</li>
+          <li>Discover gaps in your knowledge and execution</li>
+          <li>Strengthen hands-on offensive techniques</li>
+          <li>Unlock enterprise labs</li>         
         </ul>
       </div>
 
@@ -1809,7 +1791,7 @@ margin-bottom:15px;
           <span>+</span>
         </div>
         <div class="faq-answer">
-          It is a hands-on evaluation designed to test your ability to simulate real-world red team attacks across Active Directory and Azure environments.
+          A hands-on test of real-world red team attack skills across Active Directory and Azure.
         </div>
       </div>
 
