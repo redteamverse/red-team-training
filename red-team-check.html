@@ -228,22 +228,13 @@ color:var(--text);
 }
 
 /* ================= RESPONSIVE ================= */
-
-@media(max-width:900px){
-
-.hero-grid{
-grid-template-columns:1fr;
+@media (max-width: 900px) {
+  .hero-left h1 {
+    font-size: 28px;
+    line-height: 1.25;
+  } 
 }
 
-.track-grid{
-grid-template-columns:1fr;
-}
-
-.hero-left h1{
-font-size:28px;
-}
-
-}
 .courses-section{
 padding:90px 0;
 background:#ffffff;
@@ -277,6 +268,11 @@ padding:25px;
 text-align:center;
 transition:0.3s;
 }
+
+  .course-card.highlight{
+  border: 2px solid #6366f1;
+  background: linear-gradient(135deg, #eef2ff, #ffffff);
+  }
 
 .course-card:hover{
 border-color:#f93f43;
@@ -341,6 +337,8 @@ color:#666;
   transition: all 0.3s ease;
 }
 
+
+
 /* HOVER */
 .unlock-card:hover {
   transform: translateY(-6px);
@@ -369,8 +367,8 @@ color:#666;
 
 /* HIGHLIGHT MAIN CARD */
 .unlock-card.highlight {
-  border: 2px solid #ef4444;
-  background: linear-gradient(135deg, #fff1f2, #ffffff);
+  border: 2px solid #6366f1;
+  background: linear-gradient(135deg, #eef2ff, #ffffff);
 }
 
 /* FIX LAST CARD WIDTH */
@@ -438,7 +436,6 @@ margin-bottom:10px;
 .step-icon{
 width:45px;
 height:45px;
-background:#f6f8fc;
 border-radius:8px;
 display:flex;
 align-items:center;
@@ -451,15 +448,7 @@ border:1px solid #e4e8f0;
 color:#22439a;
 font-size:18px;
 }
-
-.step-card:hover .step-icon{
-background:#f93f43;
-border-color:#f93f43;
-}
-
-.step-card:hover .step-icon i{
-color:#ffffff;
-}  
+ 
    
 /* TRACK GRID */
 
@@ -542,7 +531,7 @@ margin-bottom:15px;
 }   
    
 .hero {
-  padding: 100px 20px;
+  padding: 40px 20px;
   background: linear-gradient(135deg, #f8fafc, #eef2ff);
 }
 
@@ -559,28 +548,36 @@ margin-bottom:15px;
 }
 
 /* LEFT */
+
+
+/* HEADLINE */
 .hero-left h1 {
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
   color: #1e3a8a;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
+/* SUBTEXT */
 .hero-sub {
   font-size: 18px;
+  line-height: 1.7;
   color: #475569;
-  margin-bottom: 15px;
-  line-height: 1.6;
+  margin-bottom: 18px;
 }
 
+/* FLOW LINE */
 .hero-flow {
   font-size: 15px;
   color: #64748b;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
+  letter-spacing: 0.2px;
 }
 
 .hero-buttons {
-  display: flex;
+  display:inline-flex;
   gap: 15px;
   margin-bottom: 15px;
 }
@@ -688,6 +685,19 @@ margin-bottom:15px;
   color: #64748b;
 }
 
+@media (max-width: 600px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}  
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .hero-grid {
@@ -696,7 +706,9 @@ margin-bottom:15px;
   }
 
   .hero-buttons {
-    justify-content: center;
+   flex-direction: column;
+    align-items: center;
+    gap: 12px; 
   }
 }   
    
@@ -870,7 +882,23 @@ margin-bottom:15px;
     display: none;
   }
 }
+@media (max-width: 600px) {
 
+  .hero-left h1 {
+    font-size: 32px;   /* reduce size */
+    line-height: 1.25; /* better spacing */
+    letter-spacing: -0.3px;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .hero-flow {
+    font-size: 15px;
+  }
+}
 @media (max-width: 600px) {
   .steps-grid {
     grid-template-columns: 1fr;
@@ -1373,7 +1401,7 @@ margin-bottom:15px;
       <div class="step-card">
         <div class="step-number">01</div>
 
-        <div class="step-icon">
+        <div class="unlock-icon">
           <i class="fa-solid fa-play"></i>
         </div>
 
@@ -1385,7 +1413,7 @@ margin-bottom:15px;
       <div class="step-card">
         <div class="step-number">02</div>
 
-        <div class="step-icon">
+        <div class="unlock-icon">
           <i class="fa-solid fa-compass"></i>
         </div>
 
@@ -1397,7 +1425,7 @@ margin-bottom:15px;
       <div class="step-card">
         <div class="step-number">03</div>
 
-        <div class="step-icon">
+        <div class="unlock-icon">
           <i class="fa-solid fa-bolt"></i>
         </div>
 
@@ -1409,7 +1437,7 @@ margin-bottom:15px;
       <div class="step-card highlight">
         <div class="step-number">04</div>
 
-        <div class="step-icon">
+        <div class="unlock-icon">
           <i class="fa-solid fa-flask"></i>
         </div>
 
@@ -1440,7 +1468,7 @@ margin-bottom:15px;
 
       <!-- AD TRACK -->
       <div class="track-card">
-        <div class="track-icon"><i class="fa-solid fa-sitemap"></i></div>
+        <div class="unlock-icon"><i class="fa-solid fa-sitemap"></i></div>
         <h3>Active Directory</h3>
         <p>Test your skills in on-prem enterprise environments including AD attacks, Kerberos abuse, and privilege escalation.</p>
 
@@ -1455,7 +1483,7 @@ margin-bottom:15px;
 
       <!-- AZURE TRACK -->
       <div class="track-card highlight">
-        <div class="track-icon"><i class="fa-solid fa-cloud"></i></div>
+        <div class="unlock-icon"><i class="fa-solid fa-cloud"></i></div>
         <h3>Azure Red Teaming</h3>
         <p>Evaluate your cloud attack capabilities including Azure AD abuse, token attacks, and privilege escalation.</p>
 
@@ -1491,7 +1519,7 @@ margin-bottom:15px;
 
       <!-- MAIN HIGHLIGHT -->
       <div class="unlock-card highlight">
-        <div class="unlock-icon"><i class="fa-solid fa-flask"></i></div>
+        <div class="unlock-icon "><i class="fa-solid fa-flask"></i></div>
         <h3>Hands-on Red Team Labs</h3>
         <p>Practice real-world attack techniques in enterprise-style environments.</p>
       </div>
@@ -1545,7 +1573,7 @@ margin-bottom:15px;
     <div class="labs-grid">
 
       <!-- PLATFORM -->
-      <div class="labs-card highlight">
+      <div class="labs-card ">
         <div class="labs-icon"><i class="fa-solid fa-laptop-code"></i></div>
         <h3>Red Labs Platform</h3>
         <p>
@@ -1554,7 +1582,7 @@ margin-bottom:15px;
       </div>
 
       <!-- BADGES -->
-      <div class="labs-card">
+      <div class="labs-card highlight">
         <div class="labs-icon"><i class="fa-solid fa-award"></i></div>
         <h3>Badges & Certificates</h3>
         <p>
@@ -1713,7 +1741,7 @@ margin-bottom:15px;
 
 <div class="courses-grid">
 
-<div class="course-card">
+<div class="course-card highlight">
 <img src="https://static.wixstatic.com/media/470c31_f89db457309f4d3caa31f94458441a8f~mv2.png/v1/fill/w_108,h_108,al_c,q_85/redteamprofessional.png">
 <p>CRTP®</p>
 </div>
@@ -1747,7 +1775,7 @@ margin-bottom:15px;
 
 <div class="courses-grid">
 
-<div class="course-card large">
+<div class="course-card large highlight">
 
 <img src="https://static.wixstatic.com/media/98ad8e_570457bb69a74296a4c990e4830050ef~mv2.png/v1/fill/w_300,h_279,al_c,q_85/CARTP_shield.png">
 
