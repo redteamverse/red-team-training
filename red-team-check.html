@@ -226,18 +226,28 @@ color:var(--text);
 .skills-card p{
 color:var(--text);
 }
+  
+.courses-section .section-label {
+  display: inline-block;
+  text-align: left;
+}
 
+.courses-section .container {
+  text-align: center; /* ensures label stays left */
+}
+  
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
   .hero-left h1 {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1.25;
   } 
+  
 }
 
 .courses-section{
 padding:90px 0;
-background:#ffffff;
+background:#ffffff;  
 }
 
 .section-title{
@@ -1305,6 +1315,20 @@ margin-bottom:15px;
   font-size: 20px;
   transition: 0.3s;
 }   
+  
+.section-label {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;  
+  padding: 10px 18px;
+  border-radius: 100px; 
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  letter-spacing: 0.8px;
+  color: #E8E8E8;
+  background: rgb(58, 63, 80);
+  
+} 
 </style>
 
 </head>
@@ -1384,6 +1408,7 @@ margin-bottom:15px;
 
     <!-- WHAT IS -->
     <div class="section-header">
+      <span class="section-label">Overview</span>
       <h2>What is a Red Team Skill Assessment?</h2>
       <p>
         A Red Team Skill Assessment evaluates your ability to simulate real-world enterprise attacks across Active Directory and Azure environments — helping you identify skill gaps and unlock hands-on labs.
@@ -1392,6 +1417,7 @@ margin-bottom:15px;
 
     <!-- HOW IT WORKS -->
     <div class="section-header">
+      <span class="section-label">Process</span>
       <h2>How the Red Team Skill Check Works</h2>      
     </div>
 
@@ -1459,6 +1485,7 @@ margin-bottom:15px;
 
     <!-- HEADER -->
     <div class="section-header">
+      <span class="section-label">Tracks</span>
       <h2>Choose Your Red Team Track</h2>
       <p>Select the environment you want to be assessed in.</p>
     </div>
@@ -1510,6 +1537,7 @@ margin-bottom:15px;
 
     <!-- HEADER -->
     <div class="section-header">
+      <span class="section-label">Outcomes</span>
       <h2>What You Unlock After Completing the Skill Check</h2>
       <p>Get access to real-world red team resources designed to sharpen your offensive security skills.</p>
     </div>
@@ -1562,7 +1590,7 @@ margin-bottom:15px;
 
     <!-- HEADER -->
     <div class="section-header">
-       
+      <span class="section-label">Platform</span>
       <h2>About the Red Labs Platform</h2>
       <p>
         Sharpen your red team skills through hands-on labs, real-world attack scenarios, and guided challenges designed for enterprise environments.
@@ -1612,6 +1640,7 @@ margin-bottom:15px;
 
     <!-- HEADER -->
     <div class="section-header">
+      <span class="section-label">Lab Categories</span>
       <h2>Red Team Lab Categories</h2>
       <p>Explore practical lab challenges across enterprise attack surfaces.</p>
     </div>
@@ -1662,6 +1691,7 @@ margin-bottom:15px;
 
     <!-- HEADER -->
     <div class="section-header">
+      <span class="section-label">Skill Growth</span>
       <h2>Assess, Practice, and Advance Your Red Team Skills</h2>
       <p>Understand your capabilities, identify gaps, and improve with hands-on labs.</p>
     </div>
@@ -1732,7 +1762,7 @@ margin-bottom:15px;
 <section class="courses-section">
 
 <div class="container">
-
+<span class="section-label">Programs</span>
 <h2 class="section-title">Our Courses & Certifications</h2>
 
 <!-- ON PREM PATH -->
@@ -1806,6 +1836,7 @@ margin-bottom:15px;
 
     <!-- HEADER -->
     <div class="section-header">
+      <span class="section-label">FAQs</span>
       <h2>Frequently Asked Questions</h2>
       <p>Everything you need to know about the Red Team Skill Assessment.</p>
     </div>
