@@ -20,9 +20,26 @@ padding:0;
 box-sizing:border-box;
 }
 
-body{
-font-family:'Inter',sans-serif;
+:root {
+  --navy: #2B2B50;
+  --white: #FFFFFF;
+  --offwhite: #F9FAFB;
+  --dark: #111827; 
+  --muted: #374151;
+  --border: #E5E7EB;
+  --primary: #B91C1C;
+
+  --space-xs: 48px;  
+  --space-md: 72px;
+  --space-lg: 96px; 
+
 }
+ 
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--navy);
+  
+}   
 
 /* HERO */
 
@@ -72,7 +89,8 @@ font-weight:800;
 
 margin-bottom:16px;
 
-color:#0f172a;
+color:white;
+    
 
 }
 
@@ -210,28 +228,50 @@ text-align:center;
 .speakers-grid{
 
 margin-top:60px;
-
 display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
+grid-template-columns:repeat(3,1fr);
 gap:32px;
-
 max-width:1000px;
-
 margin-left:auto;
 margin-right:auto;
-
 }
 
+.speaker-social{
+display:flex;
+gap:10px;
+justify-content:center;
+margin-top:14px;
+}
 
+.speaker-social a{
+width:34px;
+height:34px;
+border-radius:8px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#f1f5f9;
+color:#0f172a;
+transition:all .25s ease;
+}
+
+.speaker-social a:hover{
+background:#2563eb;
+color:#fff;
+transform:translateY(-2px);
+}
+
+.speaker-social svg{
+width:16px;
+height:16px;
+}
 /* speaker card */
 
 .speaker-card{
 
 background:white;
 
-padding:26px 22px 30px;
+padding:20px 22px 30px;
 
 border-radius:16px;
 
@@ -258,7 +298,7 @@ border-color:#3b82f6;
 
 width:100%;
 
-height:140px;
+height:180px;
 
 margin-bottom:18px;
 
@@ -3923,12 +3963,328 @@ display:none;
 }
 
 }
+/* ================= ALTSECCON STATS ================= */
+
+.altseccon-stats{
+padding:100px 20px;
+background:#ffffff;
+font-family:Inter, sans-serif;
+}
+
+.altseccon-stats .container{
+max-width:1200px;
+margin:auto;
+}
+
+.stats-title{
+text-align:center;
+font-size:40px;
+font-weight:700;
+margin-bottom:70px;
+color:#0f172a;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+.stat-card{
+background:#ffffff;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:40px 30px;
+text-align:center;
+transition:all .35s ease;
+position:relative;
+}
+
+.stat-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+border-color:#2563eb;
+}
+
+.stat-icon{
+margin-bottom:20px;
+display:flex;
+justify-content:center;
+}
+
+.stat-icon svg{
+width:32px;
+height:32px;
+stroke:#2563eb;
+}
+
+.stat-number{
+font-size:34px;
+font-weight:700;
+color:#111827;
+margin-bottom:6px;
+}
+
+.stat-label{
+font-size:16px;
+font-weight:600;
+margin-bottom:6px;
+color:#111827;
+}
+
+.stat-desc{
+font-size:14px;
+color:#6b7280;
+}
+
+/* Tablet */
+
+@media(max-width:900px){
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:520px){
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+.stats-title{
+font-size:30px;
+}
+
+}
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: none;
+  background: transparent;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease, background 0.25s ease;
+}
+
+.site-header.is-visible {
+  display: block;
+  transform: translateY(0);
+}
+
+.site-header.is-solid {
+  background: rgba(43, 43, 80, 0.95);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.nav a {
+  margin-left: 28px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  text-decoration: none;
+  position: relative;
+  opacity: 0.85;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-red);
+  transition: width 0.25s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Disable desktop header on mobile */
+@media (max-width: 768px) {
+  .site-header {
+    display: none !important;
+  }
+}    
+    
+/* ===== SECTION SUB MENU ===== */
+
+.section-nav{
+  width:100%;
+  background:#fff;
+  border-bottom:1px solid #e5e7eb;
+  position:sticky;
+  top:50px;
+  z-index:900;
+  transition:top .3s ease;
+}
+
+
+.section-nav-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:14px 20px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+
+.section-nav-container::-webkit-scrollbar{
+  display:none;
+}
+
+.section-nav a{
+  font-size:14px;
+  color:#374151;
+  text-decoration:none;
+  font-weight:500;
+  position:relative;
+  white-space:nowrap;
+  padding-bottom:6px;
+}
+
+.section-nav a:hover{
+  color:#2563eb;
+}
+
+.section-nav a.active{
+  color:#2563eb;
+}
+
+.section-nav a.active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-2px;
+  width:100%;
+  height:2px;
+  background:#2563eb;
+}  
+.social-connect{
+padding:90px 20px;
+background:#0f172a;
+text-align:center;
+color:white;
+}
+
+.social-connect .container{
+max-width:900px;
+margin:auto;
+}
+
+.section-eyebrow{
+text-transform:uppercase;
+letter-spacing:.2em;
+font-size:12px;
+color:#3b82f6;
+margin-bottom:10px;
+}
+
+.section-title{
+font-size:32px;
+margin-bottom:12px;
+}
+
+.section-intro{
+color:#94a3b8;
+margin-bottom:40px;
+}
+
+.social-icons{
+display:flex;
+justify-content:center;
+gap:24px;
+}
+
+.social{
+width:56px;
+height:56px;
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:12px;
+
+border:1px solid rgba(255,255,255,.15);
+
+color:white;
+
+transition:.3s;
+}
+
+.social svg{
+width:22px;
+height:22px;
+}
+
+.social:hover{
+transform:translateY(-4px);
+}
+
+.social.twitter:hover{
+background:#1DA1F2;
+border-color:#1DA1F2;
+}
+
+.social.linkedin:hover{
+background:#0A66C2;
+border-color:#0A66C2;
+}
+
+.social.discord:hover{
+background:#5865F2;
+border-color:#5865F2;
+}    
 </style>
 
 </head>
 
 
 <body>
+<header id="stickyHeader" class="site-header">
+  <div class="header-inner">
+    <div class="logo">AltSecCON</div>
+
+    <nav class="nav">
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">Training</a>     
+      <a href="#event">Schedule</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>
+      <a href="#AltSecCON-2026">Tickets</a>
+      <a href="#contact">Venue</a>
+      <a href="#contact">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>      
 
 <section class="hero">
 
@@ -4020,8 +4376,27 @@ View Conference Agenda
 </div>
 
 </section>
-    
-<section class="overview-section">
+
+<nav class="section-nav" id="sectionNav">
+  <div class="section-nav-container">
+
+    <a href="#overview">Overview</a>
+    <a href="#stats">Stats</a>
+     <a href="#highlights">Highlights</a>  
+    <a href="#community">Community</a>
+    <a href="#topics">Topics</a>
+    <a href="#speakers">Speakers</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#sponsors">Sponsors</a>
+    <a href="#audience">Audience</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#tickets">Pass</a>
+    <a href="#venue">Venue</a>
+    <a href="#faq">FAQs</a>
+
+  </div>
+</nav>    
+<section class="overview-section" id="overview">
 
 <div class="container overview-wrapper">
 
@@ -4059,9 +4434,10 @@ alt="AltSecCON video">
 
 </div>
 
+    
 <!-- RIGHT CONTENT -->
 
-<div class="overview-content">
+<div class="overview-content" id="overview">
 
 <p class="section-eyebrow">
 Conference Overview
@@ -4100,7 +4476,56 @@ Read More
 </div>
 
 </section>
-<section class="conference-highlights">
+<section class="altseccon-stats" id="stats">
+
+<div class="container">
+
+<h2 class="stats-title">AltSecCON Conference </h2>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<div class="stat-icon">
+<i data-lucide="calendar-days"></i>
+</div>
+<h3 class="stat-number" data-target="1">1</h3>
+<p class="stat-label">Day</p>
+<p class="stat-desc">Practitioner Conference</p>
+</div>
+
+<div class="stat-card">
+<div class="stat-icon">
+<i data-lucide="mic"></i>
+</div>
+<h3 class="stat-number" data-target="10" data-plus="true">10+</h3>
+<p class="stat-label">Speakers</p>
+<p class="stat-desc">Security Experts & Researchers</p>
+</div>
+
+<div class="stat-card">
+<div class="stat-icon">
+<i data-lucide="presentation"></i>
+</div>
+<h3 class="stat-number" data-target="8" data-plus="true">8+</h3>
+<p class="stat-label">Technical Talks</p>
+<p class="stat-desc">Offensive Security Insights</p>
+</div>
+
+<div class="stat-card">
+<div class="stat-icon">
+<i data-lucide="users"></i>
+</div>
+<h3 class="stat-number">Community</h3>
+<p class="stat-label">Networking</p>
+<p class="stat-desc">Cybersecurity Professionals</p>
+</div>
+
+</div>
+
+</div>
+
+</section>    
+<section class="conference-highlights" id="highlights">
 
 <div class="container">
 
@@ -4310,7 +4735,7 @@ and attendees creating informal networking opportunities.
 </div>
 </section>    
 
-<section class="community-trust">
+<section class="community-trust" id="community">
 
 <div class="container">
 
@@ -4399,7 +4824,7 @@ AltSecCON fosters collaboration and knowledge sharing within the cybersecurity c
 
 </section>        
 
-<section class="conference-topics">
+<section class="conference-topics" id="topics">
 
 <div class="container">
 
@@ -4454,7 +4879,7 @@ The AltSecCON Practitioner Conference features technical talks focused on enterp
 </div>
 </section>
 
-<section class="conference-speakers">
+<section class="conference-speakers" id="speakers">
 
 <div class="container">
 
@@ -4478,18 +4903,26 @@ AltSecCON speakers include experienced Red Team practitioners, security research
 <div class="speaker-card">
 
 <div class="speaker-image">
-
-
-
 <img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" alt="Nikhil Mittal">
-
 </div>
 
 <h3>Nikhil Mittal</h3>
+<p class="speaker-role">Founder</p>
+<span class="speaker-company">Altered Security</span>
 
-<p class="speaker-role">Red Team Lead</p>
+<div class="speaker-social">
+<a href="#" target="_blank" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.24 8.25H4.7V24H.24V8.25zM8.34 8.25H12.6V10.4H12.66C13.25 9.3 14.68 8.15 16.95 8.15 21.54 8.15 22.4 11.1 22.4 15.02V24H17.94V16.15C17.94 14.23 17.9 11.75 15.25 11.75 12.55 11.75 12.14 13.83 12.14 16.02V24H8.34V8.25z"/>
+</svg>
+</a>
 
-<span class="speaker-company">Security Company</span>
+<a href="#" target="_blank" aria-label="X">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M18.9 1H22L14.7 9.35 23.3 23H16.4L11 15.2 4.2 23H1L8.7 14.2 0.5 1H7.6L12.5 7.9 18.9 1z"/>
+</svg>
+</a>
+</div>
 
 </div>
 
@@ -4499,18 +4932,26 @@ AltSecCON speakers include experienced Red Team practitioners, security research
 <div class="speaker-card">
 
 <div class="speaker-image">
-
-
-
 <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9759.jpg" alt="Speaker">
-
 </div>
 
-<h3>Speaker Name</h3>
-
+<h3>Vishal</h3>
 <p class="speaker-role">Security Researcher</p>
+<span class="speaker-company">Altered Security</span>
 
-<span class="speaker-company">Technology Organization</span>
+<div class="speaker-social">
+<a href="#" target="_blank" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.24 8.25H4.7V24H.24V8.25zM8.34 8.25H12.6V10.4H12.66C13.25 9.3 14.68 8.15 16.95 8.15 21.54 8.15 22.4 11.1 22.4 15.02V24H17.94V16.15C17.94 14.23 17.9 11.75 15.25 11.75 12.55 11.75 12.14 13.83 12.14 16.02V24H8.34V8.25z"/>
+</svg>
+</a>
+
+<a href="#" target="_blank" aria-label="X">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M18.9 1H22L14.7 9.35 23.3 23H16.4L11 15.2 4.2 23H1L8.7 14.2 0.5 1H7.6L12.5 7.9 18.9 1z"/>
+</svg>
+</a>
+</div>
 
 </div>
 
@@ -4520,18 +4961,26 @@ AltSecCON speakers include experienced Red Team practitioners, security research
 <div class="speaker-card">
 
 <div class="speaker-image">
-
-
-
 <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="Speaker">
-
 </div>
 
-<h3>Speaker Name</h3>
+<h3>Amit</h3>
+<p class="speaker-role">Trainer</p>
+<span class="speaker-company">Altered Security</span>
 
-<p class="speaker-role">Penetration Tester</p>
+<div class="speaker-social">
+<a href="#" target="_blank" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.24 8.25H4.7V24H.24V8.25zM8.34 8.25H12.6V10.4H12.66C13.25 9.3 14.68 8.15 16.95 8.15 21.54 8.15 22.4 11.1 22.4 15.02V24H17.94V16.15C17.94 14.23 17.9 11.75 15.25 11.75 12.55 11.75 12.14 13.83 12.14 16.02V24H8.34V8.25z"/>
+</svg>
+</a>
 
-<span class="speaker-company">Cybersecurity Consulting Firm</span>
+<a href="#" target="_blank" aria-label="X">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M18.9 1H22L14.7 9.35 23.3 23H16.4L11 15.2 4.2 23H1L8.7 14.2 0.5 1H7.6L12.5 7.9 18.9 1z"/>
+</svg>
+</a>
+</div>
 
 </div>
 
@@ -4541,24 +4990,30 @@ AltSecCON speakers include experienced Red Team practitioners, security research
 <div class="speaker-card">
 
 <div class="speaker-image">
-
-
-
 <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Speaker">
-
 </div>
 
-<h3>Speaker Name</h3>
-
+<h3>Hitesh</h3>
 <p class="speaker-role">Security Engineer</p>
+<span class="speaker-company">Altered Security</span>
 
-<span class="speaker-company">Enterprise Security Team</span>
+<div class="speaker-social">
+<a href="#" target="_blank" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.24 8.25H4.7V24H.24V8.25zM8.34 8.25H12.6V10.4H12.66C13.25 9.3 14.68 8.15 16.95 8.15 21.54 8.15 22.4 11.1 22.4 15.02V24H17.94V16.15C17.94 14.23 17.9 11.75 15.25 11.75 12.55 11.75 12.14 13.83 12.14 16.02V24H8.34V8.25z"/>
+</svg>
+</a>
+
+<a href="#" target="_blank" aria-label="X">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M18.9 1H22L14.7 9.35 23.3 23H16.4L11 15.2 4.2 23H1L8.7 14.2 0.5 1H7.6L12.5 7.9 18.9 1z"/>
+</svg>
+</a>
+</div>
 
 </div>
 
-
 </div>
-
 
 <p class="speakers-note">
 Speakers will share practical insights, research findings, and experiences from real-world offensive security engagements.
@@ -4566,8 +5021,8 @@ Speakers will share practical insights, research findings, and experiences from 
 
 </div>
 
-</section>  
-<section class="conference-agenda">
+</section>
+<section class="conference-agenda" id="agenda">
 
 <div class="container">
 
@@ -5007,7 +5462,7 @@ Call for speakers submissions close on <strong>[date to be announced]</strong>.
 
 </section>    
 
-<section class="conference-sponsors">
+<section class="conference-sponsors" id="sponsors">
 
 <div class="container">
 
@@ -5231,7 +5686,7 @@ For sponsorship inquiries, please contact the AltSecCON team.
 
 </div>
 </section>
-<section class="conference-audience">
+<section class="conference-audience" id="audience">
 
 <div class="container">
 
@@ -5371,7 +5826,7 @@ Get Your Ticket
 </section>       
 
   
-<section class="conference-gallery">
+<section class="conference-gallery" id="gallery">
 
 <div class="container">
 
@@ -5415,7 +5870,7 @@ View AltSecCON Gallery
 </div>
 
 </section>    
-<section class="conference-tickets">
+<section class="conference-tickets" id="tickets">
 
 <div class="container">
 
@@ -5506,7 +5961,7 @@ All prices are exclusive of GST. Limited seats available. Book early to save mor
 </div>
 
 </section>    
-<section class="conference-venue">
+<section class="conference-venue" id="venue">
 
 <div class="container">
 
@@ -5580,7 +6035,7 @@ Bengaluru is one of India’s leading technology hubs and home to a vibrant cybe
 </div>
 
 </section>    
-<section class="conference-faq">
+<section class="conference-faq" id="faq">
 
 <div class="container">
 
@@ -5760,6 +6215,50 @@ Secure your spot at the AltSecCON Practitioner Conference in Bengaluru.
 </div>
 
 </section>    
+    
+<section class="social-connect">
+
+  <div class="container">
+
+    <p class="section-eyebrow">Social Community</p>
+    <h2 class="section-title">Stay Connected</h2>
+
+    <p class="section-intro">
+      Follow Altered Security to stay updated on Red Team training,
+      AltSecCON announcements, and cybersecurity research updates.
+    </p>
+
+    <div class="social-icons">
+
+      <a href="https://twitter.com/AlteredSecurity" target="_blank" class="social twitter">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.3 1.7-2.2-.8.5-1.6.8-2.5 1-1.5-1.6-4-1.7-5.6-.2-1 .9-1.5 2.3-1.2 3.6-3.3-.2-6.3-1.7-8.3-4.1-.4.7-.6 1.6-.6 2.4 0 1.6.8 3.1 2.1 4-.6 0-1.2-.2-1.7-.5v.1c0 2.2 1.5 4 3.6 4.4-.4.1-.8.2-1.2.2-.3 0-.6 0-.9-.1.6 1.9 2.4 3.2 4.5 3.2-1.6 1.3-3.7 2-5.8 2H2c2.1 1.4 4.6 2.2 7.3 2.2 8.7 0 13.4-7.2 13.4-13.4v-.6c.9-.6 1.6-1.3 2.2-2.1z"
+          stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </a>
+
+      <a href="https://www.linkedin.com/company/alteredsecurity/" target="_blank" class="social linkedin">
+        <svg viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="5" cy="5" r="2" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M11 9h4v2c.7-1.2 2-2 3.5-2 2.5 0 4.5 2 4.5 4.5V21h-4v-6.2c0-1.2-.8-2-2-2s-2 .8-2 2V21h-4V9z"
+          stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </a>
+
+      <a href="https://discord.com/invite/vcEwaRMwJe" target="_blank" class="social discord">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M20 4c-1.5-.7-3-1.1-4.5-1.3l-.2.4c1.6.4 2.8 1 3.9 1.8-2.5-1.3-5.4-1.3-7.9 0 1.1-.8 2.3-1.4 3.9-1.8l-.2-.4C12.5 2.9 11 3.3 9.5 4 7 7.5 6 11 6.3 14.4c1.6 1.2 3.1 2 4.6 2.5l.5-.9c-.9-.3-1.7-.7-2.5-1.2.2.2.4.3.6.4 2.2 1 4.7 1 6.9 0 .2-.1.4-.2.6-.4-.8.5-1.6.9-2.5 1.2l.5.9c1.5-.5 3-1.3 4.6-2.5.4-3.7-.6-7.2-3.2-10.4z"
+          stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>    
+    
 <script>
 
 document.querySelectorAll(".agenda-toggle").forEach(btn => {
@@ -5896,5 +6395,130 @@ updateStack();
 });
 
 </script>   
+<script>
+/* ================= NUMBER COUNTER ================= */
+
+const counters = document.querySelectorAll(".stat-number");
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+const counter = entry.target;
+const target = parseInt(counter.dataset.target);
+const showPlus = counter.dataset.plus === "true";
+
+if(!target) return;
+
+const duration = 1800;
+const startTime = performance.now();
+
+function update(currentTime){
+
+const elapsed = currentTime - startTime;
+const progress = Math.min(elapsed / duration, 1);
+
+const value = Math.floor(progress * target);
+
+counter.textContent = value;
+
+if(progress < 1){
+requestAnimationFrame(update);
+}else{
+counter.textContent = showPlus ? target + "+" : target;
+}
+
+}
+
+requestAnimationFrame(update);
+observer.unobserve(counter);
+
+}
+
+});
+
+},{ threshold:0.6 });
+
+counters.forEach(counter => observer.observe(counter));
+    </script>    
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+  const header = document.getElementById("stickyHeader");
+  const tabs = document.querySelectorAll(".mobile-tabs a");
+
+  const sections = Array.from(tabs)
+    .map(tab => document.querySelector(tab.getAttribute("href")))
+    .filter(Boolean);
+
+  function handleScroll() {
+    const scrollY = window.scrollY;
+    const isMobile = window.innerWidth <= 768;
+
+    /* Desktop header */
+    if (!isMobile) {
+      if (scrollY > 80) {
+        header.classList.add("is-visible", "is-solid");
+      } else {
+        header.classList.remove("is-visible", "is-solid");
+      }
+    }
+
+    /* Mobile ScrollSpy */
+    if (isMobile) {
+      let activeIndex = -1;
+
+      sections.forEach((section, index) => {
+        if (scrollY >= section.offsetTop - 160) {
+          activeIndex = index;
+        }
+      });
+
+      tabs.forEach(tab => tab.classList.remove("active"));
+      if (activeIndex >= 0) {
+        tabs[activeIndex].classList.add("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleScroll);
+</script>    
+<script>
+document.querySelectorAll('.section-nav a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+    
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".section-nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.clientHeight;
+
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});    
+</script>    
+    
 </body>
 </html>
