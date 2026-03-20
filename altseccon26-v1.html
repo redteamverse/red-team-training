@@ -2880,6 +2880,79 @@ RESPONSIVE
     font-size: 0.85rem;
   }
 }  
+.faq-section {
+  background: #FFFFFF;
+  color: #111827;
+  padding: 96px 24px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq-intro {
+  color: #6B7280;
+  margin-bottom: 40px;
+}
+
+/* List */
+.faq-list {
+  text-align: left;
+}
+
+/* Item */
+.faq-item {
+  border-bottom: 1px solid #E5E7EB;
+  padding: 16px 0;
+}
+
+/* Question */
+.faq-question {
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px 0;
+  position: relative;
+}
+
+/* Arrow */
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+/* Active */
+.faq-item.active .faq-question::after {
+  content: "−";
+}
+
+/* Answer */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+.faq-answer p {
+  font-size: 0.9rem;
+  color: #374151;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* Open state */
+.faq-item.active .faq-answer {
+  max-height: 200px;
+}  
 </style>
 </head>
 
@@ -3936,7 +4009,107 @@ Thanks,
 
 </section>  
 <!-- CONTACT US -->
+<section class="faq-section">
 
+  <div class="faq-container">
+
+    <span class="section-eyebrow">FAQs</span>
+    <h2>Frequently Asked Questions</h2>
+    <p class="faq-intro">
+      Find answers to common questions about AltSecCON training, conference, and participation.
+    </p>
+
+    <div class="faq-list">
+
+      <div class="faq-item active">
+        <button class="faq-question">
+          What is the difference between training and conference?
+        </button>
+        <div class="faq-answer">
+          <p>
+            The training is a multi-day, instructor-led hands-on program focused on Red Team techniques. 
+            The conference is a one-day event featuring technical talks, practitioner insights, and networking opportunities.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Who should attend AltSecCON?
+        </button>
+        <div class="faq-answer">
+          <p>
+            AltSecCON is designed for security professionals including Red Teamers, penetration testers, 
+            security engineers, and individuals looking to build or enhance offensive security skills.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Do I need prior experience for the training?
+        </button>
+        <div class="faq-answer">
+          <p>
+            Basic understanding of networking and security concepts is recommended. 
+            Different courses are available for beginner, intermediate, and advanced levels.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Will I receive a certification after training?
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, participants receive a course completion certification along with an opportunity 
+            to attempt the certification exam for the selected training program.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Is lab access included after the training?
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, participants receive 30 days of lab access to continue practicing and reinforcing 
+            the concepts covered during the training.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Will both training and conference be held at the same location?
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, both the training and conference are hosted in Bengaluru, India, typically within 
+            the same venue to provide a seamless experience.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How can I register or get more details?
+        </button>
+        <div class="faq-answer">
+          <p>
+            You can use the form above to request details for training, conference, or team participation. 
+            Our team will reach out with relevant information and next steps.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -4093,6 +4266,16 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
   lucide.createIcons();
 </script>
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
 
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question');
+
+    btn.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+</script>
 </body>
 </html>
