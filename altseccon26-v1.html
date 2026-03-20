@@ -1895,6 +1895,10 @@ gap:22px;
   color: var(--white);
 }
 
+  .logo a{
+    color: var(--white);
+  }  
+
 .nav a {
   margin-left: 28px;
   font-size: 14px;
@@ -2649,6 +2653,233 @@ height:220px;
     padding: 9px 12px;
   }
 }  
+  
+.ticket-section {
+  background: #F9FAFB;
+  padding: 96px 24px;
+  color: #111827;
+}
+
+.ticket-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ticket-container h2
+  {
+    font-size: 2.2rem;
+  }
+  
+.ticket-intro {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  color: #6B7280;
+}
+
+/* Grid */
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Card */
+.ticket-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 26px;
+  text-align: left;
+  position: relative;
+}
+
+.ticket-card h3 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.ticket-card ul {
+  margin-bottom: 20px;
+  padding-left: 18px;
+}
+
+.ticket-card li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* Highlight */
+.ticket-card.highlight {
+  border: 2px solid #B91C1C;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: #B91C1C;
+  color: white;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ticket-grid {
+    grid-template-columns: 1fr;
+  }
+}  
+  
+/* =====================
+VENUE SECTION
+===================== */
+.venue-section {
+  background: #F9FAFB;
+  color: #111827;
+  padding: 96px 24px;
+}
+
+.venue-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Intro */
+.venue-intro {
+  max-width: 720px;
+  margin: 12px auto 40px;
+  font-size: 1.05rem;
+  color: #6B7280;
+  line-height: 1.6;
+}
+
+/* =====================
+TOP INFO CARDS
+===================== */
+.venue-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 48px;
+}
+
+.venue-info-item {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.venue-info-item strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #6B7280;
+}
+
+.venue-info-item span {
+  font-size: 0.95rem;
+  color: #111827;
+  font-weight: 600;
+}
+
+/* =====================
+CONTENT SPLIT
+===================== */
+.venue-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  text-align: left;
+}
+
+/* Left text */
+.venue-text p {
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Feature list */
+.venue-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.venue-text li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* =====================
+MAP PLACEHOLDER
+===================== */
+.venue-map {
+  border: 2px dashed #D1D5DB;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  background: #FFFFFF;
+}
+
+.venue-map p {
+  font-size: 0.9rem;
+  color: #6B7280;
+}
+
+/* =====================
+HOVER (optional polish)
+===================== */
+@media (hover:hover){
+  .venue-info-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+  }
+}
+
+/* =====================
+RESPONSIVE
+===================== */
+@media (max-width: 900px) {
+  .venue-info {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .venue-map {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .venue-section {
+    padding: 72px 20px;
+  }
+
+  .venue-intro {
+    font-size: 0.95rem;
+  }
+
+  .venue-text li {
+    font-size: 0.85rem;
+  }
+}  
 </style>
 </head>
 
@@ -2656,13 +2887,13 @@ height:220px;
 <!-- DESKTOP STICKY HEADER -->
 <header id="stickyHeader" class="site-header">
   <div class="header-inner">
-    <div class="logo">AltSecCON</div>
+    <div class="logo"><a href="#home">AltSecCON</a></div>
 
     <nav class="nav">
-      <a href="#training">Training</a>     
+      <a href="#training" id="get-train">Training</a>     
       <a href="#event">Schedule</a>
       <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>
-      <a href="#AltSecCON-2026">Tickets</a>
+      <a href="#tickets">Tickets</a>
       <a href="#venue">Venue</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
@@ -2671,7 +2902,7 @@ height:220px;
 </header>  
 <!-- HERO -->
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="home">
 
   <video autoplay muted loop playsinline>
     <source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm" type="video/webm">
@@ -3528,13 +3759,131 @@ Thanks,
   </div>
 </section>
 
+<section class="ticket-section" id="tickets">
 
+  <div class="ticket-container" >
 
+    <span class="section-eyebrow">Tickets</span>
+    <h2>Choose Your AltSecCON Experience</h2>
+    <p class="ticket-intro">
+      Select the option that best fits your learning goals — training, conference, or a complete experience.
+    </p>
 
-<!-- AltSecCON 2026 TEASER -->
+    <div class="ticket-grid">
+
+      <!-- TRAINING -->
+      <div class="ticket-card">
+        <h3>Training Only</h3>
+        <ul>
+          <li>Instructor-led Red Team training (selected course)</li>
+          <li>Course completion certification</li>
+          <li>30 days of lab access</li>
+          <li>One certification exam attempt</li>
+        </ul>
+         <a href="#training" class="btn btn-primary">View Training Options</a> 
+      </div>
+
+      <!-- CONFERENCE -->
+      <div class="ticket-card">
+        <h3>Conference Only</h3>
+        <ul>
+          <li>Full access to all conference talks</li>
+          <li>Networking with security professionals</li>
+          <li>Panel discussions and practitioner sessions</li>
+          <li>Coffee breaks and lunch included</li>
+          <li>Welcome kit</li>
+          <li>Participation e-certificate</li>
+        </ul>
+        <button class="btn btn-tertiary">Get Conference Pass</button>
+      </div>
+
+      <!-- COMBO -->
+      <div class="ticket-card highlight">
+        <div class="badge">Best Value</div>
+        <h3>Training + Conference</h3>
+        <ul>
+          <li>Instructor-led Red Team training (selected course)</li>
+          <li>Course completion certification</li>
+          <li>30 days of lab access</li>
+          <li>One certification exam attempt</li>
+          <li>Full conference access</li>
+          <li>Networking and panel discussions</li>
+          <li>Coffee breaks, lunch, and welcome kit</li>
+          <li>Participation e-certificate</li>
+        </ul>
+        <button class="btn btn-primary">Get Full Access</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="venue-section" id="venue">
+
+  <div class="venue-container">
+
+    <span class="section-eyebrow">Event Location</span>
+    <h2>Training & Conference Venue</h2>
+
+    <p class="venue-intro">
+      AltSecCON will take place in Bengaluru, India, hosting both the instructor-led Red Team training and the practitioner conference in a shared environment designed for learning and collaboration.
+    </p>
+
+    <!-- Top Info Cards -->
+    <div class="venue-info">
+
+      <div class="venue-info-item">
+        <strong>Training Location</strong>
+        <span>Bengaluru, India</span>
+      </div>
+
+      <div class="venue-info-item">
+        <strong>Conference Location</strong>
+        <span>Bengaluru, India</span>
+      </div>
+
+      <div class="venue-info-item">
+        <strong>Venue</strong>
+        <span>To be announced soon</span>
+      </div>
+
+    </div>
+
+    <!-- Content Split -->
+    <div class="venue-content">
+
+      <!-- Left -->
+      <div class="venue-text">
+        <p>
+          Bengaluru is one of India’s leading technology hubs and home to a strong cybersecurity community. 
+          AltSecCON brings both training and conference experiences together in a single venue to enable 
+          continuous learning, collaboration, and interaction.
+        </p>
+
+        <ul>
+          <li>✔ Dedicated training classrooms for hands-on sessions</li>
+          <li>✔ Conference presentation and discussion areas</li>
+          <li>✔ Networking spaces for participants and speakers</li>
+          <li>✔ Coffee breaks, lunch, and collaboration zones</li>
+        </ul>
+      </div>
+
+      <!-- Right (Map Placeholder) -->
+      <div class="venue-map">
+        <p>📍 Map will be updated once the venue is announced.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 
   
-<section class="contact-tabs-section">
+<section class="contact-tabs-section" id="contact">
 
   <div class="contact-container">
      
