@@ -1,0 +1,6528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AltSecCON Practitioner Conference</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root {
+  --navy: #2B2B50;
+  --white: #FFFFFF;
+  --offwhite: #F9FAFB;
+  --dark: #111827; 
+  --muted: #374151;
+  --border: #E5E7EB;
+  --primary: #B91C1C;
+
+  --space-xs: 48px;  
+  --space-md: 72px;
+  --space-lg: 96px; 
+
+}
+ 
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--navy);
+  
+}   
+
+/* HERO */
+
+
+
+/* =============================
+WHY ATTEND SECTION
+============================= */
+
+
+    
+    
+/* SECTION */
+
+
+
+.container{
+
+max-width:1100px;
+margin:auto;
+
+}
+
+/* EYEBROW */
+
+.section-eyebrow{
+
+text-transform:uppercase;
+
+letter-spacing:.2em;
+
+font-size:.75rem;
+
+color:#3b82f6;
+
+margin-bottom:14px;
+
+}
+
+/* TITLE */
+
+.section-title{
+
+font-size:2.6rem;
+
+font-weight:800;
+
+margin-bottom:16px;
+
+color:white;
+    
+
+}
+
+/* INTRO */
+
+.section-intro{
+
+max-width:760px;
+
+margin:auto;
+
+font-size:1.05rem;
+
+color:#475569;
+
+margin-bottom:60px;
+
+line-height:1.6;
+
+}
+
+/* GRID */
+
+.topics-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:28px;
+
+}
+
+/* CARD */
+
+.topic-card{
+
+background:#f8fafc;
+
+padding:34px 28px;
+
+border-radius:16px;
+
+border:1px solid #e2e8f0;
+
+text-align:left;
+
+transition:all .25s ease;
+
+}
+
+.topic-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+}
+
+/* ICON */
+
+.topic-icon{
+width:48px;
+height:48px;
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+color:white;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+margin-bottom:14px;
+}
+
+/* TITLE */
+
+.topic-card h3{
+
+font-size:1.15rem;
+
+margin-bottom:10px;
+
+color:#0f172a;
+
+}
+
+/* TEXT */
+
+.topic-card p{
+
+font-size:.95rem;
+
+color:#475569;
+
+line-height:1.6;
+
+}
+
+/* TAGLINE */
+
+.topics-tagline{
+
+margin-top:60px;
+
+font-size:.95rem;
+
+color:#64748b;
+
+}
+
+/* MOBILE */
+
+@media(max-width:640px){
+
+.section-title{
+font-size:2rem;
+}
+
+.section-intro{
+font-size:.95rem;
+}
+
+}    
+    
+/* SECTION */
+
+/* SECTION */
+
+.conference-speakers{
+padding:110px 20px;
+background:#f8fafc;
+text-align:center;
+}
+
+.speakers-grid{
+
+margin-top:60px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:32px;
+max-width:1000px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.speaker-social{
+display:flex;
+gap:10px;
+justify-content:center;
+margin-top:14px;
+}
+
+.speaker-social a{
+width:34px;
+height:34px;
+border-radius:8px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#f1f5f9;
+color:#0f172a;
+transition:all .25s ease;
+}
+
+.speaker-social a:hover{
+background:#2563eb;
+color:#fff;
+transform:translateY(-2px);
+}
+
+.speaker-social svg{
+width:16px;
+height:16px;
+}
+/* speaker card */
+
+.speaker-card{
+
+background:white;
+
+padding:20px 22px 30px;
+
+border-radius:16px;
+
+border:1px solid #e5e7eb;
+
+transition:.3s;
+
+}
+
+.speaker-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+border-color:#3b82f6;
+
+}
+
+
+/* speaker image */
+
+.speaker-image{
+
+width:100%;
+
+height:180px;
+
+margin-bottom:18px;
+
+border-radius:12px;
+
+overflow:hidden;
+
+}
+
+.speaker-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+/* name */
+
+.speaker-card h3{
+
+font-size:1.1rem;
+
+margin-bottom:6px;
+
+color:#0f172a;
+
+}
+
+
+/* role */
+
+.speaker-role{
+
+color:#2563eb;
+
+font-weight:500;
+
+font-size:.9rem;
+
+margin-bottom:4px;
+
+}
+
+
+/* company */
+
+.speaker-company{
+
+font-size:.85rem;
+
+color:#64748b;
+
+}
+
+
+/* note */
+
+.speakers-note{
+
+margin-top:40px;
+
+font-size:.9rem;
+
+color:#64748b;
+
+max-width:700px;
+
+margin-left:auto;
+margin-right:auto;
+
+}
+
+
+/* tablet */
+
+@media (max-width:900px){
+
+.speakers-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+/* mobile */
+
+@media (max-width:600px){
+
+.speakers-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:640px){
+
+.section-title{
+font-size:2rem;
+}
+
+.section-intro{
+font-size:.95rem;
+}
+
+}
+    
+.conference-agenda{
+padding:110px 20px;
+background:#ffffff;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+text-align:center;
+}
+
+/* headings */
+
+.section-eyebrow{
+text-transform:uppercase;
+letter-spacing:.2em;
+font-size:.75rem;
+color:#3b82f6;
+margin-bottom:14px;
+}
+
+.section-title{
+font-size:2.6rem;
+font-weight:800;
+margin-bottom:16px;
+color:#0f172a;
+}
+
+.section-intro{
+max-width:760px;
+margin:auto;
+font-size:1.05rem;
+color:#475569;
+margin-bottom:70px;
+line-height:1.6;
+}
+
+/* timeline */
+
+.agenda-wrapper{
+display:flex;
+flex-direction:column;
+gap:30px;
+}
+
+/* row */
+
+.agenda-row{
+display:grid;
+grid-template-columns:100px 1fr;
+gap:24px;
+align-items:start;
+}
+
+/* time */
+
+.agenda-time{
+font-weight:700;
+font-size:1.1rem;
+color:#2563eb;
+padding-top:8px;
+}
+
+/* card */
+
+.agenda-card{
+background:#f8fafc;
+border:1px solid #e2e8f0;
+border-radius:14px;
+padding:22px;
+text-align:left;
+transition:.25s;
+}
+
+.agenda-card:hover{
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+transform:translateY(-4px);
+}
+
+/* header */
+
+.agenda-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:6px;
+}
+
+/* title */
+
+.agenda-header h3{
+font-size:1.1rem;
+color:#0f172a;
+}
+
+/* tags */
+
+.agenda-tag{
+font-size:.7rem;
+padding:4px 10px;
+border-radius:20px;
+background:#e2e8f0;
+color:#334155;
+}
+
+.keynote{background:#fde68a;}
+.tech{background:#bfdbfe;}
+.research{background:#ddd6fe;}
+.break{background:#e5e7eb;}
+.redteam{background:#fecaca;}
+.cloud{background:#bae6fd;}
+.panel{background:#fcd34d;}
+.closing{background:#bbf7d0;}
+
+/* text */
+
+.agenda-short{
+color:#475569;
+font-size:.95rem;
+}
+
+.agenda-full{
+display:none;
+margin-top:6px;
+color:#475569;
+font-size:.95rem;
+}
+
+/* button */
+
+.agenda-toggle{
+margin-top:10px;
+background:none;
+border:none;
+color:#2563eb;
+font-weight:600;
+cursor:pointer;
+}
+
+/* mobile */
+
+@media(max-width:640px){
+
+.agenda-row{
+grid-template-columns:1fr;
+}
+
+.agenda-time{
+margin-bottom:6px;
+}
+
+.section-title{
+font-size:2rem;
+}
+
+}
+
+/* SECTION */
+
+.conference-sponsors{
+padding:120px 20px;
+background:#f8fafc;
+text-align:center;
+}
+
+.conference-sponsors .container{
+max-width:1100px;
+margin:auto;
+}
+
+
+/* tier block */
+
+.sponsor-tier{
+padding:60px 40px;
+border-radius:18px;
+margin-top:70px;
+}
+
+
+/* tier colors */
+
+.platinum-tier{
+background:#ffffff;
+border:1px solid #e2e8f0;
+}
+
+.gold-tier{
+background:#fff8e6;
+border:1px solid #fde68a;
+}
+
+.community-tier{
+background:#f1f5f9;
+border:1px solid #e2e8f0;
+}
+
+
+/* titles */
+
+.tier-title{
+font-size:1.45rem;
+font-weight:700;
+margin-bottom:8px;
+}
+
+.platinum-tier .tier-title{
+color:#0f172a;
+}
+
+.gold-tier .tier-title{
+color:#b45309;
+}
+
+.community-tier .tier-title{
+color:#2563eb;
+}
+
+
+.tier-desc{
+color:#64748b;
+font-size:.9rem;
+margin-bottom:35px;
+}
+
+
+/* sponsor grid */
+
+.sponsor-grid{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+}
+
+
+/* sponsor card */
+
+.sponsor-card{
+background:white;
+border-radius:12px;
+padding:20px 28px;
+display:flex;
+align-items:center;
+justify-content:center;
+min-width:160px;
+border:1px solid #e5e7eb;
+transition:.25s;
+}
+
+.sponsor-card img{
+max-height:36px;
+filter:grayscale(100%);
+opacity:.7;
+transition:.25s;
+}
+
+.sponsor-card:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 25px rgba(0,0,0,.08);
+border-color:#3b82f6;
+}
+
+.sponsor-card:hover img{
+filter:none;
+opacity:1;
+}
+
+
+/* CTA */
+
+.sponsor-cta{
+margin-top:70px;
+}
+
+.btn-sponsor{
+display:inline-block;
+margin-top:10px;
+padding:12px 22px;
+background:#2563eb;
+color:white;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:.25s;
+}
+
+.btn-sponsor:hover{
+background:#1d4ed8;
+}
+
+  
+  
+
+/* mobile */
+
+@media(max-width:640px){
+
+.section-title{
+font-size:2rem;
+}
+
+}
+.conference-audience{
+
+padding:110px 20px;
+
+background:#ffffff;
+
+text-align:center;
+
+}
+
+.container{
+
+max-width:1100px;
+margin:auto;
+
+}
+
+/* headings */
+
+.section-eyebrow{
+
+text-transform:uppercase;
+letter-spacing:.2em;
+font-size:.75rem;
+color:#3b82f6;
+margin-bottom:14px;
+
+}
+
+.section-title{
+
+font-size:2.6rem;
+font-weight:800;
+margin-bottom:16px;
+color:#0f172a;
+
+}
+
+.section-intro{
+
+max-width:760px;
+margin:auto;
+font-size:1.05rem;
+color:#475569;
+margin-bottom:60px;
+
+}
+
+/* grid */
+
+.audience-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:28px;
+
+}
+
+/* card */
+
+.audience-card{
+
+background:#f8fafc;
+
+border:1px solid #e2e8f0;
+
+padding:30px;
+
+border-radius:16px;
+
+text-align:left;
+
+transition:.25s;
+
+}
+
+.audience-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+}
+
+/* icon */
+
+.audience-icon{
+
+width:48px;
+height:48px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:12px;
+
+background:#e0ecff;
+
+color:#2563eb;
+
+font-size:20px;
+
+margin-bottom:16px;
+
+}
+
+/* title */
+
+.audience-card h3{
+
+font-size:1.1rem;
+
+margin-bottom:10px;
+
+color:#0f172a;
+
+}
+
+/* text */
+
+.audience-card p{
+
+font-size:.95rem;
+
+color:#475569;
+
+line-height:1.6;
+
+}
+
+/* note */
+
+.audience-note{
+
+margin-top:40px;
+
+color:#64748b;
+
+font-size:.95rem;
+
+}
+
+/* CTA */
+
+.audience-cta{
+
+margin-top:60px;
+
+background:#0f172a;
+
+color:white;
+
+padding:40px;
+
+border-radius:16px;
+
+}
+
+.audience-cta h3{
+
+font-size:1.6rem;
+
+margin-bottom:10px;
+
+}
+
+.audience-cta p{
+
+margin-bottom:20px;
+
+color:#cbd5f5;
+
+}
+
+.btn-ticket{
+
+display:inline-block;
+
+background:#ef4444;
+
+color:white;
+
+padding:12px 28px;
+
+border-radius:10px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.btn-ticket:hover{
+
+background:#f87171;
+
+}
+
+/* mobile */
+
+@media(max-width:640px){
+
+.section-title{
+font-size:2rem;
+}
+
+.section-intro{
+font-size:.95rem;
+}
+
+}    
+    
+.agenda-cta{
+
+padding:80px 20px;
+
+background:linear-gradient(135deg,#0f172a,#1e293b);
+
+text-align:center;
+
+color:white;
+
+}
+
+.cta-container{
+
+max-width:700px;
+margin:auto;
+
+}
+
+/* title */
+
+.agenda-cta h3{
+
+font-size:2rem;
+
+margin-bottom:12px;
+
+}
+
+/* text */
+
+.agenda-cta p{
+
+color:#cbd5f5;
+
+font-size:1.05rem;
+
+margin-bottom:24px;
+
+line-height:1.6;
+
+}
+
+/* button below the agenda */
+
+.btn-ticket{
+
+display:inline-block;
+
+background:#ef4444;
+
+color:white;
+
+padding:14px 30px;
+
+border-radius:10px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.25s;
+
+box-shadow:0 10px 30px rgba(239,68,68,.35);
+
+}
+
+.btn-ticket:hover{
+
+background:#f87171;
+
+transform:translateY(-2px);
+
+}    
+    
+
+
+.container{
+
+max-width:1100px;
+margin:auto;
+
+}
+
+/* headings */
+
+.section-eyebrow{
+
+text-transform:uppercase;
+letter-spacing:.2em;
+font-size:.75rem;
+color:#3b82f6;
+margin-bottom:14px;
+
+}
+
+.section-title{
+
+font-size:2.6rem;
+font-weight:800;
+margin-bottom:16px;
+color:#0f172a;
+
+}
+
+.section-intro{
+
+max-width:760px;
+margin:auto;
+font-size:1.05rem;
+color:#475569;
+margin-bottom:60px;
+
+}
+
+
+/* mobile */
+
+@media(max-width:640px){
+
+.section-title{
+font-size:2rem;
+}
+
+.section-intro{
+font-size:.95rem;
+}
+
+}    
+.conference-cta{
+
+padding:90px 20px;
+
+background:#ffffff;
+
+text-align:center;
+
+}
+
+.cta-box{
+
+max-width:700px;
+
+margin:auto;
+
+background:#0f172a;
+
+color:white;
+
+padding:45px;
+
+border-radius:16px;
+
+}
+
+.cta-box h3{
+
+font-size:1.6rem;
+
+margin-bottom:10px;
+
+}
+
+.cta-box p{
+
+color:#cbd5f5;
+
+margin-bottom:22px;
+
+font-size:1rem;
+
+line-height:1.6;
+
+}
+
+.btn-ticket{
+
+display:inline-block;
+
+background:#ef4444;
+
+color:white;
+
+padding:12px 28px;
+
+border-radius:10px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.btn-ticket:hover{
+
+background:#f87171;
+
+}    
+    
+.conference-gallery{
+
+padding:110px 20px;
+
+background:#f8fafc;
+
+text-align:center;
+
+}
+
+.container{
+
+max-width:1100px;
+margin:auto;
+
+}
+
+/* headings */
+
+.section-eyebrow{
+
+text-transform:uppercase;
+letter-spacing:.2em;
+font-size:.75rem;
+color:#3b82f6;
+margin-bottom:14px;
+
+}
+
+.section-title{
+
+font-size:2.6rem;
+font-weight:800;
+margin-bottom:16px;
+color:#0f172a;
+
+}
+
+.section-intro{
+
+max-width:760px;
+margin:auto;
+font-size:1.05rem;
+color:#475569;
+margin-bottom:60px;
+
+}
+
+/* grid */
+
+.gallery-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:18px;
+
+margin-bottom:60px;
+
+}
+
+/* images */
+
+.gallery-grid img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:14px;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.gallery-grid img:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+/* CTA */
+
+.gallery-cta{
+
+max-width:650px;
+
+margin:auto;
+
+background:#0f172a;
+
+color:white;
+
+padding:45px;
+
+border-radius:16px;
+
+}
+
+.gallery-cta h3{
+
+font-size:1.6rem;
+
+margin-bottom:10px;
+
+}
+
+.gallery-cta p{
+
+color:#cbd5f5;
+
+margin-bottom:22px;
+
+}
+
+.btn-ticket{
+
+display:inline-block;
+
+background:#ef4444;
+
+color:white;
+
+padding:12px 28px;
+
+border-radius:10px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.btn-ticket:hover{
+
+background:#f87171;
+
+}
+
+/* mobile */
+
+@media(max-width:640px){
+
+.section-title{
+font-size:2rem;
+}
+
+.section-intro{
+font-size:.95rem;
+}
+
+.gallery-grid img{
+height:200px;
+}
+
+}    
+.btn-gallery{
+
+display:inline-block;
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 28px;
+
+border-radius:10px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.btn-gallery:hover{
+
+background:#3b82f6;
+
+transform:translateY(-2px);
+
+}    
+    
+.conference-tickets{
+
+padding:110px 20px;
+
+background:#f8fafc;
+
+text-align:center;
+
+}
+
+.container{
+
+max-width:1100px;
+margin:auto;
+
+}
+
+/* headings */
+
+.section-eyebrow{
+
+text-transform:uppercase;
+letter-spacing:.2em;
+font-size:.75rem;
+color:#3b82f6;
+margin-bottom:14px;
+
+}
+
+.section-title{
+
+font-size:2.6rem;
+font-weight:800;
+margin-bottom:16px;
+color:#0f172a;
+
+}
+
+.section-intro{
+
+max-width:760px;
+margin:auto;
+font-size:1.05rem;
+color:#475569;
+margin-bottom:70px;
+
+}
+
+/* grid */
+
+.tickets-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+/* card */
+
+.ticket-card{
+
+background:white;
+
+border-radius:16px;
+
+padding:40px;
+
+border:1px solid #e2e8f0;
+
+text-align:left;
+
+position:relative;
+
+transition:.25s;
+
+}
+
+.ticket-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 25px 50px rgba(0,0,0,.08);
+
+}
+
+/* featured */
+
+.ticket-card.featured{
+
+border:2px solid #2563eb;
+
+transform:scale(1.02);
+
+}
+
+/* badge */
+
+.ticket-badge{
+
+position:absolute;
+
+top:-12px;
+left:20px;
+
+background:#2563eb;
+
+color:white;
+
+font-size:.7rem;
+
+padding:5px 12px;
+
+border-radius:20px;
+
+}
+
+/* title */
+
+.ticket-card h3{
+
+font-size:1.3rem;
+
+margin-bottom:14px;
+
+color:#0f172a;
+
+}
+
+/* price */
+
+.ticket-price{
+
+font-size:2.3rem;
+
+font-weight:800;
+
+margin-bottom:10px;
+
+}
+
+.ticket-price span{
+
+font-size:.9rem;
+
+font-weight:500;
+
+color:#64748b;
+
+}
+
+/* description */
+
+.ticket-desc{
+
+color:#475569;
+
+margin-bottom:20px;
+
+}
+
+/* features */
+
+.ticket-features{
+
+list-style:none;
+
+padding:0;
+
+margin-bottom:24px;
+
+}
+
+.ticket-features li{
+
+margin-bottom:8px;
+
+color:#334155;
+
+}
+
+/* buttons */
+
+.ticket-btn{
+
+display:block;
+
+text-align:center;
+
+background:#0f172a;
+
+color:white;
+
+padding:12px;
+
+border-radius:10px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.ticket-btn.primary{
+
+background:#ef4444;
+
+}
+
+.ticket-btn:hover{
+
+transform:translateY(-2px);
+
+opacity:.9;
+
+}
+
+/* note */
+
+.ticket-note{
+
+font-size:.85rem;
+
+color:#64748b;
+
+margin-top:10px;
+
+}
+
+.tickets-note{
+
+margin-top:50px;
+
+color:#64748b;
+
+}
+
+/* mobile */
+
+@media(max-width:640px){
+
+.section-title{
+font-size:2rem;
+}
+
+.section-intro{
+font-size:.95rem;
+}
+
+}    
+.ticket-btn.disabled{
+
+background:#cbd5e1;
+
+color:#64748b;
+
+cursor:not-allowed;
+
+box-shadow:none;
+
+}
+
+.ticket-btn.disabled:hover{
+
+transform:none;
+
+opacity:1;
+
+}    
+    
+/* FEATURED CARD */
+
+.ticket-card.featured{
+
+border:2px solid #2563eb;
+
+box-shadow:0 15px 40px rgba(37,99,235,0.15);
+
+transform:scale(1.04);
+
+position:relative;
+
+background:white;
+
+}
+
+/* RIBBON */
+
+.ticket-ribbon{
+
+position:absolute;
+
+top:-12px;
+right:20px;
+
+background:#2563eb;
+
+color:white;
+
+font-size:.75rem;
+
+padding:5px 12px;
+
+border-radius:20px;
+
+font-weight:600;
+
+}
+
+/* URGENCY TEXT */
+
+.ticket-urgency{
+
+font-size:.9rem;
+
+color:#ef4444;
+
+margin-bottom:18px;
+
+font-weight:500;
+
+}
+
+/* CTA BUTTON */
+
+.ticket-btn.primary{
+
+background:#ef4444;
+
+box-shadow:0 10px 30px rgba(239,68,68,.35);
+
+}
+
+.ticket-btn.primary:hover{
+
+background:#f87171;
+
+transform:translateY(-2px);
+
+}    
+.conference-venue{
+
+padding:110px 20px;
+
+background:#ffffff;
+
+text-align:center;
+
+}
+
+.container{
+
+max-width:1100px;
+margin:auto;
+
+}
+
+/* headings */
+
+.section-eyebrow{
+
+text-transform:uppercase;
+letter-spacing:.2em;
+font-size:.75rem;
+color:#3b82f6;
+margin-bottom:14px;
+
+}
+
+.section-title{
+
+font-size:2.6rem;
+font-weight:800;
+margin-bottom:16px;
+color:#0f172a;
+
+}
+
+.section-intro{
+
+max-width:760px;
+margin:auto;
+font-size:1.05rem;
+color:#475569;
+margin-bottom:60px;
+
+}
+
+/* venue info cards */
+
+.venue-info{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-bottom:60px;
+
+}
+
+.venue-item{
+
+background:#f8fafc;
+
+border:1px solid #e2e8f0;
+
+padding:22px;
+
+border-radius:12px;
+
+}
+
+.venue-item h4{
+
+font-size:.9rem;
+
+color:#64748b;
+
+margin-bottom:6px;
+
+}
+
+.venue-item p{
+
+font-weight:600;
+
+color:#0f172a;
+
+}
+
+/* content */
+
+.venue-content{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+
+align-items:center;
+
+text-align:left;
+
+}
+
+/* description */
+
+.venue-description{
+
+color:#475569;
+
+margin-bottom:20px;
+
+line-height:1.6;
+
+}
+
+/* features */
+
+.venue-features{
+
+list-style:none;
+padding:0;
+
+}
+
+.venue-features li{
+
+margin-bottom:10px;
+
+color:#334155;
+
+}
+
+/* map */
+
+.venue-map{
+
+width:100%;
+
+}
+
+.map-placeholder{
+
+background:#f1f5f9;
+
+border:2px dashed #cbd5e1;
+
+height:250px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:14px;
+
+text-align:center;
+
+color:#64748b;
+
+}
+
+/* mobile */
+
+@media(max-width:768px){
+
+.venue-content{
+
+grid-template-columns:1fr;
+
+}
+
+.section-title{
+font-size:2rem;
+}
+
+}    
+.conference-faq{
+
+padding:110px 20px;
+
+background:#f8fafc;
+
+text-align:center;
+
+}
+
+.container{
+
+max-width:900px;
+margin:auto;
+
+}
+
+/* headings */
+
+.section-eyebrow{
+
+text-transform:uppercase;
+letter-spacing:.2em;
+font-size:.75rem;
+color:#3b82f6;
+margin-bottom:14px;
+
+}
+
+.section-title{
+
+font-size:2.6rem;
+font-weight:800;
+margin-bottom:16px;
+color:#0f172a;
+
+}
+
+.section-intro{
+
+max-width:760px;
+margin:auto;
+font-size:1.05rem;
+color:#475569;
+margin-bottom:60px;
+
+}
+
+/* FAQ */
+
+.faq-wrapper{
+
+text-align:left;
+
+}
+
+.faq-item{
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+.faq-question{
+
+width:100%;
+
+background:none;
+
+border:none;
+
+text-align:left;
+
+font-size:1.05rem;
+
+font-weight:600;
+
+padding:18px 0;
+
+cursor:pointer;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+color:#0f172a;
+
+}
+
+.faq-icon{
+
+font-size:1.3rem;
+
+color:#3b82f6;
+
+}
+
+.faq-answer{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:max-height .3s ease;
+
+color:#475569;
+
+padding-right:20px;
+
+}
+
+.faq-answer ul{
+
+margin-top:10px;
+
+padding-left:18px;
+
+}
+
+.faq-answer li{
+
+margin-bottom:6px;
+
+}
+
+/* open state */
+
+.faq-item.active .faq-answer{
+
+max-height:200px;
+
+margin-bottom:16px;
+
+}
+
+.faq-item.active .faq-icon{
+
+transform:rotate(45deg);
+
+}
+
+/* mobile */
+
+@media(max-width:640px){
+
+.section-title{
+font-size:2rem;
+}
+
+.section-intro{
+font-size:.95rem;
+}
+
+}    
+    
+.conference-final-cta{
+
+padding:120px 20px;
+
+background:linear-gradient(135deg,#0f172a,#1e293b);
+
+color:white;
+
+text-align:center;
+
+}
+
+.cta-container{
+
+max-width:800px;
+
+margin:auto;
+
+}
+
+/* title */
+
+.cta-title{
+
+font-size:2.8rem;
+
+font-weight:800;
+
+margin-bottom:18px;
+
+}
+
+/* text */
+
+.cta-text{
+
+font-size:1.1rem;
+
+color:#cbd5f5;
+
+line-height:1.7;
+
+margin-bottom:35px;
+
+}
+
+/* event info */
+
+.cta-event-info{
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+margin-bottom:40px;
+
+font-weight:500;
+
+}
+
+.cta-event-info span{
+
+background:rgba(255,255,255,.08);
+
+padding:10px 16px;
+
+border-radius:8px;
+
+}
+
+/* buttons */
+
+.cta-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+/* primary */
+
+.cta-btn{
+
+padding:14px 28px;
+
+border-radius:10px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.cta-btn.primary{
+
+background:#ef4444;
+
+color:white;
+
+box-shadow:0 10px 30px rgba(239,68,68,.35);
+
+}
+
+.cta-btn.primary:hover{
+
+background:#f87171;
+
+transform:translateY(-2px);
+
+}
+
+/* secondary */
+
+.cta-btn.secondary{
+
+background:rgba(255,255,255,.12);
+
+color:white;
+
+border:1px solid rgba(255,255,255,.25);
+
+}
+
+.cta-btn.secondary:hover{
+
+background:rgba(255,255,255,.2);
+
+}
+
+/* mobile */
+
+@media(max-width:640px){
+
+.cta-title{
+font-size:2rem;
+}
+
+.cta-text{
+font-size:1rem;
+}
+
+}    
+ /* HERO SECTION */
+
+/* HERO SECTION */
+
+.hero{
+
+position:relative;
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:80px 6%;
+
+overflow:hidden;
+
+}
+
+/* VIDEO BACKGROUND */
+
+.hero-video{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+z-index:0;
+
+}
+
+/* DARK OVERLAY */
+
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+180deg,
+rgba(2,6,23,.7),
+rgba(2,6,23,.9)
+);
+
+z-index:1;
+
+}
+
+/* CYBER GRID */
+
+.hero-grid-bg{
+
+position:absolute;
+
+inset:0;
+
+background-image:
+linear-gradient(rgba(59,130,246,.08) 1px, transparent 1px),
+linear-gradient(90deg, rgba(59,130,246,.08) 1px, transparent 1px);
+
+background-size:80px 80px;
+
+z-index:2;
+
+}
+
+/* HERO CONTENT */
+
+.hero-container{
+
+position:relative;
+
+z-index:3;
+
+max-width:1200px;
+width:100%;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+/* GLASS CARD */
+
+.hero-card{
+
+background:rgba(15,23,42,.6);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:18px;
+
+padding:50px;
+
+box-shadow:0 30px 60px rgba(0,0,0,.5);
+
+}
+
+/* TEXT */
+
+.hero-eyebrow{
+
+font-size:12px;
+
+letter-spacing:.2em;
+
+text-transform:uppercase;
+
+color:#60a5fa;
+
+margin-bottom:14px;
+
+}
+
+.hero-title{
+
+font-size:54px;
+
+font-weight:800;
+
+margin-bottom:10px;
+color: white;    
+
+}
+
+.hero-subtitle{
+
+font-size:22px;
+
+color:#cbd5f5;
+
+margin-bottom:16px;
+
+}
+
+.hero-highlight{
+
+font-size:15px;
+
+color:#94a3b8;
+
+margin-bottom:28px;
+
+}
+
+/* META */
+
+.hero-meta{
+
+display:flex;
+flex-wrap:wrap;
+
+gap:22px;
+
+font-size:14px;
+
+color:#cbd5f5;
+
+margin-bottom:28px;
+
+}
+
+.hero-meta span{
+
+display:flex;
+align-items:center;
+gap:8px;
+
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+
+}
+
+.btn-primary{
+
+background:#ef4444;
+
+color:white;
+
+padding:14px 26px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:600;
+
+box-shadow:0 12px 30px rgba(239,68,68,.35);
+
+transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+
+background:#f87171;
+
+}
+
+.btn-outline{
+
+border:1px solid rgba(255,255,255,.25);
+
+padding:14px 26px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+}
+
+.btn-outline:hover{
+
+background:rgba(255,255,255,.08);
+
+}
+
+/* IMAGE COLLAGE */
+
+.hero-collage{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:18px;
+
+}
+
+.hero-collage img{
+
+width:100%;
+height:220px;
+
+object-fit:cover;
+
+border-radius:16px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.5);
+
+transition:.4s;
+
+}
+
+.hero-collage img:hover{
+
+transform:scale(1.05);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero-container{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-meta{
+
+justify-content:center;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-title{
+
+font-size:42px;
+
+}
+
+.hero-card{
+
+padding:40px;
+
+}
+
+.hero-collage{
+
+margin-top:40px;
+
+}
+
+}
+
+
+/* PRIMARY BUTTON */
+
+.btn-ticket{
+
+background:#ef4444;
+
+color:white;
+
+padding:12px 22px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.25s;
+
+box-shadow:0 10px 25px rgba(239,68,68,.35);
+
+}
+
+.btn-ticket:hover{
+
+background:#f87171;
+
+transform:translateY(-2px);
+
+}
+
+
+/* SECONDARY BUTTON */
+
+.btn-agenda{
+
+background:transparent;
+
+border:1px solid rgba(255,255,255,.25);
+
+color:white;
+
+padding:12px 22px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.25s;
+
+}
+
+.btn-agenda:hover{
+
+background:rgba(255,255,255,.1);
+
+}
+
+
+/* MOBILE */
+
+@media (max-width:640px){
+
+.hero-title{
+font-size:2.5rem;
+}
+
+.hero-card{
+padding:40px 30px;
+}
+
+}
+.call-speakers{
+
+padding:110px 20px;
+
+background:#f8fafc;
+
+text-align:center;
+
+}
+
+.container{
+
+max-width:1100px;
+margin:auto;
+
+}
+
+
+/* headings */
+
+.section-eyebrow{
+
+text-transform:uppercase;
+
+letter-spacing:.2em;
+
+font-size:.75rem;
+
+color:#3b82f6;
+
+margin-bottom:14px;
+
+}
+
+.section-title{
+
+font-size:2.6rem;
+
+font-weight:800;
+
+margin-bottom:16px;
+
+color:#0f172a;
+
+}
+
+.section-intro{
+
+max-width:760px;
+
+margin:auto;
+
+font-size:1.05rem;
+
+color:#475569;
+
+margin-bottom:20px;
+
+}
+
+
+/* grid */
+
+.speaker-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:28px;
+
+margin-top:60px;
+
+text-align:left;
+
+}
+
+
+/* block */
+
+.speaker-block{
+
+background:white;
+
+padding:28px;
+
+border-radius:16px;
+
+border:1px solid #e2e8f0;
+
+transition:.25s;
+
+}
+
+.speaker-block:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+}
+
+
+/* block title */
+
+.speaker-block h3{
+
+font-size:1.1rem;
+
+margin-bottom:12px;
+
+color:#0f172a;
+
+}
+
+
+/* list */
+
+.speaker-block ul{
+
+padding-left:18px;
+
+color:#475569;
+
+}
+
+.speaker-block li{
+
+margin-bottom:8px;
+
+}
+
+
+/* CTA */
+
+.speaker-cta{
+
+margin-top:60px;
+
+}
+
+
+.btn-speaker{
+
+display:inline-block;
+
+background:#2563eb;
+
+color:white;
+
+padding:14px 30px;
+
+border-radius:10px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.25s;
+
+box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+.btn-speaker:hover{
+
+background:#3b82f6;
+
+transform:translateY(-2px);
+
+}
+
+
+/* deadline */
+
+.speaker-deadline{
+
+margin-top:12px;
+
+font-size:.9rem;
+
+color:#64748b;
+
+}
+
+
+/* mobile */
+
+@media(max-width:640px){
+
+.section-title{
+font-size:2rem;
+}
+
+.section-intro{
+font-size:.95rem;
+}
+
+}    
+
+
+.container{
+
+max-width:1100px;
+margin:auto;
+
+}
+
+/* headings */
+
+.section-eyebrow{
+
+text-transform:uppercase;
+
+letter-spacing:.2em;
+
+font-size:.75rem;
+
+color:#3b82f6;
+
+margin-bottom:14px;
+
+}
+
+.section-title{
+
+font-size:2.6rem;
+
+font-weight:800;
+
+margin-bottom:16px;
+
+color:#0f172a;
+
+}
+
+.section-intro{
+
+max-width:760px;
+
+margin:auto;
+
+font-size:1.05rem;
+
+color:#475569;
+
+margin-bottom:18px;
+
+line-height:1.7;
+
+}
+
+
+/* grid */
+
+.sponsor-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:28px;
+
+margin-top:60px;
+
+text-align:left;
+
+}
+
+
+/* card */
+
+.sponsor-card{
+
+background:#f8fafc;
+
+padding:28px;
+
+border-radius:16px;
+
+border:1px solid #e2e8f0;
+
+transition:.25s;
+
+}
+
+.sponsor-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+}
+
+
+/* icon */
+
+.sponsor-icon{
+
+width:46px;
+
+height:46px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:12px;
+
+background:#e0ecff;
+
+color:#2563eb;
+
+font-size:18px;
+
+margin-bottom:14px;
+
+}
+
+
+/* title */
+
+.sponsor-card h3{
+
+font-size:1.1rem;
+
+margin-bottom:10px;
+
+color:#0f172a;
+
+}
+
+
+/* text */
+
+.sponsor-card p{
+
+font-size:.95rem;
+
+color:#475569;
+
+line-height:1.6;
+
+}
+
+
+/* sponsor types */
+
+.sponsor-types{
+
+margin-top:60px;
+
+}
+
+.sponsor-types h3{
+
+font-size:1.2rem;
+
+margin-bottom:12px;
+
+}
+
+.sponsor-types ul{
+
+list-style:none;
+
+padding:0;
+
+}
+
+.sponsor-types li{
+
+margin-bottom:6px;
+
+color:#475569;
+
+}
+
+.sponsor-note{
+
+margin-top:10px;
+
+font-size:.9rem;
+
+color:#64748b;
+
+}
+
+
+/* CTA */
+
+.sponsor-cta{
+
+margin-top:40px;
+
+}
+
+.btn-sponsor{
+
+display:inline-block;
+
+background:#2563eb;
+
+color:white;
+
+padding:14px 30px;
+
+border-radius:10px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.25s;
+
+box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+.btn-sponsor:hover{
+
+background:#3b82f6;
+
+transform:translateY(-2px);
+
+}
+
+.sponsor-contact{
+
+margin-top:12px;
+
+font-size:.9rem;
+
+color:#64748b;
+
+}
+
+
+/* mobile */
+
+@media(max-width:640px){
+
+.section-title{
+font-size:2rem;
+}
+
+.section-intro{
+font-size:.95rem;
+}
+
+}    
+.community-trust{
+
+padding:110px 20px;
+
+background:#f8fafc;
+
+text-align:center;
+
+}
+
+.container{
+
+max-width:1100px;
+margin:auto;
+
+}
+
+/* headings */
+
+.section-eyebrow{
+
+text-transform:uppercase;
+letter-spacing:.2em;
+font-size:.75rem;
+color:#3b82f6;
+margin-bottom:14px;
+
+}
+
+.section-title{
+
+font-size:2.6rem;
+font-weight:800;
+margin-bottom:16px;
+color:#0f172a;
+
+}
+
+.section-intro{
+
+max-width:760px;
+margin:auto;
+font-size:1.05rem;
+color:#475569;
+margin-bottom:18px;
+line-height:1.7;
+
+}
+
+
+/* cards */
+
+.community-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:28px;
+margin-top:60px;
+text-align:left;
+
+}
+
+.community-card{
+
+background:white;
+padding:28px;
+border-radius:16px;
+border:1px solid #e2e8f0;
+transition:.25s;
+
+}
+
+.community-card:hover{
+
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+}
+
+.community-card h3{
+
+font-size:1.1rem;
+margin-bottom:10px;
+color:#0f172a;
+
+}
+
+.community-card p{
+
+font-size:.95rem;
+color:#475569;
+line-height:1.6;
+
+}
+
+
+/* logos */
+
+.community-logos{
+
+margin-top:70px;
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+align-items:center;
+
+}
+
+.community-logos img{
+
+height:38px;
+opacity:.65;
+filter:grayscale(100%);
+transition:.25s;
+
+}
+
+.community-logos img:hover{
+
+opacity:1;
+filter:grayscale(0);
+
+}
+
+
+/* note */
+
+.community-note{
+
+margin-top:25px;
+color:#64748b;
+font-size:.95rem;
+
+}
+
+
+/* mobile */
+
+@media(max-width:640px){
+
+.section-title{
+font-size:2rem;
+}
+
+.section-intro{
+font-size:.95rem;
+}
+
+}    
+
+
+.conference-experience{
+padding:110px 20px;
+background:#f8fafc;
+text-align:center;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+}
+
+/* headings */
+
+.section-eyebrow{
+text-transform:uppercase;
+letter-spacing:.2em;
+font-size:.75rem;
+color:#3b82f6;
+margin-bottom:14px;
+}
+
+.section-title{
+font-size:2.6rem;
+font-weight:800;
+margin-bottom:16px;
+color:#0f172a;
+}
+
+.section-intro{
+max-width:760px;
+margin:auto;
+font-size:1.05rem;
+color:#475569;
+line-height:1.7;
+margin-bottom:20px;
+}
+
+
+/* grid */
+
+.experience-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
+margin-top:60px;
+text-align:left;
+}
+
+
+/* card */
+
+.experience-card{
+background:white;
+padding:32px;
+border-radius:16px;
+border:1px solid #e2e8f0;
+transition:.25s;
+position:relative;
+}
+
+.experience-card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 45px rgba(0,0,0,.08);
+border-color:#3b82f6;
+}
+
+
+/* icon */
+
+.experience-icon{
+width:48px;
+height:48px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:12px;
+background:#e0ecff;
+color:#2563eb;
+font-size:18px;
+margin-bottom:16px;
+transition:.25s;
+}
+
+.experience-card:hover .experience-icon{
+background:#2563eb;
+color:white;
+box-shadow:0 10px 20px rgba(37,99,235,.35);
+}
+
+
+/* text */
+
+.experience-card h3{
+font-size:1.1rem;
+margin-bottom:10px;
+color:#0f172a;
+}
+
+.experience-card p{
+font-size:.95rem;
+color:#475569;
+line-height:1.6;
+}
+
+
+/* responsive */
+
+@media(max-width:900px){
+.experience-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:640px){
+.experience-grid{
+grid-template-columns:1fr;
+}
+
+.section-title{
+font-size:2rem;
+}
+
+.section-intro{
+font-size:.95rem;
+}
+}
+    
+.become-sponsor{
+padding:120px 20px;
+background:#f8fafc;
+text-align:center;
+}
+
+.become-sponsor .container{
+max-width:1100px;
+margin:auto;
+}
+
+/* BENEFIT GRID */
+
+.sponsor-benefits{
+margin-top:60px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
+}
+
+/* BENEFIT CARD */
+
+.benefit-card{
+background:white;
+padding:32px;
+border-radius:16px;
+border:1px solid #e5e7eb;
+text-align:left;
+transition:.25s;
+}
+
+.benefit-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+border-color:#3b82f6;
+}
+
+/* ICON */
+
+.benefit-icon{
+width:48px;
+height:48px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:12px;
+background:#e0ecff;
+color:#2563eb;
+font-size:18px;
+margin-bottom:16px;
+transition:.25s;
+}
+
+.benefit-card:hover .benefit-icon{
+background:#2563eb;
+color:white;
+box-shadow:0 10px 20px rgba(37,99,235,.35);
+}
+
+/* TEXT */
+
+.benefit-card h3{
+font-size:1.1rem;
+margin-bottom:10px;
+color:#0f172a;
+}
+
+.benefit-card p{
+font-size:.95rem;
+color:#475569;
+line-height:1.6;
+}
+
+/* TYPES SECTION */
+
+.sponsor-types{
+margin-top:90px;
+}
+
+.types-title{
+font-size:1.4rem;
+font-weight:700;
+margin-bottom:30px;
+}
+
+.types-grid{
+display:flex;
+justify-content:center;
+gap:22px;
+flex-wrap:wrap;
+}
+
+/* TYPE CARDS */
+
+.type-card{
+padding:18px 28px;
+border-radius:10px;
+font-weight:600;
+font-size:.95rem;
+border:1px solid #e2e8f0;
+background:white;
+}
+
+/* PLATINUM */
+
+.type-card.platinum{
+border-color:#cbd5f5;
+background:#f1f5f9;
+}
+
+/* GOLD */
+
+.type-card.gold{
+border-color:#fde68a;
+background:#fff8e6;
+}
+
+/* COMMUNITY */
+
+.type-card.community{
+border-color:#dbeafe;
+background:#eff6ff;
+}
+
+.sponsor-note{
+margin-top:16px;
+color:#64748b;
+font-size:.9rem;
+}
+
+/* CTA */
+
+.sponsor-cta{
+margin-top:80px;
+background:white;
+padding:40px;
+border-radius:16px;
+border:1px solid #e2e8f0;
+}
+
+.sponsor-cta h3{
+margin-bottom:10px;
+font-size:1.4rem;
+}
+
+.sponsor-cta p{
+color:#64748b;
+margin-bottom:16px;
+}
+
+.btn-sponsor{
+display:inline-block;
+padding:12px 24px;
+background:#2563eb;
+color:white;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:.25s;
+}
+
+.btn-sponsor:hover{
+background:#1d4ed8;
+transform:translateY(-2px);
+}
+
+.sponsor-contact{
+margin-top:12px;
+font-size:.9rem;
+color:#64748b;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.sponsor-benefits{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+
+.conference-highlights{
+padding:120px 20px;
+background:#f8fafc;
+}
+
+.conference-highlights .container{
+max-width:1100px;
+margin:auto;
+}
+
+.section-eyebrow{
+text-align:center;
+color:#2563eb;
+font-size:13px;
+letter-spacing:2px;
+text-transform:uppercase;
+margin-bottom:10px;
+}
+
+.section-title{
+text-align:center;
+font-size:2.4rem;
+margin-bottom:16px;
+}
+
+.section-intro{
+text-align:center;
+max-width:720px;
+margin:0 auto 70px;
+color:#64748b;
+font-size:1rem;
+line-height:1.6;
+}
+
+
+/* ROW */
+
+.highlight-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:60px;
+margin-bottom:90px;
+}
+
+.highlight-row.reverse{
+direction:rtl;
+}
+
+.highlight-row.reverse .highlight-text{
+direction:ltr;
+}
+
+
+/* IMAGE */
+
+.highlight-image img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:14px;
+}
+
+
+/* TEXT */
+
+.highlight-text{
+position:relative;
+}
+
+.highlight-number{
+font-size:70px;
+font-weight:700;
+color:#e2e8f0;
+position:absolute;
+top:-40px;
+left:-10px;
+z-index:0;
+}
+
+.highlight-text h3{
+font-size:1.35rem;
+margin-bottom:12px;
+position:relative;
+z-index:1;
+}
+
+.highlight-text p{
+color:#475569;
+font-size:.96rem;
+line-height:1.6;
+position:relative;
+z-index:1;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.highlight-row{
+grid-template-columns:1fr;
+gap:30px;
+}
+
+.highlight-row.reverse{
+direction:ltr;
+}
+
+.highlight-number{
+position:relative;
+top:auto;
+left:auto;
+display:block;
+margin-bottom:10px;
+}
+
+.highlight-image img{
+height:240px;
+}
+
+}
+/* EVENT INFO */
+
+.agenda-event-info{
+background:#f1f5f9;
+border:1px solid #e2e8f0;
+padding:28px;
+border-radius:12px;
+margin:40px 0 60px;
+text-align:center;
+}
+
+.agenda-event-title{
+font-size:1.25rem;
+font-weight:600;
+margin-bottom:14px;
+}
+
+.agenda-meta{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+font-size:.95rem;
+color:#334155;
+margin-bottom:10px;
+}
+
+.agenda-meta span{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.agenda-meta i{
+color:#2563eb;
+}
+
+.agenda-note{
+font-size:.85rem;
+color:#64748b;
+margin-top:10px;
+}    
+
+.conference-overview{
+padding:120px 20px;
+background:#ffffff;
+}
+
+ .overview-section{
+padding:80px 20px;
+background:#f8fafc;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+/* layout */
+
+.overview-wrapper{
+display:grid;
+grid-template-columns:1.1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+/* collage */
+
+.media-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-auto-rows:180px;
+gap:14px;
+}
+
+.media-grid img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:14px;
+}
+
+/* VIDEO TILE */
+
+.video-tile{
+position:relative;
+border-radius:14px;
+overflow:hidden;
+
+/* medium portrait */
+grid-row:span 2;
+aspect-ratio:3 / 4;
+}
+
+.video-thumb{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.overview-video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+display:none;
+}
+
+/* PLAY BUTTON */
+
+.video-play{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:65px;
+height:65px;
+border-radius:50%;
+border:none;
+background:rgba(0,0,0,.6);
+color:#fff;
+font-size:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+transition:.3s;
+}
+
+.video-play:hover{
+background:#2563eb;
+transform:translate(-50%,-50%) scale(1.1);
+}
+
+/* content */
+
+.section-eyebrow{
+font-size:12px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+color:#2563eb;
+margin-bottom:10px;
+}
+
+.section-title{
+font-size:34px;
+margin-bottom:18px;
+}
+
+.overview-text{
+color:#475569;
+line-height:1.7;
+margin-bottom:16px;
+}
+
+/* read more */
+
+.overview-hidden{
+display:none;
+}
+
+.overview-hidden.show{
+display:block;
+}
+
+.overview-readmore{
+margin-top:10px;
+padding:10px 20px;
+border:none;
+background:#2563eb;
+color:#fff;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* responsive */
+
+@media (max-width:900px){
+
+.overview-wrapper{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.media-grid{
+grid-auto-rows:140px;
+}
+
+}   
+
+.conference-topics{
+padding:110px 20px;
+background:#ffffff;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+text-align:center;
+}
+
+/* GRID */
+
+.topics-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+
+gap:50px;
+
+position:relative;
+
+margin-top:60px;
+
+}
+
+/* CONNECTING GRAPH LINES */
+
+.topics-grid::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+right:0;
+
+top:50%;
+
+height:2px;
+
+background:#e2e8f0;
+
+transform:translateY(-50%);
+
+}
+
+.topics-grid::before{
+
+content:"";
+
+position:absolute;
+
+left:8%;
+right:8%;
+
+top:50%;
+
+height:2px;
+
+background:linear-gradient(
+90deg,
+transparent,
+#e2e8f0,
+transparent
+);
+
+transform:translateY(-50%);
+
+}
+/* CARD */
+
+.topic-card{
+
+background:white;
+
+padding:28px;
+
+border-radius:14px;
+
+border:1px solid #e2e8f0;
+
+text-align:left;
+
+transition:0.3s;
+
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+/* HOVER */
+
+.topic-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+border-color:#2563eb;
+
+}
+
+/* ICON */
+
+.topic-icon{
+
+width:46px;
+
+height:46px;
+
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:10px;
+
+color:white;
+
+font-size:18px;
+
+margin-bottom:14px;
+
+box-shadow:0 8px 18px rgba(37,99,235,.35);
+
+}
+
+/* TEXT */
+
+.topic-card h3{
+
+font-size:17px;
+
+margin-bottom:6px;
+
+}
+
+.topic-card p{
+
+font-size:14px;
+
+color:#475569;
+
+line-height:1.6;
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.topics-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.topics-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.topics-grid::before,
+.topics-grid::after{
+
+display:none;
+
+}
+
+}
+/* ================= ALTSECCON STATS ================= */
+
+.altseccon-stats{
+padding:100px 20px;
+background:#ffffff;
+font-family:Inter, sans-serif;
+}
+
+.altseccon-stats .container{
+max-width:1200px;
+margin:auto;
+}
+
+.stats-title{
+text-align:center;
+font-size:40px;
+font-weight:700;
+margin-bottom:70px;
+color:#0f172a;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+.stat-card{
+background:#ffffff;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:40px 30px;
+text-align:center;
+transition:all .35s ease;
+position:relative;
+}
+
+.stat-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+border-color:#2563eb;
+}
+
+.stat-icon{
+margin-bottom:20px;
+display:flex;
+justify-content:center;
+}
+
+.stat-icon svg{
+width:32px;
+height:32px;
+stroke:#2563eb;
+}
+
+.stat-number{
+font-size:34px;
+font-weight:700;
+color:#111827;
+margin-bottom:6px;
+}
+
+.stat-label{
+font-size:16px;
+font-weight:600;
+margin-bottom:6px;
+color:#111827;
+}
+
+.stat-desc{
+font-size:14px;
+color:#6b7280;
+}
+
+/* Tablet */
+
+@media(max-width:900px){
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:520px){
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+.stats-title{
+font-size:30px;
+}
+
+}
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: none;
+  background: transparent;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease, background 0.25s ease;
+}
+
+.site-header.is-visible {
+  display: block;
+  transform: translateY(0);
+}
+
+.site-header.is-solid {
+  background: rgba(43, 43, 80, 0.95);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.logo a{
+     color: white;
+     text-decoration: none;
+    }    
+.nav a {
+  margin-left: 28px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  text-decoration: none;
+  position: relative;
+  opacity: 0.85;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-red);
+  transition: width 0.25s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Disable desktop header on mobile */
+@media (max-width: 768px) {
+  .site-header {
+    display: none !important;
+  }
+}    
+    
+/* ===== SECTION SUB MENU ===== */
+
+.section-nav{
+  width:100%;
+  background:#fff;
+  border-bottom:1px solid #e5e7eb;
+  position:sticky;
+  top:50px;
+  z-index:900;
+  transition:top .3s ease;
+}
+
+
+.section-nav-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:14px 20px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+
+.section-nav-container::-webkit-scrollbar{
+  display:none;
+}
+
+.section-nav a{
+  font-size:14px;
+  color:#374151;
+  text-decoration:none;
+  font-weight:500;
+  position:relative;
+  white-space:nowrap;
+  padding-bottom:6px;
+}
+
+.section-nav a:hover{
+  color:#2563eb;
+}
+
+.section-nav a.active{
+  color:#2563eb;
+}
+
+.section-nav a.active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-2px;
+  width:100%;
+  height:2px;
+  background:#2563eb;
+}  
+.social-connect{
+padding:90px 20px;
+background:#0f172a;
+text-align:center;
+color:white;
+}
+
+.social-connect .container{
+max-width:900px;
+margin:auto;
+}
+
+.section-eyebrow{
+text-transform:uppercase;
+letter-spacing:.2em;
+font-size:12px;
+color:#3b82f6;
+margin-bottom:10px;
+}
+
+.section-title{
+font-size:32px;
+margin-bottom:12px;
+}
+
+.section-intro{
+color:#94a3b8;
+margin-bottom:40px;
+}
+
+.social-icons{
+display:flex;
+justify-content:center;
+gap:24px;
+}
+
+.social{
+width:56px;
+height:56px;
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:12px;
+
+border:1px solid rgba(255,255,255,.15);
+
+color:white;
+
+transition:.3s;
+}
+
+.social svg{
+width:22px;
+height:22px;
+}
+
+.social:hover{
+transform:translateY(-4px);
+}
+
+.social.twitter:hover{
+background:#1DA1F2;
+border-color:#1DA1F2;
+}
+
+.social.linkedin:hover{
+background:#0A66C2;
+border-color:#0A66C2;
+}
+
+.social.discord:hover{
+background:#5865F2;
+border-color:#5865F2;
+}    
+</style>
+
+</head>
+
+
+<body>
+<header id="stickyHeader" class="site-header">
+  <div class="header-inner">
+      <div class="logo"><a href="https://redteamverse.github.io/red-team-training/altseccon26-v1.html"> AltSecCON</a></div>
+
+    <nav class="nav">
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">Training</a>     
+      <a href="#event">Schedule</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>
+      <a href="#AltSecCON-2026">Tickets</a>
+      <a href="#contact">Venue</a>
+      <a href="#contact">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>      
+
+<section class="hero">
+
+<!-- VIDEO -->
+
+<video class="hero-video" autoplay muted loop playsinline>
+
+<source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm" type="video/webm">
+
+</video>
+
+<div class="hero-overlay"></div>
+
+
+
+
+<div class="hero-container">
+
+
+<!-- HERO CARD -->
+
+<div class="hero-card">
+
+<p class="hero-eyebrow">
+AltSecCON CONFERENCE DAY
+</p>
+
+<h1 class="hero-title">
+AltSecCON
+</h1>
+
+<p class="hero-subtitle">
+Practitioner Conference
+</p>
+
+<p class="hero-highlight">
+Technical talks, practitioner insights, and community discussions.
+</p>
+
+<div class="hero-meta">
+
+<span>
+<i class="fa-solid fa-calendar-days"></i>
+3 November 2026
+</span>
+
+<span>
+<i class="fa-solid fa-location-dot"></i>
+Bengaluru, India
+</span>
+
+<span>
+<i class="fa-solid fa-users"></i>
+Security professionals & researchers
+</span>
+
+</div>
+
+<div class="hero-buttons">
+
+<a href="#" class="btn-primary">
+Get Conference Ticket
+</a>
+
+<a href="#" class="btn-outline">
+View Conference Agenda
+</a>
+
+</div>
+
+</div>
+
+
+<!-- IMAGE COLLAGE -->
+
+<div class="hero-collage">
+
+<img src="https://redteamverse.github.io/red-team-training/images/c1.webp">
+
+<img src="https://redteamverse.github.io/red-team-training/images/c2.webp">
+
+<img src="https://redteamverse.github.io/red-team-training/images/c4.webp">
+
+<img src="https://redteamverse.github.io/red-team-training/images/c5.webp">
+
+</div>
+
+
+</div>
+
+</section>
+
+<nav class="section-nav" id="sectionNav">
+  <div class="section-nav-container">
+
+    <a href="#overview">Overview</a>
+    <a href="#stats">Stats</a>
+     <a href="#highlights">Highlights</a>  
+    <a href="#community">Community</a>
+    <a href="#topics">Topics</a>
+    <a href="#speakers">Speakers</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#sponsors">Sponsors</a>
+    <a href="#audience">Audience</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#tickets">Pass</a>
+    <a href="#venue">Venue</a>
+    <a href="#faq">FAQs</a>
+
+  </div>
+</nav>    
+<section class="overview-section" id="overview">
+
+<div class="container overview-wrapper">
+
+<!-- LEFT COLLAGE -->
+
+<div class="overview-media">
+
+<div class="media-grid">
+
+<img src="https://redteamverse.github.io/red-team-training/images/c1.webp" alt="AltSecCON session">
+
+<img src="https://redteamverse.github.io/red-team-training/images/c2.webp" alt="AltSecCON training">
+
+<!-- VIDEO TILE -->
+
+<div class="video-tile">
+
+<img class="video-thumb"
+src="https://redteamverse.github.io/red-team-training/images/new-1.webp"
+alt="AltSecCON video">
+
+<button class="video-play">
+<i class="fa-solid fa-play"></i>
+</button>
+
+<video class="overview-video" playsinline preload="metadata">
+<source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm" type="video/webm">
+</video>
+
+</div>
+
+<img src="https://redteamverse.github.io/red-team-training/images/c4.webp" alt="AltSecCON networking">
+
+</div>
+
+</div>
+
+    
+<!-- RIGHT CONTENT -->
+
+<div class="overview-content" id="overview">
+
+<p class="section-eyebrow">
+Conference Overview
+</p>
+
+<h2 class="section-title">
+AltSecCON Practitioner Conference
+</h2>
+
+<p class="overview-text">
+AltSecCON Practitioner Conference is a one-day cybersecurity event bringing together security practitioners, researchers, and professionals to discuss offensive security techniques, enterprise defense strategies, and real-world security challenges.
+</p>
+
+<p class="overview-text">
+The conference focuses on technical talks, practitioner insights, and community interaction within the cybersecurity ecosystem.
+</p>
+
+<div class="overview-hidden">
+
+<p>
+Attendees will hear from experienced speakers sharing research findings, Red Team experiences, and practical security lessons learned from enterprise environments.
+</p>
+
+<p>
+The event also provides opportunities for networking, discussion, and collaboration among cybersecurity professionals across India.
+</p>
+
+</div>
+
+<button class="overview-readmore">
+Read More
+</button>
+
+</div>
+
+</div>
+
+</section>
+<section class="altseccon-stats" id="stats">
+
+<div class="container">
+
+<h2 class="stats-title">AltSecCON Conference </h2>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<div class="stat-icon">
+<i data-lucide="calendar-days"></i>
+</div>
+<h3 class="stat-number" data-target="1">1</h3>
+<p class="stat-label">Day</p>
+<p class="stat-desc">Practitioner Conference</p>
+</div>
+
+<div class="stat-card">
+<div class="stat-icon">
+<i data-lucide="mic"></i>
+</div>
+<h3 class="stat-number" data-target="10" data-plus="true">10+</h3>
+<p class="stat-label">Speakers</p>
+<p class="stat-desc">Security Experts & Researchers</p>
+</div>
+
+<div class="stat-card">
+<div class="stat-icon">
+<i data-lucide="presentation"></i>
+</div>
+<h3 class="stat-number" data-target="8" data-plus="true">8+</h3>
+<p class="stat-label">Technical Talks</p>
+<p class="stat-desc">Offensive Security Insights</p>
+</div>
+
+<div class="stat-card">
+<div class="stat-icon">
+<i data-lucide="users"></i>
+</div>
+<h3 class="stat-number">Community</h3>
+<p class="stat-label">Networking</p>
+<p class="stat-desc">Cybersecurity Professionals</p>
+</div>
+
+</div>
+
+</div>
+
+</section>    
+<section class="conference-highlights" id="highlights">
+
+<div class="container">
+
+<p class="section-eyebrow">Conference Highlights</p>
+
+<h2 class="section-title">Why Attend AltSecCON</h2>
+
+<p class="section-intro">
+AltSecCON Practitioner Conference brings together cybersecurity professionals,
+researchers, and Red Team practitioners for a focused day of technical discussions,
+practitioner insights, and community networking.
+</p>
+
+
+<!-- 01 -->
+
+<div class="highlight-row">
+
+<div class="highlight-image">
+<img src="https://redteamverse.github.io/red-team-training/images/new-1.webp">
+</div>
+
+<div class="highlight-text">
+
+<span class="highlight-number">01</span>
+
+<h3>Technical Talks</h3>
+
+<p>
+Learn from experienced security practitioners presenting real-world offensive
+security techniques, research findings, and enterprise attack scenarios.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 02 -->
+
+<div class="highlight-row reverse">
+
+<div class="highlight-image">
+<img src="https://redteamverse.github.io/red-team-training/images/new-2.webp">
+</div>
+
+<div class="highlight-text">
+
+<span class="highlight-number">02</span>
+
+<h3>Expert Speakers</h3>
+
+<p>
+Hear from industry professionals, Red Team operators, and security researchers
+sharing practical knowledge from real engagements and security research.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 03 -->
+
+<div class="highlight-row">
+
+<div class="highlight-image">
+<img src="https://redteamverse.github.io/red-team-training/images/new-3.webp">
+</div>
+
+<div class="highlight-text">
+
+<span class="highlight-number">03</span>
+
+<h3>Security Research Insights</h3>
+
+<p>
+Explore emerging attack techniques, vulnerability research, and modern
+offensive security approaches discussed by the cybersecurity community.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 04 -->
+
+<div class="highlight-row reverse">
+
+<div class="highlight-image">
+<img src="https://redteamverse.github.io/red-team-training/images/new-4.webp">
+</div>
+
+<div class="highlight-text">
+
+<span class="highlight-number">04</span>
+
+<h3>Panel Discussions</h3>
+
+<p>
+Participate in discussions with experts exploring enterprise security
+challenges, modern threats, and strategies for improving defensive capabilities.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 05 -->
+
+<div class="highlight-row">
+
+<div class="highlight-image">
+<img src="https://redteamverse.github.io/red-team-training/images/new-5.webp">
+</div>
+
+<div class="highlight-text">
+
+<span class="highlight-number">05</span>
+
+<h3>Community Networking</h3>
+
+<p>
+Connect with cybersecurity professionals from across India including
+penetration testers, security engineers, researchers, and students.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 06 -->
+
+<div class="highlight-row reverse">
+
+<div class="highlight-image">
+<img src="https://redteamverse.github.io/red-team-training/images/new-6.webp">
+</div>
+
+<div class="highlight-text">
+
+<span class="highlight-number">06</span>
+
+<h3>Real-World Case Studies</h3>
+
+<p>
+Understand practical security challenges and lessons learned from
+real enterprise environments and security assessments.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 07 -->
+
+<div class="highlight-row">
+
+<div class="highlight-image">
+<img src="https://redteamverse.github.io/red-team-training/images/new-7.webp">
+</div>
+
+<div class="highlight-text">
+
+<span class="highlight-number">07</span>
+
+<h3>Knowledge Exchange</h3>
+
+<p>
+Engage with peers to discuss new security ideas, share experiences,
+and learn from the wider cybersecurity ecosystem.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 08 -->
+
+<div class="highlight-row reverse">
+
+<div class="highlight-image">
+<img src="https://redteamverse.github.io/red-team-training/images/new-8.webp">
+</div>
+
+<div class="highlight-text">
+
+<span class="highlight-number">08</span>
+
+<h3>Food & Refreshments</h3>
+
+<p>
+Enjoy coffee breaks and lunch while interacting with speakers
+and attendees creating informal networking opportunities.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+</section>    
+
+<section class="community-trust" id="community">
+
+<div class="container">
+
+<p class="section-eyebrow">
+Community
+</p>
+
+<h2 class="section-title">
+Trusted by the Cybersecurity Community
+</h2>
+
+<p class="section-intro">
+AltSecCON brings together members of the cybersecurity community including Red Team practitioners, penetration testers, security engineers, researchers, and students interested in offensive security and enterprise defense.
+</p>
+
+<div class="community-grid">
+
+<!-- CARD -->
+
+<div class="community-card">
+
+<h3>Security Practitioners</h3>
+
+<p>
+Red Team operators and penetration testers sharing real-world offensive security experiences and insights.
+</p>
+
+</div>
+
+
+<div class="community-card">
+
+<h3>Security Engineers</h3>
+
+<p>
+Professionals responsible for securing enterprise systems and improving organizational defense strategies.
+</p>
+
+</div>
+
+
+<div class="community-card">
+
+<h3>Security Researchers</h3>
+
+<p>
+Researchers exploring vulnerabilities, attack techniques, and emerging threats in modern technology environments.
+</p>
+
+</div>
+
+
+<div class="community-card">
+
+<h3>Cybersecurity Community</h3>
+
+<p>
+Students, enthusiasts, and professionals engaging with the broader cybersecurity ecosystem.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- COMMUNITY LOGOS -->
+
+<div class="community-logos">
+
+<img src="https://static.wixstatic.com/media/470c31_f0d7f2f030b54a7ead4b4ba7ceba80c5~mv2.png/v1/fill/w_111,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ibm.png">
+
+<img src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png">
+
+<img src="https://static.wixstatic.com/media/470c31_7fafa23a6e154914b4c8c9f527a0d8f0~mv2.png/v1/fill/w_210,h_55,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/offensive.png">
+
+<img src="https://static.wixstatic.com/media/470c31_a8f72ea2af084571b3646b13855f3ba0~mv2.png/v1/fill/w_162,h_29,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sony.png">
+
+</div>
+
+
+<p class="community-note">
+AltSecCON fosters collaboration and knowledge sharing within the cybersecurity community.
+</p>
+
+</div>
+
+</section>        
+
+<section class="conference-topics" id="topics">
+
+<div class="container">
+
+<p class="section-eyebrow">Technical Focus</p>
+
+<h2 class="section-title">Conference Topics</h2>
+
+<p class="section-intro">
+The AltSecCON Practitioner Conference features technical talks focused on enterprise attack techniques, Red Team operations, and real-world security challenges.
+</p>
+
+<div class="topics-grid">
+
+<div class="topic-card">
+<div class="topic-icon"><i class="fa-solid fa-network-wired"></i></div>
+<h3>Active Directory Attacks</h3>
+<p>Privilege escalation and enterprise attack paths.</p>
+</div>
+
+<div class="topic-card">
+<div class="topic-icon"><i class="fa-solid fa-cloud"></i></div>
+<h3>Azure & Cloud Attacks</h3>
+<p>Identity abuse and cloud privilege escalation.</p>
+</div>
+
+<div class="topic-card">
+<div class="topic-icon"><i class="fa-solid fa-bullseye"></i></div>
+<h3>Red Team Operations</h3>
+<p>Adversary simulation techniques and engagements.</p>
+</div>
+
+<div class="topic-card">
+<div class="topic-icon"><i class="fa-solid fa-shield-halved"></i></div>
+<h3>Detection Strategies</h3>
+<p>Enterprise detection engineering and defense.</p>
+</div>
+
+<div class="topic-card">
+<div class="topic-icon"><i class="fa-solid fa-flask"></i></div>
+<h3>Security Research</h3>
+<p>Vulnerabilities and exploitation techniques.</p>
+</div>
+
+<div class="topic-card">
+<div class="topic-icon"><i class="fa-solid fa-chart-line"></i></div>
+<h3>Case Studies</h3>
+<p>Lessons learned from real enterprise incidents.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="conference-speakers" id="speakers">
+
+<div class="container">
+
+<p class="section-eyebrow">
+Conference Speakers
+</p>
+
+<h2 class="section-title">
+Meet the Speakers
+</h2>
+
+<p class="section-intro">
+AltSecCON speakers include experienced Red Team practitioners, security researchers, and industry professionals who work on real-world offensive security engagements. They bring practical insights from enterprise security operations, Red Team exercises, and security research.
+</p>
+
+
+<div class="speakers-grid">
+
+<!-- Speaker 1 -->
+
+<div class="speaker-card">
+
+<div class="speaker-image">
+<img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" alt="Nikhil Mittal">
+</div>
+
+<h3>Nikhil Mittal</h3>
+<p class="speaker-role">Founder</p>
+<span class="speaker-company">Altered Security</span>
+
+<div class="speaker-social">
+<a href="#" target="_blank" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.24 8.25H4.7V24H.24V8.25zM8.34 8.25H12.6V10.4H12.66C13.25 9.3 14.68 8.15 16.95 8.15 21.54 8.15 22.4 11.1 22.4 15.02V24H17.94V16.15C17.94 14.23 17.9 11.75 15.25 11.75 12.55 11.75 12.14 13.83 12.14 16.02V24H8.34V8.25z"/>
+</svg>
+</a>
+
+<a href="#" target="_blank" aria-label="X">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M18.9 1H22L14.7 9.35 23.3 23H16.4L11 15.2 4.2 23H1L8.7 14.2 0.5 1H7.6L12.5 7.9 18.9 1z"/>
+</svg>
+</a>
+</div>
+
+</div>
+
+
+<!-- Speaker 2 -->
+
+<div class="speaker-card">
+
+<div class="speaker-image">
+<img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9759.jpg" alt="Speaker">
+</div>
+
+<h3>Vishal</h3>
+<p class="speaker-role">Security Researcher</p>
+<span class="speaker-company">Altered Security</span>
+
+<div class="speaker-social">
+<a href="#" target="_blank" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.24 8.25H4.7V24H.24V8.25zM8.34 8.25H12.6V10.4H12.66C13.25 9.3 14.68 8.15 16.95 8.15 21.54 8.15 22.4 11.1 22.4 15.02V24H17.94V16.15C17.94 14.23 17.9 11.75 15.25 11.75 12.55 11.75 12.14 13.83 12.14 16.02V24H8.34V8.25z"/>
+</svg>
+</a>
+
+<a href="#" target="_blank" aria-label="X">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M18.9 1H22L14.7 9.35 23.3 23H16.4L11 15.2 4.2 23H1L8.7 14.2 0.5 1H7.6L12.5 7.9 18.9 1z"/>
+</svg>
+</a>
+</div>
+
+</div>
+
+
+<!-- Speaker 3 -->
+
+<div class="speaker-card">
+
+<div class="speaker-image">
+<img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="Speaker">
+</div>
+
+<h3>Amit</h3>
+<p class="speaker-role">Trainer</p>
+<span class="speaker-company">Altered Security</span>
+
+<div class="speaker-social">
+<a href="#" target="_blank" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.24 8.25H4.7V24H.24V8.25zM8.34 8.25H12.6V10.4H12.66C13.25 9.3 14.68 8.15 16.95 8.15 21.54 8.15 22.4 11.1 22.4 15.02V24H17.94V16.15C17.94 14.23 17.9 11.75 15.25 11.75 12.55 11.75 12.14 13.83 12.14 16.02V24H8.34V8.25z"/>
+</svg>
+</a>
+
+<a href="#" target="_blank" aria-label="X">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M18.9 1H22L14.7 9.35 23.3 23H16.4L11 15.2 4.2 23H1L8.7 14.2 0.5 1H7.6L12.5 7.9 18.9 1z"/>
+</svg>
+</a>
+</div>
+
+</div>
+
+
+<!-- Speaker 4 -->
+
+<div class="speaker-card">
+
+<div class="speaker-image">
+<img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Speaker">
+</div>
+
+<h3>Hitesh</h3>
+<p class="speaker-role">Security Engineer</p>
+<span class="speaker-company">Altered Security</span>
+
+<div class="speaker-social">
+<a href="#" target="_blank" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.24 8.25H4.7V24H.24V8.25zM8.34 8.25H12.6V10.4H12.66C13.25 9.3 14.68 8.15 16.95 8.15 21.54 8.15 22.4 11.1 22.4 15.02V24H17.94V16.15C17.94 14.23 17.9 11.75 15.25 11.75 12.55 11.75 12.14 13.83 12.14 16.02V24H8.34V8.25z"/>
+</svg>
+</a>
+
+<a href="#" target="_blank" aria-label="X">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M18.9 1H22L14.7 9.35 23.3 23H16.4L11 15.2 4.2 23H1L8.7 14.2 0.5 1H7.6L12.5 7.9 18.9 1z"/>
+</svg>
+</a>
+</div>
+
+</div>
+
+</div>
+
+<p class="speakers-note">
+Speakers will share practical insights, research findings, and experiences from real-world offensive security engagements.
+</p>
+
+</div>
+
+</section>
+<section class="conference-agenda" id="agenda">
+
+<div class="container">
+
+<p class="section-eyebrow">Conference Schedule</p>
+
+<h2 class="section-title">Conference Agenda</h2>
+
+<p class="section-intro">
+The AltSecCON Practitioner Conference features a full day of technical talks, practitioner insights, and discussions focused on real-world offensive security challenges, enterprise attack techniques, and modern defense strategies.
+</p>
+
+<div class="agenda-event-info">
+
+<h3 class="agenda-event-title">
+AltSecCON Practitioner Conference ’26 (Bengaluru Edition)
+</h3>
+
+<div class="agenda-meta">
+
+<span>
+<i class="fa-solid fa-calendar-days"></i>
+03 Nov 2026, Tuesday
+</span>
+
+<span>
+<i class="fa-solid fa-clock"></i>
+09:00 AM – 05:00 PM
+</span>
+
+<span>
+<i class="fa-solid fa-location-dot"></i>
+Bengaluru, Karnataka
+</span>
+
+</div>
+
+<p class="agenda-note">
+Kindly Note: Agenda & Schedule is subject to change without prior notice.
+</p>
+
+</div>
+<div class="agenda-wrapper">
+
+<!-- ITEM -->
+
+<div class="agenda-row">
+
+<div class="agenda-time">09:00</div>
+
+<div class="agenda-card">
+
+<div class="agenda-header">
+
+<h3>Registration & Welcome</h3>
+
+<span class="agenda-tag">Conference</span>
+
+</div>
+
+<p class="agenda-short">
+Conference check-in and welcome session.
+</p>
+
+<div class="agenda-full">
+Conference check-in, networking, and welcome session for participants.
+</div>
+
+<button class="agenda-toggle">Read More</button>
+
+</div>
+
+</div>
+
+
+<div class="agenda-row">
+
+<div class="agenda-time">10:00</div>
+
+<div class="agenda-card">
+
+<div class="agenda-header">
+
+<h3>Opening Keynote</h3>
+
+<span class="agenda-tag keynote">Keynote</span>
+
+</div>
+
+<p class="agenda-short">
+Cybersecurity landscape and offensive security importance.
+</p>
+
+<div class="agenda-full">
+Discussion on the evolving cybersecurity landscape and the importance of offensive security in enterprise environments.
+</div>
+
+<button class="agenda-toggle">Read More</button>
+
+</div>
+
+</div>
+
+
+<div class="agenda-row">
+
+<div class="agenda-time">11:00</div>
+
+<div class="agenda-card">
+
+<div class="agenda-header">
+
+<h3>Technical Talk</h3>
+
+<span class="agenda-tag tech">Technical</span>
+
+</div>
+
+<p class="agenda-short">
+Active Directory attack techniques overview.
+</p>
+
+<div class="agenda-full">
+Active Directory attack techniques and enterprise privilege escalation paths.
+</div>
+
+<button class="agenda-toggle">Read More</button>
+
+</div>
+
+</div>
+
+
+<div class="agenda-row">
+
+<div class="agenda-time">12:00</div>
+
+<div class="agenda-card">
+
+<div class="agenda-header">
+
+<h3>Security Research Session</h3>
+
+<span class="agenda-tag research">Research</span>
+
+</div>
+
+<p class="agenda-short">
+Insights into vulnerabilities and exploitation techniques.
+</p>
+
+<div class="agenda-full">
+Security research insights covering vulnerabilities, exploitation techniques, and real-world security observations.
+</div>
+
+<button class="agenda-toggle">Read More</button>
+
+</div>
+
+</div>
+
+
+<div class="agenda-row">
+
+<div class="agenda-time">13:00</div>
+
+<div class="agenda-card">
+
+<div class="agenda-header">
+
+<h3>Lunch & Networking</h3>
+
+<span class="agenda-tag break">Break</span>
+
+</div>
+
+<p class="agenda-short">
+Lunch break with networking opportunities.
+</p>
+
+<div class="agenda-full">
+Lunch break with an opportunity for attendees to connect and interact with speakers and fellow professionals.
+</div>
+
+<button class="agenda-toggle">Read More</button>
+
+</div>
+
+</div>
+
+
+<div class="agenda-row">
+
+<div class="agenda-time">14:00</div>
+
+<div class="agenda-card">
+
+<div class="agenda-header">
+
+<h3>Red Team Case Study</h3>
+
+<span class="agenda-tag redteam">Red Team</span>
+
+</div>
+
+<p class="agenda-short">
+Real-world Red Team engagement lessons.
+</p>
+
+<div class="agenda-full">
+Real-world Red Team engagement experiences and lessons learned from enterprise security assessments.
+</div>
+
+<button class="agenda-toggle">Read More</button>
+
+</div>
+
+</div>
+
+
+<div class="agenda-row">
+
+<div class="agenda-time">15:00</div>
+
+<div class="agenda-card">
+
+<div class="agenda-header">
+
+<h3>Cloud Security Session</h3>
+
+<span class="agenda-tag cloud">Cloud</span>
+
+</div>
+
+<p class="agenda-short">
+Azure identity abuse and cloud attack paths.
+</p>
+
+<div class="agenda-full">
+Discussion on Azure identity abuse, cloud privilege escalation, and cloud attack paths.
+</div>
+
+<button class="agenda-toggle">Read More</button>
+
+</div>
+
+</div>
+
+
+<div class="agenda-row">
+
+<div class="agenda-time">16:00</div>
+
+<div class="agenda-card">
+
+<div class="agenda-header">
+
+<h3>Panel Discussion</h3>
+
+<span class="agenda-tag panel">Panel</span>
+
+</div>
+
+<p class="agenda-short">
+Industry professionals discussing security trends.
+</p>
+
+<div class="agenda-full">
+Industry professionals discussing offensive security trends and enterprise defense strategies.
+</div>
+
+<button class="agenda-toggle">Read More</button>
+
+</div>
+
+</div>
+
+
+<div class="agenda-row">
+
+<div class="agenda-time">17:00</div>
+
+<div class="agenda-card">
+
+<div class="agenda-header">
+
+<h3>Closing Talk</h3>
+
+<span class="agenda-tag closing">Closing</span>
+
+</div>
+
+<p class="agenda-short">
+Summary of conference insights and discussions.
+</p>
+
+<div class="agenda-full">
+Closing session summarizing key insights and discussions from the conference.
+</div>
+
+<button class="agenda-toggle">Read More</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section> 
+<section class="conference-cta">
+
+<div class="cta-box">
+
+<h3>🎟 Get Conference Ticket</h3>
+
+<p>
+Be part of AltSecCON and experience a day of expert talks, practitioner insights, and meaningful discussions with the cybersecurity community.
+</p>
+
+<a href="#" class="btn-ticket">
+Get Your Ticket
+</a>
+
+</div>
+
+</section>       
+<section class="call-speakers">
+
+<div class="container">
+
+<p class="section-eyebrow">
+Speaker Opportunities
+</p>
+
+<h2 class="section-title">
+Call for Speakers
+</h2>
+
+<p class="section-intro">
+AltSecCON invites security practitioners, researchers, and professionals to share their insights, research, and real-world experiences with the cybersecurity community.
+</p>
+
+<p class="section-intro">
+We welcome technical talks covering offensive security, enterprise defense strategies, security research, and real-world case studies.
+</p>
+
+
+<div class="speaker-grid">
+
+
+<!-- TOPICS -->
+
+<div class="speaker-block">
+
+<h3>Suggested Topics</h3>
+
+<ul>
+
+<li>Active Directory attack techniques</li>
+<li>Cloud security and Azure attack paths</li>
+<li>Red Team operations and adversary simulation</li>
+<li>Vulnerability research and exploitation techniques</li>
+<li>Threat detection and defensive strategies</li>
+<li>Real-world security case studies</li>
+
+</ul>
+
+</div>
+
+
+<!-- WHO CAN APPLY -->
+
+<div class="speaker-block">
+
+<h3>Who Can Apply</h3>
+
+<ul>
+
+<li>Security researchers</li>
+<li>Red Team operators</li>
+<li>Penetration testers</li>
+<li>Security engineers</li>
+<li>Cybersecurity professionals with real-world experience</li>
+
+</ul>
+
+</div>
+
+
+<!-- TALK FORMAT -->
+
+<div class="speaker-block">
+
+<h3>Talk Format</h3>
+
+<p>
+Typical conference sessions are <strong>30–45 minutes</strong>, including time for audience questions and discussion.
+</p>
+
+</div>
+
+
+<!-- BENEFITS -->
+
+<div class="speaker-block">
+
+<h3>Speaker Benefits</h3>
+
+<ul>
+
+<li>Opportunity to present your research to the cybersecurity community</li>
+<li>Connect with security professionals and industry experts</li>
+<li>Increase visibility within the security ecosystem</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="speaker-cta">
+
+<a href="#" class="btn-speaker">
+🎤 Submit Your Talk Proposal
+</a>
+
+<p class="speaker-deadline">
+Call for speakers submissions close on <strong>[date to be announced]</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>    
+
+<section class="conference-sponsors" id="sponsors">
+
+<div class="container">
+
+<p class="section-eyebrow">Industry Support</p>
+
+<h2 class="section-title">Conference Sponsors</h2>
+
+<p class="section-intro">
+AltSecCON is supported by leading cybersecurity organizations and technology companies
+committed to strengthening the security community through knowledge sharing, research,
+and collaboration.
+</p>
+
+
+<!-- PLATINUM -->
+
+<div class="sponsor-tier platinum-tier">
+
+<h3 class="tier-title">Platinum Sponsors</h3>
+
+<p class="tier-desc">
+Top partners supporting the AltSecCON conference and community initiatives.
+</p>
+
+<div class="sponsor-grid">
+
+<div class="sponsor-card">
+<img src="https://static.wixstatic.com/media/470c31_f0d7f2f030b54a7ead4b4ba7ceba80c5~mv2.png">
+</div>
+
+<div class="sponsor-card">
+<img src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png">
+</div>
+
+</div>
+
+</div>
+
+
+<!-- GOLD -->
+
+<div class="sponsor-tier gold-tier">
+
+<h3 class="tier-title">Gold Sponsors</h3>
+
+<p class="tier-desc">
+Organizations contributing to the growth of the cybersecurity ecosystem.
+</p>
+
+<div class="sponsor-grid">
+
+<div class="sponsor-card">
+<img src="https://static.wixstatic.com/media/470c31_7fafa23a6e154914b4c8c9f527a0d8f0~mv2.png">
+</div>
+
+<div class="sponsor-card">
+<img src="https://static.wixstatic.com/media/470c31_047fc59bcd9d43d1b11b01f5639b0002~mv2.png">
+</div>
+
+<div class="sponsor-card">
+<img src="https://static.wixstatic.com/media/470c31_893eb74e40d54618bf41e949f81aef4a~mv2.png">
+</div>
+
+</div>
+
+</div>
+
+
+<!-- COMMUNITY -->
+
+<div class="sponsor-tier community-tier">
+
+<h3 class="tier-title">Community Partners</h3>
+
+<p class="tier-desc">
+Security communities and ecosystem partners supporting the event.
+</p>
+
+<div class="sponsor-grid">
+
+<div class="sponsor-card">
+<img src="https://static.wixstatic.com/media/470c31_a8f72ea2af084571b3646b13855f3ba0~mv2.png">
+</div>
+
+<div class="sponsor-card">
+<img src="https://static.wixstatic.com/media/470c31_250e7983cfe34a9eaa7a67587e615af8~mv2.jpg">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="sponsor-cta">
+
+<p>Interested in AltSecCON conference sponsorship?</p>
+
+<a href="#" class="btn-sponsor">🤝 Become a Sponsor</a>
+
+</div>
+
+</div>
+
+</section>
+<section class="become-sponsor">
+
+<div class="container">
+
+<p class="section-eyebrow">Partnership Opportunities</p>
+
+<h2 class="section-title">Become a Sponsor</h2>
+
+<p class="section-intro">
+Support the AltSecCON Practitioner Conference and connect with a growing community of cybersecurity professionals, researchers, and practitioners.
+</p>
+
+<p class="section-intro">
+Sponsoring AltSecCON provides an opportunity to showcase your organization, engage with security experts, and contribute to the advancement of cybersecurity knowledge and collaboration.
+</p>
+
+
+<!-- BENEFITS -->
+
+<div class="sponsor-benefits">
+
+<div class="benefit-card">
+
+<div class="benefit-icon">
+<i class="fa-solid fa-bullhorn"></i>
+</div>
+
+<h3>Brand Visibility</h3>
+
+<p>
+Promote your organization to a focused audience of cybersecurity professionals, Red Team practitioners, and enterprise security teams.
+</p>
+
+</div>
+
+
+<div class="benefit-card">
+
+<div class="benefit-icon">
+<i class="fa-solid fa-users"></i>
+</div>
+
+<h3>Connect with the Security Community</h3>
+
+<p>
+Engage with security researchers, engineers, and practitioners working on real-world security challenges.
+</p>
+
+</div>
+
+
+<div class="benefit-card">
+
+<div class="benefit-icon">
+<i class="fa-solid fa-handshake"></i>
+</div>
+
+<h3>Industry Collaboration</h3>
+
+<p>
+Build relationships with organizations, professionals, and communities shaping the future of cybersecurity.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- SPONSORSHIP TIERS -->
+
+<div class="sponsor-types">
+
+<h3 class="types-title">Sponsorship Opportunities</h3>
+
+<div class="types-grid">
+
+<div class="type-card platinum">
+<span>Platinum Sponsor</span>
+</div>
+
+<div class="type-card gold">
+<span>Gold Sponsor</span>
+</div>
+
+<div class="type-card community">
+<span>Community Partner</span>
+</div>
+
+</div>
+
+<p class="sponsor-note">
+Detailed sponsorship packages and benefits will be shared upon request.
+</p>
+
+</div>
+
+
+<!-- CTA -->
+
+<div class="sponsor-cta">
+
+<h3>Partner with AltSecCON</h3>
+
+<p>
+Showcase your organization and support the cybersecurity community.
+</p>
+
+<a href="#" class="btn-sponsor">
+🤝 Become a Sponsor
+</a>
+
+<p class="sponsor-contact">
+For sponsorship inquiries, please contact the AltSecCON team.
+</p>
+
+</div>
+
+</div>
+</section>
+<section class="conference-audience" id="audience">
+
+<div class="container">
+
+<p class="section-eyebrow">Target Audience</p>
+
+<h2 class="section-title">Who Should Attend</h2>
+
+<p class="section-intro">
+The AltSecCON Practitioner Conference is designed for security professionals, researchers, and practitioners interested in offensive security, enterprise defense strategies, and real-world cybersecurity challenges.
+</p>
+
+
+<div class="audience-grid">
+
+<!-- CARD -->
+
+<div class="audience-card">
+
+<div class="audience-icon">
+<i class="fa-solid fa-crosshairs"></i>
+</div>
+
+<h3>Red Team Operators</h3>
+
+<p>
+Professionals involved in adversary simulation, security assessments, and Red Team engagements within enterprise environments.
+</p>
+
+</div>
+
+
+<div class="audience-card">
+
+<div class="audience-icon">
+<i class="fa-solid fa-bug"></i>
+</div>
+
+<h3>Penetration Testers</h3>
+
+<p>
+Security professionals performing vulnerability assessments and penetration testing across applications, networks, and cloud environments.
+</p>
+
+</div>
+
+
+<div class="audience-card">
+
+<div class="audience-icon">
+<i class="fa-solid fa-shield-halved"></i>
+</div>
+
+<h3>Security Engineers</h3>
+
+<p>
+Engineers responsible for protecting enterprise infrastructure, monitoring threats, and improving defensive capabilities.
+</p>
+
+</div>
+
+
+<div class="audience-card">
+
+<div class="audience-icon">
+<i class="fa-solid fa-flask"></i>
+</div>
+
+<h3>Security Researchers</h3>
+
+<p>
+Researchers exploring vulnerabilities, attack techniques, and emerging security trends within modern technology ecosystems.
+</p>
+
+</div>
+
+
+<div class="audience-card">
+
+<div class="audience-icon">
+<i class="fa-solid fa-user-shield"></i>
+</div>
+
+<h3>SOC Analysts & Threat Hunters</h3>
+
+<p>
+Security analysts working in Security Operations Centers monitoring attacks, investigating threats, and improving detection capabilities.
+</p>
+
+</div>
+
+
+<div class="audience-card">
+
+<div class="audience-icon">
+<i class="fa-solid fa-graduation-cap"></i>
+</div>
+
+<h3>Cybersecurity Students & Enthusiasts</h3>
+
+<p>
+Students and aspiring professionals interested in learning from practitioners and engaging with the cybersecurity community.
+</p>
+
+</div>
+
+</div>
+
+
+<p class="audience-note">
+Professionals from startups, enterprises, consulting firms, and research communities are welcome to participate.
+</p>
+
+
+<!-- CTA BLOCK -->
+
+
+
+</div>
+
+</section>    
+<section class="conference-cta">
+
+<div class="cta-box">
+
+<h3>🎟 Get Conference Ticket</h3>
+
+<p>
+Be part of AltSecCON and experience a day of expert talks, practitioner insights, and meaningful discussions with the cybersecurity community.
+</p>
+
+<a href="#" class="btn-ticket">
+Get Your Ticket
+</a>
+
+</div>
+
+</section>       
+
+  
+<section class="conference-gallery" id="gallery">
+
+<div class="container">
+
+<p class="section-eyebrow">Event Moments</p>
+
+<h2 class="section-title">AltSecCON Conference Gallery</h2>
+
+<p class="section-intro">
+Moments from AltSecCON training sessions, conference talks, and community interactions showcasing the vibrant cybersecurity community coming together to learn, share knowledge, and collaborate.
+</p>
+
+
+<div class="gallery-grid">
+
+<img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-1.webp" alt="AltSecCON event">
+
+<img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-5.webp" alt="AltSecCON event">
+
+<img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp" alt="AltSecCON event">
+
+<img src="https://redteamverse.github.io/red-team-training/images/c1.webp" alt="AltSecCON event">
+
+<img src="https://redteamverse.github.io/red-team-training/images/c2.webp" alt="AltSecCON event">
+
+<img src="https://redteamverse.github.io/red-team-training/images/c4.webp" alt="AltSecCON event">
+
+<img src="https://redteamverse.github.io/red-team-training/images/c5.webp" alt="AltSecCON event">
+
+</div>
+<div class="">
+<a href="/gallery" class="btn-gallery">
+View AltSecCON Gallery
+</a>
+
+</div>
+
+<!-- CTA -->
+
+
+
+</div>
+
+</section>    
+<section class="conference-tickets" id="tickets">
+
+<div class="container">
+
+<p class="section-eyebrow">Conference Pass</p>
+
+<h2 class="section-title">Choose Your Conference Pass</h2>
+
+<p class="section-intro">
+Secure your spot at the AltSecCON Practitioner Conference and join cybersecurity professionals, researchers, and Red Team practitioners for a day of technical talks, discussions, and networking.
+</p>
+
+
+<div class="tickets-grid">
+
+<!-- EARLY BIRD -->
+
+<div class="ticket-card featured">
+
+<div class="ticket-ribbon">
+Most Popular
+</div>
+
+<h3>Early Bird Conference Pass</h3>
+
+<div class="ticket-price">
+₹8,000 <span>INR</span>
+</div>
+
+<p class="ticket-desc">
+Available for early registrations.
+</p>
+
+<ul class="ticket-features">
+
+<li>✔ Full access to all conference talks</li>
+<li>✔ Networking with security professionals</li>
+<li>✔ Panel discussions and practitioner sessions</li>
+<li>✔ Coffee breaks and lunch included</li>
+<li>✔ Welcome Kit</li>
+<li>✔ Participation E-Certificate</li>
+
+</ul>
+
+<p class="ticket-urgency">
+⚡ Limited early bird tickets available
+</p>
+
+<a href="#" class="ticket-btn primary">
+🎟 Buy Early Bird Ticket
+</a>
+
+</div>
+
+
+<!-- REGULAR -->
+
+<div class="ticket-card">
+
+<h3>Regular Conference Pass</h3>
+
+<div class="ticket-price">₹10,000 <span>INR</span></div>
+
+<p class="ticket-desc">
+Standard conference ticket.
+</p>
+
+<ul class="ticket-features">
+
+<li>✔ Full access to all conference talks</li>
+<li>✔ Networking with security professionals</li>
+<li>✔ Panel discussions and practitioner sessions</li>
+<li>✔ Coffee breaks and lunch included</li>
+<li>✔ Welcome Kit</li>
+<li>✔ Participation E-Certificate</li>    
+</ul>
+<button class="ticket-btn disabled" disabled>
+🎟 Buy Conference Ticket
+</button>
+</div>
+
+</div>
+
+
+<p class="tickets-note">
+All prices are exclusive of GST. Limited seats available. Book early to save more! 
+</p>
+
+</div>
+
+</section>    
+<section class="conference-venue" id="venue">
+
+<div class="container">
+
+<p class="section-eyebrow">Event Location</p>
+
+<h2 class="section-title">Conference Venue</h2>
+
+<p class="section-intro">
+The AltSecCON Practitioner Conference will be held in Bengaluru, India, bringing together cybersecurity professionals, researchers, and practitioners for a full day of technical discussions and community interaction.
+</p>
+
+
+<!-- VENUE INFO -->
+
+<div class="venue-info">
+
+<div class="venue-item">
+<h4>City</h4>
+<p>Bengaluru, India</p>
+</div>
+
+<div class="venue-item">
+<h4>Conference Date</h4>
+<p>3 November 2026</p>
+</div>
+
+<div class="venue-item">
+<h4>Venue</h4>
+<p>To be announced soon</p>
+</div>
+
+</div>
+
+
+<!-- VENUE DESCRIPTION -->
+
+<div class="venue-content">
+
+<div class="venue-text">
+
+<p class="venue-description">
+Bengaluru is one of India’s leading technology hubs and home to a vibrant cybersecurity community. The conference venue will provide a professional environment for technical talks, networking sessions, and community interaction.
+</p>
+
+<ul class="venue-features">
+
+<li>✔ Conference presentation hall</li>
+<li>✔ Networking areas for attendees</li>
+<li>✔ Lunch and refreshment spaces</li>
+<li>✔ Opportunities to interact with speakers and participants</li>
+
+</ul>
+
+</div>
+
+
+<!-- MAP PLACEHOLDER -->
+
+<div class="venue-map">
+
+<div class="map-placeholder">
+
+<p>📍 Google Map will be embedded once the venue is announced.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>    
+<section class="conference-faq" id="faq">
+
+<div class="container">
+
+<p class="section-eyebrow">Conference Information</p>
+
+<h2 class="section-title">Frequently Asked Questions</h2>
+
+<p class="section-intro">
+Find answers to common questions about the AltSecCON Practitioner Conference including tickets, venue details, and participation.
+</p>
+
+
+<div class="faq-wrapper">
+
+<!-- ITEM -->
+
+<div class="faq-item">
+
+<button class="faq-question">
+What is AltSecCON Practitioner Conference?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+AltSecCON Practitioner Conference is a one-day cybersecurity event bringing together security professionals, researchers, and Red Team practitioners to share technical insights, research discussions, and real-world security experiences.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+When and where will the conference take place?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+The conference will take place on <strong>3 November 2026 in Bengaluru, India.</strong>
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+Who should attend the conference?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+The conference is designed for cybersecurity professionals including Red Team operators, penetration testers, security engineers, SOC analysts, researchers, and students interested in offensive security.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+What does the conference ticket include?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<ul>
+<li>Access to all technical talks and sessions</li>
+<li>Networking with cybersecurity professionals</li>
+<li>Panel discussions with industry practitioners</li>
+<li>Coffee breaks and lunch during the conference</li>
+</ul>
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+Do I need prior Red Team experience to attend?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+No. While the conference focuses on technical security topics, professionals with different levels of cybersecurity experience are welcome to attend.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+Will food and refreshments be provided?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+Yes. Coffee breaks and lunch will be provided for all conference attendees.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+Can I get a refund if I cannot attend?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+Ticket refund policies will be announced closer to the conference date.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+How can I contact the organizers?
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+For conference-related inquiries, please contact the AltSecCON team through the contact form on the website.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>    
+<section class="conference-final-cta">
+
+<div class="cta-container">
+
+<h2 class="cta-title">
+Join the AltSecCON Practitioner Conference
+</h2>
+
+<p class="cta-text">
+Be part of a day of technical talks, practitioner insights, and networking with cybersecurity professionals from across India.
+Secure your spot at the AltSecCON Practitioner Conference in Bengaluru.
+</p>
+
+
+<div class="cta-event-info">
+
+<span>
+📅 3 November 2026
+</span>
+
+<span>
+📍 Bengaluru, India
+</span>
+
+</div>
+
+
+<div class="cta-buttons">
+
+<a href="#" class="cta-btn primary">
+🎟 Get Conference Ticket
+</a>
+
+<a href="#agenda" class="cta-btn secondary">
+📅 View Conference Agenda
+</a>
+
+</div>
+
+</div>
+
+</section>    
+    
+<section class="social-connect">
+
+  <div class="container">
+
+    <p class="section-eyebrow">Social Community</p>
+    <h2 class="section-title">Stay Connected</h2>
+
+    <p class="section-intro">
+      Follow Altered Security to stay updated on Red Team training,
+      AltSecCON announcements, and cybersecurity research updates.
+    </p>
+
+    <div class="social-icons">
+
+      <a href="https://twitter.com/AlteredSecurity" target="_blank" class="social twitter">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.3 1.7-2.2-.8.5-1.6.8-2.5 1-1.5-1.6-4-1.7-5.6-.2-1 .9-1.5 2.3-1.2 3.6-3.3-.2-6.3-1.7-8.3-4.1-.4.7-.6 1.6-.6 2.4 0 1.6.8 3.1 2.1 4-.6 0-1.2-.2-1.7-.5v.1c0 2.2 1.5 4 3.6 4.4-.4.1-.8.2-1.2.2-.3 0-.6 0-.9-.1.6 1.9 2.4 3.2 4.5 3.2-1.6 1.3-3.7 2-5.8 2H2c2.1 1.4 4.6 2.2 7.3 2.2 8.7 0 13.4-7.2 13.4-13.4v-.6c.9-.6 1.6-1.3 2.2-2.1z"
+          stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </a>
+
+      <a href="https://www.linkedin.com/company/alteredsecurity/" target="_blank" class="social linkedin">
+        <svg viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="5" cy="5" r="2" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M11 9h4v2c.7-1.2 2-2 3.5-2 2.5 0 4.5 2 4.5 4.5V21h-4v-6.2c0-1.2-.8-2-2-2s-2 .8-2 2V21h-4V9z"
+          stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </a>
+
+      <a href="https://discord.com/invite/vcEwaRMwJe" target="_blank" class="social discord">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M20 4c-1.5-.7-3-1.1-4.5-1.3l-.2.4c1.6.4 2.8 1 3.9 1.8-2.5-1.3-5.4-1.3-7.9 0 1.1-.8 2.3-1.4 3.9-1.8l-.2-.4C12.5 2.9 11 3.3 9.5 4 7 7.5 6 11 6.3 14.4c1.6 1.2 3.1 2 4.6 2.5l.5-.9c-.9-.3-1.7-.7-2.5-1.2.2.2.4.3.6.4 2.2 1 4.7 1 6.9 0 .2-.1.4-.2.6-.4-.8.5-1.6.9-2.5 1.2l.5.9c1.5-.5 3-1.3 4.6-2.5.4-3.7-.6-7.2-3.2-10.4z"
+          stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>    
+    
+<script>
+
+document.querySelectorAll(".agenda-toggle").forEach(btn => {
+
+btn.addEventListener("click", () => {
+
+const full = btn.previousElementSibling;
+
+if(full.style.display === "block"){
+
+full.style.display = "none";
+btn.textContent = "Read More";
+
+}else{
+
+full.style.display = "block";
+btn.textContent = "Read Less";
+
+}
+
+});
+
+});
+
+</script>  
+<script>
+
+document.querySelectorAll(".faq-question").forEach(button => {
+
+button.addEventListener("click", () => {
+
+const faqItem = button.parentElement;
+
+faqItem.classList.toggle("active");
+
+});
+
+});
+
+
+
+</script>    
+<script>
+
+const hero = document.querySelector(".hero");
+
+hero.addEventListener("mousemove", (e) => {
+
+const x = (window.innerWidth / 2 - e.clientX) / 40;
+const y = (window.innerHeight / 2 - e.clientY) / 40;
+
+hero.style.setProperty("--moveX", x + "px");
+hero.style.setProperty("--moveY", y + "px");
+
+});
+
+</script>    
+<script>
+document.querySelector(".overview-toggle").addEventListener("click", function(){
+
+const section = document.querySelector(".conference-overview");
+
+section.classList.toggle("expanded");
+
+this.textContent =
+section.classList.contains("expanded") ? "Read Less" : "Read More";
+
+});
+</script>    
+<script>
+
+/* VIDEO PLAY */
+
+const playBtn = document.querySelector(".video-play");
+const video = document.querySelector(".overview-video");
+const thumb = document.querySelector(".video-thumb");
+
+playBtn.addEventListener("click", () => {
+
+thumb.style.display = "none";
+playBtn.style.display = "none";
+
+video.style.display = "block";
+video.play();
+
+});
+
+/* READ MORE */
+
+const btn = document.querySelector(".overview-readmore");
+const hidden = document.querySelector(".overview-hidden");
+
+btn.addEventListener("click", () => {
+
+hidden.classList.toggle("show");
+
+btn.textContent = hidden.classList.contains("show")
+? "Read Less"
+: "Read More";
+
+});
+
+</script> 
+   
+<script>
+
+const stack = document.getElementById("cardStack");
+
+function updateStack(){
+
+const cards = stack.querySelectorAll(".stack-card");
+
+cards.forEach((card,index)=>{
+
+card.style.zIndex = cards.length - index;
+card.style.transform = `translateY(${index*12}px) scale(${1 - index*0.03})`;
+
+});
+
+}
+
+updateStack();
+
+stack.addEventListener("click",(e)=>{
+
+const card = e.target.closest(".stack-card");
+
+if(!card) return;
+
+stack.appendChild(card);
+
+updateStack();
+
+});
+
+</script>   
+<script>
+/* ================= NUMBER COUNTER ================= */
+
+const counters = document.querySelectorAll(".stat-number");
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+const counter = entry.target;
+const target = parseInt(counter.dataset.target);
+const showPlus = counter.dataset.plus === "true";
+
+if(!target) return;
+
+const duration = 1800;
+const startTime = performance.now();
+
+function update(currentTime){
+
+const elapsed = currentTime - startTime;
+const progress = Math.min(elapsed / duration, 1);
+
+const value = Math.floor(progress * target);
+
+counter.textContent = value;
+
+if(progress < 1){
+requestAnimationFrame(update);
+}else{
+counter.textContent = showPlus ? target + "+" : target;
+}
+
+}
+
+requestAnimationFrame(update);
+observer.unobserve(counter);
+
+}
+
+});
+
+},{ threshold:0.6 });
+
+counters.forEach(counter => observer.observe(counter));
+    </script>    
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+  const header = document.getElementById("stickyHeader");
+  const tabs = document.querySelectorAll(".mobile-tabs a");
+
+  const sections = Array.from(tabs)
+    .map(tab => document.querySelector(tab.getAttribute("href")))
+    .filter(Boolean);
+
+  function handleScroll() {
+    const scrollY = window.scrollY;
+    const isMobile = window.innerWidth <= 768;
+
+    /* Desktop header */
+    if (!isMobile) {
+      if (scrollY > 80) {
+        header.classList.add("is-visible", "is-solid");
+      } else {
+        header.classList.remove("is-visible", "is-solid");
+      }
+    }
+
+    /* Mobile ScrollSpy */
+    if (isMobile) {
+      let activeIndex = -1;
+
+      sections.forEach((section, index) => {
+        if (scrollY >= section.offsetTop - 160) {
+          activeIndex = index;
+        }
+      });
+
+      tabs.forEach(tab => tab.classList.remove("active"));
+      if (activeIndex >= 0) {
+        tabs[activeIndex].classList.add("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleScroll);
+</script>    
+<script>
+document.querySelectorAll('.section-nav a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+    
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".section-nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.clientHeight;
+
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});    
+</script>    
+    
+</body>
+</html>
