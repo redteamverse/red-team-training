@@ -948,10 +948,9 @@ box-shadow:0 4px 10px rgba(185,28,28,0.2);
 
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
-background-color:#3B82F6;
-border-color: #3B82F6;
-transform:translateY(-2px);
-box-shadow:0 10px 22px rgba(185,28,28,0.35);
+background-color: transparent;
+  color: #1E3A8A;
+  border-color: #ffffff;
 }
 
 
@@ -1853,6 +1852,12 @@ gap:22px;
   color: var(--white);
   text-decoration: none;
 }
+  
+.logo a::after {
+  display: none !important;
+  content: none !important;
+}
+  
 
   .header-inner .logo a{
     color: var(--white);
@@ -3170,6 +3175,101 @@ border-radius:5px;
     grid-template-columns: 1fr;
   }
 } 
+.email-wrapper {
+  position: relative;
+}
+
+/* COLLAPSED STATE */
+.email-content.collapsed {
+  max-height: 380px; /* show ~first paragraph */
+  overflow: hidden;
+  position: relative;
+}
+
+/* FADE EFFECT */
+.email-content.collapsed::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, #fff);
+}
+
+/* BUTTON */
+.read-more-btn {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-weight: 600;
+  cursor: pointer;
+}  
+@media (min-width: 768px) {
+  .email-content {
+    max-height: none !important;
+    overflow: visible !important;
+    
+  }
+
+  .email-content::after {
+    display: none;
+  }
+
+  .read-more-btn {
+    display: none;
+  }
+}  
+/* ICON BOX */
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+}  
+  
+  
+.footer-social a::after {
+  display: none !important;
+  content: none !important;
+}
+  
+  
+/* SOCIAL */
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+/* ICON */
+.footer-social i {
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
+}
+/* HOVER */
+.footer-social a:hover {
+  background: #ef4444;
+  transform: translateY(-3px);
+}  
+/* FOOTER TEXT */
+.footer-copy {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #64748b;
+}  
+  
+ .footer-social svg {
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
+} 
 </style>
 </head>
 
@@ -3285,7 +3385,7 @@ border-radius:5px;
     <!-- ITEM 2 -->
     <div class="timeline-row reverse">
       <div class="timeline-image">
-        <img src="https://redteamverse.github.io/red-team-training/images/new-7.webp">
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp">
       </div>
 
       <div class="timeline-text">
@@ -3499,30 +3599,7 @@ border-radius:5px;
     </p>
 
   </div>
-</section>
-  <!-- THANK YOU SECTION -->
-<section class="thankyou-section">
-  <div class="thankyou-container">  
-    <p class="community-caption">
-  Participants of the in-person Red Team training at AltSecCON
-</p>
-
-    <div class="thankyou-image community-image">
-      <img
-        src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp"
-        alt="AltSecCON in-person Red Team training session"
-      >
-    </div> 
-
-  <div class="community-governance">
-  <p>
-  Participation from the security community helps maintain the depth and practical focus of AltSecCON training.
-  </p>
-
-</div>
-</div>
-  
-</section>
+</section> 
 <!-- =====================
 ALTSECCON CONFERENCE SECTION
 ===================== -->
@@ -3711,7 +3788,9 @@ below explain the value of attending.
 
 <p>You can copy and send the following email to request approval from your manager.</p>
 
-<pre>
+<div class="email-wrapper">
+
+  <pre class="email-content collapsed" id="emailContent">
 Subject: Request to Attend AltSecCon Red Team Training
 
 Hi [Manager Name],
@@ -3736,7 +3815,11 @@ our internal security practices.
 
 Thanks,
 [Your Name]
-</pre>
+  </pre>
+
+  <button class="read-more-btn" onclick="toggleEmail()">Read more</button>
+
+</div>
 
 </div>
 
@@ -4388,7 +4471,8 @@ Thanks,
       <p>© AltSecCON. An Altered Security initiative.
       </p>
     </div>
-
+<!-- SOCIAL ICONS -->
+  
     <!-- Training Programs -->
     <div class="footer-block">
       <h4>Training Programs</h4>
@@ -4411,8 +4495,26 @@ Thanks,
         <li><a href="/gallery">Gallery</a></li>
         <li><a href="/2026">AltSecCON 2026</a></li>
       </ul>
-    </div>
+    </div>   
+<div class="footer-block">
+  <h4>Follow Us</h4>
 
+  <div class="footer-social">
+    <a href="https://twitter.com/AlteredSecurity" target="_blank">
+      <i data-lucide="x"></i>
+    </a>
+
+   <a href="https://www.linkedin.com/company/alteredsecurity/" target="_blank">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.7-1.3 2.4-2.7 5-2.7 5.3 0 6.3 3.5 6.3 8V24h-5V16c0-1.9 0-4.3-2.6-4.3-2.6 0-3 2-3 4.1V24h-5V8z"/>
+  </svg>
+    </a>
+
+    <a href="https://discord.com/invite/vcEwaRMwJe" target="_blank">
+      <i data-lucide="message-circle"></i>
+    </a>
+  </div>
+</div>
     <!-- Policies & Contact -->
     <div class="footer-block">
       <h4>Information</h4>
@@ -4529,5 +4631,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 </script>
+<script>
+function toggleEmail() {
+  const content = document.getElementById("emailContent");
+  const btn = document.querySelector(".read-more-btn");
+
+  content.classList.toggle("collapsed");
+
+  if (content.classList.contains("collapsed")) {
+    btn.innerText = "Read more";
+  } else {
+    btn.innerText = "Show less";
+  }
+}
+</script>  
+<script>
+  window.addEventListener("load", () => {
+    lucide.createIcons();
+  });
+</script>  
 </body>
 </html>
