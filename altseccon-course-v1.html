@@ -355,13 +355,11 @@ background:#F8FAFC;
 }
 
 .section-eyebrow{
-display:block;
-text-align:center;
-font-size:12px;
-letter-spacing:.12em;
 text-transform:uppercase;
-color:#6B7280;
-margin-bottom:10px;
+letter-spacing:.2em;
+font-size:.75rem;
+color:#3b82f6;
+margin-bottom:14px;
 }
 
 .learn-title{
@@ -537,16 +535,16 @@ border:1px solid #E5E7EB;
 border-radius:10px;
 padding:24px;
 background:#F9FAFB;
-
 display:flex;
 flex-direction:column;
 gap:10px;
+align-items: center;    
 }
 
 /* Icon */
 
 .overview-icon{
-font-size:22px;
+font-size:22px;   
 }
 
 /* Title */
@@ -685,6 +683,8 @@ line-height:1.6;
 
 .accordion-content li{
 margin-bottom:8px;
+align-content: center;
+text-align: left;    
 }
 
 /* open state */
@@ -765,6 +765,7 @@ gap:24px;
 text-align: left;
 }
 
+    
 
 .lab-card{
 border:1px solid #E5E7EB;
@@ -1790,19 +1791,14 @@ Sticky CTA Button
 
 .sticky-cta-button{
 display:inline-flex;
-align-items:center;
 gap:10px;
-
 background:#B91C1C;
 color:#FFFFFF;
-
 padding:12px 20px;
 border-radius:6px;
-
 font-size:15px;
 font-weight:600;
 text-decoration:none;
-
 box-shadow:0 6px 16px rgba(0,0,0,0.15);
 }
 
@@ -1813,16 +1809,15 @@ width:18px;
 height:18px;
 flex-shrink:0;
 }
+    
 .sticky-cta{
 position:fixed;
 bottom:24px;
-left:50%;
+right:0%;
 transform:translate(-50%, 20px);
 z-index:1000;
-
 opacity:0;
 pointer-events:none;
-
 transition:opacity .3s ease, transform .3s ease;
 }
 
@@ -1848,7 +1843,8 @@ transform:translateY(0);
 .sticky-cta-button{
 display:flex;
 justify-content:center;
-width:100%;
+align-items: center;
+width:50%;
 }
 
 }
@@ -2496,6 +2492,433 @@ margin-bottom:10px;
     text-align: left;
   }
 }    
+    
+.hero-meta {
+  display: flex;
+  gap: 40px;
+  margin: 20px 0 30px;
+  flex-wrap: wrap;
+}
+
+/* ITEM */
+.meta-item {
+  display: flex;
+  flex-direction: column;
+ min-width: 120px;
+}
+
+/* LABEL */
+.meta-label {
+  font-size: 12px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* VALUE */
+.meta-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-top: 2px;
+}
+.meta-item:not(:last-child) {
+  border-right: 1px solid #e2e8f0;
+  padding-right: 20px;
+}
+@media (max-width: 768px) {
+  .hero-meta {
+    gap: 20px;
+  }
+
+  .meta-item {
+    width: 100%;
+    border-right: none;
+  }
+}    
+    
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  margin: 20px 0 25px;
+  flex-wrap: wrap;
+}
+
+/* BUTTON BASE */
+.hero-btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+
+/* PRIMARY */
+.btn-primary.hero-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btn-primary.hero-btn:hover {
+  background: #dc2626;
+}
+
+/* OUTLINE */
+.btn-outline.hero-btn {
+  border: 1px solid #0f172a;
+  color: #0f172a;
+  background: transparent;
+}
+
+.btn-outline.hero-btn:hover {
+  background: #22439a;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-btn {
+    width: auto;
+    min-width: 180px;  
+    text-align: center;
+  }
+    
+ .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+  }
+    
+  .meta-item {
+    flex: 1 1 calc(50% - 10px); /* 👈 2 items in one row */
+  }
+
+  /* Date goes full width */
+  .meta-item:nth-child(3) {
+    flex: 1 1 100%;
+  }
+}    
+    
+.cta-note {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 8px;
+} 
+    
+/* CTA BLOCK */
+.labs-cta {
+  margin-top: 50px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 16px;
+  text-align: center;
+  color: #fff;
+}
+
+/* HEADING */
+.labs-cta h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* DESCRIPTION */
+.labs-cta p {
+  color: #cbd5f5;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+/* BUTTON */
+.labs-cta-btn {
+  background: #ef4444;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: 0.25s ease;
+}
+
+.labs-cta-btn:hover {
+  background: #dc2626;
+}
+    
+.labs-main-grid {
+  display: block; /* 👈 stack everything */
+  margin-top: 30px;
+}
+
+.labs-image {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.labs-image img {
+  width: 100%;
+  max-width: 900px;   /* keeps it clean */
+  border-radius: 16px;
+}
+
+/* GRID INSIDE */
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+ margin-top: 20px;    
+}
+
+/* CARD */
+.lab-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 18px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.lab-card:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+/* LIST */
+.lab-card ul {
+  padding-left: 18px;
+}
+
+.lab-card li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #475569;
+}
+
+/* CTA */
+.labs-cta {
+  margin-top: 60px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 16px;
+  text-align: center;
+  color: #fff;
+}
+
+.labs-cta h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.labs-cta p {
+  color: #cbd5f5;
+  margin-bottom: 20px;
+}
+
+.labs-cta-btn {
+  background: #ef4444;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .labs-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .labs-grid {
+    grid-template-columns: 1fr;
+  }
+}   
+/* GRID */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* CARD */
+.overview-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+}
+
+/* ICON BOX */
+.overview-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 0, 0, 0.08); /* light red bg */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* ICON */
+.overview-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #e53935; /* red icon */
+  stroke-width: 2;
+}
+
+/* TEXT */
+.overview-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.overview-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+}    
+    
+/* SECTION */
+.audience-section {
+  padding: 80px 0;
+  background: #f9fafc;
+}
+
+/* GRID */
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+ 
+}
+
+/* CARD */
+.audience-card {
+border:1px solid #E5E7EB;
+border-radius:10px;
+padding:24px;
+background:#F9FAFB;
+display:flex;
+flex-direction:column;
+gap:10px;
+align-items: center;
+}
+
+.audience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+}
+
+/* ICON BOX */
+.audience-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 0, 0, 0.08);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* ICON */
+.audience-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #e53935;
+}
+
+/* TEXT */
+.audience-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.audience-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* CTA */
+.audience-cta {
+  margin-top: 60px;
+  text-align: center;
+  padding: 40px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #eee;
+}
+
+.audience-cta h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.audience-cta p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.btn-primary {
+  background: #e53935;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #c62828;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .audience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .audience-cta {
+    padding: 30px 20px;
+  }
+}    
 </style>
 </head>
 
@@ -2539,25 +2962,43 @@ It covers AD enumeration, trust mapping, Kerberos based attacks,
 defense bypasses and more! Earn the Certified Red Team Professional
 (CRTP) certification.
 </p>
+<div class="hero-meta">
 
+  <div class="meta-item">
+    <span class="meta-label">Instructor</span>
+    <span class="meta-value">Nikhil Mittal</span>
+  </div>
+
+  <div class="meta-item">
+    <span class="meta-label">Location</span>
+    <span class="meta-value">Bangalore</span>
+  </div>
+
+  <div class="meta-item">
+    <span class="meta-label">Date</span>
+    <span class="meta-value">31 Oct 2026 – 2 Nov 2026</span>
+  </div>
+
+</div>
 <!-- HERO MODULES -->
 
 <!-- =========================
 Hero Feature Modules
 ========================= -->
+<div class="hero-cta">
 
+  <a href="#enroll" class="btn-primary hero-btn">
+    Enroll Now
+  </a>
+
+  <a href="#curriculum" class="btn-outline hero-btn">
+    Explore Course
+  </a>
+<p class="cta-note">Limited seats available • Early bird discount active</p>
+</div>
 <div class="hero-modules">
 
-<div class="hero-module">
 
-<svg class="module-icon" viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
-<path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/>
-</svg>
-
-<span>Duration — 3 Days</span>
-
-</div>
 
 
 <div class="hero-module">
@@ -2572,16 +3013,7 @@ Hero Feature Modules
 </div>
 
 
-<div class="hero-module">
 
-<svg class="module-icon" viewBox="0 0 24 24">
-<path d="M3 12h18" stroke="currentColor" stroke-width="2"/>
-<path d="M12 3v18" stroke="currentColor" stroke-width="2"/>
-</svg>
-
-<span>Enterprise Lab Environment</span>
-
-</div>
 
 
 <div class="hero-module">
@@ -2642,7 +3074,8 @@ Hero Feature Modules
     <a href="#prerequisites">Prerequisites</a>  
     <a href="#enroll">Enroll</a>  
     <a href="#labs">Labs </a>       
-    <a href="#instructor">Instructor</a>        
+    <a href="#instructor">Instructor</a>
+    <a href="#audience">Audience</a> 
     <a href="#venue">Venue</a> 
     <a href="#faq">FAQ</a>
   </div>
@@ -2706,6 +3139,7 @@ Defenses and Bypass Techniques
 </div>
 
 </section>
+    
 <section class="training-overview" id="training-details">
 
 <div class="container">
@@ -2723,126 +3157,53 @@ Participants work through guided attack scenarios, labs, and capture-the-flag ch
 
 <div class="overview-grid">
 
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="calendar-days"></i></div>
+    <h3>3 Day Training</h3>
+    <p>Instructor-led sessions delivered during AltSecCON.</p>
+  </div>
 
-<!-- Card 1 -->
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="clock"></i></div>
+    <h3>8 Hours Per Session</h3>
+    <p>Full-day guided sessions covering Red Team tradecraft.</p>
+  </div>
 
-<div class="overview-card">
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="flask-conical"></i></div>
+    <h3>8 Weeks Lab Access</h3>
+    <p>Continue practicing attacks in enterprise-grade labs.</p>
+  </div>
 
-<div class="overview-icon">📅</div>
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="target"></i></div>
+    <h3>40 Capture-the-Flag Challenges</h3>
+    <p>Hands-on exercises designed to test attack techniques.</p>
+  </div>
 
-<h3>3 Day Training</h3>
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="wrench"></i></div>
+    <h3>23 Practical Lab Exercises</h3>
+    <p>Step-by-step labs simulating real enterprise scenarios.</p>
+  </div>
 
-<p>
-Instructor-led sessions delivered during AltSecCON.
-</p>
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="award"></i></div>
+    <h3>1 CRTP Certification Attempt</h3>
+    <p>Earn the Certified Red Team Professional credential.</p>
+  </div>
 
-</div>
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="file-text"></i></div>
+    <h3>Course Completion Certificate</h3>
+    <p>Certificate issued after completing all learning objectives.</p>
+  </div>
 
-
-<!-- Card 2 -->
-
-<div class="overview-card">
-
-<div class="overview-icon">⏱</div>
-
-<h3>8 Hours Per Session</h3>
-
-<p>
-Full-day guided sessions covering Red Team tradecraft.
-</p>
-
-</div>
-
-
-<!-- Card 3 -->
-
-<div class="overview-card">
-
-<div class="overview-icon">🧪</div>
-
-<h3>8 Weeks Lab Access</h3>
-
-<p>
-Continue practicing attacks in enterprise-grade labs.
-</p>
-
-</div>
-
-
-<!-- Card 4 -->
-
-<div class="overview-card">
-
-<div class="overview-icon">🎯</div>
-
-<h3>40 Capture-the-Flag Challenges</h3>
-
-<p>
-Hands-on exercises designed to test attack techniques.
-</p>
-
-</div>
-
-
-<!-- Card 5 -->
-
-<div class="overview-card">
-
-<div class="overview-icon">🛠</div>
-
-<h3>23 Practical Lab Exercises</h3>
-
-<p>
-Step-by-step labs simulating real enterprise scenarios.
-</p>
-
-</div>
-
-
-<!-- Card 6 -->
-
-<div class="overview-card">
-
-<div class="overview-icon">🏅</div>
-
-<h3>1 CRTP Certification Attempt</h3>
-
-<p>
-Earn the Certified Red Team Professional credential.
-</p>
-
-</div>
-
-
-<!-- Card 7 -->
-
-<div class="overview-card">
-
-<div class="overview-icon">📜</div>
-
-<h3>Course Completion Certificate</h3>
-
-<p>
-Certificate issued after completing all learning objectives.
-</p>
-
-</div>
-
-
-<!-- Card 8 -->
-
-<div class="overview-card">
-
-<div class="overview-icon">🎥</div>
-
-<h3>Video Course Included</h3>
-
-<p>
-Access recorded lessons for revision after training.
-</p>
-
-</div>
-
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="video"></i></div>
+    <h3>Video Course Included</h3>
+    <p>Access recorded lessons for revision after training.</p>
+  </div>
 
 </div>
 
@@ -2979,7 +3340,7 @@ privilege escalation, persistence, and enterprise attack paths in Active Directo
 <!-- LEFT CONTENT -->
 <div class="cert-intro">
 
-<p class="eyebrow">CERTIFICATION</p>
+<Span class="section-eyebrow">CERTIFICATION</Span>
 
 <h2>Build Your Red Team Credentials</h2>
 
@@ -3122,7 +3483,7 @@ Directory attack tradecraft.
 
 <div class="container">
 
-<p class="eyebrow">Requirements</p>
+<span class="section-eyebrow">Requirements</span>
 
 <h2 class="section-title">Prerequisites</h2>
 
@@ -3146,7 +3507,14 @@ Ability to use Windows command line tools (PowerShell / CMD)
 <span class="check-icon">✓</span>
 Familiarity with Windows administration concepts
 </li>
-
+<li>
+<span class="check-icon">✓</span>
+Bring Your Own Laptops with Windows 10 /11 or recent MacOS
+</li>
+<li>
+<span class="check-icon">✓</span>
+A recent web-browser (Chrome would be preferred)
+</li>
 </ul>
 
 </div>
@@ -3155,7 +3523,7 @@ Familiarity with Windows administration concepts
 <section class="enroll-section" id="enroll">
 
   <div class="container">
-    <p class="eyebrow">Purchase</p>
+    <span class="section-eyebrow">Purchase</span>
     <h2 class="section-title">Enroll in CRTP Training</h2>
     <p class="section-subtitle">
       Hands-on Red Team training with enterprise labs, certification, and lifetime learning access.
@@ -3220,68 +3588,95 @@ Familiarity with Windows administration concepts
 </section>  
 <section class="labs-section" id="labs">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-header">
-<p class="eyebrow">Hands-on Training</p>
-<h2>Labs & Training Environment</h2>
-<p class="lead">
-This training is built around a fully hands-on lab environment designed to simulate real enterprise Active Directory infrastructure.
-Participants perform attacks, bypass defenses, and practice Red Team tradecraft inside isolated lab networks.
-</p>
-</div>
+    <!-- HEADER -->
+    <div class="section-header">
+      <span class="section-eyebrow">Hands-on Training</span>
+      <h2>Labs & Training Environment</h2>
+      <p class="lead">
+        This training is built around a fully hands-on lab environment designed to simulate real enterprise Active Directory infrastructure.
+        Participants perform attacks, bypass defenses, and practice Red Team tradecraft inside isolated lab networks.
+      </p>
+    </div>
 
+    <!-- MAIN GRID -->
+    <div class="labs-main-grid">
 
-<div class="labs-grid">
+      <!-- LEFT IMAGE -->
+      <div class="labs-image">
+        <img src="https://static.wixstatic.com/media/470c31_33920ce03254499483e54c9df75654ce~mv2.png" alt="Active Directory Lab Environment">
+      </div>
 
-<div class="lab-card">
-<h3>Enterprise Active Directory Lab</h3>
-<ul>
-<li>Multi-domain Active Directory environment</li>
-<li>Realistic enterprise network architecture</li>
-<li>Multiple trust relationships</li>
-<li>Domain users, servers, and privileged accounts</li>
-</ul>
-</div>
+      <!-- RIGHT CONTENT -->
+      <div class="labs-content">
 
+        <div class="labs-grid">
 
-<div class="lab-card">
-<h3>Offensive Tradecraft Practice</h3>
-<ul>
-<li>Hands-on enumeration exercises</li>
-<li>Kerberos attack scenarios</li>
-<li>Privilege escalation paths</li>
-<li>Defense evasion techniques</li>
-</ul>
-</div>
+          <div class="lab-card">
+            <h3>Enterprise Active Directory Lab</h3>
+            <ul>
+              <li>Multi-domain Active Directory environment</li>
+              <li>Realistic enterprise network architecture</li>
+              <li>Multiple trust relationships</li>
+              <li>Domain users, servers, and privileged accounts</li>
+            </ul>
+          </div>
 
+          <div class="lab-card">
+            <h3>Offensive Tradecraft Practice</h3>
+            <ul>
+              <li>Hands-on enumeration exercises</li>
+              <li>Kerberos attack scenarios</li>
+              <li>Privilege escalation paths</li>
+              <li>Defense evasion techniques</li>
+            </ul>
+          </div>
 
-<div class="lab-card">
-<h3>Red Team Tooling</h3>
-<ul>
-<li>PowerShell tradecraft</li>
-<li>.NET offensive tooling</li>
-<li>Custom scripts and automation</li>
-<li>Operational security considerations</li>
-</ul>
-</div>
+          <div class="lab-card">
+            <h3>Red Team Tooling</h3>
+            <ul>
+              <li>PowerShell tradecraft</li>
+              <li>.NET offensive tooling</li>
+              <li>Custom scripts and automation</li>
+              <li>Operational security considerations</li>
+            </ul>
+          </div>
 
+          <div class="lab-card">
+            <h3>Realistic Attack Paths</h3>
+            <ul>
+              <li>Privilege escalation chains</li>
+              <li>Lateral movement techniques</li>
+              <li>Persistence strategies</li>
+              <li>Domain dominance scenarios</li>
+            </ul>
+          </div>
 
-<div class="lab-card">
-<h3>Realistic Attack Paths</h3>
-<ul>
-<li>Privilege escalation chains</li>
-<li>Lateral movement techniques</li>
-<li>Persistence strategies</li>
-<li>Domain dominance scenarios</li>
-</ul>
-</div>
+        </div>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</section>  
+    <!-- CTA BLOCK -->
+    <div class="labs-cta">
+
+      <h3>Develop Real-World Red Team Skills</h3>
+
+      <p>
+        Build practical offensive security skills through hands-on labs and real enterprise attack scenarios.
+      </p>
+
+      <a href="#enroll" class="btn-primary labs-cta-btn">
+        Enroll Now
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
     
 
@@ -3314,7 +3709,7 @@ Instructor Intro
 
 <div class="instructor-intro">
 
-<p class="eyebrow">Instructor</p>
+<span class="section-eyebrow">Instructor</span>
 
 <h2>Nikhil Mittal</h2>
 
@@ -3424,12 +3819,91 @@ Social Proof Section
 <!-- =========================
 Social Proof Section
 ========================= -->
+<section class="audience-section" id="audience">
 
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="section-header">
+      <span class="section-eyebrow">Target Audience</span>
+      <h2>Who Should Attend This Training?</h2>
+      <p class="lead">
+        This training is designed for professionals looking to build and validate real-world
+        Red Team skills in Active Directory and enterprise environments.
+      </p>
+    </div>
+
+    <!-- CARDS -->
+    <div class="audience-grid">
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <i data-lucide="shield"></i>
+        </div>
+        <h3>Cybersecurity Professionals</h3>
+        <p>Enhance offensive security skills and understand real-world enterprise attack paths.</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <i data-lucide="terminal"></i>
+        </div>
+        <h3>Penetration Testers</h3>
+        <p>Level up your AD attack techniques and improve post-exploitation workflows.</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <i data-lucide="settings"></i>
+        </div>
+        <h3>Security Engineers</h3>
+        <p>Understand attacker techniques to build better detection and defense strategies.</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <i data-lucide="activity"></i>
+        </div>
+        <h3>SOC Analysts</h3>
+        <p>Learn how attacks happen in enterprise environments to improve monitoring and response.</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <i data-lucide="graduation-cap"></i>
+        </div>
+        <h3>Aspiring Red Teamers</h3>
+        <p>Build a strong foundation in Active Directory attacks and offensive security.</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <i data-lucide="book-open"></i>
+        </div>
+        <h3>Students & Learners</h3>
+        <p>Gain hands-on experience with real enterprise labs and practical attack scenarios.</p>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="audience-cta">
+      <h3>Start Your Red Team Journey Today</h3>
+      <p>
+        Join instructor-led training and gain hands-on experience in real enterprise attack scenarios.
+      </p>
+
+      <a href="#enroll" class="btn-primary">Enroll Now</a>
+    </div>
+
+  </div>
+
+</section>
 <section class="social-proof-section">
 
 <div class="container">
 
-<p class="eyebrow">Social Proof</p>
+<span class="section-eyebrow">Social Proof</span>
 
 <h2 class="section-title">
 Trusted by Security Professionals Worldwide
@@ -3521,7 +3995,7 @@ Sticky Schedule CTA
 <section>
 <div class="sticky-cta" id="stickyCTA">
 
-<a href="#" class="sticky-cta-button">
+<a href="#enroll" class="sticky-cta-button">
 
 <svg class="cta-icon" viewBox="0 0 24 24" fill="none">
 <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
@@ -3530,7 +4004,7 @@ Sticky Schedule CTA
 <line x1="16" y1="3" x2="16" y2="7" stroke="currentColor" stroke-width="2"/>
 </svg>
 
-Request Upcoming Schedule
+Enroll Now
 
 </a>
 
@@ -3545,7 +4019,7 @@ FAQ Section
 
 <div class="container">
 
-<p class="eyebrow">FAQ</p>
+<span class="section-eyebrow">FAQ</span>
 
 <h2 class="section-title">Frequently Asked Questions</h2>
 
@@ -3902,5 +4376,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>   
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>    
 </body>
 </html>
