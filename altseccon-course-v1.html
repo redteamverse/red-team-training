@@ -47,7 +47,8 @@ Hero Section
 
 .hero-section{
 background:#FFFFFF;
-padding:120px 0;
+padding:120px 0px;   
+padding-bottom: 80px; /* important */    
 }
 
 
@@ -2101,11 +2102,420 @@ border-radius:6px;
 
 margin-bottom:10px;
 }    
+    
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  color: #E5E7EB;
+  display: none;
+  background: transparent;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease, background 0.25s ease;
+}
+
+.site-header.is-visible {
+  display: block;
+  transform: translateY(0);
+}
+
+.site-header.is-solid {
+  background: rgba(43, 43, 80, 0.95);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+}
+  
+.logo a::after {
+  display: none !important;
+  content: none !important;
+}
+  
+
+  .header-inner .logo a{
+    color: var(--white);
+    text-decoration:none;
+  }  
+
+.nav a {
+  margin-left: 28px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  text-decoration: none;
+  position: relative;
+  opacity: 0.85;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-red);
+  transition: width 0.25s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Disable desktop header on mobile */
+@media (max-width: 768px) {
+  .site-header {
+    display: none !important;
+  }
+}
+    
+/* Hidden by default */
+.section-nav {
+  position: sticky;
+  top: 60px;
+  z-index: 99;
+
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Visible state */
+.section-nav.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+.section-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 14px 20px;
+}
+
+.section-nav-container::-webkit-scrollbar{
+  display:none;
+}
+
+.section-nav a{
+  font-size:14px;
+  color:#374151;
+  text-decoration:none;
+  font-weight:500;
+  position:relative;
+  white-space:nowrap;
+  padding-bottom:6px;
+}
+
+.section-nav a:hover{
+  color:#2563eb;
+}
+
+.section-nav a.active{
+  color:#2563eb;
+}
+
+.section-nav a.active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-2px;
+  width:100%;
+  height:2px;
+  background:#2563eb;
+}      
+    
+.section-nav {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);   
+}    
+    
+.enroll-section {
+  padding: 80px 20px;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+/* FEATURES */
+.enroll-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.feature-item {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+/* PRICING GRID */
+.pricing-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.pricing-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* HIGHLIGHT CARD */
+.pricing-card.highlight {
+  border: 2px solid #ef4444;
+  transform: scale(1.05);
+}
+
+/* BADGE */
+.badge {
+  background: #ef4444;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* PRICE */
+.price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 15px 0;
+}
+
+.price span {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* TEXT */
+.save-text {
+  color: #16a34a;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.note-text {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+/* BUTTONS */
+.btn-primary {
+  background: #ef4444;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-outline {
+  border: 1px solid #0f172a;
+  color: #0f172a;
+  padding: 12px;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.full {
+  width: 100%;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .pricing-card.highlight {
+    transform: none;
+  }
+}    
+/* FEATURES LIST */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 25px;
+  text-align: left;
+}
+
+.features-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 12px;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+/* CHECK ICON */
+.features-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #16a34a;
+  font-weight: bold;
+}    
+    
+.btn-outline.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #cbd5f5;
+  color: #94a3b8;
+}    
+    
+.schedule-section {
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+/* TABLE */
+.schedule-table {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ROW */
+.schedule-row {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  transition: 0.3s ease;
+}
+
+.schedule-row:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+/* DATE BOX */
+.schedule-date {
+  min-width: 90px;
+  text-align: center;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.schedule-date .day {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.schedule-date .month {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* CONTENT */
+.schedule-content h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.schedule-content p {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .schedule-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .schedule-date {
+    width: 100%;
+    text-align: left;
+  }
+}    
 </style>
 </head>
 
 <body>
+<header id="stickyHeader" class="site-header">
+  <div class="header-inner">
+    <div class="logo"><a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">AltSecCON</a></div>
 
+    <nav class="nav">
+      <a href="#training" id="get-train">Training</a>     
+      <a href="#event">Schedule</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>
+      <a href="#tickets">Tickets</a>
+      <a href="#venue">Venue</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>  
+    
 <!-- =========================
 Hero Section
 ========================= -->
@@ -2196,7 +2606,15 @@ Hero Feature Modules
 <span>Video course included!</span>
 
 </div>
-
+<!-- EXAM -->
+  <div class="hero-module">
+    <svg class="module-icon" viewBox="0 0 24 24">
+      <rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="8" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="2"/>
+      <line x1="8" y1="13" x2="14" y2="13" stroke="currentColor" stroke-width="2"/>
+    </svg>
+    <span>CRTP Exam Attempt</span>
+  </div>
 </div>
 
 </div>
@@ -2213,11 +2631,27 @@ Hero Feature Modules
 </div>
 
 </section>
-<section class="learn-section">
+<nav class="section-nav" id="sectionNav">
+  <div class="section-nav-container">
+
+    <a href="#overview">Course Overview</a>
+    <a href="#training-details">Training Details</a>
+    <a href="#curriculum">Curriculum</a> 
+    <a href="#certification">Certification</a>   
+    <a href="#schedule">Schedule</a> 
+    <a href="#prerequisites">Prerequisites</a>  
+    <a href="#enroll">Enroll</a>  
+    <a href="#labs">Labs </a>       
+    <a href="#instructor">Instructor</a>        
+    <a href="#venue">Venue</a> 
+    <a href="#faq">FAQ</a>
+  </div>
+</nav>      
+<section class="learn-section" id="overview">
 
 <div class="container">
 
-<span class="section-eyebrow">Course Overview</span>
+<span class="section-eyebrow" >Course Overview</span>
 
 <h2 class="learn-title">What You Will Learn</h2>
 
@@ -2272,11 +2706,11 @@ Defenses and Bypass Techniques
 </div>
 
 </section>
-<section class="training-overview">
+<section class="training-overview" id="training-details">
 
 <div class="container">
 
-<span class="section-eyebrow">Training Overview</span>
+<span class="section-eyebrow" >Training Overview</span>
 
 <h2 class="overview-title">
 Course Structure & Training Details
@@ -2415,7 +2849,7 @@ Access recorded lessons for revision after training.
 </div>
 
 </section>    
-<section class="curriculum-section">
+<section class="curriculum-section" id="curriculum">
 
 <div class="container">
 
@@ -2538,73 +2972,7 @@ privilege escalation, persistence, and enterprise attack paths in Active Directo
 
 </div>
 </section>   
-<section class="labs-section">
-
-<div class="container">
-
-<div class="section-header">
-<p class="eyebrow">Hands-on Training</p>
-<h2>Labs & Training Environment</h2>
-<p class="lead">
-This training is built around a fully hands-on lab environment designed to simulate real enterprise Active Directory infrastructure.
-Participants perform attacks, bypass defenses, and practice Red Team tradecraft inside isolated lab networks.
-</p>
-</div>
-
-
-<div class="labs-grid">
-
-<div class="lab-card">
-<h3>Enterprise Active Directory Lab</h3>
-<ul>
-<li>Multi-domain Active Directory environment</li>
-<li>Realistic enterprise network architecture</li>
-<li>Multiple trust relationships</li>
-<li>Domain users, servers, and privileged accounts</li>
-</ul>
-</div>
-
-
-<div class="lab-card">
-<h3>Offensive Tradecraft Practice</h3>
-<ul>
-<li>Hands-on enumeration exercises</li>
-<li>Kerberos attack scenarios</li>
-<li>Privilege escalation paths</li>
-<li>Defense evasion techniques</li>
-</ul>
-</div>
-
-
-<div class="lab-card">
-<h3>Red Team Tooling</h3>
-<ul>
-<li>PowerShell tradecraft</li>
-<li>.NET offensive tooling</li>
-<li>Custom scripts and automation</li>
-<li>Operational security considerations</li>
-</ul>
-</div>
-
-
-<div class="lab-card">
-<h3>Realistic Attack Paths</h3>
-<ul>
-<li>Privilege escalation chains</li>
-<li>Lateral movement techniques</li>
-<li>Persistence strategies</li>
-<li>Domain dominance scenarios</li>
-</ul>
-</div>
-
-</div>
-
-</div>
-
-</section>  
-
-    
-<section class="certification-section">
+<section class="certification-section" id="certification">
 
 <div class="container cert-grid">
 
@@ -2688,9 +3056,69 @@ Directory attack tradecraft.
 
 </div>
 
-</section>
- 
-<section class="prerequisites-section">
+</section>    
+<section class="schedule-section" id="schedule">
+
+  <div class="container">
+    <span class="section-eyebrow" >Training Overview</span>
+    <!-- HEADER -->
+    <h2 class="section-title">Training Schedule</h2>
+
+    <p class="section-subtitle">
+      Daily 8-hour sessions from <strong>09:00 AM</strong> to <strong>05:00 PM IST</strong>.
+    </p>
+
+    <!-- SCHEDULE TABLE -->
+    <div class="schedule-table">
+
+      <!-- ROW 1 -->
+      <div class="schedule-row">
+        <div class="schedule-date">
+          <span class="day">31</span>
+          <span class="month">Oct 2026</span>
+        </div>
+
+        <div class="schedule-content">
+          <h3>Day 1</h3>
+          <p>Enumeration, Offensive PowerShell and .NET Tradecraft</p>
+        </div>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="schedule-row">
+        <div class="schedule-date">
+          <span class="day">01</span>
+          <span class="month">Nov 2026</span>
+        </div>
+
+        <div class="schedule-content">
+          <h3>Day 2</h3>
+          <p>Lateral Movement, Domain Privilege Escalation and Persistence</p>
+        </div>
+      </div>
+
+      <!-- ROW 3 -->
+      <div class="schedule-row">
+        <div class="schedule-date">
+          <span class="day">02</span>
+          <span class="month">Nov 2026</span>
+        </div>
+
+        <div class="schedule-content">
+          <h3>Day 3</h3>
+          <p>
+            Domain Persistence, Dominance and Escalation to Enterprise Admins.<br>
+            Defenses, Monitoring and Bypassing Defenses
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>  
+<section class="prerequisites-section" id="prerequisites">
 
 <div class="container">
 
@@ -2723,7 +3151,142 @@ Familiarity with Windows administration concepts
 
 </div>
 
-</section>
+</section>    
+<section class="enroll-section" id="enroll">
+
+  <div class="container">
+    <p class="eyebrow">Purchase</p>
+    <h2 class="section-title">Enroll in CRTP Training</h2>
+    <p class="section-subtitle">
+      Hands-on Red Team training with enterprise labs, certification, and lifetime learning access.
+    </p>
+
+    <div class="pricing-grid">
+
+      <!-- EARLY BIRD -->
+      <div class="pricing-card highlight">
+
+        <div class="badge">Early Bird - 10% OFF</div>
+
+        <h3>Early Bird Access</h3>
+
+        <div class="price">
+          ₹35,999 <span>+ GST</span>
+        </div>
+        <p class="note-text">Only 50 seats are left</p>
+        <!-- FEATURES -->
+        <ul class="features-list">
+          <li>60 Days Lab Access</li>
+          <li>Course Completion Certificate</li>
+          <li>Lifetime Course Material Access</li>
+          <li>1 Certification Exam Attempt</li>
+          <li>Instructor-led Sessions</li>
+        </ul>
+
+        <a href="#register" class="btn-primary full">
+          Enroll Now
+        </a>
+
+      </div>
+
+      <!-- REGULAR -->
+      <div class="pricing-card">
+
+        <h3>Regular Access</h3>
+        
+        <div class="price">
+          ₹39,999 <span>+ GST</span>
+        </div>
+         <p class="note-text">Available after early bird ends</p>
+        <!-- FEATURES -->
+        <ul class="features-list">
+          <li>60 Days Lab Access</li>
+          <li>Course Completion Certificate</li>
+          <li>Lifetime Course Material Access</li>
+          <li>1 Certification Exam Attempt</li>
+          <li>Instructor-led Red Team Training</li>
+        </ul>
+
+        <a href="#" class="btn-outline full disabled">
+  Enroll Now
+      </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>  
+<section class="labs-section" id="labs">
+
+<div class="container">
+
+<div class="section-header">
+<p class="eyebrow">Hands-on Training</p>
+<h2>Labs & Training Environment</h2>
+<p class="lead">
+This training is built around a fully hands-on lab environment designed to simulate real enterprise Active Directory infrastructure.
+Participants perform attacks, bypass defenses, and practice Red Team tradecraft inside isolated lab networks.
+</p>
+</div>
+
+
+<div class="labs-grid">
+
+<div class="lab-card">
+<h3>Enterprise Active Directory Lab</h3>
+<ul>
+<li>Multi-domain Active Directory environment</li>
+<li>Realistic enterprise network architecture</li>
+<li>Multiple trust relationships</li>
+<li>Domain users, servers, and privileged accounts</li>
+</ul>
+</div>
+
+
+<div class="lab-card">
+<h3>Offensive Tradecraft Practice</h3>
+<ul>
+<li>Hands-on enumeration exercises</li>
+<li>Kerberos attack scenarios</li>
+<li>Privilege escalation paths</li>
+<li>Defense evasion techniques</li>
+</ul>
+</div>
+
+
+<div class="lab-card">
+<h3>Red Team Tooling</h3>
+<ul>
+<li>PowerShell tradecraft</li>
+<li>.NET offensive tooling</li>
+<li>Custom scripts and automation</li>
+<li>Operational security considerations</li>
+</ul>
+</div>
+
+
+<div class="lab-card">
+<h3>Realistic Attack Paths</h3>
+<ul>
+<li>Privilege escalation chains</li>
+<li>Lateral movement techniques</li>
+<li>Persistence strategies</li>
+<li>Domain dominance scenarios</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+</section>  
+
+    
+
+ 
+
 
 <!-- =========================
 Instructor Authority Section
@@ -2741,7 +3304,7 @@ Instructor Authority Section
 Instructor Authority Section
 ========================= -->
 
-<section class="instructor-section">
+<section class="instructor-section" id="instructor">
 
 <div class="container">
 
@@ -2955,7 +3518,7 @@ Penetration Tester
 <!-- =========================
 Sticky Schedule CTA
 ========================= -->
-
+<section>
 <div class="sticky-cta" id="stickyCTA">
 
 <a href="#" class="sticky-cta-button">
@@ -2978,7 +3541,7 @@ Request Upcoming Schedule
 FAQ Section
 ========================= -->
 
-<section class="faq-section">
+<section class="faq-section" id="faq">
 
 <div class="container">
 
@@ -3100,8 +3663,8 @@ new dates are announced.
 
 <a href="#" class="final-cta">
 Contact for Training</a>
-
-</section>    
+    </div>
+</section>  
 
 <!-- =========================
 Explore Other Red Team Trainings
@@ -3228,5 +3791,116 @@ question.querySelector(".faq-icon").textContent = "−";
 });
 
 </script>    
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const header = document.getElementById("stickyHeader");
+  const sectionNav = document.getElementById("sectionNav");
+
+  const navLinks = document.querySelectorAll(".section-nav a");
+  const tabs = document.querySelectorAll(".mobile-tabs a");
+
+  const hero = document.querySelector(".hero-section");
+
+  /* Collect sections from BOTH nav + mobile tabs */
+  const sections = Array.from(
+    document.querySelectorAll("section[id]")
+  );
+
+  /* =========================
+     SCROLL HANDLER
+  ========================= */
+  function handleScroll() {
+    const scrollY = window.scrollY;
+    const isMobile = window.innerWidth <= 768;
+
+    /* -------------------------
+       HEADER SHOW/HIDE
+    ------------------------- */
+    if (!isMobile) {
+      if (scrollY > 80) {
+        header.classList.add("is-visible", "is-solid");
+      } else {
+        header.classList.remove("is-visible", "is-solid");
+      }
+    }
+
+    /* -------------------------
+       SECTION NAV SHOW AFTER HERO
+    ------------------------- */
+    if (hero && sectionNav) {
+      if (scrollY > hero.offsetHeight - 100) {
+        sectionNav.classList.add("is-visible");
+      } else {
+        sectionNav.classList.remove("is-visible");
+      }
+    }
+
+    /* -------------------------
+       SCROLL SPY (DESKTOP NAV)
+    ------------------------- */
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      const sectionHeight = section.clientHeight;
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+
+    /* -------------------------
+       MOBILE TAB ACTIVE
+    ------------------------- */
+    if (isMobile && tabs.length) {
+      let activeIndex = -1;
+
+      tabs.forEach((tab, index) => {
+        const section = document.querySelector(tab.getAttribute("href"));
+        if (section && scrollY >= section.offsetTop - 160) {
+          activeIndex = index;
+        }
+      });
+
+      tabs.forEach(tab => tab.classList.remove("active"));
+      if (activeIndex >= 0) {
+        tabs[activeIndex].classList.add("active");
+      }
+    }
+  }
+
+  /* =========================
+     SMOOTH SCROLL
+  ========================= */
+  document.querySelectorAll('.section-nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  /* =========================
+     EVENTS
+  ========================= */
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleScroll);
+
+});
+</script>   
 </body>
 </html>
