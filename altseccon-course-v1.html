@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CRTP Training</title>
+<title>CRTP® Training</title>
 
 <style>
 
@@ -68,21 +68,48 @@ Hero Content
 ========================= */
 
 .hero-content h1{
-font-size:48px;
+font-size:44px;
 line-height:1.2;
-color:#111827;
-margin-bottom:22px;
+font-weight: 700;    
+color: #111;
+margin-bottom:20px;
 }
 
-.hero-description{
-font-size:18px;
-line-height:1.6;
-color:#374151;
-max-width:600px;
-margin-bottom:40px;
+/* MAIN TITLE */
+.hero-title {
+  font-size: 34px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-
+/* SUBTITLE */
+.hero-subtitle {
+  font-size: 20px;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+/* DESCRIPTION */
+.hero-description {
+  font-size: 15px;
+  color: #4b5563;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+}
+/* HIGHLIGHT */
+.hero-highlight {
+  display: block;
+  font-size: 28px;
+  color: #374151;
+  font-weight: 500;
+  margin-top: 6px;
+}
 /* =========================
 Hero Module Card
 ========================= */
@@ -133,6 +160,24 @@ grid-template-columns:1fr;
 }
 
 }
+    
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+}    
 /* =========================
 Hero Stats Grid
 ========================= */
@@ -252,10 +297,7 @@ Hero Image Wrapper
 ========================= */
 
 .hero-image{
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
+text-align: center;    
 }
 
 
@@ -277,19 +319,42 @@ z-index:0;
 
 
 /* Certificate */
-
-.hero-image img{
-position:relative;
-z-index:1;
-transition:transform .3s ease;
-width:100%;
-max-width:420px;
-
-border-radius:12px;
-
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+.hero-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
 }
+    
+.hero-caption {
+  position: relative;
+  padding-top: 12px;
+}
+    
+.hero-caption::before {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: #e5e7eb;
+  display: block;
+  margin: 0 auto 10px;
+}    
+.hero-caption {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #6b7280; /* soft gray */
+  line-height: 1.6;
 
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-caption strong {
+  color: #111; /* strong contrast */
+  font-weight: 600;
+}    
+   
 .hero-image img:hover{
 transform:translateY(-6px);
 }
@@ -903,7 +968,7 @@ grid-row:1;
 }
 
 .certificate-image img{
-width:100%;
+width:80%;
 border-radius:12px;
 border:1px solid #E5E7EB;
 box-shadow:0 10px 28px rgba(0,0,0,0.06);    
@@ -1288,9 +1353,8 @@ max-width:520px;
 
 .highlight-item{
 display:flex;
+gap: 8px;    
 align-items:flex-start;
-gap:10px;
-
 font-size:16px;
 line-height:1.6;
 color:#374151;
@@ -1365,7 +1429,15 @@ background:#FFFFFF;
 border-color:#B91C1C;
 }
 
-
+@media (max-width:768px){
+.highlight-item{
+display:flex;
+align-items:flex-start;
+font-size:16px;
+line-height:1.6;
+color:#374151;
+}    
+    }
 /* =========================
 Mobile
 ========================= */
@@ -1918,27 +1990,28 @@ Final Section
 ========================= */
 
 .final-section{
-padding:100px 20px;
+padding:10px 10px;
 background:#2B2B50;
 color:#FFFFFF;
 text-align:center;
+align-items: center;    
 }
 
 .final-container{
-max-width:720px;
+max-width:520px;
 margin:auto;
 }
 
 .final-title{
 font-size:36px;
-margin-bottom:16px;
+margin-bottom:10px;
 }
 
 .final-description{
 font-size:18px;
 line-height:1.6;
 opacity:.9;
-margin-bottom:36px;
+margin-bottom:10px;
 }
 
 /* CTA */
@@ -1951,7 +2024,7 @@ padding:14px 28px;
 border-radius:6px;
 font-weight:600;
 text-decoration:none;
-margin-bottom:26px;
+margin-bottom:10px;
 }
 
 .final-cta:hover{
@@ -2016,6 +2089,7 @@ margin:auto;
 .other-courses-section{
 padding:90px 20px;
 background:#F9FAFB;
+ 
 }
 
 .section-title{
@@ -2102,15 +2176,17 @@ margin-bottom:10px;
     
 .site-header {
   position: fixed;
+ height: 72px;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  color: #E5E7EB;
+  color: #000000;
   display: none;
   background: transparent;
   transform: translateY(-100%);
   transition: transform 0.3s ease, background 0.25s ease;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .site-header.is-visible {
@@ -2119,49 +2195,86 @@ margin-bottom:10px;
 }
 
 .site-header.is-solid {
-  background: rgba(43, 43, 80, 0.95);
+  background: #ffffff;
+  backdrop-filter: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+ height: 60px;
 }
 
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 18px 28px;
+  padding: 14px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.25s ease;
 }
 
-.logo {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--white);
-  text-decoration: none;
+/* Reduce padding when shrunk */
+.site-header.is-solid .header-inner {
+  padding: 10px 28px;
 }
-  
+    
+/* Slight logo shrink */
+.site-header.is-solid .logo img {
+  height: 32px;
+}
+
+.site-header.is-solid .logo span {
+  font-size: 20px;
+}    
+   
+    
+.logo img {
+  filter: none;
+}
+    
 .logo a::after {
   display: none !important;
-  content: none !important;
 }
   
 
-  .header-inner .logo a{
-    color: var(--white);
-    text-decoration:none;
-  }  
-
-.nav a {
-  margin-left: 28px;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--white);
+  
+/* LOGO WRAPPER */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
-  position: relative;
-  opacity: 0.85;
 }
 
+/* LOGO IMAGE */
+.logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+/* LOGO TEXT */
+.logo span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 0.3px;
+}
+
+  
+/* NAV LINKS */
+.nav a {
+  color: #111827; /* darker = better contrast */
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 14px; 
+  margin-left: 24px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+
 .nav a:hover {
-  opacity: 1;
+        opacity: 1;
+    color: #e53935;
 }
 
 .nav a::after {
@@ -2171,14 +2284,17 @@ margin-bottom:10px;
   bottom: -6px;
   width: 0;
   height: 2px;
-  background: var(--primary-red);
-  transition: width 0.25s ease;
+background: #e53935;  
+transition: width 0.25s ease;
 }
 
 .nav a:hover::after {
   width: 100%;
 }
-
+/* ACTIVE LINK */
+.nav a.active {
+  color: #e53935;
+}
 /* Disable desktop header on mobile */
 @media (max-width: 768px) {
   .site-header {
@@ -2189,7 +2305,7 @@ margin-bottom:10px;
 /* Hidden by default */
 .section-nav {
   position: sticky;
-  top: 60px;
+  top: 55px;
   z-index: 99;
 
   transform: translateY(-100%);
@@ -2926,7 +3042,15 @@ align-items: center;
 <body>
 <header id="stickyHeader" class="site-header">
   <div class="header-inner">
-    <div class="logo"><a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">AltSecCON</a></div>
+    <div class="logo">
+  <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">
+    
+    <img src="https://static.wixstatic.com/media/98ad8e_5fe5742cfaf44db197695e76018055d2~mv2.png" alt="AltSecCON Logo">
+
+    <span>AltSecCON</span>
+
+  </a>
+</div>
 
     <nav class="nav">
       <a href="#training" id="get-train">Training</a>     
@@ -2952,16 +3076,18 @@ Hero Section
 
 <div class="hero-content">
 
-<h1>
-Active Directory Attacks for Red and Blue Teams
-(Beginner's Edition)
+<h1 class="hero-title">
+  Active Directory Attacks for<br>
+  Red and Blue Teams
 </h1>
 
+<p class="hero-subtitle">
+  (Beginner's Edition)
+</p>
+
 <p class="hero-description">
-This 3-day beginner class teaches you how to get started with Red Teaming.
-It covers AD enumeration, trust mapping, Kerberos based attacks,
-defense bypasses and more! Earn the Certified Red Team Professional
-(CRTP) certification.
+  This 3-day beginner class teaches you how to get started with Red Teaming.
+  It covers AD enumeration, trust mapping, Kerberos-based attacks, and defense bypasses.
 </p>
 <div class="hero-meta">
 
@@ -3046,7 +3172,7 @@ Hero Feature Modules
       <line x1="8" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="2"/>
       <line x1="8" y1="13" x2="14" y2="13" stroke="currentColor" stroke-width="2"/>
     </svg>
-    <span>CRTP Exam Attempt</span>
+    <span>CRTP® Exam Attempt</span>
   </div>
 </div>
 
@@ -3057,11 +3183,16 @@ Hero Feature Modules
 
 <div class="hero-image">
 
-<img src="https://redteamverse.github.io/red-team-training/images/CRTP_Certificate.png" alt="CRTP Certificate">
+  <img src="https://redteamverse.github.io/red-team-training/images/CRTP_Certificate.png" alt="CRTP Certificate">
+
+  <p class="hero-caption">
+    Earn the <strong>Certified Red Team Professional (CRTP®)</strong> certification
+  </p>
 
 </div>
 
 </div>
+   
 
 </section>
 <nav class="section-nav" id="sectionNav">
@@ -3152,7 +3283,7 @@ Course Structure & Training Details
 </h2>
 
 <p class="overview-intro">
-The CRTP training at AltSecCON is a hands-on, instructor-led experience designed for practical learning. 
+The CRTP® training at AltSecCON is a hands-on, instructor-led experience designed for practical learning. 
 Participants work through guided attack scenarios, labs, and capture-the-flag challenges inside a simulated enterprise environment.
 </p>
 
@@ -3190,7 +3321,7 @@ Participants work through guided attack scenarios, labs, and capture-the-flag ch
 
   <div class="overview-card">
     <div class="overview-icon"><i data-lucide="award"></i></div>
-    <h3>1 CRTP Certification Attempt</h3>
+    <h3>1 CRTP® Certification Attempt</h3>
     <p>Earn the Certified Red Team Professional credential.</p>
   </div>
 
@@ -3220,7 +3351,7 @@ Participants work through guided attack scenarios, labs, and capture-the-flag ch
 <h2 class="curriculum-title">What You'll Cover During Training</h2>
 
 <p class="curriculum-intro">
-The CRTP training is organized into four modules across three days, covering enumeration,
+The CRTP® training is organized into four modules across three days, covering enumeration,
 privilege escalation, persistence, and enterprise attack paths in Active Directory environments.
 </p>
 
@@ -3347,7 +3478,7 @@ privilege escalation, persistence, and enterprise attack paths in Active Directo
 
 <p class="lead">
 Participants who complete the training can attempt the Certified Red Team
-Professional (CRTP) certification — a hands-on exam focused on Active
+Professional (CRTP®) certification — a hands-on exam focused on Active
 Directory attack tradecraft.
 </p>
 
@@ -3365,7 +3496,7 @@ Directory attack tradecraft.
 
 <div class="cert-card">
 
-<h3>CRTP Certification</h3>
+<h3>CRTP® Certification</h3>
 
 <ul>
 <li>Industry recognized Red Team certification</li>
@@ -3501,7 +3632,7 @@ A recent web-browser (Chrome would be preferred)
 
   <div class="container">
     <span class="section-eyebrow">Purchase</span>
-    <h2 class="section-title">Enroll in CRTP Training</h2>
+    <h2 class="section-title">Enroll in CRTP® Training</h2>
     <p class="section-subtitle">
       Hands-on Red Team training with enterprise labs, certification, and lifetime learning access.
     </p>
@@ -4066,7 +4197,7 @@ Is certification included with the training?
 <div class="faq-answer">
 <p>
 Participants can attempt the Certified Red Team Professional
-(CRTP) certification exam after completing the training.
+(CRTP®) certification exam after completing the training.
 </p>
 </div>
 
@@ -4107,13 +4238,13 @@ Start Your Red Team Training
 </h2>
 
 <p class="final-description">
-Training schedules are released periodically. Request the
-upcoming schedule and our team will notify you when
-new dates are announced.
+Join instructor-led training and gain hands-on experience in real enterprise attack scenarios.
+
+
 </p>
 
 <a href="#" class="final-cta">
-Contact for Training</a>
+Enroll for Training</a>
     </div>
 </section>  
 
