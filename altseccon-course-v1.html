@@ -39,7 +39,10 @@ max-width:1280px;
 margin:auto;
 padding:0 20px;
 }
-
+  
+html, body {
+  overflow-x: hidden;
+}
 
 /* =========================
 Hero Section
@@ -164,8 +167,8 @@ grid-template-columns:1fr;
 @media (max-width: 768px) {
 
   .hero-title {
-    font-size: 28px;
-    line-height: 1.3;
+    font-size: 24px;
+    line-height: 1.8;
   }
 
   .hero-subtitle {
@@ -1883,36 +1886,31 @@ height:18px;
 flex-shrink:0;
 }
     
-.sticky-cta{
-position:fixed;
-bottom:24px;
-right:0%;
-transform:translate(-50%, 20px);
-z-index:1000;
-opacity:0;
-pointer-events:none;
-transition:opacity .3s ease, transform .3s ease;
+.sticky-cta {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 
-.sticky-cta.show{
-opacity:1;
-pointer-events:auto;
-transform:translate(-50%, 0);
-}   
+.sticky-cta.show {
+  opacity: 0.8;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}  
     
-@media (max-width:768px){
+
+  @media (max-width:768px){
 
   .sticky-cta{
-    left: 50%;
-    transform: translate(-50%, 20px);
-    padding: 0 16px;
     width: 100%;
-    max-width: 250px; /* optional premium constraint */
-  }
-
-  .sticky-cta.show{
-    transform: translate(-50%, 0);
-  }
+    max-width: 360px;
+    padding: 0 16px;
+    }
 
   .sticky-cta-button{
     width: 100%;
@@ -2175,21 +2173,27 @@ margin-bottom:10px;
     
 .site-header {
   position: fixed;
- height: 72px;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  color: #000000;
-  display: none;
-  background: transparent;
-  transform: translateY(-100%);
-  transition: transform 0.3s ease, background 0.25s ease;
+
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid #e5e7eb;
+
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
 }
 
-.site-header.is-visible {
-  display: block;
+@media (max-width:768px){
+
+  .nav {
+    display: none; /* hide desktop nav */
+  }
+
+}  
+.site-header.is-visible {  
   transform: translateY(0);
 }
 
@@ -2297,26 +2301,41 @@ transition: width 0.25s ease;
 /* Disable desktop header on mobile */
 @media (max-width: 768px) {
   .site-header {
-    display: none !important;
+ 
   }
 }
-    
-/* Hidden by default */
-.section-nav {
-  position: sticky;
-  top: 55px;
-  z-index: 99;
+    @media (max-width:768px){
 
-  transform: translateY(-100%);
+  .section-nav {
+    top: 60px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .section-nav-container {
+    display: inline-flex;
+    padding: 0 16px;
+  }
+
+}
+.section-nav {
+  position: fixed;   /* 🔥 make it truly sticky */
+  top: 60px;         /* below header */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid #e5e7eb;
+
+  transform: translateY(-120%);
   opacity: 0;
   transition: all 0.3s ease;
-
-  background: #fff;
-  border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
 }
 
-/* Visible state */
+/* visible state */
 .section-nav.is-visible {
   transform: translateY(0);
   opacity: 1;
@@ -2404,7 +2423,9 @@ transition: width 0.25s ease;
   font-size: 14px;
   color: #0f172a;
 }
-
+.section {
+  scroll-margin-top: 120px;
+}
 /* PRICING GRID */
 .pricing-grid {
   display: flex;
@@ -3035,33 +3056,146 @@ align-items: center;
     padding: 30px 20px;
   }
 }    
+  
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #111;
+  transition: 0.3s ease;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 1200;
+  transition: right 0.35s ease;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+
+.mobile-menu-content {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-menu a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+}
+
+/* OVERLAY */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1100;
+  transition: opacity 0.3s ease;
+}
+
+/* ACTIVE STATE */
+.mobile-menu.open {
+  right: 0;
+}
+
+.menu-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* HAMBURGER ANIMATION */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px);
+}
+
+/* MOBILE ONLY */
+@media (max-width:768px){
+
+  .nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+}  
 </style>
 </head>
 
 <body>
 <header id="stickyHeader" class="site-header">
   <div class="header-inner">
+
+    <!-- LOGO -->
     <div class="logo">
-  <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">
-    
-    <img src="https://static.wixstatic.com/media/98ad8e_5fe5742cfaf44db197695e76018055d2~mv2.png" alt="AltSecCON Logo">
+      <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">
+        <img src="https://static.wixstatic.com/media/98ad8e_5fe5742cfaf44db197695e76018055d2~mv2.png" alt="AltSecCON Logo">
+        <span>AltSecCON</span>
+      </a>
+    </div>
 
-    <span>AltSecCON</span>
-
-  </a>
-</div>
-
+    <!-- DESKTOP NAV -->
     <nav class="nav">
-      <a href="#training" id="get-train">Training</a>     
+      <a href="#training">Training</a>     
       <a href="#event">Schedule</a>
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>
+      <a href="#">Conference</a>
       <a href="#tickets">Tickets</a>
       <a href="#venue">Venue</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
   </div>
-</header>  
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-content">
+    <a href="#training">Training</a>
+    <a href="#event">Schedule</a>
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>
+    <a href="#tickets">Tickets</a>
+    <a href="#venue">Venue</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+<!-- OVERLAY -->
+<div class="menu-overlay" id="menuOverlay"></div>
     
 <!-- =========================
 Hero Section
@@ -4307,119 +4441,84 @@ privilege escalation, and cloud persistence mechanisms.
 
 </section>    
 <script>
-const accordionItems = document.querySelectorAll(".accordion-item");
-
-accordionItems.forEach(item => {
-
-const header = item.querySelector(".accordion-header");
-
-header.addEventListener("click", () => {
-
-const openItem = document.querySelector(".accordion-item.active");
-
-if(openItem && openItem !== item){
-openItem.classList.remove("active");
-}
-
-item.classList.toggle("active");
-
-});
-
-});
-    </script>
-<script>
-
 document.addEventListener("DOMContentLoaded", function(){
 
-const stickyCTA = document.getElementById("stickyCTA");
+  /* =========================
+     ACCORDION
+  ========================= */
+  document.querySelectorAll(".accordion-item").forEach(item => {
+    const header = item.querySelector(".accordion-header");
 
-window.addEventListener("scroll", function(){
+    header.addEventListener("click", () => {
+      const openItem = document.querySelector(".accordion-item.active");
 
-const scrollPosition = window.scrollY;
-const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (openItem && openItem !== item) {
+        openItem.classList.remove("active");
+      }
 
-if(scrollPosition > pageHeight * 0.0){
-stickyCTA.classList.add("show");
-}else{
-stickyCTA.classList.remove("show");
-}
-
-});
-
-});
-
-</script>
-<script>
-
-const faqQuestions = document.querySelectorAll(".faq-question");
-
-faqQuestions.forEach(question => {
-
-question.addEventListener("click", () => {
-
-const answer = question.nextElementSibling;
-
-if(answer.style.maxHeight){
-answer.style.maxHeight = null;
-question.querySelector(".faq-icon").textContent = "+";
-}else{
-answer.style.maxHeight = answer.scrollHeight + "px";
-question.querySelector(".faq-icon").textContent = "−";
-}
-
-});
-
-});
-
-</script>    
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const header = document.getElementById("stickyHeader");
-  const sectionNav = document.getElementById("sectionNav");
-
-  const navLinks = document.querySelectorAll(".section-nav a");
-  const tabs = document.querySelectorAll(".mobile-tabs a");
-
-  const hero = document.querySelector(".hero-section");
-
-  /* Collect sections from BOTH nav + mobile tabs */
-  const sections = Array.from(
-    document.querySelectorAll("section[id]")
-  );
+      item.classList.toggle("active");
+    });
+  });
 
   /* =========================
-     SCROLL HANDLER
+     FAQ TOGGLE
   ========================= */
+  document.querySelectorAll(".faq-question").forEach(question => {
+    question.addEventListener("click", () => {
+      const answer = question.nextElementSibling;
+      const icon = question.querySelector(".faq-icon");
+
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+        icon.textContent = "+";
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        icon.textContent = "−";
+      }
+    });
+  });
+
+  /* =========================
+     HEADER + SECTION NAV + CTA
+  ========================= */
+  const header = document.getElementById("stickyHeader");
+  const sectionNav = document.getElementById("sectionNav");
+  const stickyCTA = document.getElementById("stickyCTA");
+  const hero = document.querySelector(".hero-section");
+
+  /* SCROLL SPY */
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".section-nav a");
+
   function handleScroll() {
     const scrollY = window.scrollY;
-    const isMobile = window.innerWidth <= 768;
 
-    /* -------------------------
-       HEADER SHOW/HIDE
-    ------------------------- */
-    if (!isMobile) {
-      if (scrollY > 80) {
-        header.classList.add("is-visible", "is-solid");
-      } else {
-        header.classList.remove("is-visible", "is-solid");
-      }
+   if (scrollY > 80) {
+  header.classList.add("is-visible", "is-solid");
+} else {
+  header.classList.remove("is-visible", "is-solid");
+}
+    
+    if (window.innerWidth <= 768) {
+  header.classList.add("is-visible", "is-solid");
+}
+
+    const triggerPoint = hero.offsetHeight - 100;
+
+    if (scrollY > triggerPoint) {
+  sectionNav.classList.add("is-visible");
+    } else {
+  sectionNav.classList.remove("is-visible");
     }
 
-    /* -------------------------
-       SECTION NAV SHOW AFTER HERO
-    ------------------------- */
-    if (hero && sectionNav) {
-      if (scrollY > hero.offsetHeight - 100) {
-        sectionNav.classList.add("is-visible");
-      } else {
-        sectionNav.classList.remove("is-visible");
-      }
+    /* STICKY CTA (always visible after small scroll) */
+    if (scrollY > 200) {
+      stickyCTA.classList.add("show");
+    } else {
+      stickyCTA.classList.remove("show");
     }
 
-    /* -------------------------
-       SCROLL SPY (DESKTOP NAV)
-    ------------------------- */
+    /* SCROLL SPY ACTIVE LINK */
     let current = "";
 
     sections.forEach(section => {
@@ -4437,25 +4536,6 @@ document.addEventListener("DOMContentLoaded", () => {
         link.classList.add("active");
       }
     });
-
-    /* -------------------------
-       MOBILE TAB ACTIVE
-    ------------------------- */
-    if (isMobile && tabs.length) {
-      let activeIndex = -1;
-
-      tabs.forEach((tab, index) => {
-        const section = document.querySelector(tab.getAttribute("href"));
-        if (section && scrollY >= section.offsetTop - 160) {
-          activeIndex = index;
-        }
-      });
-
-      tabs.forEach(tab => tab.classList.remove("active"));
-      if (activeIndex >= 0) {
-        tabs[activeIndex].classList.add("active");
-      }
-    }
   }
 
   /* =========================
@@ -4475,17 +4555,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* =========================
-     EVENTS
-  ========================= */
+  /* EVENTS */
   window.addEventListener("scroll", handleScroll);
-  window.addEventListener("resize", handleScroll);
+  window.addEventListener("load", handleScroll);
 
 });
-</script>   
+</script>
+<script>
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("menuOverlay");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("open");
+  overlay.classList.toggle("show");
+});
+
+/* CLOSE ON OVERLAY CLICK */
+overlay.addEventListener("click", () => {
+  hamburger.classList.remove("active");
+  mobileMenu.classList.remove("open");
+  overlay.classList.remove("show");
+});
+
+/* CLOSE ON LINK CLICK */
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("open");
+    overlay.classList.remove("show");
+  });
+});
+</script>
+<!-- ICONS -->
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
   lucide.createIcons();
-</script>    
+</script>   
 </body>
 </html>
