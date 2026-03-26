@@ -7,7 +7,7 @@
 
 <style>
 
-/* ========================= */
+/* ========================= GLOBAL ========================= */
 body{
   margin:0;
   font-family:system-ui;
@@ -15,18 +15,10 @@ body{
   color:#111827;
 }
 
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:60px 20px;
-}
-
-/* =========================
-   HERO
-========================= */
+/* ========================= HERO ========================= */
 .hero{
   text-align:center;
-  padding:80px 20px 40px;
+  padding:80px 20px 30px;
 }
 
 .hero h1{
@@ -37,64 +29,113 @@ body{
   color:#B91C1C;
 }
 
-.hero p{
-  max-width:600px;
-  margin:auto;
+.gallery-desc{
+  text-align:center;
+  max-width:650px;
+  margin:10px auto 40px;
   color:#6B7280;
+  line-height:1.6;
 }
 
-/* =========================
-   GALLERY GRID
-========================= */
+/* ========================= GRID FIXED ========================= */
 .gallery{
-  column-count:3;
-  column-gap:15px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  padding:0 20px;
 }
 
-.gallery-item{
+.item{
   position:relative;
-  margin-bottom:15px;
-  cursor:pointer;
+  border-radius:14px;
   overflow:hidden;
-  border-radius:12px;
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.6s;
 }
 
-.gallery-item img{
+.item.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* masonry feel */
+.item:nth-child(3n){
+  grid-row:span 2;
+}
+
+.item img{
   width:100%;
-  border-radius:12px;
-  transition:0.4s;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:0.5s;
 }
 
-.gallery-item:hover img{
-  transform:scale(1.05);
+.item:hover img{
+  transform:scale(1.08);
 }
 
 /* overlay */
 .overlay{
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.2);
+  background:linear-gradient(to top, rgba(0,0,0,0.4), transparent);
   opacity:0;
   transition:0.3s;
 }
 
-.gallery-item:hover .overlay{
+.item:hover .overlay{
   opacity:1;
 }
 
-/* =========================
-   VIDEO
-========================= */
+/* ========================= LIGHTBOX ========================= */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+}
+
+.lightbox.active{
+  display:flex;
+}
+
+/* nav */
+.nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+}
+
+.prev{ left:30px; }
+.next{ right:30px; }
+
+/* ========================= VIDEO ========================= */
 .video-section{
-  margin-top:60px;
+  max-width:900px;
+  margin:80px auto;
+  padding:0 20px;
 }
 
 .video-card{
   position:relative;
   aspect-ratio:16/9;
-  border-radius:12px;
+  border-radius:16px;
   overflow:hidden;
-  background:#000;
   cursor:pointer;
 }
 
@@ -104,60 +145,96 @@ body{
   object-fit:cover;
 }
 
-.video-overlay{
+.play{
   position:absolute;
   inset:0;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:rgba(0,0,0,0.4);
 }
 
-.play-btn{
-  width:70px;
-  height:70px;
+.play div{
+  width:80px;
+  height:80px;
   border-radius:50%;
   background:#B91C1C;
   color:#fff;
-  font-size:24px;
+  font-size:28px;
   display:flex;
   align-items:center;
   justify-content:center;
+  transition:0.3s;
 }
 
-/* =========================
-   MODAL
-========================= */
-.modal{
+.play div:hover{
+  transform:scale(1.1);
+}
+
+/* video modal */
+.video-modal{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.9);
+  background:rgba(0,0,0,0.95);
   display:none;
   align-items:center;
   justify-content:center;
+  z-index:1000;
 }
 
-.modal img{
-  max-width:90%;
-  max-height:90%;
+.video-modal video{
+  width:90%;
+  max-width:900px;
 }
 
-.modal.active{
-  display:flex;
+/* ========================= CTA ========================= */
+.gallery-cta{
+  padding:80px 20px;
+  background:#111827;
+  color:#fff;
+  text-align:center;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.cta-box{
+  max-width:700px;
+  margin:auto;
+}
+
+.gallery-cta h2{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.gallery-cta p{
+  color:#D1D5DB;
+  margin-bottom:25px;
+}
+
+.cta-btn{
+  background:#B91C1C;
+  color:#fff;
+  padding:14px 26px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  transition:0.3s;
+}
+
+.cta-btn:hover{
+  background:#EA3037;
+  transform:translateY(-2px);
+}
+
+/* ========================= RESPONSIVE ========================= */
 @media(max-width:900px){
   .gallery{
-    column-count:2;
+    grid-template-columns:repeat(2,1fr);
   }
 }
 
 @media(max-width:600px){
   .gallery{
-    column-count:1;
+    grid-template-columns:1fr;
   }
 
   .hero h1{
@@ -171,85 +248,131 @@ body{
 <body>
 
 <!-- HERO -->
-<section class="hero">
-  <h1><span>AltSecCON</span> Gallery</h1>
-  <p>Explore moments from training sessions, labs, and conference experience.</p>
+<div class="hero">
+  <h1>AltSecCON <span>Gallery</span></h1>
+  <p class="gallery-desc">
+    Explore real moments from AltSecCON training — hands-on labs, collaborative learning, 
+    and deep technical sessions led by expert instructors.
+  </p>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+
+  <!-- images -->
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-1.webp"></div>
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-7.webp"></div>
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp"></div>
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-5.webp"></div>
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-4.webp"></div>
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9212.webp"></div>
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/c5.webp"></div>
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/new-2.webp"></div>
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/new-5.webp"></div>
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/new-7.webp"></div>
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/PostTrainingLabAccess.webp"></div>
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/new-3.webp"></div>
+  <div class="item"><img src="https://redteamverse.github.io/red-team-training/images/coursecontent.webp"></div>
+
+</div>
+
+<!-- VIDEO -->
+<div class="video-section">
+  <div class="video-card" id="videoCard">
+    <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp">
+    <div class="play"><div>▶</div></div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="nav prev" id="prev">&#10094;</span>
+  <img id="lightImg">
+  <span class="nav next" id="next">&#10095;</span>
+</div>
+
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+  <video controls autoplay>
+    <source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm">
+  </video>
+</div>
+
+<!-- CTA -->
+<section class="gallery-cta">
+  <div class="cta-box">
+    <h2>Be a Part of This Year's AltSecCON</h2>
+    <p>Join professionals and gain real-world red team experience.</p>
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" 
+       class="cta-btn">
+       Book Your Ticket
+    </a>
+  </div>
 </section>
-
-<div class="container">
-
-  <!-- GALLERY -->
-  <div class="gallery">
-
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-1.webp"></div>
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-7.webp"></div>
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp"></div>
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-5.webp"></div>
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-4.webp"></div>
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9212.webp"></div>
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/c5.webp"></div>
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/new-2.webp"></div>
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/new-5.webp"></div>
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/new-7.webp"></div>
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/PostTrainingLabAccess.webp"></div>
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/new-3.webp"></div>
-    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/coursecontent.webp"></div>
-
-  </div>
-
-  <!-- VIDEO -->
-  <div class="video-section">
-    <div class="video-card" id="videoCard">
-
-      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp">
-
-      <div class="video-overlay">
-        <div class="play-btn">▶</div>
-      </div>
-
-      <video id="video" style="display:none;">
-        <source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm">
-      </video>
-
-    </div>
-  </div>
-
-</div>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-  <img id="modalImg">
-</div>
 
 <script>
 
-/* =========================
-   IMAGE MODAL
-========================= */
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modalImg");
+/* ========================= FADE-IN ========================= */
+const items = document.querySelectorAll(".item");
 
-document.querySelectorAll(".gallery-item img").forEach(img=>{
-  img.onclick = ()=>{
-    modal.classList.add("active");
-    modalImg.src = img.src;
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+items.forEach(el=>observer.observe(el));
+
+/* ========================= LIGHTBOX ========================= */
+const lightbox = document.getElementById("lightbox");
+const lightImg = document.getElementById("lightImg");
+
+let index = 0;
+const images = document.querySelectorAll(".item img");
+
+images.forEach((img,i)=>{
+  img.onclick=()=>{
+    index=i;
+    lightImg.src=img.src;
+    lightbox.classList.add("active");
   }
 });
 
-modal.onclick = ()=>{
-  modal.classList.remove("active");
+document.getElementById("next").onclick=()=>{
+  index=(index+1)%images.length;
+  lightImg.src=images[index].src;
 };
 
-/* =========================
-   VIDEO
-========================= */
-const videoCard = document.getElementById("videoCard");
-const video = document.getElementById("video");
-
-videoCard.onclick = ()=>{
-  video.style.display="block";
-  video.play();
+document.getElementById("prev").onclick=()=>{
+  index=(index-1+images.length)%images.length;
+  lightImg.src=images[index].src;
 };
+
+lightbox.onclick=()=>lightbox.classList.remove("active");
+
+/* ========================= VIDEO ========================= */
+const videoModal = document.getElementById("videoModal");
+
+document.getElementById("videoCard").onclick=()=>{
+  videoModal.style.display="flex";
+};
+
+videoModal.onclick=()=>{
+  videoModal.style.display="none";
+};
+
+/* ========================= KEYBOARD ========================= */
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){
+    lightbox.classList.remove("active");
+    videoModal.style.display="none";
+  }
+  if(e.key==="ArrowRight") document.getElementById("next").click();
+  if(e.key==="ArrowLeft") document.getElementById("prev").click();
+});
 
 </script>
 
