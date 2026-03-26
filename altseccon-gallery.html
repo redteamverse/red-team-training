@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AltSecCON Gallery</title>
+
+<style>
+
+/* ========================= */
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#F9FAFB;
+  color:#111827;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+  text-align:center;
+  padding:80px 20px 40px;
+}
+
+.hero h1{
+  font-size:42px;
+}
+
+.hero span{
+  color:#B91C1C;
+}
+
+.hero p{
+  max-width:600px;
+  margin:auto;
+  color:#6B7280;
+}
+
+/* =========================
+   GALLERY GRID
+========================= */
+.gallery{
+  column-count:3;
+  column-gap:15px;
+}
+
+.gallery-item{
+  position:relative;
+  margin-bottom:15px;
+  cursor:pointer;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.gallery-item img{
+  width:100%;
+  border-radius:12px;
+  transition:0.4s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.05);
+}
+
+/* overlay */
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.2);
+  opacity:0;
+  transition:0.3s;
+}
+
+.gallery-item:hover .overlay{
+  opacity:1;
+}
+
+/* =========================
+   VIDEO
+========================= */
+.video-section{
+  margin-top:60px;
+}
+
+.video-card{
+  position:relative;
+  aspect-ratio:16/9;
+  border-radius:12px;
+  overflow:hidden;
+  background:#000;
+  cursor:pointer;
+}
+
+.video-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.video-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.4);
+}
+
+.play-btn{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:#B91C1C;
+  color:#fff;
+  font-size:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal img{
+  max-width:90%;
+  max-height:90%;
+}
+
+.modal.active{
+  display:flex;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:900px){
+  .gallery{
+    column-count:2;
+  }
+}
+
+@media(max-width:600px){
+  .gallery{
+    column-count:1;
+  }
+
+  .hero h1{
+    font-size:28px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1><span>AltSecCON</span> Gallery</h1>
+  <p>Explore moments from training sessions, labs, and conference experience.</p>
+</section>
+
+<div class="container">
+
+  <!-- GALLERY -->
+  <div class="gallery">
+
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-1.webp"></div>
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-7.webp"></div>
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp"></div>
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-5.webp"></div>
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-4.webp"></div>
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9212.webp"></div>
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/c5.webp"></div>
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/new-2.webp"></div>
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/new-5.webp"></div>
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/new-7.webp"></div>
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/PostTrainingLabAccess.webp"></div>
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/new-3.webp"></div>
+    <div class="gallery-item"><img src="https://redteamverse.github.io/red-team-training/images/coursecontent.webp"></div>
+
+  </div>
+
+  <!-- VIDEO -->
+  <div class="video-section">
+    <div class="video-card" id="videoCard">
+
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp">
+
+      <div class="video-overlay">
+        <div class="play-btn">▶</div>
+      </div>
+
+      <video id="video" style="display:none;">
+        <source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm">
+      </video>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <img id="modalImg">
+</div>
+
+<script>
+
+/* =========================
+   IMAGE MODAL
+========================= */
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
+
+document.querySelectorAll(".gallery-item img").forEach(img=>{
+  img.onclick = ()=>{
+    modal.classList.add("active");
+    modalImg.src = img.src;
+  }
+});
+
+modal.onclick = ()=>{
+  modal.classList.remove("active");
+};
+
+/* =========================
+   VIDEO
+========================= */
+const videoCard = document.getElementById("videoCard");
+const video = document.getElementById("video");
+
+videoCard.onclick = ()=>{
+  video.style.display="block";
+  video.play();
+};
+
+</script>
+
+</body>
+</html>
