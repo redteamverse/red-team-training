@@ -3270,6 +3270,316 @@ border-radius:5px;
   height: 18px;
   color: #ffffff;
 } 
+  
+.why-section{
+  padding:80px 20px;
+  background:#F9FAFB;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+
+
+
+h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.lead{
+  color:#6B7280;
+  max-width:700px;
+  margin-bottom:40px;
+}
+
+/* stats */
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-bottom:40px;
+}
+
+.stat-card{
+  background:#fff;
+  border:1px solid #E5E7EB;
+  padding:25px;
+  border-radius:10px;
+  text-align:center;
+}
+
+.stat-number{
+  font-size:28px;
+  font-weight:700;
+  color:#B91C1C;
+}
+
+.stat-label{
+  font-size:14px;
+  color:#6B7280;
+}
+
+/* features */
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+
+.feature{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+
+/* 🔥 ICON BOX (LIKE YOUR SNAP) */
+.icon-box{
+  width:40px;
+  height:40px;
+  background: rgba(185, 28, 28, 0.08);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.icon-box svg{
+  width:20px;
+  height:20px;
+  color:#B91C1C;
+}
+
+.feature h4{
+  margin:0;
+  font-size:16px;
+}
+
+.feature p{
+  margin:5px 0 0;
+  font-size:14px;
+  color:#6B7280;
+}
+
+/* responsive */
+@media(max-width:768px){
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+  .features-grid{
+    grid-template-columns:1fr;
+  }
+}
+  
+/* =========================
+   PRECAP VIDEO SECTION
+========================= */
+/* =========================
+   VIDEO SECTION (ISOLATED)
+========================= */
+.video-section{
+  padding:80px 20px;
+  background:#FFFFFF;
+}
+
+/* Container only for this section */
+.video-section .container{
+  max-width:900px;
+  margin:auto;
+}
+
+/* =========================
+   PREMIUM HEADING
+========================= */
+.video-section .section-title{
+  text-align:center;
+  font-size:36px;
+  font-weight:700;
+  line-height:1.2;
+  color:#111827;
+  margin-bottom:12px;
+}
+
+  .container .section-eyebrow{
+    text-align: center;
+  }  
+  
+/* Highlight AltSecCON (NO underline) */
+.video-section .section-title span{
+  color:#B91C1C;
+}
+
+/* Description */
+.video-section .section-desc{
+  text-align:center;
+  max-width:600px;
+  margin:0 auto 35px;
+  font-size:15px;
+  color:#6B7280;
+  line-height:1.6;
+}
+
+/* Divider */
+.video-section .section-divider{
+  width:60px;
+  height:3px;
+  background:#B91C1C;
+  margin:20px auto 30px;
+  border-radius:2px;
+}
+
+/* =========================
+   VIDEO CARD
+========================= */
+.video-section .video-card{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid #E5E7EB;
+  background:#000;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.video-section .video-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Thumbnail */
+.video-section .video-thumbnail{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Video */
+.video-section video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+
+/* Overlay */
+.video-section .video-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.3s;
+}
+
+/* Play Button */
+.video-section .play-btn{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  border:none;
+  background:#B91C1C;
+  color:#fff;
+  font-size:24px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.3s;
+}
+
+.video-section .play-btn:hover{
+  background:#EA3037;
+  transform:scale(1.1);
+}
+
+/* Playing state */
+.video-section .video-card.playing .video-thumbnail{
+  display:none;
+}
+
+.video-section .video-card.playing video{
+  display:block;
+}
+
+.video-section .video-card.playing .video-overlay{
+  opacity:0;
+  pointer-events:none;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+.video-section .section-title,
+.video-section .section-desc,
+.video-section .section-divider{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.6s ease forwards;
+}
+
+.video-section .section-desc{
+  animation-delay:0.2s;
+}
+
+.video-section .section-divider{
+  animation-delay:0.3s;
+}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:768px){
+  .video-section .container{
+    max-width:100%;
+  }
+
+  .video-section .section-title{
+    font-size:26px;
+  }
+}
+  
+ .timeline-header .time-sec{
+  color:#B91C1C;
+}
+.course-grid-container .time-sec{
+color:#B91C1C;
+}  
+  
+.conference-container .time-sec{
+color:#B91C1C;
+}  
+  
+.container .time-sec{
+color:#B91C1C;
+}  
+  
+.gallery-container .time-sec{
+color:#B91C1C;
+}  
+.ticket-container .time-sec{
+color:#B91C1C;
+}  
+  
+.contact-container .time-sec{
+color:#B91C1C;
+}  
 </style>
 </head>
 
@@ -3355,7 +3665,7 @@ border-radius:5px;
     <div class="timeline-header">
       <span class="section-eyebrow">Outcome
     </span>
-      <h3>What AltSecCON Delivered in Bengaluru</h3>
+      <h3>What <span class="time-sec">AltSecCON</span> Delivered in Bengaluru</h3>
       <p>
         During our recent in-person training event, security professionals joined AltSecCON for hands-on Red Team training designed around depth, realism, and long-term skill development.
       </p>
@@ -3445,7 +3755,7 @@ border-radius:5px;
   <div class="course-grid-container">
     <span class="section-eyebrow">Curriculum 
     </span>
-    <h2>Training Programs at AltSecCON </h2>
+    <h2>Training Programs at <span class="time-sec">AltSecCON</span> </h2>
 
     <p class="course-grid-intro">
     Instructor-led Red Team certification programs covering Active Directory, evasion techniques, and Azure attack tradecraft.     </p>
@@ -3600,6 +3910,141 @@ border-radius:5px;
 
   </div>
 </section> 
+  
+<!-- =========================
+     WHY TRAIN WITH US
+========================= -->
+<!-- =========================
+     WHY TRAIN WITH US
+========================= -->
+<section class="why-section">
+
+  <div class="container">
+
+    <span class="section-eyebrow">WHY TRAIN WITH US</span>
+    <h2>Built for Real-World Enterprise Security</h2>
+
+    <p class="lead">
+      Our training programs are trusted globally by professionals and organizations 
+      who demand practical, hands-on expertise in offensive and defensive security.
+    </p>
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <div class="stat-number">50,000+</div>
+        <div class="stat-label">Professionals Trained</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">130+</div>
+        <div class="stat-label">Countries Reached</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">600+</div>
+        <div class="stat-label">Organizations Served</div>
+      </div>
+
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature">
+        <div class="icon-box">
+          <i data-lucide="user-check"></i>
+        </div>
+        <div>
+          <h4>Expert Instructors</h4>
+          <p>Courses are authored and delivered by industry experts with real-world experience.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon-box">
+          <i data-lucide="cpu"></i>
+        </div>
+        <div>
+          <h4>Pioneers of Enterprise Labs</h4>
+          <p>Hands-on labs designed to simulate real enterprise environments.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon-box">
+          <i data-lucide="thumbs-up"></i>
+        </div>
+        <div>
+          <h4>Highly Recommended</h4>
+          <p>Trusted and recommended by professionals across industries worldwide.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon-box">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <div>
+          <h4>Enterprise Security Focus</h4>
+          <p>Focused on real attack scenarios and defense strategies used in enterprises.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     PRECAP VIDEO SECTION
+========================= -->
+<!-- =========================
+     ALTSecCON PRECAP VIDEO
+========================= -->
+<!-- =========================
+     ALTSecCON PRECAP VIDEO
+========================= -->
+<section class="video-section">
+
+  <div class="container">
+     <span class="eyebrow">AltSecCON Glimpse</span>
+  <h2 class="section-title">    
+  Get a Glimpse of <span>AltSecCON</span>
+   </h2>
+
+<div class="section-divider"></div>
+
+    <p class="section-desc">
+      A quick look at the experience, energy, and real-world learning that defines AltSecCON.
+    </p>
+
+    <div class="video-card" id="videoCard">
+
+      <!-- Thumbnail -->
+      <img 
+        src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp" 
+        alt="AltSecCON Preview"
+        class="video-thumbnail"
+        id="videoThumbnail"
+      />
+
+      <!-- Overlay -->
+      <div class="video-overlay" id="videoOverlay">
+        <button class="play-btn">▶</button>
+      </div>
+
+      <!-- Video -->
+      <video id="eventVideo" preload="none">
+        <source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm" type="video/webm">
+      </video>
+
+    </div>
+
+  </div>
+
+</section>
+
 <!-- =====================
 ALTSECCON CONFERENCE SECTION
 ===================== -->
@@ -3609,9 +4054,7 @@ ALTSECCON CONFERENCE SECTION
 <div class="conference-container">
 
 <span class="section-eyebrow">Conference Day</span>
-
-<h2>AltSecCON Practitioner Conference</h2>
-
+  <h2><span class="time-sec">AltSecCON</span> Practitioner Conference</h2>
 <p class="conference-lead">
 Alongside the instructor-led Red Team training, AltSecCON also includes a dedicated conference day where security practitioners share technical insights, research discussions, and real-world offensive security experiences with the community.
 </p>
@@ -3726,7 +4169,7 @@ In-person sessions and practitioner discussions during AltSecCON.
 <div class="container">
 <span class="eyebrow">Approval Request</span>
     
-<h2 class="section-title">Request Approval to Attend AltSecCON</h2>
+<h2 class="section-title">Request Approval to Attend <span class="time-sec">AltSecCON</span></h2>
 
 <p class="section-intro">
 AltSecCon is an in-person red teaming training event focused on enterprise attack techniques in 
@@ -4005,7 +4448,7 @@ Thanks,
   <div class="gallery-container">
 
     <span class="section-eyebrow">Gallery</span>
-    <h2>AltSecCON Bengaluru 2025 Highlights</h2>
+    <h2><span class="time-sec">AltSecCON</span> Bengaluru 2025 Highlights</h2>
 
     <p class="gallery-intro">
       A glimpse into the instructor-led, in-person Red Team training sessions
@@ -4182,7 +4625,7 @@ Thanks,
   <div class="ticket-container" >
 
     <span class="section-eyebrow">Tickets</span>
-    <h2>Choose Your AltSecCON Experience</h2>
+    <h2>Choose Your <span class="time-sec">AltSecCON</span> Experience</h2>
     <p class="ticket-intro">
       Select the option that best fits your learning goals — training, conference, or a complete experience.
     </p>
@@ -4306,7 +4749,7 @@ Thanks,
 
   <div class="contact-container">
      <span class="section-eyebrow">Contact Us</span>
-    <h2>Get Started with AltSecCON</h2>
+    <h2>Get Started with <span class="time-sec">AltSecCON</span></h2>
     <p class="contact-intro">
       Choose what you're interested in and share your details. Our team will get in touch with relevant information.
     </p>
@@ -4652,5 +5095,23 @@ function toggleEmail() {
     lucide.createIcons();
   });
 </script>  
+<script>
+const videoCard = document.getElementById("videoCard");
+const video = document.getElementById("eventVideo");
+
+videoCard.addEventListener("click", () => {
+  if(video.paused){
+    videoCard.classList.add("playing");
+    video.play().catch(()=>{});
+  } else {
+    video.pause();
+    videoCard.classList.remove("playing");
+  }
+});
+
+video.addEventListener("ended", () => {
+  videoCard.classList.remove("playing");
+});
+</script> 
 </body>
 </html>
