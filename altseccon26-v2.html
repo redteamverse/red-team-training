@@ -39,8 +39,7 @@ a {
 }
  
 body {
-  font-family: 'Inter', sans-serif;
-  background: var(--navy);
+  font-family: 'Inter', sans-serif;  
   color: var(--white);
 }
 /* PRIMARY TEXT SYSTEM */
@@ -1822,61 +1821,113 @@ gap:22px;
   width: 100%;
   z-index: 1000;
 
-  display: none;
-  background: transparent;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+
   transform: translateY(-100%);
-  transition: transform 0.3s ease, background 0.25s ease;
+  transition: transform 0.3s ease;
 }
 
-.site-header.is-visible {
-  display: block;
+@media (max-width:768px){
+
+  .nav {
+    display: none; /* hide desktop nav */
+  }
+
+}  
+.site-header.is-visible {  
   transform: translateY(0);
 }
 
 .site-header.is-solid {
-  background: rgba(43, 43, 80, 0.95);
+  background: #ffffff;
+  backdrop-filter: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+ height: 60px;
 }
 
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 18px 28px;
+  padding: 14px 28px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  gap: 40px; /* 🔥 THIS FIXES CROWDING */
 }
 
-.logo {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--white);
-  text-decoration: none;
+/* Reduce padding when shrunk */
+.site-header.is-solid .header-inner {
+  padding: 10px 28px;
 }
-  
+    
+/* Slight logo shrink */
+.site-header.is-solid .logo img {
+  height: 32px;
+}
+
+.site-header.is-solid .logo span {
+  font-size: 20px;
+}    
+   
+    
+.logo img {
+  filter: none;
+}
+    
 .logo a::after {
   display: none !important;
-  content: none !important;
 }
   
 
-  .header-inner .logo a{
-    color: var(--white);
-    text-decoration:none;
-  }  
-
-.nav a {
-  margin-left: 28px;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--white);
+  
+/* LOGO WRAPPER */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
-  position: relative;
-  opacity: 0.85;
 }
 
+/* LOGO IMAGE */
+.logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+/* LOGO TEXT */
+.logo span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 0.3px;
+}
+
+  /* nav spacing clean */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px; /* instead of margin-left */
+}
+/* NAV LINKS */
+.nav a {
+  color: #111827; /* darker = better contrast */
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 14px; 
+  margin-left: 0px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+
 .nav a:hover {
-  opacity: 1;
+        opacity: 1;
+    color: #e53935;
 }
 
 .nav a::after {
@@ -1886,74 +1937,52 @@ gap:22px;
   bottom: -6px;
   width: 0;
   height: 2px;
-  background: var(--primary-red);
-  transition: width 0.25s ease;
+background: #e53935;  
+transition: width 0.25s ease;
 }
 
 .nav a:hover::after {
   width: 100%;
 }
+/* ACTIVE LINK */
+.nav a.active {
+  color: #e53935;
+}
+  
+/* HAMBURGER SHOW */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
 
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #111;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+  }
+
+}  
 /* Disable desktop header on mobile */
 @media (max-width: 768px) {
   .site-header {
-    display: none !important;
+ 
   }
 }
+   
 
-/* =========================
-   MOBILE BOTTOM NAV
-========================= */
-
-.mobile-tabs {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .mobile-tabs {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 56px;
-    background: var(--structural-blue);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 34px; 
-    z-index: 1000;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .mobile-tabs a {
-    flex: 1;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-decoration: none;
-    color: #FFFFFF !important;
-
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
-    position: relative;
-  }
-
-  /* ACTIVE INDICATOR (INSIDE BAR) */
-  .mobile-tabs a.active::after {
-    content: "";
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 24px;
-    height: 2px;
-    background: var(--primary-red);
-    border-radius: 2px;
-  }
 
   body {
     padding-bottom: 64px;
@@ -1963,21 +1992,15 @@ gap:22px;
 
 .justify-section{
 padding:80px 20px;
-background:#f7f9fc;
+background: var(--offwhite);
+  
 }
 
 .justify-section .container{
 max-width:1200px;
-margin:auto;
+padding: var(--space-lg) 24px;
 }
-
-.section-title{
-text-align:center;
-font-size:34px;
-font-weight:700;
-margin-bottom:15px;
-color:#111;
-}
+  
 
 .section-intro{
 text-align:center;
@@ -1988,6 +2011,19 @@ font-size:16px;
 line-height:1.6;
 color:#555;
 }
+  
+  
+  
+.section-title{
+text-align:center;
+font-size:34px;
+font-weight:700;
+margin-bottom:15px;
+color:#111;
+}
+  
+
+
 
 .justify-grid{
 display:grid;
@@ -3580,26 +3616,157 @@ color:#B91C1C;
 .contact-container .time-sec{
 color:#B91C1C;
 }  
+.mobile-menu{
+  position: fixed;
+  top: 60px;
+  right: -100%;
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.mobile-menu.open{
+  right: 0;
+}
+
+.mobile-menu a{
+  color:#111;
+  font-size:14px;
+  font-weight:500;
+}
+
+.menu-overlay{
+  position: fixed;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s;
+  z-index:998;
+}
+
+.menu-overlay.show{
+  opacity:1;
+  pointer-events:auto;
+}  
+/* =========================
+   SUB NAV (SECOND HEADER)
+========================= */
+.section-nav {
+  position: sticky;
+  top: 60px; /* height of main header */
+  z-index: 998;
+
+  background: #fff;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/* container */
+.section-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* links */
+.section-nav a {
+  position: relative;
+  padding: 14px 0;
+  font-size: 14px;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* hover */
+.section-nav a:hover {
+  color: #111827;
+}
+
+/* ACTIVE LINK */
+.section-nav a.active {
+  color: #1D4ED8;
+}
+
+/* underline animation */
+.section-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+  background: #2563EB;
+}
+
+/* scroll hide scrollbar */
+.section-nav-container::-webkit-scrollbar {
+  display: none;
+}  
+  
 </style>
 </head>
 
 <body>
 <!-- DESKTOP STICKY HEADER -->
-<header id="stickyHeader" class="site-header">
+<header id="stickyHeader" class="site-header"> 
   <div class="header-inner">
-    <div class="logo"><a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">AltSecCON</a></div>
 
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">
+        <img src="https://static.wixstatic.com/media/98ad8e_5fe5742cfaf44db197695e76018055d2~mv2.png" alt="AltSecCON Logo">
+        <span>AltSecCON</span>
+      </a>
+    </div>
+
+    <!-- DESKTOP NAV -->
     <nav class="nav">
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-training.html" id="get-train">Training</a>     
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Schedule</a>
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Tickets</a>
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Gallery</a>
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>
+      <a href="#training">Training</a>     
+      <a href="#event">Schedule</a>
+      <a href="#">Conference</a>
+      <a href="#tickets">Tickets</a>
+      <a href="#venue">Venue</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
     </nav>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
   </div>
-</header>  
+</header> 
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#training">Training</a>
+  <a href="#event">Schedule</a>
+  <a href="#">Conference</a>
+  <a href="#tickets">Tickets</a>
+  <a href="#venue">Venue</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<div class="menu-overlay" id="menuOverlay"></div>  
 <!-- HERO -->
 <!-- HERO -->
 <section class="hero" id="home">
@@ -3656,8 +3823,25 @@ color:#B91C1C;
   </div>
 
 </section>
-  
-<section class="training-timeline">
+  <nav class="section-nav" id="sectionNav">
+  <div class="section-nav-container">
+
+    <a href="#outcome">Outcome</a>
+    <a href="#Curriculum">Training Details</a>
+    <a href="#curriculum">Curriculum</a> 
+    <a href="#certification">Certification</a>   
+    <a href="#schedule">Schedule</a> 
+    <a href="#prerequisites">Prerequisites</a>  
+    <a href="#enroll">Enroll</a>  
+    <a href="#labs">Labs</a>       
+    <a href="#instructor">Instructor</a>
+    <a href="#audience">Audience</a> 
+    <a href="#venue">Venue</a> 
+    <a href="#faq">FAQ</a>
+
+  </div>
+</nav>
+<section class="training-timeline" id="outcome">
 
   <div class="container">
 
@@ -4979,139 +5163,269 @@ Thanks,
     </p>
   </div>
 </footer>
-
-<script>
-  (function () {
-    const track = document.querySelector('.testimonial-track');
-    const cards = document.querySelectorAll('.testimonial-card');
-    const visible = 3;
-    let index = 0;
-
-    if (!track || cards.length <= visible) return;
-
-    const totalSteps = cards.length - visible + 1;
-
-    setInterval(() => {
-      index = (index + 1) % totalSteps;
-      track.style.transform = `translateX(-${index * (100 / visible)}%)`;
-    }, 5000); // rotate every 7s
-  })();
-</script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  
+
+  /* =========================
+     HEADER + SUB NAV + CTA
+  ========================= */
+  const header = document.getElementById("stickyHeader");
+  const sectionNav = document.getElementById("sectionNav");
+  const stickyCTA = document.getElementById("stickyCTA");
+  const hero = document.querySelector(".hero");
+
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".section-nav a");
+
+  function handleScroll() {
+    const scrollY = window.scrollY;
+
+    /* HEADER */
+    if (scrollY > 80) {
+      header.classList.add("is-visible", "is-solid");
+    } else {
+      header.classList.remove("is-visible", "is-solid");
+    }
+
+    /* MOBILE ALWAYS SHOW HEADER */
+    if (window.innerWidth <= 768) {
+      header.classList.add("is-visible", "is-solid");
+    }
+
+    /* SHOW SUB NAV AFTER HERO */
+    if (hero) {
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+
+      if (scrollY > heroBottom - 120) {
+        sectionNav.classList.add("is-visible");
+      } else {
+        sectionNav.classList.remove("is-visible");
+      }
+    }
+
+    /* STICKY CTA */
+    if (stickyCTA) {
+      if (scrollY > 200) {
+        stickyCTA.classList.add("show");
+      } else {
+        stickyCTA.classList.remove("show");
+      }
+    }
+
+    /* ACTIVE LINK */
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 140;
+      const sectionHeight = section.clientHeight;
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+
+        /* auto center active tab */
+        link.scrollIntoView({
+          behavior: "smooth",
+          inline: "center",
+          block: "nearest"
+        });
+      }
+    });
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("load", handleScroll);
+
+
+  /* =========================
+     SMOOTH SCROLL (FIXED)
+     👉 Prevent auto scroll on load
+  ========================= */
+  navLinks.forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const target = document.querySelector(this.getAttribute("href"));
+      if (!target) return;
+
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: "smooth"
+      });
+    });
+  });
+
+
+  /* =========================
+     MOBILE MENU
+  ========================= */
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("menuOverlay");
+
+  if (hamburger && mobileMenu && overlay) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mobileMenu.classList.toggle("open");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      mobileMenu.classList.remove("open");
+      overlay.classList.remove("show");
+    });
+
+    document.querySelectorAll(".mobile-menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        mobileMenu.classList.remove("open");
+        overlay.classList.remove("show");
+      });
+    });
+  }
+
+
+  /* =========================
+     TABS
+  ========================= */
   const tabs = document.querySelectorAll('.tab');
   const contents = document.querySelectorAll('.tab-content');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-
       tabs.forEach(t => t.classList.remove('active'));
       contents.forEach(c => c.classList.remove('active'));
 
       tab.classList.add('active');
-      document.getElementById(tab.dataset.tab).classList.add('active');
-
+      const target = document.getElementById(tab.dataset.tab);
+      if (target) target.classList.add('active');
     });
   });
 
-});
-</script>
-<script>
-  document.getElementById('footerYear').textContent = new Date().getFullYear();
-</script>
-<script>
-  const header = document.getElementById("stickyHeader");
-  const tabs = document.querySelectorAll(".mobile-tabs a");
 
-  const sections = Array.from(tabs)
-    .map(tab => document.querySelector(tab.getAttribute("href")))
-    .filter(Boolean);
+  /* =========================
+     ACCORDION
+  ========================= */
+  document.querySelectorAll(".accordion-item").forEach(item => {
+    const header = item.querySelector(".accordion-header");
 
-  function handleScroll() {
-    const scrollY = window.scrollY;
-    const isMobile = window.innerWidth <= 768;
+    header.addEventListener("click", () => {
+      const openItem = document.querySelector(".accordion-item.active");
 
-    /* Desktop header */
-    if (!isMobile) {
-      if (scrollY > 80) {
-        header.classList.add("is-visible", "is-solid");
+      if (openItem && openItem !== item) {
+        openItem.classList.remove("active");
+      }
+
+      item.classList.toggle("active");
+    });
+  });
+
+
+  /* =========================
+     FAQ TOGGLE
+  ========================= */
+  document.querySelectorAll(".faq-question").forEach(question => {
+    question.addEventListener("click", () => {
+      const answer = question.nextElementSibling;
+      const icon = question.querySelector(".faq-icon");
+
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+        icon.textContent = "+";
       } else {
-        header.classList.remove("is-visible", "is-solid");
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        icon.textContent = "−";
       }
-    }
-
-    /* Mobile ScrollSpy */
-    if (isMobile) {
-      let activeIndex = -1;
-
-      sections.forEach((section, index) => {
-        if (scrollY >= section.offsetTop - 160) {
-          activeIndex = index;
-        }
-      });
-
-      tabs.forEach(tab => tab.classList.remove("active"));
-      if (activeIndex >= 0) {
-        tabs[activeIndex].classList.add("active");
-      }
-    }
-  }
-
-  window.addEventListener("scroll", handleScroll);
-  window.addEventListener("resize", handleScroll);
-</script>
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
-<script>
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  faqItems.forEach(item => {
-    const btn = item.querySelector('.faq-question');
-
-    btn.addEventListener('click', () => {
-      item.classList.toggle('active');
     });
   });
-</script>
-<script>
-function toggleEmail() {
-  const content = document.getElementById("emailContent");
-  const btn = document.querySelector(".read-more-btn");
 
-  content.classList.toggle("collapsed");
 
-  if (content.classList.contains("collapsed")) {
-    btn.innerText = "Read more";
-  } else {
-    btn.innerText = "Show less";
+  /* =========================
+     TESTIMONIAL SLIDER
+  ========================= */
+  const track = document.querySelector('.testimonial-track');
+  const cards = document.querySelectorAll('.testimonial-card');
+
+  if (track && cards.length > 3) {
+    let index = 0;
+    const visible = 3;
+    const totalSteps = cards.length - visible + 1;
+
+    setInterval(() => {
+      index = (index + 1) % totalSteps;
+      track.style.transform = `translateX(-${index * (100 / visible)}%)`;
+    }, 5000);
   }
-}
-</script>  
-<script>
-  window.addEventListener("load", () => {
+
+
+  /* =========================
+     VIDEO PLAY
+  ========================= */
+  const videoCard = document.getElementById("videoCard");
+  const video = document.getElementById("eventVideo");
+
+  if (videoCard && video) {
+    videoCard.addEventListener("click", () => {
+      if (video.paused) {
+        videoCard.classList.add("playing");
+        video.play().catch(()=>{});
+      } else {
+        video.pause();
+        videoCard.classList.remove("playing");
+      }
+    });
+
+    video.addEventListener("ended", () => {
+      videoCard.classList.remove("playing");
+    });
+  }
+
+
+  /* =========================
+     FOOTER YEAR
+  ========================= */
+  const year = document.getElementById("footerYear");
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
+
+
+  /* =========================
+     EMAIL TOGGLE
+  ========================= */
+  window.toggleEmail = function () {
+    const content = document.getElementById("emailContent");
+    const btn = document.querySelector(".read-more-btn");
+
+    if (!content || !btn) return;
+
+    content.classList.toggle("collapsed");
+    btn.innerText = content.classList.contains("collapsed")
+      ? "Read more"
+      : "Show less";
+  };
+
+});
+
+
+/* =========================
+   ICONS (LUCIDE)
+========================= */
+window.addEventListener("load", () => {
+  if (window.lucide) {
     lucide.createIcons();
-  });
-</script>  
-<script>
-const videoCard = document.getElementById("videoCard");
-const video = document.getElementById("eventVideo");
-
-videoCard.addEventListener("click", () => {
-  if(video.paused){
-    videoCard.classList.add("playing");
-    video.play().catch(()=>{});
-  } else {
-    video.pause();
-    videoCard.classList.remove("playing");
   }
 });
-
-video.addEventListener("ended", () => {
-  videoCard.classList.remove("playing");
-});
-</script> 
+  
+</script>
+<script src="https://unpkg.com/lucide@latest"></script>  
 </body>
 </html>
