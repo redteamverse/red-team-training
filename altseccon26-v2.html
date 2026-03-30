@@ -1821,13 +1821,8 @@ gap:22px;
  /* =========================
    HEADER BASE
 ========================= */
-.topbar-closed .site-header {
-  top: 0;
-}
 
-.topbar-closed .section-nav {
-  top: 47px;
-}
+  
   
 .site-header {
   position: fixed;
@@ -1923,13 +1918,14 @@ gap:22px;
   align-items: center;
   justify-content: center;
 
-  gap: 26px;
+  gap: 20px;
 
   max-width: 720px;   /* 🔥 prevents stretch */
   width: 100%;
 
   margin: 0 auto;     /* 🔥 perfectly centered */
 }
+  
 .nav a {
   color: #111827;  
   font-weight: 500;
@@ -3903,13 +3899,7 @@ LINK SPACING
   font-weight: 600;
 }
 
-.topbar-closed .site-header {
-  top: 0;
-}
-
-.topbar-closed .section-nav {
-  top: 47px;
-}  
+ 
 /* =========================
    SLIDING INDICATOR
 ========================= */
@@ -3930,9 +3920,13 @@ LINK SPACING
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-  .section-nav {
-    top: px; /* slightly smaller header on mobile */
-  }
+.section-nav {
+  position: sticky;
+  top: 85px; /* adjust based on main header height */
+  z-index: 998;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+}
 
   .section-nav-container {
     gap: 20px;
