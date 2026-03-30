@@ -4595,11 +4595,6 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
 <!-- Conference Gallery -->
 
 <div class="conference-gallery">
-
-<p class="conference-caption">
-In-person sessions and practitioner discussions during AltSecCON.
-</p>
-
 </div>
 
 <div class="conference-cta">
@@ -5056,7 +5051,7 @@ Thanks,
     </div>
 
     <div class="gallery-caption">
-      In-person training, real classrooms
+     
     </div>
 
     <div class="gallery-cta ">
@@ -5520,22 +5515,7 @@ SIDE FLOATING CTA
   </div>
 
 </div>
-<script>
-const trigger = document.getElementById("sideTrigger");
-const panel = document.getElementById("sidePanel");
-
-trigger.addEventListener("click", () => {
-  panel.classList.toggle("active");
-  trigger.classList.toggle("active");
-});
-
-document.addEventListener("click", function(e) {
-  if (!trigger.contains(e.target) && !panel.contains(e.target)) {
-    panel.classList.remove("active");
-    trigger.classList.remove("active");
-  }
-});
-</script>
+  
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -5706,7 +5686,86 @@ window.addEventListener("load", () => {
   }
 });
 </script>
-  
+<script>
+const trigger = document.getElementById("sideTrigger");
+const panel = document.getElementById("sidePanel");
+
+trigger.addEventListener("click", () => {
+  panel.classList.toggle("active");
+  trigger.classList.toggle("active");
+});
+
+document.addEventListener("click", function(e) {
+  if (!trigger.contains(e.target) && !panel.contains(e.target)) {
+    panel.classList.remove("active");
+    trigger.classList.remove("active");
+  }
+});
+</script>  
 <script src="https://unpkg.com/lucide@latest"></script>  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* =========================
+     FAQ ACCORDION
+  ========================= */
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+
+    if (question) {
+      question.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    }
+  });
+
+  /* =========================
+     CONTACT TABS
+  ========================= */
+  const tabs = document.querySelectorAll(".tab");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+
+      // remove active
+      tabs.forEach(t => t.classList.remove("active"));
+      tabContents.forEach(c => c.classList.remove("active"));
+
+      // add active
+      tab.classList.add("active");
+
+      const target = tab.getAttribute("data-tab");
+      const content = document.getElementById(target);
+
+      if (content) {
+        content.classList.add("active");
+      }
+    });
+  });
+
+  /* =========================
+     TESTIMONIAL SLIDER
+  ========================= */
+  const track = document.querySelector(".testimonial-track");
+
+  if (track) {
+    let index = 0;
+    const cards = document.querySelectorAll(".testimonial-card");
+    const total = cards.length;
+
+    function moveSlide() {
+      index = (index + 1) % total;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // Auto slide
+    setInterval(moveSlide, 4000);
+  }
+
+});
+</script>  
 </body>
 </html>
