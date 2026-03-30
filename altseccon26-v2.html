@@ -1818,6 +1818,9 @@ gap:22px;
    DESKTOP HEADER
 ========================= */
 
+ /* =========================
+   HEADER BASE
+========================= */
 .site-header {
   position: fixed;
   top: 0;
@@ -1833,62 +1836,47 @@ gap:22px;
   transition: transform 0.3s ease;
 }
 
-@media (max-width:768px){
-
-  .nav {
-    display: none; /* hide desktop nav */
-  }
-
-}  
 .site-header.is-visible {  
   transform: translateY(0);
 }
 
+/* =========================
+   SCROLL STATE
+========================= */
 .site-header.is-solid {
   background: #ffffff;
   backdrop-filter: none;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
- height: 60px;
 }
 
+/* =========================
+   HEADER LAYOUT (3 SECTION)
+========================= */
 .header-inner {
-  max-width: 1200px;
+  max-width: 1380px; /* 🔥 more breathing room */
   margin: 0 auto;
-  padding: 14px 28px;
+  padding: 16px 40px;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-
-  gap: 40px; /* 🔥 THIS FIXES CROWDING */
 }
 
-/* Reduce padding when shrunk */
+/* shrink */
 .site-header.is-solid .header-inner {
   padding: 10px 28px;
 }
-    
-/* Slight logo shrink */
-.site-header.is-solid .logo img {
-  height: 32px;
+
+/* =========================
+   LEFT: LOGO
+========================= */
+.header-left {
+  display: flex;
+  align-items: center;
+
 }
 
-.site-header.is-solid .logo span {
-  font-size: 20px;
-}    
-   
-    
-.logo img {
-  filter: none;
-}
-    
-.logo a::after {
-  display: none !important;
-}
   
-
-  
-/* LOGO WRAPPER */
 .logo a {
   display: flex;
   align-items: center;
@@ -1896,44 +1884,61 @@ gap:22px;
   text-decoration: none;
 }
 
-/* LOGO IMAGE */
 .logo img {
   height: 28px;
   width: auto;
   display: block;
+  transition: 0.3s;
 }
 
-/* LOGO TEXT */
 .logo span {
   font-size: 18px;
   font-weight: 700;
-  color: #000000;
+  color: #000;
   letter-spacing: 0.3px;
 }
 
-  /* nav spacing clean */
+/* shrink logo */
+.site-header.is-solid .logo img {
+  height: 26px;
+}
+
+.site-header.is-solid .logo span {
+  font-size: 17px;
+}
+
+/* =========================
+   CENTER: NAV
+========================= */
 .nav {
   display: flex;
   align-items: center;
-  gap: 28px; /* instead of margin-left */
+  justify-content: center;
+
+  gap: 26px;
+
+  max-width: 720px;   /* 🔥 prevents stretch */
+  width: 100%;
+
+  margin: 0 auto;     /* 🔥 perfectly centered */
 }
-/* NAV LINKS */
 .nav a {
-  color: #111827; /* darker = better contrast */
+  color: #111827;  
   font-weight: 500;
   text-decoration: none;
-  font-size: 14px; 
-  margin-left: 0px;
+  font-size: 14px;
   position: relative;
   transition: color 0.3s ease;
+  padding: 6px 4px;
 }
 
-
+/* hover */
 .nav a:hover {
-        opacity: 1;
-    color: #e53935;
+  color: #e53935;
+  opacity: 0.9;
 }
 
+/* underline */
 .nav a::after {
   content: "";
   position: absolute;
@@ -1941,18 +1946,132 @@ gap:22px;
   bottom: -6px;
   width: 0;
   height: 2px;
-background: #e53935;  
-transition: width 0.25s ease;
+  background: #e53935;
+  transition: width 0.25s ease;
 }
 
 .nav a:hover::after {
   width: 100%;
 }
-/* ACTIVE LINK */
+
+/* active */
 .nav a.active {
   color: #e53935;
 }
-  
+
+/* REMOVE underline effect from logo */
+.logo a::after {
+  display: none !important;
+}
+
+/* also ensure no default underline */
+.logo a {
+  text-decoration: none;
+}  
+/* =========================
+   RIGHT: CTA
+========================= */
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-left: 40px; /* 🔥 creates strong separation */
+}
+/* CTA BUTTON */
+
+.header-cta .btn {
+  background: linear-gradient(135deg, #B91C1C, #DC2626);
+  color: #fff;
+
+  padding: 9px 16px;
+  font-size: 13px;
+  border-radius: 8px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  white-space: nowrap;
+
+  box-shadow: 0 6px 18px rgba(185, 28, 28, 0.25);
+  transition: all 0.25s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.header-cta .btn:hover {
+  background: linear-gradient(135deg, #EA3037, #DC2626);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(185, 28, 28, 0.35);
+}
+
+/* shine effect */
+.header-cta .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.3),
+    rgba(255,255,255,0.05)
+  );
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.header-cta .btn:hover::before {
+  left: 120%;
+}
+/* remove underline */
+.header-cta .btn::after {
+  display: none !important;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #111;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .nav {
+    display: none;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+ 
 /* HAMBURGER SHOW */
 .hamburger {
   display: none;
@@ -3800,15 +3919,17 @@ color:#B91C1C;
 <header id="stickyHeader" class="site-header"> 
   <div class="header-inner">
 
-    <!-- LOGO -->
-    <div class="logo">
-      <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">
-        <img src="https://static.wixstatic.com/media/98ad8e_5fe5742cfaf44db197695e76018055d2~mv2.png" alt="AltSecCON Logo">
-        <span>AltSecCON</span>
-      </a>
+    <!-- LEFT: LOGO -->
+    <div class="header-left">
+      <div class="logo">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">
+          <img src="https://static.wixstatic.com/media/98ad8e_5fe5742cfaf44db197695e76018055d2~mv2.png" alt="AltSecCON Logo">
+          <span>AltSecCON</span>
+        </a>
+      </div>
     </div>
 
-    <!-- DESKTOP NAV -->
+    <!-- CENTER: NAV -->
     <nav class="nav">
       <a href="#training">Training</a>     
       <a href="#event">Schedule</a>
@@ -3819,6 +3940,12 @@ color:#B91C1C;
       <a href="#contact">Contact</a>
     </nav>
 
+    <!-- RIGHT: CTA -->
+    <div class="header-cta">
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Book Training</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Book Conference</a>
+    </div>
+
     <!-- HAMBURGER -->
     <div class="hamburger" id="hamburger">
       <span></span>
@@ -3827,7 +3954,7 @@ color:#B91C1C;
     </div>
 
   </div>
-</header> 
+</header>
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#training">Training</a>
