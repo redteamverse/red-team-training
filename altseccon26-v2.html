@@ -3819,9 +3819,8 @@ color:#B91C1C;
 ========================= */
 .section-nav {
   position: sticky;
-  top: 60px; /* adjust based on main header height */
+  top: 58px; /* adjust based on main header height */
   z-index: 998;
-
   background: #FFFFFF;
   border-bottom: 1px solid #E5E7EB;
 }
@@ -3833,14 +3832,11 @@ color:#B91C1C;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-
   display: flex;
   align-items: center;
-  gap: 28px;
-
+  gap: 25px;
   overflow-x: auto;
   white-space: nowrap;
-
   position: relative; /* 🔥 needed for indicator */
   scroll-behavior: smooth;
 }
@@ -3897,7 +3893,7 @@ color:#B91C1C;
 ========================= */
 @media (max-width: 768px) {
   .section-nav {
-    top: 56px; /* slightly smaller header on mobile */
+    top: 47px; /* slightly smaller header on mobile */
   }
 
   .section-nav-container {
@@ -3910,7 +3906,112 @@ color:#B91C1C;
     padding: 12px 0;
   }
 }  
+/* =====================
+WRAPPER
+===================== */
+.side-cta {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: none;
+}
 
+/* Mobile only */
+@media (max-width: 768px) {
+  .side-cta {
+    display: block;
+  }
+}
+
+/* =====================
+TRIGGER (HALF HIDDEN)
+===================== */
+.side-cta-trigger {
+  background: linear-gradient(135deg, #B91C1C, #DC2626);
+  color: #fff;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 12px 0 0 12px;
+  cursor: pointer;
+
+  /* Half hidden */
+  transform: translateX(50%);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+
+  transition: all 0.3s ease;
+}
+
+/* Slight reveal on hover/tap */
+.side-cta-trigger:active {
+  transform: translateX(30%);
+}
+
+/* =====================
+PANEL
+===================== */
+.side-cta-panel {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+  opacity: 0;
+  pointer-events: none;
+
+  background: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+
+  transition: all 0.25s ease;
+}
+
+/* Active */
+.side-cta-panel.active {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+  pointer-events: auto;
+}
+
+/* =====================
+BUTTONS
+===================== */
+.cta-btn {
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Primary */
+.cta-btn.primary {
+  background: #B91C1C;
+  color: #fff;
+}
+
+/* Secondary */
+.cta-btn.secondary {
+  background: #F3F4F6;
+  color: #111827;
+}
+
+/* Tap effect */
+.cta-btn:active {
+  transform: scale(0.96);
+}
 </style>
 </head>
 
@@ -4028,9 +4129,9 @@ color:#B91C1C;
   <nav class="section-nav" id="sectionNav">
   <div class="section-nav-container">
     <a href="#outcome">Outcome</a>
-    <a href="#curriculum">Training Details</a>
+    <a href="#training">Training Details</a>
     <a href="#community">Community</a> 
-    <a href="#why">WHY TRAIN</a>   
+    <a href="#why">Why Train</a>   
     <a href="#glimpse">Glimpse</a> 
     <a href="#conference">Conference</a>  
     <a href="#approval">Approval</a>  
@@ -4133,7 +4234,7 @@ color:#B91C1C;
 <!-- WHAT AltSecCON DELIVERED -->
 
 <!-- TRAINING PROGRAMS -->
-<section id="curriculum" class="course-grid-section">
+<section id="training" class="course-grid-section">
   <div class="course-grid-container">
     <span class="section-eyebrow">Curriculum 
     </span>
@@ -5342,6 +5443,48 @@ Thanks,
   </div>
 </section>
   
+<!-- =====================
+MOBILE STICKY CTA
+===================== -->
+<!-- =====================
+RIGHT EDGE MOBILE CTA
+===================== -->
+<div class="side-cta" id="sideCTA">
+
+  <!-- Collapsed pill -->
+  <div class="side-cta-trigger" id="sideTrigger">
+    Book
+  </div>
+
+  <!-- Expanded panel -->
+  <div class="side-cta-panel" id="sidePanel">
+    
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="cta-btn primary">
+      Book Training
+    </a>
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="cta-btn secondary">
+      Book Conference
+    </a>
+
+  </div>
+
+</div>
+<script>
+const trigger = document.getElementById("sideTrigger");
+const panel = document.getElementById("sidePanel");
+
+trigger.addEventListener("click", () => {
+  panel.classList.toggle("active");
+});
+
+// Close on outside click
+document.addEventListener("click", function(e) {
+  if (!trigger.contains(e.target) && !panel.contains(e.target)) {
+    panel.classList.remove("active");
+  }
+});
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
