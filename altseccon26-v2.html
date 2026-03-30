@@ -3642,7 +3642,7 @@ color:#B91C1C;
 .mobile-menu a{
   color:#111;
   font-size:14px;
-  font-weight:500;
+  font-weight:600;
 }
 
 .menu-overlay{
@@ -3659,6 +3659,39 @@ color:#B91C1C;
   opacity:1;
   pointer-events:auto;
 }  
+  
+  
+/* =========================
+   MOBILE MENU CTA FIX
+========================= */
+.mobile-menu .btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 12px;
+  background: #B91C1C;
+  color: #e5e7eb;
+}
+
+.mobile-menu .btn:hover {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 12px;
+  background: #EA3037;
+  color: #e5e7eb;
+}  
+/* spacing from links */
+.mobile-menu a:not(.btn) {
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/* =========================
+   EXTRA PREMIUM TOUCH
+========================= */
+
 /* =========================
    SUB NAV (SECOND HEADER)
 ========================= */
@@ -3730,16 +3763,14 @@ color:#B91C1C;
 .nav-indicator {
   position: absolute;
   bottom: 0;
-  left: 0;
 
   height: 2px;
   width: 0;
 
   background: #2563EB;
 
-  border-radius: 2px;
-
-  transition: all 0.3s ease;
+  transform: translateX(0);   /* 🔥 use transform instead of left */
+  transition: transform 0.3s ease, width 0.3s ease;
 }
 
 /* =========================
@@ -3806,6 +3837,8 @@ color:#B91C1C;
   <a href="#venue">Venue</a>
   <a href="#gallery">Gallery</a>
   <a href="#contact">Contact</a>
+  <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Book Training</a>
+  <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Book Conference</a>
 </div>
 
 <div class="menu-overlay" id="menuOverlay"></div>  
@@ -5193,7 +5226,7 @@ Thanks,
 document.addEventListener("DOMContentLoaded", function () {
 
   /* =========================
-     HEADER + SUB NAV + CTA
+     ELEMENTS
   ========================= */
   const header = document.getElementById("stickyHeader");
   const sectionNav = document.getElementById("sectionNav");
@@ -5203,23 +5236,43 @@ document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".section-nav a");
 
+  const indicator = document.querySelector(".nav-indicator");
+  const container = document.querySelector(".section-nav-container");
+
+  /* =========================
+     SLIDING INDICATOR
+  ========================= */
+  function moveIndicator(el) {
+    if (!el || !indicator) return;
+
+    const left = el.offsetLeft;
+    const width = el.offsetWidth;
+
+    indicator.style.width = width + "px";
+    indicator.style.transform = `translateX(${left}px)`;
+  }
+
+  /* =========================
+     MAIN SCROLL HANDLER
+  ========================= */
   function handleScroll() {
     const scrollY = window.scrollY;
 
     /* HEADER */
-    if (scrollY > 80) {
-      header.classList.add("is-visible", "is-solid");
-    } else {
-      header.classList.remove("is-visible", "is-solid");
+    if (header) {
+      if (scrollY > 80) {
+        header.classList.add("is-visible", "is-solid");
+      } else {
+        header.classList.remove("is-visible", "is-solid");
+      }
+
+      if (window.innerWidth <= 768) {
+        header.classList.add("is-visible", "is-solid");
+      }
     }
 
-    /* MOBILE ALWAYS SHOW HEADER */
-    if (window.innerWidth <= 768) {
-      header.classList.add("is-visible", "is-solid");
-    }
-
-    /* SHOW SUB NAV AFTER HERO */
-    if (hero) {
+    /* SUB NAV */
+    if (hero && sectionNav) {
       const heroBottom = hero.offsetTop + hero.offsetHeight;
 
       if (scrollY > heroBottom - 120) {
@@ -5229,7 +5282,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    /* STICKY CTA */
+    /* CTA */
     if (stickyCTA) {
       if (scrollY > 200) {
         stickyCTA.classList.add("show");
@@ -5238,7 +5291,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    /* ACTIVE LINK */
+    /* ACTIVE LINK + INDICATOR */
     let current = "";
 
     sections.forEach(section => {
@@ -5256,9 +5309,10 @@ document.addEventListener("DOMContentLoaded", function () {
       if (link.getAttribute("href") === "#" + current) {
         link.classList.add("active");
 
-        /* auto center active tab */
+        moveIndicator(link);
+
         link.scrollIntoView({
-          behavior: "smooth",
+          behavior: "auto",
           inline: "center",
           block: "nearest"
         });
@@ -5266,13 +5320,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  /* =========================
+     EVENTS
+  ========================= */
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("load", handleScroll);
-
+  window.addEventListener("resize", handleScroll);
 
   /* =========================
-     SMOOTH SCROLL (FIXED)
-     👉 Prevent auto scroll on load
+     CLICK NAV
   ========================= */
   navLinks.forEach(anchor => {
     anchor.addEventListener("click", function (e) {
@@ -5285,42 +5341,11 @@ document.addEventListener("DOMContentLoaded", function () {
         top: target.offsetTop - 80,
         behavior: "smooth"
       });
+
+      moveIndicator(this);
     });
   });
 
-/* =========================
-   SLIDING UNDERLINE
-========================= */
-const indicator = document.querySelector(".nav-indicator");
-
-function moveIndicator(el) {
-  if (!el || !indicator) return;
-
-  const container = document.querySelector(".section-nav-container");
-
-  const rect = el.getBoundingClientRect();
-  const parentRect = container.getBoundingClientRect();
-
-  indicator.style.width = rect.width + "px";
-  indicator.style.left = (rect.left - parentRect.left) + "px";
-}
-
-/* move on click */
-navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    moveIndicator(link);
-  });
-});
-
-/* move on active change (scroll) */
-function updateIndicatorFromActive() {
-  const active = document.querySelector(".section-nav a.active");
-  if (active) moveIndicator(active);
-}
-
-/* call inside your scroll function */
-window.addEventListener("scroll", updateIndicatorFromActive);
-window.addEventListener("load", updateIndicatorFromActive);
   /* =========================
      MOBILE MENU
   ========================= */
@@ -5350,129 +5375,13 @@ window.addEventListener("load", updateIndicatorFromActive);
     });
   }
 
-
-  /* =========================
-     TABS
-  ========================= */
-  const tabs = document.querySelectorAll('.tab');
-  const contents = document.querySelectorAll('.tab-content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      contents.forEach(c => c.classList.remove('active'));
-
-      tab.classList.add('active');
-      const target = document.getElementById(tab.dataset.tab);
-      if (target) target.classList.add('active');
-    });
-  });
-
-
-  /* =========================
-     ACCORDION
-  ========================= */
-  document.querySelectorAll(".accordion-item").forEach(item => {
-    const header = item.querySelector(".accordion-header");
-
-    header.addEventListener("click", () => {
-      const openItem = document.querySelector(".accordion-item.active");
-
-      if (openItem && openItem !== item) {
-        openItem.classList.remove("active");
-      }
-
-      item.classList.toggle("active");
-    });
-  });
-
-
-  /* =========================
-     FAQ TOGGLE
-  ========================= */
-  document.querySelectorAll(".faq-question").forEach(question => {
-    question.addEventListener("click", () => {
-      const answer = question.nextElementSibling;
-      const icon = question.querySelector(".faq-icon");
-
-      if (answer.style.maxHeight) {
-        answer.style.maxHeight = null;
-        icon.textContent = "+";
-      } else {
-        answer.style.maxHeight = answer.scrollHeight + "px";
-        icon.textContent = "−";
-      }
-    });
-  });
-
-
-  /* =========================
-     TESTIMONIAL SLIDER
-  ========================= */
-  const track = document.querySelector('.testimonial-track');
-  const cards = document.querySelectorAll('.testimonial-card');
-
-  if (track && cards.length > 3) {
-    let index = 0;
-    const visible = 3;
-    const totalSteps = cards.length - visible + 1;
-
-    setInterval(() => {
-      index = (index + 1) % totalSteps;
-      track.style.transform = `translateX(-${index * (100 / visible)}%)`;
-    }, 5000);
-  }
-
-
-  /* =========================
-     VIDEO PLAY
-  ========================= */
-  const videoCard = document.getElementById("videoCard");
-  const video = document.getElementById("eventVideo");
-
-  if (videoCard && video) {
-    videoCard.addEventListener("click", () => {
-      if (video.paused) {
-        videoCard.classList.add("playing");
-        video.play().catch(()=>{});
-      } else {
-        video.pause();
-        videoCard.classList.remove("playing");
-      }
-    });
-
-    video.addEventListener("ended", () => {
-      videoCard.classList.remove("playing");
-    });
-  }
-
-
   /* =========================
      FOOTER YEAR
   ========================= */
   const year = document.getElementById("footerYear");
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
-
-
-  /* =========================
-     EMAIL TOGGLE
-  ========================= */
-  window.toggleEmail = function () {
-    const content = document.getElementById("emailContent");
-    const btn = document.querySelector(".read-more-btn");
-
-    if (!content || !btn) return;
-
-    content.classList.toggle("collapsed");
-    btn.innerText = content.classList.contains("collapsed")
-      ? "Read more"
-      : "Show less";
-  };
+  if (year) year.textContent = new Date().getFullYear();
 
 });
-
 
 /* =========================
    ICONS (LUCIDE)
@@ -5482,8 +5391,8 @@ window.addEventListener("load", () => {
     lucide.createIcons();
   }
 });
-  
 </script>
+  
 <script src="https://unpkg.com/lucide@latest"></script>  
 </body>
 </html>
