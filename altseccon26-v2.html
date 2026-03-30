@@ -22,6 +22,7 @@ a {
   
 }
 
+  
 
 :root {
   --navy: #2B2B50;
@@ -41,6 +42,8 @@ a {
 body {
   font-family: 'Inter', sans-serif;  
   color: var(--navy);
+  background-color:#16163F;
+  padding-bottom: 64px;
 }
 /* PRIMARY TEXT SYSTEM */
 
@@ -1985,21 +1988,17 @@ transition: width 0.25s ease;
    
 
 
-  body {
-    padding-bottom: 64px;
-  }
-}
-
-
+/* SECTION = FULL WIDTH BACKGROUND */
 .justify-section{
-padding:80px 20px;
-background: var(--offwhite);
-  
+  padding:80px 20px;
+  background:#F9FAFB; /* ✅ white background */
 }
 
+/* CONTAINER = CONTENT WIDTH */
 .justify-section .container{
-max-width:1200px;
-padding: var(--space-lg) 24px;
+  max-width:1100px;
+  margin:0 auto;
+  padding: var(--space-lg) 24px;
 }
   
 
@@ -3607,6 +3606,10 @@ color:#B91C1C;
 color:#B91C1C;
 }  
   
+  .time-sec{
+  color:#B91C1C;
+  }
+  
 .gallery-container .time-sec{
 color:#B91C1C;
 }  
@@ -3659,16 +3662,21 @@ color:#B91C1C;
 /* =========================
    SUB NAV (SECOND HEADER)
 ========================= */
+/* =========================
+   SECTION NAV (SECOND HEADER)
+========================= */
 .section-nav {
   position: sticky;
-  top: 60px; /* height of main header */
+  top: 60px; /* adjust based on main header height */
   z-index: 998;
 
-  background: #fff;
+  background: #FFFFFF;
   border-bottom: 1px solid #E5E7EB;
 }
 
-/* container */
+/* =========================
+   CONTAINER
+========================= */
 .section-nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -3680,9 +3688,19 @@ color:#B91C1C;
 
   overflow-x: auto;
   white-space: nowrap;
+
+  position: relative; /* 🔥 needed for indicator */
+  scroll-behavior: smooth;
 }
 
-/* links */
+/* hide scrollbar */
+.section-nav-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================
+   LINKS
+========================= */
 .section-nav a {
   position: relative;
   padding: 14px 0;
@@ -3690,36 +3708,59 @@ color:#B91C1C;
   color: #374151;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  transition: all 0.25s ease;
+
+  flex-shrink: 0; /* prevent shrinking */
 }
 
 /* hover */
 .section-nav a:hover {
-  color: #111827;
-}
-
-/* ACTIVE LINK */
-.section-nav a.active {
   color: #1D4ED8;
 }
 
-/* underline animation */
-.section-nav a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 2px;
-  background: #2563EB;
+/* active */
+.section-nav a.active {
+  color: #1D4ED8;
+  font-weight: 600;
 }
 
-/* scroll hide scrollbar */
-.section-nav-container::-webkit-scrollbar {
-  display: none;
+/* =========================
+   SLIDING INDICATOR
+========================= */
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  height: 2px;
+  width: 0;
+
+  background: #2563EB;
+
+  border-radius: 2px;
+
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .section-nav {
+    top: 56px; /* slightly smaller header on mobile */
+  }
+
+  .section-nav-container {
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  .section-nav a {
+    font-size: 13px;
+    padding: 12px 0;
+  }
 }  
-  
+
 </style>
 </head>
 
@@ -3826,20 +3867,23 @@ color:#B91C1C;
 </section>
   <nav class="section-nav" id="sectionNav">
   <div class="section-nav-container">
-
     <a href="#outcome">Outcome</a>
-    <a href="#Curriculum">Training Details</a>
-    <a href="#curriculum">Curriculum</a> 
-    <a href="#certification">Certification</a>   
-    <a href="#schedule">Schedule</a> 
-    <a href="#prerequisites">Prerequisites</a>  
-    <a href="#enroll">Enroll</a>  
-    <a href="#labs">Labs</a>       
-    <a href="#instructor">Instructor</a>
-    <a href="#audience">Audience</a> 
+    <a href="#curriculum">Training Details</a>
+    <a href="#community">Community</a> 
+    <a href="#why">WHY TRAIN</a>   
+    <a href="#glimpse">Glimpse</a> 
+    <a href="#conference">Conference</a>  
+    <a href="#approval">Approval</a>  
+    <a href="#instructors">Instructors</a>       
+    <a href="#event">Event</a>
+    <a href="#certification">Certification</a> 
+    <a href="#gallery">Gallery</a> 
+     <a href="#testimonials">Testimonials</a> 
+    <a href="#tickets">Tickets</a> 
     <a href="#venue">Venue</a> 
-    <a href="#faq">FAQ</a>
-
+     <a href="#contact">contact</a> 
+    <a href="#faqs">FAQs</a>
+     <div class="nav-indicator"></div>
   </div>
 </nav>
 <section class="training-timeline" id="outcome">
@@ -3936,7 +3980,7 @@ color:#B91C1C;
 <!-- WHAT AltSecCON DELIVERED -->
 
 <!-- TRAINING PROGRAMS -->
-<section id="training" class="course-grid-section">
+<section id="curriculum" class="course-grid-section">
   <div class="course-grid-container">
     <span class="section-eyebrow">Curriculum 
     </span>
@@ -4065,7 +4109,7 @@ color:#B91C1C;
   </div>
 </section>  
   <!-- TRUST -->
-<section class="trust-section">
+<section class="trust-section" id="community">
   <div class="trust-container">
 
     <span class="section-eyebrow">Community trust</span>
@@ -4102,7 +4146,7 @@ color:#B91C1C;
 <!-- =========================
      WHY TRAIN WITH US
 ========================= -->
-<section class="why-section">
+<section class="why-section" id="why">
 
   <div class="container">
 
@@ -4190,12 +4234,12 @@ color:#B91C1C;
 <!-- =========================
      ALTSecCON PRECAP VIDEO
 ========================= -->
-<section class="video-section">
+<section class="video-section" id="glimpse">
 
   <div class="container">
      <span class="eyebrow">AltSecCON Glimpse</span>
   <h2 class="section-title">    
-  Get a Glimpse of <span>AltSecCON</span>
+  Get a Glimpse of <span>AltSecCON 2025</span>
    </h2>
 
 <div class="section-divider"></div>
@@ -4234,7 +4278,7 @@ color:#B91C1C;
 ALTSECCON CONFERENCE SECTION
 ===================== -->
 
-<section class="conference-section">
+<section class="conference-section" id="conference">
 
 <div class="conference-container">
 
@@ -4349,7 +4393,7 @@ In-person sessions and practitioner discussions during AltSecCON.
 </div>
 
 </section>  
-<section class="justify-section">
+<section class="justify-section" id="approval">
 
 <div class="container">
 <span class="eyebrow">Approval Request</span>
@@ -4580,7 +4624,7 @@ Thanks,
 </section>
  
   <!-- CERTIFICATION & OUTCOMES -->
-<section class="certification-section">
+<section class="certification-section" id="certification">
   <div class="certification-container">
 
     <span class="section-eyebrow">Certification & Outcomes</span>
@@ -4633,7 +4677,7 @@ Thanks,
   <div class="gallery-container">
 
     <span class="section-eyebrow">Gallery</span>
-    <h2><span class="time-sec">AltSecCON</span> Bengaluru 2025 Highlights</h2>
+    <h2><span class="time-sec">AltSecCON 2025</span> Highlights</h2>
 
     <p class="gallery-intro">
       A glimpse into the instructor-led, in-person Red Team training sessions
@@ -4665,7 +4709,7 @@ Thanks,
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonial-section">
+<section class="testimonial-section" id="testimonials">
   <div class="testimonial-container">
 
     <span class="section-eyebrow">Testimonials</span>
@@ -4872,7 +4916,7 @@ Thanks,
   <div class="venue-container">
 
     <span class="section-eyebrow">Event Location</span>
-    <h2>Training & Conference Venue</h2>
+    <h2><span class="time-sec">AltSecCON </span>Training & Conference Venue</h2>
 
     <p class="venue-intro">
       AltSecCON will take place in Bengaluru, India, hosting both the instructor-led Red Team training and the practitioner conference in a shared environment designed for learning and collaboration.
@@ -4983,7 +5027,7 @@ Thanks,
 
 </section>  
 <!-- CONTACT US -->
-<section class="faq-section">
+<section class="faq-section" id="faqs">
 
   <div class="faq-container">
 
@@ -5244,7 +5288,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+/* =========================
+   SLIDING UNDERLINE
+========================= */
+const indicator = document.querySelector(".nav-indicator");
 
+function moveIndicator(el) {
+  if (!el || !indicator) return;
+
+  const container = document.querySelector(".section-nav-container");
+
+  const rect = el.getBoundingClientRect();
+  const parentRect = container.getBoundingClientRect();
+
+  indicator.style.width = rect.width + "px";
+  indicator.style.left = (rect.left - parentRect.left) + "px";
+}
+
+/* move on click */
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    moveIndicator(link);
+  });
+});
+
+/* move on active change (scroll) */
+function updateIndicatorFromActive() {
+  const active = document.querySelector(".section-nav a.active");
+  if (active) moveIndicator(active);
+}
+
+/* call inside your scroll function */
+window.addEventListener("scroll", updateIndicatorFromActive);
+window.addEventListener("load", updateIndicatorFromActive);
   /* =========================
      MOBILE MENU
   ========================= */
