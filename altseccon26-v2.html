@@ -950,9 +950,9 @@ box-shadow:0 4px 10px rgba(185,28,28,0.2);
 
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
-background-color: transparent;
-  color: #1E3A8A;
-  border-color: #ffffff;
+background-color: #1E3A8A;
+  color: #ffffff; 
+  transform:translateY(-2px);
 }
 
 
@@ -4075,9 +4075,9 @@ BUTTONS
 
     <!-- CENTER: NAV -->
     <nav class="nav">
-      <a href="#training">Training</a>     
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
+      <a href="#training">Training</a>  
       <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>      
       <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Tickets</a>
       <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
       <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Gallery</a>
@@ -4103,9 +4103,9 @@ BUTTONS
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="menu-content">
-  <a href="#training">Training</a>     
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>
+  <a href="#training">Training</a>   
+  <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>  
+  <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>  
   <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Tickets</a>
   <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
   <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Gallery</a>
@@ -4176,22 +4176,22 @@ BUTTONS
   <nav class="section-nav" id="sectionNav">
   <div class="section-nav-container">
     <a href="#outcome">Outcome</a>
-    <a href="#training">Training Details</a>
-    <a href="#community">Community</a> 
-    <a href="#why">Why Train</a>   
-    <a href="#glimpse">Glimpse</a> 
+    <a href="#why">Why Train</a>  
+    <a href="#training">Training</a>
     <a href="#conference">Conference</a>  
-    <a href="#approval">Approval</a>  
-    <a href="#instructors">Instructors</a>       
-    <a href="#event">Event</a>
-    <a href="#certification">Certification</a> 
-    <a href="#gallery">Gallery</a> 
-     <a href="#testimonials">Testimonials</a> 
+    <a href="#glimpse">Glimpse</a>    
     <a href="#tickets">Tickets</a> 
+    <a href="#community">Community</a> 
+    <a href="#instructors">Instructors</a>   
+    <a href="#certification">Certification</a>    
+    <a href="#event">Event</a>
+    <a href="#approval">Approval</a> 
+    <a href="#gallery">Gallery</a> 
+    <a href="#testimonials">Testimonials</a>     
     <a href="#venue">Venue</a> 
-     <a href="#contact">Contact</a> 
+    <a href="#contact">Contact</a> 
     <a href="#faqs">FAQs</a>
-     <div class="nav-indicator"></div>
+    <div class="nav-indicator"></div>
   </div>
 </nav>
 <section class="training-timeline" id="outcome">
@@ -4277,7 +4277,87 @@ BUTTONS
   </div>
 
 </section>
+<!-- =========================
+     WHY TRAIN WITH US
+========================= -->
+<section class="why-section" id="why">
 
+  <div class="container">
+
+    <span class="section-eyebrow">WHY TRAIN WITH US</span>
+    <h2>Built for Real-World Enterprise Security</h2>
+
+    <p class="lead">
+      Our training programs are trusted globally by professionals and organizations 
+      who demand practical, hands-on expertise in offensive and defensive security.
+    </p>
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <div class="stat-number">50,000+</div>
+        <div class="stat-label">Professionals Trained</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">130+</div>
+        <div class="stat-label">Countries Reached</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">600+</div>
+        <div class="stat-label">Organizations Served</div>
+      </div>
+
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature">
+        <div class="icon-box">
+          <i data-lucide="user-check"></i>
+        </div>
+        <div>
+          <h4>Expert Instructors</h4>
+          <p>Courses are authored and delivered by industry experts with real-world experience.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon-box">
+          <i data-lucide="cpu"></i>
+        </div>
+        <div>
+          <h4>Pioneers of Enterprise Labs</h4>
+          <p>Hands-on labs designed to simulate real enterprise environments.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon-box">
+          <i data-lucide="thumbs-up"></i>
+        </div>
+        <div>
+          <h4>Highly Recommended</h4>
+          <p>Trusted and recommended by professionals across industries worldwide.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon-box">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <div>
+          <h4>Enterprise Security Focus</h4>
+          <p>Focused on real attack scenarios and defense strategies used in enterprises.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 <!-- WHAT AltSecCON DELIVERED -->
 
 <!-- TRAINING PROGRAMS -->
@@ -4409,172 +4489,7 @@ BUTTONS
     </div>
   </div>
 </section>  
-  <!-- TRUST -->
-<section class="trust-section" id="community">
-  <div class="trust-container">
-
-    <span class="section-eyebrow">Community trust</span>
-
-    <h2>Trusted by the Security Community</h2>
-
-    <p class="trust-intro">
-      Security professionals from across India joined AltSecCON for hands-on Red Team training and professional collaboration.
-    </p>
-
-    <p class="trust-label">
-      Professionals joined AltSecCON from organizations such as
-    </p>
-
-    <div class="trust-logos community-logos">
-      <img src="https://redteamverse.github.io/red-team-training/images/microsoft.png" alt="">
-      <img src="https://redteamverse.github.io/red-team-training/images/security.png" alt="">
-      <img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg" alt="">
-      <img src="https://redteamverse.github.io/red-team-training/images/wipro.png" alt="">
-      <img src="https://redteamverse.github.io/red-team-training/images/RS.jpg" alt="">
-      <img src="https://redteamverse.github.io/red-team-training/images/SST.png" alt="">
-    </div>
-
-    <p class="trust-note">
-      Logos represent organizations where attendees work and do not imply sponsorship.
-    </p>
-
-  </div>
-</section> 
   
-<!-- =========================
-     WHY TRAIN WITH US
-========================= -->
-<!-- =========================
-     WHY TRAIN WITH US
-========================= -->
-<section class="why-section" id="why">
-
-  <div class="container">
-
-    <span class="section-eyebrow">WHY TRAIN WITH US</span>
-    <h2>Built for Real-World Enterprise Security</h2>
-
-    <p class="lead">
-      Our training programs are trusted globally by professionals and organizations 
-      who demand practical, hands-on expertise in offensive and defensive security.
-    </p>
-
-    <div class="stats-grid">
-
-      <div class="stat-card">
-        <div class="stat-number">50,000+</div>
-        <div class="stat-label">Professionals Trained</div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-number">130+</div>
-        <div class="stat-label">Countries Reached</div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-number">600+</div>
-        <div class="stat-label">Organizations Served</div>
-      </div>
-
-    </div>
-
-    <div class="features-grid">
-
-      <div class="feature">
-        <div class="icon-box">
-          <i data-lucide="user-check"></i>
-        </div>
-        <div>
-          <h4>Expert Instructors</h4>
-          <p>Courses are authored and delivered by industry experts with real-world experience.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="icon-box">
-          <i data-lucide="cpu"></i>
-        </div>
-        <div>
-          <h4>Pioneers of Enterprise Labs</h4>
-          <p>Hands-on labs designed to simulate real enterprise environments.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="icon-box">
-          <i data-lucide="thumbs-up"></i>
-        </div>
-        <div>
-          <h4>Highly Recommended</h4>
-          <p>Trusted and recommended by professionals across industries worldwide.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="icon-box">
-          <i data-lucide="shield-check"></i>
-        </div>
-        <div>
-          <h4>Enterprise Security Focus</h4>
-          <p>Focused on real attack scenarios and defense strategies used in enterprises.</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- =========================
-     PRECAP VIDEO SECTION
-========================= -->
-<!-- =========================
-     ALTSecCON PRECAP VIDEO
-========================= -->
-<!-- =========================
-     ALTSecCON PRECAP VIDEO
-========================= -->
-<section class="video-section" id="glimpse">
-
-  <div class="container">
-     <span class="eyebrow">AltSecCON Glimpse</span>
-  <h2 class="section-title">    
-  Get a Glimpse of <span>AltSecCON 2025</span>
-   </h2>
-
-<div class="section-divider"></div>
-
-    <p class="section-desc">
-      A quick look at the experience, energy, and real-world learning that defines AltSecCON.
-    </p>
-
-    <div class="video-card" id="videoCard">
-
-      <!-- Thumbnail -->
-      <img 
-        src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp" 
-        alt="AltSecCON Preview"
-        class="video-thumbnail"
-        id="videoThumbnail"
-      />
-
-      <!-- Overlay -->
-      <div class="video-overlay" id="videoOverlay">
-        <button class="play-btn">▶</button>
-      </div>
-
-      <!-- Video -->
-      <video id="eventVideo" preload="none">
-        <source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm" type="video/webm">
-      </video>
-
-    </div>
-
-  </div>
-
-</section>
-
 <!-- =====================
 ALTSECCON CONFERENCE SECTION
 ===================== -->
@@ -4693,7 +4608,320 @@ In-person sessions and practitioner discussions during AltSecCON.
 
 </div>
 
+</section>   
+  
+<!-- =========================
+     ALTSecCON PRECAP VIDEO
+========================= -->
+<section class="video-section" id="glimpse">
+
+  <div class="container">
+     <span class="eyebrow">AltSecCON Glimpse</span>
+  <h2 class="section-title">    
+  Get a Glimpse of <span>AltSecCON 2025</span>
+   </h2>
+
+<div class="section-divider"></div>
+
+    <p class="section-desc">
+      A quick look at the experience, energy, and real-world learning that defines AltSecCON.
+    </p>
+
+    <div class="video-card" id="videoCard">
+
+      <!-- Thumbnail -->
+      <img 
+        src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp" 
+        alt="AltSecCON Preview"
+        class="video-thumbnail"
+        id="videoThumbnail"
+      />
+
+      <!-- Overlay -->
+      <div class="video-overlay" id="videoOverlay">
+        <button class="play-btn">▶</button>
+      </div>
+
+      <!-- Video -->
+      <video id="eventVideo" preload="none">
+        <source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm" type="video/webm">
+      </video>
+
+    </div>
+
+  </div>
+
+</section>    
+<section class="ticket-section" id="tickets">
+
+  <div class="ticket-container" >
+
+    <span class="section-eyebrow">Tickets</span>
+    <h2>Choose Your <span class="time-sec">AltSecCON</span> Experience</h2>
+    <p class="ticket-intro">
+      Select the option that best fits your learning goals — training, conference, or a complete experience.
+    </p>
+
+    <div class="ticket-grid">
+
+      <!-- TRAINING -->
+      <div class="ticket-card">
+        <h3>Training Only</h3>
+        <ul>
+          <li>Instructor-led Red Team training (selected course)</li>
+          <li>Course completion certification</li>
+          <li>60 days of lab access</li>
+          <li>One certification exam attempt</li>
+        </ul>
+         <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Training</a> 
+      </div>
+
+      <!-- CONFERENCE -->
+      <div class="ticket-card">
+        <h3>Conference Only</h3>
+        <ul>
+          <li>Full access to all conference talks</li>
+          <li>Networking with security professionals</li>
+          <li>Panel discussions and practitioner sessions</li>
+          <li>Coffee breaks and lunch included</li>
+          <li>Welcome kit</li>
+          <li>Participation e-certificate</li>
+        </ul>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Conference Pass</a>
+
+      </div>
+
+      <!-- COMBO -->
+      <div class="ticket-card highlight">
+        <div class="badge">Best Value</div>
+        <h3>Training + Conference</h3>
+        <ul>
+          <li>Instructor-led Red Team training (selected course)</li>
+          <li>Course completion certification</li>
+          <li>60 days of lab access</li>
+          <li>One certification exam attempt</li>
+          <li>Full conference access</li>
+          <li>Networking and panel discussions</li>
+          <li>Coffee breaks, lunch, and welcome kit</li>
+          <li>Participation e-certificate</li>
+        </ul>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Get Full Access</a>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>  
+
+  <!-- TRUST -->
+<section class="trust-section" id="community">
+  <div class="trust-container">
+
+    <span class="section-eyebrow">Community trust</span>
+
+    <h2>Trusted by the Security Community</h2>
+
+    <p class="trust-intro">
+      Security professionals from across India joined AltSecCON for hands-on Red Team training and professional collaboration.
+    </p>
+
+    <p class="trust-label">
+      Professionals joined AltSecCON from organizations such as
+    </p>
+
+    <div class="trust-logos community-logos">
+      <img src="https://redteamverse.github.io/red-team-training/images/microsoft.png" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/security.png" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/wipro.png" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/RS.jpg" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/SST.png" alt="">
+    </div>
+
+    <p class="trust-note">
+      Logos represent organizations where attendees work and do not imply sponsorship.
+    </p>
+
+  </div>
+</section> 
+  
+ <!-- INSTRUCTOR SECTION -->
+<section id="instructors" class="instructor-section">
+  <div class="instructor-container">
+
+    <span class="section-eyebrow">Instructors</span>
+    <h2>Meet Your Instructors</h2>
+
+    <p class="instructor-intro">
+      Our instructors bring deep Red Team experience from enterprise operations,
+      real-world engagements, and advanced adversary simulation.
+    </p>
+
+    <div class="instructor-grid">
+      <!-- Primary Instructors -->
+      <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" alt="Nikhil Mittal">
+        <h3>Nikhil Mittal</h3>
+        <p class="instructor-role">Lead Red Team Instructor</p>
+         <p class="instructor-authority">
+    Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
+  </p>
+      </div>
+      <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9696.jpg" alt="Manthan">
+        <h3>Manthan</h3>
+        <p>Red Team Practitioner</p>
+      </div>    
+   
+     <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Manthan">
+        <h3>Hitesh</h3>
+        <p>Red Team Practitioner</p>
+    </div>     
+   
+  
+      <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="Manthan">
+        <h3>Amit</h3>
+        <p>Red Team Practitioner</p>
+      </div>
+      <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9759.jpg" alt="Manthan">
+        <h3>Vishal</h3>
+        <p>Red Team Practitioner</p>
+      </div>
+    </div>     
+  
+    <div class="instructor-card-cta">
+      <a href="#" class="btn btn-tertiary">Explore Training Programs →</a>
+    </div>
+
+    <!-- Supporting Images 
+    <div class="instructor-support">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="AltSecCON instruction scene">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Hands-on teaching moment">
+    </div>-->
+  </div> 
+</section>
+<!-- CERTIFICATION & OUTCOMES -->
+<section class="certification-section" id="certification">
+  <div class="certification-container">
+
+    <span class="section-eyebrow">Certification & Outcomes</span>
+    <h2>Course Completion Certification</h2>
+
+    <p class="certification-intro">
+      Participants who successfully complete the full instructor-led training
+      receive an official course completion certificate issued by Altered Security.
+      This certification validates hands-on participation and successful completion
+      of the program.
+    </p>
+
+    <div class="certification-points">
+
+  <div class="certification-card">
+    <div class="certification-icon">
+      <i data-lucide="badge-check"></i>
+    </div>
+    <h3>Issued After Full Training</h3>
+    <p>
+      Certificates are issued only after attending the complete training
+      duration, including all practical and instructor-led sessions.
+    </p>
+  </div>
+
+  <div class="certification-card">
+    <div class="certification-icon">
+      <i data-lucide="check-circle"></i>
+    </div>
+    <h3>Completion-Based Validation</h3>
+    <p>
+      The certification reflects successful course completion
+      and learning outcomes — not just attendance.
+    </p>
+  </div>
+
+</div>
+
+    <div class="certification-cta">
+      <a href="#" class="btn-secondary">
+        View Certification Details →
+      </a>
+    </div>
+
+  </div>
+</section>  
+
+
+<!-- Event Overview-->
+  <section class="event-structure-section" id="event">
+  <div class="event-structure-container">
+
+    <div class="event-structure-text">
+      <span class="section-eyebrow">Event Format</span>
+      <h2>Event Structure Overview</h2>
+
+      <p class="event-structure-summary">
+        Industry-leading in-person red team training, certifications and conference on Red Teaming.
+      </p>
+
+      <div class="event-structure-cards">
+
+  <div class="structure-card">
+    <div class="structure-icon">
+      <i data-lucide="calendar-days"></i>
+    </div>
+    <h3>Multi-Day Training Format</h3>
+    <p>Training will be deliver across multiple consecutive days to allow uninterrupted learning.</p>
+  </div>
+   <div class="structure-card">
+    <div class="structure-icon">
+      <i data-lucide="users"></i>
+    </div>
+    <h3>Practitioner Conference</h3>
+    <p>The AltSecCON Practitioner Conference features technical talks focused on enterprise attack techniques, Red Team operations, and real-world security challenges.</p>
+  </div>
+  <div class="structure-card">
+    <div class="structure-icon">
+      <i data-lucide="presentation"></i>
+    </div>
+    <h3>In-Person Delivery</h3>
+    <p>All sessions will be conduct on-site with direct instructor interaction.</p>
+  </div>
+   <div class="structure-card">
+    <div class="structure-icon">
+      <i data-lucide="soup"></i>
+    </div>
+    <h3>Food & Refreshments</h3>
+    <p>Enjoy coffee breaks and lunch while interacting with speakers and attendees creating informal networking opportunities.</p>
+  </div>  
+
+</div>
+
+      <!-- Operational details -->
+      <div class="event-structure-ops">
+        <div><strong>Training Sessions:</strong> 9:00 AM – 5:00 PM</div>
+        <div><strong>Conference Day:</strong> 9:00 AM – 5:00 PM</div>
+        <div><strong>Scheduled breaks:</strong> Tea breaks and lunch included</div>
+      </div>
+
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html" class="btn-secondary">
+        View full event details →
+      </a>
+    </div>
+
+    <div class="event-structure-image">
+      <img
+        src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9212.webp"
+        alt="Instructor-led Red Team training session"
+      >
+    </div>
+
+  </div>
+</section>
+
+
 <section class="justify-section" id="approval">
 
 <div class="container">
@@ -4799,179 +5027,10 @@ Thanks,
 </div>
 
 </section>
-  <!-- INSTRUCTOR SECTION -->
-<section id="instructors" class="instructor-section">
-  <div class="instructor-container">
-
-    <span class="section-eyebrow">Instructors</span>
-    <h2>Meet Your Instructors</h2>
-
-    <p class="instructor-intro">
-      Our instructors bring deep Red Team experience from enterprise operations,
-      real-world engagements, and advanced adversary simulation.
-    </p>
-
-    <div class="instructor-grid">
-      <!-- Primary Instructors -->
-      <div class="instructor-card">
-        <img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" alt="Nikhil Mittal">
-        <h3>Nikhil Mittal</h3>
-        <p class="instructor-role">Lead Red Team Instructor</p>
-         <p class="instructor-authority">
-    Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
-  </p>
-      </div>
-      <div class="instructor-card">
-        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9696.jpg" alt="Manthan">
-        <h3>Manthan</h3>
-        <p>Red Team Practitioner</p>
-      </div>    
-   
-     <div class="instructor-card">
-        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Manthan">
-        <h3>Hitesh</h3>
-        <p>Red Team Practitioner</p>
-    </div>     
-   
-  
-      <div class="instructor-card">
-        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="Manthan">
-        <h3>Amit</h3>
-        <p>Red Team Practitioner</p>
-      </div>
-      <div class="instructor-card">
-        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9759.jpg" alt="Manthan">
-        <h3>Vishal</h3>
-        <p>Red Team Practitioner</p>
-      </div>
-    </div>     
-  
-    <div class="instructor-card-cta">
-      <a href="#" class="btn btn-tertiary">Explore Training Programs →</a>
-    </div>
-
-    <!-- Supporting Images 
-    <div class="instructor-support">
-      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="AltSecCON instruction scene">
-      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Hands-on teaching moment">
-    </div>-->
-  </div> 
-</section>
-<!-- Event Overview-->
-  <section class="event-structure-section" id="event">
-  <div class="event-structure-container">
-
-    <div class="event-structure-text">
-      <span class="section-eyebrow">Event Format</span>
-      <h2>Event Structure Overview</h2>
-
-      <p class="event-structure-summary">
-        Industry-leading in-person red team training, certifications and conference on Red Teaming.
-      </p>
-
-      <div class="event-structure-cards">
-
-  <div class="structure-card">
-    <div class="structure-icon">
-      <i data-lucide="calendar-days"></i>
-    </div>
-    <h3>Multi-Day Training Format</h3>
-    <p>Training will be deliver across multiple consecutive days to allow uninterrupted learning.</p>
-  </div>
-   <div class="structure-card">
-    <div class="structure-icon">
-      <i data-lucide="users"></i>
-    </div>
-    <h3>Practitioner Conference</h3>
-    <p>The AltSecCON Practitioner Conference features technical talks focused on enterprise attack techniques, Red Team operations, and real-world security challenges.</p>
-  </div>
-  <div class="structure-card">
-    <div class="structure-icon">
-      <i data-lucide="presentation"></i>
-    </div>
-    <h3>In-Person Delivery</h3>
-    <p>All sessions will be conduct on-site with direct instructor interaction.</p>
-  </div>
-   <div class="structure-card">
-    <div class="structure-icon">
-      <i data-lucide="soup"></i>
-    </div>
-    <h3>Food & Refreshments</h3>
-    <p>Enjoy coffee breaks and lunch while interacting with speakers and attendees creating informal networking opportunities.</p>
-  </div>  
-
-</div>
-
-      <!-- Operational details -->
-      <div class="event-structure-ops">
-        <div><strong>Training Sessions:</strong> 9:00 AM – 5:00 PM</div>
-        <div><strong>Conference Day:</strong> 9:00 AM – 5:00 PM</div>
-        <div><strong>Scheduled breaks:</strong> Tea breaks and lunch included</div>
-      </div>
-
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html" class="btn-secondary">
-        View full event details →
-      </a>
-    </div>
-
-    <div class="event-structure-image">
-      <img
-        src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9212.webp"
-        alt="Instructor-led Red Team training session"
-      >
-    </div>
-
-  </div>
-</section>
  
-  <!-- CERTIFICATION & OUTCOMES -->
-<section class="certification-section" id="certification">
-  <div class="certification-container">
 
-    <span class="section-eyebrow">Certification & Outcomes</span>
-    <h2>Course Completion Certification</h2>
-
-    <p class="certification-intro">
-      Participants who successfully complete the full instructor-led training
-      receive an official course completion certificate issued by Altered Security.
-      This certification validates hands-on participation and successful completion
-      of the program.
-    </p>
-
-    <div class="certification-points">
-
-  <div class="certification-card">
-    <div class="certification-icon">
-      <i data-lucide="badge-check"></i>
-    </div>
-    <h3>Issued After Full Training</h3>
-    <p>
-      Certificates are issued only after attending the complete training
-      duration, including all practical and instructor-led sessions.
-    </p>
-  </div>
-
-  <div class="certification-card">
-    <div class="certification-icon">
-      <i data-lucide="check-circle"></i>
-    </div>
-    <h3>Completion-Based Validation</h3>
-    <p>
-      The certification reflects successful course completion
-      and learning outcomes — not just attendance.
-    </p>
-  </div>
-
-</div>
-
-    <div class="certification-cta">
-      <a href="#" class="btn-secondary">
-        View Certification Details →
-      </a>
-    </div>
-
-  </div>
-</section>
+ 
+  
 
 <!-- GALLERY PREVIEW -->
 <section class="gallery-section" id="gallery">
@@ -5150,67 +5209,7 @@ Thanks,
   </div>
 </section>
 
-<section class="ticket-section" id="tickets">
 
-  <div class="ticket-container" >
-
-    <span class="section-eyebrow">Tickets</span>
-    <h2>Choose Your <span class="time-sec">AltSecCON</span> Experience</h2>
-    <p class="ticket-intro">
-      Select the option that best fits your learning goals — training, conference, or a complete experience.
-    </p>
-
-    <div class="ticket-grid">
-
-      <!-- TRAINING -->
-      <div class="ticket-card">
-        <h3>Training Only</h3>
-        <ul>
-          <li>Instructor-led Red Team training (selected course)</li>
-          <li>Course completion certification</li>
-          <li>60 days of lab access</li>
-          <li>One certification exam attempt</li>
-        </ul>
-         <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Training</a> 
-      </div>
-
-      <!-- CONFERENCE -->
-      <div class="ticket-card">
-        <h3>Conference Only</h3>
-        <ul>
-          <li>Full access to all conference talks</li>
-          <li>Networking with security professionals</li>
-          <li>Panel discussions and practitioner sessions</li>
-          <li>Coffee breaks and lunch included</li>
-          <li>Welcome kit</li>
-          <li>Participation e-certificate</li>
-        </ul>
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Conference Pass</a>
-
-      </div>
-
-      <!-- COMBO -->
-      <div class="ticket-card highlight">
-        <div class="badge">Best Value</div>
-        <h3>Training + Conference</h3>
-        <ul>
-          <li>Instructor-led Red Team training (selected course)</li>
-          <li>Course completion certification</li>
-          <li>60 days of lab access</li>
-          <li>One certification exam attempt</li>
-          <li>Full conference access</li>
-          <li>Networking and panel discussions</li>
-          <li>Coffee breaks, lunch, and welcome kit</li>
-          <li>Participation e-certificate</li>
-        </ul>
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Get Full Access</a>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
 
 <section class="venue-section" id="venue">
 
