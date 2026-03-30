@@ -3755,7 +3755,7 @@ MOBILE MENU (FINAL FIX)
 ========================= */
 .mobile-menu {
   position: fixed;
-  top: 42px; /* 🔥 cover header */
+  top: 48px; /* 🔥 cover header */
   right: -100%;
   width: 260px;
   height: 100vh;
@@ -3942,7 +3942,7 @@ WRAPPER
   top: 60%;
   right: 0;
   transform: translateY(-50%);
-  z-index: 500;
+  z-index: 999;
 }
 
 /* Hide on desktop */
@@ -3970,6 +3970,7 @@ TRIGGER
   transform: translateX(15%); /* instead of 55% */
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
   transition: all 0.3s ease;
+  opacity: 0.6;
 }
 .cta-text {
   white-space: nowrap;
