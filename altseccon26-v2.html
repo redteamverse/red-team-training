@@ -43,7 +43,7 @@ body {
   font-family: 'Inter', sans-serif;  
   color: var(--navy);
   background-color:#16163F;
-  padding-bottom: 64px;
+  padding-bottom: 64px; 
 }
 /* PRIMARY TEXT SYSTEM */
 
@@ -1821,12 +1821,20 @@ gap:22px;
  /* =========================
    HEADER BASE
 ========================= */
+.topbar-closed .site-header {
+  top: 0;
+}
+
+.topbar-closed .section-nav {
+  top: 47px;
+}
+  
 .site-header {
   position: fixed;
-  top: 0;
+  top: 40px;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 2500;
 
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
@@ -3842,7 +3850,7 @@ LINK SPACING
 ========================= */
 .section-nav {
   position: sticky;
-  top: 58px; /* adjust based on main header height */
+  top: 90px; /* adjust based on main header height */
   z-index: 998;
   background: #FFFFFF;
   border-bottom: 1px solid #E5E7EB;
@@ -3895,6 +3903,13 @@ LINK SPACING
   font-weight: 600;
 }
 
+.topbar-closed .site-header {
+  top: 0;
+}
+
+.topbar-closed .section-nav {
+  top: 47px;
+}  
 /* =========================
    SLIDING INDICATOR
 ========================= */
@@ -3916,7 +3931,7 @@ LINK SPACING
 ========================= */
 @media (max-width: 768px) {
   .section-nav {
-    top: 47px; /* slightly smaller header on mobile */
+    top: px; /* slightly smaller header on mobile */
   }
 
   .section-nav-container {
@@ -4055,10 +4070,66 @@ BUTTONS
   background: #F3F4F6;
   color: #111827;
 }
+  
+/* =====================
+TOP BAR
+===================== */
+/* =====================
+TOP BAR
+===================== */
+
+/* =====================
+TOP BAR
+===================== */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px; /* 🔥 IMPORTANT */
+
+  background: #B91C1C;
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 13px;
+  z-index: 3000;
+}
+
+/* Text */
+.top-bar-text {
+  text-align: center;
+}
+
+/* Close button */
+.top-bar-close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
 </style>
 </head>
 
 <body>
+<div class="top-bar" id="topBar">
+  <span class="top-bar-text">
+    Early Bird Ends Soon — Use Code <strong>EARLY200</strong>
+  </span>
+
+  <button class="top-bar-close" id="topBarClose">✕</button>
+</div>
 <!-- DESKTOP STICKY HEADER -->
 <header id="stickyHeader" class="site-header"> 
   <div class="header-inner">
@@ -5767,5 +5838,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>  
+
 </body>
 </html>
