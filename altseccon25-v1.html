@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AltSecCON 2025 Highlights</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= BASE ================= */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #F9FAFB;
+  color: #111827;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 70px 20px;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+}
+
+.hero-meta {
+  margin-top: 15px;
+}
+
+.hero-badge {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.hero-tags span {
+  display: inline-block;
+  margin: 5px;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* ================= SECTION ================= */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+}
+
+/* ================= TIMELINE ================= */
+.timeline-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+.timeline-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.timeline-image img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.timeline-text {
+  flex: 1;
+}
+
+.timeline-image {
+  flex: 1;
+}
+
+/* ================= VIDEO ================= */
+.video-section video {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* ================= GALLERY ================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ================= HIGHLIGHTS ================= */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.highlight-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.highlight-card h3 {
+  font-size: 28px;
+  color: #B91C1C;
+}
+
+/* ================= TESTIMONIALS ================= */
+.testimonials {
+  background: #111827;
+  color: #fff;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: #1F2937;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.testimonial-card p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.testimonial-card h4 {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #9CA3AF;
+}
+
+/* ================= CTA ================= */
+.cta {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta a {
+  background: #B91C1C;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:768px) {
+  .timeline-row { flex-direction: column; }
+  .gallery { grid-template-columns: 1fr; }
+  .highlights { grid-template-columns: 1fr; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm" type="video/webm">
+  </video>
+
+  <div>
+    <h1>AltSecCON 2025</h1>
+
+    <p>Industry-leading in-person red team training, certifications and conference on Red Teaming</p>
+
+    <div class="hero-tags">
+      <span>On-Prem AD</span>
+      <span>Azure Red Teaming</span>
+    </div>
+
+    <div class="hero-meta">
+      <span class="hero-badge">📅 5 Dec – 7 Dec 2025</span>
+      <span class="hero-badge">📍 Bangalore</span>
+      <span class="hero-badge">🏨 Conrad Hotel</span>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOME -->
+<section class="container">
+  <div class="section-title">
+    <h2>What AltSecCON Delivered in Bengaluru</h2>
+  </div>
+
+  <div class="timeline-row">
+    <div class="timeline-image">
+      <img src="https://redteamverse.github.io/red-team-training/images/new-3.webp">
+    </div>
+    <div class="timeline-text">
+      <h3>Deep-Dive Instructor-Led Training</h3>
+      <p>Hands-on enterprise-grade red team training.</p>
+    </div>
+  </div>
+
+  <div class="timeline-row reverse">
+    <div class="timeline-image">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp">
+    </div>
+    <div class="timeline-text">
+      <h3>Real-World Adversary Simulation</h3>
+      <p>Focused on Active Directory & Azure attacks.</p>
+    </div>
+  </div>
+
+  <div class="timeline-row">
+    <div class="timeline-image">
+      <img src="https://redteamverse.github.io/red-team-training/images/new-5.webp">
+    </div>
+    <div class="timeline-text">
+      <h3>High-Value Networking</h3>
+      <p>Collaborated with security professionals.</p>
+    </div>
+  </div>
+
+  <div class="timeline-row reverse">
+    <div class="timeline-image">
+      <img src="https://redteamverse.github.io/red-team-training/images/PostTrainingLabAccess.webp">
+    </div>
+    <div class="timeline-text">
+      <h3>Lab Access & Certification</h3>
+      <p>Post-training labs + certification attempts.</p>
+    </div>
+  </div>
+
+  <div class="timeline-row">
+    <div class="timeline-image">
+      <img src="https://redteamverse.github.io/red-team-training/images/coursecontent.webp">
+    </div>
+    <div class="timeline-text">
+      <h3>Lifetime Learning Resources</h3>
+      <p>Long-term study materials for continued growth.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="container video-section">
+  <div class="section-title">
+    <h2>Get a Glimpse of AltSecCON 2025</h2>
+  </div>
+
+  <video controls>
+    <source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm">
+  </video>
+</section>
+
+<!-- GALLERY -->
+<section class="container">
+  <div class="section-title">
+    <h2>Gallery</h2>
+  </div>
+
+  <div class="gallery">
+    <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-1.webp">
+    <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-7.webp">
+    <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp">
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="container">
+  <div class="section-title">
+    <h2>AltSecCON 2025 Highlights</h2>
+  </div>
+
+  <div class="highlights">
+    <div class="highlight-card"><h3>500+</h3><p>Attendees</p></div>
+    <div class="highlight-card"><h3>10+</h3><p>Trainers</p></div>
+    <div class="highlight-card"><h3>5+</h3><p>Courses</p></div>
+    <div class="highlight-card"><h3>3 Days</h3><p>Hands-on Learning</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="container testimonials">
+  <div class="section-title">
+    <h2>What Attendees Say</h2>
+  </div>
+
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p>"One of the most practical red team trainings I’ve attended."</p>
+      <h4>Security Engineer</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"The hands-on labs and instructors were top-notch."</p>
+      <h4>Penetration Tester</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"Great networking and real-world learning experience."</p>
+      <h4>Red Team Analyst</h4>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Join AltSecCON 2026</h2>
+  <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">
+    Book Your Seat
+  </a>
+</section>
+
+</body>
+</html>
