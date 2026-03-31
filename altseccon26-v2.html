@@ -4169,6 +4169,35 @@ MENU
   pointer-events: auto;
   transform: translateY(0);
 }  
+  
+/* =====================
+MOBILE DROPDOWN FIX
+===================== */
+.mobile-menu .nav-item {
+  display: block;
+  width: 100%;
+}
+
+/* Make toggle full width */
+.mobile-menu .dropdown-toggle {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/* Hide dropdown by default */
+.mobile-menu .dropdown-menu {
+  display: none;
+  position: static; /* 🔥 VERY IMPORTANT */
+  box-shadow: none;
+  padding-left: 10px;
+}
+
+/* Show when active */
+.mobile-menu .nav-item.active .dropdown-menu {
+  display: block;
+}  
 </style>
 </head>
 
@@ -5955,12 +5984,22 @@ document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
 });
 </script>
 <script>
-document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+<script>
+document.querySelectorAll(".mobile-menu .dropdown-toggle").forEach(toggle => {
   toggle.addEventListener("click", function(e) {
     e.preventDefault();
-    this.parentElement.classList.toggle("active");
+
+    const parent = this.parentElement;
+
+    // Close others (optional but better UX)
+    document.querySelectorAll(".mobile-menu .nav-item").forEach(item => {
+      if (item !== parent) item.classList.remove("active");
+    });
+
+    parent.classList.toggle("active");
   });
 });
+</script>
 </script>  
 </body>
 </html>
