@@ -4117,7 +4117,58 @@ TOP BAR
   cursor: pointer;
 }
 
+/* =====================
+DROPDOWN WRAPPER
+===================== */
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
 
+/* =====================
+MENU
+===================== */
+/* DROPDOWN MENU */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background: #fff;
+  min-width: 240px;
+  padding: 8px 0;
+
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+  display: none; /* 🔥 FIX */
+  z-index: 2000;
+}
+
+/* SHOW ON HOVER */
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+/* ITEMS */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  color: #111;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background: #F3F4F6;
+}
+  
+/* Mobile dropdown */
+.nav-item.active .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}  
 </style>
 </head>
 
@@ -4145,14 +4196,40 @@ TOP BAR
 
     <!-- CENTER: NAV -->
     <nav class="nav">
+
       <a href="#training">Training</a>  
+
       <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>      
+
       <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Tickets</a>
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
+
+      <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">AltSecCON 2026 ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">Overview</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
+        </div>
+      </div>
+
+      <!-- 🔥 Past Events DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Past Events ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-2025.html">
+            AltSecCON 2025 (Bengaluru)
+          </a>
+        </div>
+      </div>
+
       <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Gallery</a>
+
       <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQS</a>
+
     </nav>
 
     <!-- RIGHT: CTA -->
@@ -4173,16 +4250,46 @@ TOP BAR
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="menu-content">
-  <a href="#training">Training</a>   
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>  
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>  
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Tickets</a>
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Gallery</a>
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQS</a>
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Book Training</a>
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Book Conference</a>
+
+    <a href="#training">Training</a>   
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>  
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Tickets</a>
+
+    <!-- AltSecCON 2026 -->
+    <div class="nav-item dropdown">
+      <a href="#" class="dropdown-toggle">AltSecCON 2026 ▾</a>
+
+      <div class="dropdown-menu">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">Overview</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
+      </div>
+    </div>
+
+    <!-- Past Events -->
+    <div class="nav-item dropdown">
+      <a href="#" class="dropdown-toggle">Past Events ▾</a>
+
+      <div class="dropdown-menu">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-2025.html">
+          AltSecCON 2025 (Bengaluru)
+        </a>
+      </div>
+    </div>
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Gallery</a>
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Book Training</a>
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Book Conference</a>
+
   </div>
 </div>
 
@@ -5837,6 +5944,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>  
+<script>
+document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+  toggle.addEventListener("click", function(e) {
+    e.preventDefault();
 
+    const parent = this.parentElement;
+    parent.classList.toggle("active");
+  });
+});
+</script>
+<script>
+document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+  toggle.addEventListener("click", function(e) {
+    e.preventDefault();
+    this.parentElement.classList.toggle("active");
+  });
+});
+</script>  
 </body>
 </html>
