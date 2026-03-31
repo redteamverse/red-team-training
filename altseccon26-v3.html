@@ -242,6 +242,8 @@ p {
   font-size: 0.85rem;
   color: #E5E7EB;
   flex-wrap: wrap;
+  line-height: 20px;
+  
 }
 .authority-capabilities div{
   border: 1px solid rgba(255,255,255,0.25);
@@ -4204,6 +4206,12 @@ MOBILE DROPDOWN FIX
     text-align: center;
     background: #F8FAFC
   }  
+  
+@media (max-width: 768px) {
+ .m-hide {
+    display: none;
+  }
+}  
 </style>
 </head>
 
@@ -4368,11 +4376,12 @@ MOBILE DROPDOWN FIX
 
       <div class="authority-capabilities">
 
-        <span>Industry-leading in-person red team training, certifications and conference on Red Teaming</span>
-
-        <div>On-Prem AD</div>
-        <div>Azure Red Teaming</div>       
-        <div>Practitioner Conference</div>    
+        <span>Industry-leading in-person red team training and conference experience covering On-Prem AD exploitation, Azure red teaming, and real-world adversary simulation.</span>
+      
+        <div class="m-hide">On-Prem AD</div>
+        <div class="m-hide">Azure Red Teaming</div>       
+        <div class="m-hide">Practitioner Conference</div>    
+        
       </div>
 
     </div>
