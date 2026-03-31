@@ -4212,6 +4212,151 @@ MOBILE DROPDOWN FIX
     display: none;
   }
 }  
+  
+/* PRICE */
+.course-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #B91C1C;
+  margin: 12px 0;
+}
+
+/* ACTION BUTTONS */
+.course-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.course-actions a {
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-book {
+  background: #B91C1C;
+  color: #ffffff !important;  /* 🔥 force white text */
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn-book:hover {
+  background: #EA3037;
+  color: #ffffff !important; /* 🔥 keep visible on hover */
+} 
+  
+/* =====================
+PRICING BOX
+===================== */
+.pricing-box {
+  background: linear-gradient(135deg, #111827, #1F2937);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 14px;
+  text-align: center;
+  color: #fff;
+}
+
+/* PRICE */
+.price {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* SUBTEXT */
+.price-sub {
+  font-size: 12px;
+  color: #FCA5A5;
+  margin-top: 4px;
+}
+
+/* NOTE */
+.price-note {
+  font-size: 11px;
+  opacity: 0.7;
+  margin: 6px 0 12px;
+}
+
+/* BUTTON */
+.pricing-box .btn-book {
+  display: inline-block;
+  width: 100%;
+  background: #B91C1C;
+  color: #fff !important;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.pricing-box .btn-book:hover {
+  background: #EA3037;
+  transform: translateY(-2px);
+}  
+.price-badge {
+  font-size: 10px;
+  background: #B91C1C;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}  
+  
+/* PRICE ROW */
+.price-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+/* OLD PRICE */
+.old-price {
+  text-decoration: line-through;
+  color: #9CA3AF;
+  font-size: 14px;
+}
+
+/* DISCOUNT BADGE */
+.discount-badge {
+  background: #B91C1C;
+  color: #fff;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* NEW PRICE */
+.price {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* SUBTEXT */
+.price-sub {
+  font-size: 12px;
+  color: #FCA5A5;
+  margin-top: 4px;
+}
+
+/* NOTE */
+.price-note {
+  font-size: 11px;
+  opacity: 0.7;
+  margin: 6px 0 12px;
+}  
+  
+  
 </style>
 </head>
 
@@ -4602,132 +4747,212 @@ MOBILE DROPDOWN FIX
 <!-- TRAINING PROGRAMS -->
 <section id="training" class="course-grid-section">
   <div class="course-grid-container">
-    <span class="section-eyebrow">Curriculum 
-    </span>
-    <h2>Training Programs at <span class="time-sec">AltSecCON</span> </h2>
+
+    <span class="section-eyebrow">Curriculum</span>
+    <h2>Training Programs at <span class="time-sec">AltSecCON</span></h2>
 
     <p class="course-grid-intro">
-    Instructor-led Red Team certification programs covering Active Directory, evasion techniques, and Azure attack tradecraft.     </p>
+      Instructor-led Red Team certification programs covering Active Directory, evasion techniques, and Azure attack tradecraft.
+    </p>
 
     <div class="course-grid">
 
-  <!-- CRTP -->
-  <div class="course-card">
-    <img src="https://static.wixstatic.com/media/470c31_1207916d21b14a428a92b4ff90a74f8a~mv2.png" class="course-img">
+      <!-- CRTP -->
+      <div class="course-card">
+        <img src="https://static.wixstatic.com/media/470c31_1207916d21b14a428a92b4ff90a74f8a~mv2.png" class="course-img">
+        <h3 class="course-signal-name">CRTP</h3>
 
-    <h3 class="course-signal-name">CRTP</h3>
+        <div class="course-meta">
+          <span>Active Directory</span>
+          <span>FOUNDATIONAL</span>
+        </div>
 
-    <div class="course-meta">
-      <span>Active Directory</span>
-      <span>FOUNDATIONAL</span>
+        <h3>Active Directory Attacks for Red and Blue Teams - Beginner's Edition</h3>
+
+        <div class="course-signal">
+          <span>3 Days</span>
+          <span>Hands-on Labs</span>
+          <span>CRTP Certification</span>
+        </div>
+
+        <!-- PRICE -->
+        <div class="pricing-box">
+            <div class="price-row">
+              <span class="old-price">₹44,999</span>
+              <span class="discount-badge">Save ₹5,000</span>
+            </div>
+          <div class="price-badge">Limited Seats</div>
+          <div class="price">
+            ₹39,999
+           </div>
+
+        <div class="price-sub">
+          Early Bird Price
+        </div>  
+      </div>
+
+      <div class="course-actions">
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html" class="link-details">
+        View Details
+      </a>
+
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">
+        Book Now
+      </a>
+      </div>
+
+      <!-- CRTE -->
+      <div class="course-card">
+        <img src="https://static.wixstatic.com/media/470c31_d20991e40bc749a5b5e34cc98f82ff70~mv2.png" class="course-img">
+        <h3 class="course-signal-name">CRTE</h3>
+
+        <div class="course-meta">
+          <span>Active Directory</span>
+          <span>ENTERPRISE</span>
+        </div>
+
+        <h3>Active Directory Attacks for Red and Blue Teams - Advanced Edition</h3>
+
+        <div class="course-signal">
+          <span>3 Days</span>
+          <span>Hands-on Labs</span>
+          <span>CRTE Certification</span>
+        </div>
+
+         <!-- PRICE -->
+        <div class="pricing-box">
+          <div class="price-badge">Limited Seats</div>
+          <div class="price">
+            ₹39,999
+           </div>
+
+        <div class="price-sub">
+          Early Bird Price
+        </div>  
+      </div>
+
+        <div class="course-actions">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+
+      <!-- CETP -->
+      <div class="course-card">
+        <img src="https://static.wixstatic.com/media/98ad8e_81fec46cf0d2498bb860aeabc27e397e~mv2.png" class="course-img">
+        <h3 class="course-signal-name">CETP</h3>
+
+        <div class="course-meta">
+          <span>EVASION</span>
+          <span>OFFENSIVE</span>
+        </div>
+
+        <h3>Evasion Techniques for Red Teams</h3>
+
+        <div class="course-signal">
+          <span>3 Days</span>
+          <span>Hands-on Labs</span>
+          <span>CETP Certification</span>
+        </div>
+
+         <!-- PRICE -->
+        <div class="pricing-box">
+          <div class="price-badge">Limited Seats</div>
+          <div class="price">
+            ₹39,999
+           </div>
+
+        <div class="price-sub">
+          Early Bird Price
+        </div>  
+      </div>
+
+        <div class="course-actions">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+
+      <!-- CARTP -->
+      <div class="course-card">
+        <img src="https://static.wixstatic.com/media/470c31_c03d5a63cde444b18d44bdb541748fa9~mv2.png" class="course-img">
+        <h3 class="course-signal-name">CARTP</h3>
+
+        <div class="course-meta">
+          <span>AZURE</span>
+          <span>IDENTITY</span>
+        </div>
+
+        <h3>Cloud Red Team Tactics for Attacking and Defending Azure - Beginner's Edition</h3>
+
+        <div class="course-signal">
+          <span>3 Days</span>
+          <span>Hands-on Labs</span>
+          <span>CARTP Certification</span>
+        </div>
+
+         <!-- PRICE -->
+        <div class="pricing-box">
+          <div class="price-badge">Limited Seats</div>
+          <div class="price">
+            ₹39,999
+           </div>
+
+        <div class="price-sub">
+          Early Bird Price
+        </div>  
+      </div>
+
+        <div class="course-actions">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+
+      <!-- CARTE -->
+      <div class="course-card">
+        <img src="https://static.wixstatic.com/media/628794_0836557da1044632b5ea9eea3e469295~mv2.png" class="course-img">
+        <h3 class="course-signal-name">CARTE</h3>
+
+        <div class="course-meta">
+          <span>AZURE</span>
+          <span>ADVANCED</span>
+        </div>
+
+        <h3>Cloud Red Team Tactics for Attacking and Defending Azure - Advanced Edition</h3>
+
+        <div class="course-signal">
+          <span>3 Days</span>
+          <span>Hands-on Labs</span>
+          <span>CARTE Certification</span>
+        </div>
+
+         <!-- PRICE -->
+        <div class="pricing-box">
+          <div class="price-badge">Limited Seats</div>
+          <div class="price">
+            ₹39,999
+           </div>
+
+        <div class="price-sub">
+          Early Bird Price
+        </div>  
+      </div>
+
+        <div class="course-actions">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+
     </div>
-
-    <h3>Active Directory Attacks for Red and Blue Teams - Beginner's Edition</h3>
-
-    <div class="course-signal">
-      <span>3 Days</span>
-      <span>Hands-on Labs</span>
-      <span>CRTP Certification</span>
-    </div>
-
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View course details</a>
-  </div>
-
-  <!-- CRTE -->
-  <div class="course-card">
-    <img src="https://static.wixstatic.com/media/470c31_d20991e40bc749a5b5e34cc98f82ff70~mv2.png" class="course-img">
-
-    <h3 class="course-signal-name">CRTE</h3>
-
-    <div class="course-meta">
-      <span>Active Directory</span>
-      <span>ENTERPRISE</span>
-    </div>
-
-    <h3>Active Directory Attacks for Red and Blue Teams - Advanced Edition</h3>
-
-    <div class="course-signal">
-      <span>3 Days</span>
-      <span>Hands-on Labs</span>
-      <span>CRTE Certification</span>
-    </div>
-
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View course details</a>
-  </div>
-
-  <!-- CETP -->
-  <div class="course-card">
-    <img src="https://static.wixstatic.com/media/98ad8e_81fec46cf0d2498bb860aeabc27e397e~mv2.png" class="course-img">
-
-    <h3 class="course-signal-name">CETP</h3>
-
-    <div class="course-meta">
-      <span>EVASION</span>
-      <span>OFFENSIVE</span>
-    </div>
-
-    <h3>Evasion Techniques for Red Teams</h3>
-
-    <div class="course-signal">
-      <span>3 Days</span>
-      <span>Hands-on Labs</span>
-      <span>CETP Certification</span>
-    </div>
-
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View course details</a>
-  </div>
-
-  <!-- CARTP -->
-  <div class="course-card">
-    <img src="https://static.wixstatic.com/media/470c31_c03d5a63cde444b18d44bdb541748fa9~mv2.png" class="course-img">
-
-    <h3 class="course-signal-name">CARTP</h3>
-
-    <div class="course-meta">
-      <span>AZURE</span>
-      <span>IDENTITY</span>
-    </div>
-
-    <h3>Cloud Red Team Tactics for Attacking and Defending Azure - Beginner's Edition</h3>
-
-    <div class="course-signal">
-      <span>3 Days</span>
-      <span>Hands-on Labs</span>
-      <span>CARTP Certification</span>
-    </div>
-
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View course details</a>
-  </div>
-
-  <!-- CARTE -->
-  <div class="course-card">
-    <img src="https://static.wixstatic.com/media/628794_0836557da1044632b5ea9eea3e469295~mv2.png/v1/fill/w_569,h_310,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/CARTE%20Steps.png" class="course-img">
-
-    <h3 class="course-signal-name">CARTE</h3>
-
-    <div class="course-meta">
-      <span>AZURE</span>
-      <span>ADVANCED</span>
-    </div>
-
-    <h3>Cloud Red Team Tactics for Attacking and Defending Azure - Advanced Edition</h3>
-
-    <div class="course-signal">
-      <span>3 Days</span>
-      <span>Hands-on Labs</span>
-      <span>CARTE Certification</span>
-    </div>
-
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View course details</a>
-  </div>
-
-</div>
 
     <div class="course-grid-cta">
       <a href="#" class="btn btn-tertiary">View All Training Programs →</a>
     </div>
+
   </div>
-</section>  
+</section>
   
 <!-- =====================
 ALTSECCON CONFERENCE SECTION
