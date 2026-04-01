@@ -1,169 +1,3028 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AltSecCON 2025 Highlights</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AltSecCON | Bengaluru Edition 2025</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-
-/* ================= BASE ================= */
-body {
+/* =====================
+   RESET & TOKENS
+===================== */
+* {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #F9FAFB;
+  padding: 0;
+  box-sizing: border-box;  
+}
+/* Kill all native + border-based underlines */
+a {
+  text-decoration: none !important;
+  
+}
+
+  
+
+:root {
+  --navy: #2B2B50;
+  --white: #FFFFFF;
+  --offwhite: #F9FAFB;
+  --dark: #111827;  
+  --muted: #374151;
+  --border: #E5E7EB;
+  --primary: #B91C1C;
+
+  --space-xs: 48px;   
+  --space-md: 72px;
+  --space-lg: 96px; 
+
+}
+ 
+body {
+  font-family: 'Inter', sans-serif;  
+  color: var(--navy);
+  background-color:#16163F;
+  padding-bottom: 64px; 
+}
+/* PRIMARY TEXT SYSTEM */
+
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+  color: #0f172a;
+}
+  h2{
+  font-size: 2.2rem;
+  font-weight: 800;
   color: #111827;
+  margin-bottom: 16px;
+  }
+/* PARAGRAPH */
+p {
+  color: #334155;
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 70px 20px;
+/* SECONDARY TEXT */
+.section-intro,
+.hero-flow,
+.label {
+  color: #64748b;
 }
+/* =====================
+   HERO SECTION (FINAL)
+===================== */
 
-/* ================= HERO ================= */
 .hero {
   position: relative;
-  height: 90vh;
+  min-height: 100vh;
+  overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: #fff;
-  overflow: hidden;
+
+  isolation: isolate; /* important: clean stacking context */
 }
 
+/* Background video */
 .hero video {
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
+
+  z-index: 0;
 }
 
+/* Gradient overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(43, 43, 80, 0.45),
+    rgba(43, 43, 80, 0.8)
+  );
+
+  z-index: 1; /* FIX: ensure overlay stays below content */
+  pointer-events: none;
+}
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: -1;
+  background: radial-gradient(
+    circle at center,
+    rgba(255,255,255,0.08) 0%,
+    rgba(255,255,255,0.04) 30%,
+    rgba(0,0,0,0) 65%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
+.hero video{
+  filter: blur(1px);
+}  
+ 
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 2;
 
-.hero h1 {
-  font-size: 2.8rem;
-}
-
-.hero-meta {
-  margin-top: 15px;
-}
-
-.hero-badge {
-  display: inline-block;
-  margin: 5px;
-  padding: 8px 14px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 999px;
-  font-size: 13px;
-}
-
-.hero-tags span {
-  display: inline-block;
-  margin: 5px;
-  padding: 6px 12px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 999px;
-  font-size: 12px;
-}
-
-/* ================= SECTION ================= */
-.section-title {
+  max-width: 900px;
   text-align: center;
-  margin-bottom: 40px;
+  padding: var(--space-lg) 24px;
+}
+@media (max-width:640px){
+
+.hero-content{
+  padding: 80px 24px;
 }
 
-.section-title h2 {
+}
+  
+@media (max-width:768px){
+
+.hero-content{
+  padding: 120px 24px;
+}
+
+}  
+/* Top meta pill */
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  padding: 10px 22px;
+  background:rgba(17,24,39,0.45); 
+  font-size: 0.75rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color:#E5E7EB;
+  margin-bottom: 16px;
+}
+/* Lucide icon inside pill */
+.meta-pill svg {
+  width: 14px;
+  height: 14px;
+  stroke: #FFFFFF;
+}  
+
+
+  
+/* Main heading */
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+/* Edition pill */
+.edition {
+  display: inline-block;
+  padding: 8px 18px;
+  letter-spacing: 0.1rem;
+  background: rgba(17, 24, 39, 0.45);
+  color: #FFFFFF;
+  text-transform: uppercase;
+  border-radius: 999px;
+  font-size: 0.90rem;
+  margin-bottom: 28px;
+}
+
+/* Authority block */
+.authority {
+  background: rgba(17, 24, 39, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 10px;
+  padding: 18px 22px;
+
+  max-width: 520px;
+  margin: 0 auto 36px;
+
+  backdrop-filter: blur(2px); /* subtle, safe */
+}
+
+/* Authority text */
+.authority strong {
+  font-size:1rem;
+  font-weight:700;
+  display: block;
+  font-size: 0.95rem;
+  color: #FFFFFF;
+}
+
+.authority span {
+  font-size: 0.8rem;
+  color: #E5E7EB;
+}
+
+/* Divider */
+.authority-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 14px 0;
+}
+
+/* Capabilities */
+.authority-capabilities {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  font-size: 0.85rem;
+  color: #E5E7EB;
+  flex-wrap: wrap;
+  line-height: 20px;
+  
+}
+.authority-capabilities div{
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+} 
+
+/* CTA buttons wrapper */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;  
+  align-items: center;
+}
+
+/* 🔐 Button safety guard */
+.hero .btn {
+  position: relative;
+  z-index: 3;
+  opacity: 1 !important;
+  background-clip: padding-box;
+}
+/* =====================
+HERO LEAD TEXT
+===================== */
+
+.hero-lead{
+  max-width:760px;
+  margin:18px auto 28px;
+  font-size:1.05rem;
+  line-height:1.6;
+  color:#E5E7EB;
+}
+
+
+/* =====================
+EVENT INFO BAR
+===================== */
+
+.hero-event-info{
+
+  display:flex;
+  justify-content:center;
+  gap:18px;
+
+  flex-wrap:wrap;
+
+  margin-bottom:28px;
+
+}
+
+.hero-info-item{
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-size:0.85rem;
+  color:#F3F4F6;
+
+  background:rgba(17,24,39,0.45);
+
+  border:1px solid rgba(255,255,255,0.18);
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+}
+
+.hero-info-item i{
+  font-size:0.85rem;
+  opacity:0.9;
+}
+
+.hero-info-item strong{
+  font-weight:600;
+}
+
+
+/* =====================
+AUTHORITY CAPABILITY TAGS
+===================== */
+
+.authority-capabilities div{
+
+  border:1px solid rgba(255,255,255,0.25);
+  padding:6px 14px;
+  border-radius:999px;
+
+  font-size:0.75rem;
+
+  background:rgba(255,255,255,0.05);
+
+  transition:all .2s ease;
+
+}
+
+@media (hover:hover){
+
+.authority-capabilities div:hover{
+
+  background:rgba(255,255,255,0.12);
+
+  transform:translateY(-2px);
+
+}
+
+}
+
+
+/* =====================
+RESPONSIVE
+===================== */
+
+@media (max-width:640px){
+
+.hero-lead{
+  font-size:0.95rem;
+}
+
+.hero-event-info{
+  gap:10px;
+}
+
+.hero-info-item{
+  font-size:0.75rem;
+  padding:7px 12px;
+}
+
+}
+/* =====================
+   SECTION DIVIDER
+===================== */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(17,24,39,0.15),
+    transparent
+  );
+}
+
+/* =====================
+   WHAT AltSecCON DELIVERED
+===================== */
+
+  
+.event-snapshot{
+display:flex;
+flex-wrap:wrap;
+align-items:center;  
+gap:14px;
+margin:16px 0 48px;
+font-size:0.85rem;
+color:#6B7280;
+font-weight:500;
+line-height:1.6;  
+border-top:1px solid #E5E7EB;
+border-bottom:1px solid #E5E7EB;
+padding:14px 0;
+
+}
+
+.event-snapshot span{
+position:relative;
+padding-right:14px;
+}
+
+.event-snapshot span:not(:last-child)::after{
+content:"~";
+position:absolute;
+right:0;
+color:#9CA3AF;
+}
+
+@media (max-width:640px){
+
+.delivered-section{
+padding:64px 24px;
+}
+
+.delivered-section h2{
+margin-bottom:16px;
+}
+
+.delivered-intro{
+margin-bottom:24px;
+font-size:0.95rem;
+}
+
+.event-snapshot{
+justify-content:flex-start;
+gap:10px;  
+margin:12px 0 36px;
+font-size:0.8rem;
+}
+
+}  
+/* =====================
+   TRUST SECTION
+===================== */
+.trust-section {
+  background: var(--offwhite);
+  color: var(--dark);
+  padding: var(--space-md) 24px;
+}
+
+.trust-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.trust-section h2 {
   font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.trust-intro {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+
+.trust-logos{
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:32px;
+align-items:center;
+margin:32px auto 28px; /* adds space below logos */
+max-width:720px;
+}
+  
+.trust-label{
+font-size:0.9rem;
+color:var(--muted);
+margin-top:8px;
+margin-bottom:18px;
+}
+    
+.trust-logos img{
+max-height:38px;
+width:auto;
+object-fit:contain;
+margin:auto;
+filter:grayscale(100%);
+opacity:.75;
+transition:opacity .2s ease;
+}
+  
+@media (hover:hover){
+.trust-logos img:hover{
+opacity:1;
+}
+}
+
+/* disclaimer */
+.trust-note{
+font-size:0.72rem;
+color:#6B7280;
+margin-top:16px; /* space above disclaimer */
+max-width:520px;
+line-height:1.5;
+  
+}
+
+@media (max-width:768px){
+
+.trust-logos{
+grid-template-columns:repeat(3,1fr);
+gap:28px;
+}
+
+}
+
+@media (max-width:480px){
+
+.trust-logos{
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+}
+
+.trust-label{
+font-size:0.85rem;
+}
+
+.trust-note{
+font-size:0.7rem;
+}
+
+}  
+/* =====================
+   TRAINING PROGRAMS
+===================== */
+.course-signal{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+font-size:0.8rem;
+color:#6B7280;
+margin-top:12px;
+padding-top:12px;
+border-top:1px solid #E5E7EB;
+margin-bottom:18px;
+}
+
+.course-signal-name{
+color:#6B7280;
+}  
+  
+.course-signal span{
+position:relative;
+padding-right:10px;
+}
+
+.course-signal span:not(:last-child)::after{
+content:"•";
+position:absolute;
+right:-4px;
+color:#9CA3AF;
+}
+.course-card:hover .course-signal{
+color:#4B5563;
+}  
+.course-card:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}  
+.course-grid-section {
+  background:#F9FAFB;
+  color: var(--dark);
+  padding: var(--space-lg) 24px;
+}
+
+.course-grid-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.course-grid-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.course-grid-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 760px;
+  margin-bottom: var(--space-md);
+}
+
+.course-grid {
+  display: grid;
+  justify-content:center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.course-card {
+  background:#FFFFFF;
+  border:1px solid #E5E7EB;
+  min-height:210px;
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+  
+@media (hover:hover){
+.course-card:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 18px rgba(0,0,0,0.06);
+}
+}
+  
+.course-card h3{
+font-size:1.05rem;
+font-weight:700;
+margin-top:4px;
+margin-bottom:14px;
+}
+
+.course-card p {
+  font-size: 0.95rem;
+  color: #4B5563;
+  margin-bottom: 12px;
+  line-height:1.6;
+}
+
+.course-card a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E3A8A; 
+  position: relative; 
+  margin-top: auto;
+}
+/* Disable animated underline inside course cards */
+.course-card a::after {
+  display: none;
+}
+.course-card a:hover {
+  color: #B91C1C; /* brand red */
 }
 
 
+.course-grid-cta {
+  margin-top: var(--space-md);
+  display: flex;
+  justify-content: center;
+}
+@media (max-width:640px){
+
+.course-grid{
+grid-template-columns:1fr;
+gap:22px;
+}
+
+}
+
+.course-level{
+display:inline-flex;
+align-self:flex-start;   /* prevents flex stretching */
+font-size:0.65rem;
+letter-spacing:0.12em;
+text-transform:capitalize;
+font-weight:700;
+padding:4px 10px;
+border-radius:6px;
+border:1px solid #E5E7EB;
+color:#374151;
+margin-bottom:12px;
+width:auto;
+max-width:max-content; 
+background:#F3F4F6; 
+}  
+  
 
 
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 1024px) {
+  .proof-grid,
+  .delivered-grid,
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trust-logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .proof-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .delivered-grid,
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+  
+}
+@media (max-width: 640px) {
+
+  .actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  
+}  
+  /* =====================
+   EVENT STRUCTURE (CARD-BASED)
+===================== */
+
+.event-structure-section {
+  background: var(--white);
+  padding: var(--space-lg) 24px;
+}
+
+.event-structure-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.event-structure-text h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.event-structure-summary {
+  font-size: 1.05rem;
+  color: #374151;
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
+/* STRUCTURE CARDS */
+.event-structure-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.structure-card {
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 18px 20px;
+  background: var(--offwhite);
+}
+
+.structure-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.structure-card p {
+  font-size: 0.9rem;
+  color: #4B5563;
+  line-height: 1.5;
+}
+
+/* CTA */
+.event-structure-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E3A8A;
+  text-decoration: none;
+}
+
+/* IMAGE */
+.event-structure-image {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.event-structure-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.9) contrast(0.95);
+}
+
+/* Hover affordance */
+@media (hover: hover) and (pointer: fine) {
+  .event-structure-link:hover {
+    text-decoration: underline;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .event-structure-container {
+    grid-template-columns: 1fr;
+  }
+
+  .event-structure-cards {
+    grid-template-columns: 1fr;
+  }
+}
+/* Operational details (time & breaks) */
+.event-structure-ops {
+  margin-bottom: 28px;
+  font-size: 0.9rem;
+  color: #374151;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 32px;
+}
+
+.event-structure-ops strong {
+  font-weight: 600;
+  color: #111827;
+}
+  /* Section eyebrow / label */
+.section-eyebrow {
+text-transform:uppercase;
+letter-spacing:.2em;
+font-size:.75rem;
+color:#3b82f6;
+margin-bottom:14px;
+  
+
+}
+  
 
 
-/* ================= HIGHLIGHTS ================= */
-.highlights {
+.eyebrow {
+  display: block;
+  text-align: center;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  font-size:.75rem;
+  color:#3b82f6; /* or your color */
+  margin-bottom:14px;
+}  
+/* Brand interaction for links */
+/* Brand interaction for text links ONLY */
+/* Text links only (not buttons) */
+  /* Text links only (not buttons) */
+/* CONTENT LINKS ONLY */
+a:not(.btn) {
+  color: #1E3A8A;
+  position: relative;
+  text-decoration: none;
+}
+
+a:not(.btn)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: #B91C1C;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+a:not(.btn):hover::after,
+a:not(.btn):focus-visible::after {
+  transform: scaleX(1);
+}
+
+
+/* FULLY isolate buttons from link underline system */
+a.btn,
+a.btn::after,
+.btn::after {
+  content: none !important;
+ 
+}
+  
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;   
+  width: auto;
+  min-width: 200px;  
+  padding: 10px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  text-transform: none;
+
+  border-radius: 8px;
+  border: 2px solid transparent;
+
+  cursor: pointer;
+  text-decoration: none !important;
+
+  transition: background-color 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease,
+              transform 0.15s ease;
+}
+  
+@media (max-width: 480px) {
+
+  .btn {
+    font-size: 14px;
+    padding: 9px 16px;
+  }
+
+}
+  
+.btn-primary {
+  background-color: #B91C1C;
+  color: #FFFFFF;
+  border-color: #B91C1C;
+  box-shadow:0 6px 14px rgba(185,28,28,0.25);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible{
+background-color:#EA3037;
+border-color:#EA3037;
+transform:translateY(-2px);
+box-shadow:0 10px 22px rgba(185,28,28,0.35);
+}
+  
+.btn-primary:active{
+transform:translateY(0);
+box-shadow:0 4px 10px rgba(185,28,28,0.2);
+}
+  
+.btn-secondary {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: #ffffff;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+background-color: #1E3A8A;
+  color: #ffffff; 
+  transform:translateY(-2px);
+}
+
+
+.btn-tertiary {
+  background-color: #1E3A8A; /* dark blue */
+  color: #FFFFFF;
+  border: 1px solid #1E3A8A;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 14px rgba(30, 58, 138, 0.25);
+}
+
+/* Hover */
+.btn-tertiary:hover,
+.btn-tertiary:focus-visible {
+  background-color: #3B82F6; /* light blue */
+  border-color: #3B82F6;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(59, 130, 246, 0.35);
+}
+
+/* Active click */
+.btn-tertiary:active {
+  transform: translateY(0);
+}
+
+
+/* =====================
+CERTIFICATION & OUTCOMES
+===================== */
+.certification-section {
+  background: var(--white);
+  color: var(--dark);
+  padding: var(--space-lg) 24px;
+}
+
+.certification-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.certification-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.certification-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 720px;
+  margin-bottom: var(--space-md);
+}
+
+.certification-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.certification-card {
+  background: var(--offwhite);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px;
+  border-left: 3px solid #B91C1C; /* brand red */
+  padding-left: 22px; /* compensate for border */
+}
+
+.certification-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--dark);
+  text-transform: uppercase;
+}
+
+.certification-card p {
+  font-size: 0.95rem;
+  color: #4B5563;
+  line-height: 1.6;
+}
+
+.certification-cta {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.certification-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E3A8A;
+  text-decoration: none;
+}
+
+/* Hover affordance */
+@media (hover: hover) and (pointer: fine) {
+  .certification-link:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .certification-points {
+    grid-template-columns: 1fr;
+  }
+}
+  /* =====================
+GALLERY PREVIEW
+===================== */
+.gallery-section {
+  background: var(--offwhite);
+  color: var(--dark);
+  padding: var(--space-lg) 24px;
+}
+
+.gallery-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gallery-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.gallery-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 720px;
+  margin-bottom: var(--space-md);
+}
+
+/* GRID */
+.gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  opacity: 0.95;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Hover affordance */
+@media (hover: hover) and (pointer: fine) {
+  .gallery-grid img:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+/* Caption */
+.gallery-caption {
+  font-size: 0.85rem;
+  color: #6B7280;
+  margin-bottom: 24px;
+}
+
+/* CTA */
+.gallery-cta {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.gallery-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E3A8A;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 200px;
+  }
+}
+/* =====================
+AltSecCON 2026 TEASER
+===================== */
+.teaser-section {
+  background: var(--blue);
+  color: var(--offwhite);
+  padding: var(--space-lg) 24px var(--space-md);
+}
+
+.teaser-container {
+  max-width: 720px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.highlight-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+.teaser-section h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 16px;
 }
 
-.highlight-card h3 {
-  font-size: 28px;
-  color: #B91C1C;
+.teaser-intro {
+  font-size: 1.05rem;
+  color: var(--white);
+  margin-bottom: 32px;
 }
 
-/* ================= TESTIMONIALS ================= */
-.testimonials {
-  background: #111827;
-  color: #fff;
+/* FORM */
+.teaser-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.teaser-form input {
+  min-width: 280px;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-family: inherit;
 }
 
-.testimonial-card {
-  background: #1F2937;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-.testimonial-card p {
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-.testimonial-card h4 {
-  margin-top: 10px;
-  font-size: 14px;
+.teaser-form input::placeholder {
   color: #9CA3AF;
 }
 
-/* ================= CTA ================= */
-.cta {
-  text-align: center;
-  padding: 80px 20px;
+.teaser-form button {
+  padding: 14px 28px;
+  font-size: 0.8rem;
 }
 
-.cta a {
-  background: #B91C1C;
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 8px;
+/* Responsive */
+@media (max-width: 640px) {
+  .teaser-section h2 {
+    font-size: 2rem;
+  }
+
+  .teaser-form {
+    flex-direction: column;
+  }
+
+  .teaser-form input,
+  .teaser-form button {
+    width: 100%;
+  }
+}
+
+/* =====================
+THANK YOU SECTION
+===================== */
+.thankyou-section {
+  background: var(--offwhite);
+  color: var(--dark);
+  padding: var(--space-lg) 24px var(--space-lg);
+}
+
+.thankyou-container {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.thankyou-section h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.thankyou-intro {
+  font-size: 1.05rem;
+  color: var(--dark);
+  margin-bottom: 32px;
+}
+
+.thankyou-image {
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  border: 1px solid var(--border);
+}
+
+.thankyou-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.thankyou-note {
+  font-size: 0.95rem;
+  color: var(--dark);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .thankyou-section h2 {
+    font-size: 2rem;
+  }
+}
+/* Feedback CTA inside Thank You */
+.thankyou-feedback {
+  margin-top: 32px;
+}
+
+.thankyou-feedback p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.thankyou-feedback-link {
+  font-size: 0.85rem;
+  font-weight: 600; 
   text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .thankyou-feedback-link:hover {
+    text-decoration: underline;
+  }
+}
+/* =====================
+CONTACT US
+===================== */
+.contact-section {
+  background: var(--white);
+  color: var(--dark);
+  padding: var(--space-lg) 24px var(--space-lg);
+}
+
+.contact-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.contact-container h2 {
+  color: #111827; /* dark text */
+}
+.contact-intro {
+  color: #6B7280;
+}  
+.contact-intro {
+  font-size: 1rem;
+  color: var(--dark);
+  margin-bottom: 32px;
+}
+
+/* FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #9CA3AF;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  padding: 14px 30px;
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+}
+  
+  /* =====================
+INSTRUCTOR SECTION
+===================== */
+.instructor-section {
+  background: var(--offwhite);
+  color: var(--dark);
+  padding: var(--space-lg) 24px var(--space-lg);
+}
+
+.instructor-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.instructor-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.instructor-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 800px;
+  margin: 0 auto 32px;
+}
+
+/* Instructor Grid */
+
+
+.instructor-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.instructor-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;   
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+
+.instructor-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--dark);
+}
+
+.instructor-card p {
+  font-size: 0.9rem;
+  color: #4B5563;
+}
+  
+.instructor-card-cta {
+  margin-top: var(--space-md);
+  display: flex;
+  justify-content: center;
+}  
+
+/* Supporting images */
+.instructor-support {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.instructor-support img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  opacity: 0.96;
+  transition: transform 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .instructor-support img:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+/* Desktop */
+.instructor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .instructor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .instructor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+  .instructor-support {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Testimonial */
+  .testimonial-section {
+  background: var(--offwhite);
+  color: var(--dark);
+}
+
+
+.testimonial-section {
+  background: var(--offwhite);
+  color: var(--dark);
+  padding: var(--space-lg) 24px;
+  position: relative;
+  isolation: isolate;
+}
+
+.testimonial-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonial-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.testimonial-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 720px;
+  margin-bottom: var(--space-md);
+}
+
+.testimonial-viewport {
+  overflow: hidden;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.6s ease;
+}
+
+.testimonial-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.testimonial-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 18px;
+}
+
+.testimonial-author strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--dark);
+}
+
+.testimonial-author span {
+  font-size: 0.8rem;
+  color: #6B7280;
+}
+
+@media (max-width: 1024px) {
+  .testimonial-card {
+    flex: 0 0 100%;
+  }
+}
+}
+
+/* =====================
+FOOTER
+===================== */
+.site-footer {
+  max-width: 1100px;
+  background: var(--navy);
+  color: #E5E7EB;
+  padding: var(--space-lg) 24px 32px;
+  margin-top: 96px; /* space-lg */
+}
+
+.footer-container {
+  max-width: 1100px; 
+  margin: 0 auto;
+  display: grid;
+  padding: var(--space-lg) 24px 32px;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+/* Footer blocks */
+.footer-block h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--white);
+}
+
+.footer-block p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #D1D5DB;
+  max-width: 360px;
+}
+
+.footer-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-block li {
+  margin-bottom: 8px;
+}
+
+.footer-block a {
+  font-size: 0.85rem;
+  color: #D1D5DB;
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer-block a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Footer bottom */
+.footer-bottom {
+  max-width: 1100px;
+  margin: 48px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+}
+  footer a,
+.footer a {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-divider {
+  height: 1px;
+  margin: 96px 0; /* controls breathing space */
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+}
+.authority-divider-band {
+max-width: 1100px;
+  height: 2px;
+  margin: 96px auto;
+  background-color: rgba(255,255,255,0.28);
+}
+.course-meta{
+display:flex;
+gap:8px;
+margin-bottom:16px;
+flex-wrap:wrap;
+}
+
+
+.course-meta span{
+font-size:0.65rem;
+letter-spacing:0.14em;
+text-transform:uppercase;
+background:#F9FAFB;  
+color:var(--muted);
+border:1px solid #E5E7EB;
+padding:5px 9px;
+border-radius:5px;
+}
+  
+@media (min-width: 1024px) {
+  .course-card h3 {
+    margin-bottom: 14px;
+  }
+
+  .course-meta {
+    margin-bottom: 14px;
+  }
+}
+
+.producer-attribution {
+  margin-top: 64px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+
+.producer-attribution p {
+  max-width: 560px;
+  margin: 0 auto;
+  font-size: 0.85rem;
+   letter-spacing: 0.01em;
+  line-height: 1.6; 
+  color: var(--muted);
+}
+
+.producer-attribution strong {
+  font-weight: 600;          /* emphasis via weight */
+  color: var(--dark);        /* NOT red */
+}
+  
+.community-caption{
+font-size:0.85rem;
+color:#374151;
+text-align:center;
+margin-bottom:12px;
+}
+
+.community-governance{
+font-size:0.8rem;
+color:#6B7280;
+text-align:center;
+max-width:640px;
+margin:18px auto 0;
+}
+  
+.community-logos{
+max-width:720px;
+margin:32px auto 18px;
+}
+
+.community-image{
+max-width:880px;
+margin:36px auto;
+padding:16px;
+background:#F9FAFB;
+border:1px solid #E5E7EB;
+border-radius:14px;
+}
+.community-image img{
+width:100%;
+border-radius:10px;
+display:block;
+}
+  
+  
+.instructor-role {
+  font-size: 0.85rem;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.instructor-authority {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 240px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+@media (max-width:640px){
+
+.trust-logos{
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+}  
+  
+@media (max-width:768px){
+
+.trust-logos{
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+}
+
+@media (max-width:480px){
+
+.trust-logos{
+grid-template-columns:repeat(2,1fr);
+gap:22px;
+}
+
+}  
+:root {
+  --primary-red: #B91C1C;
+  --structural-blue: #2B2B50;
+  --white: #FFFFFF;
+}
+
+/* =========================
+   DESKTOP HEADER
+========================= */
+
+ /* =========================
+   HEADER BASE
+========================= */
+
+ 
+.site-header {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  z-index: 2500;
+
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+.site-header.is-visible {  
+  transform: translateY(0);
+}
+
+/* =========================
+   SCROLL STATE
+========================= */
+.site-header.is-solid {
+  background: #ffffff;
+  backdrop-filter: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.header-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 16px 32px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+
+/* shrink */
+.site-header.is-solid .header-inner {
+  padding: 10px 28px;
+}
+
+/* =========================
+   LEFT: LOGO
+========================= */
+.header-left {
+  display: flex;
+  align-items: center;
+
+}
+
+  
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+  transition: 0.3s;
+}
+
+.logo span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 0.3px;
+}
+
+/* shrink logo */
+.site-header.is-solid .logo img {
+  height: 26px;
+}
+
+.site-header.is-solid .logo span {
+  font-size: 17px;
+}
+
+/* =========================
+   CENTER: NAV
+========================= */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  gap: 18px;
+  width: 100%;
+  margin: 0 auto;
+  flex-wrap: nowrap;   /* 🔥 prevent wrapping */
+}
+.nav a {
+  color: #111827;  
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 6px 4px;
+}
+
+/* hover */
+.nav a:hover {
+  color: #e53935;
+  opacity: 0.9;
+}
+
+/* apply underline ONLY to normal links */
+.nav a:not(.dropdown-toggle)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #e53935;
+  transition: width 0.25s ease;
+}
+
+.nav a:not(.dropdown-toggle):hover::after {
+  width: 100%;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav-item > .dropdown-toggle::after {
+  content: "▾";
+  font-size: 11px;
+  margin-left: 6px;
+  display: inline-block;
+  color: #111827;
+}  
+/* active */
+.nav a.active {
+  color: #e53935;
+}
+
+/* REMOVE underline effect from logo */
+.logo a::after {
+  display: none !important;
+}
+
+/* also ensure no default underline */
+.logo a {
+  text-decoration: none;
+}  
+/* =========================
+   RIGHT: CTA
+========================= */
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-self: end;
+  margin-left: 40px; /* 🔥 creates strong separation */
+}
+/* CTA BUTTON */
+
+.header-cta .btn {
+  background: linear-gradient(135deg, #B91C1C, #DC2626);
+  color: #fff;
+
+  padding: 9px 16px;
+  font-size: 13px;
+  border-radius: 8px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  white-space: nowrap;
+
+  box-shadow: 0 6px 18px rgba(185, 28, 28, 0.25);
+  transition: all 0.25s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.header-cta .btn:hover {
+  background: linear-gradient(135deg, #EA3037, #DC2626);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(185, 28, 28, 0.35);
+}
+
+/* shine effect */
+.header-cta .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.3),
+    rgba(255,255,255,0.05)
+  );
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.header-cta .btn:hover::before {
+  left: 120%;
+}
+/* remove underline */
+.header-cta .btn::after {
+  display: none !important;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #111;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .nav {
+    display: none;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+ 
+/* HAMBURGER SHOW */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #111;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+  }
+
+}  
+/* Disable desktop header on mobile */
+@media (max-width: 768px) {
+  .site-header {
+ 
+  }
+}
+   
+
+
+/* SECTION = FULL WIDTH BACKGROUND */
+.justify-section{
+  padding:80px 20px;
+  background:#F9FAFB; /* ✅ white background */
+}
+
+/* CONTAINER = CONTENT WIDTH */
+.justify-section .container{
+  max-width:1100px;
+  margin:0 auto;
+  padding: var(--space-lg) 24px;
+}
+  
+
+.section-intro{
+text-align:center;
+max-width:750px;
+margin:auto;
+margin-bottom:50px;
+font-size:16px;
+line-height:1.6;
+color:#555;
+}
+  
+  
+  
+.section-title{
+text-align:center;
+font-size:34px;
+font-weight:700;
+margin-bottom:15px;
+color:#111;
+}
+  
+
+
+
+.justify-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+.justify-card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+text-align:center;
+transition:all 0.3s ease;
+}
+
+.justify-card:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.justify-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(185, 28, 28, 0.08); /* same subtle red */
+  border-radius: 8px;
+  margin: 0 auto 14px; /* center in card */
+}
+
+/* Lucide SVG */
+.justify-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: #B91C1C;
+}
+
+@media (hover:hover){
+  .justify-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  }
+
+  .justify-card:hover .justify-icon {
+    background: rgba(185, 28, 28, 0.15);
+  }
+}  
+.justify-card h3{
+font-size:18px;
+margin-bottom:10px;
+color:#111;
+}
+
+.justify-card p{
+font-size:14px;
+line-height:1.6;
+color:#555;
+}
+
+.manager-template{
+margin-top:60px;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.manager-template h3{
+margin-bottom:10px;
+font-size:22px;
+color:#111;
+}
+
+.manager-template p{
+margin-bottom:20px;
+color:#555;
+}
+
+.manager-template pre{
+background:#0f172a;
+color:#e5e7eb;
+padding:25px;
+border-radius:8px;
+font-size:14px;
+line-height:1.7;
+overflow-x:auto;
+white-space:pre-wrap;
+}
+
+@media (max-width:768px){
+
+.section-title{
+font-size:28px;
+}
+
+.section-intro{
+font-size:15px;
+}
+
+.justify-card{
+padding:25px;
+}
+
+.manager-template{
+padding:25px;
+}
+
+}
+/* =====================
+CONFERENCE SECTION
+===================== */
+
+.conference-section{
+background: var(--offwhite);
+color: var(--dark);
+padding: var(--space-lg) 24px;
+}
+
+.conference-container{
+max-width:1100px;
+margin:0 auto;
+}
+
+.conference-section h2{
+font-size:2.2rem;
+font-weight:800;
+margin-bottom:16px;
+color:#111827;
+}
+
+.conference-lead{
+font-size:1.05rem;
+color:#374151;
+max-width:760px;
+line-height:1.6;
+margin-bottom:18px;
+}
+
+
+/* =====================
+CONFERENCE INFO BAR
+===================== */
+
+.conference-info{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin:32px 0 40px;
+}
+  
+.conference-info-item {
+  display: flex;
+  align-items: center; /* 🔥 center vertically */
+  gap: 14px;
+  background: white;
+  border: 1px solid #E5E7EB;
+  padding: 18px;
+  border-radius: 10px;
+}
+
+/* Icon box */
+.conference-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(185, 28, 28, 0.08);
+  border-radius: 8px;
+}
+
+/* Lucide icon */
+.conference-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: #B91C1C;
+}
+.conference-info-item strong{
+display:block;
+font-size:0.85rem;
+font-weight:700;
+margin-bottom:4px;
+color:#111827;
+}
+
+.conference-info-item span{
+font-size:0.9rem;
+color:#4B5563;
+}
+  
+@media (hover:hover){
+  .conference-info-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  }
+
+  .conference-card:hover .conference-icon {
+    background: rgba(185, 28, 28, 0.15);
+  }
+}  
+/* =====================
+HIGHLIGHT CARDS
+===================== */
+
+
+
+
+/* =====================
+CTA
+===================== */
+
+.conference-cta{
+display:flex;
+justify-content:center;
+}
+
+
+/* =====================
+RESPONSIVE
+===================== */
+
+@media (max-width:900px){
+
+.conference-info{
+grid-template-columns:1fr;
+}
+
+.conference-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media (max-width:640px){
+
+.conference-section h2{
+font-size:1.8rem;
+}
+
+.conference-lead{
+font-size:0.95rem;
+}
+
+}
+/* =====================
+CONFERENCE GALLERY
+===================== */
+
+.conference-gallery{
+margin:48px 0 32px;
+}
+
+.gallery-row{
+
+display:grid;
+grid-template-columns:1.4fr 0.6fr;
+
+gap:20px;
+
+margin-bottom:20px;
+
+}
+
+.gallery-large img,
+.gallery-small img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+border-radius:14px;
+
+border:1px solid #E5E7EB;
+
+transition:transform .25s ease, box-shadow .25s ease;
+
+}
+
+/* Height control */
+
+.gallery-large{
+height:340px;
+}
+
+.gallery-small{
+height:340px;
+}
+
+/* Hover */
+
+@media (hover:hover){
+
+.gallery-large img:hover,
+.gallery-small img:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 12px 28px rgba(0,0,0,0.1);
+
+}
+
+}
+
+/* Caption */
+
+.conference-caption{
+
+font-size:0.85rem;
+
+color:#6B7280;
+
+margin-top:10px;
+align-content: center;  
+  text-align: center;
+
+}
+
+/* Tablet */
+
+@media (max-width:900px){
+
+.gallery-row{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.gallery-large,
+.gallery-small{
+height:260px;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:640px){
+
+.gallery-row{
+
+grid-template-columns:1fr;
+
+}
+
+.gallery-large,
+.gallery-small{
+height:220px;
+}
+
+}
+  
+.delivered-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(185, 28, 28, 0.08);
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+/* Lucide SVG */
+.delivered-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: #B91C1C;
+}
+
+/* Better spacing */
+.delivered-card h3 {
+  margin-top: 4px;
+}
+
+/* Hover polish */
+@media (hover:hover){
+  .delivered-card:hover .delivered-icon {
+    background: rgba(185, 28, 28, 0.15);
+  }
+}  
+  
+.structure-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(185, 28, 28, 0.08);
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+/* Lucide SVG */
+.structure-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: #B91C1C;
+}  
+  
+@media (hover:hover){
+  .structure-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  }
+
+  .structure-card:hover .structure-icon {
+    background: rgba(185, 28, 28, 0.15);
+  }
+}  
+  
+.certification-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(185, 28, 28, 0.08);
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+/* Lucide SVG */
+.certification-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: #B91C1C;
+}  
+@media (hover:hover){
+  .certification-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  }
+
+  .certification-card:hover .certification-icon {
+    background: rgba(185, 28, 28, 0.15);
+  }
+}  
+  
+.contact-tabs-section {
+  background: #FFFFFF;
+  padding: 96px 24px;
+}
+
+.contact-container {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-container h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.contact-intro {
+  font-size: 1rem;
+  color: #6B7280;
+  margin-bottom: 32px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #E5E7EB;
+  background: #F9FAFB;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab.active {
+  background: #B91C1C;
+  color: #FFFFFF;
+  border-color: #B91C1C;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.tab-content.active {
+  display: block;
+  opacity: 1;
+}
+.tab-content h3 {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form input {
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px solid #E5E7EB;
+  font-size: 0.9rem;
+}
+
+.form button {
+  width: auto;                 /* 🔥 stop full width */
+  align-self: flex-start;      /* align left (or center if you want) */
+  padding: 10px 18px;          /* standard size */
+  font-size: 14px;
+  border-radius: 6px;
+  background: #B91C1C;
+  color: #FFFFFF;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.form button:hover {
+  background: #EA3037;
+}
+
+/* Mobile */
+@media (max-width:640px){
+  .tabs {
+    gap: 8px;
+  }
+
+  .tab {
+    flex: 1;
+    font-size: 0.75rem;
+    padding: 9px 12px;
+  }
+}  
+  
+.ticket-section {
+  background: #F9FAFB;
+  padding: 96px 24px;
+  color: #111827;
+}
+
+.ticket-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ticket-container h2
+  {
+    font-size: 2.2rem;
+  }
+  
+.ticket-intro {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  color: #6B7280;
+}
+
+/* Grid */
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Card */
+.ticket-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 26px;
+  text-align: left;
+  position: relative;
+}
+
+.ticket-card h3 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.ticket-card ul {
+  margin-bottom: 20px;
+  padding-left: 18px;
+}
+
+.ticket-card li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* Highlight */
+.ticket-card.highlight {
+  border: 2px solid #B91C1C;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: #B91C1C;
+  color: white;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ticket-grid {
+    grid-template-columns: 1fr;
+  }
+}  
+  
+/* =====================
+VENUE SECTION
+===================== */
+.venue-section {
+  background: #F9FAFB;
+  color: #111827;
+  padding: 96px 24px;
+}
+
+.venue-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+  .venue-container h2{
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 16px;
+  }  
+
+/* Intro */
+.venue-intro {
+  max-width: 720px;
+  margin: 12px auto 40px;
+  font-size: 1.05rem;
+  color: #6B7280;
+  line-height: 1.6;
+}
+
+/* =====================
+TOP INFO CARDS
+===================== */
+.venue-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 48px;
+}
+
+.venue-info-item {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.venue-info-item strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #6B7280;
+}
+
+.venue-info-item span {
+  font-size: 0.95rem;
+  color: #111827;
   font-weight: 600;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width:768px) {
-  .timeline-row { flex-direction: column; }
-  .gallery { grid-template-columns: 1fr; }
-  .highlights { grid-template-columns: 1fr; }
-  .testimonial-grid { grid-template-columns: 1fr; }
+/* =====================
+CONTENT SPLIT
+===================== */
+.venue-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  text-align: left;
 }
 
+/* Left text */
+.venue-text p {
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Feature list */
+.venue-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.venue-text li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* =====================
+MAP PLACEHOLDER
+===================== */
+.venue-map {
+  border: 2px dashed #D1D5DB;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  background: #FFFFFF;
+}
+
+.venue-map p {
+  font-size: 0.9rem;
+  color: #6B7280;
+}
+
+/* =====================
+HOVER (optional polish)
+===================== */
+@media (hover:hover){
+  .venue-info-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+  }
+}
+
+/* =====================
+RESPONSIVE
+===================== */
+@media (max-width: 900px) {
+  .venue-info {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .venue-map {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .venue-section {
+    padding: 72px 20px;
+  }
+
+  .venue-intro {
+    font-size: 0.95rem;
+  }
+
+  .venue-text li {
+    font-size: 0.85rem;
+  }
+}  
+.faq-section {
+  background: #FFFFFF;
+  color: #111827;
+  padding: 96px 24px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq-intro {
+  color: #6B7280;
+  margin-bottom: 40px;
+}
+
+/* List */
+.faq-list {
+  text-align: left;
+}
+
+/* Item */
+.faq-item {
+  border-bottom: 1px solid #E5E7EB;
+  padding: 16px 0;
+}
+
+/* Question */
+.faq-question {
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px 0;
+  position: relative;
+}
+
+/* Arrow */
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+/* Active */
+.faq-item.active .faq-question::after {
+  content: "−";
+}
+
+/* Answer */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+.faq-answer p {
+  font-size: 0.9rem;
+  color: #374151;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* Open state */
+.faq-item.active .faq-answer {
+  max-height: 200px;
+}  
+  
 .training-timeline {
   padding: 80px 20px 40px; /* less bottom space */
   background: #f8fafc;
@@ -310,7 +3169,391 @@ border-radius:5px;
     font-size: 40px;
     margin-bottom: 10px;
   }
-}    
+}
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.course-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  transition: 0.3s;
+}
+
+/* IMAGE */
+/* IMAGE FIX */
+.course-img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain; 
+  border-radius: 12px; /* show full image */
+}
+.course-img-wrap {
+  height: 200px;
+  background: #e2e8f0; /* grey bg like your card */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 15px;
+}  
+/* CARD */
+.course-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden; /* ensures clean edges */
+}
+/* IMAGE WRAPPER (IMPORTANT) */
+.course-card img {
+  background: #f1f5f9; /* fallback */
+}
+  
+
+/* GRID */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* TITLE */
+.course-signal-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* META */
+.course-meta span {
+  font-size: 12px;
+  padding: 4px 10px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  margin-right: 6px;
+}
+
+/* MAIN TITLE */
+.course-card h3 {
+  font-size: 16px;
+  margin: 12px 0;
+  color: #0f172a;
+}
+
+/* SIGNAL */
+.course-signal span {
+  font-size: 13px;
+  color: #64748b;
+  margin-right: 10px;
+}
+
+/* LINK */
+.course-card a {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #ef4444;
+  text-decoration: none;
+}
+
+/* HOVER */
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-img {
+    max-height: none; /* full image on mobile */
+  }
+}  
+  
+/* GRID */
+.conference-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.conference-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.conference-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+}
+
+/* IMAGE WRAP */
+.conference-img {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+/* IMAGE */
+.conference-img img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  transition: 0.4s ease;
+}
+
+/* ZOOM EFFECT */
+.conference-card:hover .conference-img img {
+  transform: scale(1.05);
+}
+
+/* OVERLAY (PREMIUM LOOK) */
+.conference-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+}
+
+/* CONTENT */
+.conference-card h3 {
+  font-size: 18px;
+  margin: 16px 20px 8px;
+  color: #0f172a;
+}
+
+.conference-card p {
+  font-size: 14px;
+  color: #475569;
+  margin: 0 20px 20px;
+  line-height: 1.6;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .conference-grid {
+    grid-template-columns: 1fr;
+  }
+} 
+.email-wrapper {
+  position: relative;
+}
+
+/* COLLAPSED STATE */
+.email-content.collapsed {
+  max-height: 380px; /* show ~first paragraph */
+  overflow: hidden;
+  position: relative;
+}
+
+/* FADE EFFECT */
+.email-content.collapsed::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, #fff);
+}
+
+/* BUTTON */
+.read-more-btn {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-weight: 600;
+  cursor: pointer;
+}  
+@media (min-width: 768px) {
+  .email-content {
+    max-height: none !important;
+    overflow: visible !important;
+    
+  }
+
+  .email-content::after {
+    display: none;
+  }
+
+  .read-more-btn {
+    display: none;
+  }
+}  
+/* ICON BOX */
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+}  
+  
+  
+.footer-social a::after {
+  display: none !important;
+  content: none !important;
+}
+  
+  
+/* SOCIAL */
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+/* ICON */
+.footer-social i {
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
+}
+/* HOVER */
+.footer-social a:hover {
+  background: #ef4444;
+  transform: translateY(-3px);
+}  
+/* FOOTER TEXT */
+.footer-copy {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #64748b;
+}  
+  
+ .footer-social svg {
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
+} 
+  
+.why-section{
+  padding:80px 20px;
+  background:#F9FAFB;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+
+
+
+h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.lead{
+  color:#6B7280;
+  max-width:700px;
+  margin-bottom:40px;
+}
+
+/* stats */
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-bottom:40px;
+}
+
+.stat-card{
+  background:#fff;
+  border:1px solid #E5E7EB;
+  padding:25px;
+  border-radius:10px;
+  text-align:center;
+}
+
+.stat-number{
+  font-size:28px;
+  font-weight:700;
+  color:#B91C1C;
+}
+
+.stat-label{
+  font-size:14px;
+  color:#6B7280;
+}
+
+/* features */
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+
+.feature{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+
+/* 🔥 ICON BOX (LIKE YOUR SNAP) */
+.icon-box{
+  width:40px;
+  height:40px;
+  background: rgba(185, 28, 28, 0.08);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.icon-box svg{
+  width:20px;
+  height:20px;
+  color:#B91C1C;
+}
+
+.feature h4{
+  margin:0;
+  font-size:16px;
+}
+
+.feature p{
+  margin:5px 0 0;
+  font-size:14px;
+  color:#6B7280;
+}
+
+/* responsive */
+@media(max-width:768px){
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+  .features-grid{
+    grid-template-columns:1fr;
+  }
+}
+  
+/* =========================
+   PRECAP VIDEO SECTION
+========================= */
+/* =========================
+   VIDEO SECTION (ISOLATED)
+========================= */
 .video-section{
   padding:80px 20px;
   background:#FFFFFF;
@@ -484,343 +3727,991 @@ border-radius:5px;
   .video-section .section-title{
     font-size:26px;
   }
-}    
+}
+  
+ .timeline-header .time-sec{
+  color:#B91C1C;
+}
+.course-grid-container .time-sec{
+color:#B91C1C;
+}  
+  
+.conference-container .time-sec{
+color:#B91C1C;
+}  
+  
+.container .time-sec{
+color:#B91C1C;
+}  
+  
+  .time-sec{
+  color:#B91C1C;
+  }
+  
+.gallery-container .time-sec{
+color:#B91C1C;
+}  
+.ticket-container .time-sec{
+color:#B91C1C;
+}  
+  
+.contact-container .time-sec{
+color:#B91C1C;
+}  
+  
+body.menu-open {
+  overflow: hidden;
+}  
+  
+.menu-open .site-header {
+  opacity: 0;
+}  
+/* =========================
+MOBILE MENU (FIXED)
+========================= */
+/* =========================
+MOBILE MENU (FINAL FIX)
+========================= */
+.mobile-menu {
+  position: fixed;
+  top: 48px; /* 🔥 cover header */
+  right: -100%;
+  width: 260px;
+  height: 100vh;
+  background: #fff;
 
-.gallery-section {
-  background: var(--offwhite);
-  color: var(--dark);
-  padding: var(--space-lg) 24px;
-text-align: center;
-align-items: center;
+  padding: 20px; /* ❌ REMOVE top padding */
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  transition: 0.3s ease;
+  z-index: 3000; /* 🔥 above header */
 }
 
-.gallery-container {
-  max-width: 1100px;
-  margin: 0 auto;
-text-align: center;
-align-items: center;    
+/* OPEN */
+.mobile-menu.open {
+  right: 0;
+}
+.menu-content {
+  margin-top: 60px; /* 👈 header height */
+}
+/* LINKS */
+.mobile-menu a {
+  color: #111;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.gallery-section h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 12px;
+/* =========================
+OVERLAY
+========================= */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 1500;
 }
 
-.gallery-intro {
-  max-width: 1100px;
-  margin: 0 auto;
-text-align: center;
-align-items: center;   
-padding-bottom: 25px;
+.menu-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* GRID */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-bottom: 20px;
-}
-
-.gallery-grid img {
+/* =========================
+CTA BUTTONS
+========================= */
+.mobile-menu .btn {
+  display: block;
   width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  opacity: 0.95;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  text-align: center;
+  margin-top: 12px;
+  background: #B91C1C;
+  color: #e5e7eb;
+  padding: 12px;
+  border-radius: 8px;
 }
 
-/* Hover affordance */
-@media (hover: hover) and (pointer: fine) {
-  .gallery-grid img:hover {
-    transform: translateY(-3px);
-    opacity: 1;
+.mobile-menu .btn:hover {
+  background: #EA3037;
+}
+
+/* =========================
+LINK SPACING
+========================= */
+.mobile-menu a:not(.btn) {
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/* =========================
+   EXTRA PREMIUM TOUCH
+========================= */
+
+/* =========================
+   SUB NAV (SECOND HEADER)
+========================= */
+/* =========================
+   SECTION NAV (SECOND HEADER)
+========================= */
+.section-nav {
+  position: sticky;
+  top: 90px; /* adjust based on main header height */
+  z-index: 998;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.section-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  overflow-x: auto;
+  white-space: nowrap;
+  position: relative; /* 🔥 needed for indicator */
+  scroll-behavior: smooth;
+}
+
+/* hide scrollbar */
+.section-nav-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================
+   LINKS
+========================= */
+.section-nav a {
+  position: relative;
+  padding: 14px 0;
+  font-size: 14px;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.25s ease;
+
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+/* hover */
+.section-nav a:hover {
+  color: #1D4ED8;
+}
+
+/* active */
+.section-nav a.active {
+  color: #1D4ED8;
+  font-weight: 600;
+}
+
+ 
+/* =========================
+   SLIDING INDICATOR
+========================= */
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+
+  height: 2px;
+  width: 0;
+
+  background: #2563EB;
+
+  transform: translateX(0);   /* 🔥 use transform instead of left */
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+.section-nav {
+  position: sticky;
+  top: 85px; /* adjust based on main header height */
+  z-index: 998;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+  .section-nav-container {
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  .section-nav a {
+    font-size: 13px;
+    padding: 12px 0;
+  }
+}  
+  
+  
+/* =====================
+WRAPPER
+===================== */
+/* =====================
+WRAPPER
+===================== */
+.side-cta {
+  position: fixed;
+  top: 90%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+  .side-cta {
+    display: none;
   }
 }
 
-/* Caption */
-.gallery-caption {
-  font-size: 0.85rem;
-  color: #6B7280;
-  margin-bottom: 24px;
+/* =====================
+TRIGGER
+===================== */
+.side-cta-trigger {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff0000;
+  border-radius: 8px;
+  animation: arrowMove 1.2s infinite;
+  opacity: 0.4;
+ 
 }
 
-/* CTA */
-.gallery-cta { 
-text-align: center;    
+/* Tap effect */
+.side-cta-trigger:active {
+  transform: translateX(35%);
 }
 
-.gallery-link {
-  font-size: 0.85rem;
+/* =====================
+ARROW (FIXED)
+===================== */
+
+.side-cta-trigger svg {
+  width: 18px;
+  height: 18px;
+  stroke: #ffffff;
+}  
+/* Arrow animation */
+@keyframes arrowMove {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Rotate when open */
+.side-cta-trigger.active .cta-arrow {
+  transform: rotate(90deg);
+  animation: none;
+}
+
+/* =====================
+PANEL
+===================== */
+.side-cta-panel {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%) translateX(20px);
+  opacity: 0;
+  pointer-events: none;
+
+  background: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  width: 220px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+
+  transition: all 0.25s ease;
+}
+
+/* Active */
+.side-cta-panel.active {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+  pointer-events: auto;
+}
+
+/* =====================
+BUTTONS
+===================== */
+.cta-btn {
+  text-align: center;
+  padding: 11px;
+  font-size: 13px;
+  border-radius: 8px;
   font-weight: 600;
-  color: #1E3A8A;
   text-decoration: none;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.cta-btn.primary {
+  background: #B91C1C;
+  color: #fff;
 }
 
-@media (max-width: 640px) {
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-grid img {
-    height: 200px;
-  }
-}    
- .testimonial-section {
-  background: var(--offwhite);
-  color: var(--dark);
-text-align: center;     
+.cta-btn.secondary {
+  background: #F3F4F6;
+  color: #111827;
 }
+  
+/* =====================
+TOP BAR
+===================== */
+/* =====================
+TOP BAR
+===================== */
 
-
-.testimonial-section {
-  background: var(--offwhite);
-  color: var(--dark);
-  padding: var(--space-lg) 24px;
-  position: relative;
-  isolation: isolate;
-    text-align: center;
-}
-
-.testimonial-container {
-  max-width: 1100px;
-  margin: 0 auto;
-   text-align: center;    
-}
-
-.testimonial-section h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.testimonial-intro {
-  background: var(--offwhite);
-  color: var(--dark);
-  padding: var(--space-lg) 24px;
-  position: relative;
-  isolation: isolate;
-    text-align: center;
-}
-
-.testimonial-viewport {
-  overflow: hidden;
-}
-
-.testimonial-track {
+/* =====================
+TOP BAR
+===================== */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px; /* 🔥 IMPORTANT */
+  background: #B91C1C;
+  color: #fff;
   display: flex;
-  gap: 24px;
-  transition: transform 0.6s ease;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  z-index: 3000;
 }
 
-.testimonial-card {
-  flex: 0 0 calc((100% - 48px) / 3);
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px;
-}
-
-.testimonial-text {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #374151;
-  margin-bottom: 18px;
-}
-
-.testimonial-author strong {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--dark);
-}
-
-.testimonial-author span {
-  font-size: 0.8rem;
-  color: #6B7280;
-}
-
-@media (max-width: 1024px) {
-  .testimonial-card {
-    flex: 0 0 100%;
-  }
-}
-}    
-/* ================= IMPROVED SPACING ================= */
-.section-title h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.section-eyebrow {
-  display: block;
+/* Text */
+.top-bar-text {
   text-align: center;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  font-size:.75rem;
-  color:#3b82f6; /* or your color */
-  margin-bottom:14px;
 }
 
-/* ================= HERO IMPROVE ================= */
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
+/* Close button */
+.top-bar-close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.hero p {
-  max-width: 700px;
-  margin: 10px auto;
-  line-height: 1.6;
+/* =====================
+DROPDOWN WRAPPER
+===================== */
+.nav-item {
+  position: relative;
+  display: inline-block;
 }
 
-/* ================= TIMELINE POLISH ================= */
-.timeline-text h3 {
-  font-weight: 700;
-}
+/* =====================
+MENU
+===================== */
+/* dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
 
-.timeline-row {
-  transition: 0.4s ease;
-}
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
 
-.timeline-row:hover {
-  transform: translateY(-4px);
-}
+  padding: 10px 0;
+  min-width: 200px;
 
-/* ================= GALLERY POLISH ================= */
-.gallery-grid img {
-  transition: 0.35s ease;
-}
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 
-.gallery-grid img:hover {
-  transform: scale(1.04);
-}
-
-/* ================= TESTIMONIAL FIX ================= */
-.testimonial-track {
-  display: flex;
-  gap: 24px;
-  transition: transform 0.6s ease;
-}
-
-.testimonial-card {
-  flex: 0 0 calc((100% - 48px) / 3);
-}
-
-/* Mobile fix */
-@media (max-width:1024px) {
-  .testimonial-card {
-    flex: 0 0 100%;
-  }
-}
-
-/* ================= FADE ANIMATION ================= */
-.fade-init {
   opacity: 0;
-  transform: translateY(30px);
-  transition: 0.6s ease;
-}
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.25s ease;
 
-.fade-init.show {
+  z-index: 999;
+}
+  
+  
+
+/* show on hover */
+.nav-item:hover .dropdown-menu {
   opacity: 1;
+  visibility: visible;
   transform: translateY(0);
 }
 
-/* ================= CTA IMPROVE ================= */
-.cta h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+/* dropdown links */
+.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #111827;
 }
 
-.cta a {
+.dropdown-menu a:hover {
+  background: #F9FAFB;
+}
+  
+/* Mobile dropdown */
+.nav-item.active .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}  
+  
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+  
+.dropdown-toggle::after {
+  content: "▾";
+  font-size: 10px;
+  margin-left: 6px;
+  display: inline-block;   /* 🔥 important */
+  color: #111827;          /* ensure visible */
+}  
+  
+.nav .dropdown-toggle::after {
+  content: "▾";
+}  
+/* =====================
+MOBILE DROPDOWN FIX
+===================== */
+.mobile-menu .nav-item {
+  display: block;
+  width: 100%;
+}
+
+
+/* Make toggle full width */
+.mobile-menu .dropdown-toggle {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+
+  
+/* Hide dropdown by default */
+.mobile-menu .dropdown-menu {
+  display: none;
+  position: static; /* 🔥 VERY IMPORTANT */
+  box-shadow: none;
+  padding-left: 10px;
+}
+
+/* Show when active */
+.mobile-menu .nav-item.active .dropdown-menu {
+  display: block;
+}  
+  
+  .expect-cta{
+    align-items: center;
+    text-align: center;
+    background: #F8FAFC
+  }  
+  
+@media (max-width: 768px) {
+ .m-hide {
+    display: none;
+  }
+}  
+  
+/* PRICE */
+.course-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #B91C1C;
+  margin: 12px 0;
+}
+
+/* ACTION BUTTONS */
+.course-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.course-actions a {
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-book {
+  background: #B91C1C;
+  color: #ffffff !important;  /* 🔥 force white text */
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn-book:hover {
+  background: #EA3037;
+  color: #ffffff !important; /* 🔥 keep visible on hover */
+} 
+  
+/* =====================
+PRICING BOX
+===================== */
+.pricing-box {
+  background: linear-gradient(135deg, #111827, #1F2937);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 14px;
+  text-align: center;
+  color: #fff;
+}
+
+/* PRICE */
+.price {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* SUBTEXT */
+.price-sub {
+  font-size: 12px;
+  color: #FCA5A5;
+  margin-top: 4px;
+}
+
+/* NOTE */
+.price-note {
+  font-size: 11px;
+  opacity: 0.7;
+  margin: 6px 0 12px;
+}
+
+/* BUTTON */
+.pricing-box .btn-book {
+  display: inline-block;
+  width: 100%;
+  background: #B91C1C;
+  color: #fff !important;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
   transition: 0.3s;
 }
 
-.cta a:hover {
+.pricing-box .btn-book:hover {
   background: #EA3037;
-}    
-    
- .time-sec{
-  color:#B91C1C;
-  }    
-    
-.btn-secondary {
-  background-color: transparent;
-  color: #1E3A8A;
-  border-color: #ffffff;
-text-decoration: none;
+  transform: translateY(-2px);
+}  
+.price-badge {
+  font-size: 10px;
+  background: #B91C1C;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}  
   
-    
+/* PRICE ROW */
+.price-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
 }
 
-.btn-secondary:hover,
-.btn-secondary:focus-visible {
-background-color: transparent;
-  color: #1E3A8A;
-  border-color: #ffffff;
+/* OLD PRICE */
+.old-price {
+  text-decoration: line-through;
+  color: #9CA3AF;
+  font-size: 14px;
 }
-    
+
+/* DISCOUNT BADGE */
+.discount-badge {
+  background: #B91C1C;
+  color: #fff;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* NEW PRICE */
+.price {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* SUBTEXT */
+.price-sub {
+  font-size: 12px;
+  color: #FCA5A5;
+  margin-top: 4px;
+}
+
+/* NOTE */
+.price-note {
+  font-size: 11px;
+  opacity: 0.7;
+  margin: 6px 0 12px;
+}  
+  
+/* LIGHT PRICING BOX */
+.pricing-box.light {
+ background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  margin-top: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+/* PRICE */
+.pricing-box.light .price {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111827;
+}
+
+/* OLD PRICE */
+.old-price {
+  text-decoration: line-through;
+  color: #9CA3AF;
+  font-size: 14px;
+}
+
+/* BADGE */
+.discount-badge {
+  background: #FEE2E2;
+  color: #B91C1C;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* SUBTEXT */
+.price-sub {
+  font-size: 12px;
+  color: #B91C1C;
+  margin-top: 4px;
+}
+
+/* NOTE */
+.price-note {
+  font-size: 11px;
+  color: #6B7280;
+  margin: 6px 0 12px;
+}
+
+/* BUTTON */
+.pricing-box.light .btn-book {
+  background: #B91C1C;
+  color: #fff !important;
+  padding: 10px;
+  border-radius: 8px;
+  display: block;
+  text-decoration: none;
+  font-weight: 600;
+}  
+  
+.seat-badge {
+  font-size: 11px;
+  color: #374151;
+  background: #F3F4F6;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 6px;
+} 
 </style>
 </head>
 
 <body>
+<div class="top-bar" id="topBar">
+  <span class="top-bar-text">
+    Early Bird Ends Soon — Use Code <strong>EARLY200</strong>
+  </span>
 
+  <button class="top-bar-close" id="topBarClose">✕</button>
+</div>
+<!-- DESKTOP STICKY HEADER -->
+<header id="stickyHeader" class="site-header"> 
+  <div class="header-inner">
+
+    <!-- LEFT: LOGO -->
+    <div class="header-left">
+      <div class="logo">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">
+          <img src="https://static.wixstatic.com/media/98ad8e_5fe5742cfaf44db197695e76018055d2~mv2.png" alt="AltSecCON Logo">
+          <span>AltSecCON</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CENTER: NAV -->
+    <nav class="nav">
+
+       <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Programs ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTE</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CETP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTE</a>
+        </div>
+      </div>
+
+       <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Conference ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Overview</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Why Attend</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Speakers</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Agenda</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Pass</a>
+        </div>
+      </div>     
+
+      <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">AltSecCON 2026 ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon26-v3.html">Overview</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
+        </div>
+      </div>
+       <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Passes</a>
+
+      <!-- 🔥 Past Events DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Past Edition ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-25-v1.html">
+            AltSecCON 2025 (Bengaluru)
+          </a>
+        </div>
+      </div>
+
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Experience</a>
+
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>
+
+    </nav>
+
+    <!-- RIGHT: CTA -->
+    <div class="header-cta">
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Get Passes</a>  
+    </div>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</header>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="menu-content">
+
+     <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Programs ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTE</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CETP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTE</a>
+        </div>
+      </div>  
+
+      <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Conference ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Overview</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Why Attend</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Speakers</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Agenda</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Pass</a>
+        </div>
+      </div>
+
+    
+
+    <!-- AltSecCON 2026 -->
+    <div class="nav-item dropdown">
+      <a href="#" class="dropdown-toggle">AltSecCON 2026 ▾</a>
+
+      <div class="dropdown-menu">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon26-v3.html">Overview</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
+      </div>
+    </div>
+    
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Passes</a>
+
+    <!-- Past Events -->
+    <div class="nav-item dropdown">
+      <a href="#" class="dropdown-toggle">Past Edition ▾</a>
+
+      <div class="dropdown-menu">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-25-v1.html">
+          AltSecCON 2025 (Bengaluru)
+        </a>
+      </div>
+    </div>
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Experience</a>
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>  
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Get Passes</a>
+
+   
+
+  </div>
+</div>
+
+<div class="menu-overlay" id="menuOverlay"></div>  
 <!-- HERO -->
-<section class="hero">
+<!-- HERO -->
+<section class="hero" id="home">
+
   <video autoplay muted loop playsinline>
     <source src="https://redteamverse.github.io/red-team-training/images/ASVideos.webm" type="video/webm">
   </video>
 
-  <div>
-    <h1>AltSecCON 2025</h1>
+  <div class="hero-content"> 
 
-    <p>AltSecCON Bengaluru delivered industry-leading in-person red team training and certifications focused on On-Prem AD exploitation, Azure red teaming, and real-world adversary simulation.
-</p>
+    <h1>AltSecCON</h1>
 
-    <div class="hero-tags">
-      <span>On-Prem AD</span>
-      <span>Azure Red Teaming</span>
+    <div class="edition">Bengaluru · 2026</div>    
+
+    <!-- Event Info -->
+    <div class="hero-event-info">
+
+      <div class="hero-info-item">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span><strong>Training</strong> 31 Oct – 2 Nov 2026</span>
+      </div>
+
+      <div class="hero-info-item">
+        <i class="fa-solid fa-microphone"></i>
+        <span><strong>Conference</strong> 3 Nov 2026</span>
+      </div>
+
+      <div class="hero-info-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span><strong>Location</strong> Bengaluru, India</span>
+      </div>
+
     </div>
 
-    <div class="hero-meta">
-      <span class="hero-badge">📅 5 Dec – 7 Dec 2025</span>
-      <span class="hero-badge">📍 Bangalore</span>
-      <span class="hero-badge">🏨 Conrad Hotel</span>
+
+    <div class="authority">    
+
+      <div class="authority-capabilities">
+
+        <span>Industry-leading in-person red team training and conference experience covering On-Prem AD exploitation, Azure red teaming, and real-world adversary simulation.</span>
+      
+        <div class="m-hide">On-Prem AD</div>
+        <div class="m-hide">Azure Red Teaming</div>       
+        <div class="m-hide">Practitioner Conference</div>    
+        
+      </div>
+
+    </div>
+
+
+    <div class="actions">
+      <a href="#training" class="btn btn-primary">Explore Training Programs</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html" class="btn btn-secondary">View Conference</a>
     </div>
   </div>
-</section>
 
-<!-- OUTCOME -->
-<section class="training-timeline" id="outcome">
+</section>
+  <nav class="section-nav" id="sectionNav">
+  <div class="section-nav-container">
+    <a href="#experience">Overview</a>
+    <a href="#why">Why Attend</a>  
+    <a href="#training">Training</a>
+    <a href="#conference">Conference</a>  
+    <a href="#glimpse">Highlights</a>    
+    <a href="#tickets">Passes</a> 
+    <a href="#community">Community</a> 
+    <a href="#instructors">Instructors</a>   
+    <a href="#certification">Certification</a>    
+    <a href="#event">Event Details</a>
+    <a href="#gallery">Gallery</a> 
+    <a href="#testimonials">Testimonials</a>     
+    <a href="#venue">Venue</a> 
+    <a href="#contact">Contact</a> 
+    <a href="#faqs">FAQs</a>
+    <div class="nav-indicator"></div>
+  </div>
+</nav>
+<section class="training-timeline" id="experience">
 
   <div class="container">
 
     <!-- HEADER -->
     <div class="timeline-header">
-      <span class="section-eyebrow">Outcome
-    </span>
-      <h3>What <span class="time-sec">AltSecCON</span> Delivered in Bengaluru</h3>
-      <p>
-        During our recent in-person training event, security professionals joined AltSecCON for hands-on Red Team training designed around depth, realism, and long-term skill development.
-      </p>
+      <span class="section-eyebrow">What to Expect</span>
 
-      <!-- OUTCOME STATS -->
-      <div class="timeline-stats">        
-        <div>Instructor-Led Training</div>
-        <div>Enterprise Labs</div>
-        <div>Course Completion Certificate</div>
-        <div>Security Community Networking</div>
-      </div>
+      <h3>What You’ll Experience at <span class="time-sec">AltSecCON</span></h3>
+
+      <p>
+        Join AltSecCON for an immersive, hands-on cybersecurity experience designed to deliver real-world red teaming skills, meaningful connections, and long-term career value.
+      </p>
     </div>
 
     <!-- ITEM 1 -->
@@ -831,8 +4722,8 @@ background-color: transparent;
 
       <div class="timeline-text">
         <span class="timeline-number">01</span>
-        <h3>Instructor-Led Red Team Training</h3>
-        <p>Full-length Red Team courses delivered in person by experienced instructors.</p>
+        <h3>Hands-On Instructor-Led Training</h3>
+        <p>Learn directly from industry experts through in-depth, real-world red team training sessions.</p>
       </div>
     </div>
 
@@ -844,8 +4735,8 @@ background-color: transparent;
 
       <div class="timeline-text">
         <span class="timeline-number">02</span>
-        <h3>Security Community Networking</h3>
-        <p>Opportunities to connect with security professionals and peers during the event.</p>
+        <h3>Networking with Security Professionals</h3>
+        <p>Connect with like-minded practitioners, exchange ideas, and build valuable industry relationships.</p>
       </div>
     </div>
 
@@ -857,8 +4748,8 @@ background-color: transparent;
 
       <div class="timeline-text">
         <span class="timeline-number">03</span>
-        <h3>Peer & Instructor Interaction</h3>
-        <p>Direct engagement with instructors and fellow practitioners in an in-person setting.</p>
+        <h3>Direct Interaction with Experts</h3>
+        <p>Engage closely with instructors and peers to deepen your understanding and practical skills.</p>
       </div>
     </div>
 
@@ -870,8 +4761,8 @@ background-color: transparent;
 
       <div class="timeline-text">
         <span class="timeline-number">04</span>
-        <h3>Post-Training Lab Access & Certification Attempt</h3>
-        <p>Participants received enterprise-aligned lab access and certification attempt.</p>
+        <h3>Post-Training Lab Access & Certification</h3>
+        <p>Continue learning beyond the event with extended lab access and certification opportunities.</p>
       </div>
     </div>
 
@@ -883,23 +4774,457 @@ background-color: transparent;
 
       <div class="timeline-text">
         <span class="timeline-number">05</span>
-        <h3>Lifetime Study Resources</h3>
-        <p>Course material available for long-term learning and reference.</p>
+        <h3>Lifetime Learning Resources</h3>
+        <p>Get access to comprehensive study materials for ongoing reference and skill development.</p>
       </div>
+      
+    </div>
+     <!-- ITEM 5 -->
+    <div class="timeline-row reverse">
+      <div class="timeline-image">
+        <img src="https://redteamverse.github.io/red-team-training/images/c5.webp">
+      </div>
+
+      <div class="timeline-text">
+        <span class="timeline-number">06</span>
+        <h3>Course Completion Certification</h3>
+        <p>Certificates are issued only after attending the complete training duration, including all practical and instructor-led sessions.</p>
+      </div>
+      
+    </div>
+  </div>
+   
+</section>
+  
+ <div class="expect-cta">
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-tertiary">Reserve Your Seat</a>
+    </div>
+  
+<!-- =========================
+     WHY TRAIN WITH US
+========================= -->
+<section class="why-section" id="why">
+
+  <div class="container">
+
+    <span class="section-eyebrow">WHY TRAIN WITH US</span>
+    <h2>Built for Real-World Enterprise Security</h2>
+
+    <p class="lead">
+      Our training programs are trusted globally by professionals and organizations 
+      who demand practical, hands-on expertise in offensive and defensive security.
+    </p>
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <div class="stat-number">50,000+</div>
+        <div class="stat-label">Professionals Trained</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">130+</div>
+        <div class="stat-label">Countries Reached</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">600+</div>
+        <div class="stat-label">Organizations Served</div>
+      </div>
+
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature">
+        <div class="icon-box">
+          <i data-lucide="user-check"></i>
+        </div>
+        <div>
+          <h4>Expert Instructors</h4>
+          <p>Courses are authored and delivered by industry experts with real-world experience.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon-box">
+          <i data-lucide="cpu"></i>
+        </div>
+        <div>
+          <h4>Pioneers of Enterprise Labs</h4>
+          <p>Hands-on labs designed to simulate real enterprise environments.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon-box">
+          <i data-lucide="thumbs-up"></i>
+        </div>
+        <div>
+          <h4>Highly Recommended</h4>
+          <p>Trusted and recommended by professionals across industries worldwide.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon-box">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <div>
+          <h4>Enterprise Security Focus</h4>
+          <p>Focused on real attack scenarios and defense strategies used in enterprises.</p>
+        </div>
+      </div>
+
     </div>
 
   </div>
 
 </section>
+<!-- WHAT AltSecCON DELIVERED -->
 
-<!-- VIDEO -->
+<!-- TRAINING PROGRAMS -->
+<section id="training" class="course-grid-section">
+  <div class="course-grid-container">
+
+    <span class="section-eyebrow">Curriculum</span>
+    <h2>Training Programs at <span class="time-sec">AltSecCON</span></h2>
+
+    <p class="course-grid-intro">
+      Instructor-led Red Team certification programs covering Active Directory, evasion techniques, and Azure attack tradecraft.
+    </p>
+
+    <div class="course-grid">
+
+      <!-- CRTP -->
+      <div class="course-card">
+        <img src="https://static.wixstatic.com/media/470c31_1207916d21b14a428a92b4ff90a74f8a~mv2.png" class="course-img">
+        <h3 class="course-signal-name">CRTP</h3>
+
+        <div class="course-meta">
+          <span>Active Directory</span>
+          <span>FOUNDATIONAL</span>
+        </div>
+
+        <h3>Active Directory Attacks for Red and Blue Teams - Beginner's Edition</h3>
+
+        <div class="course-signal">
+          This 3-day beginner class teaches you how to get started with Red Teaming. It covers AD enumeration, trust mapping, Kerberos-based attacks, and defense bypasses.
+        </div>
+
+        <!-- PRICE -->
+        <div class="pricing-box light">
+
+  <div class="price-row">
+    <span class="old-price">₹44,999</span>
+    <span class="discount-badge">Save ₹5,000</span>
+  </div>
+   <div class="seat-badge"><i data-lucide="users"></i> Limited Seats</div>
+  <div class="price">₹39,999</div>
+
+  <div class="price-sub">Early Bird Price</div>
+   <div class="price-note">
+    Includes certification + labs
+  </div>
+
+</div>
+
+        <div class="course-actions">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+
+      <!-- CRTE -->
+      <div class="course-card">
+        <img src="https://static.wixstatic.com/media/470c31_d20991e40bc749a5b5e34cc98f82ff70~mv2.png" class="course-img">
+        <h3 class="course-signal-name">CRTE</h3>
+
+        <div class="course-meta">
+          <span>Active Directory</span>
+          <span>ENTERPRISE</span>
+        </div>
+
+        <h3>Active Directory Attacks for Red and Blue Teams - Advanced Edition</h3>
+
+        <div class="course-signal">
+          This 3-day beginner class teaches you how to get started with Red Teaming. It covers AD enumeration, trust mapping, Kerberos-based attacks, and defense bypasses.
+        </div>
+
+         <!-- PRICE -->
+        <div class="pricing-box light">
+
+  <div class="price-row">
+    <span class="old-price">₹44,999</span>
+    <span class="discount-badge">Save ₹5,000</span>
+  </div>
+  <div class="seat-badge"><i data-lucide="users"></i> Limited Seats</div>
+  <div class="price">₹39,999</div>
+
+  <div class="price-sub">Early Bird Price</div>
+   <div class="price-note">
+    Includes certification + labs
+  </div>
+
+</div>
+
+        <div class="course-actions">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+
+      <!-- CETP -->
+      <div class="course-card">
+        <img src="https://static.wixstatic.com/media/98ad8e_81fec46cf0d2498bb860aeabc27e397e~mv2.png" class="course-img">
+        <h3 class="course-signal-name">CETP</h3>
+
+        <div class="course-meta">
+          <span>EVASION</span>
+          <span>OFFENSIVE</span>
+        </div>
+
+        <h3>Evasion Techniques for Red Teams</h3>
+
+        <div class="course-signal">
+          This 3-day beginner class teaches you how to get started with Red Teaming. It covers AD enumeration, trust mapping, Kerberos-based attacks, and defense bypasses.
+        </div>
+
+         <!-- PRICE -->
+        <div class="pricing-box light">
+
+  <div class="price-row">
+    <span class="old-price">₹44,999</span>
+    <span class="discount-badge">Save ₹5,000</span>
+  </div>
+  <div class="seat-badge"><i data-lucide="users"></i> Limited Seats</div>
+  <div class="price">₹39,999</div>
+
+  <div class="price-sub">Early Bird Price</div>
+   <div class="price-note">
+    Includes certification + labs
+  </div>
+
+</div>
+
+        <div class="course-actions">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+
+      <!-- CARTP -->
+      <div class="course-card">
+        <img src="https://static.wixstatic.com/media/470c31_c03d5a63cde444b18d44bdb541748fa9~mv2.png" class="course-img">
+        <h3 class="course-signal-name">CARTP</h3>
+
+        <div class="course-meta">
+          <span>AZURE</span>
+          <span>IDENTITY</span>
+        </div>
+
+        <h3>Cloud Red Team Tactics for Attacking and Defending Azure - Beginner's Edition</h3>
+
+        <div class="course-signal">
+         This 3-day beginner class teaches you how to get started with Red Teaming. It covers AD enumeration, trust mapping, Kerberos-based attacks, and defense bypasses.
+        </div>
+
+         <!-- PRICE -->
+        <div class="pricing-box light">
+
+  <div class="price-row">
+    <span class="old-price">₹44,999</span>
+    <span class="discount-badge">Save ₹5,000</span>
+  </div>
+  <div class="seat-badge"><i data-lucide="users"></i> Limited Seats</div>
+  <div class="price">₹39,999</div>
+
+  <div class="price-sub">Early Bird Price</div>
+   <div class="price-note">
+    Includes certification + labs
+  </div>
+
+</div>
+
+        <div class="course-actions">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+
+      <!-- CARTE -->
+      <div class="course-card">
+        <img src="https://static.wixstatic.com/media/628794_0836557da1044632b5ea9eea3e469295~mv2.png" class="course-img">
+        <h3 class="course-signal-name">CARTE</h3>
+
+        <div class="course-meta">
+          <span>AZURE</span>
+          <span>ADVANCED</span>
+        </div>
+
+        <h3>Cloud Red Team Tactics for Attacking and Defending Azure - Advanced Edition</h3>
+
+        <div class="course-signal">
+          This 3-day beginner class teaches you how to get started with Red Teaming. It covers AD enumeration, trust mapping, Kerberos-based attacks, and defense bypasses.
+        </div>
+
+         <!-- PRICE -->
+        <div class="pricing-box light">
+
+  <div class="price-row">
+    <span class="old-price">₹44,999</span>
+    <span class="discount-badge">Save ₹5,000</span>
+  </div>
+  <div class="seat-badge"><i data-lucide="users"></i> Limited Seats</div>
+  <div class="price">₹39,999</div>
+
+  <div class="price-sub">Early Bird Price</div>
+   <div class="price-note">
+    Includes certification + labs
+  </div>
+
+</div>
+
+        <div class="course-actions">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="course-grid-cta">
+      <a href="#" class="btn btn-tertiary">View All Training Programs →</a>
+    </div>
+
+  </div>
+</section>
+  
+<!-- =====================
+ALTSECCON CONFERENCE SECTION
+===================== -->
+
+<section class="conference-section" id="conference">
+
+<div class="conference-container">
+
+<span class="section-eyebrow">Conference Day</span>
+  <h2><span class="time-sec">AltSecCON</span> Practitioner Conference</h2>
+<p class="conference-lead">
+Alongside the instructor-led Red Team training, AltSecCON also includes a dedicated conference day where security practitioners share technical insights, research discussions, and real-world offensive security experiences with the community.
+</p>
+
+<!-- Conference Info -->
+
+<div class="conference-info">
+
+  <div class="conference-info-item">
+    <div class="conference-icon">
+      <i data-lucide="calendar"></i>
+    </div>
+    <div>
+      <strong>Conference Date</strong>
+      <span>3 November 2026</span>
+    </div>
+  </div>
+
+  <div class="conference-info-item">
+    <div class="conference-icon">
+      <i data-lucide="map-pin"></i>
+    </div>
+    <div>
+      <strong>Location</strong>
+      <span>Bengaluru, India</span>
+    </div>
+  </div>
+
+  <div class="conference-info-item">
+    <div class="conference-icon">
+      <i data-lucide="users"></i>
+    </div>
+    <div>
+      <strong>Audience</strong>
+      <span>Security practitioners, Red Team operators, penetration testers, and enterprise security engineers.</span>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Highlights -->
+
+<div class="conference-grid">
+
+  <!-- CARD 1 -->
+  <div class="conference-card">
+    <div class="conference-img">
+      <img src="https://redteamverse.github.io/red-team-training/images/new-5.webp">
+    </div>
+    <h3>Technical Talks</h3>
+    <p>
+      Presentations from experienced security professionals covering offensive security research, Red Team techniques, and real-world attack scenarios.
+    </p>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="conference-card">
+    <div class="conference-img">
+      <img src="https://redteamverse.github.io/red-team-training/images/new-7.webp">
+    </div>
+    <h3>Practitioner Insights</h3>
+    <p>
+      Discussions from practitioners actively working in Red Team operations, adversary simulation, and enterprise security assessments.
+    </p>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="conference-card">
+    <div class="conference-img">
+      <img src="https://redteamverse.github.io/red-team-training/images/c5.webp">
+    </div>
+    <h3>Security Community</h3>
+    <p>
+      An opportunity for security professionals to connect with peers, share experiences, and discuss practical security challenges.
+    </p>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="conference-card">
+    <div class="conference-img">
+      <img src="https://redteamverse.github.io/red-team-training/images/new-2.webp">
+    </div>
+    <h3>Knowledge Exchange</h3>
+    <p>
+      Focused conversations around modern attack techniques, defensive strategies, and the evolving enterprise threat landscape.
+    </p>
+  </div>
+
+</div>
+<!-- Conference Images -->
+
+<!-- Conference Gallery -->
+
+<div class="conference-gallery">
+</div>
+
+<div class="conference-cta">
+<a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html" class="btn btn-tertiary">View Conference Details</a>
+</div>
+
+</div>
+
+</section>   
+  
+<!-- =========================
+     ALTSecCON PRECAP VIDEO
+========================= -->
 <section class="video-section" id="glimpse">
 
   <div class="container">
-     <span class="section-eyebrow">AltSecCON Glimpse</span>
-  <h3 class="section-title">    
-  Get a Glimpse of <span>AltSecCON</span> 2025
-   </h3>
+     <span class="eyebrow">AltSecCON Glimpse</span>
+  <h2 class="section-title">    
+  Get a Glimpse of <span>AltSecCON 2025</span>
+   </h2>
 
 <div class="section-divider"></div>
 
@@ -930,10 +5255,391 @@ background-color: transparent;
     </div>
 
   </div>
+ <div class="instructor-card-cta">
+      <a href="https://redteamverse.github.io/red-team-training/altseccon25-v1.html" class="btn btn-tertiary">View AltSecCON 2025 →</a>
+    </div>
+</section>    
+<section class="ticket-section" id="tickets">
 
+  <div class="ticket-container" >
+
+    <span class="section-eyebrow">Tickets</span>
+    <h2>Choose Your <span class="time-sec">AltSecCON</span> Experience</h2>
+    <p class="ticket-intro">
+      Select the option that best fits your learning goals — training, conference, or a complete experience.
+    </p>
+
+    <div class="ticket-grid">
+
+      <!-- TRAINING -->
+      <div class="ticket-card">
+        <h3>Training Only</h3>
+        <ul>
+          <li>Instructor-led Red Team training (selected course)</li>
+          <li>Course completion certification</li>
+          <li>60 days of lab access</li>
+          <li>One certification exam attempt</li>
+        </ul>
+         <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Training</a> 
+      </div>
+
+      <!-- CONFERENCE -->
+      <div class="ticket-card">
+        <h3>Conference Only</h3>
+        <ul>
+          <li>Full access to all conference talks</li>
+          <li>Networking with security professionals</li>
+          <li>Panel discussions and practitioner sessions</li>
+          <li>Coffee breaks and lunch included</li>
+          <li>Welcome kit</li>
+          <li>Participation e-certificate</li>
+        </ul>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Conference Pass</a>
+
+      </div>
+
+      <!-- COMBO -->
+      <div class="ticket-card highlight">
+        <div class="badge">Best Value</div>
+        <h3>Training + Conference</h3>
+        <ul>
+          <li>Instructor-led Red Team training (selected course)</li>
+          <li>Course completion certification</li>
+          <li>60 days of lab access</li>
+          <li>One certification exam attempt</li>
+          <li>Full conference access</li>
+          <li>Networking and panel discussions</li>
+          <li>Coffee breaks, lunch, and welcome kit</li>
+          <li>Participation e-certificate</li>
+        </ul>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Get Full Access</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>  
+
+  <!-- TRUST -->
+<section class="trust-section" id="community">
+  <div class="trust-container">
+
+    <span class="section-eyebrow">Community trust</span>
+
+    <h2>Trusted by the Security Community</h2>
+
+    <p class="trust-intro">
+      Security professionals from across India joined AltSecCON for hands-on Red Team training and professional collaboration.
+    </p>
+
+    <p class="trust-label">
+      Professionals joined AltSecCON from organizations such as
+    </p>
+
+    <div class="trust-logos community-logos">
+      <img src="https://redteamverse.github.io/red-team-training/images/microsoft.png" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/security.png" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/wipro.png" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/RS.jpg" alt="">
+      <img src="https://redteamverse.github.io/red-team-training/images/SST.png" alt="">
+    </div>
+
+    <p class="trust-note">
+      Logos represent organizations where attendees work and do not imply sponsorship.
+    </p>
+
+  </div>
+</section> 
+  
+ <!-- INSTRUCTOR SECTION -->
+<section id="instructors" class="instructor-section">
+  <div class="instructor-container">
+
+    <span class="section-eyebrow">Instructors</span>
+    <h2>Meet Your Instructors</h2>
+
+    <p class="instructor-intro">
+      Our instructors bring deep Red Team experience from enterprise operations,
+      real-world engagements, and advanced adversary simulation.
+    </p>
+
+    <div class="instructor-grid">
+      <!-- Primary Instructors -->
+      <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" alt="Nikhil Mittal">
+        <h3>Nikhil Mittal</h3>
+        <p class="instructor-role">Lead Red Team Instructor</p>
+         <p class="instructor-authority">
+    Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
+  </p>
+      </div>
+      <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9696.jpg" alt="Manthan">
+        <h3>Manthan</h3>
+        <p>Red Team Practitioner</p>
+      </div>    
+   
+     <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Manthan">
+        <h3>Hitesh</h3>
+        <p>Red Team Practitioner</p>
+    </div>     
+   
+  
+      <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="Manthan">
+        <h3>Amit</h3>
+        <p>Red Team Practitioner</p>
+      </div>
+      <div class="instructor-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9759.jpg" alt="Manthan">
+        <h3>Vishal</h3>
+        <p>Red Team Practitioner</p>
+      </div>
+    </div>     
+  
+    <div class="instructor-card-cta">
+      <a href="#" class="btn btn-tertiary">Explore Training Programs →</a>
+    </div>
+
+    <!-- Supporting Images 
+    <div class="instructor-support">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="AltSecCON instruction scene">
+      <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Hands-on teaching moment">
+    </div>-->
+  </div> 
+</section>
+<!-- CERTIFICATION & OUTCOMES -->
+<section class="certification-section" id="certification">
+  <div class="certification-container">
+
+    <span class="section-eyebrow">Certification & Outcomes</span>
+    <h2>Course Completion Certification</h2>
+
+    <p class="certification-intro">
+      Participants who successfully complete the full instructor-led training
+      receive an official course completion certificate issued by Altered Security.
+      This certification validates hands-on participation and successful completion
+      of the program.
+    </p>
+
+    <div class="certification-points">
+
+  <div class="certification-card">
+    <div class="certification-icon">
+      <i data-lucide="badge-check"></i>
+    </div>
+    <h3>Issued After Full Training</h3>
+    <p>
+      Certificates are issued only after attending the complete training
+      duration, including all practical and instructor-led sessions.
+    </p>
+  </div>
+
+  <div class="certification-card">
+    <div class="certification-icon">
+      <i data-lucide="check-circle"></i>
+    </div>
+    <h3>Completion-Based Validation</h3>
+    <p>
+      The certification reflects successful course completion
+      and learning outcomes — not just attendance.
+    </p>
+  </div>
+
+</div>
+
+    <div class="certification-cta">
+      <a href="#" class="btn-secondary">
+        View Certification Details →
+      </a>
+    </div>
+
+  </div>
+</section>  
+
+
+<!-- Event Overview-->
+  <section class="event-structure-section" id="event">
+  <div class="event-structure-container">
+
+    <div class="event-structure-text">
+      <span class="section-eyebrow">Event Format</span>
+      <h2>Event Structure Overview</h2>
+
+      <p class="event-structure-summary">
+        Industry-leading in-person red team training, certifications and conference on Red Teaming.
+      </p>
+
+      <div class="event-structure-cards">
+
+  <div class="structure-card">
+    <div class="structure-icon">
+      <i data-lucide="calendar-days"></i>
+    </div>
+    <h3>Multi-Day Training Format</h3>
+    <p>Training will be deliver across multiple consecutive days to allow uninterrupted learning.</p>
+  </div>
+   <div class="structure-card">
+    <div class="structure-icon">
+      <i data-lucide="users"></i>
+    </div>
+    <h3>Practitioner Conference</h3>
+    <p>The AltSecCON Practitioner Conference features technical talks focused on enterprise attack techniques, Red Team operations, and real-world security challenges.</p>
+  </div>
+  <div class="structure-card">
+    <div class="structure-icon">
+      <i data-lucide="presentation"></i>
+    </div>
+    <h3>In-Person Delivery</h3>
+    <p>All sessions will be conduct on-site with direct instructor interaction.</p>
+  </div>
+   <div class="structure-card">
+    <div class="structure-icon">
+      <i data-lucide="soup"></i>
+    </div>
+    <h3>Food & Refreshments</h3>
+    <p>Enjoy coffee breaks and lunch while interacting with speakers and attendees creating informal networking opportunities.</p>
+  </div>  
+
+</div>
+
+      <!-- Operational details -->
+      <div class="event-structure-ops">
+        <div><strong>Training Sessions:</strong> 9:00 AM – 5:00 PM</div>
+        <div><strong>Conference Day:</strong> 9:00 AM – 5:00 PM</div>
+        <div><strong>Scheduled breaks:</strong> Tea breaks and lunch included</div>
+      </div>
+
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html" class="btn-secondary">
+        View full event details →
+      </a>
+    </div>
+
+    <div class="event-structure-image">
+      <img
+        src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9212.webp"
+        alt="Instructor-led Red Team training session"
+      >
+    </div>
+
+  </div>
 </section>
 
-<!-- GALLERY -->
+
+<section class="justify-section" id="approval">
+
+<div class="container">
+<span class="eyebrow">Approval Request</span>
+    
+<h2 class="section-title">Request Approval to Attend <span class="time-sec">AltSecCON</span></h2>
+
+<p class="section-intro">
+AltSecCon is an in-person red teaming training event focused on enterprise attack techniques in 
+Active Directory and Azure environments. If you need approval from your manager, the points 
+below explain the value of attending.
+</p>
+
+<div class="justify-grid">
+
+  <div class="justify-card">
+    <div class="justify-icon">
+      <i data-lucide="shield-check"></i>
+    </div>
+    <h3>Strengthen Enterprise Security</h3>
+    <p>
+      Learn how attackers compromise enterprise Active Directory and Azure environments 
+      and understand how to identify and mitigate these weaknesses.
+    </p>
+  </div>
+
+  <div class="justify-card">
+    <div class="justify-icon">
+      <i data-lucide="terminal"></i>
+    </div>
+    <h3>Hands-on Red Team Training</h3>
+    <p>
+      Practice real-world offensive techniques through guided labs designed to simulate 
+      enterprise attack scenarios.
+    </p>
+  </div>
+
+  <div class="justify-card">
+    <div class="justify-icon">
+      <i data-lucide="search"></i>
+    </div>
+    <h3>Identify Security Gaps</h3>
+    <p>
+      Understand common misconfigurations and privilege escalation paths attackers use 
+      in corporate environments.
+    </p>
+  </div>
+
+  <div class="justify-card">
+    <div class="justify-icon">
+      <i data-lucide="trending-up"></i>
+    </div>
+    <h3>Bring Knowledge Back</h3>
+    <p>
+      Apply the techniques learned during the training to improve your organization's 
+      security posture and detection capabilities.
+    </p>
+  </div>
+
+</div>
+
+<div class="manager-template">
+
+<h3>Sample Email to Request Approval</h3>
+
+<p>You can copy and send the following email to request approval from your manager.</p>
+
+<div class="email-wrapper">
+
+  <pre class="email-content collapsed" id="emailContent">
+Subject: Request to Attend AltSecCon Red Team Training
+
+Hi [Manager Name],
+
+I would like to attend AltSecCon, an in-person red teaming training event focused 
+on enterprise attack techniques in Active Directory and Azure environments.
+
+The training includes hands-on labs, practical attack simulations, and guidance 
+from experienced instructors in offensive security.
+
+Attending this training will help strengthen our organization's security posture 
+by understanding how attackers exploit enterprise environments and how to detect 
+these attacks.
+
+Key benefits include:
+• Hands-on red team labs
+• Enterprise attack simulations
+• Practical AD and Azure security techniques
+
+I believe this training will provide valuable insights that can help improve 
+our internal security practices.
+
+Thanks,
+[Your Name]
+  </pre>
+
+  <button class="read-more-btn" onclick="toggleEmail()">Read more</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+ 
+
+ 
+  
+
+<!-- GALLERY PREVIEW -->
 <section class="gallery-section" id="gallery">
   <div class="gallery-container">
 
@@ -957,29 +5663,15 @@ background-color: transparent;
     </div>
 
     <div class="gallery-caption">
-      In-person training, real classrooms
+     
     </div>
 
-    <div class="gallery-cta">
+    <div class="gallery-cta ">
       <a href="/gallery" class="btn-secondary">
         View Full Gallery →
       </a>
     </div>
 
-  </div>
-</section>
-<!-- HIGHLIGHTS -->
-<section class="container">
-  <div class="section-title">
-    <span class="section-eyebrow">Highlights</span>
-    <h2><span class="time-sec">AltSecCON</span> 2025 Highlights</h2>
-  </div>
-
-  <div class="highlights">
-    <div class="highlight-card"><h3>500+</h3><p>Attendees</p></div>
-    <div class="highlight-card"><h3>10+</h3><p>Trainers</p></div>
-    <div class="highlight-card"><h3>5+</h3><p>Courses</p></div>
-    <div class="highlight-card"><h3>3 Days</h3><p>Hands-on Learning</p></div>
   </div>
 </section>
 
@@ -1124,88 +5816,609 @@ background-color: transparent;
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-  <h2>Join <span class="time-sec">AltSecCON</span> 2026</h2>
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">
-    Book Your Seat
-  </a>
+
+
+<section class="venue-section" id="venue">
+
+  <div class="venue-container">
+
+    <span class="section-eyebrow">Event Location</span>
+    <h2><span class="time-sec">AltSecCON </span>Training & Conference Venue</h2>
+
+    <p class="venue-intro">
+      AltSecCON will take place in Bengaluru, India, hosting both the instructor-led Red Team training and the practitioner conference in a shared environment designed for learning and collaboration.
+    </p>
+
+    <!-- Top Info Cards -->
+    <div class="venue-info">
+
+      <div class="venue-info-item">
+        <strong>Training Location</strong>
+        <span>Bengaluru, India</span>
+      </div>
+
+      <div class="venue-info-item">
+        <strong>Conference Location</strong>
+        <span>Bengaluru, India</span>
+      </div>
+
+      <div class="venue-info-item">
+        <strong>Venue</strong>
+        <span>To be announced soon</span>
+      </div>
+
+    </div>
+
+    <!-- Content Split -->
+    <div class="venue-content">
+
+      <!-- Left -->
+      <div class="venue-text">
+        <p>
+          Bengaluru is one of India’s leading technology hubs and home to a strong cybersecurity community. 
+          AltSecCON brings both training and conference experiences together in a single venue to enable 
+          continuous learning, collaboration, and interaction.
+        </p>
+
+        <ul>
+          <li>✔ Dedicated training classrooms for hands-on sessions</li>
+          <li>✔ Conference presentation and discussion areas</li>
+          <li>✔ Networking spaces for participants and speakers</li>
+          <li>✔ Coffee breaks, lunch, and collaboration zones</li>
+        </ul>
+      </div>
+
+      <!-- Right (Map Placeholder) -->
+      <div class="venue-map">
+        <p>📍 Map will be updated once the venue is announced.</p>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+  
+<section class="contact-tabs-section" id="contact">
+
+  <div class="contact-container">
+     <span class="section-eyebrow">Contact Us</span>
+    <h2>Get Started with <span class="time-sec">AltSecCON</span></h2>
+    <p class="contact-intro">
+      Choose what you're interested in and share your details. Our team will get in touch with relevant information.
+    </p>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="training1">Training</button>
+      <button class="tab" data-tab="conference1">Conference</button>
+      <button class="tab" data-tab="team">For Teams</button>
+    </div>
+
+    <!-- Forms -->
+    <div class="tab-content active " id="training1">
+      <h3>Request Training Details</h3>
+      <form class="form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Experience Level">
+        <input type="text" placeholder="Interested Course (CRTP, CRTE, etc.)">
+        <button type="submit" class="btn btn-primary">Get Training Details</button>
+      </form>
+    </div>
+
+    <div class="tab-content" id="conference1">
+      <h3>Get Conference Information</h3>
+      <form class="form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Your Role">
+        <button type="submit">Get Conference Details</button>
+      </form>
+    </div>
+
+    <div class="tab-content" id="team">
+      <h3>Request Team Training Information</h3>
+      <form class="form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Company Name">
+        <input type="email" placeholder="Work Email" required>
+        <input type="text" placeholder="Team Size">
+        <button type="submit">Request Details</button>
+      </form>
+    </div>
+
+  </div>
+
+</section>  
+<!-- CONTACT US -->
+<section class="faq-section" id="faqs">
+
+  <div class="faq-container">
+
+    <span class="section-eyebrow">FAQs</span>
+    <h2>Frequently Asked Questions</h2>
+    <p class="faq-intro">
+      Find answers to common questions about AltSecCON training, conference, and participation.
+    </p>
+
+    <div class="faq-list">
+
+      <div class="faq-item active">
+        <button class="faq-question">
+          What is the difference between training and conference?
+        </button>
+        <div class="faq-answer">
+          <p>
+            The training is a multi-day, instructor-led hands-on program focused on Red Team techniques. 
+            The conference is a one-day event featuring technical talks, practitioner insights, and networking opportunities.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Who should attend AltSecCON?
+        </button>
+        <div class="faq-answer">
+          <p>
+            AltSecCON is designed for security professionals including Red Teamers, penetration testers, 
+            security engineers, and individuals looking to build or enhance offensive security skills.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Do I need prior experience for the training?
+        </button>
+        <div class="faq-answer">
+          <p>
+            Basic understanding of networking and security concepts is recommended. 
+            Different courses are available for beginner, intermediate, and advanced levels.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Will I receive a certification after training?
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, participants receive a course completion certification along with an opportunity 
+            to attempt the certification exam for the selected training program.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Is lab access included after the training?
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, participants receive 30 days of lab access to continue practicing and reinforcing 
+            the concepts covered during the training.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Will both training and conference be held at the same location?
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, both the training and conference are hosted in Bengaluru, India, typically within 
+            the same venue to provide a seamless experience.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How can I register or get more details?
+        </button>
+        <div class="faq-answer">
+          <p>
+            You can use the form above to request details for training, conference, or team participation. 
+            Our team will reach out with relevant information and next steps.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<section class="site-footer">
+  <div class="footer-container">
+
+    <!-- Brand / About -->
+    <div class="footer-block">
+      <h4>About AltSecCON</h4>
+      <p>
+        AltSecCON is an in-person Red Team training initiative focused on
+        instructor-led delivery, enterprise-aligned labs, and practical
+        offensive security execution.
+      </p><br>
+      <p>© AltSecCON. An Altered Security initiative.
+      </p>
+    </div>
+
+    <!-- Training Programs -->
+    <div class="footer-block">
+      <h4>Training Programs</h4>
+      <ul>
+        <li><a href="/training/crtp">CRTP</a></li>
+        <li><a href="/training/crte">CRTE</a></li>
+        <li><a href="/training/cetp">CETP</a></li>
+        <li><a href="/training/cartp">CARTP</a></li>
+        <li><a href="/training/carte">CARTE</a></li>
+      </ul>
+    </div>
+ <!-- Event -->
+    <div class="footer-block">
+      <h4>Conference</h4>
+      <ul>
+        <li><a href="/instructors">Tickets</a></li>
+        <li><a href="/event-structure">Event Schedule</a></li>
+        <li><a href="/certification">Certification & Outcomes</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/gallery">FAQs</a></li>
+        <li><a href="/2026">AltSecCON 2026</a></li>
+      </ul>
+    </div>
+    
+    <!-- Event -->
+    <div class="footer-block">
+      <h4>Event</h4>
+      <ul>
+        <li><a href="/instructors">Venue</a></li>
+        <li><a href="/event-structure">Event Schedule</a></li>
+        <li><a href="/certification">Tickets</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/gallery">FAQs</a></li>
+        <li><a href="/2026">AltSecCON 2026</a></li>
+      </ul>
+    </div>
+    
+
+    <!-- Policies & Contact -->
+    <div class="footer-block">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="/code-of-conduct">Code of Conduct</a></li>
+        <li><a href="/policy">Policy</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>
+      © <span id="footerYear"></span> AltSecCON. All rights reserved.
+    </p>
+  </div>
+</section>
+  
+<!-- =====================
+MOBILE STICKY CTA
+===================== -->
+<!-- =====================
+RIGHT EDGE MOBILE CTA
+===================== -->
+<!-- =====================
+SIDE FLOATING CTA
+===================== -->
+<div class="side-cta">
+
+  <!-- Trigger -->
+  <div class="side-cta-trigger" id="sideTrigger">
+    <span class="cta-arrow"><i data-lucide="ticket-percent"></i></span>
+  </div>
+
+  <!-- Panel -->
+  <div class="side-cta-panel" id="sidePanel">
+    
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="cta-btn primary">
+     Get Training Pass
+    </a>
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="cta-btn secondary">
+      Conference Pass
+    </a>
+
+  </div>
+
+</div>
+  
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ================= VIDEO PLAY ================= */
-  const card = document.getElementById("videoCard");
-  const video = document.getElementById("eventVideo");
+  /* =========================
+     ELEMENTS
+  ========================= */
+  const header = document.getElementById("stickyHeader");
+  const sectionNav = document.getElementById("sectionNav");
+  const stickyCTA = document.getElementById("stickyCTA");
+  const hero = document.querySelector(".hero");
 
-  if (card && video) {
-    card.addEventListener("click", () => {
-      card.classList.add("playing");
-      video.play();
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".section-nav a");
+
+  const indicator = document.querySelector(".nav-indicator");
+  const container = document.querySelector(".section-nav-container");
+
+  /* =========================
+     SLIDING INDICATOR
+  ========================= */
+  function moveIndicator(el) {
+    if (!el || !indicator) return;
+
+    const left = el.offsetLeft;
+    const width = el.offsetWidth;
+
+    indicator.style.width = width + "px";
+    indicator.style.transform = `translateX(${left}px)`;
+  }
+
+  /* =========================
+     MAIN SCROLL HANDLER
+  ========================= */
+  function handleScroll() {
+    const scrollY = window.scrollY;
+
+    /* HEADER */
+    if (header) {
+      if (scrollY > 80) {
+        header.classList.add("is-visible", "is-solid");
+      } else {
+        header.classList.remove("is-visible", "is-solid");
+      }
+
+      if (window.innerWidth <= 768) {
+        header.classList.add("is-visible", "is-solid");
+      }
+    }
+
+    /* SUB NAV */
+    if (hero && sectionNav) {
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+
+      if (scrollY > heroBottom - 120) {
+        sectionNav.classList.add("is-visible");
+      } else {
+        sectionNav.classList.remove("is-visible");
+      }
+    }
+
+    /* CTA */
+    if (stickyCTA) {
+      if (scrollY > 200) {
+        stickyCTA.classList.add("show");
+      } else {
+        stickyCTA.classList.remove("show");
+      }
+    }
+
+    /* ACTIVE LINK + INDICATOR */
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 140;
+      const sectionHeight = section.clientHeight;
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+
+        moveIndicator(link);
+
+        link.scrollIntoView({
+          behavior: "auto",
+          inline: "center",
+          block: "nearest"
+        });
+      }
     });
   }
 
-  /* ================= TESTIMONIAL SLIDER ================= */
+  /* =========================
+     EVENTS
+  ========================= */
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("load", handleScroll);
+  window.addEventListener("resize", handleScroll);
+
+  /* =========================
+     CLICK NAV
+  ========================= */
+  navLinks.forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const target = document.querySelector(this.getAttribute("href"));
+      if (!target) return;
+
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: "smooth"
+      });
+
+      moveIndicator(this);
+    });
+  });
+
+  /* =========================
+     MOBILE MENU
+  ========================= */
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("menuOverlay");
+
+  if (hamburger && mobileMenu && overlay) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mobileMenu.classList.toggle("open");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      mobileMenu.classList.remove("open");
+      overlay.classList.remove("show");
+    });
+
+    document.querySelectorAll(".mobile-menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        mobileMenu.classList.remove("open");
+        overlay.classList.remove("show");
+      });
+    });
+  }
+
+  /* =========================
+     FOOTER YEAR
+  ========================= */
+  const year = document.getElementById("footerYear");
+  if (year) year.textContent = new Date().getFullYear();
+
+});
+
+/* =========================
+   ICONS (LUCIDE)
+========================= */
+window.addEventListener("load", () => {
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+});
+</script>
+<script>
+const trigger = document.getElementById("sideTrigger");
+const panel = document.getElementById("sidePanel");
+
+trigger.addEventListener("click", () => {
+  panel.classList.toggle("active");
+  trigger.classList.toggle("active");
+});
+
+document.addEventListener("click", function(e) {
+  if (!trigger.contains(e.target) && !panel.contains(e.target)) {
+    panel.classList.remove("active");
+    trigger.classList.remove("active");
+  }
+});
+</script>  
+<script src="https://unpkg.com/lucide@latest"></script>  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* =========================
+     FAQ ACCORDION
+  ========================= */
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+
+    if (question) {
+      question.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    }
+  });
+
+  /* =========================
+     CONTACT TABS
+  ========================= */
+  const tabs = document.querySelectorAll(".tab");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+
+      // remove active
+      tabs.forEach(t => t.classList.remove("active"));
+      tabContents.forEach(c => c.classList.remove("active"));
+
+      // add active
+      tab.classList.add("active");
+
+      const target = tab.getAttribute("data-tab");
+      const content = document.getElementById(target);
+
+      if (content) {
+        content.classList.add("active");
+      }
+    });
+  });
+
+  /* =========================
+     TESTIMONIAL SLIDER
+  ========================= */
   const track = document.querySelector(".testimonial-track");
 
   if (track) {
     let index = 0;
     const cards = document.querySelectorAll(".testimonial-card");
-    const visible = window.innerWidth <= 1024 ? 1 : 3;
-    const totalSlides = Math.ceil(cards.length / visible);
+    const total = cards.length;
 
-    setInterval(() => {
-      index = (index + 1) % totalSlides;
+    function moveSlide() {
+      index = (index + 1) % total;
       track.style.transform = `translateX(-${index * 100}%)`;
-    }, 4000);
+    }
+
+    // Auto slide
+    setInterval(moveSlide, 4000);
   }
 
-  /* ================= COUNTER ================= */
-  const counters = document.querySelectorAll('.highlight-card h3');
+});
+</script>  
+<script>
+document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+  toggle.addEventListener("click", function(e) {
+    e.preventDefault();
 
-  counters.forEach(counter => {
-    const text = counter.innerText;
-    const number = parseInt(text);
-
-    if (!isNaN(number)) {
-      counter.innerText = "0";
-
-      let count = 0;
-      const step = number / 40;
-
-      const update = () => {
-        count += step;
-        if (count < number) {
-          counter.innerText = Math.ceil(count) + "+";
-          requestAnimationFrame(update);
-        } else {
-          counter.innerText = number + "+";
-        }
-      };
-
-      update();
-    }
+    const parent = this.parentElement;
+    parent.classList.toggle("active");
   });
-
-  /* ================= SCROLL ANIMATION ================= */
-  const elements = document.querySelectorAll(
-    ".timeline-row, .highlight-card, .gallery-grid img"
-  );
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, { threshold: 0.2 });
-
-  elements.forEach(el => {
-    el.classList.add("fade-init");
-    observer.observe(el);
-  });
-
 });
 </script>
+<script>
+<script>
+document.querySelectorAll(".mobile-menu .dropdown-toggle").forEach(toggle => {
+  toggle.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    const parent = this.parentElement;
+
+    // Close others (optional but better UX)
+    document.querySelectorAll(".mobile-menu .nav-item").forEach(item => {
+      if (item !== parent) item.classList.remove("active");
+    });
+
+    parent.classList.toggle("active");
+  });
+});
+</script>
+</script>  
 </body>
 </html>
