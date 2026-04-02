@@ -3799,12 +3799,22 @@ FORCE FULLSCREEN MENU (FINAL FIX)
 }
   
 .menu-content {
-  padding: 80px 24px 24px; /* space for header + breathing */
+  padding: 90px 24px 32px; /* space for header + breathing */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
+/* MAIN LINKS */
+.mobile-menu .nav-item > a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}  
+  
 /* LINKS */
 .mobile-menu a {
   color: #111;
@@ -3817,6 +3827,9 @@ FORCE FULLSCREEN MENU (FINAL FIX)
   align-items: center;
   padding: 20px 24px;
   border-bottom: 1px solid #E5E7EB;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
 }
 
 .menu-top button {
@@ -3867,7 +3880,7 @@ LINK SPACING
 .mobile-menu a:not(.btn) {
   display: block;
   padding: 12px 0;
-  border-bottom: 1px solid #E5E7EB;
+  border-bottom: none; /* 🔥 REMOVE DUPLICATE */
 }
 
 /* =========================
@@ -4214,15 +4227,15 @@ MENU
   color: #111827;          /* ensure visible */
 }  
   
-.nav .dropdown-toggle::after {
-  content: "▾";
-}  
+
 /* =====================
 MOBILE DROPDOWN FIX
 ===================== */
 .mobile-menu .nav-item {
   display: block;
   width: 100%;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
 
@@ -4242,16 +4255,25 @@ MOBILE DROPDOWN FIX
   position: static; /* 🔥 VERY IMPORTANT */
   box-shadow: none;
   padding-left: 10px;
-    max-height: 0;
+   max-height: 0;
+
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+   background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
   overflow: hidden;
-  transition: max-height 0.3s ease;
 }
 
 /* Show when active */
 .mobile-menu .nav-item.active .dropdown-menu {
   display: block;
   margin-top: 10px;
-  max-height: 500px; /* enough for content */
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 10px; /* enough for content */
 }  
   
   .expect-cta{
@@ -4628,9 +4650,9 @@ PRICING BOX
         <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
       </div>
     </div>
-    
+    <div class="nav-item">
     <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Passes</a>
-
+    </div>
     <!-- Past Events -->
     <div class="nav-item dropdown">
       <a href="#" class="dropdown-toggle">Past Edition ▾</a>
@@ -4641,11 +4663,12 @@ PRICING BOX
         </a>
       </div>
     </div>
-
+    <div class="nav-item">
     <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Experience</a>
-
+    </div>
+    <div class="nav-item">
     <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>  
-
+    </div>
     <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Get Passes</a>
 
    
