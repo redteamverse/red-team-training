@@ -3990,7 +3990,7 @@ WRAPPER
 ===================== */
 .side-cta {
   position: fixed;
-  top: 90%;
+  top: 70%;
   right: 0;
   transform: translateY(-50%);
   z-index: 999;
@@ -4489,6 +4489,48 @@ PRICING BOX
   margin-bottom: 6px;
 } 
 
+/* =========================
+SCROLL TO TOP BUTTON
+========================= */
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+
+  background: #111827;
+  color: #fff;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  border: none;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+
+  transition: all 0.3s ease;
+  z-index: 99999;
+}
+
+/* SHOW */
+.scroll-top-btn.show {
+  opacity: 0.8;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* HOVER */
+.scroll-top-btn:hover {
+  background: #B91C1C;
+}  
 </style>
 </head>
 
@@ -6198,6 +6240,36 @@ SIDE FLOATING CTA
 
 </div> 
 
+<button id="scrollTopBtn" class="scroll-top-btn">↑</button>  
+  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const btn = document.getElementById("scrollTopBtn");
+  const trainingSection = document.getElementById("training");
+
+  if (!btn || !trainingSection) return;
+
+  window.addEventListener("scroll", () => {
+    const trainingTop = trainingSection.offsetTop;
+
+    if (window.scrollY >= trainingTop - 100) {
+      btn.classList.add("show");
+    } else {
+      btn.classList.remove("show");
+    }
+  });
+
+  // SCROLL TO TOP
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+});
+</script>  
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
