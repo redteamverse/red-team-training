@@ -4531,10 +4531,50 @@ SCROLL TO TOP BUTTON
 .scroll-top-btn:hover {
   background: #B91C1C;
 }  
+  
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* CART ICON */
+.cart-icon {
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* COUNT BADGE */
+#cartCount {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+
+  background: #B91C1C;
+  color: #fff;
+  font-size: 11px;
+
+  padding: 2px 6px;
+  border-radius: 50%;
+}  
+  
+@media (max-width: 768px) {
+
+  .header-cta .btn {
+    display: none; /* hide button */
+  }
+
+  .cart-icon {
+    display: block; /* keep cart */
+  }
+
+}  
 </style>
 </head>
 
 <body>
+  
 <div class="top-bar" id="topBar">
   <span class="top-bar-text">
     Early Bird Ends Soon — Use Code <strong>EARLY200</strong>
@@ -4544,8 +4584,9 @@ SCROLL TO TOP BUTTON
 </div>
 <!-- DESKTOP STICKY HEADER -->
 <header id="stickyHeader" class="site-header"> 
+  
   <div class="header-inner">
-
+   
     <!-- LEFT: LOGO -->
     <div class="header-left">
       <div class="logo">
@@ -4615,10 +4656,20 @@ SCROLL TO TOP BUTTON
 
     </nav>
 
-    <!-- RIGHT: CTA -->
-    <div class="header-cta">
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Get Passes</a>  
-    </div>
+<div class="header-cta">
+
+  <!-- CART ICON -->
+  <div class="cart-icon" onclick="window.location.href='https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html'">
+    🛒
+    <span id="cartCount">0</span>
+  </div>
+
+  <!-- CTA -->
+  <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">
+    Get Passes
+  </a>
+
+</div>
 
     <!-- HAMBURGER -->
     <div class="hamburger" id="hamburger">
