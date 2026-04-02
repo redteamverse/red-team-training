@@ -6363,10 +6363,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* HEADER */
     if (header) {
-      if (scrollY > 80) {
+      if (scrollY > 0) {
         header.classList.add("is-visible", "is-solid");
       } else {
-        header.classList.remove("is-visible", "is-solid");
+        header.classList.add("is-visible", "is-solid");
       }
 
       if (window.innerWidth <= 768) {
