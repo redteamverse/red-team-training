@@ -3395,55 +3395,51 @@ border-radius:5px;
     display: none;
   }
 }  
-/* ICON BOX */
-.footer-social a {
-  width: 40px;
-  height: 40px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  
-}  
-  
-  
-.footer-social a::after {
-  display: none !important;
-  content: none !important;
-}
-  
-  
-/* SOCIAL */
+/* =========================
+FOOTER SOCIAL
+========================= */
+
 .footer-social {
   display: flex;
   gap: 12px;
   margin-top: 10px;
 }
-/* ICON */
-.footer-social i {
-  width: 18px;
-  height: 18px;
-  color: #ffffff;
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  color: #fff;
+
+  transition: all 0.25s ease;
 }
+
+/* COLORS */
+.social-icon.twitter { background: #000; }
+.social-icon.linkedin { background: #0077B5; }
+.social-icon.discord { background: #5865F2; }
+
 /* HOVER */
-.footer-social a:hover {
-  background: #ef4444;
+.social-icon:hover {
   transform: translateY(-3px);
-}  
-/* FOOTER TEXT */
-.footer-copy {
-  margin-top: 15px;
-  font-size: 13px;
-  color: #64748b;
-}  
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
   
- .footer-social svg {
-  width: 18px;
-  height: 18px;
-  color: #ffffff;
-} 
+/* REMOVE RED UNDERLINE FROM SOCIAL ICONS */
+.footer-social a::after {
+  display: none !important;
+}
+
+.footer-social a {
+  text-decoration: none !important;
+}  
   
 .why-section{
   padding:80px 20px;
@@ -4492,7 +4488,6 @@ PRICING BOX
   gap: 5px;
   margin-bottom: 6px;
 } 
-  
 
 </style>
 </head>
@@ -6143,6 +6138,24 @@ Thanks,
       </ul>
     </div>
 
+    <div class="footer-block">
+  <h4>Follow Us</h4>
+  <div class="footer-social">
+
+    <a href="https://twitter.com/AlteredSecurity" target="_blank" class="social-icon twitter" aria-label="Twitter">
+      <i class="fab fa-x-twitter"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/company/alteredsecurity/" target="_blank" class="social-icon linkedin" aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://discord.com/invite/vcEwaRMwJe" target="_blank" class="social-icon discord" aria-label="Discord">
+      <i class="fab fa-discord"></i>
+    </a>
+
+  </div>
+</div>
   </div>
 
   <!-- Footer Bottom -->
@@ -6167,7 +6180,7 @@ SIDE FLOATING CTA
 
   <!-- Trigger -->
   <div class="side-cta-trigger" id="sideTrigger">
-    <span class="cta-arrow"><i data-lucide="ticket-percent"></i></span>
+    <span class="cta-arrow"><i data-lucide="plus"></i></span>
   </div>
 
   <!-- Panel -->
@@ -6183,8 +6196,8 @@ SIDE FLOATING CTA
 
   </div>
 
-</div>
-  
+</div> 
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
