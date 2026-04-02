@@ -77,7 +77,7 @@ p {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-
+   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1832,8 +1832,7 @@ gap:22px;
    HEADER BASE
 ========================= */
 
-  
-  
+ 
 .site-header {
   position: fixed;
   top: 40px;
@@ -1862,18 +1861,16 @@ gap:22px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
-/* =========================
-   HEADER LAYOUT (3 SECTION)
-========================= */
 .header-inner {
-  max-width: 1380px; /* 🔥 more breathing room */
+  max-width: 1380px;
   margin: 0 auto;
-  padding: 16px 40px;
+  padding: 16px 32px;
 
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
 }
+
 
 /* shrink */
 .site-header.is-solid .header-inner {
@@ -1927,12 +1924,12 @@ gap:22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  max-width: 720px;  /* 🔥 prevents stretch */
+ 
+  gap: 18px;
   width: 100%;
-  margin: 0 auto;     /* 🔥 perfectly centered */
+  margin: 0 auto;
+  flex-wrap: nowrap;   /* 🔥 prevent wrapping */
 }
-  
 .nav a {
   color: #111827;  
   font-weight: 500;
@@ -1949,8 +1946,8 @@ gap:22px;
   opacity: 0.9;
 }
 
-/* underline */
-.nav a::after {
+/* apply underline ONLY to normal links */
+.nav a:not(.dropdown-toggle)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -1961,10 +1958,21 @@ gap:22px;
   transition: width 0.25s ease;
 }
 
+.nav a:not(.dropdown-toggle):hover::after {
+  width: 100%;
+}
+
 .nav a:hover::after {
   width: 100%;
 }
 
+.nav-item > .dropdown-toggle::after {
+  content: "▾";
+  font-size: 11px;
+  margin-left: 6px;
+  display: inline-block;
+  color: #111827;
+}  
 /* active */
 .nav a.active {
   color: #e53935;
@@ -1986,7 +1994,7 @@ gap:22px;
   display: flex;
   align-items: center;
   gap: 12px;
-
+  justify-self: end;
   margin-left: 40px; /* 🔥 creates strong separation */
 }
 /* CTA BUTTON */
@@ -3754,9 +3762,10 @@ color:#B91C1C;
 body.menu-open {
   overflow: hidden;
 }  
-  
+ 
 .menu-open .site-header {
   opacity: 0;
+   z-index: 1000;
 }  
 /* =========================
 MOBILE MENU (FIXED)
@@ -3764,38 +3773,58 @@ MOBILE MENU (FIXED)
 /* =========================
 MOBILE MENU (FINAL FIX)
 ========================= */
+/* =========================
+FORCE FULLSCREEN MENU (FINAL FIX)
+========================= */
+
 .mobile-menu {
-  position: fixed;
-  top: 48px; /* 🔥 cover header */
-  right: -100%;
-  width: 260px;
-  height: 100vh;
+  position: fixed !important;
+  backdrop-filter: blur(8px);
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
   background: #fff;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100vh !important;
+  z-index: 999999 !important;
+  transform: translateY(-100%);
+  opacity: 1;
+}
 
-  padding: 20px; /* ❌ REMOVE top padding */
-
+/* OPEN STATE */
+.mobile-menu.open {
+  transform: translateY(0);
+  z-index: 99998 !important;
+}
+  
+.menu-content {
+  padding: 80px 24px 24px; /* space for header + breathing */
   display: flex;
   flex-direction: column;
-  gap: 16px;
-
-  transition: 0.3s ease;
-  z-index: 3000; /* 🔥 above header */
+  gap: 20px;
 }
 
-/* OPEN */
-.mobile-menu.open {
-  right: 0;
-}
-.menu-content {
-  margin-top: 60px; /* 👈 header height */
-}
 /* LINKS */
 .mobile-menu a {
   color: #111;
   font-size: 14px;
   font-weight: 600;
 }
+.menu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #E5E7EB;
+}
 
+.menu-top button {
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 /* =========================
 OVERLAY
 ========================= */
@@ -4120,39 +4149,48 @@ DROPDOWN WRAPPER
 /* =====================
 MENU
 ===================== */
-/* DROPDOWN MENU */
+/* dropdown menu */
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 120%;
   left: 0;
 
   background: #fff;
-  min-width: 240px;
-  padding: 8px 0;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
 
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  min-width: 200px;
 
-  display: none; /* 🔥 FIX */
-  z-index: 2000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.25s ease;
+
+  z-index: 999;
 }
+  
+  
 
-/* SHOW ON HOVER */
+/* show on hover */
 .nav-item:hover .dropdown-menu {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-/* ITEMS */
+/* dropdown links */
 .dropdown-menu a {
   display: block;
-  padding: 10px 16px;
-  color: #111;
-  font-size: 14px;
-  text-decoration: none;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #111827;
 }
 
 .dropdown-menu a:hover {
-  background: #F3F4F6;
+  background: #F9FAFB;
 }
   
 /* Mobile dropdown */
@@ -4162,6 +4200,23 @@ MENU
   transform: translateY(0);
 }  
   
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+  
+.dropdown-toggle::after {
+  content: "▾";
+  font-size: 10px;
+  margin-left: 6px;
+  display: inline-block;   /* 🔥 important */
+  color: #111827;          /* ensure visible */
+}  
+  
+.nav .dropdown-toggle::after {
+  content: "▾";
+}  
 /* =====================
 MOBILE DROPDOWN FIX
 ===================== */
@@ -4169,6 +4224,7 @@ MOBILE DROPDOWN FIX
   display: block;
   width: 100%;
 }
+
 
 /* Make toggle full width */
 .mobile-menu .dropdown-toggle {
@@ -4178,17 +4234,24 @@ MOBILE DROPDOWN FIX
   border-bottom: 1px solid #E5E7EB;
 }
 
+
+  
 /* Hide dropdown by default */
 .mobile-menu .dropdown-menu {
   display: none;
   position: static; /* 🔥 VERY IMPORTANT */
   box-shadow: none;
   padding-left: 10px;
+    max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
 /* Show when active */
 .mobile-menu .nav-item.active .dropdown-menu {
   display: block;
+  margin-top: 10px;
+  max-height: 500px; /* enough for content */
 }  
   
   .expect-cta{
@@ -4418,6 +4481,8 @@ PRICING BOX
   gap: 5px;
   margin-bottom: 6px;
 } 
+  
+
 </style>
 </head>
 
@@ -4446,23 +4511,44 @@ PRICING BOX
     <!-- CENTER: NAV -->
     <nav class="nav">
 
-      <a href="#training">Programs</a>  
+       <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Programs ▾</a>
 
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTE</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CETP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTE</a>
+        </div>
+      </div>
 
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Passes</a>
+       <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Conference ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Overview</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Why Attend</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Speakers</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Agenda</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Pass</a>
+        </div>
+      </div>     
 
       <!-- 🔥 AltSecCON 2026 DROPDOWN -->
       <div class="nav-item dropdown">
         <a href="#" class="dropdown-toggle">AltSecCON 2026 ▾</a>
 
         <div class="dropdown-menu">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">Overview</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon26-v3.html">Overview</a>
           <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
           <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
           <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
         </div>
       </div>
+       <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Passes</a>
 
       <!-- 🔥 Past Events DROPDOWN -->
       <div class="nav-item dropdown">
@@ -4497,25 +4583,53 @@ PRICING BOX
 </header>
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
+  <div class="menu-top">
+  <span>Menu</span>
+  <button id="menuClose">&times;</button>
+</div>
   <div class="menu-content">
 
-    <a href="#training">Programs</a>   
+     <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Programs ▾</a>
 
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Conference</a>  
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTE</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CETP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTE</a>
+        </div>
+      </div>  
 
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Passes</a>
+      <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Conference ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Overview</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Why Attend</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Speakers</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Agenda</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Pass</a>
+        </div>
+      </div>
+
+    
 
     <!-- AltSecCON 2026 -->
     <div class="nav-item dropdown">
       <a href="#" class="dropdown-toggle">AltSecCON 2026 ▾</a>
 
       <div class="dropdown-menu">
-        <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">Overview</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon26-v3.html">Overview</a>
         <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
         <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
         <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
       </div>
     </div>
+    
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Passes</a>
 
     <!-- Past Events -->
     <div class="nav-item dropdown">
@@ -6026,6 +6140,7 @@ Thanks,
       © <span id="footerYear"></span> AltSecCON. All rights reserved.
     </p>
   </div>
+  
 </section>
   
 <!-- =====================
@@ -6183,34 +6298,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* =========================
-     MOBILE MENU
-  ========================= */
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const overlay = document.getElementById("menuOverlay");
 
-  if (hamburger && mobileMenu && overlay) {
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      mobileMenu.classList.toggle("open");
-      overlay.classList.toggle("show");
-    });
-
-    overlay.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      mobileMenu.classList.remove("open");
-      overlay.classList.remove("show");
-    });
-
-    document.querySelectorAll(".mobile-menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        mobileMenu.classList.remove("open");
-        overlay.classList.remove("show");
-      });
-    });
-  }
 
   /* =========================
      FOOTER YEAR
@@ -6288,7 +6376,66 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+  
+  document.addEventListener("DOMContentLoaded", function () {
 
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("menuOverlay");
+  const closeBtn = document.getElementById("menuClose");
+
+  if (!hamburger || !mobileMenu) return;
+
+  // OPEN MENU
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.add("open");
+    if (overlay) overlay.classList.add("show");
+    document.body.classList.add("menu-open");
+  });
+
+  // CLOSE MENU (X button)
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      if (overlay) overlay.classList.remove("show");
+      document.body.classList.remove("menu-open");
+    });
+  }
+
+  // CLOSE ON OVERLAY
+  if (overlay) {
+    overlay.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      overlay.classList.remove("show");
+      document.body.classList.remove("menu-open");
+    });
+  }
+
+  // CLOSE ON LINK CLICK
+  document.querySelectorAll(".mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      if (overlay) overlay.classList.remove("show");
+      document.body.classList.remove("menu-open");
+    });
+  });
+
+  // DROPDOWN SUPPORT
+  document.querySelectorAll(".mobile-menu .dropdown-toggle").forEach(toggle => {
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const parent = this.parentElement;
+
+      document.querySelectorAll(".mobile-menu .nav-item").forEach(item => {
+        if (item !== parent) item.classList.remove("active");
+      });
+
+      parent.classList.toggle("active");
+    });
+  });
+
+});
   /* =========================
      TESTIMONIAL SLIDER
   ========================= */
@@ -6310,33 +6457,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>  
-<script>
-document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
-  toggle.addEventListener("click", function(e) {
-    e.preventDefault();
 
-    const parent = this.parentElement;
-    parent.classList.toggle("active");
-  });
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("menuOverlay");
+  const closeBtn = document.getElementById("menuClose");
+
+  console.log("hamburger:", hamburger);
+  console.log("mobileMenu:", mobileMenu);
+
+  // 🔥 HARD TEST CLICK
+  if (hamburger) {
+    hamburger.onclick = function () {
+      console.log("CLICK WORKING");
+
+      mobileMenu.classList.add("open");
+
+      if (overlay) overlay.classList.add("show");
+      document.body.classList.add("menu-open");
+    };
+  }
+
+  // CLOSE BUTTON
+  if (closeBtn) {
+    closeBtn.onclick = function () {
+      mobileMenu.classList.remove("open");
+      if (overlay) overlay.classList.remove("show");
+      document.body.classList.remove("menu-open");
+    };
+  }
+
 });
-</script>
-<script>
-<script>
-document.querySelectorAll(".mobile-menu .dropdown-toggle").forEach(toggle => {
-  toggle.addEventListener("click", function(e) {
-    e.preventDefault();
+  
+document.addEventListener("click", function (e) {
 
-    const parent = this.parentElement;
+  const toggle = e.target.closest(".mobile-menu .dropdown-toggle");
+  if (!toggle) return;
 
-    // Close others (optional but better UX)
-    document.querySelectorAll(".mobile-menu .nav-item").forEach(item => {
-      if (item !== parent) item.classList.remove("active");
-    });
+  e.preventDefault();
 
-    parent.classList.toggle("active");
+  const parent = toggle.parentElement;
+
+  // close others
+  document.querySelectorAll(".mobile-menu .nav-item").forEach(item => {
+    if (item !== parent) item.classList.remove("active");
   });
-});
+
+  // toggle current
+  parent.classList.toggle("active");
+});  
 </script>
-</script>  
+ 
 </body>
 </html>
