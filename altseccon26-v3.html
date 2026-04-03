@@ -449,97 +449,100 @@ font-size:0.8rem;
 /* =====================
    TRUST SECTION
 ===================== */
+/* SECTION */
 .trust-section {
-  background: var(--offwhite);
-  color: var(--dark);
-  padding: var(--space-md) 24px;
+  background: linear-gradient(to bottom, #ffffff, #F9FAFB);
+  padding: 90px 20px;
+  text-align: center;
 }
 
 .trust-container {
   max-width: 1000px;
-  margin: 0 auto;
-}
-
-.trust-section h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.trust-intro {
-  font-size: 1rem;
-  color: var(--muted);
-  max-width: 640px;
-  margin-bottom: 28px;
-}
-
-.trust-logos{
-display:grid;
-grid-template-columns:repeat(6,1fr);
-gap:32px;
-align-items:center;
-margin:32px auto 28px; /* adds space below logos */
-max-width:720px;
+  margin: auto;
 }
   
-.trust-label{
-font-size:0.9rem;
-color:var(--muted);
-margin-top:8px;
-margin-bottom:18px;
-}
-    
-.trust-logos img{
-max-height:38px;
-width:auto;
-object-fit:contain;
-margin:auto;
-filter:grayscale(100%);
-opacity:.75;
-transition:opacity .2s ease;
-}
-  
-@media (hover:hover){
-.trust-logos img:hover{
-opacity:1;
-}
-}
-
-/* disclaimer */
-.trust-note{
-font-size:0.72rem;
-color:#6B7280;
-margin-top:16px; /* space above disclaimer */
-max-width:520px;
-line-height:1.5;
-  
-}
-
-@media (max-width:768px){
-
-.trust-logos{
-grid-template-columns:repeat(3,1fr);
-gap:28px;
-}
-
-}
-
-@media (max-width:480px){
-
-.trust-logos{
-grid-template-columns:repeat(2,1fr);
-gap:24px;
-}
-
-.trust-label{
-font-size:0.85rem;
-}
-
-.trust-note{
-font-size:0.7rem;
-}
-
+.trust-section {
+  background: linear-gradient(to bottom, #ffffff, #F9FAFB);
+  padding: 90px 20px;
+  text-align: center;
 }  
+
+/* TITLE */
+.trust-intro {
+  max-width: 600px;
+  margin: 10px auto 30px;
+  color: #6B7280;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.trust-item {
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+/* subtle shadow only on hover */
+.trust-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border-color: #d1d5db;
+}
+
+.trust-item img {
+  max-height: 30px;
+  max-width: 100%;
+
+  filter: grayscale(100%);
+  opacity: 0.6;
+
+  transition: all 0.3s ease;
+}
+
+/* hover → reveal color */
+.trust-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+.trust-divider {
+  width: 60px;
+  height: 3px;
+  background: #B91C1C;
+  margin: 20px auto;
+  border-radius: 2px;
+}  
+
+/* NOTE */
+.trust-note {
+  font-size: 12px;
+  color: #6B7280;
+  margin-top: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .trust-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 /* =====================
    TRAINING PROGRAMS
 ===================== */
@@ -840,13 +843,11 @@ background:#F3F4F6;
 }
   /* Section eyebrow / label */
 .section-eyebrow {
-text-transform:uppercase;
-letter-spacing:.2em;
-font-size:.75rem;
-color:#3b82f6;
-margin-bottom:14px;
-  
-
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2563EB; /* subtle blue accent */
+  margin-bottom: 10px;
 }
   
 
@@ -960,11 +961,22 @@ box-shadow:0 4px 10px rgba(185,28,28,0.2);
 
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
-background-color: #1E3A8A;
-  color: #ffffff; 
+  color: #1E3A8A; 
   transform:translateY(-2px);
 }
 
+  .btn-ghost{
+  background-color:transparent;
+  color: #FFFFFF;
+  border-color: #ffffff; 
+  }  
+  
+  .btn-ghost:hover{
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+  border-color: #1E3A8A;
+  transform:translateY(-2px);
+  }  
 
 .btn-tertiary {
   background-color: #1E3A8A; /* dark blue */
@@ -1017,25 +1029,62 @@ CERTIFICATION & OUTCOMES
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 720px;
-  margin-bottom: var(--space-md);
+  margin-bottom: 10px;
+
 }
 
 .certification-points {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-bottom: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
 }
+  
+.cert-badge {
+  display: inline-block;
+  font-size: 12px;
+  color: #B91C1C;
+  background: #FEE2E2;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin: 12px 0 20px;
+}  
+.cert-highlight {
+  font-size: 12px;
+  color: #B91C1C;
+  margin-top: 6px;
+  font-weight: 600;
+}  
 
 .certification-card {
-  background: var(--offwhite);
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
   padding: 22px;
-  border-left: 3px solid #B91C1C; /* brand red */
-  padding-left: 22px; /* compensate for border */
+
+  transition: all 0.3s ease;
+  position: relative;
 }
 
+/* subtle left accent instead of full border */
+.certification-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  bottom: 20px;
+  width: 3px;
+  background: #B91C1C;
+  border-radius: 2px;
+}
+
+/* hover */
+.certification-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+  
 .certification-card h3 {
   font-size: 0.9rem;
   font-weight: 700;
@@ -1069,6 +1118,18 @@ CERTIFICATION & OUTCOMES
   }
 }
 
+.certification-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .certification-points {
+    grid-template-columns: 1fr;
+  }
+}  
 /* Responsive */
 @media (max-width: 900px) {
   .certification-points {
@@ -4809,7 +4870,7 @@ SCROLL TO TOP BUTTON
 
     <div class="actions">
       <a href="#training" class="btn btn-primary">Explore Training Programs</a>
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html" class="btn btn-secondary">View Conference</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html" class="btn btn-ghost">View Conference</a>
     </div>
   </div>
 
@@ -4819,12 +4880,11 @@ SCROLL TO TOP BUTTON
     <a href="#experience">Overview</a>
     <a href="#why">Why Attend</a>  
     <a href="#training">Training</a>
+     <a href="#certification">Certification</a>   
     <a href="#conference">Conference</a>  
     <a href="#glimpse">Highlights</a>    
-    <a href="#tickets">Passes</a> 
-    <a href="#community">Community</a> 
-    <a href="#instructors">Instructors</a>   
-    <a href="#certification">Certification</a>    
+    <a href="#tickets">Passes</a>     
+    <a href="#instructors">Instructors</a>       
     <a href="#event">Event Details</a>
     <a href="#gallery">Gallery</a> 
     <a href="#testimonials">Testimonials</a>     
@@ -5016,6 +5076,52 @@ SCROLL TO TOP BUTTON
   </div>
 
 </section>
+  <!-- TRUST -->
+<section class="trust-section" id="community">
+  <div class="trust-container">
+   
+    <span class="section-eyebrow">Community Trust</span>
+
+    <h2>Trusted by Security Professionals</h2>     
+    <p class="trust-intro">
+      Security professionals across India joined AltSecCON for hands-on red team training and real-world collaboration.
+    </p>
+    
+    <!-- LOGO GRID -->
+    <div class="trust-grid">
+        
+      <div class="trust-item">        
+        <img src="https://redteamverse.github.io/red-team-training/images/microsoft.png">
+      </div>
+        
+      <div class="trust-item">
+        <img src="https://redteamverse.github.io/red-team-training/images/security.png">
+      </div>
+
+      <div class="trust-item">
+        <img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg">
+      </div>
+
+      <div class="trust-item">
+        <img src="https://redteamverse.github.io/red-team-training/images/wipro.png">
+      </div>
+
+      <div class="trust-item">
+        <img src="https://redteamverse.github.io/red-team-training/images/RS.jpg">
+      </div>
+
+      <div class="trust-item">
+        <img src="https://redteamverse.github.io/red-team-training/images/SST.png">
+      </div>
+
+    </div>
+
+    <p class="trust-note">
+      Logos represent organizations where attendees work and do not imply sponsorship.
+    </p>
+
+  </div>
+</section>  
 <!-- WHAT AltSecCON DELIVERED -->
 
 <!-- TRAINING PROGRAMS -->
@@ -5234,6 +5340,65 @@ SCROLL TO TOP BUTTON
 
   </div>
 </section>
+<!-- CERTIFICATION & OUTCOMES -->
+<section class="certification-section" id="certification">
+  <div class="certification-container">
+
+    <span class="section-eyebrow">Certification & Outcomes</span>
+    <h2>Earn Industry-Recognized Certification</h2>
+     
+    <p class="certification-intro">
+      Complete the training to receive your certification, including one attempt for the selected course
+
+    </p>
+     <div class="cert-badge">
+  ✔ Included with every training program
+</div>
+    <div class="certification-points">
+  
+
+  <div class="certification-card">
+    <div class="certification-icon">
+      <i data-lucide="badge-check"></i>
+    </div>
+    <h3>Issued After Full Training</h3>
+    <p>
+      Course Completion Certificates are issued only after attending the complete training
+      duration, including all practical and instructor-led sessions.
+    </p>
+  </div>
+
+  <div class="certification-card">
+    <div class="certification-icon">
+      <i data-lucide="check-circle"></i>
+    </div>
+    <h3>Completion-Based Validation</h3>
+    <p>
+      The certification reflects successful course completion
+      and learning outcomes — not just attendance.
+    </p>
+  </div>
+  <div class="certification-card">
+    
+  <div class="certification-icon">
+    <i data-lucide="award"></i>
+  </div>
+   
+  <h3>Course-Specific Certification Attempt</h3>
+
+  <p>
+  Each participant is granted one certification attempt for their selected course, designed to validate real-world red team expertise after training.  
+  
+  </p>
+
+</div>    
+
+</div>    
+
+  </div>
+</section>  
+
+  
   
 <!-- =====================
 ALTSECCON CONFERENCE SECTION
@@ -5361,8 +5526,6 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
   Get a Glimpse of <span>AltSecCON 2025</span>
    </h2>
 
-<div class="section-divider"></div>
-
     <p class="section-desc">
       A quick look at the experience, energy, and real-world learning that defines AltSecCON.
     </p>
@@ -5456,37 +5619,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
 
 </section>  
 
-  <!-- TRUST -->
-<section class="trust-section" id="community">
-  <div class="trust-container">
 
-    <span class="section-eyebrow">Community trust</span>
-
-    <h2>Trusted by the Security Community</h2>
-
-    <p class="trust-intro">
-      Security professionals from across India joined AltSecCON for hands-on Red Team training and professional collaboration.
-    </p>
-
-    <p class="trust-label">
-      Professionals joined AltSecCON from organizations such as
-    </p>
-
-    <div class="trust-logos community-logos">
-      <img src="https://redteamverse.github.io/red-team-training/images/microsoft.png" alt="">
-      <img src="https://redteamverse.github.io/red-team-training/images/security.png" alt="">
-      <img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg" alt="">
-      <img src="https://redteamverse.github.io/red-team-training/images/wipro.png" alt="">
-      <img src="https://redteamverse.github.io/red-team-training/images/RS.jpg" alt="">
-      <img src="https://redteamverse.github.io/red-team-training/images/SST.png" alt="">
-    </div>
-
-    <p class="trust-note">
-      Logos represent organizations where attendees work and do not imply sponsorship.
-    </p>
-
-  </div>
-</section> 
   
  <!-- INSTRUCTOR SECTION -->
 <section id="instructors" class="instructor-section">
@@ -5546,55 +5679,6 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
     </div>-->
   </div> 
 </section>
-<!-- CERTIFICATION & OUTCOMES -->
-<section class="certification-section" id="certification">
-  <div class="certification-container">
-
-    <span class="section-eyebrow">Certification & Outcomes</span>
-    <h2>Course Completion Certification</h2>
-
-    <p class="certification-intro">
-      Participants who successfully complete the full instructor-led training
-      receive an official course completion certificate issued by Altered Security.
-      This certification validates hands-on participation and successful completion
-      of the program.
-    </p>
-
-    <div class="certification-points">
-
-  <div class="certification-card">
-    <div class="certification-icon">
-      <i data-lucide="badge-check"></i>
-    </div>
-    <h3>Issued After Full Training</h3>
-    <p>
-      Certificates are issued only after attending the complete training
-      duration, including all practical and instructor-led sessions.
-    </p>
-  </div>
-
-  <div class="certification-card">
-    <div class="certification-icon">
-      <i data-lucide="check-circle"></i>
-    </div>
-    <h3>Completion-Based Validation</h3>
-    <p>
-      The certification reflects successful course completion
-      and learning outcomes — not just attendance.
-    </p>
-  </div>
-
-</div>
-
-    <div class="certification-cta">
-      <a href="#" class="btn-secondary">
-        View Certification Details →
-      </a>
-    </div>
-
-  </div>
-</section>  
-
 
 <!-- Event Overview-->
   <section class="event-structure-section" id="event">
@@ -5648,8 +5732,8 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
         <div><strong>Scheduled breaks:</strong> Tea breaks and lunch included</div>
       </div>
 
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html" class="btn-secondary">
-        View full event details →
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html" class="btn btn-tertiary">
+        View Full Event Details →
       </a>
     </div>
 
@@ -5802,7 +5886,7 @@ Thanks,
     </div>
 
     <div class="gallery-cta ">
-      <a href="/gallery" class="btn-secondary">
+      <a href="/gallery" class="btn btn-tertiary">
         View Full Gallery →
       </a>
     </div>
