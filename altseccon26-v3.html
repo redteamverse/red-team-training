@@ -18,7 +18,7 @@
 }
 /* Kill all native + border-based underlines */
 a {
-  text-decoration: none !important;
+  text-decoration: underline;
   
 }
 
@@ -846,7 +846,7 @@ background:#F3F4F6;
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #2563EB; /* subtle blue accent */
+  color: #2B2B50; /* subtle blue accent */
   margin-bottom: 10px;
 }
   
@@ -858,7 +858,7 @@ background:#F3F4F6;
   letter-spacing:.2em;
   text-transform:uppercase;
   font-size:.75rem;
-  color:#3b82f6; /* or your color */
+  color:#2B2B50; /* or your color */
   margin-bottom:14px;
 }  
 /* Brand interaction for links */
@@ -978,25 +978,20 @@ box-shadow:0 4px 10px rgba(185,28,28,0.2);
   transform:translateY(-2px);
   }  
 
-.btn-tertiary {
-  background-color: #1E3A8A; /* dark blue */
-  color: #FFFFFF;
-  border: 1px solid #1E3A8A;
-  padding: 12px 22px;
-  border-radius: 6px;
+.btn-tertiary { 
+  
+  color: #1E3A8A !important; 
   font-weight: 600;
   font-size: 0.85rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 6px 14px rgba(30, 58, 138, 0.25);
+  transition: all 0.2s ease; 
 }
 
 /* Hover */
 .btn-tertiary:hover,
 .btn-tertiary:focus-visible {
-  background-color: #3B82F6; /* light blue */
-  border-color: #3B82F6;
+  color: #2B2B50 !important;
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(59, 130, 246, 0.35);
+  
 }
 
 /* Active click */
@@ -3108,9 +3103,10 @@ RESPONSIVE
 }
 
 .timeline-header h2 {
-  font-size: 14px;
-  color: #ef4444;
-  margin-bottom: 8px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 16px;
 }
 
 .timeline-header h3 {
@@ -3937,13 +3933,7 @@ LINK SPACING
   border-bottom: 1px solid #E5E7EB;
 }
 
-/* =========================
-   EXTRA PREMIUM TOUCH
-========================= */
 
-/* =========================
-   SUB NAV (SECOND HEADER)
-========================= */
 /* =========================
    SECTION NAV (SECOND HEADER)
 ========================= */
@@ -3993,12 +3983,12 @@ LINK SPACING
 
 /* hover */
 .section-nav a:hover {
-  color: #1D4ED8;
+  color: #1E3A8A;
 }
 
 /* active */
 .section-nav a.active {
-  color: #1D4ED8;
+  color: #2B2B50;
   font-weight: 600;
 }
 
@@ -4013,7 +4003,7 @@ LINK SPACING
   height: 2px;
   width: 0;
 
-  background: #2563EB;
+  background: #1E3A8A;
 
   transform: translateX(0);   /* 🔥 use transform instead of left */
   transition: transform 0.3s ease, width 0.3s ease;
@@ -4353,10 +4343,18 @@ MOBILE DROPDOWN FIX
 
 .course-actions a {
   font-size: 13px;
+  color: #2B2B50;
   text-decoration: none;
   font-weight: 600;
 }
 
+.course-actions a:hover {
+  font-size: 13px;
+  color: #1E3A8A;
+  text-decoration: none;
+  font-weight: 600;
+}  
+  
 .btn-book {
   background: #B91C1C;
   color: #ffffff !important;  /* 🔥 force white text */
@@ -4870,10 +4868,10 @@ SCROLL TO TOP BUTTON
 
     <div class="actions">
       <a href="#training" class="btn btn-primary">Explore Training Programs</a>
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html" class="btn btn-ghost">View Conference</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html" class="btn btn-ghost">View Conference Details</a>
     </div>
   </div>
-
+  
 </section>
   <nav class="section-nav" id="sectionNav">
   <div class="section-nav-container">
@@ -4902,7 +4900,7 @@ SCROLL TO TOP BUTTON
     <div class="timeline-header">
       <span class="section-eyebrow">What to Expect</span>
 
-      <h3>What You’ll Experience at <span class="time-sec">AltSecCON</span></h3>
+      <h2>What You’ll Experience at <span class="time-sec">AltSecCON</span></h2>
 
       <p>
         Join AltSecCON for an immersive, hands-on cybersecurity experience designed to deliver real-world red teaming skills, meaningful connections, and long-term career value.
@@ -4992,7 +4990,7 @@ SCROLL TO TOP BUTTON
 </section>
   
  <div class="expect-cta">
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-tertiary">Reserve Your Seat</a>
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Reserve Your Seat</a>
     </div>
   
 <!-- =========================
@@ -5335,7 +5333,7 @@ SCROLL TO TOP BUTTON
     </div>
 
     <div class="course-grid-cta">
-      <a href="#" class="btn btn-tertiary">View All Training Programs →</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-training.html" class="btn-tertiary">View All Training Programs →</a>
     </div>
 
   </div>
@@ -5508,7 +5506,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
 </div>
 
 <div class="conference-cta">
-<a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html" class="btn btn-tertiary">View Conference Details</a>
+<a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html" class="btn-tertiary ->">View Conference Details →</a>
 </div>
 
 </div>
@@ -5554,7 +5552,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
 
   </div>
  <div class="instructor-card-cta">
-      <a href="https://redteamverse.github.io/red-team-training/altseccon25-v1.html" class="btn btn-tertiary">View AltSecCON 2025 →</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon25-v1.html" class="btn-tertiary">View AltSecCON 2025 →</a>
     </div>
 </section>    
 <section class="ticket-section" id="tickets">
@@ -5638,7 +5636,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
       <div class="instructor-card">
         <img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" alt="Nikhil Mittal">
         <h3>Nikhil Mittal</h3>
-        <p class="instructor-role">Lead Red Team Instructor</p>
+        <p class="instructor-role">Lead Red Team Training</p>
          <p class="instructor-authority">
     Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
   </p>
@@ -5669,7 +5667,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
     </div>     
   
     <div class="instructor-card-cta">
-      <a href="#" class="btn btn-tertiary">Explore Training Programs →</a>
+      <a href="#" class="btn-tertiary">Explore Training Programs →</a>
     </div>
 
     <!-- Supporting Images 
@@ -5732,7 +5730,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
         <div><strong>Scheduled breaks:</strong> Tea breaks and lunch included</div>
       </div>
 
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html" class="btn btn-tertiary">
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html" class="btn-tertiary">
         View Full Event Details →
       </a>
     </div>
@@ -5886,7 +5884,7 @@ Thanks,
     </div>
 
     <div class="gallery-cta ">
-      <a href="/gallery" class="btn btn-tertiary">
+      <a href="/gallery" class="btn-tertiary">
         View Full Gallery →
       </a>
     </div>
