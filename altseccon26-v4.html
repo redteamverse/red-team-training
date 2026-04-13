@@ -89,6 +89,17 @@ section h3 {
   max-width: 420px;
 } 
   
+  
+ .supporting-body strong  {
+  font-size: 0.875rem;
+  font-weight:700;
+  color: #ffffff;   
+  line-height: 1.6;
+  max-width: 420px;
+}  
+  
+  
+  
 .supporting-body {
   margin-bottom: 0; /* reset */
 }
@@ -96,6 +107,27 @@ section h3 {
 .supporting-body + .supporting-body {
   margin-top: 8px;
 }  
+  
+.main-content  {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #4B5563;   
+  line-height: 1.6;
+  max-width: 420px;
+} 
+  
+.main-content li  {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #4B5563;   
+  line-height: 1.6;
+  max-width: 420px;
+}   
+  
+.main-content {
+  margin-bottom: 0; /* reset */
+  }
+  
   
 .main-body {
   font-size: 1rem;
@@ -563,8 +595,8 @@ font-size:0.8rem;
 
 /* NOTE */
 .trust-note {
-  font-size: 12px;
-  color: #6B7280;
+  font-size: 0.75rem;
+  color: #4B5563;
   margin-top: 20px;
 }
 
@@ -849,8 +881,8 @@ color: #111827;
 /* Operational details (time & breaks) */
 .event-structure-ops {
   margin-bottom: 28px;
-  font-size: 0.9rem;
-  color: #374151;
+  font-size: 0.875rem;
+  color: #4B5563;
   display: flex;
   flex-wrap: wrap;
   gap: 18px 32px;
@@ -858,7 +890,7 @@ color: #111827;
 
 .event-structure-ops strong {
   font-weight: 600;
-  color: #111827;
+  color:#111827;
 }
   /* Section eyebrow / label */
 .section-eyebrow {
@@ -1052,10 +1084,10 @@ CERTIFICATION & OUTCOMES
   
 .cert-badge {
   display: inline-block;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #B91C1C;
   background: #FEE2E2;
-  padding: 6px 12px;
+  padding: 4px 8px;
   border-radius: 999px;
   font-weight: 600;
   margin: 12px 0 20px;
@@ -1373,15 +1405,6 @@ CONTACT US
 
 
 
-.contact-intro {
-  color: #6B7280;
-}  
-.contact-intro {
-  font-size: 1rem;
-  color: var(--dark);
-  margin-bottom: 32px;
-}
-
 /* FORM */
 .contact-form {
   display: flex;
@@ -1398,7 +1421,7 @@ CONTACT US
 .contact-form input,
 .contact-form textarea {
   padding: 14px 16px;
-  font-size: 0.9rem;
+  font-size: 0.8125rem;
   font-family: inherit;
   border-radius: 6px;
   border: 1px solid var(--border);
@@ -1416,7 +1439,7 @@ CONTACT US
 .contact-form button {
   align-self: flex-start;
   padding: 14px 30px;
-  font-size: 0.8rem;
+  font-size: 0.8125rem;
 }
 
 /* Responsive */
@@ -1588,22 +1611,16 @@ color: #111827;
   padding: 24px;
 }
 
-.testimonial-text {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #374151;
-  margin-bottom: 18px;
-}
-
 .testimonial-author strong {
   display: block;
   font-size: 0.9rem;
   color: var(--dark);
+  margin-top: 10px;
 }
 
 .testimonial-author span {
   font-size: 0.8rem;
-  color: #6B7280;
+  color: #4B5563;
 }
 
 @media (max-width: 1024px) {
@@ -1735,7 +1752,7 @@ font-weight: 600;
 letter-spacing:0.14em;
 text-transform:uppercase;
 background:#F9FAFB;  
-color:var(--muted);
+color:#4B5563;
 border:1px solid #E5E7EB;
 padding:5px 9px;
 border-radius:5px;
@@ -1810,15 +1827,15 @@ display:block;
   
 .instructor-role {
   font-size: 0.85rem;
-  color: var(--dark);
+  color: #1F2937; 
   margin-bottom: 4px;
 }
 
 .instructor-authority {
   margin-top: 10px;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   line-height: 1.45;
-  color: var(--muted);
+  color: #4B5563;
   max-width: 240px;
   margin-left: auto;
   margin-right: auto;
@@ -2369,16 +2386,25 @@ margin:32px 0 40px;
 }
 .conference-info-item strong{
 display:block;
-font-size:0.85rem;
+font-size:1.125rem;
 font-weight:700;
 margin-bottom:4px;
 color:#111827;
 }
 
 .conference-info-item span{
-font-size:0.9rem;
-color:#4B5563;
+font-size:0.875rem;
+color: #4B5563;
 }
+  
+  .trainer{
+display:block;
+font-size:1.125rem;
+font-weight:700;
+margin-bottom:4px;
+color:#111827;
+  }
+  
   
 @media (hover:hover){
   .conference-info-item:hover {
@@ -2640,7 +2666,12 @@ height:220px;
   text-align: center;
 }
 
-
+.form-title{
+  font-size: 1.125rem;
+  font-weight: 600;  
+  color: #111827;
+  margin-bottom: 32px;
+  }
 
 .contact-intro {
   font-size: 1rem;
@@ -2662,7 +2693,7 @@ height:220px;
   border-radius: 999px;
   border: 1px solid #E5E7EB;
   background: #F9FAFB;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -2685,12 +2716,7 @@ height:220px;
   display: block;
   opacity: 1;
 }
-.tab-content h3 {
-font-size: 1.25rem;
-font-weight: 600;
-margin-bottom: 8px;
-color: #111827;
-}
+
 
 /* Form */
 .form {
@@ -2791,9 +2817,10 @@ color: #111827;
 }
 
 .ticket-card li {
+  font-size: 0.9375;
+  font-weight: 400;
+  color:#111827;
   margin-bottom: 8px;
-  font-size: 0.9rem;
-  color: #374151;
 }
 
 /* Highlight */
@@ -2863,17 +2890,16 @@ TOP INFO CARDS
 }
 
 .venue-info-item strong {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: #6B7280;
+display:block;
+font-size:1.125rem;
+font-weight:700;
+margin-bottom:4px;
+color:#111827;
 }
 
 .venue-info-item span {
-  font-size: 0.95rem;
-  color: #111827;
-  font-weight: 600;
+font-size:0.875rem;
+color: #4B5563;
 }
 
 /* =====================
@@ -2900,8 +2926,9 @@ CONTENT SPLIT
 
 .venue-text li {
   margin-bottom: 10px;
-  font-size: 0.9rem;
-  color: #374151;
+  font-size: 0.9375;
+  font-weight: 400;
+  color:#4B5563;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -2961,7 +2988,7 @@ RESPONSIVE
   }
 
   .venue-text li {
-    font-size: 0.85rem;
+    font-size: 0.9375rem;
   }
 }  
 .faq-section {
@@ -2996,21 +3023,27 @@ RESPONSIVE
 .faq-question {
   width: 100%;
   text-align: left;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: clamp(1rem, 5vw, 1.25rem);
+  font-weight: 400;
   background: none;
   border: none;
   cursor: pointer;
   padding: 12px 0;
   position: relative;
+  color: #111827;
 }
+  
+  .faq-answer .supporting-body{
+      font-size: clamp(0.875rem, 5vw, 1rem);
+  }  
+  
 
 /* Arrow */
 .faq-question::after {
   content: "+";
   position: absolute;
   right: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   transition: transform 0.2s ease;
 }
 
@@ -3026,12 +3059,7 @@ RESPONSIVE
   transition: max-height 0.25s ease;
 }
 
-.faq-answer p {
-  font-size: 0.9rem;
-  color: #374151;
-  margin-top: 8px;
-  line-height: 1.6;
-}
+
 
 /* Open state */
 .faq-item.active .faq-answer {
@@ -3226,11 +3254,9 @@ font-size:0.75rem;
 font-weight: 600;  
 letter-spacing:0.14em;
 text-transform:uppercase;
-color:var(--muted);
 padding:15px 9px;
-
-}
-
+color: #4B5563;
+  }
 
 
 /* MAIN TITLE */
@@ -3241,12 +3267,6 @@ margin-bottom: 8px;
 color: #111827;
 }
 
-/* SIGNAL */
-.course-signal span {
-  font-size: 13px;
-  color: #64748b;
-  margin-right: 10px;
-}
 
 /* LINK */
 .course-card a {
@@ -4355,7 +4375,7 @@ PRICING BOX
 /* OLD PRICE */
 .old-price {
   text-decoration: line-through;
-  color: #9CA3AF;
+  color: #4B5563;
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -4412,7 +4432,7 @@ PRICING BOX
 .seat-badge {
   font-size: 0.8125rem;
   font-weight: 400;
-  color: #6B7280;
+  color: #4B5563;
   background: #F3F4F6;
   padding: 4px 10px;
   border-radius: 999px;
@@ -5508,7 +5528,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
       <!-- Primary Instructors -->
       <div class="instructor-card">
         <img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" alt="Nikhil Mittal">
-        <h3>Nikhil Mittal</h3>
+        <div class="trainer">Nikhil Mittal</div>
         <p class="instructor-role">Lead Red Team Training</p>
          <p class="instructor-authority">
     Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
@@ -5516,26 +5536,39 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
       </div>
       <div class="instructor-card">
         <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9696.jpg" alt="Manthan">
-        <h3>Manthan</h3>
-        <p class="supporting-body">Red Team Practitioner</p>
-      </div>    
+        <div class="trainer">Manthan</div>
+        <p class="instructor-role">Red Team Practitioner</p>
+        <p class="instructor-authority">
+    Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
+  </p>
+      </div>  
+      
    
      <div class="instructor-card">
         <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Manthan">
-        <h3>Hitesh</h3>
-        <p class="supporting-body">Red Team Practitioner</p>
+        <div class="trainer">Hitesh</div>
+        <p class="instructor-role">Red Team Practitioner</p>
+       <p class="instructor-authority">
+    Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
+  </p>
     </div>     
    
   
       <div class="instructor-card">
         <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="Manthan">
-        <h3>Amit</h3>
-        <p class="supporting-body">Red Team Practitioner</p>
+        <div class="trainer">Amit</div>
+        <p class="instructor-role">Red Team Practitioner</p>
+        <p class="instructor-authority">
+    Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
+  </p>
       </div>
       <div class="instructor-card">
         <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9759.jpg" alt="Manthan">
-        <h3>Vishal</h3>
-        <p class="supporting-body">Red Team Practitioner</p>
+        <div class="trainer">Vishal</div>
+        <p class="instructor-role">Red Team Practitioner</p>
+        <p class="instructor-authority">
+    Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
+  </p>
       </div>
     </div>     
   
@@ -5944,7 +5977,7 @@ Thanks,
 
       <!-- Left -->
       <div class="venue-text">
-        <p class="supporting-body">
+        <p class="main-content">
           Bengaluru is one of India’s leading technology hubs and home to a strong cybersecurity community. 
           AltSecCON brings both training and conference experiences together in a single venue to enable 
           continuous learning, collaboration, and interaction.
@@ -5989,7 +6022,7 @@ Thanks,
 
     <!-- Forms -->
     <div class="tab-content active" id="training1">
-      <p>Request Training Details</p>
+      <p class="form-title">Request Training Details</p>
       <form class="form">
         <input type="text" placeholder="Full Name" required>
         <input type="email" placeholder="Email" required>
@@ -6049,9 +6082,9 @@ Thanks,
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
+       <h3> <button class="faq-question">
           Who should attend AltSecCON?
-        </button>
+        </button></h3>
         <div class="faq-answer">
           <p class="supporting-body">
             AltSecCON is designed for security professionals including Red Teamers, penetration testers, 
@@ -6061,9 +6094,9 @@ Thanks,
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
+        <h3> <button class="faq-question">
           Do I need prior experience for the training?
-        </button>
+        </button></h3>
         <div class="faq-answer">
           <p class="supporting-body">
             Basic understanding of networking and security concepts is recommended. 
@@ -6132,7 +6165,7 @@ Thanks,
 
     <!-- Brand / About -->
     <div class="footer-block">
-      <h4>About AltSecCON</h4>
+      <p class="supporting-body"><strong>About AltSecCON</strong></p>
       <p class="supporting-body">
         AltSecCON is an in-person Red Team training initiative focused on
         instructor-led delivery, enterprise-aligned labs, and practical
@@ -6143,8 +6176,8 @@ Thanks,
     </div>
 
     <!-- Training Programs -->
-    <div class="footer-block">
-      <h4>Training Programs</h4>
+    <div class="footer-block">     
+      <p class="supporting-body"><strong>Training Programs</strong></p>
       <ul>
         <li><a href="/training/crtp">CRTP</a></li>
         <li><a href="/training/crte">CRTE</a></li>
@@ -6155,7 +6188,7 @@ Thanks,
     </div>
  <!-- Event -->
     <div class="footer-block">
-      <h4>Conference</h4>
+      <p class="supporting-body"><strong>Conference</strong></p>
       <ul>
         <li><a href="/instructors">Tickets</a></li>
         <li><a href="/event-structure">Event Schedule</a></li>
@@ -6167,8 +6200,8 @@ Thanks,
     </div>
     
     <!-- Event -->
-    <div class="footer-block">
-      <h4>Event</h4>
+    <div class="footer-block">   
+      <p class="supporting-body"><strong>Event</strong></p>
       <ul>
         <li><a href="/instructors">Venue</a></li>
         <li><a href="/event-structure">Event Schedule</a></li>
@@ -6181,8 +6214,8 @@ Thanks,
     
 
     <!-- Policies & Contact -->
-    <div class="footer-block">
-      <h4>Information</h4>
+    <div class="footer-block">     
+      <p class="supporting-body"><strong>Information</strong></p>
       <ul>
         <li><a href="/code-of-conduct">Code of Conduct</a></li>
         <li><a href="/policy">Policy</a></li>
@@ -6191,7 +6224,7 @@ Thanks,
     </div>
 
     <div class="footer-block">
-  <h4>Follow Us</h4>
+  <p class="supporting-body"><strong>Follow Us</strong></p>
   <div class="footer-social">
 
     <a href="https://twitter.com/AlteredSecurity" target="_blank" class="social-icon twitter" aria-label="Twitter">
