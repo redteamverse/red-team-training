@@ -216,23 +216,24 @@ section h3 {
 }  
   
 .hero h1 {
-  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   letter-spacing: -0.02em;
   color: #FFFFFF;
 }
-/* Edition pill */
+  
 .edition {
   display: inline-block;
-  padding: 8px 18px;
-  letter-spacing: 0.1rem;
+  padding: clamp(6px, 1vw, 10px) clamp(10px, 1.5vw, 16px);
+  letter-spacing: 0.08em;
   background: rgba(17, 24, 39, 0.45);
   color: #FFFFFF;
   text-transform: uppercase;
   border-radius: 999px;
-  font-size: 0.75rem;
-  margin-bottom: 18px;
+  font-size: clamp(0.7rem, 0.8vw, 0.85rem);
+  margin-bottom: clamp(16px, 2vw, 26px);
+  margin-top: 0;
 }
 
 /* Authority block */
