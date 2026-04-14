@@ -2208,14 +2208,14 @@ color:#111;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:25px;
+  text-align: left;
 }
 
 .justify-card{
 background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-text-align:center;
+border: 1px solid #E5E7EB;
+border-radius: 10px;
+padding: 18px 20px;
 transition:all 0.3s ease;
 }
 
@@ -2224,23 +2224,6 @@ transform:translateY(-6px);
 box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
-.justify-icon {
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(185, 28, 28, 0.08); /* same subtle red */
-  border-radius: 8px;
-  margin: 0 auto 14px; /* center in card */
-}
-
-/* Lucide SVG */
-.justify-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: #B91C1C;
-}
 
 @media (hover:hover){
   .justify-card:hover {
@@ -2351,14 +2334,16 @@ CONFERENCE INFO BAR
 .conference-info-item {
   display: flex;
   align-items: flex-start; 
+  gap: 14px;
   background: white;
   border: 1px solid #E5E7EB;
   padding: 18px;
   border-radius: 10px;
   max-width: 420px;
   width: 100%;
+  
 }
-
+  
 @media (max-width: 900px) {
 
   .conference-info {
@@ -2370,7 +2355,7 @@ CONFERENCE INFO BAR
     flex-direction: column;   /* 🔥 stack vertically */
     align-items: center;      /* center everything */
     text-align: center;       /* center text */
-
+    gap: 0px;
     max-width: 420px;
     width: 100%;
   }
@@ -2378,7 +2363,7 @@ CONFERENCE INFO BAR
   .icon-box {
     margin-bottom: 10px; /* space below icon */
   }
-
+  
 }
   
   
@@ -3324,6 +3309,10 @@ color: #111827;
   margin: 0 20px 20px;
 }
 
+.email-wrapper {
+  position: relative;
+  text-align: left;
+}  
 /* MOBILE */
 @media (max-width: 768px) {
   .conference-grid {
@@ -3332,6 +3321,7 @@ color: #111827;
 } 
 .email-wrapper {
   position: relative;
+  text-align: left;
 }
 
 /* COLLAPSED STATE */
@@ -3484,14 +3474,13 @@ FOOTER SOCIAL
   display: block;
 }  
 
-.justify-card .icon-box {
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10 auto;
+.justify-card .icon-box {  
+  display: flex;  
+  justify-content: left;
+  margin-bottom: 16px;
 }
 
+  
 .venue-info-item .icon-box {
 
   display: flex;
