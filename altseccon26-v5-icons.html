@@ -364,7 +364,30 @@ section h3 {
   border-radius:999px;
 }
 
+@media (max-width: 768px) {
 
+  .authority {
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .authority-capabilities {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .authority-capabilities div {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    line-height: 1.2;
+  }
+
+  /* 🔥 Force better wrapping (2 per row feel) */
+  .authority-capabilities div {
+    flex: 0 1 auto;
+  }
+
+}
 
 /* =====================
 AUTHORITY CAPABILITY TAGS
@@ -4704,11 +4727,11 @@ SCROLL TO TOP BUTTON
 
       <div class="authority-capabilities">
 
-        <span>Industry-leading in-person red team training and conference experience covering On-Prem AD exploitation, Azure red teaming, and real-world adversary simulation.</span>
+        <span class="m-hide">Industry-leading in-person red team training and conference experience covering On-Prem AD exploitation, Azure red teaming, and real-world adversary simulation.</span>
       
-        <div class="m-hide">On-Prem AD</div>
-        <div class="m-hide">Azure Red Teaming</div>       
-        <div class="m-hide">Practitioner Conference</div>    
+        <div>On-Prem AD</div>
+        <div>Azure Red Teaming</div>       
+        <div>Practitioner Conference</div>   
         
       </div>
 
