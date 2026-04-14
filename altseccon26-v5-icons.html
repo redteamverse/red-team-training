@@ -52,6 +52,7 @@ font-size: 2.25rem;
 font-weight: 700;
 margin-bottom: 16px;
 color: #111827;
+text-align: center;  
   }    
 
   
@@ -79,6 +80,7 @@ section h3 {
   font-weight: 400;
   color:#1F2937; 
   margin-bottom: 16px;
+  text-align: center;
 }   
   
 .supporting-body  {
@@ -507,15 +509,6 @@ font-size:0.8rem;
 }
 
 }  
-/* =====================
-   TRUST SECTION
-===================== */
-/* SECTION */
-.trust-section {
-  background: linear-gradient(to bottom, #ffffff, #F9FAFB);
-  padding: 90px 20px;
-  text-align: center;
-}
 
 .trust-container {
   max-width: 1000px;
@@ -1077,7 +1070,7 @@ CERTIFICATION & OUTCOMES
 }
   
 .cert-badge {
-  display: inline-block;
+  display: block;
   font-size: 0.75rem;
   color: #B91C1C;
   background: #FEE2E2;
@@ -1085,7 +1078,10 @@ CERTIFICATION & OUTCOMES
   border-radius: 999px;
   font-weight: 600;
   margin: 12px 0 20px;
+  text-align: center;
+  
 }  
+  
 .cert-highlight {
   font-size: 12px;
   color: #B91C1C;
@@ -2345,24 +2341,49 @@ margin-bottom:18px;
 CONFERENCE INFO BAR
 ===================== */
 
-.conference-info{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
-margin:32px 0 40px;
+.conference-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 32px 0 40px;
 }
-  
+
 .conference-info-item {
   display: flex;
-  align-items: flex-start; /* 🔥 FIX */
+  align-items: flex-start;
   gap: 14px;
   background: white;
   border: 1px solid #E5E7EB;
   padding: 18px;
   border-radius: 10px;
+  max-width: 420px;
+  width: 100%;
 }
 
+@media (max-width: 900px) {
 
+  .conference-info {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .conference-info-item {
+    flex-direction: column;   /* 🔥 stack vertically */
+    align-items: center;      /* center everything */
+    text-align: center;       /* center text */
+
+    max-width: 420px;
+    width: 100%;
+  }
+
+  .icon-box {
+    margin-bottom: 5px; /* space below icon */
+  }
+
+}
+  
+  
+  
 
 
 .conference-info-item strong{
@@ -2378,6 +2399,14 @@ font-size:0.875rem;
 color: #4B5563;
 }
   
+  
+  
+  
+  
+  
+  
+  
+  
   .trainer{
 display:block;
 font-size:1.125rem;
@@ -2385,19 +2414,8 @@ font-weight:700;
 margin-bottom:4px;
 color:#111827;
   }
-  
-  
+    
  
-/* =====================
-HIGHLIGHT CARDS
-===================== */
-
-
-
-
-/* =====================
-CTA
-===================== */
 
 .conference-cta{
 display:flex;
@@ -2405,26 +2423,7 @@ justify-content:center;
 }
 
 
-/* =====================
-RESPONSIVE
-===================== */
 
-@media (max-width:900px){
-
-.conference-info{
-grid-template-columns:1fr;
-}
-
-.conference-grid{
-grid-template-columns:1fr;
-}
-
-}
-
-
-/* =====================
-CONFERENCE GALLERY
-===================== */
 
 .conference-gallery{
 margin:48px 0 32px;
@@ -3207,15 +3206,27 @@ color: #111827;
   gap: 25px;
 }
 
-/* TITLE */
 .course-signal-name {
-font-size:0.75rem;
-font-weight: 600;  
-letter-spacing:0.14em;
-text-transform:uppercase;
-padding:15px 9px;
-color: #4B5563;
-  }
+  position: relative;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 15px 9px 15px 14px;
+  color: #4B5563;
+}
+
+.course-signal-name::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 70%; /* shorter line for style */
+  background: #B91C1C;   
+}
 
 
 /* MAIN TITLE */
@@ -4959,7 +4970,7 @@ SCROLL TO TOP BUTTON
 
   <div class="container">
 
-    <span class="section-eyebrow">WHY TRAIN WITH US</span>
+    <span class="eyebrow">WHY TRAIN WITH US</span>
     <h2>Built for Real-World Enterprise Security</h2>
 
     <p class="lead">
@@ -5085,7 +5096,7 @@ SCROLL TO TOP BUTTON
 <section id="training" class="course-grid-section">
   <div class="course-grid-container">
 
-    <span class="section-eyebrow">Curriculum</span>
+    <span class="eyebrow">Curriculum</span>
     <h2>Training Programs at <span class="time-sec">AltSecCON</span></h2>
 
     <p class="lead">
@@ -5301,7 +5312,7 @@ SCROLL TO TOP BUTTON
 <section class="certification-section" id="certification">
   <div class="certification-container">
 
-    <span class="section-eyebrow">Certification & Outcomes</span>
+    <span class="eyebrow">Certification & Outcomes</span>
     <h2>Earn Industry-Recognized Certification</h2>
      
     <p class="lead">
@@ -5364,7 +5375,7 @@ ALTSECCON CONFERENCE SECTION
 
 <div class="conference-container">
 
-<span class="section-eyebrow">Conference Day</span>
+<span class="eyebrow">Conference Day</span>
   <h2><span class="time-sec">AltSecCON</span> Practitioner Conference</h2>
 <p class="lead">
 Alongside the instructor-led Red Team training, AltSecCON also includes a dedicated conference day where security practitioners share technical insights, research discussions, and real-world offensive security experiences with the community.
@@ -5666,7 +5677,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
   <div class="event-structure-container">
 
     <div class="event-structure-text">
-      <span class="section-eyebrow">Event Format</span>
+      <span class="eyebrow">Event Format</span>
       <h2>Event Structure Overview</h2>
 
       <p class="lead">
@@ -5843,7 +5854,7 @@ Thanks,
 <section class="gallery-section" id="gallery">
   <div class="gallery-container">
 
-    <span class="section-eyebrow">Gallery</span>
+    <span class="eyebrow">Gallery</span>
     <h2><span class="time-sec">AltSecCON 2025</span> Highlights</h2>
 
     <p class="lead">
@@ -5879,7 +5890,7 @@ Thanks,
 <section class="testimonial-section" id="testimonials">
   <div class="testimonial-container">
 
-    <span class="section-eyebrow">Testimonials</span>
+    <span class="eyebrow">Testimonials</span>
     <h2>What Participants Said</h2>
 
     <p class="lead">
@@ -6022,7 +6033,7 @@ Thanks,
 
   <div class="venue-container">
 
-    <span class="section-eyebrow">Event Location</span>
+    <span class="eyebrow">Event Location</span>
     <h2><span class="time-sec">AltSecCON </span>Training & Conference Venue</h2>
 
     <p class="lead">
