@@ -1905,7 +1905,6 @@ gap:22px;
   max-width: 1380px;
   margin: 0 auto;
   padding: 16px 32px;
-
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
@@ -1942,10 +1941,10 @@ gap:22px;
 }
 
 .logo span {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   color: #000;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.02em;
 }
 
 /* shrink logo */
@@ -1963,8 +1962,7 @@ gap:22px;
 .nav {
   display: flex;
   align-items: center;
-  justify-content: center;
- 
+  justify-content: center; 
   gap: 18px;
   width: 100%;
   margin: 0 auto;
@@ -1974,16 +1972,17 @@ gap:22px;
   color: #111827;  
   font-weight: 500;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.875rem;
   position: relative;
   transition: color 0.3s ease;
   padding: 6px 4px;
+  letter-spacing: 0.01em;
 }
 
 /* hover */
 .nav a:hover {
-  color: #e53935;
-  opacity: 0.9;
+  color: #111827;
+ 
 }
 
 /* apply underline ONLY to normal links */
@@ -2008,7 +2007,7 @@ gap:22px;
 
 .nav-item > .dropdown-toggle::after {
   content: "▾";
-  font-size: 11px;
+  font-size: 0.6875rem;
   margin-left: 6px;
   display: inline-block;
   color: #111827;
@@ -2042,11 +2041,11 @@ gap:22px;
 .header-cta .btn {
   background: linear-gradient(135deg, #B91C1C, #DC2626);
   color: #fff;
-
+   font-weight: 600;
   padding: 9px 16px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   border-radius: 8px;
-
+  letter-spacing: 0.02em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -3844,9 +3843,9 @@ LINK SPACING
 .section-nav {
   position: sticky;
   top: 90px; /* adjust based on main header height */
-  z-index: 998;
+  z-index: 1000;
   background: #FFFFFF;
-  border-bottom: 1px solid #E5E7EB;
+  border-bottom: 1px solid #E5E7EB; 
 }
 
 /* =========================
@@ -3854,10 +3853,10 @@ LINK SPACING
 ========================= */
 .section-nav-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: 0 auto;  
   display: flex;
   align-items: center;
+  padding: 12px 20px;
   gap: 25px;
   overflow-x: auto;
   white-space: nowrap;
@@ -3875,28 +3874,52 @@ LINK SPACING
 ========================= */
 .section-nav a {
   position: relative;
-  padding: 14px 0;
-  font-size: 14px;
-  color: #374151;
+  white-space: nowrap;
+  padding: 6px 0;
+  font-size: 0.8125rem; 
+  color: #111827;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.25s ease;
-
+  letter-spacing: 0.01em;
   flex-shrink: 0; /* prevent shrinking */
 }
 
 /* hover */
 .section-nav a:hover {
-  color: #1E3A8A;
+  color: #111827;
 }
 
 /* active */
 .section-nav a.active {
-  color: #2B2B50;
+  color: #111827;
   font-weight: 600;
 }
 
- 
+ .section-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: #2B2B50;
+  transition: width 0.25s ease;
+}
+  
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #B91C1C;
+  transition: all 0.3s ease;
+}  
+
+.section-nav a:hover::after,
+.section-nav a.active::after {
+  width: 100%;
+}
 /* =========================
    SLIDING INDICATOR
 ========================= */
@@ -3926,13 +3949,12 @@ LINK SPACING
 }
 
   .section-nav-container {
-    gap: 20px;
-    padding: 0 16px;
+    gap: 16px;
+    padding: 10px 16px;
   }
 
   .section-nav a {
-    font-size: 13px;
-    padding: 12px 0;
+    font-size: 0.75rem; /* 12px */   
   }
 }  
   
@@ -4145,7 +4167,8 @@ MENU
 .dropdown-menu a {
   display: block;
   padding: 8px 16px;
-  font-size: 13px;
+  font-size: 0.875rem;
+  font-weight: 400;
   color: #111827;
 }
 
