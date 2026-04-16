@@ -3253,13 +3253,14 @@ background:#ffffff;
 }
 
  .overview-section{
-padding:80px 20px;
+padding: 80px 20px 20px;
 background:#f8fafc;
+ margin: auto;
 }
 
 .container{
 max-width:1200px;
-margin:auto;
+ margin: auto;  
 }
 
 /* layout */
@@ -3578,14 +3579,15 @@ display:none;
 /* ================= ALTSECCON STATS ================= */
 
 .altseccon-stats{
-padding:100px 20px;
-background:#ffffff;
+padding:10px 10px;
+background:#F8FAFC;
 font-family:Inter, sans-serif;
+margin: auto;  
 }
 
 .altseccon-stats .container{
 max-width:1200px;
-margin:auto;
+margin: auto;
 }
 
 .stats-title{
@@ -3881,19 +3883,14 @@ background:#5865F2;
 border-color:#5865F2;
 }    
     
-
-
-
-
-
- 
     
 
 
 .btn-primary {
   background: linear-gradient(135deg, #EF4444, #DC2626);
   color: #fff;
-  padding: 12px 18px;
+  font-size: 0.875rem;
+  padding: 12px 12px;
   border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
@@ -3904,15 +3901,16 @@ border-color:#5865F2;
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(220,38,38,0.4);
 }
+  
+
 
 .btn-outline {
   border: 1px solid rgba(255,255,255,0.25);
   color: #fff;
-
-  padding: 12px 18px;
+  font-size: 0.875rem;
+  padding: 12px 12px;
   border-radius: 10px;
   text-decoration: none;
-
   transition: 0.3s ease;
 }
 
@@ -4048,36 +4046,8 @@ border-color:#5865F2;
   flex-wrap: wrap;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #EF4444, #DC2626);
-  color: #fff;
-  padding: 14px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
 
-  box-shadow: 0 10px 30px rgba(239,68,68,0.35);
-  transition: 0.3s;
-}
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  border: 1px solid rgba(255,255,255,0.25);
-  color: #fff;
-  padding: 14px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 500;
-
-  transition: 0.3s;
-}
-
-.btn-outline:hover {
-  background: rgba(255,255,255,0.05);
-}
 
 /* =========================
    RESPONSIVE
@@ -4102,7 +4072,90 @@ border-color:#5865F2;
   }
 
 }
+
+/* =========================
+   LOGO SECTION
+========================= */
+.logo-slider {
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* LABEL */
+.logo-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6B7280;
+  margin-bottom: 18px;
+}
+
+/* CENTER WRAPPER */
+.logo-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* TRACK */
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+/* 🔥 EQUAL BOX (MAIN FIX) */
+.logo-item {
+  width: 120px;   /* 🔥 fixed width */
+  height: 60px;   /* 🔥 fixed height */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.03); /* very subtle */
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+   background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+
+/* LOGO IMAGE */
+.logo-item img {
+  max-height: 28px;
+  max-width: 90px;
+  object-fit: contain;
+
+  filter: grayscale(100%) opacity(0.7);
+  transition: 0.3s;
   
+}
+
+/* HOVER */
+.logo-item:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.logo-item:hover img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
+
+/* ANIMATION */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 </style>
 
 </head>
@@ -4129,7 +4182,6 @@ border-color:#5865F2;
     <div class="hero-video-box">
       <div class="video-thumbnail">
         <img src="https://redteamverse.github.io/red-team-training/images/c2.webp" alt="Conference Video">
-        
         <div class="play-button">▶</div>
       </div>
     </div>
@@ -4147,6 +4199,36 @@ border-color:#5865F2;
     </div>
 
   </div>
+
+  <!-- 🔥 LOGO SLIDER -->
+  <div class="logo-slider">
+
+  <p class="logo-label">Trusted by professionals at</p>
+
+  <div class="logo-wrapper"> <!-- 🔥 NEW WRAPPER -->
+
+    <div class="logo-track">
+
+      <!-- SET -->
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/microsoft.png"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/security.png"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/wipro.png"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/RS.jpg"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/SST.png"></div>
+
+      <!-- DUPLICATE -->
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/microsoft.png"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/security.png"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/wipro.png"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/RS.jpg"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/SST.png"></div>
+
+    </div>
+
+  </div>
+</div>
 
 </section>
 
@@ -4197,7 +4279,7 @@ border-color:#5865F2;
     
 <!-- RIGHT CONTENT -->
 
-<div class="overview-content" id="overview">
+<div class="overview-content">
 
 <p class="section-eyebrow">
 Conference Overview
@@ -4227,10 +4309,6 @@ The event also provides opportunities for networking, discussion, and collaborat
 
 </div>
 
-<button class="overview-readmore">
-Read More
-</button>
-
 </div>
 
 </div>
@@ -4239,9 +4317,6 @@ Read More
 <section class="altseccon-stats" id="stats">
 
 <div class="container">
-
-<h2 class="stats-title">AltSecCON Conference </h2>
-
 <div class="stats-grid">
 
 <div class="stat-card">
@@ -4444,57 +4519,26 @@ real enterprise environments and security assessments.
 </div>
 
 
-<!-- 07 -->
 
-<div class="highlight-row">
-
-<div class="highlight-image">
-<img src="https://redteamverse.github.io/red-team-training/images/new-7.webp">
-</div>
-
-<div class="highlight-text">
-
-<span class="highlight-number">07</span>
-
-<h3>Knowledge Exchange</h3>
-
-<p>
-Engage with peers to discuss new security ideas, share experiences,
-and learn from the wider cybersecurity ecosystem.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- 08 -->
-
-<div class="highlight-row reverse">
-
-<div class="highlight-image">
-<img src="https://redteamverse.github.io/red-team-training/images/new-8.webp">
-</div>
-
-<div class="highlight-text">
-
-<span class="highlight-number">08</span>
-
-<h3>Food & Refreshments</h3>
-
-<p>
-Enjoy coffee breaks and lunch while interacting with speakers
-and attendees creating informal networking opportunities.
-</p>
-
-</div>
-
-</div>
 
 
 </div>
 </section>    
+<section class="conference-cta">
 
+<div class="cta-box">
+
+<p>
+Be part of AltSecCON  practitioner insights, and meaningful discussions with the cybersecurity community.
+</p>
+
+<a href="#" class="btn-ticket">
+Get Your Ticket
+</a>
+
+</div>
+
+</section>   
 <section class="community-trust" id="community">
 
 <div class="container">
@@ -4510,57 +4554,6 @@ Trusted by the Cybersecurity Community
 <p class="section-intro">
 AltSecCON brings together members of the cybersecurity community including Red Team practitioners, penetration testers, security engineers, researchers, and students interested in offensive security and enterprise defense.
 </p>
-
-<div class="community-grid">
-
-<!-- CARD -->
-
-<div class="community-card">
-
-<h3>Security Practitioners</h3>
-
-<p>
-Red Team operators and penetration testers sharing real-world offensive security experiences and insights.
-</p>
-
-</div>
-
-
-<div class="community-card">
-
-<h3>Security Engineers</h3>
-
-<p>
-Professionals responsible for securing enterprise systems and improving organizational defense strategies.
-</p>
-
-</div>
-
-
-<div class="community-card">
-
-<h3>Security Researchers</h3>
-
-<p>
-Researchers exploring vulnerabilities, attack techniques, and emerging threats in modern technology environments.
-</p>
-
-</div>
-
-
-<div class="community-card">
-
-<h3>Cybersecurity Community</h3>
-
-<p>
-Students, enthusiasts, and professionals engaging with the broader cybersecurity ecosystem.
-</p>
-
-</div>
-
-</div>
-
-
 <!-- COMMUNITY LOGOS -->
 
 <div class="community-logos">
@@ -5094,23 +5087,99 @@ Closing session summarizing key insights and discussions from the conference.
 </div>
 
 </section> 
-<section class="conference-cta">
+  
+<section class="conference-tickets" id="tickets">
 
-<div class="cta-box">
+<div class="container">
 
-<h3>🎟 Get Conference Ticket</h3>
+<p class="section-eyebrow">Conference Pass</p>
 
-<p>
-Be part of AltSecCON and experience a day of expert talks, practitioner insights, and meaningful discussions with the cybersecurity community.
+<h2 class="section-title">Choose Your Conference Pass</h2>
+
+<p class="section-intro">
+Secure your spot at the AltSecCON Practitioner Conference and join cybersecurity professionals, researchers, and Red Team practitioners for a day of technical talks, discussions, and networking.
 </p>
 
-<a href="#" class="btn-ticket">
-Get Your Ticket
+
+<div class="tickets-grid">
+
+<!-- EARLY BIRD -->
+
+<div class="ticket-card featured">
+
+<div class="ticket-ribbon">
+Most Popular
+</div>
+
+<h3>Early Bird Conference Pass</h3>
+
+<div class="ticket-price">
+₹8,000 <span>INR</span>
+</div>
+
+<p class="ticket-desc">
+Available for early registrations.
+</p>
+
+<ul class="ticket-features">
+
+<li>✔ Full access to all conference talks</li>
+<li>✔ Networking with security professionals</li>
+<li>✔ Panel discussions and practitioner sessions</li>
+<li>✔ Coffee breaks and lunch included</li>
+<li>✔ Welcome Kit</li>
+<li>✔ Participation E-Certificate</li>
+
+</ul>
+
+<p class="ticket-urgency">
+⚡ Limited early bird tickets available
+</p>
+
+<a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="ticket-btn primary">
+🎟 Buy Early Bird Ticket
 </a>
 
 </div>
 
-</section>       
+
+<!-- REGULAR -->
+
+<div class="ticket-card">
+
+<h3>Regular Conference Pass</h3>
+
+<div class="ticket-price">₹10,000 <span>INR</span></div>
+
+<p class="ticket-desc">
+Standard conference ticket.
+</p>
+
+<ul class="ticket-features">
+
+<li>✔ Full access to all conference talks</li>
+<li>✔ Networking with security professionals</li>
+<li>✔ Panel discussions and practitioner sessions</li>
+<li>✔ Coffee breaks and lunch included</li>
+<li>✔ Welcome Kit</li>
+<li>✔ Participation E-Certificate</li>    
+</ul>
+<button class="ticket-btn disabled" disabled>
+🎟 Buy Conference Ticket
+</button>
+</div>
+
+</div>
+
+
+<p class="tickets-note">
+All prices are exclusive of GST. Limited seats available. Book early to save more! 
+</p>
+
+</div>
+
+</section>    
+ 
 <section class="call-speakers">
 
 <div class="container">
@@ -5130,81 +5199,6 @@ AltSecCON invites security practitioners, researchers, and professionals to shar
 <p class="section-intro">
 We welcome technical talks covering offensive security, enterprise defense strategies, security research, and real-world case studies.
 </p>
-
-
-<div class="speaker-grid">
-
-
-<!-- TOPICS -->
-
-<div class="speaker-block">
-
-<h3>Suggested Topics</h3>
-
-<ul>
-
-<li>Active Directory attack techniques</li>
-<li>Cloud security and Azure attack paths</li>
-<li>Red Team operations and adversary simulation</li>
-<li>Vulnerability research and exploitation techniques</li>
-<li>Threat detection and defensive strategies</li>
-<li>Real-world security case studies</li>
-
-</ul>
-
-</div>
-
-
-<!-- WHO CAN APPLY -->
-
-<div class="speaker-block">
-
-<h3>Who Can Apply</h3>
-
-<ul>
-
-<li>Security researchers</li>
-<li>Red Team operators</li>
-<li>Penetration testers</li>
-<li>Security engineers</li>
-<li>Cybersecurity professionals with real-world experience</li>
-
-</ul>
-
-</div>
-
-
-<!-- TALK FORMAT -->
-
-<div class="speaker-block">
-
-<h3>Talk Format</h3>
-
-<p>
-Typical conference sessions are <strong>30–45 minutes</strong>, including time for audience questions and discussion.
-</p>
-
-</div>
-
-
-<!-- BENEFITS -->
-
-<div class="speaker-block">
-
-<h3>Speaker Benefits</h3>
-
-<ul>
-
-<li>Opportunity to present your research to the cybersecurity community</li>
-<li>Connect with security professionals and industry experts</li>
-<li>Increase visibility within the security ecosystem</li>
-
-</ul>
-
-</div>
-
-</div>
-
 
 <div class="speaker-cta">
 
@@ -5327,125 +5321,7 @@ Security communities and ecosystem partners supporting the event.
 </div>
 
 </section>
-<section class="become-sponsor">
 
-<div class="container">
-
-<p class="section-eyebrow">Partnership Opportunities</p>
-
-<h2 class="section-title">Become a Sponsor</h2>
-
-<p class="section-intro">
-Support the AltSecCON Practitioner Conference and connect with a growing community of cybersecurity professionals, researchers, and practitioners.
-</p>
-
-<p class="section-intro">
-Sponsoring AltSecCON provides an opportunity to showcase your organization, engage with security experts, and contribute to the advancement of cybersecurity knowledge and collaboration.
-</p>
-
-
-<!-- BENEFITS -->
-
-<div class="sponsor-benefits">
-
-<div class="benefit-card">
-
-<div class="benefit-icon">
-<i class="fa-solid fa-bullhorn"></i>
-</div>
-
-<h3>Brand Visibility</h3>
-
-<p>
-Promote your organization to a focused audience of cybersecurity professionals, Red Team practitioners, and enterprise security teams.
-</p>
-
-</div>
-
-
-<div class="benefit-card">
-
-<div class="benefit-icon">
-<i class="fa-solid fa-users"></i>
-</div>
-
-<h3>Connect with the Security Community</h3>
-
-<p>
-Engage with security researchers, engineers, and practitioners working on real-world security challenges.
-</p>
-
-</div>
-
-
-<div class="benefit-card">
-
-<div class="benefit-icon">
-<i class="fa-solid fa-handshake"></i>
-</div>
-
-<h3>Industry Collaboration</h3>
-
-<p>
-Build relationships with organizations, professionals, and communities shaping the future of cybersecurity.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- SPONSORSHIP TIERS -->
-
-<div class="sponsor-types">
-
-<h3 class="types-title">Sponsorship Opportunities</h3>
-
-<div class="types-grid">
-
-<div class="type-card platinum">
-<span>Platinum Sponsor</span>
-</div>
-
-<div class="type-card gold">
-<span>Gold Sponsor</span>
-</div>
-
-<div class="type-card community">
-<span>Community Partner</span>
-</div>
-
-</div>
-
-<p class="sponsor-note">
-Detailed sponsorship packages and benefits will be shared upon request.
-</p>
-
-</div>
-
-
-<!-- CTA -->
-
-<div class="sponsor-cta">
-
-<h3>Partner with AltSecCON</h3>
-
-<p>
-Showcase your organization and support the cybersecurity community.
-</p>
-
-<a href="#" class="btn-sponsor">
-🤝 Become a Sponsor
-</a>
-
-<p class="sponsor-contact">
-For sponsorship inquiries, please contact the AltSecCON team.
-</p>
-
-</div>
-
-</div>
-</section>
 <section class="conference-audience" id="audience">
 
 <div class="container">
@@ -5630,97 +5506,7 @@ View AltSecCON Gallery
 </div>
 
 </section>    
-<section class="conference-tickets" id="tickets">
-
-<div class="container">
-
-<p class="section-eyebrow">Conference Pass</p>
-
-<h2 class="section-title">Choose Your Conference Pass</h2>
-
-<p class="section-intro">
-Secure your spot at the AltSecCON Practitioner Conference and join cybersecurity professionals, researchers, and Red Team practitioners for a day of technical talks, discussions, and networking.
-</p>
-
-
-<div class="tickets-grid">
-
-<!-- EARLY BIRD -->
-
-<div class="ticket-card featured">
-
-<div class="ticket-ribbon">
-Most Popular
-</div>
-
-<h3>Early Bird Conference Pass</h3>
-
-<div class="ticket-price">
-₹8,000 <span>INR</span>
-</div>
-
-<p class="ticket-desc">
-Available for early registrations.
-</p>
-
-<ul class="ticket-features">
-
-<li>✔ Full access to all conference talks</li>
-<li>✔ Networking with security professionals</li>
-<li>✔ Panel discussions and practitioner sessions</li>
-<li>✔ Coffee breaks and lunch included</li>
-<li>✔ Welcome Kit</li>
-<li>✔ Participation E-Certificate</li>
-
-</ul>
-
-<p class="ticket-urgency">
-⚡ Limited early bird tickets available
-</p>
-
-<a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="ticket-btn primary">
-🎟 Buy Early Bird Ticket
-</a>
-
-</div>
-
-
-<!-- REGULAR -->
-
-<div class="ticket-card">
-
-<h3>Regular Conference Pass</h3>
-
-<div class="ticket-price">₹10,000 <span>INR</span></div>
-
-<p class="ticket-desc">
-Standard conference ticket.
-</p>
-
-<ul class="ticket-features">
-
-<li>✔ Full access to all conference talks</li>
-<li>✔ Networking with security professionals</li>
-<li>✔ Panel discussions and practitioner sessions</li>
-<li>✔ Coffee breaks and lunch included</li>
-<li>✔ Welcome Kit</li>
-<li>✔ Participation E-Certificate</li>    
-</ul>
-<button class="ticket-btn disabled" disabled>
-🎟 Buy Conference Ticket
-</button>
-</div>
-
-</div>
-
-
-<p class="tickets-note">
-All prices are exclusive of GST. Limited seats available. Book early to save more! 
-</p>
-
-</div>
-
-</section>    
+  
 <section class="conference-venue" id="venue">
 
 <div class="container">
@@ -5795,6 +5581,23 @@ Bengaluru is one of India’s leading technology hubs and home to a vibrant cybe
 </div>
 
 </section>    
+<section class="conference-cta">
+
+<div class="cta-box">
+
+<h3>🎟 Get Conference Ticket</h3>
+
+<p>
+Be part of AltSecCON and experience a day of expert talks, practitioner insights, and meaningful discussions with the cybersecurity community.
+</p>
+
+<a href="#" class="btn-ticket">
+Get Your Ticket
+</a>
+
+</div>
+
+</section>        
 <section class="conference-faq" id="faq">
 
 <div class="container">
