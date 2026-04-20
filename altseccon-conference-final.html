@@ -2866,7 +2866,10 @@ border-color:#5865F2;
    VIDEO
 ========================= */
 .hero-video-box {
-  margin: 40px 0 30px;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;
+  margin: 0 auto;
 }
 
 .video-thumbnail {
@@ -2874,13 +2877,19 @@ border-color:#5865F2;
   border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
+  max-width: 540px;
+  width: 100%; /* important */
   box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  margin:20px auto;
+  
 }
 
 .video-thumbnail img {
   width: 100%;
   display: block;
   filter: brightness(0.85);
+   text-align: center;
+  align-content: center;
 }
 
 /* PLAY BUTTON */
@@ -3043,6 +3052,8 @@ border-color:#5865F2;
 .why-attend {
   background: #F8FAFC;
   padding: 90px 20px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .why-attend .container {
@@ -3078,7 +3089,7 @@ border-color:#5865F2;
 
 .why-image img {
   width: 100%;
-  max-width: 780px;
+  max-width:600px;
   margin: 0 auto;
   display: block;
 
@@ -3098,13 +3109,10 @@ border-color:#5865F2;
 /* CARD */
 .why-card {
   background: linear-gradient(180deg, #ffffff, #f9fafb);
-  border-radius: 16px;
-  padding: 22px;
-
+  padding: 18px;
+  border-radius: 14px;
   border: 1px solid #E5E7EB;
-
   transition: all 0.3s ease;
-
   position: relative;
   overflow: hidden;
 }
@@ -3461,9 +3469,12 @@ border-color:#5865F2;
 .section-title {
 font-size: 2.25rem;
 font-weight: 700;
-margin-bottom: 16px;
 color: #111827;
-text-align: center;
+max-width: 600px;
+line-height: 1.2;
+margin: auto;
+margin-bottom: 16px;  
+
 }
 
 
@@ -3547,12 +3558,22 @@ text-align: center;
   transform: translateY(-6px);
   box-shadow: 0 20px 50px rgba(0,0,0,0.08);
 }
-
-/* ICON */
-.diff-icon {  
-  margin-bottom: 10px;
+.diff-icon {
+  color: #2B2B50;
 }
 
+.diff-icon svg {
+  stroke: currentColor;
+}
+  
+.diff-icon svg {
+  stroke: #2B2B50;
+  transition: 0.3s;
+}
+
+.diff-card:hover .diff-icon svg {
+  stroke: #EF4444; /* your brand red */
+} 
 /* DIVIDER */
 .diff-divider {
   height: 1px;
@@ -3709,7 +3730,7 @@ text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 50px;
 
   padding: 24px 30px;
   margin: 40px auto;
