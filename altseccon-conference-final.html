@@ -2436,7 +2436,7 @@ overflow: hidden;
 .hero-description {
   font-size: 1.05rem;
   color: #9CA3AF;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   line-height: 1.6;
 }
 
@@ -2975,23 +2975,7 @@ overflow: hidden;
 /* =========================
    LEFT CONTENT
 ========================= */
-.diff-left {
-  position: relative;
-  padding-left: 26px;
-  max-width: 520px;
-}
 
-/* ACCENT LINE */
-.diff-left::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  height: 80%;
-  width: 3px;
-  background: linear-gradient(180deg, #ef4444, transparent);
-  border-radius: 2px;
-}
 
 
 
@@ -3014,39 +2998,14 @@ margin-bottom: 16px;
 
 /* SECTION */
 .altseccon-diff-merged {
-  padding: 100px 20px;
-  background: linear-gradient(180deg, #ffffff, #f9fafb);
-}
-
-/* CONTAINER */
-.altseccon-diff-merged .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* TOP GRID */
-.diff-top {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 60px;
+  padding: 20px 20px;
+  background: linear-gradient(180deg, #ffffff, #f9fafb);  
+  display: flex; 
   align-items: center;
 }
 
-/* LEFT */
-.diff-left {
-  position: relative;
-  padding-left: 24px;
-}
 
-.diff-left::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10px;
-  height: 80%;
-  width: 3px;
-  background: linear-gradient(180deg, #ef4444, transparent);
-}
+
 
 /* EYEBROW */
 .diff-eyebrow {
@@ -3055,10 +3014,32 @@ margin-bottom: 16px;
   letter-spacing: 0.12em;
 }
 
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* TAG */
+.tag {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1E3A8A;
+
+  background: #F1F5F9;
+  border: 1px solid #E5E7EB;
+
+  padding: 6px 12px;
+  border-radius: 999px; /* pill shape */
+
+  white-space: nowrap;
+}  
 /* INTRO */
 .diff-intro {
   margin: 16px 0;
   color: #4B5563;
+  max-width: 580px;
 }
 
 /* POINTS */
@@ -4067,7 +4048,7 @@ body {
     <!-- LEFT: LOGO -->
     <div class="header-left">
       <div class="logo">
-        <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon26-v5-icons.html">
           <img src="https://static.wixstatic.com/media/98ad8e_5fe5742cfaf44db197695e76018055d2~mv2.png" alt="AltSecCON Logo">
           <span>AltSecCON</span>
         </a>
@@ -4432,38 +4413,15 @@ body {
       </ul>
 
     </div>
-
-    <!-- RIGHT -->
-    <div class="diff-right">
-
-      <div class="diff-card">
-        <div class="diff-icon"><i data-lucide="crosshair"></i></div>
-        <h3>Real-World Attacks</h3>
-        <p>Sessions based on real enterprise attack scenarios and engagements.</p>
-      </div>
-
-      <div class="diff-card">
-        <div class="diff-icon"><i data-lucide="user-check"></i></div>
-        <h3>Practitioner-Led</h3>
-        <p>Learn from professionals actively working in Red Team operations.</p>
-      </div>
-
-      <div class="diff-card">
-        <div class="diff-icon"><i data-lucide="building-2"></i></div>
-        <h3>Enterprise Focus</h3>
-        <p>Deep dive into Active Directory, Azure, and enterprise environments.</p>
-      </div>
-
-      <div class="diff-card">
-        <div class="diff-icon"><i data-lucide="brain-circuit"></i></div>
-        <h3>Offensive Mindset</h3>
-        <p>Understand how attackers think, operate, and exploit systems.</p>
-      </div>
-
-    </div>
-
   </div>
-
+  <div class="tag-group">
+  <span class="tag">
+  <i data-lucide="shield"></i> Real-World Attacks
+</span>
+  <span class="tag">Practitioner-Led</span>
+  <span class="tag">Enterprise Focus</span>
+  <span class="tag">Offensive Mindset</span>
+</div>
   <!-- DIVIDER -->
   <div class="diff-divider"></div>
 
