@@ -4040,6 +4040,64 @@ body {
     color: #EA3037;
   }  
   
+.experience-snapshot {
+  padding: 96px 20px;
+  background: #fff;
+}
+
+/* GRID */
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+/* ITEM */
+.snapshot-item {
+  border-left: 2px solid #E5E7EB;
+  padding-left: 16px;
+  position: relative;
+}
+
+/* DOT */
+.snapshot-item::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: #B91C1C;
+  border-radius: 50%;
+}
+
+/* ICON */
+.snapshot-item i {
+  width: 20px;
+  height: 20px;
+  color: #B91C1C;
+  margin-bottom: 8px;
+}
+
+/* TITLE */
+.snapshot-item h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+/* TEXT */
+.snapshot-item p {
+  font-size: 14px;
+  color: #374151;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .snapshot-grid {
+    grid-template-columns: 1fr;
+  }
+}  
 </style>
 
 </head>
@@ -4586,7 +4644,58 @@ body {
 
 </section>
 
- 
+<section class="experience-snapshot">
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <p class="section-eyebrow">Conference Experience</p>
+    <h2 class="section-title">What Your Day at <span class="time-sec">AltSecCON</span> Looks Like</h2>
+
+    <!-- TIMELINE STYLE -->
+    <div class="snapshot-grid">
+
+      <div class="snapshot-item">
+        <i data-lucide="badge-check"></i>
+        <h3>Entry & Registration</h3>
+        <p>Smooth check-in experience with conference access and materials.</p>
+      </div>
+
+      <div class="snapshot-item">
+        <i data-lucide="mic"></i>
+        <h3>Live Expert Sessions</h3>
+        <p>Deep-dive talks from active red team professionals.</p>
+      </div>
+
+      <div class="snapshot-item">
+        <i data-lucide="users"></i>
+        <h3>Networking Breaks</h3>
+        <p>Meet peers, practitioners, and industry professionals.</p>
+      </div>
+
+      <div class="snapshot-item">
+        <i data-lucide="utensils"></i>
+        <h3>Food & Refreshments</h3>
+        <p>Curated meals and breaks to keep you energized.</p>
+      </div>
+
+      <div class="snapshot-item">
+        <i data-lucide="file-check"></i>
+        <h3>Participation Certificate</h3>
+        <p>Get an official e-certificate after attending.</p>
+      </div>
+
+      <div class="snapshot-item">
+        <i data-lucide="sparkles"></i>
+        <h3>Complete Experience</h3>
+        <p>A focused, distraction-free environment for serious learners.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section> 
      
 
 <section class="conference-speakers" id="speakers">
