@@ -2208,84 +2208,7 @@ font-size:30px;
 }
 
 }
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
 
-  display: none;
-  background: transparent;
-  transform: translateY(-100%);
-  transition: transform 0.3s ease, background 0.25s ease;
-}
-
-.site-header.is-visible {
-  display: block;
-  transform: translateY(0);
-}
-
-.site-header.is-solid {
-  background: rgba(43, 43, 80, 0.95);
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 18px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--white);
-}
-
-.logo a{
-     color: white;
-     text-decoration: none;
-    }    
-.nav a {
-  margin-left: 28px;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--white);
-  text-decoration: none;
-  position: relative;
-  opacity: 0.85;
-}
-
-.nav a:hover {
-  opacity: 1;
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: var(--primary-red);
-  transition: width 0.25s ease;
-}
-
-.nav a:hover::after {
-  width: 100%;
-}
-
-/* Disable desktop header on mobile */
-@media (max-width: 768px) {
-  .site-header {
-    display: none !important;
-  }
-}    
-    
 /* ===== SECTION SUB MENU ===== */
 
 .section-nav{
@@ -2382,12 +2305,23 @@ font-size:30px;
 ========================= */
 .hero-centered {
   background: #2B2B50;
-  padding: 120px 20px 100px;
+  padding: 170px 20px 20px 20px ;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
   
+  
+@media(max-width:768px){
+
+.hero-centered{
+background: #2B2B50;
+padding: 120px 10px 10px 10px ;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+}  
 
 /* subtle glow */
 .hero-centered::before {
@@ -3691,12 +3625,605 @@ margin-bottom: 16px;
     grid-template-columns: 1fr;
   }
 }  
+  
+
+body {
+  margin: 0;
+  padding: 0;
+}  
+  
+body {
+  font-family: 'Inter', sans-serif;  
+  color: var(--navy);
+  background-color:#16163F;
+  padding-bottom: 64px; 
+}  
+/* =========================
+   TOP BAR
+========================= */
+.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background: #B91C1C;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  z-index: 3000;
+}
+
+.top-bar-close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+  
+.menu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  font-weight: 600;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+#menuClose {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}  
+
+/* =========================
+   HEADER
+========================= */
+.site-header {
+  position: fixed;
+  top: 40px;
+  width: 100%;
+  z-index: 2500;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #E5E7EB;
+  transition: all 0.3s ease;
+}
+
+.site-header.is-solid {
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   INNER
+========================= */
+.header-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+
+/* shrink */
+.site-header.is-solid .header-inner {
+  padding: 10px 28px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+   white-space: nowrap; /* prevents break */
+  text-decoration: none;
+}
+
+.logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+  transition: 0.3s;
+}
+
+.logo span {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 0.02em;
+}
+
+/* =========================
+   NAV
+========================= */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 18px;
+  width: 100%;
+  margin: 0 auto;
+  flex-wrap: nowrap;   /* 🔥 prevent wrapping */
+}
+.nav a {
+  color: #111827;  
+  font-weight: 00;
+  text-decoration: none;
+  font-size: 0.875rem;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 6px 4px;
+  letter-spacing: 0.01em;
+}
+
+/* hover */
+.nav a:hover {
+  color: #111827;
+ 
+}
+
+/* underline */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #B91C1C;
+  transition: 0.25s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+.nav-item {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+
+  padding: 8px 0;
+  min-width: 220px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.25s ease;
+     overflow: hidden;
+  z-index: 2600;
+
+  display: flex;           /* 🔥 IMPORTANT */
+  flex-direction: column;  /* 🔥 FORCE VERTICAL */
+}
+
+.nav-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+
+  font-size: 14px;
+  color: #111827;
+  text-decoration: none;
+    overflow: hidden;
+  white-space: nowrap; /* prevent breaking */
+}
+  
+.mobile-menu .dropdown-menu a {
+  color: #111827;
+  opacity: 1;
+}
+.dropdown-menu a:hover {
+  background: #F9FAFB;
+}
+.dropdown-menu a:hover {
+  background: #F9FAFB;
+  padding-left: 20px;
+  transition: 0.2s;
+}
+.mobile-menu .dropdown-toggle {
+  font-weight: 600;
+  color: #111827;
+}  
+  
+.dropdown-toggle::after {
+  content: "▼";
+  margin-left: 6px;
+  transition: 0.2s;
+}
+
+.nav-item.active .dropdown-toggle::after {
+  transform: rotate(180deg);
+}  
+/* =========================
+   CTA + CART
+========================= */
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-left: 20px;
+}
+
+.cart-icon {
+  cursor: pointer;
+  position: relative;
+  font-size: 18px;
+}
+
+.cart-icon span {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #B91C1C;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.header-cta .btn {
+  background: #B91C1C;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.header-cta .btn:hover {
+  background: #EA3037;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #111;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+.mobile-menu {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  display: none;
+  flex-direction: column;
+  z-index: 2000;
+  border-top: 1px solid #E5E7EB;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+/* top bar */
+.menu-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #E5E7EB;
+}
+  
+.menu-content {
+  display: flex;
+  flex-direction: column;
+}  
+
+/* links */
+.menu-content a {
+  display: block;
+  padding: 14px 20px;
+  font-size: 14px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/* dropdown mobile */
+.mobile-menu .dropdown-menu {
+  display: none;
+  position: static;
+  box-shadow: none;
+  padding-left: 10px;
+}
+
+.mobile-menu .nav-item.active .dropdown-menu {
+  display: block;
+}
+
+/* FIX mobile dropdown visibility */
+.mobile-menu .dropdown-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+}  
+/* =========================
+   MOBILE LINK FIX
+========================= */
+.mobile-menu a {
+  color: #111827;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  display: block;
+  padding: 14px 20px;
+}
+
+/* remove blue + underline */
+.mobile-menu a:visited,
+.mobile-menu a:active {
+  color: #111827;
+}
+
+/* hover */
+.mobile-menu a:hover {
+  background: #F9FAFB;
+}  
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .nav,
+  .header-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+} 
+  
+@media (max-width: 768px) {
+
+  .header-inner {
+    grid-template-columns: auto auto; /* 🔥 remove middle column */
+    padding: 14px 16px;
+  }
+
+  /* hide center nav */
+  .nav {
+    display: none;
+  }
+
+  /* force hamburger to right */
+  .hamburger {
+    display: flex;
+    justify-self: end;   /* 🔥 key fix */
+  }
+
+  /* optional: tighten logo spacing */
+  .logo span {
+    font-size: 16px;
+  }
+
+}  
+  
 </style>
 
 </head>
 
 
-<body>    
+<body>   
+<div class="top-bar" id="topBar">
+  <span class="top-bar-text">
+    Early Bird Ends Soon — Use Code <strong>EARLY200</strong>
+  </span>
+
+  <button class="top-bar-close" id="topBarClose">✕</button>
+</div>
+<!-- DESKTOP STICKY HEADER -->
+<header id="stickyHeader" class="site-header"> 
+  
+  <div class="header-inner">
+   
+    <!-- LEFT: LOGO -->
+    <div class="header-left">
+      <div class="logo">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon26-v2.html">
+          <img src="https://static.wixstatic.com/media/98ad8e_5fe5742cfaf44db197695e76018055d2~mv2.png" alt="AltSecCON Logo">
+          <span>AltSecCON</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CENTER: NAV -->
+    <nav class="nav">
+
+       <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Programs ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTE</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CETP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTE</a>
+        </div>
+      </div>
+
+       <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Conference ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Overview</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Why Attend</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Speakers</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Agenda</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Pass</a>
+        </div>
+      </div>     
+
+      <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">AltSecCON 2026 ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon26-v3.html">Overview</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
+        </div>
+      </div>
+       <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Passes</a>
+
+      <!-- 🔥 Past Events DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Past Edition ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon25-v1.html">
+            AltSecCON 2025 (Bengaluru)
+          </a>
+        </div>
+      </div>
+
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Experience</a>
+
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>
+
+    </nav>
+
+<div class="header-cta">
+
+  <!-- CART ICON -->
+  <div class="cart-icon" onclick="window.location.href='https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html'">
+    🛒
+    <span id="cartCount">0</span>
+  </div>
+
+  <!-- CTA -->
+  <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">
+    Get Passes
+  </a>
+
+</div>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</header>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="menu-top">
+  <span>Menu</span>
+  <button id="menuClose">&times;</button>
+</div>
+  <div class="menu-content">
+
+     <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Programs</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTE</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CETP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTP</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTE</a>
+        </div>
+      </div>  
+
+      <!-- 🔥 AltSecCON 2026 DROPDOWN -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Conference</a>
+
+        <div class="dropdown-menu">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Overview</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Why Attend</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Speakers</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Agenda</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Pass</a>
+        </div>
+      </div>
+
+    
+
+    <!-- AltSecCON 2026 -->
+    <div class="nav-item dropdown">
+      <a href="#" class="dropdown-toggle">AltSecCON 2026</a>
+
+      <div class="dropdown-menu">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon26-v3.html">Overview</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
+      </div>
+    </div>
+    
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Passes</a>
+
+    <!-- Past Events -->
+    <div class="nav-item dropdown">
+      <a href="#" class="dropdown-toggle">Past Edition</a>
+
+      <div class="dropdown-menu">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon25-v1.html">
+          AltSecCON 2025 (Bengaluru)
+        </a>
+      </div>
+    </div>
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Experience</a>
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>  
+
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Get Passes</a>
+
+   
+
+  </div>
+</div>  
 <section class="hero-centered">
 
   <div class="hero-inner">
@@ -5117,7 +5644,83 @@ For conference-related inquiries, please contact the AltSecCON team through the 
 
     
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+  /* =========================
+     ELEMENTS
+  ========================= */
+  const header = document.getElementById("stickyHeader");
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const closeBtn = document.getElementById("menuClose");
+
+  /* =========================
+     HEADER SCROLL
+  ========================= */
+  function handleScroll() {
+    const scrollY = window.scrollY;
+
+    if (!header) return;
+
+    if (scrollY > 50) {
+      header.classList.add("is-visible", "is-solid");
+    } else {
+      header.classList.remove("is-solid");
+      header.classList.add("is-visible"); // keep visible on top
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("load", handleScroll);
+
+  /* =========================
+     MOBILE MENU TOGGLE
+  ========================= */
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", () => {
+      mobileMenu.classList.add("active");
+      document.body.style.overflow = "hidden"; // prevent scroll
+    });
+  }
+
+  /* CLOSE MENU (X BUTTON) */
+  if (closeBtn && mobileMenu) {
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+  }
+
+  /* CLOSE MENU ON LINK CLICK */
+ document.querySelectorAll(".mobile-menu a:not(.dropdown-toggle)").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+    document.body.style.overflow = "";
+  });
+});
+
+  /* =========================
+     MOBILE DROPDOWN
+  ========================= */
+  document.querySelectorAll(".mobile-menu .dropdown-toggle").forEach(toggle => {
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const parent = this.parentElement;
+
+      // close other dropdowns
+      document.querySelectorAll(".mobile-menu .nav-item").forEach(item => {
+        if (item !== parent) item.classList.remove("active");
+      });
+
+      // toggle current
+      parent.classList.toggle("active");
+    });
+  });
+
+});
+</script>
    
 <script>
 (function () {
