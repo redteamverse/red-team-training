@@ -3002,9 +3002,52 @@ margin-bottom: 16px;
   background: linear-gradient(180deg, #ffffff, #f9fafb);  
   display: flex; 
   align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
+  .altseccon-diff-merged .container{
+    
+margin: 0 auto;
+  
+  }  
+/* GROUP */
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center; /* center for hero */
+  margin-top: 24px;
+}
 
+/* TAG */
+.tag {
+  display: inline-flex;         /* 🔥 important */
+  align-items: center;          /* 🔥 vertical align fix */
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #1E3A8A;
+
+  background: #F1F5F9;
+  border: 1px solid #E5E7EB;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  white-space: nowrap;
+}
+
+/* ICON */
+.tag i {
+  width: 16px;
+  height: 16px;
+  color: #1E3A8A;
+  flex-shrink: 0;
+}
+  
+  
 
 
 /* EYEBROW */
@@ -3014,33 +3057,16 @@ margin-bottom: 16px;
   letter-spacing: 0.12em;
 }
 
-.tag-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-/* TAG */
-.tag {
-  font-size: 13px;
-  font-weight: 500;
-  color: #1E3A8A;
-
-  background: #F1F5F9;
-  border: 1px solid #E5E7EB;
-
-  padding: 6px 12px;
-  border-radius: 999px; /* pill shape */
-
-  white-space: nowrap;
-}  
+  
 /* INTRO */
 .diff-intro {
   margin: 16px 0;
   color: #4B5563;
-  max-width: 580px;
+  max-width: 900px;
+  text-align: center;
 }
+  
+ 
 
 /* POINTS */
 .diff-points {
@@ -3138,20 +3164,7 @@ margin-bottom: 16px;
   content: "✖ ";
 }
 
-/* MOBILE */
-@media (max-width: 900px) {
-  .diff-top {
-    grid-template-columns: 1fr;
-  }
 
-  .diff-right {
-    grid-template-columns: 1fr;
-  }
-
-  .compare-row {
-    grid-template-columns: 1fr;
-  }
-}  
 
 /* TOGGLE SWITCH */
 .toggle-switch {
@@ -4386,9 +4399,6 @@ body {
 
 <div class="container">
 
-  <!-- TOP PART -->
-  <div class="diff-top">
-
     <!-- LEFT -->
     <div class="diff-left">
 
@@ -4409,18 +4419,33 @@ body {
       <ul class="diff-points">
         <li>No generic talks</li>
         <li>No vendor-driven content</li>
-        <li>Only real-world attack insights</li>
+        <li>AltSecCON is built around</li>
       </ul>
 
     </div>
-  </div>
+
   <div class="tag-group">
+
   <span class="tag">
-  <i data-lucide="shield"></i> Real-World Attacks
-</span>
-  <span class="tag">Practitioner-Led</span>
-  <span class="tag">Enterprise Focus</span>
-  <span class="tag">Offensive Mindset</span>
+    <i data-lucide="shield"></i>
+    Real-World Attacks
+  </span>
+
+  <span class="tag">
+    <i data-lucide="user-check"></i>
+    Practitioner-Led
+  </span>
+
+  <span class="tag">
+    <i data-lucide="building"></i>
+    Enterprise Focus
+  </span>
+
+  <span class="tag">
+    <i data-lucide="target"></i>
+    Offensive Mindset
+  </span>
+
 </div>
   <!-- DIVIDER -->
   <div class="diff-divider"></div>
