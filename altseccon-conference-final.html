@@ -3003,12 +3003,12 @@ margin-bottom: 16px;
   display: flex; 
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+ 
 }
 
   .altseccon-diff-merged .container{
     
-margin: 0 auto;
+
   
   }  
 /* GROUP */
@@ -3400,7 +3400,9 @@ margin: 0 auto;
 .topic-icon svg {
   width: 22px;
   height: 22px;
-  color: #1E3A8A
+  color: #1E3A8A;
+  stroke-width: 2.2; 
+  margin-bottom: 10px;
 }
 
 /* TITLE */
@@ -4102,7 +4104,84 @@ body {
     transform: rotate(90deg); /* vertical flow */
   }
 }  
-  
+
+
+/* SECTION */
+.conf-benefits-illus {
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+/* GRID */
+.illus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+/* CARD */
+.illus-card {
+  padding: 22px;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  background: #fff;
+  transition: 0.25s ease;
+  position: relative;
+}
+
+/* 🔥 subtle brand accent */
+.illus-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: #1E3A8A;
+  border-radius: 10px 0 0 10px;
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+/* hover */
+.illus-card:hover::before {
+  opacity: 1;
+}
+/* ICON */
+.illus-icon i {
+  width: 22px;
+  height: 22px;
+  color: #B91C1C;
+}
+
+/* TITLE */
+.illus-card h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+/* TEXT */
+.illus-card p {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* HOVER */
+.illus-card:hover {
+  transform: translateY(-4px);
+  border-color: #D1D5DB;
+
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .illus-grid {
+    grid-template-columns: 1fr;
+  }
+}  
 </style>
 
 </head>
@@ -4707,7 +4786,75 @@ body {
 
 </section>
      
+<section class="conf-benefits-illus">
 
+  <div class="container">
+
+    <!-- HEADER -->
+    <p class="section-eyebrow">What You Get</p>
+
+    <h2 class="section-title">
+      Everything Included in Your AltSecCON Experience
+    </h2>
+
+    <p class="section-intro">
+      A complete conference experience designed for learning, comfort, and meaningful interaction.
+    </p>
+
+    <!-- GRID -->
+    <div class="illus-grid">
+
+      <div class="illus-card">      
+          <div class="topic-icon"><i data-lucide="gift"></i></div>       
+        <h3>Welcome Kit</h3>
+        <p>Conference essentials and curated materials on arrival.</p>
+      </div>
+
+      <div class="illus-card">    
+          <div class="topic-icon"><i data-lucide="file-check"></i>
+        </div>
+        <h3>Participation Certificate</h3>
+        <p>Official e-certificate to validate your attendance.</p>
+      </div>
+
+      <div class="illus-card">
+        <div class="illus-icon">
+          <div class="topic-icon"><i data-lucide="utensils"></i></div>
+        </div>
+        <h3>Meals & Refreshments</h3>
+        <p>Lunch and snacks provided throughout the day.</p>
+      </div>
+
+      <div class="illus-card">
+        <div class="illus-icon">
+          <div class="topic-icon"><i data-lucide="users"></i></div>
+        </div>
+        <h3>Meet the Experts</h3>
+        <p>Interact directly with speakers and professionals.</p>
+      </div>
+
+      <div class="illus-card">
+        <div class="illus-icon">
+          <div class="topic-icon"><i data-lucide="badge-check"></i></div>
+        </div>
+        <h3>Full Session Access</h3>
+        <p>Attend all scheduled talks and discussions.</p>
+      </div>
+
+      <div class="illus-card">
+        <div class="illus-icon">
+          <div class="topic-icon"><i data-lucide="network"></i></div>
+        </div>
+        <h3>Networking</h3>
+        <p>Connect with peers and industry professionals.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+  
 <section class="conference-speakers" id="speakers">
 
 <div class="container">
