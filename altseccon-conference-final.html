@@ -4048,27 +4048,34 @@ body {
   text-align: center;
 }
 
-/* FLOW WRAPPER */
+/* FLOW */
 .flow-wrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
   margin-top: 40px;
 }
 
 /* STEP */
 .flow-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 0 0 auto;
+  min-width: 160px;
 
   background: #fff;
   border: 1px solid #E5E7EB;
   padding: 16px 20px;
   border-radius: 12px;
-  min-width: 140px;
+
+  transition: 0.3s ease;
+  opacity: 0.5;
+  transform: scale(0.92);
+  color: #2B2B50;
+}
+
+.flow-step.active {
+  opacity: 1;
+  transform: scale(1);
+  border-color: #2B2B50;
 }
 
 /* ICON */
@@ -4083,29 +4090,142 @@ body {
 .flow-step span {
   font-size: 14px;
   font-weight: 500;
-  color: #111827;
 }
 
-/* ARROW */
-.flow-arrow i {
-  font-size: 20px;
-  width: 20px;
-  height: 50px;
+/* DOTS */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
 }
 
+.dot {
+  width: 6px;
+  height: 6px;
+  background: #D1D5DB;
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.dot.active {
+  width: 18px;
+  background: #B91C1C;
+}
+
+/* CONTENT */
+.flow-content {
+  margin-top: 28px;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.flow-content-item {
+  display: none;
+  animation: fadeUp 0.4s ease;
+}
+
+.flow-content-item.active {
+  display: block;
+}
+
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(10px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* CONTENT IMAGE */
+.flow-content-item img {
+  width: 100%;
+  max-width: 520px;
+  margin-top: 16px;
+  border-radius: 12px;
+  display: block;
+  margin-inline: auto;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.4s ease;
+}
+
+/* ACTIVE IMAGE ANIMATION */
+.flow-content-item.active img {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* DESKTOP IMPROVEMENT */
+@media (min-width: 769px) {
+
+  .flow-wrapper {
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 24px;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  /* remove mobile scaling effect */
+  .flow-step {
+    opacity: 1;
+    transform: none;
+    min-width: 150px;
+  }
+
+  /* active state more subtle */
+  .flow-step.active {
+    border-color: #B91C1C;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+
+  /* 🔥 CONNECTOR LINE (makes it premium) */
+  .flow-wrapper {
+    position: relative;
+  }
+
+  .flow-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: #E5E7EB;
+    z-index: 0;
+  }
+
+  .flow-step {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+  }
+
+  /* content spacing fix */
+  .flow-content {
+    margin-top: 40px;
+  }
+
+}  
 /* MOBILE */
 @media (max-width: 768px) {
 
   .flow-wrapper {
-    flex-direction: column;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 10px 0;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 50%;
   }
 
-  .flow-arrow {
-    transform: rotate(90deg); /* vertical flow */
+  .flow-wrapper::-webkit-scrollbar {
+    display: none;
   }
-}  
 
+  .flow-step {
+    scroll-snap-align: center;
+  }
 
+}
 /* SECTION */
 .conf-benefits-illus {
   padding: 80px 20px;
@@ -4732,55 +4852,82 @@ body {
 
   <div class="container">
 
-    <!-- HEADER -->
     <p class="section-eyebrow">Conference Experience</p>
     <h2 class="section-title">Your Day at AltSecCON</h2>
 
-    <!-- FLOW -->
+    <!-- STEPS -->
     <div class="flow-wrapper">
 
-      <div class="flow-step">
+      <div class="flow-step active" data-step="0">
         <i data-lucide="badge-check"></i>
         <span>Registration</span>
       </div>
 
-      <div class="flow-arrow">
-  <i data-lucide="arrow-right"></i>
-</div>
-
-      <div class="flow-step">
+      <div class="flow-step" data-step="1">
         <i data-lucide="mic"></i>
         <span>Expert Talks</span>
       </div>
 
-      <div class="flow-arrow">
-  <i data-lucide="arrow-right"></i>
-</div>
-
-      <div class="flow-step">
+      <div class="flow-step" data-step="2">
         <i data-lucide="users"></i>
         <span>Networking</span>
       </div>
 
-      <div class="flow-arrow">
-        <i data-lucide="arrow-right"></i>
-      </div>
-
-      <div class="flow-step">
+      <div class="flow-step" data-step="3">
         <i data-lucide="utensils"></i>
         <span>Food & Breaks</span>
       </div>
 
-      <div class="flow-arrow">
-  <i data-lucide="arrow-right"></i>
-</div>
-
-      <div class="flow-step">
+      <div class="flow-step" data-step="4">
         <i data-lucide="file-check"></i>
         <span>Certificate</span>
       </div>
 
     </div>
+
+    <!-- DOTS -->
+    <div class="carousel-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+      <span class="dot" data-index="4"></span>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="flow-content">
+
+      <div class="flow-content-item active" data-step="0">
+        <h3>Registration</h3>
+        <p>Quick check-in with your welcome kit and access details to start your day smoothly.</p>
+        <img src="https://redteamverse.github.io/red-team-training/images/c5.webp" alt="Registration">
+      </div>
+
+      <div class="flow-content-item" data-step="1">
+        <h3>Expert Talks</h3>
+        <p>Deep dive into real-world offensive techniques shared by experienced practitioners.</p>
+        <img src="https://redteamverse.github.io/red-team-training/images/new-3.webp" alt="Expert Talks">
+      </div>
+
+      <div class="flow-content-item" data-step="2">
+        <h3>Networking</h3>
+        <p>Connect with professionals, researchers, and peers across the security community.</p>
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp" alt="Networking">
+      </div>
+
+      <div class="flow-content-item" data-step="3">
+        <h3>Food & Breaks</h3>
+        <p>Relax, recharge, and continue discussions in an informal setting.</p>
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-6.webp" alt="Food & Breaks">
+      </div>
+
+      <div class="flow-content-item" data-step="4">
+        <h3>Certification</h3>
+        <p>Receive your official participation certificate.</p>
+        <img src="https://redteamverse.github.io/red-team-training/images/demo-cert.avif" alt="Certificate">
+      </div>
+    </div>
+
 
   </div>
 
@@ -6132,5 +6279,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>  
+<script>
+const wrapper = document.querySelector(".flow-wrapper");
+const steps = document.querySelectorAll(".flow-step");
+const dots = document.querySelectorAll(".dot");
+const contents = document.querySelectorAll(".flow-content-item");
+
+/* 🔥 CORE FUNCTION */
+function setActive(index) {
+
+  // steps
+  steps.forEach(s => s.classList.remove("active"));
+  steps[index].classList.add("active");
+
+  // dots
+  dots.forEach(d => d.classList.remove("active"));
+  if (dots[index]) dots[index].classList.add("active");
+
+  // content
+  contents.forEach(c => c.classList.remove("active"));
+  if (contents[index]) contents[index].classList.add("active");
+}
+
+/* SCROLL (mobile) */
+function updateOnScroll() {
+  let center = wrapper.scrollLeft + wrapper.offsetWidth / 2;
+  let activeIndex = 0;
+
+  steps.forEach((step, index) => {
+    const box = step.offsetLeft + step.offsetWidth / 2;
+
+    if (Math.abs(center - box) < step.offsetWidth / 2) {
+      activeIndex = index;
+    }
+  });
+
+  setActive(activeIndex);
+}
+
+wrapper.addEventListener("scroll", () => {
+  requestAnimationFrame(updateOnScroll);
+});
+
+/* 🔥 CLICK (desktop fix) */
+steps.forEach((step, index) => {
+  step.addEventListener("click", () => {
+
+    setActive(index); // 🔥 immediate update
+
+    // scroll only for mobile
+    step.scrollIntoView({
+      behavior: "smooth",
+      inline: "center"
+    });
+
+  });
+});
+
+/* dots click */
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    setActive(index);
+    steps[index].scrollIntoView({
+      behavior: "smooth",
+      inline: "center"
+    });
+  });
+});
+
+/* init */
+setActive(0);
+</script>
+
+  
 </body>
 </html>
