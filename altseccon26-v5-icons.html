@@ -885,7 +885,7 @@ color: #111827;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #2B2B50; /* subtle blue accent */
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
   
 
@@ -2198,6 +2198,7 @@ font-size:34px;
 font-weight:700;
 margin-bottom:15px;
 color:#111;
+margin-bottom: 12px;  
 }
   
 
@@ -3025,6 +3026,7 @@ RESPONSIVE
 .timeline-header {
   text-align: center;
   margin-bottom: 80px;
+ 
 }
 
 
@@ -3418,10 +3420,6 @@ FOOTER SOCIAL
   background:#F9FAFB;
 }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-}
 
 
 
@@ -4602,6 +4600,271 @@ SCROLL TO TOP BUTTON
     padding: 28px 20px;
   }
 }
+  
+
+  
+.training-benefits {
+  padding: 96px 20px;
+  background: #F9FAFB;
+}
+
+/* HEADER */
+.section-eyebrow {
+  font-size: 13px;
+  color: #6B7280;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.section-intro {
+  max-width: 680px;
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* CARD */
+.benefit-card {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  padding: 24px;
+  transition: 0.25s ease;
+  border-radius: 14px;
+}
+
+/* ICON */
+.benefit-card i {
+  width: 26px;
+  height: 26px;
+  color: #B91C1C;
+  margin-bottom: 12px;
+}
+
+/* TITLE */
+.benefit-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+/* TEXT */
+.benefit-card p {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* HOVER */
+.benefit-card:hover {
+  transform: translateY(-6px);
+  border-color: #D1D5DB;
+}
+
+/* PROOF LINE */
+.benefit-proof {
+  margin-top: 32px;
+  font-size: 15px;
+  color: #111827;
+  font-weight: 500;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+}  
+
+
+/* SECTION */
+.day-experience {
+  padding: 96px 20px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* HEADER */
+.section-eyebrow {
+  font-size: 13px;
+  color: #6B7280;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.section-intro {
+  max-width: 680px;
+  color: #374151;
+  margin-bottom: 32px;
+}
+
+/* =========================
+   TABS (PREMIUM RED ACTIVE)
+========================= */
+.exp-tabs {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  background: #F3F4F6;
+  border-radius: 999px;
+  padding: 4px;
+
+  margin: 0 auto 36px auto;
+  width: fit-content; /* keeps it tight */
+}
+.day-experience .container {
+  text-align: center;
+}  
+/* TAB */
+.exp-tab {
+  position: relative;
+  z-index: 2;
+  padding: 8px 20px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 999px;
+  color: #6B7280;
+  transition: 0.3s ease;
+}
+
+/* ACTIVE TAB (RED) */
+.exp-tab.active {
+  color: #fff;
+}
+
+/* INDICATOR (RED BACKGROUND) */
+.tab-indicator {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: calc(100% - 8px);
+  background: #B91C1C;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.exp-content {
+  position: relative;
+  min-height: 220px;
+}
+
+/* PANES */
+.exp-pane {
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  transition: all 0.35s ease;
+}
+
+.exp-pane.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+/* =========================
+   FLOW
+========================= */
+.flow-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+/* STEP */
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  padding: 16px 18px;
+  border-radius: 12px;
+  min-width: 130px;
+
+  transition: 0.25s ease;
+}
+
+.flow-step:hover {
+  transform: translateY(-4px);
+  border-color: #D1D5DB;
+}
+
+/* ICON */
+.flow-step i {
+  width: 22px;
+  height: 22px;
+  color: #B91C1C;
+  margin-bottom: 8px;
+}
+
+/* TEXT */
+.flow-step span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* ARROW */
+.flow-arrow {
+  display: flex;
+  align-items: center;
+}
+
+.flow-arrow i {
+  width: 18px;
+  height: 18px;
+  color: #9CA3AF;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .flow-wrapper {
+    flex-direction: column;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+}
 </style>
 </head>
 
@@ -4869,7 +5132,7 @@ SCROLL TO TOP BUTTON
     <div class="timeline-header">
       <span class="section-eyebrow">What to Expect</span>
 
-      <h2>What You’ll Experience at <span class="time-sec">AltSecCON</span></h2>
+      <h2>What You’ll Gain from <span class="time-sec">AltSecCON</span></h2>
 
       <p class="lead">
         Join AltSecCON for an immersive, hands-on cybersecurity experience designed to deliver real-world red teaming skills, meaningful connections, and long-term career value.
@@ -4902,45 +5165,21 @@ SCROLL TO TOP BUTTON
       </div>
     </div>
 
-    <!-- ITEM 3 -->
-    <div class="timeline-row">
-      <div class="timeline-image">
-        <img src="https://redteamverse.github.io/red-team-training/images/new-5.webp">
-      </div>
-
-      <div class="timeline-text">
-        <span class="timeline-number">03</span>
-        <h3>Direct Interaction with Experts</h3>
-        <p class="supporting-body">Engage closely with instructors and peers to deepen your understanding and practical skills.</p>
-      </div>
-    </div>
+   
 
     <!-- ITEM 4 -->
-    <div class="timeline-row reverse">
+    <div class="timeline-row">
       <div class="timeline-image">
         <img src="https://redteamverse.github.io/red-team-training/images/PostTrainingLabAccess.webp">
       </div>
 
       <div class="timeline-text">
-        <span class="timeline-number">04</span>
+        <span class="timeline-number">03</span>
         <h3>Post-Training Lab Access & Certification</h3>
         <p class="supporting-body">Continue learning beyond the event with extended lab access and certification opportunities.</p>
       </div>
     </div>
 
-    <!-- ITEM 5 -->
-    <div class="timeline-row">
-      <div class="timeline-image">
-        <img src="https://redteamverse.github.io/red-team-training/images/coursecontent.webp">
-      </div>
-
-      <div class="timeline-text">
-        <span class="timeline-number">05</span>
-        <h3>Lifetime Learning Resources</h3>
-        <p class="supporting-body">Get access to comprehensive study materials for ongoing reference and skill development.</p>
-      </div>
-      
-    </div>
      <!-- ITEM 5 -->
     <div class="timeline-row reverse">
       <div class="timeline-image">
@@ -4948,7 +5187,7 @@ SCROLL TO TOP BUTTON
       </div>
 
       <div class="timeline-text">
-        <span class="timeline-number">06</span>
+        <span class="timeline-number">04</span>
         <h3>Course Completion Certification</h3>
         <p class="supporting-body">Certificates are issued only after attending the complete training duration, including all practical and instructor-led sessions.</p>
       </div>
@@ -4960,7 +5199,7 @@ SCROLL TO TOP BUTTON
   
  <div class="expect-cta">
     <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Reserve Your Seat</a>
-    </div>
+  </div>
   
 <!-- =========================
      WHY TRAIN WITH US
@@ -5306,6 +5545,67 @@ SCROLL TO TOP BUTTON
 
   </div>
 </section>
+<section class="training-benefits">
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <p class="eyebrow">Training Advantage</p>
+
+    <h2>
+      Improve Your Chances of Clearing Red Team Certifications
+    </h2>
+
+    <p class="lead">
+    A focused training approach designed to build practical skills, improve problem-solving, and prepare you for real certification challenges.  
+    </p>
+
+    <!-- BENEFIT GRID -->
+    <div class="benefit-grid">
+
+      <div class="benefit-card">
+        <div class="icon-box">
+          <i data-lucide="target"></i>
+          </div>
+        <h3>Higher Certification Success Rate</h3>
+        <p>Structured learning aligned with real exam scenarios. </p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="icon-box">
+        <i data-lucide="brain"></i>
+        </div>
+        <h3>Think Like an Attacker</h3>
+        <p>Develop an offensive mindset beyond step-by-step learning.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="icon-box">
+        <i data-lucide="users"></i>
+        </div>
+        <h3>Live Doubt Resolution</h3>
+        <p>Get guidance when stuck — no learning gaps.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="icon-box">
+        <i data-lucide="zap"></i>
+        </div>
+        <h3>Practical Tricks & Techniques</h3>
+        <p>Learn real attack methods used in engagements.</p>
+      </div>
+
+    </div>
+
+    <!-- PROOF LINE -->
+    <p class="benefit-proof">
+      Training significantly increases your ability to clear red team certifications compared to self-study alone.
+    </p>
+  </div>
+</section>  
+   <div class="expect-cta">
+    <a href="#" class="btn-tertiary ->">View Training Programs →</a>
+  </div>
 <!-- CERTIFICATION & OUTCOMES -->
 <section class="certification-section" id="certification">
   <div class="certification-container">
@@ -5477,6 +5777,156 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
 </div>
 
 </section>   
+
+<section class="day-experience">
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <p class="eyebrow">Experience</p>
+    <h2>A Day Designed for Real Impact</h2>
+    <p class="lead">
+      From expert-led sessions to hands-on learning and networking, every part of AltSecCON is structured to deliver practical, real-world value.
+    </p>
+
+    <!-- TABS -->
+    <div class="exp-tabs">
+      <div class="tab-indicator"></div>      
+      <button class="exp-tab" data-tab="exp-training">Training</button>
+      <button class="exp-tab active" data-tab="exp-conference">Conference</button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="exp-content">
+
+      <!-- TRAINING -->
+      <div class="exp-pane" id="exp-training">
+        <div class="flow-wrapper">
+
+          <div class="flow-step">
+            <div class="icon-box">
+            <i data-lucide="terminal"></i>
+            </div>
+            <span>Lab Setup</span>
+          </div>
+
+          <div class="flow-arrow">
+            <div class="icon-box">
+            <i data-lucide="arrow-right"></i></div>
+          </div>
+
+          <div class="flow-step">
+            <div class="icon-box">
+            <i data-lucide="cpu"></i>
+            </div>
+            <span>Hands-On Labs</span>
+          </div>
+
+          <div class="flow-arrow">
+            <div class="icon-box">
+            <i data-lucide="arrow-right"></i></div>
+          </div>
+
+          <div class="flow-step">
+            <div class="icon-box">
+            <i data-lucide="user-check"></i>
+            </div>
+            <span>Guided Learning</span>
+          </div>
+
+          <div class="flow-arrow">
+            <div class="icon-box">
+            <i data-lucide="arrow-right"></i></div>
+          </div>
+
+          <div class="flow-step">
+            <div class="icon-box">
+            <i data-lucide="zap"></i>
+            </div>
+            <span>Attack Simulation</span>
+          </div>
+
+          <div class="flow-arrow">
+            <div class="icon-box">
+            <i data-lucide="arrow-right"></i></div>
+          </div>
+
+          <div class="flow-step">
+            <div class="icon-box">
+            <i data-lucide="award"></i>
+            </div>
+            <span>Certification</span>
+          </div>
+
+        </div>
+      </div>
+            <!-- CONFERENCE -->
+      <div class="exp-pane active" id="exp-conference">
+        <div class="flow-wrapper">
+
+          <div class="flow-step">
+            <div class="icon-box">
+            <i data-lucide="badge-check"></i>
+            </div>
+            <span>Registration</span>
+          </div>
+
+          <div class="flow-arrow">
+            <div class="icon-box">
+            <i data-lucide="arrow-right"></i></div>
+          </div>
+
+          <div class="flow-step">
+            <div class="icon-box">
+            <i data-lucide="mic"></i>
+            </div>
+            <span>Expert Talks</span>
+          </div>
+
+          <div class="flow-arrow">
+            <div class="icon-box">
+            <i data-lucide="arrow-right"></i></div>
+          </div>
+
+          <div class="flow-step">
+            <div class="icon-box">
+            <i data-lucide="users"></i>
+            </div>
+            <span>Networking</span>
+          </div>
+
+          <div class="flow-arrow">
+            <div class="icon-box">
+            <i data-lucide="arrow-right"></i></div>
+          </div>
+
+          <div class="flow-step">
+            <div class="icon-box">
+            <i data-lucide="utensils"></i>
+            </div>
+            <span>Food & Breaks</span>
+          </div>
+
+          <div class="flow-arrow">
+            <div class="icon-box">
+            <i data-lucide="arrow-right"></i></div>
+          </div>
+
+          <div class="flow-step">
+            <div class="icon-box">
+            <i data-lucide="file-check"></i>
+            </div>
+            <span>Certificate</span>
+          </div>
+
+        </div>
+      </div> 
+    </div>
+
+  </div>
+
+</section>  
+
 <section class="subscribe-section">
   <div class="subscribe-container">
     
@@ -6762,6 +7212,41 @@ document.addEventListener("click", function (e) {
   parent.classList.toggle("active");
 });  
 </script>
- 
+<script>
+const tabs = document.querySelectorAll(".exp-tab");
+const panes = document.querySelectorAll(".exp-pane");
+const indicator = document.querySelector(".tab-indicator");
+
+function moveIndicator(tab) {
+  const rect = tab.getBoundingClientRect();
+  const parentRect = tab.parentElement.getBoundingClientRect();
+
+  indicator.style.width = rect.width + "px";
+  indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;
+}
+
+window.addEventListener("load", () => {
+  const activeTab = document.querySelector(".exp-tab.active");
+  if (activeTab) moveIndicator(activeTab);
+});
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+
+    const target = tab.dataset.tab;
+
+    tabs.forEach(t => t.classList.remove("active"));
+    panes.forEach(p => p.classList.remove("active"));
+
+    tab.classList.add("active");
+
+    setTimeout(() => {
+      document.getElementById(target).classList.add("active");
+    }, 50);
+
+    moveIndicator(tab);
+  });
+});
+</script>
 </body>
 </html>
