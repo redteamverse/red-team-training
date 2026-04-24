@@ -889,6 +889,7 @@ a:not(.btn) {
   position: relative;
   text-decoration: none;
 }
+  
 
 a:not(.btn)::after {
   content: "";
@@ -1002,6 +1003,7 @@ box-shadow:0 4px 10px rgba(185,28,28,0.2);
   font-weight: 600;
   font-size: 0.85rem;
   transition: all 0.2s ease; 
+ 
 }
 
 /* Hover */
@@ -1042,12 +1044,7 @@ CERTIFICATION & OUTCOMES
 
 }
 
-.certification-points {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
 
-}
   
 .cert-badge {
   display: block;
@@ -1117,6 +1114,11 @@ color: #111827;
   text-decoration: none;
 }
 
+.certification-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}  
 /* Hover affordance */
 @media (hover: hover) and (pointer: fine) {
   .certification-link:hover {
@@ -1124,11 +1126,7 @@ color: #111827;
   }
 }
 
-.certification-points {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
+
 
 /* mobile */
 @media (max-width: 768px) {
@@ -4004,8 +4002,8 @@ WRAPPER
 ===================== */
 .side-cta {
   position: fixed;
-  top: 70%;
-  right: 0;
+  top: 90%;
+  right: 1%;
   transform: translateY(-50%);
   z-index: 999;
 }
@@ -4013,7 +4011,11 @@ WRAPPER
 /* Hide on desktop */
 @media (min-width: 769px) {
   .side-cta {
-    display: none;
+  position: fixed;
+  top: 90%;
+  right: 1%;
+  transform: translateY(-50%);
+  z-index: 999;
   }
 }
 
@@ -4029,7 +4031,7 @@ TRIGGER
   justify-content: center;
   background: #ff0000;  
   animation: arrowMove 1.2s infinite;
-  opacity: 0.4; 
+  opacity: 0.8; 
 }
 
 /* Tap effect */
@@ -4082,13 +4084,19 @@ PANEL
   box-shadow: 0 20px 50px rgba(0,0,0,0.2);
 
   transition: all 0.25s ease;
+   text-decoration: none !important;
 }
 
+ .side-cta-panel * a {
+  text-decoration: none !important;
+}
+  
 /* Active */
 .side-cta-panel.active {
   opacity: 1;
   transform: translateY(-50%) translateX(0);
   pointer-events: auto;
+  text-decoration: none !important;
 }
 
 /* =====================
@@ -4107,22 +4115,22 @@ BUTTONS
   background: #B91C1C;
   color: #fff;
 }
+  
+.cta-btn.primary:hover {
+ text-decoration: none !important;
+}  
 
 .cta-btn.secondary {
   background: #F3F4F6;
   color: #111827;
 }
   
-/* =====================
-TOP BAR
-===================== */
-/* =====================
-TOP BAR
-===================== */
+.side-cta-panel .cta-btn .primary:hover {
+  text-decoration: none !important;
+}  
+ 
 
-/* =====================
-TOP BAR
-===================== */
+
 .top-bar {
   position: fixed;
   top: 0;
@@ -5584,10 +5592,14 @@ SCROLL TO TOP BUTTON
       Training significantly increases your ability to clear red team certifications compared to self-study alone.
     </p>
   </div>
+  
+   <div class="course-grid-cta">
+     <a href="#" class="btn-tertiary">View Training Programs →</a>
+  </div>  
+   
+
 </section>  
-   <div class="expect-cta">
-    <a href="#" class="btn-tertiary ->">View Training Programs →</a>
-  </div>
+
 <!-- CERTIFICATION & OUTCOMES -->
 <section class="certification-section" id="certification">
   <div class="certification-container">
@@ -5748,23 +5760,6 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
 
 </section>   
 
-
-
-<section class="subscribe-section">
-  <div class="subscribe-container">
-    
-    <h3>Stay Updated</h3>
-    <p>Get updates on training, labs, and conference announcements.</p>
-
-    <form class="subscribe-form">
-      <input type="email" placeholder="Enter your email" required />
-      <button type="submit">Get Notified</button>
-    </form>
-
-    <small>No spam. Only relevant updates.</small>
-
-  </div>
-</section>  
 <!-- =========================
      ALTSecCON PRECAP VIDEO
 ========================= -->
