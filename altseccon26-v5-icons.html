@@ -918,6 +918,11 @@ a.btn::after,
  
 }
   
+.side-cta-panel .cta-btn::after {
+  display: none !important;
+}  
+  
+  
 .btn {
   display: inline-flex;
   align-items: center;
@@ -4006,6 +4011,7 @@ WRAPPER
   right: 1%;
   transform: translateY(-50%);
   z-index: 999;
+  text-decoration: none !important;
 }
 
 /* Hide on desktop */
@@ -4078,12 +4084,10 @@ PANEL
   flex-direction: column;
   gap: 10px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-  transition: all 0.25s ease;
-  
+  transition: all 0.25s ease;  
 }
 
-
-  
+ 
 /* Active */
 .side-cta-panel.active {
   opacity: 1;
@@ -4102,6 +4106,7 @@ BUTTONS
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .cta-btn.primary {
@@ -4109,8 +4114,8 @@ BUTTONS
   color: #fff;
 }
   
-.cta-btn.primary:hover {
- text-decoration: none !important;
+.cta-btn:hover {
+ transform: translateY(-1px);
 }  
 
 .cta-btn.secondary {
