@@ -48,9 +48,9 @@ body {
 /* PRIMARY TEXT SYSTEM */
 
 h2 {
-font-size: 2.25rem;
-font-weight: 700;
-margin-bottom: 16px;
+font-size: 2rem;
+font-weight: 600;
+margin-bottom: 12px;
 color: #111827;
 text-align: center;  
   }    
@@ -78,10 +78,15 @@ section h3 {
 .lead{
   font-size: 1.125rem;
   font-weight: 400;
-  color:#1F2937; 
-  margin-bottom: 16px;
+  color:#4B5563;
+  margin: 0 auto;
   text-align: center;
+  max-width: 720px;
+  padding-bottom: 28px;
+  line-height: 1.7;
 }   
+  
+ 
   
 .supporting-body  {
   font-size: 0.875rem;
@@ -510,14 +515,10 @@ font-size:0.8rem;
 
 }  
 
-.trust-container {
-  max-width: 1000px;
-  margin: auto;
-}
-  
+
 .trust-section {
   background: linear-gradient(to bottom, #ffffff, #F9FAFB);
-  padding: 90px 20px;
+  padding: 80px 20px;
   text-align: center;
 }  
 
@@ -534,7 +535,7 @@ font-size:0.8rem;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 22px;
-  margin-top: 40px;
+
 }
 
 .trust-item {
@@ -612,18 +613,7 @@ border-top:1px solid #E5E7EB;
 margin-bottom:18px;
 }
  
-  
-.course-signal span{
-position:relative;
-padding-right:10px;
-}
 
-.course-signal span:not(:last-child)::after{
-content:"•";
-position:absolute;
-right:-4px;
-color:#9CA3AF;
-}
 .course-card:hover .course-signal{
 color:#4B5563;
 }  
@@ -651,12 +641,7 @@ box-shadow:0 8px 20px rgba(0,0,0,0.05);
   margin-bottom: var(--space-md);
 }
 
-.course-grid {
-  display: grid;
-  justify-content:center;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
+
 
 .course-card {
   background:#FFFFFF;
@@ -676,12 +661,6 @@ box-shadow:0 8px 18px rgba(0,0,0,0.06);
 }
 }
   
-.course-card h3{
-font-size:1.25rem;
-font-weight:600;
-margin-top:4px;
-margin-bottom:8px;
-}
 
 .course-card p {
   font-size: 0.95rem;
@@ -782,7 +761,7 @@ background:#F3F4F6;
 
 .event-structure-section {
   background: var(--white);
-  padding: var(--space-lg) 24px;
+  padding:80px 20px;
 }
 
 .event-structure-container {
@@ -816,6 +795,7 @@ background:#F3F4F6;
   border-radius: 10px;
   padding: 18px 20px;
   background: var(--offwhite);
+  transition: all 0.3s ease;
 }
 
 .structure-card h3 {
@@ -896,7 +876,7 @@ color: #111827;
   letter-spacing:0.12em;
   text-transform:uppercase;
   font-size:.75rem;
-  color:#2B2B50; /* or your color */
+  color:#1E3A8A;
   margin-bottom:10px;
 }  
 /* Brand interaction for links */
@@ -1044,7 +1024,7 @@ CERTIFICATION & OUTCOMES
 .certification-section {
   background: var(--white);
   color: var(--dark);
-  padding: var(--space-lg) 24px;
+  padding:80px 20px;
 }
 
 .certification-container {
@@ -1077,7 +1057,7 @@ CERTIFICATION & OUTCOMES
   padding: 4px 8px;
   border-radius: 999px;
   font-weight: 600;
-  margin: 12px 0 20px;
+  margin-bottom: 20px;
   text-align: center;
   
 }  
@@ -1106,8 +1086,7 @@ CERTIFICATION & OUTCOMES
   left: 0;
   top: 20px;
   bottom: 20px;
-  width: 3px;
-  background: #B91C1C;
+  width: 3px;  
   border-radius: 2px;
 }
 
@@ -1169,21 +1148,12 @@ GALLERY PREVIEW
 .gallery-section {
   background: var(--offwhite);
   color: var(--dark);
-  padding: var(--space-lg) 24px;
+  padding:80px 20px;
 }
 
 .gallery-container {
   max-width: 1100px;
   margin: 0 auto;
-}
-
-
-
-.gallery-intro {
-  font-size: 1.05rem;
-  color: var(--muted);
-  max-width: 720px;
-  margin-bottom: var(--space-md);
 }
 
 /* GRID */
@@ -1449,7 +1419,7 @@ INSTRUCTOR SECTION
 .instructor-section {
   background: var(--offwhite);
   color: var(--dark);
-  padding: var(--space-lg) 24px var(--space-lg);
+  padding:80px 20px;
 }
 
 .instructor-container {
@@ -1479,8 +1449,17 @@ INSTRUCTOR SECTION
 
   display: flex;
   flex-direction: column;
+   transition: all 0.3s ease;
 }
 
+.instructor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border-color: #d1d5db;
+}
+
+  
+  
 .instructor-card img {
   width: 100%;
   aspect-ratio: 4 / 3;   
@@ -1550,24 +1529,18 @@ color: #111827;
 }
 
 
-  .instructor-support {
-    grid-template-columns: 1fr;
-  }
-}
 
-/* Testimonial */
-  .testimonial-section {
-  background: var(--offwhite);
-  color: var(--dark);
-}
+
+
+
 
 
 .testimonial-section {
   background: var(--offwhite);
   color: var(--dark);
-  padding: var(--space-lg) 24px;
   position: relative;
   isolation: isolate;
+  padding:80px 20px; 
 }
 
 .testimonial-container {
@@ -1750,7 +1723,7 @@ border-radius:5px;
   
 @media (min-width: 1024px) {
   .course-card h3 {
-    margin-bottom: 14px;
+   
   }
 
   .course-meta {
@@ -2176,7 +2149,6 @@ gap:22px;
 .justify-section .container{
   max-width:1100px;
   margin:0 auto;
-  padding: var(--space-lg) 24px;
 }
   
 
@@ -2301,7 +2273,7 @@ CONFERENCE SECTION
 .conference-section{
 background: var(--offwhite);
 color: var(--dark);
-padding: var(--space-lg) 24px;
+padding:80px 20px;
 }
 
 .conference-container{
@@ -2311,13 +2283,6 @@ margin:0 auto;
 
 
 
-.conference-lead{
-font-size:1.05rem;
-color:#374151;
-max-width:760px;
-line-height:1.6;
-margin-bottom:18px;
-}
 
 
 /* =====================
@@ -2328,7 +2293,7 @@ CONFERENCE INFO BAR
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  margin: 32px 0 40px;
+  margin-bottom:  40px;
 }
 
 .conference-info-item {
@@ -2341,7 +2306,14 @@ CONFERENCE INFO BAR
   border-radius: 10px;
   max-width: 420px;
   width: 100%;
+  transition: all 0.3s ease;
   
+}
+  
+.conference-info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border-color: #d1d5db;
 }
   
 @media (max-width: 900px) {
@@ -2604,13 +2576,14 @@ height:220px;
   
 .contact-tabs-section {
   background: #FFFFFF;
-  padding: 96px 24px;
+  padding:80px 20px;
+  text-align: center;
 }
 
 .contact-container {
   max-width: 720px;
   margin: 0 auto;
-  text-align: center;
+  
 }
 
 .form-title{
@@ -2713,7 +2686,7 @@ height:220px;
   
 .ticket-section {
   background: #F9FAFB;
-  padding: 96px 24px;
+  padding:80px 20px;
   color: #111827;
 }
 
@@ -2746,7 +2719,16 @@ height:220px;
   padding: 26px;
   text-align: left;
   position: relative;
+  transition: all 0.3s ease;
 }
+  
+.ticket-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border-color: #d1d5db;
+}
+
+  
 
 .ticket-card h3 {
 font-size: 1.25rem;
@@ -2796,24 +2778,16 @@ VENUE SECTION
 .venue-section {
   background: #F9FAFB;
   color: #111827;
-  padding: 96px 24px;
+  padding:80px 20px;
 }
 
 .venue-container {
   max-width: 1100px;
   margin: 0 auto;
-  text-align: center;
+ 
 }
 
- 
-/* Intro */
-.venue-intro {
-  max-width: 720px;
-  margin: 12px auto 40px;
-  font-size: 1.05rem;
-  color: #6B7280;
-  line-height: 1.6;
-}
+
 
 /* =====================
 TOP INFO CARDS
@@ -2831,6 +2805,7 @@ TOP INFO CARDS
   padding: 18px;
   border-radius: 10px;
   text-align: center;
+  transition: all 0.3s ease;
 }
 
 .venue-info-item strong {
@@ -2938,13 +2913,14 @@ RESPONSIVE
 .faq-section {
   background: #FFFFFF;
   color: #111827;
-  padding: 96px 24px;
+  padding:80px 20px;
+  text-align: center;
 }
 
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
-  text-align: center;
+  
 }
 
 .faq-intro {
@@ -3010,75 +2986,53 @@ RESPONSIVE
   max-height: 200px;
 }  
   
+/* SECTION */
 .training-timeline {
-  padding: 80px 20px 40px; /* less bottom space */
-  background: #f8fafc;
+  padding:80px 20px;
+  background: #F8FAFC;
 }
 
 .container {
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
 }
-  
- 
 
-/* HEADER */
+/* ======================
+   HEADER
+====================== */
 .timeline-header {
   text-align: center;
-  margin-bottom: 80px;
- 
+
 }
 
 
 
-.timeline-header h3 {
-font-size: 1.25rem;
-font-weight: 600;
-margin-bottom: 8px;
-color: #111827;
-}
 
-/* STATS */
-.timeline-stats {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.timeline-stats div {
-font-size:0.65rem;
-letter-spacing:0.14em;
-text-transform:uppercase;
-background:#F7F9FC;  
-color:var(--muted);
-border:1px solid #E5E7EB;
-padding:5px 9px;
-border-radius:5px;
-}
-.curriculum-section {
-  padding-top: 40px; /* reduce from large value */
-}
-/* ROW */
+/* ======================
+   ROW
+====================== */
 .timeline-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+  position: relative;
 }
 
-/* REMOVE EXTRA SPACE FROM LAST ITEM */
+/* remove last spacing */
 .timeline-row:last-child {
   margin-bottom: 0;
-}  
-/* REVERSE */
+}
+
+/* reverse layout */
 .timeline-row.reverse {
   flex-direction: row-reverse;
 }
 
-/* IMAGE */
+/* ======================
+   IMAGE
+====================== */
 .timeline-image {
   flex: 1;
 }
@@ -3088,62 +3042,146 @@ border-radius:5px;
   max-width: 520px;
   border-radius: 16px;
   display: block;
+
+  /* 🔥 premium touch */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
 }
 
-/* TEXT */
+.timeline-row:hover .timeline-image img {
+  transform: translateY(-4px);
+}
+
+/* ======================
+   TEXT
+====================== */
 .timeline-text {
   flex: 1;
   position: relative;
+  border-left: 2px solid #1E3A8A;
+  padding-left: 20px;
+  
+  transition: 0.3s ease;
 }
 
-/* NUMBER */
+
+/* ======================
+   NUMBER (BACKGROUND STYLE)
+====================== */
 .timeline-number {
   position: absolute;
-  top: -40px;
-  left: 0;
+  top: -30px;
+  left: -10px;
   font-size: 80px;
   font-weight: 800;
-  color: rgba(30, 58, 138, 0.08);
+  color: rgba(30, 58, 138, 0.06);
+  z-index: 0;
 }
 
-/* TITLE */
+/* ======================
+   TAG (TRAINING / CONFERENCE)
+====================== */
+.timeline-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.timeline-tag.training {
+  color: #B91C1C;
+}
+
+.timeline-tag.conf {
+  color: #1E3A8A;
+}
+
+/* ======================
+   TITLE
+====================== */
 .timeline-text h3 {
-font-size: 1.25rem;
-font-weight: 600;
-margin-bottom: 8px;
-color: #111827;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
 }
 
-/* TEXT */
+/* ======================
+   BODY
+====================== */
+.timeline-text p {
+  color: #4B5563;
+  line-height: 1.7;
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+}
 
+/* ======================
+   CTA
+====================== */
+.timeline-cta {
+  margin-top: 60px;
+  text-align: center;
+}
 
-/* RESPONSIVE */
+.primary-btn {
+  background: #B91C1C;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: #991B1B;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
 @media (max-width: 900px) {
+
   .timeline-row {
     flex-direction: column;
     text-align: center;
     gap: 30px;
+    margin-bottom: 60px;
   }
 
   .timeline-row.reverse {
     flex-direction: column;
   }
 
-  .timeline-text p {
-    max-width: 100%;    
+  .timeline-text {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .timeline-row:hover .timeline-text {
+    border-left: none;
   }
 
   .timeline-number {
     position: static;
     font-size: 40px;
     margin-bottom: 10px;
+    display: block;
   }
-}
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-}
+
+  .timeline-text p {
+    max-width: 100%;
+  }
+
+}  
+  
+
 
 /* CARD */
 .course-card {
@@ -3210,19 +3248,12 @@ color: #111827;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 3px;
-  height: 70%; /* shorter line for style */
-  background: #B91C1C;   
+  width: 2px;
+  height: 50%; /* shorter line for style */
+  background: #1E3A8A;
 }
 
 
-/* MAIN TITLE */
-.course-card h3 {
-font-size: 1.25rem;
-font-weight: 600;
-margin-bottom: 8px;
-color: #111827;
-}
 
 
 /* LINK */
@@ -3438,8 +3469,16 @@ FOOTER SOCIAL
   padding:25px;
   border-radius:10px;
   text-align:center;
+  transition: all 0.3s ease;
 }
 
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border-color: #d1d5db;
+}
+
+  
 .stat-number{
   font-size:1.75rem;
   font-weight:600;
@@ -4604,7 +4643,7 @@ SCROLL TO TOP BUTTON
 
   
 .training-benefits {
-  padding: 96px 20px;
+  padding: 80px 20px;
   background: #F9FAFB;
 }
 
@@ -4689,182 +4728,79 @@ SCROLL TO TOP BUTTON
 }  
 
 
-/* SECTION */
-.day-experience {
-  padding: 96px 20px;
-  background: #ffffff;
-  overflow: hidden;
-}
-
-/* HEADER */
-.section-eyebrow {
-  font-size: 13px;
-  color: #6B7280;
-  margin-bottom: 8px;
-}
-
-.section-title {
-  font-size: 32px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 12px;
-}
-
-.section-intro {
-  max-width: 680px;
-  color: #374151;
-  margin-bottom: 32px;
-}
-
-/* =========================
-   TABS (PREMIUM RED ACTIVE)
-========================= */
-.exp-tabs {
-  position: relative;
-  display: flex;
-  justify-content: center;
-
-  background: #F3F4F6;
-  border-radius: 999px;
-  padding: 4px;
-
-  margin: 0 auto 36px auto;
-  width: fit-content; /* keeps it tight */
-}
-.day-experience .container {
+.altsec-experience {
+  padding: 100px 20px;
+  background: #F9FAFB;
   text-align: center;
-}  
-/* TAB */
-.exp-tab {
-  position: relative;
-  z-index: 2;
-  padding: 8px 20px;
-  border: none;
-  background: transparent;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 999px;
-  color: #6B7280;
-  transition: 0.3s ease;
 }
 
-/* ACTIVE TAB (RED) */
-.exp-tab.active {
-  color: #fff;
-}
-
-/* INDICATOR (RED BACKGROUND) */
-.tab-indicator {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  height: calc(100% - 8px);
-  background: #B91C1C;
-  border-radius: 999px;
-  transition: all 0.3s ease;
-}
-
-/* =========================
-   CONTENT
-========================= */
-.exp-content {
-  position: relative;
-  min-height: 220px;
-}
-
-/* PANES */
-.exp-pane {
-  opacity: 0;
-  transform: translateY(16px);
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  transition: all 0.35s ease;
-}
-
-.exp-pane.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-  position: relative;
-}
-
-/* =========================
-   FLOW
-========================= */
 .flow-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: 16px;  
   flex-wrap: wrap;
 }
 
-/* STEP */
 .flow-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   background: #fff;
   border: 1px solid #E5E7EB;
-  padding: 16px 18px;
-  border-radius: 12px;
-  min-width: 130px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  min-width: 140px;
 
-  transition: 0.25s ease;
+  transition: 0.3s;
+  opacity: 0.6;
 }
 
-.flow-step:hover {
-  transform: translateY(-4px);
-  border-color: #D1D5DB;
+.flow-step.active {
+  opacity: 1;
+  border-color: #1E3A8A;
 }
 
-/* ICON */
 .flow-step i {
-  width: 22px;
-  height: 22px;
+  display: block;
+  margin-bottom: 6px;
   color: #B91C1C;
-  margin-bottom: 8px;
 }
 
-/* TEXT */
-.flow-step span {
-  font-size: 14px;
-  font-weight: 500;
-  color: #111827;
-}
-
-/* ARROW */
-.flow-arrow {
+.carousel-dots {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 18px;
 }
 
-.flow-arrow i {
-  width: 18px;
-  height: 18px;
-  color: #9CA3AF;
+.dot {
+  width: 6px;
+  height: 6px;
+  background: #D1D5DB;
+  border-radius: 50%;
 }
 
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-
-  .flow-wrapper {
-    flex-direction: column;
-  }
-
-  .flow-arrow {
-    transform: rotate(90deg);
-  }
-
-  .section-title {
-    font-size: 24px;
-  }
-
+.dot.active {
+  width: 16px;
+  background: #B91C1C;
 }
+
+.flow-content {
+  margin-top: 30px;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.flow-content-item {
+  display: none;
+}
+
+.flow-content-item.active {
+  display: block;
+}
+
+.flow-content img {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 12px;
+} 
 </style>
 </head>
 
@@ -5130,16 +5066,16 @@ SCROLL TO TOP BUTTON
 
     <!-- HEADER -->
     <div class="timeline-header">
-      <span class="section-eyebrow">What to Expect</span>
+      <span class="eyebrow">What to Expect</span>
 
       <h2>What You’ll Gain from <span class="time-sec">AltSecCON</span></h2>
 
       <p class="lead">
-        Join AltSecCON for an immersive, hands-on cybersecurity experience designed to deliver real-world red teaming skills, meaningful connections, and long-term career value.
+        A structured combination of hands-on training and conference experience designed to build real-world skills and meaningful industry connections.
       </p>
     </div>
 
-    <!-- ITEM 1 -->
+    <!-- 01 TRAINING -->
     <div class="timeline-row">
       <div class="timeline-image">
         <img src="https://redteamverse.github.io/red-team-training/images/new-3.webp">
@@ -5148,53 +5084,60 @@ SCROLL TO TOP BUTTON
       <div class="timeline-text">
         <span class="timeline-number">01</span>
         <h3>Hands-On Instructor-Led Training</h3>
-        <p class="supporting-body">Learn directly from industry experts through in-depth, real-world red team training sessions.</p>
+        <p class="supporting-body">
+          Learn directly from experts through real-world red team techniques, guided labs, and structured attack scenarios.
+        </p>
       </div>
     </div>
 
-    <!-- ITEM 2 -->
+    <!-- 02 TRAINING -->
     <div class="timeline-row reverse">
-      <div class="timeline-image">
-        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp">
-      </div>
-
-      <div class="timeline-text">
-        <span class="timeline-number">02</span>
-        <h3>Networking with Security Professionals</h3>
-        <p class="supporting-body">Connect with like-minded practitioners, exchange ideas, and build valuable industry relationships.</p>
-      </div>
-    </div>
-
-   
-
-    <!-- ITEM 4 -->
-    <div class="timeline-row">
       <div class="timeline-image">
         <img src="https://redteamverse.github.io/red-team-training/images/PostTrainingLabAccess.webp">
       </div>
 
       <div class="timeline-text">
-        <span class="timeline-number">03</span>
-        <h3>Post-Training Lab Access & Certification</h3>
-        <p class="supporting-body">Continue learning beyond the event with extended lab access and certification opportunities.</p>
+        <span class="timeline-number">02</span>
+        <h3>Lab Practice & Real Attack Simulation</h3>
+        <p class="supporting-body">
+          Apply concepts in hands-on lab environments designed to simulate real enterprise attack paths.
+        </p>
       </div>
     </div>
 
-     <!-- ITEM 5 -->
-    <div class="timeline-row reverse">
+    <!-- 03 TRAINING -->
+    <div class="timeline-row">
       <div class="timeline-image">
-        <img src="https://redteamverse.github.io/red-team-training/images/c5.webp">
+        <img src="https://redteamverse.github.io/red-team-training/images/demo-cert.avif">
       </div>
 
       <div class="timeline-text">
-        <span class="timeline-number">04</span>
-        <h3>Course Completion Certification</h3>
-        <p class="supporting-body">Certificates are issued only after attending the complete training duration, including all practical and instructor-led sessions.</p>
+        <span class="timeline-number">03</span>
+        <h3>Certification & Continued Learning</h3>
+        <p class="supporting-body">
+          Validate your skills with certification and continue improving through extended lab access.
+        </p>
       </div>
-      
+    </div>
+
+   
+      <!-- 04 CONFERENCE -->
+  <div class="timeline-row reverse">
+    <div class="timeline-image">
+      <img src="https://redteamverse.github.io/red-team-training/images/c4.webp" alt="AltSecCON Conference Networking">
+    </div>
+
+    <div class="timeline-text">
+      <span class="timeline-number">04</span>      
+      <h3>Conference & Networking Experience</h3>
+      <p class="supporting-body">
+        Attend expert talks, connect with professionals, and gain insights from real-world security practitioners.
+      </p>
     </div>
   </div>
-   
+
+  </div>
+
 </section>
   
  <div class="expect-cta">
@@ -5284,10 +5227,8 @@ SCROLL TO TOP BUTTON
 </section>
   <!-- TRUST -->
 <section class="trust-section" id="community">
-  <div class="trust-container">
-   
-    <span class="section-eyebrow">Community Trust</span>
-
+  <div class="container">   
+    <span class="eyebrow">Community Trust</span>
     <h2>Trusted by Security Professionals</h2>     
     <p class="lead">
       Security professionals across India joined AltSecCON for hands-on red team training and real-world collaboration.
@@ -5429,7 +5370,7 @@ SCROLL TO TOP BUTTON
 
         <h3>Evasion Techniques for Red Teams</h3>
 
-        <div class="course-signal supporting-body">
+        <div class=" supporting-body">
           This 3-day beginner class teaches you how to get started with Red Teaming. It covers AD enumeration, trust mapping, Kerberos-based attacks, and defense bypasses.
         </div>
             <div class="course-meta">
@@ -5724,7 +5665,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
       <img src="https://redteamverse.github.io/red-team-training/images/new-5.webp">
     </div>
     <h3>Technical Talks</h3>
-    <p class="supporting-body">
+    <p class="course-signal supporting-body">
       Presentations from experienced security professionals covering offensive security research, Red Team techniques, and real-world attack scenarios.
     </p>
   </div>
@@ -5735,7 +5676,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
       <img src="https://redteamverse.github.io/red-team-training/images/new-7.webp">
     </div>
     <h3>Practitioner Insights</h3>
-    <p class="supporting-body">
+    <p class="course-signal supporting-body">
       Discussions from practitioners actively working in Red Team operations, adversary simulation, and enterprise security assessments.
     </p>
   </div>
@@ -5746,7 +5687,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
       <img src="https://redteamverse.github.io/red-team-training/images/c5.webp">
     </div>
     <h3>Security Community</h3>
-    <p class="supporting-body">
+    <p class="course-signal supporting-body">
       An opportunity for security professionals to connect with peers, share experiences, and discuss practical security challenges.
     </p>
   </div>
@@ -5757,7 +5698,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
       <img src="https://redteamverse.github.io/red-team-training/images/new-2.webp">
     </div>
     <h3>Knowledge Exchange</h3>
-    <p class="supporting-body">
+    <p class="course-signal supporting-body">
       Focused conversations around modern attack techniques, defensive strategies, and the evolving enterprise threat landscape.
     </p>
   </div>
@@ -5778,154 +5719,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
 
 </section>   
 
-<section class="day-experience">
 
-  <div class="container">
-
-    <!-- HEADER -->
-    <p class="eyebrow">Experience</p>
-    <h2>A Day Designed for Real Impact</h2>
-    <p class="lead">
-      From expert-led sessions to hands-on learning and networking, every part of AltSecCON is structured to deliver practical, real-world value.
-    </p>
-
-    <!-- TABS -->
-    <div class="exp-tabs">
-      <div class="tab-indicator"></div>      
-      <button class="exp-tab" data-tab="exp-training">Training</button>
-      <button class="exp-tab active" data-tab="exp-conference">Conference</button>
-    </div>
-
-    <!-- CONTENT -->
-    <div class="exp-content">
-
-      <!-- TRAINING -->
-      <div class="exp-pane" id="exp-training">
-        <div class="flow-wrapper">
-
-          <div class="flow-step">
-            <div class="icon-box">
-            <i data-lucide="terminal"></i>
-            </div>
-            <span>Lab Setup</span>
-          </div>
-
-          <div class="flow-arrow">
-            <div class="icon-box">
-            <i data-lucide="arrow-right"></i></div>
-          </div>
-
-          <div class="flow-step">
-            <div class="icon-box">
-            <i data-lucide="cpu"></i>
-            </div>
-            <span>Hands-On Labs</span>
-          </div>
-
-          <div class="flow-arrow">
-            <div class="icon-box">
-            <i data-lucide="arrow-right"></i></div>
-          </div>
-
-          <div class="flow-step">
-            <div class="icon-box">
-            <i data-lucide="user-check"></i>
-            </div>
-            <span>Guided Learning</span>
-          </div>
-
-          <div class="flow-arrow">
-            <div class="icon-box">
-            <i data-lucide="arrow-right"></i></div>
-          </div>
-
-          <div class="flow-step">
-            <div class="icon-box">
-            <i data-lucide="zap"></i>
-            </div>
-            <span>Attack Simulation</span>
-          </div>
-
-          <div class="flow-arrow">
-            <div class="icon-box">
-            <i data-lucide="arrow-right"></i></div>
-          </div>
-
-          <div class="flow-step">
-            <div class="icon-box">
-            <i data-lucide="award"></i>
-            </div>
-            <span>Certification</span>
-          </div>
-
-        </div>
-      </div>
-            <!-- CONFERENCE -->
-      <div class="exp-pane active" id="exp-conference">
-        <div class="flow-wrapper">
-
-          <div class="flow-step">
-            <div class="icon-box">
-            <i data-lucide="badge-check"></i>
-            </div>
-            <span>Registration</span>
-          </div>
-
-          <div class="flow-arrow">
-            <div class="icon-box">
-            <i data-lucide="arrow-right"></i></div>
-          </div>
-
-          <div class="flow-step">
-            <div class="icon-box">
-            <i data-lucide="mic"></i>
-            </div>
-            <span>Expert Talks</span>
-          </div>
-
-          <div class="flow-arrow">
-            <div class="icon-box">
-            <i data-lucide="arrow-right"></i></div>
-          </div>
-
-          <div class="flow-step">
-            <div class="icon-box">
-            <i data-lucide="users"></i>
-            </div>
-            <span>Networking</span>
-          </div>
-
-          <div class="flow-arrow">
-            <div class="icon-box">
-            <i data-lucide="arrow-right"></i></div>
-          </div>
-
-          <div class="flow-step">
-            <div class="icon-box">
-            <i data-lucide="utensils"></i>
-            </div>
-            <span>Food & Breaks</span>
-          </div>
-
-          <div class="flow-arrow">
-            <div class="icon-box">
-            <i data-lucide="arrow-right"></i></div>
-          </div>
-
-          <div class="flow-step">
-            <div class="icon-box">
-            <i data-lucide="file-check"></i>
-            </div>
-            <span>Certificate</span>
-          </div>
-
-        </div>
-      </div> 
-    </div>
-
-  </div>
-
-</section>  
 
 <section class="subscribe-section">
   <div class="subscribe-container">
@@ -5984,11 +5778,112 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
       <a href="https://redteamverse.github.io/red-team-training/altseccon25-v1.html" class="btn-tertiary">View AltSecCON 2025 →</a>
     </div>
 </section>    
+  
+<section class="altsec-experience">
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <p class="eyebrow">AltSecCON Experience</p>
+    <h2>Your Day at AltSecCON</h2>
+    <p class="lead">
+      A complete experience combining hands-on training, expert talks, networking, and certification.
+    </p>
+
+    <!-- FLOW -->
+    <div class="flow-wrapper">
+
+      <div class="flow-step active" data-step="0">
+        <i data-lucide="terminal"></i>
+        <span>Lab Setup</span>
+      </div>
+
+      <div class="flow-step" data-step="1">
+        <i data-lucide="cpu"></i>
+        <span>Hands-On Labs</span>
+      </div>
+
+      <div class="flow-step" data-step="2">
+        <i data-lucide="mic"></i>
+        <span>Expert Talks</span>
+      </div>
+
+      <div class="flow-step" data-step="3">
+        <i data-lucide="users"></i>
+        <span>Networking</span>
+      </div>
+
+      <div class="flow-step" data-step="4">
+        <i data-lucide="utensils"></i>
+        <span>Food & Breaks</span>
+      </div>
+
+      <div class="flow-step" data-step="5">
+        <i data-lucide="award"></i>
+        <span>Certification</span>
+      </div>
+
+    </div>
+
+    <!-- DOTS -->
+    <div class="carousel-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+      <span class="dot" data-index="4"></span>
+      <span class="dot" data-index="5"></span>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="flow-content">
+
+      <div class="flow-content-item active" data-step="0">
+        <h3>Lab Setup</h3>
+        <p>Get access to your environment and tools to begin your hands-on journey.</p>
+        <img src="https://redteamverse.github.io/red-team-training/images/new-3.webp">
+      </div>
+
+      <div class="flow-content-item" data-step="1">
+        <h3>Hands-On Labs</h3>
+        <p>Practice real-world attack techniques in guided lab environments.</p>
+        <img src="https://redteamverse.github.io/red-team-training/images/PostTrainingLabAccess.webp">
+      </div>
+
+      <div class="flow-content-item" data-step="2">
+        <h3>Expert Talks</h3>
+        <p>Learn from practitioners sharing real enterprise attack scenarios.</p>
+        <img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp">
+      </div>
+
+      <div class="flow-content-item" data-step="3">
+        <h3>Networking</h3>
+        <p>Connect with security professionals and expand your network.</p>
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp">
+      </div>
+
+      <div class="flow-content-item" data-step="4">
+        <h3>Food & Breaks</h3>
+        <p>Relax and engage in informal discussions during breaks.</p>
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-6.webp">
+      </div>
+
+      <div class="flow-content-item" data-step="5">
+        <h3>Certification</h3>
+        <p>Receive your official participation certificate.</p>
+        <img src="https://redteamverse.github.io/red-team-training/images/demo-cert.avif">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>  
 <section class="ticket-section" id="tickets">
 
   <div class="ticket-container" >
 
-    <span class="section-eyebrow">Tickets</span>
+    <span class="eyebrow">Tickets</span>
     <h2>Choose Your <span class="time-sec">AltSecCON</span> Experience</h2>
     <p class="lead">
       Select the option that best fits your learning goals — training, conference, or a complete experience.
@@ -6052,7 +5947,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
 <section id="instructors" class="instructor-section">
   <div class="instructor-container">
 
-    <span class="section-eyebrow">Instructors</span>
+    <span class="eyebrow">Instructors</span>
     <h2>Meet Your Instructors</h2>
 
     <p class="lead">
@@ -6557,7 +6452,7 @@ Thanks,
 <section class="contact-tabs-section" id="contact">
 
   <div class="contact-container">
-     <span class="section-eyebrow">Contact Us</span>
+     <span class="eyebrow">Contact Us</span>
     <h2>Get Started with <span class="time-sec">AltSecCON</span></h2>
     <p class="lead">
       Choose what you're interested in and share your details. Our team will get in touch with relevant information.
@@ -6611,7 +6506,7 @@ Thanks,
 
   <div class="faq-container">
 
-    <span class="section-eyebrow">FAQs</span>
+    <span class="eyebrow">FAQs</span>
     <h2>Frequently Asked Questions</h2>
     <p class="lead">
       Find answers to common questions about AltSecCON training, conference, and participation.
@@ -7246,6 +7141,29 @@ tabs.forEach(tab => {
 
     moveIndicator(tab);
   });
+});
+</script>
+  <script>
+const steps = document.querySelectorAll(".flow-step");
+const dots = document.querySelectorAll(".dot");
+const contents = document.querySelectorAll(".flow-content-item");
+
+function setActive(index) {
+  steps.forEach(s => s.classList.remove("active"));
+  dots.forEach(d => d.classList.remove("active"));
+  contents.forEach(c => c.classList.remove("active"));
+
+  steps[index].classList.add("active");
+  dots[index].classList.add("active");
+  contents[index].classList.add("active");
+}
+
+steps.forEach((step, i) => {
+  step.addEventListener("click", () => setActive(i));
+});
+
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => setActive(i));
 });
 </script>
 </body>
