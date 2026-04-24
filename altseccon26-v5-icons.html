@@ -4801,6 +4801,47 @@ SCROLL TO TOP BUTTON
   margin-top: 15px;
   border-radius: 12px;
 } 
+/* ======================
+   MOBILE HORIZONTAL FLOW
+====================== */
+@media (max-width: 768px) {
+
+  .flow-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 14px;
+
+    padding: 10px 0;
+
+    justify-content: flex-start;
+
+    /* smooth scroll */
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 16px;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .flow-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* STEP */
+  .flow-step {
+    flex: 0 0 auto;
+    min-width: 150px;
+
+    scroll-snap-align: start;
+  }
+
+  /* improve tap feel */
+  .flow-step:active {
+    transform: scale(0.96);
+  }
+
+}  
 </style>
 </head>
 
