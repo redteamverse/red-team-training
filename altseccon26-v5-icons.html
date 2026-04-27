@@ -4848,6 +4848,76 @@ SCROLL TO TOP BUTTON
   }
 
 }  
+  
+.actions {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* PRIMARY CTA */
+.btn-primary {
+  background: #B91C1C;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+
+  transition: 0.25s ease;
+  box-shadow: 0 10px 25px rgba(185, 28, 28, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(185, 28, 28, 0.35);
+}
+
+/* SECONDARY CTA */
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,0.5);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  backdrop-filter: blur(6px);
+  transition: 0.25s;
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* META TEXT */
+.cta-meta {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  max-width: 420px;
+  text-align: center;
+  line-height: 1.4;
+}  
+  
+/* DESKTOP CTA INLINE */
+@media (min-width: 769px) {
+
+  .actions {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* keep meta below */
+  .cta-meta {
+    flex-basis: 100%;
+    order: 3;
+    margin-top: 4px;
+  }
+
+}  
 </style>
 </head>
 
@@ -4855,7 +4925,7 @@ SCROLL TO TOP BUTTON
   
 <div class="top-bar" id="topBar">
   <span class="top-bar-text">
-    Early Bird Ends Soon — Use Code <strong>EARLY200</strong>
+    Early Bird Tickets Now Live — Limited Seats for Hands-On Training
   </span>
 
   <button class="top-bar-close" id="topBarClose">✕</button>
@@ -5043,7 +5113,7 @@ SCROLL TO TOP BUTTON
 
     <h1>AltSecCON 2026</h1>
 
-    <div class="edition"> In-Person Red Team Training & Conference</div>    
+    <div class="edition">Hands-On Red Team Training + Conference</div>    
 
     <!-- Event Info -->
     <div class="hero-event-info">
@@ -5069,24 +5139,39 @@ SCROLL TO TOP BUTTON
     <div class="authority">    
 
       <div class="authority-capabilities">
-
-        <span class="m-hide">Industry-leading in-person red team training and conference experience covering On-Prem AD exploitation, Azure red teaming, and real-world adversary simulation.</span>
+         <span>Master real-world Active Directory and Azure attack techniques</span><span class="m-hide">in a 3-day hands-on training, 
+         followed by a 1-day practitioner-focused conference in Bangalore.</span>
       
         <div>On-Prem AD</div>
         <div>Azure Red Teaming</div>       
-        <div>Practitioner Conference</div>   
+        <div>Adversary Simulation</div>   
         
       </div>
 
     </div>
 
 
-    <div class="actions">
-      <a href="#training" class="btn btn-primary">Explore Training Programs</a>
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-final.html" class="btn btn-ghost">View Conference Details</a>
-    </div>
+ <div class="actions">
+
+  <!-- PRIMARY CTA -->
+  <a href="#training" class="btn btn-primary">
+    Secure Early Bird Pass
+  </a>
+
+  <!-- TRUST + URGENCY -->
+  <p class="cta-meta">
+    <span>Early bird ends soon • Limited hands-on lab seats</span><span class="m-hide">
+    • Price increases after deadline</span>
+  </p>
+
+  <!-- SECONDARY CTA -->
+  <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-final.html" 
+     class="btn btn-ghost">
+    View Training Details
+  </a>
+
+</div>
   </div>
-  
 </section>
   <nav class="section-nav" id="sectionNav">
   <div class="section-nav-container">
