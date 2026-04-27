@@ -312,21 +312,56 @@ section h3 {
 
 /* Capabilities */
 .authority-capabilities {
-  display: flex;
+
   justify-content: center;
-  gap: 18px;
-  font-size: 0.85rem;
+  font-size:0.85rem;
   color: #E5E7EB;
   flex-wrap: wrap;
-  line-height: 20px;
+  line-height: 1.6;
+  text-align: center;  
+  margin: 0 auto;
+  
   
 }
-.authority-capabilities div{
-  border: 1px solid rgba(255,255,255,0.25);
-  padding: 5px 12px;
+  
+/* Capabilities */
+.authority-capabilities span {
+
+  font-size:0.85rem;
+  color: #E5E7EB; 
+  line-height: 1.6;
+  
+}  
+  
+   
+.auth-text {
+  line-height: 1.6;
+  margin-bottom: 14px; /* spacing before tags */
+}  
+  
+/* TAGS (ONLY HERE WE USE FLEX + GAP) */
+.auth-tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* TAG STYLE */
+.auth-tags span {
+  padding: 6px 12px;
   border-radius: 999px;
-  font-size: 0.8rem;
-} 
+  border: 1px solid rgba(255,255,255,0.25);
+  font-size: 12px;
+}
+
+/* MOBILE HIDE */
+@media (max-width: 768px) {
+  .m-hide {
+    display: none;
+  }
+}  
+
 
 /* CTA buttons wrapper */
 .actions {
@@ -371,60 +406,7 @@ section h3 {
   border-radius:999px;
 }
 
-@media (max-width: 768px) {
 
-  .authority {
-    padding: 16px;
-    max-width: 100%;
-  }
-
-  .authority-capabilities {
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .authority-capabilities div {
-    font-size: 0.75rem;
-    padding: 6px 12px;
-    line-height: 1.2;
-  }
-
-  /* 🔥 Force better wrapping (2 per row feel) */
-  .authority-capabilities div {
-    flex: 0 1 auto;
-  }
-
-}
-
-/* =====================
-AUTHORITY CAPABILITY TAGS
-===================== */
-
-.authority-capabilities div{
-
-  border:1px solid rgba(255,255,255,0.25);
-  padding:6px 14px;
-  border-radius:999px;
-
-  font-size:0.75rem;
-
-  background:rgba(255,255,255,0.05);
-
-  transition:all .2s ease;
-
-}
-
-@media (hover:hover){
-
-.authority-capabilities div:hover{
-
-  background:rgba(255,255,255,0.12);
-
-  transform:translateY(-2px);
-
-}
-
-}
 
 
 /* =====================
@@ -997,8 +979,7 @@ box-shadow:0 4px 10px rgba(185,28,28,0.2);
   
   .btn-ghost:hover{
   background-color: #1E3A8A;
-  color: #FFFFFF;
-  border-color: #1E3A8A;
+  color: #FFFFFF; 
   transform:translateY(-2px);
   }  
 
@@ -2282,6 +2263,7 @@ padding:80px 20px;
 .conference-container{
 max-width:1100px;
 margin:0 auto;
+  text-align: center;
 }
 
 
@@ -3233,28 +3215,34 @@ RESPONSIVE
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
 }
-
+  
+/* CONTAINER */
 .course-signal-name {
-  position: relative;
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 15px 9px 15px 14px;
-  color: #4B5563;
+  display: flex;
+  align-items: center;
+  gap:8px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
-.course-signal-name::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2px;
-  height: 50%; /* shorter line for style */
-  background: #1E3A8A;
+/* CRTP BADGE */
+.course-badge {
+  background: rgba(185,28,28,0.1);
+  color: #B91C1C;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
 }
+
+/* DESCRIPTION */
+.course-desc {
+  font-size: 13px;
+  color: #6B7280;
+}
+
 
 
 
@@ -4287,12 +4275,8 @@ MOBILE DROPDOWN FIX
     background: #F8FAFC
   }  
   
-@media (max-width: 768px) {
- .m-hide {
-    display: none;
-  }
-}  
   
+
 /* PRICE */
 .course-price {
   font-size: 20px;
@@ -4899,6 +4883,7 @@ SCROLL TO TOP BUTTON
   line-height: 1.4;
 }  
   
+
 /* DESKTOP CTA INLINE */
 @media (min-width: 769px) {
 
@@ -4917,6 +4902,189 @@ SCROLL TO TOP BUTTON
     margin-top: 4px;
   }
 
+}  
+  
+.auth-sub {
+  display: block;
+  margin-top: 6px;
+  color: #CBD5F5;
+}  
+  
+/* ======================
+   STATS
+====================== */
+.trust-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px 0 40px;
+  flex-wrap: wrap;
+}
+
+.trust-stats div {
+  text-align: center;
+}
+
+.trust-stats strong {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.trust-stats span {
+  font-size: 12px;
+  color: #6B7280;
+}
+
+/* ======================
+   TESTIMONIAL
+====================== */
+.trust-testimonial {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #374151;
+  max-width: 520px;
+  margin-inline: auto;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.trust-testimonial span {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #6B7280;
+  font-style: normal;
+}  
+  
+.conference-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+   text-align: center;
+  font-size: 13px;
+  color: #B91C1C;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 6px 12px;
+  border-radius: 999px;
+
+ margin: 0 auto;
+}
+
+/* icon */
+.conference-note i {
+  width: 16px;
+  height: 16px;
+  color: #EF4444; /* subtle red accent */
+}  
+  
+.conference-note {
+  backdrop-filter: blur(6px);
+}  
+  
+
+.ticket-sub-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #B91C1C;
+
+  padding: 5px 10px 5px 12px; /* extra left space */
+  
+  border-left: 2px solid rgba(185,28,28,0.6);
+
+  margin-bottom: 14px;
+}
+  
+  
+.ticket-price-start {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 8px 0 14px;
+}
+
+/* EARLY BIRD TAG */
+.ticket-price-start span {
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #B91C1C;
+  background: rgba(185, 28, 28, 0.1);
+
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-left: 6px;
+}  
+  
+/* spacing from cards */
+.ticket-grid {
+  margin-bottom: 28px; /* 🔥 creates gap */
+}
+.pricing-note {
+  border-top: 1px solid #E5E7EB;
+  padding-top: 14px;
+  margin-top: 0;
+}
+/* note spacing */
+.pricing-note i {
+  margin-top: 0; /* remove overlap feel */
+  padding-top: 14px;
+  text-align: center;
+  font-size: 13px;
+  color: #6B7280; 
+} 
+  
+/* WRAPPER */
+.instructor-footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #E5E7EB;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* TRUST LINE */
+.trust-inline {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6B7280;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ICON */
+.trust-inline i {
+  width: 14px;
+  height: 14px;
+  opacity: 0.7;
+}
+
+.venue-info {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #374151;
+}  
+/* CTA */
+.instructor-card-cta {
+  margin: 0; /* remove old spacing */
+}
+
+/* MOBILE STACK */
+@media (max-width: 768px) {
+  .instructor-footer {
+    flex-direction: column;
+    text-align: center;
+  }
 }  
 </style>
 </head>
@@ -5120,17 +5288,17 @@ SCROLL TO TOP BUTTON
 
       <div class="hero-info-item">
         <i class="fa-solid fa-calendar-days"></i>
-        <span><strong>Training</strong> 31 Oct – 2 Nov 2026</span>
+        <span><strong>Training</strong> 24 Oct – 26 Oct 2026</span>
       </div>
 
       <div class="hero-info-item">
         <i class="fa-solid fa-microphone"></i>
-        <span><strong>Conference</strong> 3 Nov 2026</span>
+        <span><strong>Conference</strong> 27 Oct 2026</span>
       </div>
 
       <div class="hero-info-item">
         <i class="fa-solid fa-location-dot"></i>
-        <span><strong>Location</strong> Bengaluru, India</span>
+        <span><strong>Location</strong> Hilton Hotel Bengaluru, India</span>
       </div>
 
     </div>
@@ -5139,14 +5307,23 @@ SCROLL TO TOP BUTTON
     <div class="authority">    
 
       <div class="authority-capabilities">
-         <span>Master real-world Active Directory and Azure attack techniques</span><span class="m-hide">in a 3-day hands-on training, 
-         followed by a 1-day practitioner-focused conference in Bangalore.</span>
-      
-        <div>On-Prem AD</div>
-        <div>Azure Red Teaming</div>       
-        <div>Adversary Simulation</div>   
-        
-      </div>
+
+  <!-- TEXT BLOCK -->
+  <div class="auth-text">
+    Master real-world Active Directory and Azure attack techniques
+    <span class="m-hide">
+      in a 3-day hands-on training, followed by a 1-day practitioner-focused conference.
+    </span>
+  </div>
+
+  <!-- TAGS -->
+  <div class="auth-tags">
+    <span>On-Prem AD</span>
+    <span>Azure Red Teaming</span>
+    <span>Adversary Simulation</span>
+  </div>
+
+</div>
 
     </div>
 
@@ -5198,12 +5375,12 @@ SCROLL TO TOP BUTTON
 
     <!-- HEADER -->
     <div class="timeline-header">
-      <span class="eyebrow">What to Expect</span>
+      <span class="eyebrow">Skills You’ll Build</span>
 
-      <h2>What You’ll Gain from <span class="time-sec">AltSecCON</span></h2>
+      <h2>Build Real Red Team Skills</h2>
 
       <p class="lead">
-        A structured combination of hands-on training and conference experience designed to build real-world skills and meaningful industry connections.
+        Build real-world red teaming skills through hands-on labs, not theory — focused on Active Directory, Azure, and adversary simulation.
       </p>
     </div>
 
@@ -5215,9 +5392,9 @@ SCROLL TO TOP BUTTON
 
       <div class="timeline-text">
         <span class="timeline-number">01</span>
-        <h3>Hands-On Instructor-Led Training</h3>
+        <h3>Hands-On Red Team Training (3 Days)</h3>
         <p class="supporting-body">
-          Learn directly from experts through real-world red team techniques, guided labs, and structured attack scenarios.
+          Execute real attack techniques in guided labs covering Active Directory exploitation, Azure abuse paths, and lateral movement — built to simulate real enterprise environments.
         </p>
       </div>
     </div>
@@ -5230,9 +5407,9 @@ SCROLL TO TOP BUTTON
 
       <div class="timeline-text">
         <span class="timeline-number">02</span>
-        <h3>Lab Practice & Real Attack Simulation</h3>
+        <h3>Lab-Based Attack Simulation</h3>
         <p class="supporting-body">
-          Apply concepts in hands-on lab environments designed to simulate real enterprise attack paths.
+          Practice full attack paths in controlled lab environments designed to mirror real-world red team engagements.
         </p>
       </div>
     </div>
@@ -5245,9 +5422,9 @@ SCROLL TO TOP BUTTON
 
       <div class="timeline-text">
         <span class="timeline-number">03</span>
-        <h3>Certification & Continued Learning</h3>
+        <h3>Certification + Extended Lab Access</h3>
         <p class="supporting-body">
-          Validate your skills with certification and continue improving through extended lab access.
+          Validate your skills and continue practicing beyond the event with extended lab access.
         </p>
       </div>
     </div>
@@ -5263,7 +5440,7 @@ SCROLL TO TOP BUTTON
       <span class="timeline-number">04</span>      
       <h3>Conference & Networking Experience</h3>
       <p class="supporting-body">
-        Attend expert talks, connect with professionals, and gain insights from real-world security practitioners.
+        Attend talks and connect with experienced red teamers working on real-world engagements.
       </p>
     </div>
   </div>
@@ -5274,6 +5451,9 @@ SCROLL TO TOP BUTTON
   
  <div class="expect-cta">
     <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Reserve Your Seat</a>
+   <p class="trust-note">
+      Prices increase soon • Limited hands-on lab seats
+    </p>
   </div>
   
 <!-- =========================
@@ -5283,29 +5463,28 @@ SCROLL TO TOP BUTTON
 
   <div class="container">
 
-    <span class="eyebrow">WHY TRAIN WITH US</span>
-    <h2>Built for Real-World Enterprise Security</h2>
+    <span class="eyebrow">Why Train at AltSecCON</span>
+    <h2>Why AltSecCON Training Works</h2>
 
     <p class="lead">
-      Our training programs are trusted globally by professionals and organizations 
-      who demand practical, hands-on expertise in offensive and defensive security.
+      Built for real-world red teaming with hands-on labs, not just certification prep.
     </p>
 
     <div class="stats-grid">
 
       <div class="stat-card">
         <div class="stat-number">50,000+</div>
-        <div class="stat-label">Professionals Trained</div>
+        <div class="stat-label">red teamers & security professionals trained</div>
       </div>
 
       <div class="stat-card">
         <div class="stat-number">130+</div>
-        <div class="stat-label">Countries Reached</div>
+        <div class="stat-label">countries reached globally</div>
       </div>
 
       <div class="stat-card">
         <div class="stat-number">600+</div>
-        <div class="stat-label">Organizations Served</div>
+        <div class="stat-label">organizations upskilled</div>
       </div>
 
     </div>
@@ -5317,8 +5496,8 @@ SCROLL TO TOP BUTTON
           <i data-lucide="user-check"></i>
         </div>
         <div>
-          <h3>Expert Instructors</h3>
-          <p class="supporting-body">Courses are authored and delivered by industry experts with real-world experience.</p>
+          <h3>Learn from Active Red Teamers</h3>
+          <p class="supporting-body">Courses are taught by professionals actively working on real-world engagements — not just trainers.</p>
         </div>
       </div>
 
@@ -5327,8 +5506,8 @@ SCROLL TO TOP BUTTON
           <i data-lucide="cpu"></i>
         </div>
         <div>
-          <h3>Pioneers of Enterprise Labs</h3>
-          <p class="supporting-body">Hands-on labs designed to simulate real enterprise environments.</p>
+          <h3>Hands-On Enterprise Labs</h3>
+          <p class="supporting-body">Practice in enterprise-grade lab environments designed to simulate real infrastructure and attack paths.</p>
         </div>
       </div>
 
@@ -5337,8 +5516,8 @@ SCROLL TO TOP BUTTON
           <i data-lucide="thumbs-up"></i>
         </div>
         <div>
-          <h3>Highly Recommended</h3>
-          <p class="supporting-body">Trusted and recommended by professionals across industries worldwide.</p>
+          <h3>Built Around Real Attack Scenarios</h3>
+          <p class="supporting-body">Learn techniques used in real engagements — from initial access to lateral movement and privilege escalation.</p>
         </div>
       </div>
 
@@ -5347,11 +5526,19 @@ SCROLL TO TOP BUTTON
           <i data-lucide="shield-check"></i>
         </div>
         <div>
-          <h3>Enterprise Security Focus</h3>
-          <p class="supporting-body">Focused on real attack scenarios and defense strategies used in enterprises.</p>
+          <h3>Trusted by Professionals Worldwide</h3>
+          <p class="supporting-body">Used by red teamers, pentesters, and security engineers across global organizations.</p>
         </div>
       </div>
-
+<div class="feature">
+        <div class="icon-box">
+          <i data-lucide="badge"></i>
+        </div>
+        <div>
+          <h3>Faster Skill Development</h3>
+          <p class="supporting-body">Compress months of self-learning into a structured, hands-on 3-day experience.</p>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -5360,47 +5547,54 @@ SCROLL TO TOP BUTTON
   <!-- TRUST -->
 <section class="trust-section" id="community">
   <div class="container">   
-    <span class="eyebrow">Community Trust</span>
-    <h2>Trusted by Security Professionals</h2>     
+
+    <span class="eyebrow">Trusted by Red Teamers & Security Engineers</span>
+    <h2>Learn Alongside Professionals from Top Organizations</h2>     
+
     <p class="lead">
-      Security professionals across India joined AltSecCON for hands-on red team training and real-world collaboration.
+      Join red teamers, pentesters, and security engineers from leading organizations who have trained with AltSecCON and built real-world attack skills.
     </p>
-    
+
+    <!-- 🔥 STATS (NEW) -->
+    <div class="trust-stats">
+      <div>
+        <strong>50,000+</strong>
+        <span>Professionals Trained</span>
+      </div>
+      <div>
+        <strong>130+</strong>
+        <span>Countries Reached</span>
+      </div>
+      <div>
+        <strong>5000+</strong>
+        <span>Attacks Practiced Daily</span>
+      </div>
+    </div>
+
     <!-- LOGO GRID -->
     <div class="trust-grid">
         
-      <div class="trust-item">        
-        <img src="https://redteamverse.github.io/red-team-training/images/microsoft.png">
-      </div>
-        
-      <div class="trust-item">
-        <img src="https://redteamverse.github.io/red-team-training/images/security.png">
-      </div>
-
-      <div class="trust-item">
-        <img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg">
-      </div>
-
-      <div class="trust-item">
-        <img src="https://redteamverse.github.io/red-team-training/images/wipro.png">
-      </div>
-
-      <div class="trust-item">
-        <img src="https://redteamverse.github.io/red-team-training/images/RS.jpg">
-      </div>
-
-      <div class="trust-item">
-        <img src="https://redteamverse.github.io/red-team-training/images/SST.png">
-      </div>
+      <div class="trust-item"><img src="https://redteamverse.github.io/red-team-training/images/microsoft.png"></div>
+      <div class="trust-item"><img src="https://redteamverse.github.io/red-team-training/images/security.png"></div>
+      <div class="trust-item"><img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg"></div>
+      <div class="trust-item"><img src="https://redteamverse.github.io/red-team-training/images/wipro.png"></div>
+      <div class="trust-item"><img src="https://redteamverse.github.io/red-team-training/images/RS.jpg"></div>
+      <div class="trust-item"><img src="https://redteamverse.github.io/red-team-training/images/SST.png"></div>
 
     </div>
 
     <p class="trust-note">
-      Logos represent organizations where attendees work and do not imply sponsorship.
+      Attendees come from organizations such as these
     </p>
 
+    <!-- 🔥 TESTIMONIAL (NEW) -->
+    <div class="trust-testimonial">
+      “One of the most practical red team trainings I’ve attended.”
+      <span>— Security Engineer, Fortune 500</span>
+    </div>
+
   </div>
-</section>  
+</section>
 <!-- WHAT AltSecCON DELIVERED -->
 
 <!-- TRAINING PROGRAMS -->
@@ -5411,7 +5605,7 @@ SCROLL TO TOP BUTTON
     <h2>Training Programs at <span class="time-sec">AltSecCON</span></h2>
 
     <p class="lead">
-      Instructor-led Red Team certification programs covering Active Directory, evasion techniques, and Azure attack tradecraft.
+      Hands-on, 3-day training programs with real lab environments. covering Active Directory, evasion techniques, and Azure attack tradecraft.
     </p>
 
     <div class="course-grid">
@@ -5419,13 +5613,16 @@ SCROLL TO TOP BUTTON
       <!-- CRTP -->
       <div class="course-card">
         <img src="https://static.wixstatic.com/media/470c31_1207916d21b14a428a92b4ff90a74f8a~mv2.png" class="course-img">
-        <div class="course-signal-name">CRTP</div>       
-
+        <div class="course-signal-name">
+        <span class="course-badge">CRTP</span>
+        <span class="course-desc">Best for: Beginners in Active Directory attacks</span>
+      </div>     
+         
         <h3>Active Directory Attacks for Red and Blue Teams - Beginner's Edition</h3>
          
         <div class="course-signal supporting-body">
+        Perform AD enumeration, privilege escalation, and Kerberos attacks in real lab environments.  
           
-          This 3-day beginner class teaches you how to get started with Red Teaming. It covers AD enumeration, trust mapping, Kerberos-based attacks, and defense bypasses.
         </div>
           <div class="course-meta">
           <span>Active Directory</span>
@@ -5438,8 +5635,8 @@ SCROLL TO TOP BUTTON
             <span class="old-price">₹44,999</span>
             <span class="discount-badge">Save ₹5,000</span>
           </div>
-           <div class="seat-badge"><i data-lucide="users"></i> Limited Seats</div>
-          <div class="price">₹39,999</div>
+           <div class="seat-badge"><i data-lucide="users"></i>Only limited lab seats available</div>
+          <div class="price">₹39,999 </div>
 
           <div class="price-sub">Early Bird Price</div>
            <div class="price-note">
@@ -5449,15 +5646,18 @@ SCROLL TO TOP BUTTON
       </div>
 
         <div class="course-actions">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Curriculum →</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
       <!-- CRTE -->
       <div class="course-card">
         <img src="https://static.wixstatic.com/media/470c31_d20991e40bc749a5b5e34cc98f82ff70~mv2.png" class="course-img">
-        <div class="course-signal-name">CRTE</div>
+        <div class="course-signal-name">
+        <span class="course-badge">CRTE</span>
+        <span class="course-desc">Best for: Beginners in Active Directory attacks</span>
+      </div>   
 
      
 
@@ -5477,7 +5677,7 @@ SCROLL TO TOP BUTTON
     <span class="old-price">₹44,999</span>
     <span class="discount-badge">Save ₹5,000</span>
   </div>
-  <div class="seat-badge"><i data-lucide="users"></i> Limited Seats</div>
+  <div class="seat-badge"><i data-lucide="users"></i>Only limited lab seats available</div>
   <div class="price">₹39,999</div>
 
   <div class="price-sub">Early Bird Price</div>
@@ -5488,24 +5688,28 @@ SCROLL TO TOP BUTTON
 </div>
 
         <div class="course-actions">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Curriculum →</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
       <!-- CETP -->
       <div class="course-card">
         <img src="https://static.wixstatic.com/media/98ad8e_81fec46cf0d2498bb860aeabc27e397e~mv2.png" class="course-img">
-         <div class="course-signal-name">CETP</div>
+         <div class="course-signal-name">
+        <span class="course-badge">CETP</span>
+        <span class="course-desc">Best for: Beginners in Active Directory attacks</span>
+      </div>   
 
      
 
         <h3>Evasion Techniques for Red Teams</h3>
 
-        <div class=" supporting-body">
+        <div class="course-signal supporting-body">
           This 3-day beginner class teaches you how to get started with Red Teaming. It covers AD enumeration, trust mapping, Kerberos-based attacks, and defense bypasses.
         </div>
-            <div class="course-meta">
+        
+       <div class="course-meta">
           <span>EVASION</span>
           <span>OFFENSIVE</span>
         </div>
@@ -5516,7 +5720,7 @@ SCROLL TO TOP BUTTON
     <span class="old-price">₹44,999</span>
     <span class="discount-badge">Save ₹5,000</span>
   </div>
-  <div class="seat-badge"><i data-lucide="users"></i> Limited Seats</div>
+  <div class="seat-badge"><i data-lucide="users"></i>Only limited lab seats available</div>
   <div class="price">₹39,999</div>
 
   <div class="price-sub">Early Bird Price</div>
@@ -5527,15 +5731,18 @@ SCROLL TO TOP BUTTON
 </div>
 
         <div class="course-actions">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Curriculum →</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
       <!-- CARTP -->
       <div class="course-card">
         <img src="https://static.wixstatic.com/media/470c31_c03d5a63cde444b18d44bdb541748fa9~mv2.png" class="course-img">
-         <div class="course-signal-name">CARTP</div>
+         <div class="course-signal-name">
+        <span class="course-badge">CARTP</span>
+        <span class="course-desc">Best for: Beginners in Active Directory attacks</span>
+      </div>
 
       
 
@@ -5555,7 +5762,7 @@ SCROLL TO TOP BUTTON
     <span class="old-price">₹44,999</span>
     <span class="discount-badge">Save ₹5,000</span>
   </div>
-  <div class="seat-badge"><i data-lucide="users"></i> Limited Seats</div>
+  <div class="seat-badge"><i data-lucide="users"></i>Only limited lab seats available</div>
   <div class="price">₹39,999</div>
 
   <div class="price-sub">Early Bird Price</div>
@@ -5565,16 +5772,19 @@ SCROLL TO TOP BUTTON
 
 </div>
 
-        <div class="course-actions">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+       <div class="course-actions">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Curriculum →</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
       <!-- CARTE -->
       <div class="course-card">
         <img src="https://static.wixstatic.com/media/628794_0836557da1044632b5ea9eea3e469295~mv2.png" class="course-img">
-         <div class="course-signal-name">CARTE</div>
+         <div class="course-signal-name">
+        <span class="course-badge">CARTE</span>
+        <span class="course-desc">Best for: Beginners in Active Directory attacks</span>
+      </div>
 
      
 
@@ -5594,7 +5804,7 @@ SCROLL TO TOP BUTTON
     <span class="old-price">₹44,999</span>
     <span class="discount-badge">Save ₹5,000</span>
   </div>
-  <div class="seat-badge"><i data-lucide="users"></i> Limited Seats</div>
+  <div class="seat-badge"><i data-lucide="users"></i>Only limited lab seats available</div>
   <div class="price">₹39,999</div>
 
   <div class="price-sub">Early Bird Price</div>
@@ -5604,91 +5814,28 @@ SCROLL TO TOP BUTTON
 
 </div>
 
-        <div class="course-actions">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Details</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Book Now</a>
+      <div class="course-actions">
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Curriculum →</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
     </div>
 
     <div class="course-grid-cta">
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-training.html" class="btn-tertiary">View All Training Programs →</a>
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-training.html" class="btn-tertiary">Explore Full Curriculum →</a>
     </div>
 
   </div>
 </section>
-<section class="training-benefits">
 
-  <div class="container">
-
-    <!-- HEADER -->
-    <p class="eyebrow">Training Advantage</p>
-
-    <h2>
-      Improve Your Chances of Clearing Red Team Certifications
-    </h2>
-
-    <p class="lead">
-    A focused training approach designed to build practical skills, improve problem-solving, and prepare you for real certification challenges.  
-    </p>
-
-    <!-- BENEFIT GRID -->
-    <div class="benefit-grid">
-
-      <div class="benefit-card">
-        <div class="icon-box">
-          <i data-lucide="target"></i>
-          </div>
-        <h3>Higher Certification Success Rate</h3>
-        <p>Structured learning aligned with real exam scenarios. </p>
-      </div>
-
-      <div class="benefit-card">
-        <div class="icon-box">
-        <i data-lucide="brain"></i>
-        </div>
-        <h3>Think Like an Attacker</h3>
-        <p>Develop an offensive mindset beyond step-by-step learning.</p>
-      </div>
-
-      <div class="benefit-card">
-        <div class="icon-box">
-        <i data-lucide="users"></i>
-        </div>
-        <h3>Live Doubt Resolution</h3>
-        <p>Get guidance when stuck — no learning gaps.</p>
-      </div>
-
-      <div class="benefit-card">
-        <div class="icon-box">
-        <i data-lucide="zap"></i>
-        </div>
-        <h3>Practical Tricks & Techniques</h3>
-        <p>Learn real attack methods used in engagements.</p>
-      </div>
-
-    </div>
-
-    <!-- PROOF LINE -->
-    <p class="benefit-proof">
-      Training significantly increases your ability to clear red team certifications compared to self-study alone.
-    </p>
-  </div>
-  
-   <div class="course-grid-cta">
-     <a href="#" class="btn-tertiary">View Training Programs →</a>
-  </div>  
-   
-
-</section>  
 
 <!-- CERTIFICATION & OUTCOMES -->
 <section class="certification-section" id="certification">
   <div class="certification-container">
 
-    <span class="eyebrow">Certification & Outcomes</span>
-    <h2>Earn Industry-Recognized Certification</h2>
+    <span class="eyebrow">Certification & Skill Validation</span>
+    <h2>Certification That Reflects Real Skills</h2>
      
     <p class="lead">
       Complete the training to receive your certification, including one attempt for the selected course
@@ -5703,9 +5850,9 @@ SCROLL TO TOP BUTTON
      <div class="icon-box">
           <i data-lucide="badge-check"></i>
  </div>
-    <h3>Certification Issued After Full Training Completion</h3>
+    <h3>Training Completion Certificate</h3>
     <p class="supporting-body">
-      Certificates are awarded only after full training completion, including all sessions and hands-on exercises—ensuring real skills, not just attendance.
+      Earn a certificate after completing all sessions and hands-on labs — validating your practical learning, not just attendance.
     </p>
   </div>  
   <div class="certification-card">
@@ -5717,7 +5864,7 @@ SCROLL TO TOP BUTTON
   <h3>Course-Specific Certification Attempt</h3>
 
   <p class="supporting-body">
-  Each participant is granted one certification attempt for their selected course, designed to validate real-world red team expertise after training.  
+  Get one certification attempt for your selected course to validate your real-world red team skills after training.
   
   </p>
 
@@ -5739,9 +5886,13 @@ ALTSECCON CONFERENCE SECTION
 <div class="conference-container">
 
 <span class="eyebrow">Conference Day</span>
-  <h2><span class="time-sec">AltSecCON</span> Practitioner Conference</h2>
+  <h2><span class="time-sec">AltSecCON</span> Red Team Practitioner Conference</h2>
+  <div class="conference-note">
+  <i data-lucide="ticket"></i>
+  <span>Conference passes available separately from training</span>
+</div>
 <p class="lead">
-Alongside the instructor-led Red Team training, AltSecCON also includes a dedicated conference day where security practitioners share technical insights, research discussions, and real-world offensive security experiences with the community.
+A dedicated conference day featuring real-world red teaming talks, practitioner insights, and community-driven discussions.
 </p>
 
 <!-- Conference Info -->
@@ -5754,7 +5905,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
 </div>
     <div>
       <strong>Conference Date</strong>
-      <span>3 November 2026</span>
+      <span>27 October 2026</span>
     </div>
   </div>
   <div class="conference-info-item">
@@ -5762,7 +5913,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
           <i data-lucide="map-pin"></i>
 </div>
     <div>
-      <strong>Location</strong>
+      <strong>Hilton Hotel</strong>
       <span>Bengaluru, India</span>
     </div>
   </div>
@@ -5790,7 +5941,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
     </div>
     <h3>Technical Talks</h3>
     <p class="course-signal supporting-body">
-      Presentations from experienced security professionals covering offensive security research, Red Team techniques, and real-world attack scenarios.
+      Real-world attack techniques, research, and red team methodologies.
     </p>
   </div>
 
@@ -5801,7 +5952,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
     </div>
     <h3>Practitioner Insights</h3>
     <p class="course-signal supporting-body">
-      Discussions from practitioners actively working in Red Team operations, adversary simulation, and enterprise security assessments.
+      Learn from professionals actively working on adversary simulation and enterprise engagements.
     </p>
   </div>
 
@@ -5812,7 +5963,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
     </div>
     <h3>Security Community</h3>
     <p class="course-signal supporting-body">
-      An opportunity for security professionals to connect with peers, share experiences, and discuss practical security challenges.
+      Connect with peers, share experiences, and expand your network.
     </p>
   </div>
 
@@ -5823,7 +5974,7 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
     </div>
     <h3>Knowledge Exchange</h3>
     <p class="course-signal supporting-body">
-      Focused conversations around modern attack techniques, defensive strategies, and the evolving enterprise threat landscape.
+    Discussions on evolving attack strategies and defensive approaches.
     </p>
   </div>
 
@@ -5849,13 +6000,13 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
 <section class="video-section" id="glimpse">
 
   <div class="container">
-     <span class="eyebrow">AltSecCON Glimpse</span>
+     <span class="eyebrow">Previous Event Highlights</span>
   <h2>    
-  Get a Glimpse of <span class="time-sec">AltSecCON 2025</span>
+  What You’ll Experience at AltSecCON
    </h2>
 
     <p class="lead">
-      A quick look at the experience, energy, and real-world learning that defines AltSecCON.
+      Real sessions, real labs, and a community of red teamers — this is what you’ll be part of.
     </p>
 
     <div class="video-card" id="videoCard">
@@ -5891,24 +6042,26 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
   <div class="container">
 
     <!-- HEADER -->
-    <p class="eyebrow">AltSecCON Experience</p>
-    <h2>Your Day at AltSecCON</h2>
+    <p class="eyebrow">What You’ll Experience</p>
+    <h2>What You’ll Actually Do at AltSecCON</h2>
     <p class="lead">
-      A complete experience combining hands-on training, expert talks, networking, and certification.
+      From setting up your lab to executing real attack scenarios and connecting with red teamers — this is a fully hands-on experience.
     </p>
 
     <!-- FLOW -->
     <div class="flow-wrapper">
 
-      <div class="flow-step active" data-step="0">
+      <div class="flow-step" data-step="0">
+        <i data-lucide="cpu"></i>
+        <span>Hands-On Labs</span>
+      </div>
+      
+      <div class="flow-step active" data-step="1">
         <i data-lucide="terminal"></i>
         <span>Lab Setup</span>
       </div>
 
-      <div class="flow-step" data-step="1">
-        <i data-lucide="cpu"></i>
-        <span>Hands-On Labs</span>
-      </div>
+      
 
       <div class="flow-step" data-step="2">
         <i data-lucide="mic"></i>
@@ -5919,16 +6072,16 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
         <i data-lucide="users"></i>
         <span>Networking</span>
       </div>
-
-      <div class="flow-step" data-step="4">
-        <i data-lucide="utensils"></i>
-        <span>Food & Breaks</span>
-      </div>
-
-      <div class="flow-step" data-step="5">
+      
+        <div class="flow-step" data-step="4">
         <i data-lucide="award"></i>
         <span>Certification</span>
       </div>
+
+      <div class="flow-step" data-step="5">
+        <i data-lucide="utensils"></i>
+        <span>Food & Breaks</span>
+      </div>   
 
     </div>
 
@@ -5946,39 +6099,41 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
     <div class="flow-content">
 
       <div class="flow-content-item active" data-step="0">
-        <h3>Lab Setup</h3>
-        <p>Get access to your environment and tools to begin your hands-on journey.</p>
-        <img src="https://redteamverse.github.io/red-team-training/images/new-3.webp">
+        <h3>Hands-On Labs</h3>
+        <p>Practice real-world attack techniques in guided lab environments designed to simulate enterprise scenarios.</p>
+        
+        <img src="https://redteamverse.github.io/red-team-training/images/PostTrainingLabAccess.webp">
       </div>
 
       <div class="flow-content-item" data-step="1">
-        <h3>Hands-On Labs</h3>
-        <p>Practice real-world attack techniques in guided lab environments.</p>
-        <img src="https://redteamverse.github.io/red-team-training/images/PostTrainingLabAccess.webp">
+        <h3>Lab Setup</h3>
+        <p>Get access to your tools, environment, and lab infrastructure to start hands-on exercises.</p>
+        <img src="https://redteamverse.github.io/red-team-training/images/new-3.webp">
       </div>
 
       <div class="flow-content-item" data-step="2">
         <h3>Expert Talks</h3>
-        <p>Learn from practitioners sharing real enterprise attack scenarios.</p>
+        <p>Learn from practitioners sharing real attack paths, techniques, and field experiences.</p>
         <img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp">
       </div>
 
       <div class="flow-content-item" data-step="3">
         <h3>Networking</h3>
-        <p>Connect with security professionals and expand your network.</p>
+        <p>Connect with red teamers, exchange ideas, and build meaningful professional connections.</p>
         <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp">
       </div>
 
       <div class="flow-content-item" data-step="4">
-        <h3>Food & Breaks</h3>
-        <p>Relax and engage in informal discussions during breaks.</p>
-        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-6.webp">
+        <h3>Certification</h3>
+        <p>Earn certification after completing hands-on labs and exercises.</p>
+          <img src="https://redteamverse.github.io/red-team-training/images/demo-cert.avif">
       </div>
 
       <div class="flow-content-item" data-step="5">
-        <h3>Certification</h3>
-        <p>Receive your official participation certificate.</p>
-        <img src="https://redteamverse.github.io/red-team-training/images/demo-cert.avif">
+        <h3>Food & Breaks</h3>
+        <p>Recharge and engage in informal discussions with peers during breaks.</p>
+      
+        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-6.webp">
       </div>
 
     </div>
@@ -5991,9 +6146,9 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
   <div class="ticket-container" >
 
     <span class="eyebrow">Tickets</span>
-    <h2>Choose Your <span class="time-sec">AltSecCON</span> Experience</h2>
+    <h2>Choose Your Pass and Secure Your Seat</h2>
     <p class="lead">
-      Select the option that best fits your learning goals — training, conference, or a complete experience.
+      Pick the option that fits your goal — hands-on training, conference access, or both.
     </p>
 
     <div class="ticket-grid">
@@ -6001,49 +6156,63 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
       <!-- TRAINING -->
       <div class="ticket-card">
         <h3>Training Only</h3>
+         <div class="ticket-sub-badge">
+  Best for: Hands-on skill building
+</div> 
+        <div class="ticket-price-start">
+  Starts from ₹39,999 <span>Early Bird</span>
+</div>
         <ul>
-          <li>Instructor-led Red Team training (selected course)</li>
-          <li>Course completion certification</li>
-          <li>60 days of lab access</li>
-          <li>One certification exam attempt</li>
+          <li>3-day hands-on training</li>       
+          <li>60 days of Real-world lab access</li>
+          <li>Certification + 1 attempt</li>
         </ul>
-         <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Training</a> 
+         <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Secure Training Seat</a> 
       </div>
 
       <!-- CONFERENCE -->
       <div class="ticket-card">
         <h3>Conference Only</h3>
+        <div class="ticket-sub-badge">
+          Best for: Talks & networking
+        </div>
+         <div class="ticket-price-start">
+  ₹7,999 <span>Early Bird</span>
+</div>
         <ul>
-          <li>Full access to all conference talks</li>
+          <li>Access to all conference talks & sessions</li>
+          <li>Real-world practitioner insights</li>
           <li>Networking with security professionals</li>
-          <li>Panel discussions and practitioner sessions</li>
-          <li>Coffee breaks and lunch included</li>
-          <li>Welcome kit</li>
-          <li>Participation e-certificate</li>
+          <li>Lunch, coffee breaks & welcome kit included</li>      
         </ul>
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Conference Pass</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Secure Conference Pass</a>
 
       </div>
 
       <!-- COMBO -->
       <div class="ticket-card highlight">
-        <div class="badge">Best Value</div>
+        <div class="badge">Best Value</div>        
         <h3>Training + Conference</h3>
+         <div class="ticket-sub-badge">
+          Best for: Complete red team experience
+        </div>     
+         <div class="ticket-price-start">
+  Starts from ₹45,999 <span>Early Bird</span>
+</div>
         <ul>
-          <li>Instructor-led Red Team training (selected course)</li>
-          <li>Course completion certification</li>
-          <li>60 days of lab access</li>
-          <li>One certification exam attempt</li>
-          <li>Full conference access</li>
-          <li>Networking and panel discussions</li>
-          <li>Coffee breaks, lunch, and welcome kit</li>
-          <li>Participation e-certificate</li>
+          <li>Full 3-day hands-on training + labs</li>
+          <li>Certification + 1 exam attempt + 60 days lab access</li>
+          <li>Full conference access (talks + networking)</li>
+          <li>Meals, breaks & welcome kit included</li>      
         </ul>
         <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Get Full Access</a>
       </div>
 
     </div>
-
+<p class="pricing-note">
+  <i data-lucide="info"></i>
+  Final pricing depends on selected training course • Early bird discounts available
+</p>
   </div>
 
 </section>  
@@ -6055,11 +6224,10 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
   <div class="instructor-container">
 
     <span class="eyebrow">Instructors</span>
-    <h2>Meet Your Instructors</h2>
+    <h2>Learn from Real Red Team Practitioners</h2>
 
     <p class="lead">
-      Our instructors bring deep Red Team experience from enterprise operations,
-      real-world engagements, and advanced adversary simulation.
+      Train with experts who actively work on real-world red team engagements, adversary simulation, and enterprise environments.
     </p>
 
     <div class="instructor-grid">
@@ -6068,16 +6236,18 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
         <img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" alt="Nikhil Mittal">
         <div class="trainer">Nikhil Mittal</div>
         <p class="instructor-role">Lead Red Team Training</p>
+        <p class="pricing-note"></p>
          <p class="instructor-authority">
-    Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
+    Founder of Altered Security with extensive experience in enterprise red teaming, Active Directory attacks, and real-world adversary simulation.
   </p>
       </div>
       <div class="instructor-card">
         <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9696.jpg" alt="Manthan">
         <div class="trainer">Manthan</div>
         <p class="instructor-role">Red Team Practitioner</p>
+        <p class="pricing-note"></p>
         <p class="instructor-authority">
-    Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
+    Specializes in offensive security techniques, hands-on lab development, and real-world attack simulations across enterprise environments.
   </p>
       </div>  
       
@@ -6086,33 +6256,34 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
         <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" alt="Manthan">
         <div class="trainer">Hitesh</div>
         <p class="instructor-role">Red Team Practitioner</p>
+       <p class="pricing-note"></p>
        <p class="instructor-authority">
-    Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
+    Focused on red team operations, attack techniques, and practical training based on real engagement experience.
   </p>
-    </div>     
-   
+    </div>    
   
-      <div class="instructor-card">
-        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="Manthan">
-        <div class="trainer">Amit</div>
-        <p class="instructor-role">Red Team Practitioner</p>
-        <p class="instructor-authority">
-    Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
-  </p>
-      </div>
+   
       <div class="instructor-card">
         <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9759.jpg" alt="Manthan">
         <div class="trainer">Vishal</div>
         <p class="instructor-role">Red Team Practitioner</p>
+        <p class="pricing-note"></p>
         <p class="instructor-authority">
     Delivered Red Team training and spoken at DEFCON, Black Hat, BrueCON and many more. 
   </p>
       </div>
-    </div>     
-  
-    <div class="instructor-card-cta">
-      <a href="#" class="btn-tertiary">Explore Training Programs →</a>
-    </div>
+    </div>       
+   <div class="instructor-footer">
+
+  <p class="trust-inline">  
+    Trusted by 50,000+ professionals across 130+ countries
+  </p>
+
+  <div class="instructor-card-cta">
+    <a href="#" class="btn-tertiary">Explore Training Programs →</a>
+  </div>
+
+</div>
 
     <!-- Supporting Images 
     <div class="instructor-support">
@@ -6128,10 +6299,10 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
 
     <div class="event-structure-text">
       <span class="eyebrow">Event Format</span>
-      <h2>Event Structure Overview</h2>
+      <h2>How AltSecCON Is Structured for Maximum Learning</h2>
 
       <p class="lead">
-        Industry-leading in-person red team training, certifications and conference on Red Teaming.
+        A focused, in-person experience designed for uninterrupted hands-on training, real-world discussions, and meaningful networking.
       </p>
 
       <div class="event-structure-cards">
@@ -6141,37 +6312,37 @@ Alongside the instructor-led Red Team training, AltSecCON also includes a dedica
       <i data-lucide="calendar-days"></i>
     </div>
     <h3>Multi-Day Training Format</h3>
-    <p class="supporting-body">Training will be deliver across multiple consecutive days to allow uninterrupted learning.</p>
+    <p class="supporting-body">3 consecutive days of hands-on training designed for deep, uninterrupted skill building.</p>
   </div>
    <div class="structure-card">
     <div class="icon-box">
       <i data-lucide="users"></i>
     </div>
     <h3>Practitioner Conference</h3>
-    <p class="supporting-body">The AltSecCON Practitioner Conference features technical talks focused on enterprise attack techniques, Red Team operations, and real-world security challenges.</p>
+    <p class="supporting-body">A dedicated conference day with real-world talks, attack techniques, and insights from active red team professionals.</p>
   </div>
   <div class="structure-card">
     <div class="icon-box">
       <i data-lucide="presentation"></i>
     </div>
     <h3>In-Person Delivery</h3>
-    <p class="supporting-body">All sessions will be conduct on-site with direct instructor interaction.</p>
+    <p class="supporting-body">Learn directly from instructors, collaborate with peers, and practice in a fully interactive environment.</p>
   </div>
    <div class="structure-card">
     <div class="icon-box">
       <i data-lucide="soup"></i>
     </div>
-    <h3>Food & Refreshments</h3>
-    <p class="supporting-body">Enjoy coffee breaks and lunch while interacting with speakers and attendees creating informal networking opportunities.</p>
+    <h3>Food & Networking</h3>
+    <p class="supporting-body">Coffee breaks and lunch included — designed to encourage informal discussions and networking with peers and experts.</p>
   </div>  
 
 </div>
 
       <!-- Operational details -->
       <div class="event-structure-ops">
-        <div><strong>Training Sessions:</strong> 9:00 AM – 5:00 PM</div>
-        <div><strong>Conference Day:</strong> 9:00 AM – 5:00 PM</div>
-        <div><strong>Scheduled breaks:</strong> Tea breaks and lunch included</div>
+        <div><strong>Training:</strong> 9:00 AM – 5:00 PM (3 Days)</div>
+        <div><strong>Conference:</strong> 9:00 AM – 5:00 PM (1 Day)</div>
+        <div><strong>Breaks:</strong> Lunch + coffee breaks included</div>
       </div>
 
       <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html" class="btn-tertiary">
@@ -6304,12 +6475,10 @@ Thanks,
 <section class="gallery-section" id="gallery">
   <div class="gallery-container">
 
-    <span class="eyebrow">Gallery</span>
-    <h2><span class="time-sec">AltSecCON 2025</span> Highlights</h2>
+    <span class="eyebrow">Event Highlights</span>
+    <h2>See What AltSecCON Feels Like</h2>
 
-    <p class="lead">
-      A glimpse into the instructor-led, in-person Red Team training sessions
-      conducted during AltSecCON.
+    <p class="lead">Real sessions, real labs, and a community of red teamers — this is the experience you’ll be part of.
     </p>
 
     <div class="gallery-grid">
@@ -6344,8 +6513,7 @@ Thanks,
     <h2>What Participants Said</h2>
 
     <p class="lead">
-      Feedback from security professionals who attended AltSecCON
-      and participated in the in-person Red Team training.
+      Hear from professionals who attended AltSecCON and applied these skills in real-world environments.
     </p>
 
     <div class="testimonial-viewport">
@@ -6355,44 +6523,7 @@ Thanks,
         <!-- TESTIMONIAL 1 -->
         <div class="testimonial-card">
           <p class="supporting-body">
-            “This was hands-on Red Team training, not a surface-level conference.
-            The depth and execution were exactly what I was looking for.”
-          </p>
-          <div class="testimonial-author">
-            <strong>Senior Security Engineer</strong>
-            <span>Enterprise Technology Firm</span>
-          </div>
-        </div>
-
-        <!-- TESTIMONIAL 2 -->
-        <div class="testimonial-card">
-         <p class="supporting-body">
-            “The instructor-led format made a big difference.
-            Real scenarios, real discussion, real learning.”
-          </p>
-          <div class="testimonial-author">
-            <strong>Red Team Practitioner</strong>
-            <span>Financial Services Organization</span>
-          </div>
-        </div>
-
-        <!-- TESTIMONIAL 3 -->
-        <div class="testimonial-card">
-          <p class="supporting-body">
-            “AltSecCON felt closer to an internal Red Team workshop
-            than an external event.”
-          </p>
-          <div class="testimonial-author">
-            <strong>Offensive Security Consultant</strong>
-            <span>Security Consulting Firm</span>
-          </div>
-        </div>
-
-        <!-- TESTIMONIAL 4 -->
-        <div class="testimonial-card">
-          <p class="supporting-body">
-            “Clear instruction, strong lab alignment,
-            and meaningful interaction with instructors.”
+           “The hands-on labs and real attack scenarios made a huge difference. This is the closest you get to real-world red teaming without being on an actual engagement.”
           </p>
           <div class="testimonial-author">
             <strong>Security Analyst</strong>
@@ -6400,11 +6531,10 @@ Thanks,
           </div>
         </div>
 
-        <!-- TESTIMONIAL 5 -->
+        <!-- TESTIMONIAL 2 -->
         <div class="testimonial-card">
-          <p class="supporting-body">
-            “The in-person delivery added a level of clarity
-            that online training rarely achieves.”
+         <p class="supporting-body">
+           “The in-person training and direct interaction with instructors made complex concepts much easier to understand compared to online courses.”
           </p>
           <div class="testimonial-author">
             <strong>Blue Team Lead</strong>
@@ -6412,64 +6542,16 @@ Thanks,
           </div>
         </div>
 
-        <!-- TESTIMONIAL 6 -->
+        <!-- TESTIMONIAL 3 -->
         <div class="testimonial-card">
           <p class="supporting-body">
-            “This was practical Red Team instruction
-            grounded in real enterprise environments.”
+           “Practical, structured, and focused on real enterprise environments — exactly what I was looking for in red team training.”
           </p>
           <div class="testimonial-author">
-            <strong>Penetration Tester</strong>
+            <strong>Offensive Security Consultant</strong>
             <span>Consulting Organization</span>
           </div>
-        </div>
-
-        <!-- TESTIMONIAL 7 -->
-        <div class="testimonial-card">
-          <p class="supporting-body">
-            “The pace, depth, and structure were very well balanced.”
-          </p>
-          <div class="testimonial-author">
-            <strong>Security Architect</strong>
-            <span>Technology Company</span>
-          </div>
-        </div>
-
-        <!-- TESTIMONIAL 8 -->
-        <div class="testimonial-card">
-          <p class="supporting-body">
-            “AltSecCON is clearly designed for professionals
-            who want real skill development.”
-          </p>
-          <div class="testimonial-author">
-            <strong>Red Team Operator</strong>
-            <span>Enterprise Security Group</span>
-          </div>
-        </div>
-
-        <!-- TESTIMONIAL 9 -->
-        <div class="testimonial-card">
-          <p class="supporting-body">
-            “The ability to discuss scenarios directly with instructors
-            was extremely valuable.”
-          </p>
-          <div class="testimonial-author">
-            <strong>Incident Response Specialist</strong>
-            <span>Critical Infrastructure Org</span>
-          </div>
-        </div>
-
-        <!-- TESTIMONIAL 10 -->
-        <div class="testimonial-card">
-          <p class="supporting-body">
-            “A focused training environment with no distractions.
-            Exactly what serious practitioners need.”
-          </p>
-          <div class="testimonial-author">
-            <strong>Offensive Security Engineer</strong>
-            <span>Enterprise Security Team</span>
-          </div>
-        </div>
+        </div>       
 
       </div>
     </div>
@@ -6483,11 +6565,11 @@ Thanks,
 
   <div class="venue-container">
 
-    <span class="eyebrow">Event Location</span>
-    <h2><span class="time-sec">AltSecCON </span>Training & Conference Venue</h2>
+    <span class="eyebrow">Location</span>
+    <h2>Join AltSecCON in Bengaluru, India  </h2>
 
     <p class="lead">
-      AltSecCON will take place in Bengaluru, India, hosting both the instructor-led Red Team training and the practitioner conference in a shared environment designed for learning and collaboration.
+      A leading technology hub with a strong cybersecurity community — bringing together hands-on training and real-world collaboration.
     </p>
 
 <div class="venue-info">
@@ -6497,20 +6579,10 @@ Thanks,
       <i data-lucide="map-pin"></i>
     </div>
     <div>
-      <strong>Training Location</strong>
-      <span>Bengaluru, India</span>
+      <strong>(Training + Conference)</strong>
+      <span>Hilton Hotel Bengaluru, India</span>
     </div>
-  </div>
-
-  <div class="venue-info-item">
-    <div class="icon-box">
-      <i data-lucide="map"></i>
-    </div>
-    <div>
-      <strong>Conference Location</strong>
-      <span>Bengaluru, India</span>
-    </div>
-  </div>
+  </div>  
 
   <div class="venue-info-item">
     <div class="icon-box">
@@ -6518,10 +6590,18 @@ Thanks,
     </div>
     <div>
       <strong>Venue</strong>
-      <span>To be announced soon</span>
+      <span>Hilton Hotel Bengaluru, India</span>
     </div>
   </div>
-
+  <div class="venue-info-item">
+    <div class="icon-box">
+      <i data-lucide="building"></i>
+    </div>
+    <div>
+      <strong>Format</strong>
+      <span>In-person event with dedicated training rooms and conference spaces</span>
+    </div>
+  </div>
 </div>
 
     <!-- Content Split -->
@@ -6530,23 +6610,31 @@ Thanks,
       <!-- Left -->
       <div class="venue-text">
         <p class="main-content">
-          Bengaluru is one of India’s leading technology hubs and home to a strong cybersecurity community. 
-          AltSecCON brings both training and conference experiences together in a single venue to enable 
-          continuous learning, collaboration, and interaction.
+          Bengaluru offers the perfect environment for focused learning and networking.
+AltSecCON is designed to combine training and conference experiences in one seamless setup.
         </p>
 
         <ul>
-          <li>✔ Dedicated training classrooms for hands-on sessions</li>
-          <li>✔ Conference presentation and discussion areas</li>
-          <li>✔ Networking spaces for participants and speakers</li>
-          <li>✔ Coffee breaks, lunch, and collaboration zones</li>
+          <li>✔ Dedicated classrooms for hands-on labs</li>
+          <li>✔ Conference spaces for talks and discussions</li>
+          <li>✔ Networking areas for attendees and speakers</li>
+          <li>✔ Meals and collaboration-friendly environment</li>
         </ul>
       </div>
-
+    
       <!-- Right (Map Placeholder) -->
-      <div class="venue-map">
-        <p class="supporting-body">📍 Map will be updated once the venue is announced.</p>
-      </div>
+     <div class="venue-map">
+
+  <iframe
+    src="https://www.google.com/maps?q=Hilton+Bangalore+Embassy+GolfLinks&output=embed"
+    width="100%"
+    height="320"
+    style="border:0; border-radius:12px;"
+    allowfullscreen=""
+    loading="lazy">   
+  </iframe>
+
+</div>
 
     </div>
 
@@ -6559,10 +6647,11 @@ Thanks,
 <section class="contact-tabs-section" id="contact">
 
   <div class="contact-container">
-     <span class="eyebrow">Contact Us</span>
+     <span class="eyebrow">Need Help Choosing?</span>
     <h2>Get Started with <span class="time-sec">AltSecCON</span></h2>
     <p class="lead">
-      Choose what you're interested in and share your details. Our team will get in touch with relevant information.
+      Ready to join? Secure your seat instantly.
+Need help choosing the right option? Share your details and we’ll guide you.
     </p>
 
     <!-- Tabs -->
@@ -6574,34 +6663,31 @@ Thanks,
 
     <!-- Forms -->
     <div class="tab-content active" id="training1">
-      <p class="form-title">Request Training Details</p>
+      <p class="form-title">Not sure which training fits you?</p>
       <form class="form">
         <input type="text" placeholder="Full Name" required>
         <input type="email" placeholder="Email" required>
-        <input type="text" placeholder="Experience Level">
-        <input type="text" placeholder="Interested Course (CRTP, CRTE, etc.)">
+        <input type="text" placeholder="Experience Level">     
         <button type="submit" class="btn btn-primary">Get Training Details</button>
       </form>
     </div>
 
     <div class="tab-content" id="conference1">
-      <h3>Get Conference Information</h3>
+      <h3>Have questions about the conference?</h3>
       <form class="form">
         <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="text" placeholder="Your Role">
-        <button type="submit">Get Conference Details</button>
+        <input type="email" placeholder="Email" required>       
+        <button type="submit">Get Conference Info</button>
       </form>
     </div>
 
     <div class="tab-content" id="team">
-      <h3>Request Team Training Information</h3>
+      <h3>Looking for team training?</h3>
       <form class="form">
         <input type="text" placeholder="Full Name" required>
-        <input type="text" placeholder="Company Name">
         <input type="email" placeholder="Work Email" required>
-        <input type="text" placeholder="Team Size">
-        <button type="submit">Request Details</button>
+        <input type="text" placeholder="Company Name">        
+        <button type="submit">Request Team Plan</button>
       </form>
     </div>
 
@@ -6627,8 +6713,11 @@ Thanks,
         </button></h3>
         <div class="faq-answer">
           <p class="supporting-body">
-            The training is a multi-day, instructor-led hands-on program focused on Red Team techniques. 
-            The conference is a one-day event featuring technical talks, practitioner insights, and networking opportunities.
+           The training is a hands-on, instructor-led program focused on real-world red team techniques with labs and certification.
+
+The conference is a single-day event featuring expert talks, practitioner insights, and networking opportunities.
+
+You can choose either individually or combine both for a complete experience.
           </p>
         </div>
       </div>
@@ -6639,8 +6728,9 @@ Thanks,
         </button></h3>
         <div class="faq-answer">
           <p class="supporting-body">
-            AltSecCON is designed for security professionals including Red Teamers, penetration testers, 
-            security engineers, and individuals looking to build or enhance offensive security skills.
+            AltSecCON is designed for security professionals, including red teamers, blue teamers, penetration testers, and engineers looking to build or advance their offensive security skills.
+
+It’s also valuable for teams and organizations aiming to strengthen their real-world security capabilities.
           </p>
         </div>
       </div>
@@ -6651,8 +6741,9 @@ Thanks,
         </button></h3>
         <div class="faq-answer">
           <p class="supporting-body">
-            Basic understanding of networking and security concepts is recommended. 
-            Different courses are available for beginner, intermediate, and advanced levels.
+            We offer both beginner-friendly and advanced training programs.
+
+Basic understanding of networking and operating systems is helpful, but each course clearly defines prerequisites so you can choose the right level.
           </p>
         </div>
       </div>
@@ -6663,8 +6754,9 @@ Thanks,
         </button>
         <div class="faq-answer">
           <p class="supporting-body">
-            Yes, participants receive a course completion certification along with an opportunity 
-            to attempt the certification exam for the selected training program.
+           Yes — upon completing the full training and hands-on exercises, you will receive a course completion certification.
+
+In addition, your enrollment includes one certification exam attempt for your selected course.
           </p>
         </div>
       </div>
@@ -6675,8 +6767,7 @@ Thanks,
         </button>
         <div class="faq-answer">
           <p class="supporting-body">
-            Yes, participants receive 30 days of lab access to continue practicing and reinforcing 
-            the concepts covered during the training.
+            Yes — all training programs include 60 days of lab access, allowing you to practice and reinforce what you’ve learned in real-world simulated environments.
           </p>
         </div>
       </div>
@@ -6687,8 +6778,9 @@ Thanks,
         </button>
         <div class="faq-answer">
           <p class="supporting-body">
-            Yes, both the training and conference are hosted in Bengaluru, India, typically within 
-            the same venue to provide a seamless experience.
+            Yes — both the instructor-led training and the practitioner conference will be conducted at the same venue: Hilton, Bengaluru.
+
+This allows participants to seamlessly transition between hands-on learning and conference sessions while networking with other security professionals in one place.
           </p>
         </div>
       </div>
@@ -6699,12 +6791,33 @@ Thanks,
         </button>
         <div class="faq-answer">
           <p class="supporting-body">
-            You can use the form above to request details for training, conference, or team participation. 
-            Our team will reach out with relevant information and next steps.
+            You can secure your seat directly through the booking options on this page.
+If you’re unsure which option is right for you, you can also submit your details and our team will help you choose the best fit.
           </p>
         </div>
       </div>
-
+      <div class="faq-item">
+              <button class="faq-question">
+                Are seats limited for training?
+              </button>
+              <div class="faq-answer">
+                <p class="supporting-body">
+                 Yes — training batches have limited seats to ensure personalized guidance and hands-on learning.
+      We recommend booking early to secure your preferred course and pricing.
+                </p>
+        </div>
+      </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I attend only the conference without training?
+            </button>
+            <div class="faq-answer">
+              <p class="supporting-body">
+              Yes — you can choose the Conference Only pass if you're primarily interested in talks, networking, and practitioner insights.
+    However, combining training + conference provides the most complete experience.
+              </p>
+        </div>
+      </div>
     </div>
 
   </div>
