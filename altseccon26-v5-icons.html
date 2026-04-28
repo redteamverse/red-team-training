@@ -43,8 +43,8 @@ body {
   font-family: 'Inter', sans-serif;  
   color: var(--navy);
   background-color:#16163F;
-  padding-bottom: 64px; 
- 
+  padding-bottom: 64px;
+
 }
 /* PRIMARY TEXT SYSTEM */
 
@@ -228,7 +228,7 @@ section h3 {
 @media (max-width:768px){
 
 .hero-content{
-  padding: 120px 24px;
+ 
 }
 
 }  
@@ -1833,7 +1833,7 @@ gap:22px;
  
 .site-header {
   position:sticky;
-  top: 68px;
+  top: 30px;
   left: 0;
   width: 100%;
   z-index: 2500;
@@ -1852,12 +1852,8 @@ gap:22px;
 
   @media (max-width: 768px) {
 
-  body {
-    
-  }
-
   .site-header {
-    top: 60px;
+    top: 26px;
   }
 
 }
@@ -5136,47 +5132,7 @@ SCROLL TO TOP BUTTON
   color: #fff;
   font-size: 18px;
   cursor: pointer;
-}
-
-/* =========================
-   🔵 INFO BAR
-========================= */
-.top-info {
-  background: #2B2B50;
-
-}
-  
- 
-
-/* INNER */
-.info-inner {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  padding: 10px 16px;
-  font-size: 13px;
-  color: #E5E7EB;
-}
-
-/* DIVIDER */
-.divider {
-  width: 1px;
-  height: 16px;
-  background: rgba(255,255,255,0.2);
-}
-
-/* LOCATION */
-.location {
-  color: #ffffff;
-}
-
-
-  
-  
-  
+}  
 /* MOBILE FIX */
   
   
@@ -5187,38 +5143,7 @@ SCROLL TO TOP BUTTON
     font-size: 11px;
     padding: 6px 10px;
   }
- .top-info {
-    display: flex;
-    align-items: center;   /* 🔥 vertical center */
-    min-height: 34px;      /* small control height (not increasing much) */
-  }
-  
-  .info-inner {
-    display: flex;
-    align-items: center;   /* 🔥 vertical center text */
-    justify-content: center;
 
-
-
-    gap: 8px;
-    font-size: 11px;
-
-    white-space: nowrap;
-    overflow-x: auto;
-
-      /* 🔥 remove extra vertical spacing */
-  }
-
-  /* hide divider for space */
-  .divider {
-    display: none;
-  }
-
-  /* shrink location */
-  .location {
-    font-size: 11px;
-    opacity: 0.8;
-  }
 
 }
 </style>
@@ -5232,23 +5157,6 @@ SCROLL TO TOP BUTTON
   <div class="top-announcement">
     <span>Early Bird Tickets Now Live</span>
     <button class="close-btn">&times;</button>
-  </div>
-
-  <!-- 🔵 DATES + LOCATION -->
-  <div class="top-info">
-    <div class="info-inner">
-
-      <span><strong>Training:</strong> 24–26 Oct 2026</span>
-
-      <span class="divider"></span>
-
-      <span><strong>Conference:</strong> 27 Oct 2026</span>
-
-      <span class="divider"></span>
-
-      <span class="location">©Hilton Hotel, Bangalore</span>
-
-    </div>
   </div>
 
 </div>
