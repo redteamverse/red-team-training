@@ -1853,7 +1853,7 @@ gap:22px;
   @media (max-width: 768px) {
 
   body {
-    padding-top: 10px;
+    
   }
 
   .site-header {
@@ -5096,96 +5096,9 @@ SCROLL TO TOP BUTTON
   .instructor-footer {
     flex-direction: column;
     text-align: center;
-  }
+  } 
 }  
-/* =========================
-   STICKY BAR BASE
-========================= */
-.sticky-dates {
-  position: fixed;
-  top: 0px; /* adjust if header height changes */
-  z-index: 98;
-  
-  background: #1E3A8A;
-  backdrop-filter: blur(8px);
 
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-/* INNER WRAPPER */
-.sticky-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 10px 14px;
-}
-
-/* =========================
-   MOBILE DESIGN (DEFAULT)
-========================= */
-
-/* ROW 1 */
-.sticky-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  color: #E5E7EB;
-}
-
-/* DIVIDER */
-.divider {
-  width: 1px;
-  height: 14px;
-  background: rgba(255,255,255,0.25);
-}
-
-/* LOCATION */
-.sticky-location {
-  text-align: center;
-  margin-top: 4px;
-  font-size: 11px;
-  color: #9CA3AF;
-}
-  
- 
-  .sticky-location svg {
-    width: 10px;
-    height: 10px;
-  }  
-  
-/* =========================
-   DESKTOP DESIGN
-========================= */
-  
-@media (max-width: 480px) {
-  .location {
-    display: none;
-  }
-}
-  
-@media (min-width: 769px) {
-
-  .sticky-inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .sticky-row {
-    font-size: 13px;
-  }
-
-  .sticky-location {
-    margin-top: 0;
-    font-size: 12px;
-  }
-}
-
-/* =========================
-   STICKY WRAPPER
-========================= */
 .top-sticky-bar {
   position: fixed;
   top: 0;
@@ -5218,7 +5131,6 @@ SCROLL TO TOP BUTTON
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-
   background: none;
   border: none;
   color: #fff;
@@ -5230,23 +5142,25 @@ SCROLL TO TOP BUTTON
    🔵 INFO BAR
 ========================= */
 .top-info {
-  background: rgba(17, 24, 39, 0.95);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: #2B2B50;
+
 }
+  
+  .info-inner svg{
+  width: 10px;
+  height: 10px;
+    
+  }  
 
 /* INNER */
 .info-inner {
   max-width: 1200px;
   margin: auto;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 14px;
-
   padding: 10px 16px;
-
   font-size: 13px;
   color: #E5E7EB;
 }
@@ -5271,7 +5185,7 @@ SCROLL TO TOP BUTTON
 
   /* reduce announcement height */
   .top-announcement {
-    font-size: 12px;
+    font-size: 11px;
     padding: 6px 10px;
   }
 
@@ -5281,10 +5195,7 @@ SCROLL TO TOP BUTTON
     flex-wrap: nowrap;          /* prevent stacking */
     justify-content: center;
     gap: 8px;
-
-    font-size: 11px;
-    padding: 6px 10px;
-
+    font-size: 11px;  
     white-space: nowrap;        /* prevent line break */
     overflow-x: auto;           /* allow scroll if needed */
   }
@@ -5326,7 +5237,7 @@ SCROLL TO TOP BUTTON
 
       <span class="divider"></span>
 
-      <span class="location">📍 Hilton Hotel, Bangalore</span>
+      <span class="location"><i data-lucide="map-pin"></i> Hilton Hotel, Bangalore</span>
 
     </div>
   </div>
