@@ -44,7 +44,7 @@ body {
   color: var(--navy);
   background-color:#16163F;
   padding-bottom: 64px; 
-   padding-top: 70px;
+ 
 }
 /* PRIMARY TEXT SYSTEM */
 
@@ -1833,7 +1833,7 @@ gap:22px;
  
 .site-header {
   position:sticky;
-  top: 70px;
+  top: 68px;
   left: 0;
   width: 100%;
   z-index: 2500;
@@ -1857,7 +1857,7 @@ gap:22px;
   }
 
   .site-header {
-    top: 55px;
+    top: 60px;
   }
 
 }
@@ -5146,11 +5146,7 @@ SCROLL TO TOP BUTTON
 
 }
   
-  .info-inner svg{
-  width: 10px;
-  height: 10px;
-    
-  }  
+ 
 
 /* INNER */
 .info-inner {
@@ -5174,13 +5170,16 @@ SCROLL TO TOP BUTTON
 
 /* LOCATION */
 .location {
-  color: #9CA3AF;
+  color: #ffffff;
 }
 
-/* =========================
-   MOBILE DESIGN
-========================= */
+
+  
+  
+  
 /* MOBILE FIX */
+  
+  
 @media (max-width: 768px) {
 
   /* reduce announcement height */
@@ -5188,16 +5187,26 @@ SCROLL TO TOP BUTTON
     font-size: 11px;
     padding: 6px 10px;
   }
-
-  /* 🔥 MAKE INFO BAR SINGLE LINE */
+ .top-info {
+    display: flex;
+    align-items: center;   /* 🔥 vertical center */
+    min-height: 34px;      /* small control height (not increasing much) */
+  }
+  
   .info-inner {
-    flex-direction: row;        /* instead of column */
-    flex-wrap: nowrap;          /* prevent stacking */
+    display: flex;
+    align-items: center;   /* 🔥 vertical center text */
     justify-content: center;
+
+
+
     gap: 8px;
-    font-size: 11px;  
-    white-space: nowrap;        /* prevent line break */
-    overflow-x: auto;           /* allow scroll if needed */
+    font-size: 11px;
+
+    white-space: nowrap;
+    overflow-x: auto;
+
+      /* 🔥 remove extra vertical spacing */
   }
 
   /* hide divider for space */
@@ -5237,7 +5246,7 @@ SCROLL TO TOP BUTTON
 
       <span class="divider"></span>
 
-      <span class="location"><i data-lucide="map-pin"></i> Hilton Hotel, Bangalore</span>
+      <span class="location">©Hilton Hotel, Bangalore</span>
 
     </div>
   </div>
