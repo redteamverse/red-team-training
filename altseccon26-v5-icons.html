@@ -5094,9 +5094,8 @@ SCROLL TO TOP BUTTON
     text-align: center;
   } 
 }  
-
 /* =========================
-   STICKY WRAPPER
+   🔝 STICKY BAR
 ========================= */
 .top-sticky-bar {
   position: fixed;
@@ -5113,24 +5112,77 @@ SCROLL TO TOP BUTTON
   background: #B91C1C;
   color: #fff;
 
-  font-size: 13px;
-  font-weight: 500;
-
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
 
-  padding: 8px 40px 8px 12px; /* space for close button */
+  padding: 8px 40px 8px 12px;
+  font-size: 13px;
+  line-height: 1.4;
+
   position: relative;
 }
 
-/* CLOSE BUTTON */
+
+
+
+/* =========================
+   🖥 DESKTOP (single line)
+========================= */
+@media (min-width: 769px) {
+
+  .top-announcement-text {
+    flex-direction: row;
+    white-space: nowrap;
+  }
+
+  .line1 {
+    font-weight: 600;
+  }
+
+  .line2::before {
+    content: " • ";
+    margin: 0 6px;
+    opacity: 0.7;
+  }
+}
+
+/* =========================
+   📱 MOBILE (2 clean lines)
+========================= */
+@media (max-width: 768px) {
+
+  .top-announcement {
+   
+    font-size: 11px;
+  }
+
+  .top-announcement-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    
+  }
+
+  .line1 {
+    font-weight: 600;
+  }
+
+  .line2 {
+    font-size: 11px;
+    opacity: 0.9;
+  }
+}
+
+/* =========================
+   ❌ CLOSE BUTTON
+========================= */
 .close-btn {
   position: absolute;
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
+
   background: none;
   border: none;
   color: #fff;
@@ -5139,62 +5191,83 @@ SCROLL TO TOP BUTTON
 }
 
 /* =========================
-   HEADER
+   🧭 HEADER
 ========================= */
 .main-header {
   background: #fff;
-  height: 64px; /* adjust based on your header */
+  height: 64px;
   display: flex;
   align-items: center;
   padding: 0 16px;
-
   border-bottom: 1px solid #eee;
 }
 
-/* =========================
-   PUSH PAGE DOWN
-========================= */
-.page-content {
-  margin-top: 104px; 
-  /* announcement (~40px) + header (64px) */
+@media (max-width: 768px) {
+  .main-header {
+    height: 56px;
+  }
 }
+  
+/* =========================
+   📱 MOBILE ALIGNMENT FIX
+========================= */
+
 
 /* =========================
-   MOBILE FIX
+   📱 MOBILE FULL WIDTH FIX
 ========================= */
 @media (max-width: 768px) {
 
   .top-announcement {
-    font-size: 11px;
-    padding: 6px 36px 6px 10px;
-    gap: 10px;
+    padding: 6px 10px;
   }
 
-  .main-header {
-    height: 56px;
+  .top-announcement-text {
+    flex: 1;                 /* ✅ take full width */
+    display: flex;
+    flex-direction: column;
+   
+
+     /* small breathing space */
   }
 
-  .page-content {
-    margin-top: 96px;
+  .close-btn {
+    position: static;        /* ✅ remove absolute */
+    transform: none;
+    margin-left: 8px;
   }
-}
+
+  .line1 {
+    font-weight: 600;   
+    margin: 0 auto;
+  }
+
+  .line2 {
+    font-size: 10px;  
+    font-weight: 600; 
+    margin: 0 auto;
   
-  
+  }
+}  
 </style>
 </head>
 
 <body>
-<!-- MERGED STICKY BAR -->
 <div class="top-sticky-bar">
 
   <!-- 🔴 ANNOUNCEMENT -->
   <div class="top-announcement">
-    <div>Early Bird Tickets Now Live</div>
-    <div>Training 24 Oct – 26 Oct 2026</div>
-    <div>Conference 27 Oct 2026</div>
-    <button class="close-btn">&times;</button>
-  </div>
 
+    <div class="top-announcement-text">
+      <span class="line1">🔥 Early Bird Tickets Live</span>
+      <span class="line2">
+        Training 24–26 Oct 2026  • Conference 27 Oct 2026
+      </span>
+    </div>
+
+    <button class="close-btn">&times;</button>
+
+  </div>
 
 <!-- DESKTOP STICKY HEADER -->
 <header id="stickyHeader" class="site-header"> 
@@ -7482,9 +7555,33 @@ dots.forEach((dot, i) => {
 });
 </script>
   <script>
-  document.querySelector('.close-btn').onclick = function () {
-    document.querySelector('.top-announcement').style.display = 'none';
-  };
+function updateStickyOffset() {
+  const stickyBar = document.querySelector('.top-sticky-bar');
+  const pageContent = document.querySelector('.page-content');
+
+  if (!stickyBar || !pageContent) return;
+
+  const height = stickyBar.offsetHeight;
+  pageContent.style.marginTop = height + 'px';
+}
+
+// Run on load
+window.addEventListener('load', updateStickyOffset);
+
+// Run on resize (mobile rotation, etc.)
+window.addEventListener('resize', updateStickyOffset);
+
+// If close button is clicked
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('close-btn')) {
+    const bar = document.querySelector('.top-announcement');
+    bar.style.display = 'none';
+
+    // recalculate after hiding
+    setTimeout(updateStickyOffset, 50);
+  }
+});
 </script>
+ 
 </body>
 </html>
