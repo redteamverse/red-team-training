@@ -3880,7 +3880,7 @@ LINK SPACING
 ========================= */
 .section-nav {
   position: sticky;
-  top: 90px; /* adjust based on main header height */
+  top: 89px; /* adjust based on main header height */
   z-index: 1000;
   background: #FFFFFF;
   border-bottom: 1px solid #E5E7EB; 
@@ -3980,7 +3980,7 @@ LINK SPACING
 @media (max-width: 768px) {
 .section-nav {
   position: sticky;
-  top: 85px; /* adjust based on main header height */
+  top: 70px; /* adjust based on main header height */
   z-index: 998;
   background: #FFFFFF;
   border-bottom: 1px solid #E5E7EB;
@@ -5095,12 +5095,15 @@ SCROLL TO TOP BUTTON
   } 
 }  
 
+/* =========================
+   STICKY WRAPPER
+========================= */
 .top-sticky-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 9999;
 }
 
 /* =========================
@@ -5116,8 +5119,9 @@ SCROLL TO TOP BUTTON
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 
-  padding: 8px 12px;
+  padding: 8px 40px 8px 12px; /* space for close button */
   position: relative;
 }
 
@@ -5132,20 +5136,50 @@ SCROLL TO TOP BUTTON
   color: #fff;
   font-size: 18px;
   cursor: pointer;
-}  
-/* MOBILE FIX */
-  
-  
+}
+
+/* =========================
+   HEADER
+========================= */
+.main-header {
+  background: #fff;
+  height: 64px; /* adjust based on your header */
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+
+  border-bottom: 1px solid #eee;
+}
+
+/* =========================
+   PUSH PAGE DOWN
+========================= */
+.page-content {
+  margin-top: 104px; 
+  /* announcement (~40px) + header (64px) */
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
 @media (max-width: 768px) {
 
-  /* reduce announcement height */
   .top-announcement {
     font-size: 11px;
-    padding: 6px 10px;
+    padding: 6px 36px 6px 10px;
+    gap: 10px;
   }
 
+  .main-header {
+    height: 56px;
+  }
 
+  .page-content {
+    margin-top: 96px;
+  }
 }
+  
+  
 </style>
 </head>
 
@@ -5155,11 +5189,13 @@ SCROLL TO TOP BUTTON
 
   <!-- 🔴 ANNOUNCEMENT -->
   <div class="top-announcement">
-    <span>Early Bird Tickets Now Live</span>
+    <div>Early Bird Tickets Now Live</div>
+    <div>Training 24 Oct – 26 Oct 2026</div>
+    <div>Conference 27 Oct 2026</div>
     <button class="close-btn">&times;</button>
   </div>
 
-</div>
+
 <!-- DESKTOP STICKY HEADER -->
 <header id="stickyHeader" class="site-header"> 
   
@@ -5259,7 +5295,7 @@ SCROLL TO TOP BUTTON
   </div>
 </header>
 
-
+</div>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
@@ -5434,6 +5470,8 @@ SCROLL TO TOP BUTTON
     <div class="nav-indicator"></div>
   </div>
 </nav>
+  
+
 <section class="training-timeline" id="experience">
 
   <div class="container">
