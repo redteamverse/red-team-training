@@ -590,21 +590,7 @@ opacity:1;
 margin-top:70px;
 }
 
-.btn-sponsor{
-display:inline-block;
-margin-top:10px;
-padding:12px 22px;
-background:#1E3A8A;
-color:white;
-border-radius:8px;
-text-decoration:none;
-font-weight:600;
-transition:.25s;
-}
 
-.btn-sponsor:hover{
-background:#2B2B50;
-}
 
   
   
@@ -799,7 +785,7 @@ background:#f87171;
     
 .conference-gallery{
 
-padding:110px 20px;
+padding: 10px 20px;
 
 background:#f8fafc;
 
@@ -1501,21 +1487,14 @@ margin-top:40px;
 .btn-sponsor{
 
 display:inline-block;
-
 background:#2563eb;
-
 color:white;
-
-padding:14px 30px;
-
+padding:15px 15px;
 border-radius:10px;
-
 font-weight:600;
-
 text-decoration:none;
-
+text-align: center;
 transition:.25s;
-
 box-shadow:0 10px 25px rgba(37,99,235,.35);
 
 }
@@ -1896,21 +1875,7 @@ color:#64748b;
 margin-bottom:16px;
 }
 
-.btn-sponsor{
-display:inline-block;
-padding:12px 24px;
-background:#2563eb;
-color:white;
-border-radius:8px;
-text-decoration:none;
-font-weight:600;
-transition:.25s;
-}
 
-.btn-sponsor:hover{
-background:#1d4ed8;
-transform:translateY(-2px);
-}
 
 .sponsor-contact{
 margin-top:12px;
@@ -2177,7 +2142,7 @@ stroke:#2563eb;
 .stat-label {
   font-size: 11px;
   color: #9CA3AF;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.002em;
   text-transform: uppercase;
 }
 
@@ -2459,7 +2424,7 @@ overflow: hidden;
 @media (max-width: 768px) {
 
   .hero-title {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   
   .hero-subtitle{
@@ -3016,7 +2981,8 @@ margin-bottom: 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  justify-content: center; /* center for hero */
+  justify-content: center; /* center for hero */  
+  align-items: center;
   margin-top: 24px;
 }
 
@@ -3072,6 +3038,7 @@ margin-bottom: 16px;
 .diff-points {
   list-style: none;
   padding: 0;
+  margin: 30px;
 }
 
 .diff-points li {
@@ -3293,13 +3260,7 @@ margin-bottom: 16px;
   opacity: 1;
   transform: translateY(0);
 }
-/* LABEL */
-.stat-label {
-  font-size: 11px;
-  color: #9CA3AF;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
+
 
 /* DIVIDER */
 .stat-divider {
@@ -4302,6 +4263,32 @@ body {
     grid-template-columns: 1fr;
   }
 }  
+  
+/* =========================
+   🔒 MICRO TRUST LINE
+========================= */
+.trust-line {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #6B7280; /* subtle gray */
+  margin-top: 18px;
+}  
+  
+.trust-line.with-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}  
+  
+.trust-line.light {
+  color: #2B2B50;
+
+
+}  
+  
+  .stat-item {
+    color: black;
+  }  
 </style>
 
 </head>
@@ -4490,12 +4477,12 @@ body {
 
     <!-- TOP TITLE -->
     <div class="hero-top">
-      <h1 class="hero-title">AltSecCON</h1>
+      <h1 class="hero-title">AltSecCON 2026</h1>
       <p class="hero-subtitle">Practitioner Conference</p>
 
       <div class="hero-meta">
-        <span><i class="fa-solid fa-calendar-days"></i> 3 November 2026</span>
-        <span><i class="fa-solid fa-location-dot"></i> Bengaluru, India</span>
+        <span><i class="fa-solid fa-calendar-days"></i> 27 October 2026</span>
+        <span><i class="fa-solid fa-location-dot"></i> Hilton Hotel, Bengaluru</span>
         <span><i class="fa-solid fa-clock"></i> 09:00 AM – 05:00 PM</span>
       </div>
     </div>
@@ -4511,17 +4498,20 @@ body {
     <!-- CONTENT -->
     <div class="hero-bottom">
       <p class="hero-description">
-        Technical talks, practitioner insights, and community discussions.
+        Real-world red team insights, practitioner-led sessions, and high-impact networking.
       </p>
 
       <div class="hero-buttons">
-        <a href="#" class="btn-primary">Get Conference Ticket</a>
-        <a href="#" class="btn-outline">View Conference Agenda</a>
+        <a href="#" class="btn-primary">Get Conference Ticket →</a>        
+        <a href="#" class="btn-outline">Explore Agenda →</a>
+               
       </div>
     </div>
 
   </div>
-
+<div class="trust-line">
+  Limited seats • Early bird pricing available
+      </div>
   <!-- 🔥 LOGO SLIDER -->
   <div class="logo-slider">
 
@@ -4560,28 +4550,28 @@ body {
 
   <div class="stat-item">
     <span class="stat-number" data-target="1">1</span>
-    <span class="stat-label">Day</span>
+    <span class="stat-label">Day Intensive Event</span>
   </div>
 
   <div class="stat-divider"></div>
  
   <div class="stat-item">
     <span class="stat-number" data-target="10">10+</span>
-    <span class="stat-label">Speakers</span>
+    <span class="stat-label">Industry Speakers</span>
   </div>
 
   <div class="stat-divider"></div>
 
   <div class="stat-item">
     <span class="stat-number" data-target="8">8+</span>
-    <span class="stat-label">Sessions</span>
+    <span class="stat-label">Technical Sessions</span>
   </div>
 
   <div class="stat-divider"></div>
 
   <div class="stat-item">
     <span class="stat-number" data-target="300">300+</span>
-    <span class="stat-label">Attendees</span>
+    <span class="stat-label">Security Professionals</span>
   </div>
 
 </div>
@@ -4615,8 +4605,7 @@ body {
     <p class="section-eyebrow">Why Attend AltSecCON</p>
     <h2 class="section-title">What You’ll Gain from <span class="time-sec">AltSecCON</span></h2>
     <p class="section-intro">
-      This is not a typical conference. AltSecCON focuses on real-world offensive
-      techniques, practitioner insights, and enterprise security challenges.
+      Not just talks — real-world insights, practical techniques, and meaningful connections.
     </p>
 
     <!-- IMAGE -->
@@ -4630,31 +4619,34 @@ body {
       <div class="why-card">
         <span class="why-number">01</span>
         <h3>Hands-On Technical Talks</h3>
-        <p>Real-world offensive techniques and enterprise attack scenarios.</p>
+        <p>Real attack techniques and enterprise scenarios — not theory.</p>
       </div>
 
       <div class="why-card">
         <span class="why-number">02</span>
-        <h3>Learn from Red Team Experts</h3>
-        <p>Sessions led by active practitioners with real engagement experience.</p>
+        <h3>Learn from Active Red Teamers</h3>
+        <p>Sessions led by practitioners with real-world engagement experience.</p>
       </div>
 
       <div class="why-card">
         <span class="why-number">03</span>
         <h3>Real Enterprise Case Studies</h3>
-        <p>Understand real attacks, failures, and lessons from enterprise environments.</p>
+        <p>Breakdowns of real attacks, failures, and lessons from the field.</p>
       </div>
 
       <div class="why-card">
         <span class="why-number">04</span>
-        <h3>Network with Security Professionals</h3>
-        <p>Connect with practitioners, researchers, and engineers across industries.</p>
+        <h3>High-Value Networking
+</h3>
+        <p>Connect with security professionals, researchers, and practitioners.</p>
       </div>
 
     </div>
 
   </div>
-
+<div class="trust-line light ">
+  "Built for professionals who want practical, real-world security insights"
+</div>
 </section>
 
 <section class="altseccon-diff-merged">
@@ -4673,15 +4665,13 @@ body {
       </h2>
 
       <p class="diff-intro">
-        Most cybersecurity conferences focus on theory and surface-level discussions.
-        AltSecCON is built around real-world offensive security — practical,
-        enterprise-focused, and led by practitioners.
+        Most conferences focus on theory. AltSecCON is built on real-world offensive security — practical, enterprise-focused, and led by practitioners.
       </p>
 
       <ul class="diff-points">
         <li>No generic talks</li>
-        <li>No vendor-driven content</li>
-        <li>AltSecCON is built around</li>
+        <li>No vendor-driven sessions</li>
+        <li>Only real-world, practitioner-led content</li>
       </ul>
 
     </div>
@@ -4700,7 +4690,7 @@ body {
 
   <span class="tag">
     <i data-lucide="building"></i>
-    Enterprise Focus
+    Enterprise Focused
   </span>
 
   <span class="tag">
@@ -4726,7 +4716,7 @@ body {
     <div class="compare-card">
       <h4>Content Quality</h4>
 
-      <p class="good active">Real-world attack scenarios</p>
+      <p class="good active">Real attack scenarios (not theory)</p>
       <p class="bad">Theory-based talks</p>
     </div>
 
@@ -4740,22 +4730,25 @@ body {
     <div class="compare-card">
       <h4>Focus</h4>
 
-      <p class="good active">Enterprise environments</p>
+      <p class="good active">Enterprise environments & real threats</p>
       <p class="bad">Generic topics</p>
     </div>
 
     <div class="compare-card">
       <h4>Learning Style</h4>
 
-      <p class="good active">Practical & hands-on insights</p>
+      <p class="good active">Practical, insight-driven sessions</p>
       <p class="bad">Slides & theory</p>
     </div>
 
   </div>
 
 </div>
-
+<div class="trust-line light ">
+  "Built for professionals who want practical security knowledge - not surface-level talks"
 </div>
+</div>
+  
 </section>  
  
     
@@ -4768,8 +4761,7 @@ body {
     <h2 class="section-title">Secure Your Seat at <span class="time-sec">AltSecCON</span></h2>
 
     <p class="section-intro">
-      Join cybersecurity professionals, researchers, and Red Team practitioners
-      for a full day of technical talks, discussions, and networking.
+      Join security professionals for a full day of real-world talks, practitioner insights, and high-value networking.
     </p>
 
     <!-- SINGLE CARD -->
@@ -4817,23 +4809,22 @@ body {
 
         <ul class="ticket-features">
           <li>✔ Full access to all conference talks</li>
-          <li>✔ Networking with security professionals</li>
-          <li>✔ Panel discussions and practitioner sessions</li>
-          <li>✔ Coffee breaks and lunch included</li>
-          <li>✔ Welcome Kit</li>
-          <li>✔ Participation E-Certificate</li>
+          <li>✔ Practitioner-led sessions & panels</li>
+          <li>✔ High-value networking</li>
+          <li>✔ Lunch, coffee breaks & welcome kit</li>
+          <li>✔ Participation e-certificate</li>        
         </ul>
 
         <p class="ticket-urgency">
-          Only limited early bird seats remaining
+          Limited early bird seats available
         </p>
 
         <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="ticket-btn primary">
-          Get Your Conference Pass
+          Get Conference Pass →
         </a>
 
         <p class="ticket-trust">
-          ✔ Instant confirmation • ✔ Secure payment • ✔ Limited seats
+          ✔ Instant confirmation • ✔ Secure payment
         </p>
 
       </div>
@@ -4855,7 +4846,7 @@ body {
     <p class="section-eyebrow">Conference Experience</p>
     <h2 class="section-title">Your Day at AltSecCON</h2>
      <p class="section-intro">
-      A complete conference experience designed for learning, comfort, and meaningful interaction.
+      A complete conference experience designed for learning, networking, and real-world insights.
     </p> 
     <!-- STEPS -->
     <div class="flow-wrapper">
@@ -4877,26 +4868,22 @@ body {
       <div class="flow-step" data-step="3">
         <i data-lucide="badge-check"></i>
         <span>Full Session Access</span>
-      </div>           
+      </div>       
 
-      <div class="flow-step" data-step="4">
-        <i data-lucide="users"></i>
-        <span>Networking</span>
-      </div>
       
-      <div class="flow-step" data-step="5">
+      <div class="flow-step" data-step="4">
         <i data-lucide="users"></i>
         <span>Meet the Experts</span>
       </div>
 
-      <div class="flow-step" data-step="6">
-        <i data-lucide="utensils"></i>
-        <span>Food & Breaks</span>
-      </div>
-
-      <div class="flow-step" data-step="7">
+      <div class="flow-step" data-step="5">
         <i data-lucide="file-check"></i>
         <span>Certificate</span>
+      </div>
+
+      <div class="flow-step" data-step="6">
+        <i data-lucide="utensils"></i>
+        <span>Food & Networking</span>
       </div>
 
     </div>
@@ -4909,8 +4896,7 @@ body {
       <span class="dot" data-index="3"></span>
       <span class="dot" data-index="4"></span>
       <span class="dot" data-index="5"></span>
-      <span class="dot" data-index="6"></span>     
-      <span class="dot" data-index="7"></span> 
+      <span class="dot" data-index="6"></span>       
     </div>
 
     <!-- CONTENT -->
@@ -4918,13 +4904,13 @@ body {
 
       <div class="flow-content-item active" data-step="0">
         <h3>Registration</h3>
-        <p>Quick check-in with your details to start your day smoothly.</p>
+        <p>Quick check-in to get started without delays.</p>
         <img src="https://redteamverse.github.io/red-team-training/images/c5.webp" alt="Registration">
       </div>
       
             <div class="flow-content-item active" data-step="1">
         <h3>Welcome Kit</h3>
-        <p>Conference essentials and curated materials on arrival.
+        <p>Receive your conference essentials and curated materials.  
 
               </p>
         <img src="https://redteamverse.github.io/red-team-training/images/new-7.webp" alt="Registration">
@@ -4932,42 +4918,36 @@ body {
 
       <div class="flow-content-item" data-step="2">
         <h3>Expert Talks</h3>
-        <p>Deep dive into real-world offensive techniques shared by experienced practitioners.</p>
+        <p>Real-world offensive security insights from experienced practitioners.</p>
         <img src="https://redteamverse.github.io/red-team-training/images/new-3.webp" alt="Expert Talks">
       </div>
  
       
         <div class="flow-content-item" data-step="3">
         <h3>Full Session Access</h3>
-        <p>Attend all scheduled talks and discussions.</p>
+        <p>Attend all talks, panels, and technical discussions.</p>
         <img src="https://redteamverse.github.io/red-team-training/images/new-5.webp" alt="Expert Talks">
-      </div>
-
+      </div>      
+    
       
-      <div class="flow-content-item" data-step="4">
-        <h3>Networking</h3>
-        <p>Connect with professionals, researchers, and peers across the security community.</p>
-        <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-8.webp" alt="Networking">
-      </div>
-      
-       <div class="flow-content-item" data-step="5">
+       <div class="flow-content-item" data-step="4">
         <h3>Meet the Experts
           </h3>
-        <p>Interact directly with speakers and professionals.
+        <p>Interact directly with speakers and industry professionals.
 
          </p>
         <img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" alt="Networking">
       </div>
 
-      <div class="flow-content-item" data-step="6">
-        <h3>Food & Breaks</h3>
-        <p>Relax, recharge, and continue discussions in an informal setting.</p>
+      <div class="flow-content-item" data-step="5">
+        <h3>Food & Networkig</h3>
+        <p>Connect and continue conversations in a relaxed setting.</p>
         <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-Gallary-6.webp" alt="Food & Breaks">
       </div>
 
-      <div class="flow-content-item" data-step="7">
+      <div class="flow-content-item" data-step="6">
         <h3>Certification</h3>
-        <p>Receive your official participation certificate.</p>
+        <p>Receive your official AltSecCON participation certificate.</p>
         <img src="https://redteamverse.github.io/red-team-training/images/demo-cert.avif" alt="Certificate">
       </div>
     </div>
@@ -4984,14 +4964,18 @@ Conference Speakers
 </p>
 
 <h2 class="section-title">
-Meet the Speakers
+Learn from Practitioners, Not Just Speakers
 </h2>
 
 <p class="section-intro">
-AltSecCON speakers include experienced Red Team practitioners, security researchers, and industry professionals who work on real-world offensive security engagements. They bring practical insights from enterprise security operations, Red Team exercises, and security research.
+Hear from Red Teamers, researchers, and security leaders sharing real-world attack insights, case studies, and lessons from enterprise environments.
 </p>
 
-
+<ul class="diff-points">
+        <li>✔ Sessions led by active practitioners</li>
+        <li>✔ Real enterprise attack scenarios</li>
+        <li>✔ No vendor-driven content</li>
+      </ul>
 <div class="speakers-grid">
 
 <!-- Speaker 1 -->
@@ -5003,8 +4987,8 @@ AltSecCON speakers include experienced Red Team practitioners, security research
 </div>
 
 <h3>Nikhil Mittal</h3>
-<p class="speaker-role">Founder</p>
-<span class="speaker-company">Altered Security</span>
+<p class="speaker-role">Founder, Altered Security</p>
+<span class="speaker-company">Spoken at DEF CON, Black Hat</span>
 
 <div class="speaker-social">
 <a href="#" target="_blank" aria-label="LinkedIn">
@@ -5033,7 +5017,7 @@ AltSecCON speakers include experienced Red Team practitioners, security research
 
 <h3>Vishal</h3>
 <p class="speaker-role">Security Researcher</p>
-<span class="speaker-company">Altered Security</span>
+<span class="speaker-company"></span>
 
 <div class="speaker-social">
 <a href="#" target="_blank" aria-label="LinkedIn">
@@ -5057,12 +5041,12 @@ AltSecCON speakers include experienced Red Team practitioners, security research
 <div class="speaker-card">
 
 <div class="speaker-image">
-<img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" alt="Speaker">
+<img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9696.jpg" alt="Speaker">
 </div>
 
-<h3>Amit</h3>
-<p class="speaker-role">Trainer</p>
-<span class="speaker-company">Altered Security</span>
+<h3>Manthan</h3>
+<p class="speaker-role">Red Team Trainer</p>
+  <span class="speaker-company"></span>
 
 <div class="speaker-social">
 <a href="#" target="_blank" aria-label="LinkedIn">
@@ -5091,7 +5075,7 @@ AltSecCON speakers include experienced Red Team practitioners, security research
 
 <h3>Hitesh</h3>
 <p class="speaker-role">Security Engineer</p>
-<span class="speaker-company">Altered Security</span>
+<span class="speaker-company"></span>
 
 <div class="speaker-social">
 <a href="#" target="_blank" aria-label="LinkedIn">
@@ -5112,7 +5096,7 @@ AltSecCON speakers include experienced Red Team practitioners, security research
 </div>
 
 <p class="speakers-note">
-Speakers will share practical insights, research findings, and experiences from real-world offensive security engagements.
+Real-world insights. Practical learnings. No generic talks.
 </p>
 
 </div>
@@ -5125,13 +5109,15 @@ Speakers will share practical insights, research findings, and experiences from 
     <p class="section-eyebrow">Technical Focus</p>
 
     <h2 class="section-title">Conference Topics</h2>
-
+      
     <p class="section-intro">
-      The AltSecCON Practitioner Conference features technical talks focused on enterprise attack techniques, Red Team operations, and real-world security challenges.
+      Deep-dive sessions focused on real enterprise attack paths, adversary techniques, and practical security challenges.
     </p>
-
+    <div class="trust-line light">
+  “No generic topics. Only what’s used in real engagements.”
+</div>
     <div class="topics-grid">
-
+        
       <div class="topic-card">
         <div class="topic-icon"><i data-lucide="network"></i></div>
         <h3>Active Directory Attacks</h3>
@@ -5164,13 +5150,19 @@ Speakers will share practical insights, research findings, and experiences from 
 
       <div class="topic-card">
         <div class="topic-icon"><i data-lucide="bar-chart-3"></i></div>
-        <h3>Case Studies</h3>
-        <p>Lessons learned from real enterprise incidents.</p>
+        <h3>Real-World Case Studies</h3>
+        <p>Breakdowns of real attacks, failures, and lessons from enterprise incidents.</p>
+      
       </div>
 
     </div>
-
+      <ul class="diff-points">
+        <li>✔ No beginner-level theory</li>
+        <li>✔ Real attack scenarios only</li>
+        <li>✔ Built for working security professionals</li>
+      </ul>
   </div>
+  
 </section>  
 <section class="conference-agenda" id="agenda">
 
@@ -5181,20 +5173,42 @@ Speakers will share practical insights, research findings, and experiences from 
 <h2 class="section-title">Conference Agenda</h2>
 
 <p class="section-intro">
-The AltSecCON Practitioner Conference features a full day of technical talks, practitioner insights, and discussions focused on real-world offensive security challenges, enterprise attack techniques, and modern defense strategies.
+A full day of practitioner-led sessions, real-world attack insights, and meaningful networking.
 </p>
+<div class="tag-group">
 
+  <span class="tag">
+    <i data-lucide="shield"></i>
+    Keynote
+  </span>
+
+  <span class="tag">
+    <i data-lucide="user-check"></i>
+    Technical
+  </span>
+
+  <span class="tag">
+    <i data-lucide="building"></i>
+    Case Study
+  </span>
+
+  <span class="tag">
+    <i data-lucide="target"></i>
+    Panel
+  </span>
+
+</div>
 <div class="agenda-event-info">
 
 <h3 class="agenda-event-title">
-AltSecCON Practitioner Conference ’26 (Bengaluru Edition)
+AltSecCON Practitioner Conference ’2026 (Bengaluru Edition)
 </h3>
 
 <div class="agenda-meta">
 
 <span>
 <i class="fa-solid fa-calendar-days"></i>
-03 Nov 2026, Tuesday
+27 Oct 2026, (Tuesday)
 </span>
 
 <span>
@@ -5204,13 +5218,13 @@ AltSecCON Practitioner Conference ’26 (Bengaluru Edition)
 
 <span>
 <i class="fa-solid fa-location-dot"></i>
-Bengaluru, Karnataka
+Hilton Hotel Bengaluru
 </span>
 
 </div>
 
 <p class="agenda-note">
-Kindly Note: Agenda & Schedule is subject to change without prior notice.
+Kindly Note: Agenda may evolve as speakers and sessions are finalized.
 </p>
 
 </div>
@@ -5240,7 +5254,7 @@ Conference check-in and welcome session.
 Conference check-in, networking, and welcome session for participants.
 </div>
 
-<button class="agenda-toggle">Read More</button>
+<button class="agenda-toggle">View Details ↓</button>
 
 </div>
 
@@ -5269,7 +5283,7 @@ Cybersecurity landscape and offensive security importance.
 Discussion on the evolving cybersecurity landscape and the importance of offensive security in enterprise environments.
 </div>
 
-<button class="agenda-toggle">Read More</button>
+<button class="agenda-toggle">View Details ↓</button>
 
 </div>
 
@@ -5298,7 +5312,7 @@ Active Directory attack techniques overview.
 Active Directory attack techniques and enterprise privilege escalation paths.
 </div>
 
-<button class="agenda-toggle">Read More</button>
+<button class="agenda-toggle">View Details ↓</button>
 
 </div>
 
@@ -5327,7 +5341,7 @@ Insights into vulnerabilities and exploitation techniques.
 Security research insights covering vulnerabilities, exploitation techniques, and real-world security observations.
 </div>
 
-<button class="agenda-toggle">Read More</button>
+<button class="agenda-toggle">View Details ↓</button>
 
 </div>
 
@@ -5356,7 +5370,7 @@ Lunch break with networking opportunities.
 Lunch break with an opportunity for attendees to connect and interact with speakers and fellow professionals.
 </div>
 
-<button class="agenda-toggle">Read More</button>
+<button class="agenda-toggle">View Details ↓</button>
 
 </div>
 
@@ -5385,7 +5399,7 @@ Real-world Red Team engagement lessons.
 Real-world Red Team engagement experiences and lessons learned from enterprise security assessments.
 </div>
 
-<button class="agenda-toggle">Read More</button>
+<button class="agenda-toggle">View Details ↓</button>
 
 </div>
 
@@ -5414,7 +5428,7 @@ Azure identity abuse and cloud attack paths.
 Discussion on Azure identity abuse, cloud privilege escalation, and cloud attack paths.
 </div>
 
-<button class="agenda-toggle">Read More</button>
+<button class="agenda-toggle">View Details ↓</button>
 
 </div>
 
@@ -5443,7 +5457,7 @@ Industry professionals discussing security trends.
 Industry professionals discussing offensive security trends and enterprise defense strategies.
 </div>
 
-<button class="agenda-toggle">Read More</button>
+<button class="agenda-toggle">View Details ↓</button>
 
 </div>
 
@@ -5472,12 +5486,16 @@ Summary of conference insights and discussions.
 Closing session summarizing key insights and discussions from the conference.
 </div>
 
-<button class="agenda-toggle">Read More</button>
+<button class="agenda-toggle">View Details ↓ </button>
 
 </div>
 
 </div>
-
+<ul class="diff-points">
+        <li>✔ Practitioner-led sessions (no theory-only talks)</li>
+        <li>✔ Real enterprise scenarios</li>
+        <li>✔ Interactive discussions & networking</li>
+      </ul>
 
 </div>
 
@@ -5543,10 +5561,10 @@ Closing session summarizing key insights and discussions from the conference.
 
 <p class="section-eyebrow">Event Moments</p>
 
-<h2 class="section-title"><span class="time-sec">AltSecCON</span> Conference Gallery</h2>
+<h2 class="section-title">Inside<span class="time-sec"> AltSecCON</span></h2>
 
 <p class="section-intro">
-Moments from AltSecCON training sessions, conference talks, and community interactions showcasing the vibrant cybersecurity community coming together to learn, share knowledge, and collaborate.
+A glimpse into hands-on learning, technical discussions, and the community behind AltSecCON.
 </p>
 
 
@@ -5567,11 +5585,16 @@ Moments from AltSecCON training sessions, conference talks, and community intera
 <img src="https://redteamverse.github.io/red-team-training/images/c5.webp" alt="AltSecCON event">
 
 </div>
+  
 <div class="">
+  
 <a href="/gallery" class="btn-gallery">
-View AltSecCON Gallery
+Explore Full Experience →
+  
 </a>
-
+<p class="ticket-trust">
+  ✔ In-person sessions • ✔ Live discussions • ✔ Active practitioner 
+        </p>
 </div>
 
 <!-- CTA -->
@@ -5581,7 +5604,7 @@ View AltSecCON Gallery
 </div>
 
 </section>   
-<section class="conference-sponsors" id="sponsors">
+  <section class="conference-sponsors" id="sponsors">
 
 <div class="container">
 
@@ -5590,9 +5613,7 @@ View AltSecCON Gallery
 <h2 class="section-title">Conference Sponsors</h2>
 
 <p class="section-intro">
-AltSecCON is supported by leading cybersecurity organizations and technology companies
-committed to strengthening the security community through knowledge sharing, research,
-and collaboration.
+AltSecCON is supported by organizations actively shaping the cybersecurity landscape through research, innovation, and real-world security practices.
 </p>
 
 
@@ -5603,7 +5624,7 @@ and collaboration.
 <h3 class="tier-title">Platinum Sponsors</h3>
 
 <p class="tier-desc">
-Top partners supporting the AltSecCON conference and community initiatives.
+Top industry leaders supporting AltSecCON and the global security community.
 </p>
 
 <div class="sponsor-grid">
@@ -5628,8 +5649,7 @@ Top partners supporting the AltSecCON conference and community initiatives.
 <h3 class="tier-title">Gold Sponsors</h3>
 
 <p class="tier-desc">
-Organizations contributing to the growth of the cybersecurity ecosystem.
-</p>
+Organizations contributing to knowledge sharing and innovation.</p>
 
 <div class="sponsor-grid">
 
@@ -5657,7 +5677,7 @@ Organizations contributing to the growth of the cybersecurity ecosystem.
 <h3 class="tier-title">Community Partners</h3>
 
 <p class="tier-desc">
-Security communities and ecosystem partners supporting the event.
+Security communities and ecosystem partners driving collaboration and growth.
 </p>
 
 <div class="sponsor-grid">
@@ -5676,10 +5696,15 @@ Security communities and ecosystem partners supporting the event.
 
 
 <div class="sponsor-cta">
+  <ul class="diff-points">
+        <li>✔ Backed by global cybersecurity leaders</li>
+        <li>✔ Trusted by enterprise security teams</li>
+        <li>✔ Supporting real-world security research</li>
+      </ul>
+<p class="tier-title">Partner with AltSecCON</p>
+<p>Reach a focused audience of security professionals, practitioners, and decision-makers.</p>
 
-<p>Interested in AltSecCON conference sponsorship?</p>
-
-<a href="#" class="btn-sponsor">Become a Sponsor</a>
+<a href="#" class="btn-sponsor">Become a Sponsor →</a>
 
 </div>
 
@@ -5696,8 +5721,7 @@ Security communities and ecosystem partners supporting the event.
 <h2 class="section-title">Conference Venue</h2>
 
 <p class="section-intro">
-The AltSecCON Practitioner Conference will be held in Bengaluru, India, bringing together cybersecurity professionals, researchers, and practitioners for a full day of technical discussions and community interaction.
-</p>
+Join us in Bengaluru for a full day of technical sessions, networking, and community interaction.</p>
 
 
 <!-- VENUE INFO -->
@@ -5706,17 +5730,17 @@ The AltSecCON Practitioner Conference will be held in Bengaluru, India, bringing
 
 <div class="venue-item">
 <h4>City</h4>
-<p>Bengaluru, India</p>
+<p> Bengaluru, India</p>
 </div>
 
 <div class="venue-item">
 <h4>Conference Date</h4>
-<p>3 November 2026</p>
+<p>27 October 2026</p>
 </div>
 
 <div class="venue-item">
 <h4>Venue</h4>
-<p>To be announced soon</p>
+<p>Hilton Hotel Bengaluru</p>
 </div>
 
 </div>
@@ -5729,15 +5753,15 @@ The AltSecCON Practitioner Conference will be held in Bengaluru, India, bringing
 <div class="venue-text">
 
 <p class="venue-description">
-Bengaluru is one of India’s leading technology hubs and home to a vibrant cybersecurity community. The conference venue will provide a professional environment for technical talks, networking sessions, and community interaction.
-</p>
+Bengaluru, one of India’s leading technology hubs, offers the perfect setting for AltSecCON—bringing together cybersecurity professionals in a focused, in-person environment.
+  </p>
 
 <ul class="venue-features">
 
-<li>✔ Conference presentation hall</li>
-<li>✔ Networking areas for attendees</li>
-<li>✔ Lunch and refreshment spaces</li>
-<li>✔ Opportunities to interact with speakers and participants</li>
+<li>✔ Professional conference venue with dedicated session spaces</li>
+<li>✔ Comfortable setup for networking and discussions</li>
+<li>✔ Meals, coffee breaks, and collaboration areas included</li>
+<li>✔ Opportunities to interact directly with speakers and practitioners</li>
 
 </ul>
 
@@ -5748,16 +5772,21 @@ Bengaluru is one of India’s leading technology hubs and home to a vibrant cybe
 
 <div class="venue-map">
 
-<div class="map-placeholder">
-
-<p>📍 Google Map will be embedded once the venue is announced.</p>
+  <iframe
+    src="https://www.google.com/maps?q=Hilton+Bangalore+Embassy+GolfLinks&output=embed"
+    width="100%"
+    height="320"
+    style="border:0; border-radius:12px;"
+    allowfullscreen=""
+    loading="lazy">   
+  </iframe>
 
 </div>
 
 </div>
-
-</div>
-
+<p class="ticket-trust">
+  ✔ Centrally located • ✔ Easy accessibility • ✔ Premium experience
+        </p>
 </div>
 
 </section>  
@@ -5936,12 +5965,12 @@ For conference-related inquiries, please contact the AltSecCON team through the 
 
       <div class="cta-pill">
         <i data-lucide="calendar"></i>
-        <span>3 November 2026</span>
+        <span>27 October 2026</span>
       </div>
 
       <div class="cta-pill">
         <i data-lucide="map-pin"></i>
-        <span>Bengaluru, India</span>
+        <span>Hilton Hotel Bengaluru, India</span>
       </div>
 
     </div>
