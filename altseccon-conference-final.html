@@ -4313,6 +4313,111 @@ body {
   overflow: visible;
 }  
 
+/* =========================
+   CTA WRAPPER
+========================= */
+.section-cta {
+  margin-top: 24px;
+}
+
+/* =========================
+   PRIMARY CTA BUTTON
+========================= */
+.btn-cta {
+  display: inline-block;
+  background: #B91C1C;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+.btn-cta:hover {
+  background: #991B1B;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   CENTER OPTION
+========================= */
+.section-cta.center {
+  text-align: center;
+}  
+  
+/* =========================
+   📱 MOBILE CTA BAR
+========================= */
+.mobile-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+
+  z-index: 9999;
+  padding: 10px 12px;
+
+  display: none; /* hidden by default */
+}
+
+/* CONTENT */
+.mobile-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* TEXT */
+.mobile-cta-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.cta-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cta-sub {
+  font-size: 11px;
+  color: #6B7280;
+}
+
+/* BUTTON */
+.mobile-cta-btn {
+  background: #B91C1C;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   SHOW ONLY ON MOBILE
+========================= */
+@media (max-width: 768px) {
+  .mobile-cta-bar {
+    display: block;
+  }
+
+  body {
+    padding-bottom: 70px; /* prevent overlap */
+  }
+}  
 </style>
 
 </head>
@@ -4321,7 +4426,7 @@ body {
 <body>   
 <div class="top-bar" id="topBar">
   <span class="top-bar-text">
-    Early Bird Ends Soon — Use Code <strong>EARLY200</strong>
+    <strong>Training</strong> 24–26 Oct 2026 <strong>•  Conference</strong> 27 Oct 2026
   </span>
 
   <button class="top-bar-close" id="topBarClose">✕</button>
@@ -4616,7 +4721,20 @@ body {
 
   </div>
 </nav>      
+<div class="mobile-cta-bar" id="mobileCTA">
 
+  <div class="mobile-cta-content">
+    <div class="mobile-cta-text">
+      <span class="cta-title">AltSecCON 2026</span>
+      <span class="cta-sub">Limited seats • Early bird active</span>
+    </div>
+
+    <a href="#pass" class="mobile-cta-btn">
+      Get Pass →
+    </a>
+  </div>
+
+</div>
 <section class="why-attend" id="attend">
 
   <div class="container">
@@ -4667,6 +4785,14 @@ body {
 <div class="trust-line light ">
   "Built for professionals who want practical, real-world security insights"
 </div>
+<div class="section-cta">
+  <a href="#pass" class="btn-cta">
+    Get Conference Ticket →
+  </a>
+  <div class="trust-line center">
+    Limited seats • Early bird pricing available
+  </div>
+</div>  
 </section>
 
 <section class="altseccon-diff-merged">
@@ -4971,7 +5097,12 @@ body {
         <img src="https://redteamverse.github.io/red-team-training/images/demo-cert.avif" alt="Certificate">
       </div>
     </div>
+  <div class="section-cta center">
+  <a href="#pass" class="btn-cta">Secure Your Seat →</a>
+  <div class="trust-line center">
+    Seats filling fast • Early pricing active
   </div>
+</div></div>
 </section>   
 
   
@@ -5118,7 +5249,9 @@ Hear from Red Teamers, researchers, and security leaders sharing real-world atta
 <p class="speakers-note">
 Real-world insights. Practical learnings. No generic talks.
 </p>
-
+<div class="section-cta center">
+  <a href="#pass" class="btn-cta">Join the Conference →</a>
+</div>
 </div>
 
 </section>  
@@ -5518,7 +5651,12 @@ Closing session summarizing key insights and discussions from the conference.
       </ul>
 
 </div>
-
+<div class="section-cta center">
+  <a href="#pass" class="btn-cta">Get Your Pass Now →</a>
+  <div class="trust-line center">
+    Early bird pricing ends soon
+  </div>
+</div>
 </div>
 
 </section>       
@@ -5808,7 +5946,12 @@ Bengaluru, one of India’s leading technology hubs, offers the perfect setting 
   ✔ Centrally located • ✔ Easy accessibility • ✔ Premium experience
         </p>
 </div>
-
+<div class="section-cta center">
+  <a href="#pass" class="btn-cta">Get Your Pass Now →</a>
+  <div class="trust-line center">
+    Early bird pricing ends soon
+  </div>
+</div>
 </section>  
     
 
@@ -6363,5 +6506,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+<script>
+let lastScroll = 0;
+const cta = document.getElementById("mobileCTA");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.scrollY;
+
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    // scroll down → hide
+    cta.style.transform = "translateY(100%)";
+  } else {
+    // scroll up → show
+    cta.style.transform = "translateY(0)";
+  }
+
+  lastScroll = currentScroll;
+});
+</script>  
 </body>
 </html>
