@@ -4056,7 +4056,7 @@ body {
 .flow-step.active {
   opacity: 1;
   transform: scale(1);
-  border-color: #2B2B50;
+  border-color: #B91C1C;
 }
 
 /* ICON */
@@ -6276,6 +6276,92 @@ if (counters.length) {
 
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+  const wrapper = document.querySelector(".flow-wrapper");
+  const steps = document.querySelectorAll(".flow-step");
+  const dots = document.querySelectorAll(".dot");
+  const contents = document.querySelectorAll(".flow-content-item");
+
+  if (!wrapper || !steps.length) return;
+
+  /* =========================
+     CORE FUNCTION
+  ========================= */
+  function setActive(index) {
+
+    // steps
+    steps.forEach(s => s.classList.remove("active"));
+    steps[index]?.classList.add("active");
+
+    // dots
+    dots.forEach(d => d.classList.remove("active"));
+    dots[index]?.classList.add("active");
+
+    // content
+    contents.forEach(c => c.classList.remove("active"));
+    contents[index]?.classList.add("active");
+  }
+
+  /* =========================
+     CLICK (DESKTOP)
+  ========================= */
+  steps.forEach((step, index) => {
+    step.addEventListener("click", () => {
+      setActive(index);
+
+      step.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest"
+      });
+    });
+  });
+
+  /* =========================
+     DOT CLICK
+  ========================= */
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      setActive(index);
+
+      steps[index]?.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest"
+      });
+    });
+  });
+
+  /* =========================
+     SCROLL SYNC (MOBILE)
+  ========================= */
+  function updateOnScroll() {
+    let center = wrapper.scrollLeft + wrapper.offsetWidth / 2;
+    let activeIndex = 0;
+
+    steps.forEach((step, index) => {
+      const boxCenter = step.offsetLeft + step.offsetWidth / 2;
+
+      if (Math.abs(center - boxCenter) < step.offsetWidth / 2) {
+        activeIndex = index;
+      }
+    });
+
+    setActive(activeIndex);
+  }
+
+  wrapper.addEventListener("scroll", () => {
+    requestAnimationFrame(updateOnScroll);
+  });
+
+  /* =========================
+     INIT
+  ========================= */
+  setActive(0);
+
+});
+</script>
 </body>
 </html>
