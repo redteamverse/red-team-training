@@ -230,6 +230,7 @@ section h3 {
 .hero-content{
   padding: 120px 24px;
 }
+  
 
 }  
 /* Top meta pill */
@@ -361,6 +362,78 @@ section h3 {
   .m-hide {
     display: none;
   }
+  
+.auth-text .uvp{
+    color:#fff;
+    font-size: 16px;
+    line-height: 1.2;
+    padding-bottom: 10px; 
+    font-weight: 600;      
+  }  
+  
+.uvp-text {    
+    color:#ffffff;
+    font-size: 12px;
+    line-height: 1.6;   
+    font-weight: 400;  
+    margin: 0px;  
+}   
+/* Authority block */
+.authority {
+  background: rgba(17, 24, 39, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 520px;
+  margin: 0px;
+  backdrop-filter: blur(2px); /* subtle, safe */
+}
+
+/* Authority text */
+.authority strong {
+  font-size:1rem;
+  font-weight:700;
+  display: block;
+  font-size: 0.95rem;
+  color: #FFFFFF;
+}
+
+.authority span {
+  font-size: 0.8rem;
+  color: #E5E7EB;
+}
+
+/* Divider */
+.authority-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 14px 0;
+}
+
+/* Capabilities */
+.authority-capabilities {
+
+  justify-content: center;
+  font-size:0.85rem;
+  color: #E5E7EB;
+  flex-wrap: wrap;
+  line-height: 1.6;
+  text-align: center;   
+  
+}
+  
+/* Capabilities */
+.authority-capabilities span {
+
+  font-size:0.85rem;
+  color: #E5E7EB; 
+  line-height: 1.2
+  
+}  
+  
+   
+  
 }  
 
 
@@ -5252,7 +5325,7 @@ SCROLL TO TOP BUTTON
   
   .uvp{
     color:#ffffff;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.2;
     padding-bottom: 10px; 
     font-weight: 600;
@@ -5495,7 +5568,7 @@ SCROLL TO TOP BUTTON
   <!-- TEXT BLOCK -->
   <div class="auth-text">
     <p class="uvp">Master Red Team Skills. Then See Them in Action.</p>
-    <p>3 days of hands-on training in Active Directory and Azure attack techniques, 
+    <p class="uvp-text">3 days of hands-on training in Active Directory and Azure attack techniques, 
       followed by a 1-day practitioner-focused conference 
       <span class="m-hide"> with real-world insights, tools, and tradecraft.</span></p>
    
@@ -5503,9 +5576,9 @@ SCROLL TO TOP BUTTON
 
   <!-- TAGS -->
   <div class="auth-tags">
-    <span>On-Prem AD</span>
-    <span>Azure Red Teaming</span>
-    <span>Adversary Simulation</span>
+    <span class="m-hide">On-Prem AD</span>
+    <span class="m-hide">Azure Red Teaming</span>
+    <span class="m-hide">Adversary Simulation</span>
   </div>
 
 </div>
