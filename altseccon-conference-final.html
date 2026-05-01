@@ -4029,36 +4029,45 @@ body {
   text-align: center;
 }
 
-/* FLOW */
+/* =========================
+   FLOW WRAPPER (SCROLLABLE)
+========================= */
 .flow-wrapper {
   display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin-top: 40px;
+  gap: 12px;
+
+  overflow-x: auto;              /* ✅ ENABLE SCROLL */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 10px 0;
+
+  justify-content: flex-start;   /* IMPORTANT */
+}
+/* hide scrollbar */
+.flow-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
-/* STEP */
 .flow-step {
-  flex: 0 0 auto;
-  min-width: 160px;
+  flex: 0 0 auto;              /* ✅ PREVENT SHRINK */
+  white-space: nowrap;         /* ✅ keep in one line */
 
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
   background: #fff;
-  border: 1px solid #E5E7EB;
-  padding: 16px 20px;
-  border-radius: 12px;
 
-  transition: 0.3s ease;
-  opacity: 0.5;
-  transform: scale(0.92);
-  color: #2B2B50;
+  cursor: pointer;
+  transition: 0.25s;
 }
 
+/* active state */
 .flow-step.active {
-  opacity: 1;
-  transform: scale(1);
   border-color: #B91C1C;
+  background: rgba(185,28,28,0.08);
+   transform: translateY(-2px);
 }
-
 /* ICON */
 .flow-step i {
   width: 24px;
@@ -4137,13 +4146,21 @@ body {
 /* DESKTOP IMPROVEMENT */
 @media (min-width: 769px) {
 
-  .flow-wrapper {
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 24px;
-    max-width: 900px;
-    margin-inline: auto;
-  }
+ /* =========================
+   FLOW WRAPPER (SCROLLABLE)
+========================= */
+.flow-wrapper {
+  display: flex;
+  gap: 12px;
+
+  overflow-x: auto;              /* ✅ ENABLE SCROLL */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 10px 0;
+
+  justify-content: flex-start;   /* IMPORTANT */
+}
 
   /* remove mobile scaling effect */
   .flow-step {
@@ -4152,11 +4169,7 @@ body {
     min-width: 150px;
   }
 
-  /* active state more subtle */
-  .flow-step.active {
-    border-color: #B91C1C;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  }
+ 
 
   /* 🔥 CONNECTOR LINE (makes it premium) */
   .flow-wrapper {
@@ -5119,7 +5132,7 @@ body {
         <img src="https://redteamverse.github.io/red-team-training/images/c5.webp" alt="Registration">
       </div>
       
-            <div class="flow-content-item active" data-step="1">
+            <div class="flow-content-item" data-step="1">
         <h3>Welcome Kit</h3>
         <p>Receive your conference essentials and curated materials.  
 
@@ -6527,48 +6540,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // steps
     steps.forEach(s => s.classList.remove("active"));
-    steps[index]?.classList.add("active");
+    steps[index].classList.add("active");
 
     // dots
     dots.forEach(d => d.classList.remove("active"));
-    dots[index]?.classList.add("active");
+    dots[index].classList.add("active");
 
     // content
     contents.forEach(c => c.classList.remove("active"));
-    contents[index]?.classList.add("active");
+    contents[index].classList.add("active");
+
+    // 🔥 scroll to center
+    steps[index].scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest"
+    });
   }
 
   /* =========================
-     CLICK (DESKTOP)
+     CLICK EVENTS
   ========================= */
   steps.forEach((step, index) => {
     step.addEventListener("click", () => {
       setActive(index);
+    });
+  });
 
-      step.scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest"
-      });
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      setActive(index);
     });
   });
 
   /* =========================
-     DOT CLICK
+     INIT
   ========================= */
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-      setActive(index);
+  setActive(0);
 
-      steps[index]?.scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest"
-      });
-    });
-  });
-
- 
+});
 </script>
   
 </body>
