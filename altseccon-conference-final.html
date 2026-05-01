@@ -4350,23 +4350,24 @@ body {
 }  
   
 /* =========================
-   📱 MOBILE CTA BAR
+   CTA BAR (GLOBAL)
 ========================= */
 .mobile-cta-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1 px);
 
-  background: #fff;
-  border-top: 1px solid #e5e7eb;
-  box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  z-index: 99999;
 
-  z-index: 9999;
-  padding: 8px 12px;
-
-  display: none;
+  padding: 6px 12px;
   transition: transform 0.3s ease;
+
+  display: block; /* ✅ show on all devices */
 }
 
 /* =========================
@@ -4374,12 +4375,12 @@ body {
 ========================= */
 .mobile-cta-inline {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center; /* ✅ MOBILE default */
 }
 
 /* =========================
-   CTA BUTTON (FIXED VERSION)
+   CTA BUTTON
 ========================= */
 .mobile-cta-btn {
   display: inline-flex;
@@ -4407,31 +4408,70 @@ body {
   box-shadow: 0 6px 16px rgba(185,28,28,0.3);
 }
 
-/* CAPTION */
-.mobile-cta-btn .cta-sub {
-  font-size: 10px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.85);
-
-  margin-top: 2px;
-  white-space: nowrap;
-}
 
 /* =========================
-   SHOW ONLY ON MOBILE
+   📱 MOBILE
 ========================= */
 @media (max-width: 768px) {
 
-  .mobile-cta-bar {
-    display: block;
+  .mobile-cta-inline {
+    justify-content: center; /* center on mobile */
   }
 
   body {
     padding-bottom: 70px; /* prevent overlap */
   }
+  
+  /* CAPTION */
+.mobile-cta-btn .cta-sub {
+  font-size: 10px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  margin-top: 2px;
+  white-space: nowrap;
 }
 
-/* SMALL MOBILE */
+  
+}
+
+
+@media (min-width: 769px) {
+
+  .mobile-cta-bar {
+    background: transparent;   /* ❌ remove bg */
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    pointer-events: none;      /* prevent empty bar click */
+  }
+
+  .mobile-cta-inline {
+    justify-content: flex-end;
+    padding-right: 40px;
+  }
+  
+  
+.mobile-cta-btn .cta-sub {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  margin-top: 2px;
+  white-space: nowrap;
+}
+  
+  .mobile-cta-btn {
+    pointer-events: auto;      /* enable button click */
+
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+}
+/* =========================
+   SMALL MOBILE
+========================= */
 @media (max-width: 400px) {
 
   .mobile-cta-btn {
@@ -4754,7 +4794,7 @@ body {
 
     <a href="#pass" class="mobile-cta-btn">
       Get Pass →
-      <span class="cta-sub">Limited seats • Early bird active</span>
+      <span class="cta-sub">Limited seats • Early bird active </span>
     </a>
 
   </div>
