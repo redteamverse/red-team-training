@@ -45,130 +45,227 @@ html, body {
 }
 
 /* =========================
-Hero Section
+   HERO SECTION
 ========================= */
-
-.hero-section{
-background:#FFFFFF;
-padding:80px 0px;   
-
- 
+.hero-section {
+  background: #FFFFFF;
+  padding: 80px 20px;
 }
-
-
-/* GRID */
-
-.hero-grid{
-display:grid;
-grid-template-columns:1.1fr 1fr;
-align-items:center;
-gap:60px;
-}
-
 
 /* =========================
-Hero Content
+   GRID
 ========================= */
-
-.hero-content h1{
-font-size:44px;
-line-height:1.2;
-font-weight: 700;    
-color: #111;
-margin-bottom:20px;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 60px;
 }
 
-/* MAIN TITLE */
+/* =========================
+   CONTENT
+========================= */
+.hero-content {
+  text-align: left;
+}
+
+/* TITLE */
 .hero-title {
-  font-size: 34px;
-  line-height: 1.25;
+  font-size: 42px;
+  line-height: 1.2;
   font-weight: 700;
   color: #111;
-  text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 /* SUBTITLE */
 .hero-subtitle {
   font-size: 20px;
-  color: #6b7280;
-  text-align: center;
+  color: #6B7280;
   margin-bottom: 16px;
   font-weight: 500;
 }
+
 /* DESCRIPTION */
 .hero-description {
   font-size: 15px;
-  color: #4b5563;
-  text-align: center;
+  color: #4B5563;
   line-height: 1.6;
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 520px;
 }
-/* HIGHLIGHT */
-.hero-highlight {
-  display: block;
-  font-size: 28px;
-  color: #374151;
+
+/* =========================
+   TAGS (MODULES)
+========================= */
+.hero-modules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  padding:20px;
+}
+
+.hero-module {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+  padding: 6px 12px;
+
+  border-radius: 999px;
+  font-size: 12px;
   font-weight: 500;
-  margin-top: 6px;
+
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  color: #1F2937;
+
+  white-space: nowrap;   /* 🔥 IMPORTANT */
 }
+.hero-module:hover {
+  background: #EEF2F7;
+}
+
+.module-icon {
+  width: 14px;
+  height: 14px;
+  color: #2563EB;
+}
+
 /* =========================
-Hero Module Card
+   INFO (Instructor / Location / Date)
 ========================= */
+.hero-info {
+  display: flex;
+  gap: 40px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-info-label {
+  font-size: 12px;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-info-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+}
+
 /* =========================
-Hero Modules with Icons
+   BUTTONS
+========================= */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #B91C1C;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #EA3037;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid #1E3A8A;
+  color: #1E3A8A;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: #1E3A8A;
+  color: #fff;
+}
+
+/* =========================
+   TRUST LINE
+========================= */
+.hero-trust {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #6B7280;
+}
+
+/* =========================
+   IMAGE
+========================= */
+.hero-image {
+  text-align: center;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  transition: 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: translateY(-6px);
+}
+
+/* caption */
+.hero-caption {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #6B7280;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-caption strong {
+  color: #111;
+  font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
 ========================= */
 
-.hero-modules{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:14px;
-margin-top:28px;
-max-width:540px;
-}
+/* TABLET + MOBILE */
+@media (max-width: 900px) {
 
-.hero-module{
-display:flex;
-align-items:center;
-gap:10px;
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-border:1px solid #E5E7EB;
-padding:12px 16px;
-border-radius:8px;
-
-font-size:14px;
-color:#374151;
-background:#F9FAFB;
-}
-
-.module-icon{
-width:18px;
-height:18px;
-color:#1E3A8A;
-flex-shrink:0;
-}
-@media (max-width:768px){
-
-.hero-modules{
-grid-template-columns:1fr 1fr;
-}
-
-}
-
-@media (max-width:480px){
-
-.hero-modules{
-grid-template-columns:1fr;
-}
-
-}
-    
-@media (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+  }
 
   .hero-title {
-    font-size: 24px;
-    line-height: 1.8;
+    font-size: 28px;
   }
 
   .hero-subtitle {
@@ -177,20 +274,55 @@ grid-template-columns:1fr;
 
   .hero-description {
     font-size: 14px;
-    padding: 0 10px;
+    margin: 0 auto;
   }
 
-}    
-/* =========================
-Hero Stats Grid
-========================= */
+  .hero-modules {
+    justify-content: center;
+  }
 
+  .hero-buttons {
+    justify-content: center;
+  }
 
-/* pills */
+  .hero-info {
+    justify-content: center;
+    gap: 20px;
+  }
 
-/* =========================
-Stat Pills
-========================= */
+  .hero-image {
+    margin-top: 40px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+
+.hero-modules {
+    grid-template-columns: repeat(2, 1fr); /* equal width */
+    gap: 10px;
+  }
+
+  .hero-module {
+    justify-content: center;
+  }
+
+  
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    text-align: center;
+  }
+}
+
 
 .stat-pill{
 display:flex;
@@ -222,148 +354,6 @@ transform:translateY(-2px);
 grid-column:1 / -1;
 }
 
-/* =========================
-Buttons
-========================= */
-
-/* =========================
-Hero CTA Buttons
-========================= */
-/* =========================
-CTA Divider
-========================= */
-
-.hero-buttons{
-display:flex;
-justify-content:center;
-align-items:center;
-
-gap:16px;
-flex-wrap:wrap;
-
-padding-top:20px;
-margin-top:20px;
-
-border-top:1px solid #E5E7EB;
-}    
-
-
-.btn-outline{
-border:1px solid #1E3A8A;
-color:#1E3A8A;
-padding:12px 22px;
-border-radius:8px;
-font-weight:600;
-text-decoration:none;
-}
-
-.btn-outline:hover{
-background:#1E3A8A;
-color:#FFFFFF;
-}
-
-.btn-primary{
-background:#B91C1C;
-color:#FFFFFF;
-padding:12px 22px;
-border-radius:8px;
-font-weight:600;
-text-decoration:none;
-}
-
-.btn-primary:hover{
-background:#EA3037;
-}
-    
-.btn-outline,
-.btn-primary{
-min-width:170px;
-text-align:center;
-transition:all .2s ease;
-}
-
-.btn-outline:hover{
-background:#1E3A8A;
-color:#FFFFFF;
-}
-
-.btn-primary:hover{
-transform:translateY(-1px);
-}
-
-/* =========================
-Hero Image
-========================= */
-
-/* =========================
-Hero Image Wrapper
-========================= */
-
-.hero-image{
-text-align: center;    
-}
-
-
-/* Glow Background */
-
-.hero-image::before{
-content:"";
-position:absolute;
-
-width:420px;
-height:420px;
-
-background:radial-gradient(circle, rgba(43,43,80,0.12), transparent 70%);
-
-border-radius:50%;
-
-z-index:0;
-}
-
-
-/* Certificate */
-.hero-image img {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 12px;
-  display: block;
-  margin: 0 auto;
-}
-    
-.hero-caption {
-  position: relative;
-  padding-top: 12px;
-}
-    
-.hero-caption::before {
-  content: "";
-  width: 40px;
-  height: 2px;
-  background: #e5e7eb;
-  display: block;
-  margin: 0 auto 10px;
-}    
-.hero-caption {
-  margin-top: 16px;
-  font-size: 14px;
-  color: #6b7280; /* soft gray */
-  line-height: 1.6;
-
-  max-width: 420px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.hero-caption strong {
-  color: #111; /* strong contrast */
-  font-weight: 600;
-}    
-   
-.hero-image img:hover{
-transform:translateY(-6px);
-}
-/* =========================
-Responsive
-========================= */
 @media (max-width:768px){
 
 .hero-stats{
@@ -433,6 +423,7 @@ margin-bottom:14px;
 
 .learn-title{
 font-size:36px;
+line-height: 1.2;  
 font-weight:700;
 text-align:center;
 margin-bottom:18px;
@@ -542,12 +533,13 @@ padding:90px 0;
 background:#ffffff;
 }
 
-.overview-title{
+h2.overview-title{
 text-align:center;
 font-size:36px;
 font-weight:700;
 margin-bottom:18px;
 color:#111827;
+line-height: 1.2;
 }
 
 .overview-intro{
@@ -2492,15 +2484,6 @@ transition: width 0.25s ease;
   margin-bottom: 20px;
 }
 
-/* BUTTONS */
-.btn-primary {
-  background: #ef4444;
-  color: #fff;
-  padding: 12px;
-  border-radius: 8px;
-  display: inline-block;
-  text-decoration: none;
-}
 
 .btn-outline {
   border: 1px solid #0f172a;
@@ -2674,12 +2657,7 @@ transition: width 0.25s ease;
   }
 }    
     
-.hero-cta {
-  display: flex;
-  gap: 14px;
-  margin: 20px 0 25px;
-  flex-wrap: wrap;
-}
+
 
 /* BUTTON BASE */
 .hero-btn {
@@ -2714,11 +2692,7 @@ transition: width 0.25s ease;
   color: #fff;
 }
 @media (max-width: 768px) {
-  .hero-cta {
-    flex-direction: column;
-    align-items: center;
-  }
-
+ 
   .hero-btn {
     width: auto;
     min-width: 180px;  
@@ -3024,21 +2998,7 @@ align-items: center;
   margin-bottom: 20px;
 }
 
-/* BUTTON */
-.btn-primary {
-  background: #e53935;
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
 
-.btn-primary:hover {
-  background: #c62828;
-}
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
@@ -3149,7 +3109,7 @@ align-items: center;
 </head>
 
 <body>
-<header id="stickyHeader" class="site-header">
+<header id="stickyHeader" class="site-header"> 
   <div class="header-inner">
 
     <!-- LOGO -->
@@ -3222,6 +3182,24 @@ Hero Section
   This 3-day beginner class teaches you how to get started with Red Teaming.
   It covers AD enumeration, trust mapping, Kerberos-based attacks, and defense bypasses.
 </p>
+  
+<div class="hero-modules">
+
+  <div class="hero-module">   
+    <span>Instructor-Led</span>
+  </div>
+
+ <div class="hero-module">   
+    <span>60 Day Lab Access</span>
+  </div>
+   
+ <div class="hero-module">   
+    <span> Course Completion Certificate</span>
+  </div>
+  <div class="hero-module">   
+    <span>Video Included</span>
+  </div>
+</div>  
 <div class="hero-meta">
 
   <div class="meta-item">
@@ -3231,12 +3209,12 @@ Hero Section
 
   <div class="meta-item">
     <span class="meta-label">Location</span>
-    <span class="meta-value">Bangalore</span>
+    <span class="meta-value">Hilton Hotel, Bangalore</span>
   </div>
 
   <div class="meta-item">
     <span class="meta-label">Date</span>
-    <span class="meta-value">31 Oct 2026 – 2 Nov 2026</span>
+    <span class="meta-value">24 Oct - 26 Oct 2026</span>
   </div>
 
 </div>
@@ -3245,69 +3223,18 @@ Hero Section
 <!-- =========================
 Hero Feature Modules
 ========================= -->
-<div class="hero-cta">
 
-  <a href="#enroll" class="btn-primary hero-btn">
-    Enroll Now
-  </a>
 
-  <a href="#curriculum" class="btn-outline hero-btn">
-    Explore Course
-  </a>
-<p class="cta-note">Limited seats available • Early bird discount active</p>
+  <div class="hero-buttons">
+  <a href="#" class="btn-primary">Reserve Your Seat</a>
+  <a href="#" class="btn-outline">Explore Course</a>
 </div>
-<div class="hero-modules">
 
-
-
-
-<div class="hero-module">
-
-<svg class="module-icon" viewBox="0 0 24 24">
-<path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" fill="none"/>
-<path d="M4 10h16" stroke="currentColor" stroke-width="2"/>
-</svg>
-
-<span>Instructor-Led Sessions</span>
-
+<div class="hero-trust">
+  Limited seats available • Early bird discount active
 </div>
 
 
-
-
-
-<div class="hero-module">
-
-<svg class="module-icon" viewBox="0 0 24 24">
-<rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"/>
-<path d="M8 12l3 3 5-6" stroke="currentColor" stroke-width="2"/>
-</svg>
-
-<span>Course Completion Certificate</span>
-
-</div>
-
-
-<div class="hero-module">
-
-<svg class="module-icon" viewBox="0 0 24 24">
-<polygon points="10,8 16,12 10,16" fill="currentColor"/>
-<rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"/>
-</svg>
-
-<span>Video course included!</span>
-
-</div>
-<!-- EXAM -->
-  <div class="hero-module">
-    <svg class="module-icon" viewBox="0 0 24 24">
-      <rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
-      <line x1="8" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="2"/>
-      <line x1="8" y1="13" x2="14" y2="13" stroke="currentColor" stroke-width="2"/>
-    </svg>
-    <span>CRTP® Exam Attempt</span>
-  </div>
-</div>
 
 </div>
 
@@ -3351,7 +3278,7 @@ Hero Feature Modules
 
 <span class="section-eyebrow" >Course Overview</span>
 
-<h2 class="learn-title">What You Will Learn</h2>
+<h2 class="learn-title">What You Will Learn in This Hands-On Training</h2>
 
 <p class="learn-intro">
 This beginner-friendly training introduces practical Red Team techniques used in modern
@@ -3412,7 +3339,7 @@ Defenses and Bypass Techniques
 <span class="section-eyebrow" >Training Overview</span>
 
 <h2 class="overview-title">
-Course Structure & Training Details
+What’s Included in Your AltSecCON Training Experience
 </h2>
 
 <p class="overview-intro">
@@ -3424,43 +3351,43 @@ Participants work through guided attack scenarios, labs, and capture-the-flag ch
 
   <div class="overview-card">
     <div class="overview-icon"><i data-lucide="calendar-days"></i></div>
-    <h3>3 Day Training</h3>
-    <p>Instructor-led sessions delivered during AltSecCON.</p>
+    <h3>3-Day Instructor-Led Training</h3>
+    <p>Intensive hands-on sessions delivered by expert practitioners.</p>
   </div>
 
   <div class="overview-card">
     <div class="overview-icon"><i data-lucide="clock"></i></div>
-    <h3>8 Hours Per Session</h3>
-    <p>Full-day guided sessions covering Red Team tradecraft.</p>
+    <h3>Full-Day Guided Learning Sessions</h3>
+    <p>8-hour deep-dive sessions focused on real-world red team tradecraft.</p>
   </div>
 
   <div class="overview-card">
     <div class="overview-icon"><i data-lucide="flask-conical"></i></div>
-    <h3>8 Weeks Lab Access</h3>
+    <h3>8 Weeks of Lab Access Included</h3>
     <p>Continue practicing attacks in enterprise-grade labs.</p>
   </div>
 
   <div class="overview-card">
     <div class="overview-icon"><i data-lucide="target"></i></div>
-    <h3>40 Capture-the-Flag Challenges</h3>
+    <h3>40+ Capture-the-Flag Challenges</h3>
     <p>Hands-on exercises designed to test attack techniques.</p>
   </div>
 
   <div class="overview-card">
     <div class="overview-icon"><i data-lucide="wrench"></i></div>
-    <h3>23 Practical Lab Exercises</h3>
+    <h3>23 Hands-On Practical Lab Exercises</h3>
     <p>Step-by-step labs simulating real enterprise scenarios.</p>
   </div>
 
   <div class="overview-card">
     <div class="overview-icon"><i data-lucide="award"></i></div>
-    <h3>1 CRTP® Certification Attempt</h3>
+    <h3>1 CRTP® Certification Attempt Included</h3>
     <p>Earn the Certified Red Team Professional credential.</p>
   </div>
 
   <div class="overview-card">
     <div class="overview-icon"><i data-lucide="file-text"></i></div>
-    <h3>Course Completion Certificate</h3>
+    <h3>Course Completion Certificate Provided</h3>
     <p>Certificate issued after completing all learning objectives.</p>
   </div>
 
@@ -3481,7 +3408,7 @@ Participants work through guided attack scenarios, labs, and capture-the-flag ch
 
 <span class="section-eyebrow">Course Curriculum</span>
 
-<h2 class="curriculum-title">What You'll Cover During Training</h2>
+<h2 class="curriculum-title">Detailed Topics You’ll Learn in This Training Course</h2>
 
 <p class="curriculum-intro">
 The CRTP® training is organized into four modules across three days, covering enumeration,
@@ -3607,7 +3534,7 @@ privilege escalation, persistence, and enterprise attack paths in Active Directo
 
 <Span class="section-eyebrow">CERTIFICATION</Span>
 
-<h2>Build Your Red Team Credentials</h2>
+<h2>Build Recognized Red Team Credentials Through This Training</h2>
 
 <p class="lead">
 Participants who complete the training can attempt the Certified Red Team
@@ -3629,7 +3556,7 @@ Directory attack tradecraft.
 
 <div class="cert-card">
 
-<h3>CRTP® Certification</h3>
+<h3>Earn CRTP® Certification for Real-World Active Directory Skills</h3>
 
 <ul>
 <li>Industry recognized Red Team certification</li>
@@ -3643,7 +3570,7 @@ Directory attack tradecraft.
 
 <div class="cert-card">
 
-<h3>Course Completion Certificate</h3>
+<h3>Course Completion Certificate Recognizing Your Hands-On Training Achievement</h3>
 
 <ul>
 <li>Issued after completing the training</li>
@@ -3664,7 +3591,7 @@ Directory attack tradecraft.
   <div class="container">
     <span class="section-eyebrow" >Training Overview</span>
     <!-- HEADER -->
-    <h2 class="section-title">Training Schedule</h2>
+    <h2 class="section-title">3-Day Red Team Training Schedule with Practical Skill Progression</h2>
 
     <p class="section-subtitle">
       Daily 8-hour sessions from <strong>09:00 AM</strong> to <strong>05:00 PM IST</strong>.
@@ -3681,7 +3608,7 @@ Directory attack tradecraft.
         </div>
 
         <div class="schedule-content">
-          <h3>Day 1</h3>
+          <h3>Day 1 – Foundations of Enumeration and Tradecraft</h3>
           <p>Enumeration, Offensive PowerShell and .NET Tradecraft</p>
         </div>
       </div>
@@ -3694,7 +3621,7 @@ Directory attack tradecraft.
         </div>
 
         <div class="schedule-content">
-          <h3>Day 2</h3>
+          <h3>Day 2 – Lateral Movement and Privilege Escalation</h3>
           <p>Lateral Movement, Domain Privilege Escalation and Persistence</p>
         </div>
       </div>
@@ -3707,7 +3634,7 @@ Directory attack tradecraft.
         </div>
 
         <div class="schedule-content">
-          <h3>Day 3</h3>
+          <h3>Day 3 – Enterprise Dominance and Defense Evasion</h3>
           <p>
             Domain Persistence, Dominance and Escalation to Enterprise Admins.<br>
             Defenses, Monitoring and Bypassing Defenses
@@ -3726,7 +3653,7 @@ Directory attack tradecraft.
 
 <span class="section-eyebrow">Requirements</span>
 
-<h2 class="section-title">Prerequisites</h2>
+<h2 class="section-title">Prerequisites and Skills Required Before Attending This Training</h2>
 
 <p class="prereq-intro">
 Make sure you are comfortable with the following before attending the training.
@@ -3765,7 +3692,7 @@ A recent web-browser (Chrome would be preferred)
 
   <div class="container">
     <span class="section-eyebrow">Purchase</span>
-    <h2 class="section-title">Enroll in CRTP® Training</h2>
+    <h2 class="section-title">Enroll in CRTP® Training and Secure Your Seat</h2>
     <p class="section-subtitle">
       Hands-on Red Team training with enterprise labs, certification, and lifetime learning access.
     </p>
@@ -3834,7 +3761,7 @@ A recent web-browser (Chrome would be preferred)
     <!-- HEADER -->
     <div class="section-header">
       <span class="section-eyebrow">Hands-on Training</span>
-      <h2>Labs & Training Environment</h2>
+      <h2>Hands-On Labs and Real-World Training Environment Setup</h2>
       <p class="lead">
         This training is built around a fully hands-on lab environment designed to simulate real enterprise Active Directory infrastructure.
         Participants perform attacks, bypass defenses, and practice Red Team tradecraft inside isolated lab networks.
@@ -3855,7 +3782,7 @@ A recent web-browser (Chrome would be preferred)
         <div class="labs-grid">
 
           <div class="lab-card">
-            <h3>Enterprise Active Directory Lab</h3>
+            <h3>Enterprise Active Directory Lab Environment for Hands-On Practice</h3>
             <ul>
               <li>Multi-domain Active Directory environment</li>
               <li>Realistic enterprise network architecture</li>
@@ -3865,7 +3792,7 @@ A recent web-browser (Chrome would be preferred)
           </div>
 
           <div class="lab-card">
-            <h3>Offensive Tradecraft Practice</h3>
+            <h3>Practice Offensive Tradecraft Techniques in Real-World Environments</h3>
             <ul>
               <li>Hands-on enumeration exercises</li>
               <li>Kerberos attack scenarios</li>
@@ -3875,7 +3802,7 @@ A recent web-browser (Chrome would be preferred)
           </div>
 
           <div class="lab-card">
-            <h3>Red Team Tooling</h3>
+            <h3>Learn Red Team Tooling Used in Real-World Attacks</h3>
             <ul>
               <li>PowerShell tradecraft</li>
               <li>.NET offensive tooling</li>
@@ -3885,7 +3812,7 @@ A recent web-browser (Chrome would be preferred)
           </div>
 
           <div class="lab-card">
-            <h3>Realistic Attack Paths</h3>
+            <h3>Realistic Attack Paths Used in Enterprise Red Team Engagements</h3>
             <ul>
               <li>Privilege escalation chains</li>
               <li>Lateral movement techniques</li>
@@ -3903,7 +3830,7 @@ A recent web-browser (Chrome would be preferred)
     <!-- CTA BLOCK -->
     <div class="labs-cta">
 
-      <h3>Develop Real-World Red Team Skills</h3>
+      <h3>Develop Real-World Red Team Skills Through Hands-On Training</h3>
 
       <p>
         Build practical offensive security skills through hands-on labs and real enterprise attack scenarios.
@@ -3953,7 +3880,7 @@ Instructor Intro
 <span class="section-eyebrow">Instructor</span>
 
 <h2>Nikhil Mittal</h2>
-
+<p class="role"> Expert in Red Team and AD Security</p>
 <p class="role">Founder – Altered Security</p>
 
 <div class="instructor-stats">
@@ -3996,7 +3923,7 @@ Instructor Content Grid
 
 <div class="instructor-highlights">
 
-<h3>Why Train with Nikhil?</h3>
+<h3>Why Train with Nikhil Mittal for Real-World Skills?</h3>
 
 <div class="highlight-list">
 
@@ -4067,7 +3994,7 @@ Social Proof Section
     <!-- HEADER -->
     <div class="section-header">
       <span class="section-eyebrow">Target Audience</span>
-      <h2>Who Should Attend This Training?</h2>
+      <h2>Who Should Attend This Red Team Training Program?</h2>
       <p class="lead">
         This training is designed for professionals looking to build and validate real-world
         Red Team skills in Active Directory and enterprise environments.
@@ -4129,7 +4056,7 @@ Social Proof Section
 
     <!-- CTA -->
     <div class="audience-cta">
-      <h3>Start Your Red Team Journey Today</h3>
+      <h3>Start Your Red Team Journey Today with Hands-On Training</h3>
       <p>
         Join instructor-led training and gain hands-on experience in real enterprise attack scenarios.
       </p>
@@ -4147,7 +4074,7 @@ Social Proof Section
 <span class="section-eyebrow">Social Proof</span>
 
 <h2 class="section-title">
-Trusted by Security Professionals Worldwide
+Trusted by Security Professionals and Organizations Worldwide
 </h2>
 
 <!-- Trust Metrics -->
@@ -4156,22 +4083,22 @@ Trusted by Security Professionals Worldwide
 
 <div class="metric">
 <span class="metric-number">50,000+</span>
-<span class="metric-label">Professionals Trained</span>
+<span class="metric-label">Professionals Trained Across Red Team and Security Domains</span>
 </div>
 
 <div class="metric">
 <span class="metric-number">130+</span>
-<span class="metric-label">Countries Served</span>
+<span class="metric-label">Countries with Active Learners and Security Teams</span>
 </div>
 
 <div class="metric">
 <span class="metric-number">600+</span>
-<span class="metric-label">Organizations Served</span>
+<span class="metric-label">Organizations Using Our Training and Programs</span>
 </div>
 
 <div class="metric">
 <span class="metric-number">5000+</span>
-<span class="metric-label">Attacks Practiced Daily</span>
+<span class="metric-label">Hands-On Attack Simulations Practiced Every Day</span>
 </div>
 
 </div>
@@ -4230,27 +4157,7 @@ Penetration Tester
 
 
 
-<!-- =========================
-Sticky Schedule CTA
-========================= -->
-<section>
-<div class="sticky-cta" id="stickyCTA">
 
-<a href="#enroll" class="sticky-cta-button">
-
-<svg class="cta-icon" viewBox="0 0 24 24" fill="none">
-<rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
-<line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
-<line x1="8" y1="3" x2="8" y2="7" stroke="currentColor" stroke-width="2"/>
-<line x1="16" y1="3" x2="16" y2="7" stroke="currentColor" stroke-width="2"/>
-</svg>
-
-Enroll Now
-
-</a>
-
-</div>
-</section>
     
 <!-- =========================
 FAQ Section
@@ -4262,7 +4169,7 @@ FAQ Section
 
 <span class="section-eyebrow">FAQ</span>
 
-<h2 class="section-title">Frequently Asked Questions</h2>
+<h2 class="section-title">Frequently Asked Questions About This Red Team Training</h2>
 
 <div class="faq-list">
 
@@ -4367,7 +4274,7 @@ Final CTA + Explore Courses
 <div class="container final-container">
 
 <h2 class="final-title">
-Start Your Red Team Training
+Start Your Red Team Training and Build Real Skills
 </h2>
 
 <p class="final-description">
@@ -4390,7 +4297,7 @@ Explore Other Red Team Trainings
 <div class="container">
 
 <h2 class="section-title">
-Explore Other Red Team Trainings
+Explore Other Hands-On Red Team Training Programs
 </h2>
 
 <div class="courses-grid">
