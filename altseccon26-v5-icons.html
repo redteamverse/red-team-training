@@ -161,7 +161,7 @@ section h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  flex-direction: column;
   isolation: isolate; /* important: clean stacking context */
 }
 
@@ -212,7 +212,9 @@ section h3 {
 .hero-content {
   position: relative;
   z-index: 2;
-
+  width: 100%;               /* ✅ force stable layout */
+  max-width: 900px;
+  margin: 0 auto; 
   max-width: 900px;
   text-align: center;
   padding: var(--space-lg) 24px;
@@ -220,7 +222,8 @@ section h3 {
 @media (max-width:640px){
 
 .hero-content{
-  padding: 80px 24px;
+  padding: 100px 20px 80px;
+  
 }
 
 }
@@ -3615,6 +3618,7 @@ FOOTER SOCIAL
   }
 }
   
+  
 /* =========================
    PRECAP VIDEO SECTION
 ========================= */
@@ -5331,6 +5335,96 @@ SCROLL TO TOP BUTTON
     font-weight: 600;
       
   }  
+  
+/* =========================
+   LOGO SECTION
+========================= */
+.logo-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 40px;
+}
+
+
+/* LABEL */
+.logo-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.logo-wrapper {
+  width: 100%;              /* ✅ force containment */
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  animation: scroll 25s linear infinite;
+
+  will-change: transform;   /* ✅ smooth GPU */
+}
+
+/* 🔥 EQUAL BOX (MAIN FIX) */
+.logo-item {
+  width: 120px;   /* 🔥 fixed width */
+  height: 60px;   /* 🔥 fixed height */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.03); /* very subtle */
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+   background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+
+/* LOGO IMAGE */
+.logo-item img {
+  max-height: 28px;
+  max-width: 90px;
+  object-fit: contain;
+
+  filter: grayscale(100%) opacity(0.7);
+  transition: 0.3s;
+  
+}
+
+/* HOVER */
+.logo-item:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.logo-item:hover img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
+.logo-track:hover {
+  animation-play-state: paused;
+}
+/* ANIMATION */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+    
 </style>
 </head>
 
@@ -5593,11 +5687,7 @@ SCROLL TO TOP BUTTON
     Secure Early Bird Pass
   </a>
 
-  <!-- TRUST + URGENCY -->
-  <p class="cta-meta">
-    <span>Early bird ends soon • Limited hands-on lab seats</span><span class="m-hide">
-    • Price increases after deadline</span>
-  </p>
+
 
   <!-- SECONDARY CTA -->
   <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-final.html" 
@@ -5606,7 +5696,36 @@ SCROLL TO TOP BUTTON
   </a>
 
 </div>
+  <div class="logo-slider">
+
+  <p class="logo-label">Trusted by professionals at</p>
+
+  <div class="logo-wrapper"> <!-- 🔥 NEW WRAPPER -->
+
+    <div class="logo-track">
+
+      <!-- SET -->
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/microsoft.png"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/security.png"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/wipro.png"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/RS.jpg"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/SST.png"></div>
+
+      <!-- DUPLICATE -->
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/microsoft.png"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/security.png"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/wipro.png"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/RS.jpg"></div>
+      <div class="logo-item"><img src="https://redteamverse.github.io/red-team-training/images/SST.png"></div>
+
+    </div>
+
   </div>
+</div>  
+  </div>
+  
 </section>
   <nav class="section-nav" id="sectionNav">
   <div class="section-nav-container">
