@@ -4100,76 +4100,6 @@ WRAPPER
   }
 }
 
-/* =====================
-TRIGGER
-===================== */
-.side-cta-trigger {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ff0000;  
-  animation: arrowMove 1.2s infinite;
-  opacity: 0.8; 
-}
-
-/* Tap effect */
-.side-cta-trigger:active {
-  transform: translateX(35%);
-}
-
-/* =====================
-ARROW (FIXED)
-===================== */
-
-.side-cta-trigger svg {
-  width: 18px;
-  height: 18px;
-  stroke: #ffffff;
-}  
-/* Arrow animation */
-@keyframes arrowMove {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(5px); }
-  100% { transform: translateX(0); }
-}
-
-/* Rotate when open */
-.side-cta-trigger.active .cta-arrow {
-  transform: rotate(90deg);
-  animation: none;
-}
-
-/* =====================
-PANEL
-===================== */
-.side-cta-panel {
-  position: absolute;
-  right: 40px;
-  top: 50%;
-  opacity: 0;
-  pointer-events: none;
-  background: #fff;
-  padding: 2px;
-  border-radius: 10px;
-  width: 150px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-  transition: all 0.25s ease;  
-}
-
- 
-/* Active */
-.side-cta-panel.active {
-  opacity: 1;
-  transform: translateY(-50%) translateX(0);
-  pointer-events: auto;
-  text-decoration: none !important;
-}
 
 /* =====================
 BUTTONS
@@ -5424,6 +5354,161 @@ SCROLL TO TOP BUTTON
     transform: translateX(-50%);
   }
 }
+  
+/* =========================
+   CTA BAR (GLOBAL)
+========================= */
+.mobile-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1 px);
+
+  border-top: 1px solid rgba(255,255,255,0.12);
+  z-index: 99999;
+
+  padding: 6px 12px;
+  transition: transform 0.3s ease;
+
+  display: block; /* ✅ show on all devices */
+}
+
+/* =========================
+   CTA WRAPPER
+========================= */
+.mobile-cta-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ✅ MOBILE default */
+}
+
+/* =========================
+   CTA BUTTON
+========================= */
+.mobile-cta-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #B91C1C, #991B1B);
+  color: #ffffff !important;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+
+  padding: 10px 20px 6px;
+  border-radius: 8px;
+
+  line-height: 1.2;
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.mobile-cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(185,28,28,0.3);
+}
+
+
+/* =========================
+   📱 MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .mobile-cta-inline {
+    justify-content: center; /* center on mobile */
+  }
+
+  body {
+    padding-bottom: 70px; /* prevent overlap */
+  }
+  
+  /* CAPTION */
+.mobile-cta-btn .cta-sub {
+  font-size: 10px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  margin-top: 2px;
+  white-space: nowrap;
+  
+}
+
+  
+}
+
+
+@media (min-width: 769px) {
+
+  .mobile-cta-bar {
+    background: transparent;   /* ❌ remove bg */
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    pointer-events: none;      /* prevent empty bar click */
+       color: #fff;
+  }
+
+  .mobile-cta-inline {
+    justify-content: flex-end;
+    padding-right: 40px;
+  }
+  
+  
+.mobile-cta-btn .cta-sub {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  margin-top: 2px;
+  white-space: nowrap;
+}
+  
+  .mobile-cta-btn {
+    pointer-events: auto;      /* enable button click */
+
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+}
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 400px) {
+
+  .mobile-cta-btn {
+    font-size: 13px;
+    padding: 8px 16px 5px;
+    color: #fff;
+  }
+
+  .mobile-cta-btn .cta-sub {
+    font-size: 9px;
+  }
+}  
+/* MOBILE ONLY behavior */
+@media (max-width: 768px) {
+  .mobile-cta-bar {
+    display: block;
+  }
+}
+
+/* DESKTOP → always visible, no animation issues */
+@media (min-width: 769px) {
+  .mobile-cta-bar {
+    transform: translateY(0) !important;
+  }
+}  
+/* default hidden (prevents flash) */
+.mobile-cta-bar {
+  transform: translateY(100%);
+}  
     
 </style>
 </head>
@@ -7311,33 +7396,96 @@ If you’re unsure which option is right for you, you can also submit your detai
   </div>
   
 </section>
-  
-<!-- =====================
-MOBILE STICKY CTA
-===================== -->
-<!-- =====================
-RIGHT EDGE MOBILE CTA
-===================== -->
-<!-- =====================
-SIDE FLOATING CTA
-===================== -->
-<div class="side-cta">
+  <div class="mobile-cta-bar" id="mobileCTA">
 
-  <!-- Trigger -->
-  <div class="side-cta-trigger" id="sideTrigger">
-    <span class="cta-arrow"><i data-lucide="plus"></i></span>
-  </div>
-  <!-- Panel -->
-  <div class="side-cta-panel" id="sidePanel">    
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="cta-btn primary">
-     Get Passes
+  <div class="mobile-cta-inline">
+
+    <a href="#pass" class="mobile-cta-btn">
+      Get Pass →
+      <span class="cta-sub">Limited seats • Early bird active </span>
     </a>
+
   </div>
 
-</div> 
+</div>
+
+
+ 
 
 <button id="scrollTopBtn" class="scroll-top-btn">↑</button>  
-  
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const cta = document.getElementById("mobileCTA");
+  const triggerSection = document.getElementById("overview");
+
+  if (!cta || !triggerSection) return;
+
+  let lastScroll = window.scrollY;
+  let isVisibleZone = false;
+
+  function checkSectionVisibility() {
+    const rect = triggerSection.getBoundingClientRect();
+    isVisibleZone = rect.top <= window.innerHeight * 0.7;
+  }
+
+  function updateCTA() {
+
+    // DESKTOP → always visible
+    if (window.innerWidth > 768) {
+      cta.style.transform = "translateY(0)";
+      return;
+    }
+
+    checkSectionVisibility();
+
+    // BEFORE section → always hidden
+    if (!isVisibleZone) {
+      cta.style.transform = "translateY(100%)";
+      return;
+    }
+
+    // AFTER section → show
+    cta.style.transform = "translateY(0)";
+  }
+
+  function handleScroll() {
+
+    // DESKTOP FIX
+    if (window.innerWidth > 768) {
+      cta.style.transform = "translateY(0)";
+      return;
+    }
+
+    checkSectionVisibility();
+
+    if (!isVisibleZone) {
+      cta.style.transform = "translateY(100%)";
+      return;
+    }
+
+    const currentScroll = window.scrollY;
+
+    if (Math.abs(currentScroll - lastScroll) < 10) return;
+
+    if (currentScroll > lastScroll) {
+      cta.style.transform = "translateY(100%)";
+    } else {
+      cta.style.transform = "translateY(0)";
+    }
+
+    lastScroll = currentScroll;
+  }
+
+  // 🔥 RUN ON LOAD
+  updateCTA();
+
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", updateCTA);
+
+});
+</script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -7509,22 +7657,7 @@ window.addEventListener("load", () => {
   }
 });
 </script>
-<script>
-const trigger = document.getElementById("sideTrigger");
-const panel = document.getElementById("sidePanel");
 
-trigger.addEventListener("click", () => {
-  panel.classList.toggle("active");
-  trigger.classList.toggle("active");
-});
-
-document.addEventListener("click", function(e) {
-  if (!trigger.contains(e.target) && !panel.contains(e.target)) {
-    panel.classList.remove("active");
-    trigger.classList.remove("active");
-  }
-});
-</script>  
 <script src="https://unpkg.com/lucide@latest"></script>  
 <script>
 document.addEventListener("DOMContentLoaded", function () {
