@@ -3195,6 +3195,142 @@ align-items: center;
   height: 18px;
   color: #1E3A8A;
 }  
+  
+.venue-section {
+  background: #F9FAFB;
+  color: #111827;
+  padding:80px 20px;
+}
+
+.venue-container {
+  max-width: 1100px;
+  margin: 0 auto;
+ 
+}
+
+
+
+/* =====================
+TOP INFO CARDS
+===================== */
+.venue-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 48px;
+}
+
+.venue-info-item {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.venue-info-item strong {
+display:block;
+font-size:1.125rem;
+font-weight:700;
+margin-bottom:4px;
+color:#111827;
+}
+
+.venue-info-item span {
+font-size:0.875rem;
+color: #4B5563;
+}
+
+/* =====================
+CONTENT SPLIT
+===================== */
+.venue-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  text-align: left;
+}
+
+/* Left text */
+.venue-text p { 
+  margin-bottom: 20px;  
+}
+
+/* Feature list */
+.venue-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.venue-text li {
+  margin-bottom: 10px;
+  font-size: 0.9375;
+  font-weight: 400;
+  color:#4B5563;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* =====================
+MAP PLACEHOLDER
+===================== */
+.venue-map {
+  border: 2px dashed #D1D5DB;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  background: #FFFFFF;
+}
+
+.venue-map p {
+  font-size: 0.9rem;
+  color: #6B7280;
+}
+
+/* =====================
+HOVER (optional polish)
+===================== */
+@media (hover:hover){
+  .venue-info-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+  }
+}
+
+/* =====================
+RESPONSIVE
+===================== */
+@media (max-width: 900px) {
+  .venue-info {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .venue-map {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .venue-section {
+    padding: 72px 20px;
+  }
+
+  .venue-intro {
+    font-size: 0.95rem;
+  }
+
+  .venue-text li {
+    font-size: 0.9375rem;
+  }
+}    
 </style>
 </head>
 
@@ -3278,7 +3414,10 @@ Hero Section
   <div class="hero-module">   
     <span>Instructor-Led</span>
   </div>
-
+<div class="hero-module">   
+    <span>CRTP</span>
+  </div>
+  
  <div class="hero-module">   
     <span>60 Day Lab Access</span>
   </div>
@@ -3362,134 +3501,6 @@ Hero Feature Modules
     <a href="#faq">FAQ</a>
   </div>
 </nav>      
-
-<section class="up-section" id="overview">
-<div class="container">
-<span class="section-eyebrow" >Course Overview</span>
-<h2 class="curriculum-title">What You Will Learn in This Hands-On Training</h2>
-<p class="learn-intro">
-This beginner-friendly training introduces practical Red Team techniques used in modern
-Active Directory environments. Participants learn how attackers enumerate domains,
-map trust relationships, escalate privileges, and bypass common enterprise defenses.
-</p>
-
-<div class="learn-layout">
-
-<div class="learn-image">
-<img src="https://redteamverse.github.io/red-team-training/images/CRTP%20active%20directory%20attacks%20alt.png" alt="Active Directory Attack Techniques">
-</div>
-
-<div class="learn-points">
-
-<div class="learn-point">
-<span class="point-icon">→</span>
-Active Directory Enumeration
-</div>
-
-<div class="learn-point">
-<span class="point-icon">→</span>
-Trust Mapping & Domain Relationships
-</div>
-
-<div class="learn-point">
-<span class="point-icon">→</span>
-Kerberos Based Attacks
-</div>
-
-<div class="learn-point">
-<span class="point-icon">→</span>
-Domain Privilege Escalation
-</div>
-
-<div class="learn-point">
-<span class="point-icon">→</span>
-SQL Server Trust Abuse
-</div>
-
-<div class="learn-point">
-<span class="point-icon">→</span>
-Defenses and Bypass Techniques
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-    
-<section class="up-section" id="training-details">
-
-<div class="container">
-
-<span class="section-eyebrow" >Training Overview</span>
-
-<h2 class="curriculum-title">
-What’s Included in Your AltSecCON Training Experience
-</h2>
-
-<p class="learn-intro">
-The CRTP® training at AltSecCON is a hands-on, instructor-led experience designed for practical learning. 
-Participants work through guided attack scenarios, labs, and capture-the-flag challenges inside a simulated enterprise environment.
-</p>
-
-<div class="overview-grid">
-
-  <div class="overview-card">
-    <div class="overview-icon"><i data-lucide="calendar-days"></i></div>
-    <h3>3-Day Instructor-Led Training</h3>
-    <p>Intensive hands-on sessions delivered by expert practitioners.</p>
-  </div>
-
-  <div class="overview-card">
-    <div class="overview-icon"><i data-lucide="clock"></i></div>
-    <h3>Full-Day Guided Learning Sessions</h3>
-    <p>8-hour deep-dive sessions focused on real-world red team tradecraft.</p>
-  </div>
-
-  <div class="overview-card">
-    <div class="overview-icon"><i data-lucide="flask-conical"></i></div>
-    <h3>8 Weeks of Lab Access Included</h3>
-    <p>Continue practicing attacks in enterprise-grade labs.</p>
-  </div>
-
-  <div class="overview-card">
-    <div class="overview-icon"><i data-lucide="target"></i></div>
-    <h3>40+ Capture-the-Flag Challenges</h3>
-    <p>Hands-on exercises designed to test attack techniques.</p>
-  </div>
-
-  <div class="overview-card">
-    <div class="overview-icon"><i data-lucide="wrench"></i></div>
-    <h3>23 Hands-On Practical Lab Exercises</h3>
-    <p>Step-by-step labs simulating real enterprise scenarios.</p>
-  </div>
-
-  <div class="overview-card">
-    <div class="overview-icon"><i data-lucide="award"></i></div>
-    <h3>1 CRTP® Certification Attempt Included</h3>
-    <p>Earn the Certified Red Team Professional credential.</p>
-  </div>
-
-  <div class="overview-card">
-    <div class="overview-icon"><i data-lucide="file-text"></i></div>
-    <h3>Course Completion Certificate Provided</h3>
-    <p>Certificate issued after completing all learning objectives.</p>
-  </div>
-
-  <div class="overview-card">
-    <div class="overview-icon"><i data-lucide="video"></i></div>
-    <h3>Video Course Included</h3>
-    <p>Access recorded lessons for revision after training.</p>
-  </div>
-
-</div>
-
-</div>
-
-</section>    
-  
 <section class="up-section">
 
   <div class="container">
@@ -3516,7 +3527,7 @@ Participants work through guided attack scenarios, labs, and capture-the-flag ch
         <p>Hands-on intensive training</p>
       </div>
 
-      <div class="stat-card adv-card highlight">
+      <div class="stat-card">
         <h3>100%</h3>
         <p>Practical lab-driven learning</p>
       </div>
@@ -3598,18 +3609,144 @@ Participants work through guided attack scenarios, labs, and capture-the-flag ch
     <p>Gain the practical skills required to confidently attempt the CRTP exam.</p>
   </div>
 </div>
-
+    </div>
     <!-- CTA -->
     <div class="adv-cta">
       <a href="#pass" class="btn-primary">Secure Your Seat →</a>
       <p class="trust-line">
         Limited seats • Beginner-friendly • No prior red teaming experience required
       </p>
-    </div>
-
-  </div>
+    </div>  
   </div>
 </section>  
+
+    
+<section class="up-section" id="training-details">
+
+<div class="container">
+
+<span class="section-eyebrow" >Training Overview</span>
+
+<h2 class="curriculum-title">
+What’s Included in Your AltSecCON Training Experience
+</h2>
+
+<p class="learn-intro">
+The CRTP® training at AltSecCON is a hands-on, instructor-led experience designed for practical learning. 
+Participants work through guided attack scenarios, labs, and capture-the-flag challenges inside a simulated enterprise environment.
+</p>
+
+<div class="overview-grid">
+
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="calendar-days"></i></div>
+    <h3>3-Day Instructor-Led Training</h3>
+    <p>Intensive hands-on sessions delivered by expert practitioners.</p>
+  </div>
+
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="clock"></i></div>
+    <h3>Full-Day Guided Learning Sessions</h3>
+    <p>8-hour deep-dive sessions focused on real-world red team tradecraft.</p>
+  </div>
+
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="flask-conical"></i></div>
+    <h3>8 Weeks of Lab Access Included</h3>
+    <p>Continue practicing attacks in enterprise-grade labs.</p>
+  </div>
+
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="target"></i></div>
+    <h3>40+ Capture-the-Flag Challenges</h3>
+    <p>Hands-on exercises designed to test attack techniques.</p>
+  </div>
+
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="wrench"></i></div>
+    <h3>23 Hands-On Practical Lab Exercises</h3>
+    <p>Step-by-step labs simulating real enterprise scenarios.</p>
+  </div>
+
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="award"></i></div>
+    <h3>1 CRTP® Certification Attempt Included</h3>
+    <p>Earn the Certified Red Team Professional credential.</p>
+  </div>
+
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="file-text"></i></div>
+    <h3>Course Completion Certificate Provided</h3>
+    <p>Certificate issued after completing all learning objectives.</p>
+  </div>
+
+  <div class="overview-card">
+    <div class="overview-icon"><i data-lucide="video"></i></div>
+    <h3>Video Course Included</h3>
+    <p>Access recorded lessons for revision after training.</p>
+  </div>
+
+</div>
+
+</div>
+
+</section>    
+<section class="up-section" id="overview">
+<div class="container">
+<span class="section-eyebrow" >Course Overview</span>
+<h2 class="curriculum-title">What You Will Learn in This Hands-On Training</h2>
+<p class="learn-intro">
+This beginner-friendly training introduces practical Red Team techniques used in modern
+Active Directory environments. Participants learn how attackers enumerate domains,
+map trust relationships, escalate privileges, and bypass common enterprise defenses.
+</p>
+
+<div class="learn-layout">
+
+<div class="learn-image">
+<img src="https://redteamverse.github.io/red-team-training/images/CRTP%20active%20directory%20attacks%20alt.png" alt="Active Directory Attack Techniques">
+</div>
+
+<div class="learn-points">
+
+<div class="learn-point">
+<span class="point-icon">→</span>
+Active Directory Enumeration
+</div>
+
+<div class="learn-point">
+<span class="point-icon">→</span>
+Trust Mapping & Domain Relationships
+</div>
+
+<div class="learn-point">
+<span class="point-icon">→</span>
+Kerberos Based Attacks
+</div>
+
+<div class="learn-point">
+<span class="point-icon">→</span>
+Domain Privilege Escalation
+</div>
+
+<div class="learn-point">
+<span class="point-icon">→</span>
+SQL Server Trust Abuse
+</div>
+
+<div class="learn-point">
+<span class="point-icon">→</span>
+Defenses and Bypass Techniques
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>  
+
 <section class="top-section" id="curriculum">
 
 <div class="container">
@@ -3733,228 +3870,6 @@ privilege escalation, persistence, and enterprise attack paths in Active Directo
 
 </div>
 </section>   
-<section class="up-section" id="certification">
-
-  <div class="container">
-
-    <!-- HEADING -->
-    <div class="cert-intro">
-      <span class="section-eyebrow">CERTIFICATION</span>
-      <h2 class="learn-intro">Build Recognized Red Team Credentials Through This Training</h2>
-      <p class="lead">
-        Participants who complete the training can attempt the Certified Red Team
-        Professional (CRTP®) certification - a hands-on exam focused on Active
-        Directory attack tradecraft.
-      </p>
-    </div>
-
-    <!-- IMAGE + CARD PAIRS -->
-    <div class="cert-pair">
-
-      <!-- ITEM 1 -->
-      <div class="cert-item">
-
-        <div class="cert-image">
-          <img src="https://redteamverse.github.io/red-team-training/images/CRTP_Certificate.png" alt="CRTP Certification">
-        </div>
-
-        <div class="cert-card">
-          <h3>Earn CRTP® Certification for Real-World Active Directory Skills</h3>
-          <ul>
-            <li>Industry recognized Red Team certification</li>
-            <li>Hands-on Active Directory attack exam</li>
-            <li>Demonstrates practical Red Team skills</li>
-            <li>Focus on enumeration, privilege escalation and lateral movement</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- ITEM 2 -->
-      <div class="cert-item">
-
-        <div class="cert-image">
-          <img src="https://redteamverse.github.io/red-team-training/images/demo-cert.avif" alt="Course Completion Certificate">
-        </div>
-
-        <div class="cert-card">
-          <h3>Course Completion Certificate Recognizing Your Hands-On Training Achievement</h3>
-          <ul>
-            <li>Issued after completing the training</li>
-            <li>Confirms participation in hands-on labs</li>
-            <li>Validates knowledge of Red Team fundamentals</li>
-            <li>Shareable credential for professional profiles</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>    
-<section class="top-section" id="schedule">
-
-  <div class="container">
-    <span class="section-eyebrow" >Training Schedule</span>
-    <!-- HEADER -->
-    <h2 class="curriculum-title">3-Day Red Team Training Schedule with Practical Skill Progression</h2>
-
-    <p class="section-subtitle">
-      Daily 8-hour sessions from <strong>09:00 AM</strong> to <strong>05:00 PM IST</strong>.
-    </p>
-
-    <!-- SCHEDULE TABLE -->
-    <div class="schedule-table">
-
-      <!-- ROW 1 -->
-      <div class="schedule-row">
-        <div class="schedule-date">
-          <span class="day">31</span>
-          <span class="month">Oct 2026</span>
-        </div>
-
-        <div class="schedule-content">
-          <h3>Day 1 – Foundations of Enumeration and Tradecraft</h3>
-          <p>Enumeration, Offensive PowerShell and .NET Tradecraft</p>
-        </div>
-      </div>
-
-      <!-- ROW 2 -->
-      <div class="schedule-row">
-        <div class="schedule-date">
-          <span class="day">01</span>
-          <span class="month">Nov 2026</span>
-        </div>
-
-        <div class="schedule-content">
-          <h3>Day 2 – Lateral Movement and Privilege Escalation</h3>
-          <p>Lateral Movement, Domain Privilege Escalation and Persistence</p>
-        </div>
-      </div>
-
-      <!-- ROW 3 -->
-      <div class="schedule-row">
-        <div class="schedule-date">
-          <span class="day">02</span>
-          <span class="month">Nov 2026</span>
-        </div>
-
-        <div class="schedule-content">
-          <h3>Day 3 – Enterprise Dominance and Defense Evasion</h3>
-          <p>
-            Domain Persistence, Dominance and Escalation to Enterprise Admins.<br>
-            Defenses, Monitoring and Bypassing Defenses
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>  
-<section class="top-section" id="prerequisites">
-
-<div class="container">
-
-<span class="section-eyebrow">Requirements</span>
-
-<h2 class="curriculum-title">Prerequisites and Skills Required Before Attending This Training</h2>
-
-<p class="learn-intro">
-Make sure you are comfortable with the following before attending the training.
-</p>
-
-<ul class="prereq-list">
-
-<li>
-<span class="check-icon">✓</span>
-Basic understanding of Active Directory
-</li>
-
-<li>
-<span class="check-icon">✓</span>
-Ability to use Windows command line tools (PowerShell / CMD)
-</li>
-
-<li>
-<span class="check-icon">✓</span>
-Familiarity with Windows administration concepts
-</li>
-<li>
-<span class="check-icon">✓</span>
-Bring Your Own Laptops with Windows 10 /11 or recent MacOS
-</li>
-<li>
-<span class="check-icon">✓</span>
-A recent web-browser (Chrome would be preferred)
-</li>
-</ul>
-
-</div>
-
-</section>    
-<section class="up-section" id="enroll">
-
-  <div class="container">
-    <span class="section-eyebrow">Purchase</span>
-    <h2 class="curriculum-title">Enroll in CRTP® Training and Secure Your Seat</h2>
-    <p class="learn-intro">
-      Hands-on Red Team training with enterprise labs, certification, and lifetime learning access.
-    </p>
-
-    <div class="pricing-grid">
-
-      <!-- EARLY BIRD -->
-      <div class="pricing-card highlight">
-
-        <div class="badge">Early Bird - 10% OFF</div>
-
-        <h3>Early Bird Price</h3>
-
-        <div class="price">
-          ₹35,999 <span>+ GST</span>
-        </div>
-        <p class="note-text">Only 50 seats are left</p>
-        <!-- FEATURES -->
-        <ul class="features-list">
-          <li>60 Days Lab Access</li>
-          <li>Course Completion Certificate</li>
-          <li>Lifetime Course Material Access</li>
-          <li>1 Certification Exam Attempt</li>
-          <li>Instructor-led Sessions</li>
-        </ul>
-
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-primary full">
-          Enroll Now
-        </a>
-
-      </div>
-
-      <!-- REGULAR -->
-      <div class="pricing-card">
-
-        <h3>Regular Price</h3>
-        
-        <div class="price">
-          ₹39,999 <span>+ GST</span>
-        </div>
-         <p class="note-text">Available after early bird offers ends</p>
-        
-
-        <a href="#" class="btn-outline full disabled">
-  Enroll Now
-      </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>  
 <section class="top-section" id="labs">
 
   <div class="container">
@@ -4045,29 +3960,7 @@ A recent web-browser (Chrome would be preferred)
 
   </div>
 
-</section>
-
-    
-
- 
-
-
-<!-- =========================
-Instructor Authority Section
-========================= -->
-
-<!-- =========================
-Instructor Authority Section
-========================= -->
-
-<!-- =========================
-Instructor Authority Section
-========================= -->
-
-<!-- =========================
-Instructor Authority Section
-========================= -->
-
+</section>  
 <section class="up-section" id="instructor">
 
 <div class="container">
@@ -4180,94 +4073,7 @@ Instructor Content Grid
 
 </div>
 
-</section>
-<!-- =========================
-Social Proof Section
-========================= -->
-
-<!-- =========================
-Social Proof Section
-========================= -->
-<section class="top-section" id="audience">
-
-  <div class="container">
-
-    <!-- HEADER -->
-    <div class="section-header">
-      <span class="section-eyebrow">Target Audience</span>
-      <h2 class="curriculum-title">Who Should Attend This Red Team Training Program?</h2>
-      <p class="learn-intro">
-        This training is designed for professionals looking to build and validate real-world
-        Red Team skills in Active Directory and enterprise environments.
-      </p>
-    </div>
-
-    <!-- CARDS -->
-    <div class="audience-grid">
-
-      <div class="audience-card">
-        <div class="audience-icon">
-          <i data-lucide="shield"></i>
-        </div>
-        <h3>Cybersecurity Professionals</h3>
-        <p>Enhance offensive security skills and understand real-world enterprise attack paths.</p>
-      </div>
-
-      <div class="audience-card">
-        <div class="audience-icon">
-          <i data-lucide="terminal"></i>
-        </div>
-        <h3>Penetration Testers</h3>
-        <p>Level up your AD attack techniques and improve post-exploitation workflows.</p>
-      </div>
-
-      <div class="audience-card">
-        <div class="audience-icon">
-          <i data-lucide="settings"></i>
-        </div>
-        <h3>Security Engineers</h3>
-        <p>Understand attacker techniques to build better detection and defense strategies.</p>
-      </div>
-
-      <div class="audience-card">
-        <div class="audience-icon">
-          <i data-lucide="activity"></i>
-        </div>
-        <h3>SOC Analysts</h3>
-        <p>Learn how attacks happen in enterprise environments to improve monitoring and response.</p>
-      </div>
-
-      <div class="audience-card">
-        <div class="audience-icon">
-          <i data-lucide="graduation-cap"></i>
-        </div>
-        <h3>Aspiring Red Teamers</h3>
-        <p>Build a strong foundation in Active Directory attacks and offensive security.</p>
-      </div>
-
-      <div class="audience-card">
-        <div class="audience-icon">
-          <i data-lucide="book-open"></i>
-        </div>
-        <h3>Students & Learners</h3>
-        <p>Gain hands-on experience with real enterprise labs and practical attack scenarios.</p>
-      </div>
-
-    </div>
-
-    <!-- CTA -->
-    <div class="audience-cta">
-      <h3>Start Your Red Team Journey Today with Hands-On Training</h3>
-      <p>
-        Join instructor-led training and gain hands-on experience in real enterprise attack scenarios.
-      </p>
-
-      <a href="#enroll" class="btn-primary">Enroll Now</a>
-    </div>
-
-  </div>
-
-</section>
+</section>  
 <section class="up-section">
 
 <div class="container">
@@ -4354,7 +4160,368 @@ Penetration Tester
 
 </div>
 
+</section>    
+<section class="up-section" id="certification">
+
+  <div class="container">
+
+    <!-- HEADING -->
+    <div class="cert-intro">
+      <span class="section-eyebrow">CERTIFICATION</span>
+      <h2 class="learn-intro">Build Recognized Red Team Credentials Through This Training</h2>
+      <p class="lead">
+        Participants who complete the training can attempt the Certified Red Team
+        Professional (CRTP®) certification - a hands-on exam focused on Active
+        Directory attack tradecraft.
+      </p>
+    </div>
+
+    <!-- IMAGE + CARD PAIRS -->
+    <div class="cert-pair">
+
+      <!-- ITEM 1 -->
+      <div class="cert-item">
+
+        <div class="cert-image">
+          <img src="https://redteamverse.github.io/red-team-training/images/CRTP_Certificate.png" alt="CRTP Certification">
+        </div>
+
+        <div class="cert-card">
+          <h3>Earn CRTP® Certification for Real-World Active Directory Skills</h3>
+          <ul>
+            <li>Industry recognized Red Team certification</li>
+            <li>Hands-on Active Directory attack exam</li>
+            <li>Demonstrates practical Red Team skills</li>
+            <li>Focus on enumeration, privilege escalation and lateral movement</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="cert-item">
+
+        <div class="cert-image">
+          <img src="https://redteamverse.github.io/red-team-training/images/demo-cert.avif" alt="Course Completion Certificate">
+        </div>
+
+        <div class="cert-card">
+          <h3>Course Completion Certificate Recognizing Your Hands-On Training Achievement</h3>
+          <ul>
+            <li>Issued after completing the training</li>
+            <li>Confirms participation in hands-on labs</li>
+            <li>Validates knowledge of Red Team fundamentals</li>
+            <li>Shareable credential for professional profiles</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>    
+<section class="top-section" id="audience">
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="section-header">
+      <span class="section-eyebrow">Target Audience</span>
+      <h2 class="curriculum-title">Who Should Attend This Red Team Training Program?</h2>
+      <p class="learn-intro">
+        This training is designed for professionals looking to build and validate real-world
+        Red Team skills in Active Directory and enterprise environments.
+      </p>
+    </div>
+
+    <!-- CARDS -->
+    <div class="audience-grid">
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <i data-lucide="shield"></i>
+        </div>
+        <h3>Cybersecurity Professionals</h3>
+        <p>Enhance offensive security skills and understand real-world enterprise attack paths.</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <i data-lucide="terminal"></i>
+        </div>
+        <h3>Penetration Testers</h3>
+        <p>Level up your AD attack techniques and improve post-exploitation workflows.</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <i data-lucide="settings"></i>
+        </div>
+        <h3>Security Engineers</h3>
+        <p>Understand attacker techniques to build better detection and defense strategies.</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <i data-lucide="activity"></i>
+        </div>
+        <h3>SOC Analysts</h3>
+        <p>Learn how attacks happen in enterprise environments to improve monitoring and response.</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <i data-lucide="graduation-cap"></i>
+        </div>
+        <h3>Aspiring Red Teamers</h3>
+        <p>Build a strong foundation in Active Directory attacks and offensive security.</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <i data-lucide="book-open"></i>
+        </div>
+        <h3>Students & Learners</h3>
+        <p>Gain hands-on experience with real enterprise labs and practical attack scenarios.</p>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="audience-cta">
+      <h3>Start Your Red Team Journey Today with Hands-On Training</h3>
+      <p>
+        Join instructor-led training and gain hands-on experience in real enterprise attack scenarios.
+      </p>
+
+      <a href="#enroll" class="btn-primary">Enroll Now</a>
+    </div>
+
+  </div>
+
 </section>  
+<section class="top-section" id="prerequisites">
+
+<div class="container">
+
+<span class="section-eyebrow">Requirements</span>
+
+<h2 class="curriculum-title">Prerequisites and Skills Required Before Attending This Training</h2>
+
+<p class="learn-intro">
+Make sure you are comfortable with the following before attending the training.
+</p>
+
+<ul class="prereq-list">
+
+<li>
+<span class="check-icon">✓</span>
+Basic understanding of Active Directory
+</li>
+
+<li>
+<span class="check-icon">✓</span>
+Ability to use Windows command line tools (PowerShell / CMD)
+</li>
+
+<li>
+<span class="check-icon">✓</span>
+Familiarity with Windows administration concepts
+</li>
+<li>
+<span class="check-icon">✓</span>
+Bring Your Own Laptops with Windows 10 /11 or recent MacOS
+</li>
+<li>
+<span class="check-icon">✓</span>
+A recent web-browser (Chrome would be preferred)
+</li>
+</ul>
+
+</div>
+
+</section>   
+<section class="top-section" id="schedule">
+
+  <div class="container">
+    <span class="section-eyebrow" >Training Schedule</span>
+    <!-- HEADER -->
+    <h2 class="curriculum-title">3-Day Red Team Training Schedule with Practical Skill Progression</h2>
+
+    <p class="section-subtitle">
+      Daily 8-hour sessions from <strong>09:00 AM</strong> to <strong>05:00 PM IST</strong>.
+    </p>
+
+    <!-- SCHEDULE TABLE -->
+    <div class="schedule-table">
+
+      <!-- ROW 1 -->
+      <div class="schedule-row">
+        <div class="schedule-date">
+          <span class="day">31</span>
+          <span class="month">Oct 2026</span>
+        </div>
+
+        <div class="schedule-content">
+          <h3>Day 1 – Foundations of Enumeration and Tradecraft</h3>
+          <p>Enumeration, Offensive PowerShell and .NET Tradecraft</p>
+        </div>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="schedule-row">
+        <div class="schedule-date">
+          <span class="day">01</span>
+          <span class="month">Nov 2026</span>
+        </div>
+
+        <div class="schedule-content">
+          <h3>Day 2 – Lateral Movement and Privilege Escalation</h3>
+          <p>Lateral Movement, Domain Privilege Escalation and Persistence</p>
+        </div>
+      </div>
+
+      <!-- ROW 3 -->
+      <div class="schedule-row">
+        <div class="schedule-date">
+          <span class="day">02</span>
+          <span class="month">Nov 2026</span>
+        </div>
+
+        <div class="schedule-content">
+          <h3>Day 3 – Enterprise Dominance and Defense Evasion</h3>
+          <p>
+            Domain Persistence, Dominance and Escalation to Enterprise Admins.<br>
+            Defenses, Monitoring and Bypassing Defenses
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>  
+   
+<section class="up-section" id="enroll">
+
+  <div class="container">
+    <span class="section-eyebrow">Purchase</span>
+    <h2 class="curriculum-title">Enroll in CRTP® Training and Secure Your Seat</h2>
+    <p class="learn-intro">
+      Hands-on Red Team training with enterprise labs, certification, and lifetime learning access.
+    </p>
+
+    <div class="pricing-grid">
+
+      <!-- EARLY BIRD -->
+      <div class="pricing-card highlight">
+
+        <div class="badge">Early Bird - 10% OFF</div>
+
+        <h3>Early Bird Price</h3>
+
+        <div class="price">
+          ₹35,999 <span>+ GST</span>
+        </div>
+        <p class="note-text">Only 50 seats are left</p>
+        <!-- FEATURES -->
+        <ul class="features-list">
+          <li>60 Days Lab Access</li>
+          <li>Course Completion Certificate</li>
+          <li>Lifetime Course Material Access</li>
+          <li>1 Certification Exam Attempt</li>
+          <li>Instructor-led Sessions</li>
+        </ul>
+
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-primary full">
+          Enroll Now
+        </a>
+
+      </div>
+
+      <!-- REGULAR -->
+      <div class="pricing-card">
+
+        <h3>Regular Price</h3>
+        
+        <div class="price">
+          ₹39,999 <span>+ GST</span>
+        </div>
+         <p class="note-text">Available after early bird offers ends</p>
+        
+
+        <a href="#" class="btn-outline full disabled">
+  Enroll Now
+      </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>  
+
+
+
+
+
+
+<!-- =========================
+Social Proof Section
+========================= -->
+
+<!-- =========================
+Social Proof Section
+========================= -->
+
+<section class="up-section" id="venue">
+
+  <div class="container">
+
+    <span class="section-eyebrow">Location</span>
+    <h2 class="curriculum-title">Attend CRTP Hand-on Training</h2>
+
+  
+<div class="venue-info">
+
+  <div class="venue-info-item">
+    <div class="icon-box">
+      <i data-lucide="map-pin"></i>
+    </div>
+    <div>
+      <strong>(Training)</strong>
+      <span>Room No: 201 2nd floor</span>
+    </div>
+  </div>  
+
+  <div class="venue-info-item">
+    <div class="icon-box">
+      <i data-lucide="building"></i>
+    </div>
+    <div>
+      <strong>Venue</strong>
+      <span>Hilton Hotel Bengaluru, India</span>
+    </div>
+  </div>
+  <div class="venue-info-item">
+    <div class="icon-box">
+      <i data-lucide="building"></i>
+    </div>
+    <div>
+      <strong>Format</strong>
+      <span>In-person event with dedicated training rooms</span>
+    </div>
+  </div>
+</div>  
+
+  </div>
+
+</section>  
+
 
 
 
@@ -4586,65 +4753,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   });
 
-  /* =========================
-     HEADER + SECTION NAV + CTA
-  ========================= */
-  const header = document.getElementById("stickyHeader");
-  const sectionNav = document.getElementById("sectionNav");
-  const stickyCTA = document.getElementById("stickyCTA");
-  const hero = document.querySelector(".hero-section");
-
-  /* SCROLL SPY */
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".section-nav a");
-
-  function handleScroll() {
-    const scrollY = window.scrollY;
-
-   if (scrollY > 80) {
-  header.classList.add("is-visible", "is-solid");
-} else {
-  header.classList.remove("is-visible", "is-solid");
-}
-    
-    if (window.innerWidth <= 768) {
-  header.classList.add("is-visible", "is-solid");
-}
-
-    const triggerPoint = hero.offsetHeight - 100;
-
-    if (scrollY > triggerPoint) {
-  sectionNav.classList.add("is-visible");
-    } else {
-  sectionNav.classList.remove("is-visible");
-    }
-
-    /* STICKY CTA (always visible after small scroll) */
-    if (scrollY > 200) {
-      stickyCTA.classList.add("show");
-    } else {
-      stickyCTA.classList.remove("show");
-    }
-
-    /* SCROLL SPY ACTIVE LINK */
-    let current = "";
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      const sectionHeight = section.clientHeight;
-
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
-    });
-  }
+ 
 
   /* =========================
      SMOOTH SCROLL
