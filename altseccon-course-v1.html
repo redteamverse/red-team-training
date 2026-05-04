@@ -110,6 +110,17 @@ html, body {
   align-items: center;
 }
 
+@media (max-width: 768px) {
+
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+
+    transform: none; /* ensure no zoom */
+  }
+
+}  
 /* =========================
    LEFT CONTENT
 ========================= */
@@ -261,16 +272,30 @@ html, body {
 /* =========================
    RIGHT IMAGE
 ========================= */
+/* =========================
+   HERO IMAGE FIX
+========================= */
 .hero-image {
-  text-align: center;
+  margin: 20px 0 14px;
+  padding: 0 10px; /* safe spacing on mobile */
 }
 
+/* IMAGE */
 .hero-image img {
   width: 100%;
-  max-width: 420px;
+  max-width: 520px;
+
+  height: auto;            /* ✅ critical */
+  object-fit: contain;     /* ✅ no crop */
+
+  transform: none;         /* ❌ remove scale */
+  
   border-radius: 12px;
   border: 1px solid #E5E7EB;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+
+  display: block;
+  margin: 0 auto;
 }
 
 .hero-caption {
@@ -3336,22 +3361,22 @@ Hero Section
 <div class="hero-benefits">
 
   <div class="hero-benefit">
-    <i data-lucide="network"></i>
+    <i data-lucide="check"></i>
     <span>Perform real Active Directory attacks step-by-step</span>
   </div>
 
   <div class="hero-benefit">
-    <i data-lucide="server"></i>
+    <i data-lucide="check"></i>
     <span>Practice in enterprise-grade lab environments</span>
   </div>
 
   <div class="hero-benefit">
-    <i data-lucide="activity"></i>
-    <span>Learn techniques used in real red team engagements</span>
+    <i data-lucide="check"></i>
+    <span>Practice in enterprise-grade lab environments</span>
   </div>
 
   <div class="hero-benefit">
-    <i data-lucide="zap"></i>
+    <i data-lucide="check"></i>
     <span>Master offensive security skills</span>
   </div>
 
@@ -3400,7 +3425,7 @@ Hero Feature Modules
 
 <div class="hero-image">
 
-  <img src="https://redteamverse.github.io/red-team-training/images/CRTP_Certificate.png" alt="CRTP Certificate">
+  <img src="https://static.wixstatic.com/media/470c31_33920ce03254499483e54c9df75654ce~mv2.png" alt="CRTP Certificate">
 
   <p class="hero-caption">
     Earn the <strong>Certified Red Team Professional (CRTP®)</strong> certification
