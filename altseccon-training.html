@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Programs - AltSecCON</title>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#F9FAFB;
+  color:#111827;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.header h1{
+  font-size:38px;
+}
+
+.header p{
+  color:#6B7280;
+  max-width:700px;
+  margin:auto;
+}
+
+/* =========================
+   GRID
+========================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card{
+  background:#fff;
+  border-radius:18px;
+  border:1px solid #E5E7EB;
+  padding:20px;
+  transition:0.3s;
+  text-align:center;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Level */
+.level{
+  text-align:left;
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+/* Image */
+.card img{
+  width:100%;
+  border-radius:14px;
+  margin-bottom:15px;
+}
+
+/* Title */
+.card h3{
+  font-size:18px;
+  color:#111827;
+  margin-bottom:10px;
+}
+
+/* Price */
+.price{
+  background:#1E3A8A;
+  color:#fff;
+  padding:10px 18px;
+  display:inline-block;
+  border-radius:8px;
+  margin:15px 0;
+  font-weight:600;
+}
+
+/* Buttons */
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:15px;
+}
+
+.btn{
+  padding:10px 14px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.btn-outline{
+  border:1px solid #1E3A8A;
+  color:#1E3A8A;
+}
+
+.btn-primary{
+  background:#B91C1C;
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:#EA3037;
+  color:#fff;
+}    
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:992px){
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+.time-sec{
+color:#B91C1C;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Training Programs at <span class="time-sec">AltSecCON</span></h1>
+    <p>
+      Instructor-led Red Team certification programs covering Active Directory,
+      Azure, and advanced evasion techniques.
+    </p>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <!-- CRTP -->
+    <div class="card">
+      <div class="level">Beginner</div>
+      <img src="https://static.wixstatic.com/media/470c31_1207916d21b14a428a92b4ff90a74f8a~mv2.png">
+      <h3>CRTP - Active Directory Attacks for Red and Blue Teams - Beginner's Edition</h3>
+      <div class="price">₹39,999 + GST</div>
+
+      <div class="actions">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html" class="btn btn-outline">More Details</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Seat</a>
+      </div>
+    </div>
+
+    <!-- CARTP -->
+    <div class="card">
+      <div class="level">Beginner</div>
+      <img src="https://static.wixstatic.com/media/470c31_c03d5a63cde444b18d44bdb541748fa9~mv2.png">
+      <h3>CARTP - Cloud Red Team Tactics for Attacking and Defending Azure - Beginner's Edition</h3>
+      <div class="price">₹39,999 + GST</div>
+
+      <div class="actions">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html" class="btn btn-outline">More Details</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Seat</a>
+      </div>
+    </div>
+
+    <!-- CARTE -->
+    <div class="card">
+      <div class="level">Advanced</div>
+      <img src="https://static.wixstatic.com/media/628794_0836557da1044632b5ea9eea3e469295~mv2.png">
+      <h3>CARTE - Cloud Red Team Tactics for Attacking and Defending Azure - Advanced Edition</h3>
+      <div class="price">₹39,999 + GST</div>
+
+      <div class="actions">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html" class="btn btn-outline">More Details</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Seat</a>
+      </div>
+    </div>
+
+    <!-- CRTE -->
+    <div class="card">
+      <div class="level">Intermediate</div>
+      <img src="https://static.wixstatic.com/media/470c31_d20991e40bc749a5b5e34cc98f82ff70~mv2.png">
+      <h3>CRTE - Active Directory Attacks for Red and Blue Teams - Advanced Edition</h3>
+      <div class="price">₹39,999 + GST</div>
+
+      <div class="actions">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html" class="btn btn-outline">More Details</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Seat</a>
+      </div>
+    </div>
+
+    <!-- CETP -->
+    <div class="card">
+      <div class="level">Intermediate</div>
+      <img src="https://static.wixstatic.com/media/98ad8e_81fec46cf0d2498bb860aeabc27e397e~mv2.png">
+      <h3>CETP - Evasion Techniques for Red Teams</h3>
+      <div class="price">₹39,999 + GST</div>
+
+      <div class="actions">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html" class="btn btn-outline">More Details</a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Book Seat</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

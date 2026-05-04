@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - AltSecCON</title>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#F9FAFB;
+  color:#111827;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.contact-page{
+  padding:80px 20px;
+}
+
+.contact-wrapper{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:start;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+.contact-info h1{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.contact-info p{
+  color:#6B7280;
+  margin-bottom:30px;
+}
+
+.contact-block{
+  margin-bottom:30px;
+}
+
+.contact-block h3{
+  margin-bottom:8px;
+}
+
+.email-link{
+  color:#B91C1C;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.email-link:hover{
+  text-decoration:underline;
+}
+
+/* Social Icons */
+.social-icons{
+  display:flex;
+  gap:12px;
+}
+
+.social-icons a{
+  width:40px;
+  height:40px;
+  background:#E5E7EB;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.2s;
+}
+
+.social-icons a:hover{
+  background:#B91C1C;
+}
+
+.social-icons svg{
+  width:18px;
+  height:18px;
+  color:#1E3A8A;
+}
+
+.social-icons a:hover svg{
+  color:#fff;
+}
+
+/* =========================
+   RIGHT SIDE FORM
+========================= */
+.contact-form{
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  border:1px solid #E5E7EB;
+}
+
+.section-eyebrow{
+  font-size:12px;
+  color:#1E3A8A;
+  letter-spacing:1px;
+}
+
+.contact-form h2{
+  font-size:26px;
+  margin:10px 0;
+}
+
+.highlight{
+  color:#B91C1C;
+}
+
+.contact-intro{
+  color:#6B7280;
+  margin-bottom:20px;
+}
+
+/* Tabs */
+.tabs{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  padding:8px 16px;
+  border-radius:999px;
+  border:1px solid #E5E7EB;
+  background:#F3F4F6;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:500;
+}
+
+.tab.active{
+  background:#B91C1C;
+  color:#fff;
+}
+
+/* Form */
+.form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.form input{
+  padding:12px;
+  border:1px solid #E5E7EB;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.form input:focus{
+  outline:none;
+  border-color:#B91C1C;
+}
+
+.form button{
+  width:fit-content;
+  padding:10px 18px;
+  background:#B91C1C;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.2s;
+}
+
+.form button:hover{
+  background:#EA3037;
+}
+
+/* Tab Content */
+.tab-content{
+  display:none;
+}
+
+.tab-content.active{
+  display:block;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+  .contact-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .contact-info h1{
+    font-size:32px;
+  }
+}
+
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
+}    
+    
+/* =========================
+   VENUE SECTION
+========================= */
+.venue-section{
+  padding:80px 20px;
+  background:#FFFFFF;
+}
+
+.venue-container{
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
+}
+
+/* Eyebrow */
+.venue-section .section-eyebrow{
+  font-size:12px;
+  color:#1E3A8A;
+  letter-spacing:1px;
+}
+
+/* Heading */
+.venue-section h2{
+  font-size:32px;
+  margin:10px 0;
+}
+
+/* Description */
+.venue-desc{
+  color:#6B7280;
+  max-width:700px;
+  margin:0 auto 40px;
+}
+
+/* Cards */
+.venue-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-bottom:40px;
+}
+
+.venue-card{
+  border:1px solid #E5E7EB;
+  padding:20px;
+  border-radius:10px;
+  background:#F9FAFB;
+}
+
+.venue-card span{
+  display:block;
+  font-size:13px;
+  color:#6B7280;
+  margin-bottom:5px;
+}
+
+.venue-card strong{
+  font-size:16px;
+}
+
+/* Content */
+.venue-content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  text-align:left;
+}
+
+/* Text */
+.venue-text p{
+  margin-bottom:15px;
+  color:#6B7280;
+}
+
+.venue-text ul{
+  padding-left:18px;
+}
+
+.venue-text li{
+  margin-bottom:8px;
+}
+
+/* Map box */
+.venue-map{
+  border:2px dashed #E5E7EB;
+  border-radius:10px;
+  padding:40px;
+  text-align:center;
+  color:#6B7280;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+  .venue-cards{
+    grid-template-columns:1fr;
+  }
+
+  .venue-content{
+    grid-template-columns:1fr;
+  }
+
+  .venue-section h2{
+    font-size:24px;
+  }
+}    
+</style>
+</head>
+
+<body>
+
+<section class="contact-page">
+
+  <div class="contact-wrapper">
+
+    <!-- LEFT -->
+    <div class="contact-info">
+
+      <h1>Contact Us</h1>
+
+      <p>
+        Want to get in touch? We'd love to hear from you.<br>
+        Here's how you can reach us...
+      </p>
+
+      <div class="contact-block">
+        <h3>Our Email</h3>
+        <a href="mailto:contact@alteredsecurity.com" class="email-link">
+          contact@alteredsecurity.com
+        </a>
+      </div>
+
+      <div class="contact-block">
+        <h3>Follow Us on our Social Media</h3>
+
+        <div class="social-icons">
+          <a href="#"><i data-lucide="X"></i></a>
+         <a href="https://www.linkedin.com/company/alteredsecurity/" target="_blank">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.7-1.3 2.4-2.7 5-2.7 5.3 0 6.3 3.5 6.3 8V24h-5V16c0-1.9 0-4.3-2.6-4.3-2.6 0-3 2-3 4.1V24h-5V8z"/>
+  </svg>
+    </a>
+          <a href="#"><i data-lucide="message-circle"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="contact-form">
+
+      <span class="section-eyebrow">CONTACT US</span>
+      <h2>Get Started with <span class="highlight">AltSecCON</span></h2>
+
+      <p class="contact-intro">
+        Choose what you're interested in and share your details.
+      </p>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" data-tab="training1">Training</button>
+        <button class="tab" data-tab="conference1">Conference</button>
+        <button class="tab" data-tab="team">Team / Manager</button>
+      </div>
+
+      <!-- Training -->
+      <div class="tab-content active" id="training1">
+        <form class="form">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="text" placeholder="Experience Level">
+          <input type="text" placeholder="Interested Course">
+          <button type="submit">Get Training Details</button>
+        </form>
+      </div>
+
+      <!-- Conference -->
+      <div class="tab-content" id="conference1">
+        <form class="form">
+          <input type="text" placeholder="Full Name">
+          <input type="email" placeholder="Email">
+          <input type="text" placeholder="Your Role">
+          <button type="submit">Get Conference Details</button>
+        </form>
+      </div>
+
+      <!-- Team -->
+      <div class="tab-content" id="team">
+        <form class="form">
+          <input type="text" placeholder="Full Name">
+          <input type="text" placeholder="Company Name">
+          <input type="email" placeholder="Work Email">
+          <input type="text" placeholder="Team Size">
+          <button type="submit">Request Details</button>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- =========================
+     VENUE SECTION
+========================= -->
+<section class="venue-section">
+
+  <div class="venue-container">
+
+    <span class="section-eyebrow">EVENT LOCATION</span>
+
+    <h2>Training & Conference Venue</h2>
+
+    <p class="venue-desc">
+      AltSecCON will take place in Bengaluru, India, hosting both the instructor-led Red Team 
+      training and the practitioner conference in a shared environment designed for learning 
+      and collaboration.
+    </p>
+
+    <!-- CARDS -->
+    <div class="venue-cards">
+
+      <div class="venue-card">
+        <span>Training Location</span>
+        <strong>Bengaluru, India</strong>
+      </div>
+
+      <div class="venue-card">
+        <span>Conference Location</span>
+        <strong>Bengaluru, India</strong>
+      </div>
+
+      <div class="venue-card">
+        <span>Venue</span>
+        <strong>To be announced soon</strong>
+      </div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="venue-content">
+
+      <div class="venue-text">
+        <p>
+          Bengaluru is one of India's leading technology hubs and home to a strong cybersecurity community.
+          AltSecCON brings both training and conference experiences together in a single venue to enable 
+          continuous learning, collaboration, and interaction.
+        </p>
+
+        <ul>
+          <li>Dedicated training classrooms for hands-on sessions</li>
+          <li>Conference presentation and discussion areas</li>
+          <li>Networking spaces for participants and speakers</li>
+          <li>Coffee breaks, lunch, and collaboration zones</li>
+        </ul>
+      </div>
+
+      <div class="venue-map">
+        📍 Map will be updated once the venue is announced.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<script>
+
+/* Lucide icons */
+lucide.createIcons();
+
+/* Tabs */
+document.querySelectorAll(".tab").forEach(tab=>{
+  tab.addEventListener("click", ()=>{
+    document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach(c=>c.classList.remove("active"));
+
+    tab.classList.add("active");
+    document.getElementById(tab.dataset.tab).classList.add("active");
+  });
+});
+
+</script>
+
+</body>
+</html>

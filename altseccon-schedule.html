@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AltSecCON Schedule</title>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+
+/* ========================= */
+:root{
+  --primary:#B91C1C;
+  --blue:#1E3A8A;
+  --text:#111827;
+  --muted:#6B7280;
+  --bg-light:#F9FAFB;
+  --border:#E5E7EB;
+}
+
+/* ========================= */
+body{
+  margin:0;
+  font-family:system-ui;
+  color:var(--text);
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+h1{
+  font-size:42px;
+}
+
+/* ========================= TABS */
+.tabs{
+  display:flex;
+  gap:10px;
+  margin:20px 0;
+  flex-wrap:wrap;
+}
+
+.tab{
+  padding:10px 18px;
+  border-radius:6px;
+  background:#f3f4f6;
+  cursor:pointer;
+}
+
+.tab.active{
+  background:var(--blue);
+  color:#fff;
+}
+
+.course-tab{
+  padding:8px 14px;
+  border:1px solid var(--border);
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.course-tab.active{
+  background:var(--primary);
+  color:#fff;
+}
+
+.day-tab{
+  padding:8px 16px;
+  border-radius:30px;
+  border:1px solid var(--border);
+  cursor:pointer;
+  font-size:14px;
+}
+
+.day-tab.active{
+  background:var(--primary);
+  color:#fff;
+}
+
+/* ========================= TIMELINE */
+.timeline{
+  position:relative;
+  margin-left:40px;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:var(--primary);
+}
+
+.timeline-item{
+  position:relative;
+  padding-left:30px;
+  margin-bottom:30px;
+}
+
+.timeline-dot{
+  position:absolute;
+  left:-6px;
+  top:8px;
+  width:14px;
+  height:14px;
+  background:var(--primary);
+  border-radius:50%;
+}
+
+/* ========================= CARD */
+.card{
+  background:var(--bg-light);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:20px;
+}
+
+.course-title{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:5px;
+}
+
+.header{
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.topic-title{
+  color:var(--primary);
+  font-weight:600;
+  font-size:14px;
+}
+
+.meta{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  border-top:1px solid var(--border);
+  margin-top:15px;
+  padding-top:10px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+.meta-item{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.breaks{
+  margin-top:10px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Event Schedule</h1>
+
+<!-- TOP -->
+<div class="tabs">
+  <div class="tab active" data-main="training">AltSecCON Training</div>
+  <div class="tab" data-main="conference">AltSecCON Conference</div>
+</div>
+
+<!-- TRAINING -->
+<div id="training">
+
+<!-- COURSE -->
+<div class="tabs">
+  <div class="course-tab active" data-course="crtp">CRTP</div>
+  <div class="course-tab" data-course="crte">CRTE</div>
+  <div class="course-tab" data-course="cetp">CETP</div>
+  <div class="course-tab" data-course="cartp">CARTP</div>
+  <div class="course-tab" data-course="carte">CARTE</div>
+</div>
+
+<!-- DAY -->
+<div class="tabs">
+  <div class="day-tab active" data-day="0">31 Oct • Day 1</div>
+  <div class="day-tab" data-day="1">01 Nov • Day 2</div>
+  <div class="day-tab" data-day="2">02 Nov • Day 3</div>
+</div>
+
+<div id="timeline"></div>
+
+</div>
+
+<!-- CONFERENCE -->
+<div id="conference" style="display:none;">
+  <div class="card">
+    <div class="header">3 Nov 2026 • Conference</div>
+
+    <div class="topic-title">Topics Covered</div>
+    <p>Talks, Live Demos, Networking</p>
+
+    <div class="meta">
+      <div class="meta-item"><i data-lucide="map-pin"></i> Bangalore | Room 450</div>
+      <div class="meta-item"><i data-lucide="clock"></i> 9:00 AM – 5:00 PM</div>
+      <div class="meta-item"><i data-lucide="user"></i> Guest Speakers</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+
+/* ========================= COURSE TITLES */
+const courseNames = {
+crtp:"Active Directory Attacks for Red and Blue Teams - Beginner's Edition",
+crte:"Active Directory Attacks for Red and Blue Teams - Advanced Edition",
+cetp:"Evasion Techniques for Red Teams",
+cartp:"Cloud Red Team Tactics for Attacking and Defending Azure - Beginner's Edition",
+carte:"Cloud Red Team Tactics for Attacking and Defending Azure - Advanced Edition"
+};
+
+/* ========================= FIXED ROOM PER COURSE */
+const roomMap = {
+crtp:"303",
+crte:"305",
+cetp:"402",
+cartp:"410",
+carte:"415"
+};
+
+/* ========================= DATA */
+const data = {
+crtp:[
+"Enumeration, Offensive PowerShell and .NET Tradecraft",
+"Lateral Movement, Domain Privilege Escalation and Persistence",
+"Domain Persistence, Dominance & Enterprise Admin Escalation"
+],
+crte:[
+"AD Enumeration & Local Privilege Escalation",
+"Lateral Movement & Domain Escalation",
+"Persistence & Defenses"
+],
+cetp:[
+"Windows Internals & EDR",
+"Kernel Attacks & Bypass",
+"C2 & Sysmon Attacks"
+],
+cartp:[
+"Azure AD Recon & Initial Access",
+"Privilege Escalation",
+"Lateral Movement & Persistence"
+],
+carte:[
+"Azure Recon",
+"Privilege Escalation",
+"Defense Bypass"
+]
+};
+
+let currentCourse="crtp";
+let currentDay=0;
+
+/* ========================= */
+function render(){
+
+const topic = data[currentCourse][currentDay];
+const courseTitle = courseNames[currentCourse];
+const room = roomMap[currentCourse];
+
+const dates = ["31 Oct 2026","01 Nov 2026","02 Nov 2026"];
+
+document.getElementById("timeline").innerHTML = `
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+
+<div class="card">
+
+<div class="course-title">${courseTitle}</div>
+
+<div class="header">
+${dates[currentDay]} • Day ${currentDay + 1} Training
+</div>
+
+<div class="topic-title">Topics Covered</div>
+<p>${topic}</p>
+
+<div class="meta">
+  <div class="meta-item"><i data-lucide="map-pin"></i> Bangalore | Room ${room}</div>
+  <div class="meta-item"><i data-lucide="clock"></i> 9:00 AM – 5:00 PM</div>
+  <div class="meta-item"><i data-lucide="user"></i> Rahul Sharma</div>
+</div>
+
+<div class="breaks">
+☕ Scheduled breaks: Tea breaks and lunch included
+</div>
+
+</div>
+
+</div>
+
+</div>
+`;
+
+lucide.createIcons();
+}
+
+render();
+
+/* ========================= INTERACTIONS */
+
+document.querySelectorAll(".course-tab").forEach(tab=>{
+  tab.onclick=()=>{
+    document.querySelectorAll(".course-tab").forEach(t=>t.classList.remove("active"));
+    tab.classList.add("active");
+    currentCourse=tab.dataset.course;
+    render();
+  };
+});
+
+document.querySelectorAll(".day-tab").forEach(tab=>{
+  tab.onclick=()=>{
+    document.querySelectorAll(".day-tab").forEach(t=>t.classList.remove("active"));
+    tab.classList.add("active");
+    currentDay=parseInt(tab.dataset.day);
+    render();
+  };
+});
+
+document.querySelectorAll(".tab").forEach(tab=>{
+  tab.onclick=()=>{
+    document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    tab.classList.add("active");
+
+    if(tab.dataset.main==="training"){
+      training.style.display="block";
+      conference.style.display="none";
+    }else{
+      training.style.display="none";
+      conference.style.display="block";
+    }
+  };
+});
+
+</script>
+
+</body>
+</html>
