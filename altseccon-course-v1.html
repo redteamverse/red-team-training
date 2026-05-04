@@ -45,88 +45,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
-.hero-section {
-  background: #FFFFFF;
-  padding: 80px 20px;
-}
 
-/* =========================
-   GRID
-========================= */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  align-items: center;
-  gap: 60px;
-}
-
-/* =========================
-   CONTENT
-========================= */
-.hero-content {
-  text-align: left;
-}
-
-/* TITLE */
-  .hero-title {
-  font-size: 38px;
-  line-height: 1.2;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 12px;
-}
-
-/* SUBTITLE */
-.hero-subtitle {
-  font-size: 20px;
-  color: #6B7280;
-  margin-bottom: 16px;
-  font-weight: 500;
-}
-
-/* DESCRIPTION */
-.hero-description {
-  font-size: 15px;
-  color: #4B5563;
-  line-height: 1.6;
-  max-width: 520px;
-}
-
-/* =========================
-   TAGS (MODULES)
-========================= */
-.hero-modules {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-start;
-  padding:20px;
-}
-
-.hero-module {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 6px;
-  padding: 6px 12px;
-
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 500;
-
-  background: #F3F4F6;
-  border: 1px solid #E5E7EB;
-  color: #1F2937;
-
-  white-space: nowrap;   /* 🔥 IMPORTANT */
-}
-.hero-module:hover {
-  background: #EEF2F7;
-}
 
 .module-icon {
   width: 14px;
@@ -134,45 +53,6 @@ html, body {
   color: #2563EB;
 }
 
-/* =========================
-   INFO (Instructor / Location / Date)
-========================= */
-.hero-info {
-  display: flex;
-  gap: 40px;
-  margin-top: 24px;
-  flex-wrap: wrap;
-}
-
-.hero-info-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.hero-info-label {
-  font-size: 12px;
-  color: #6B7280;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.hero-info-value {
-  font-size: 14px;
-  font-weight: 500;
-  color: #111;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
 
 .btn-primary {
   background: #B91C1C;
@@ -204,56 +84,204 @@ html, body {
   color: #fff;
 }
 
+
+
+/* hover */
+
 /* =========================
-   TRUST LINE
+   HERO SECTION
 ========================= */
-.hero-trust {
-  margin-top: 10px;
-  font-size: 13px;
-  color: #6B7280;
+.hero-section {
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.hero-highlight {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-top: 20px;
+  color: #111827;
+}  
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
 /* =========================
-   IMAGE
+   LEFT CONTENT
+========================= */
+.hero-content {
+  max-width: 640px;
+}
+
+/* TITLE */
+.hero-title {
+  font-size: clamp(28px, 4vw, 46px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0F172A;
+  margin-bottom: 6px;
+}
+
+.hero-title span {
+  color: #B91C1C;
+}
+
+/* SUBTITLE */
+.hero-subtitle {
+  font-size: 14px;
+  color: #6B7280;
+  margin-bottom: 14px;
+}
+
+/* DESCRIPTION */
+.hero-description {
+  font-size: 15px;
+  color: #4B5563;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   BENEFITS
+========================= */
+.hero-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.hero-benefit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #374151;
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.hero-benefit svg {
+  width: 15px;
+  height: 15px;
+  color: #B91C1C;
+}
+
+/* =========================
+   HERO BADGE
+========================= */
+.hero-badge {
+  display: inline-flex;
+  align-items: flex-start;
+  
+  gap: 6px;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  background: rgba(185, 28, 28, 0.08);
+  border: 1px solid rgba(185, 28, 28, 0.2);
+  color: #B91C1C;
+
+  margin-bottom: 12px;
+}
+
+/* ICON */
+.hero-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .hero-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}  
+/* =========================
+   META INFO
+========================= */
+.hero-meta {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  font-size: 11px;
+  color: #6B7280;
+  text-transform: uppercase;
+}
+
+.meta-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+  margin-top: 8px;
+ 
+}
+
+
+/* TRUST LINE */
+.hero-trust {
+  font-size: 13px;
+  color: #6B7280;   
+  text-align: left;
+}
+
+/* =========================
+   RIGHT IMAGE
 ========================= */
 .hero-image {
   text-align: center;
-  position: relative;
 }
 
 .hero-image img {
   width: 100%;
   max-width: 420px;
   border-radius: 12px;
-  display: block;
-  margin: 0 auto;
-  transition: 0.3s ease;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-.hero-image img:hover {
-  transform: translateY(-6px);
-}
-
-/* caption */
 .hero-caption {
-  margin-top: 16px;
-  font-size: 14px;
+  font-size: 13px;
   color: #6B7280;
-  max-width: 420px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-caption strong {
-  color: #111;
-  font-weight: 600;
+  margin-top: 10px;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
-
-/* TABLET + MOBILE */
 @media (max-width: 900px) {
 
   .hero-grid {
@@ -262,23 +290,26 @@ html, body {
   }
 
   .hero-content {
-    text-align: center;
+    margin: auto;
   }
 
   .hero-title {
-    font-size: 18px;
+    font-size: 26px;
   }
 
-  .hero-subtitle {
+  .hero-content h2 {
     font-size: 18px;
   }
 
   .hero-description {
     font-size: 14px;
-    margin: 0 auto;
   }
 
-  .hero-modules {
+  .hero-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-meta {
     justify-content: center;
   }
 
@@ -286,126 +317,17 @@ html, body {
     justify-content: center;
   }
 
-  .hero-info {
-    justify-content: center;
-    gap: 20px;
+  .hero-trust {
+    text-align: center;
   }
 
   .hero-image {
     margin-top: 40px;
   }
 }
-
-/* SMALL MOBILE */
-@media (max-width: 480px) {
-
-.hero-modules {
-    grid-template-columns: repeat(2, 1fr); /* equal width */
-    gap: 10px;
-  }
-
-  .hero-module {
-    justify-content: center;
-  }
-
   
-  .hero-title {
-    font-size: 20px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .btn-primary,
-  .btn-outline {
-    text-align: center;
-  }
-}
-
-
-.stat-pill{
-display:flex;
-align-items:center;
-justify-content:center;
-
-border:1px solid #E5E7EB;
-background:#FFFFFF;
-
-padding:12px 16px;
-border-radius:8px;
-
-font-size:14px;
-color:#374151;
-
-transition:all .2s ease;
-}
-
-/* hover */
-
-.stat-pill:hover{
-border-color:#CBD5E1;
-transform:translateY(-2px);
-}
-
-/* last stat full width */
-
-.stat-pill:last-child{
-grid-column:1 / -1;
-}
-
-@media (max-width:768px){
-
-.hero-stats{
-grid-template-columns:repeat(2,1fr);
-}
-
-.stat-pill:last-child{
-grid-column:1 / -1;
-}
-
-}
-@media (max-width:480px){
-
-.hero-stats{
-grid-template-columns:1fr;
-}
-
-.stat-pill:last-child{
-grid-column:auto;
-}
-
-}    
     
-@media (max-width:900px){
 
-.hero-grid{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.hero-description{
-margin-top: 20px:    
-}
-
-.hero-modules{
-margin:auto;
-}
-
-.hero-buttons{
-justify-content:center;
-}
-
-.hero-image{
-margin-top:40px;
-}
-
-.hero-content h1{
-font-size:34px;
-}
-
-}
        
 /* ---------------- WHAT YOU WILL LEARN ---------------- */
 
@@ -3394,41 +3316,47 @@ Hero Section
 <!-- LEFT CONTENT -->
 
 <div class="hero-content">
-
+<div class="hero-badge">
+  <i data-lucide="award"></i>
+  <span>CRTP® Training</span>
+</div>
 <h1 class="hero-title">
-  Active Directory Attacks for<br>
+  <span>Active Directory Attacks</span>  for
   Red and Blue Teams
 </h1>
-
 <p class="hero-subtitle">
   (Beginner's Edition)
 </p>
+  <p class="hero-highlight">Master Real Active Directory Attacks in Live Enterprise Lab Environments</p>
 
 <p class="hero-description">
-  This 3-day beginner class teaches you how to get started with Red Teaming.
-  It covers AD enumeration, trust mapping, Kerberos-based attacks, and defense bypasses.
+ Learn how to identify, exploit, and defend real-world Active Directory attack paths using hands-on labs and techniques used in modern red team engagements.
 </p>
   
-<div class="hero-modules">
+<div class="hero-benefits">
 
-  <div class="hero-module">   
-    <span>Instructor-Led</span>
+  <div class="hero-benefit">
+    <i data-lucide="network"></i>
+    <span>Perform real Active Directory attacks step-by-step</span>
   </div>
-<div class="hero-module">   
-    <span>CRTP</span>
+
+  <div class="hero-benefit">
+    <i data-lucide="server"></i>
+    <span>Practice in enterprise-grade lab environments</span>
   </div>
-  
- <div class="hero-module">   
-    <span>60 Day Lab Access</span>
+
+  <div class="hero-benefit">
+    <i data-lucide="activity"></i>
+    <span>Learn techniques used in real red team engagements</span>
   </div>
-   
- <div class="hero-module">   
-    <span> Course Completion Certificate</span>
+
+  <div class="hero-benefit">
+    <i data-lucide="zap"></i>
+    <span>Master offensive security skills</span>
   </div>
-  <div class="hero-module">   
-    <span>Video Included</span>
-  </div>
+
 </div>  
+
 <div class="hero-meta">
 
   <div class="meta-item">
@@ -3484,23 +3412,7 @@ Hero Feature Modules
    
 
 </section>
-<nav class="section-nav" id="sectionNav">
-  <div class="section-nav-container">
 
-    <a href="#overview">Course Overview</a>
-    <a href="#training-details">Training Details</a>
-    <a href="#curriculum">Curriculum</a> 
-    <a href="#certification">Certification</a>   
-    <a href="#schedule">Schedule</a> 
-    <a href="#prerequisites">Prerequisites</a>  
-    <a href="#enroll">Enroll</a>  
-    <a href="#labs">Labs </a>       
-    <a href="#instructor">Instructor</a>
-    <a href="#audience">Audience</a> 
-    <a href="#venue">Venue</a> 
-    <a href="#faq">FAQ</a>
-  </div>
-</nav>      
 <section class="up-section">
 
   <div class="container">
@@ -3691,61 +3603,7 @@ Participants work through guided attack scenarios, labs, and capture-the-flag ch
 </div>
 
 </section>    
-<section class="up-section" id="overview">
-<div class="container">
-<span class="section-eyebrow" >Course Overview</span>
-<h2 class="curriculum-title">What You Will Learn in This Hands-On Training</h2>
-<p class="learn-intro">
-This beginner-friendly training introduces practical Red Team techniques used in modern
-Active Directory environments. Participants learn how attackers enumerate domains,
-map trust relationships, escalate privileges, and bypass common enterprise defenses.
-</p>
-
-<div class="learn-layout">
-
-<div class="learn-image">
-<img src="https://redteamverse.github.io/red-team-training/images/CRTP%20active%20directory%20attacks%20alt.png" alt="Active Directory Attack Techniques">
-</div>
-
-<div class="learn-points">
-
-<div class="learn-point">
-<span class="point-icon">→</span>
-Active Directory Enumeration
-</div>
-
-<div class="learn-point">
-<span class="point-icon">→</span>
-Trust Mapping & Domain Relationships
-</div>
-
-<div class="learn-point">
-<span class="point-icon">→</span>
-Kerberos Based Attacks
-</div>
-
-<div class="learn-point">
-<span class="point-icon">→</span>
-Domain Privilege Escalation
-</div>
-
-<div class="learn-point">
-<span class="point-icon">→</span>
-SQL Server Trust Abuse
-</div>
-
-<div class="learn-point">
-<span class="point-icon">→</span>
-Defenses and Bypass Techniques
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>  
+  
 
 <section class="top-section" id="curriculum">
 
@@ -3870,6 +3728,228 @@ privilege escalation, persistence, and enterprise attack paths in Active Directo
 
 </div>
 </section>   
+<section class="up-section" id="certification">
+
+  <div class="container">
+
+    <!-- HEADING -->
+    <div class="cert-intro">
+      <span class="section-eyebrow">CERTIFICATION</span>
+      <h2 class="learn-intro">Build Recognized Red Team Credentials Through This Training</h2>
+      <p class="lead">
+        Participants who complete the training can attempt the Certified Red Team
+        Professional (CRTP®) certification - a hands-on exam focused on Active
+        Directory attack tradecraft.
+      </p>
+    </div>
+
+    <!-- IMAGE + CARD PAIRS -->
+    <div class="cert-pair">
+
+      <!-- ITEM 1 -->
+      <div class="cert-item">
+
+        <div class="cert-image">
+          <img src="https://redteamverse.github.io/red-team-training/images/CRTP_Certificate.png" alt="CRTP Certification">
+        </div>
+
+        <div class="cert-card">
+          <h3>Earn CRTP® Certification for Real-World Active Directory Skills</h3>
+          <ul>
+            <li>Industry recognized Red Team certification</li>
+            <li>Hands-on Active Directory attack exam</li>
+            <li>Demonstrates practical Red Team skills</li>
+            <li>Focus on enumeration, privilege escalation and lateral movement</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="cert-item">
+
+        <div class="cert-image">
+          <img src="https://redteamverse.github.io/red-team-training/images/demo-cert.avif" alt="Course Completion Certificate">
+        </div>
+
+        <div class="cert-card">
+          <h3>Course Completion Certificate Recognizing Your Hands-On Training Achievement</h3>
+          <ul>
+            <li>Issued after completing the training</li>
+            <li>Confirms participation in hands-on labs</li>
+            <li>Validates knowledge of Red Team fundamentals</li>
+            <li>Shareable credential for professional profiles</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>    
+<section class="top-section" id="schedule">
+
+  <div class="container">
+    <span class="section-eyebrow" >Training Schedule</span>
+    <!-- HEADER -->
+    <h2 class="curriculum-title">3-Day Red Team Training Schedule with Practical Skill Progression</h2>
+
+    <p class="section-subtitle">
+      Daily 8-hour sessions from <strong>09:00 AM</strong> to <strong>05:00 PM IST</strong>.
+    </p>
+
+    <!-- SCHEDULE TABLE -->
+    <div class="schedule-table">
+
+      <!-- ROW 1 -->
+      <div class="schedule-row">
+        <div class="schedule-date">
+          <span class="day">31</span>
+          <span class="month">Oct 2026</span>
+        </div>
+
+        <div class="schedule-content">
+          <h3>Day 1 – Foundations of Enumeration and Tradecraft</h3>
+          <p>Enumeration, Offensive PowerShell and .NET Tradecraft</p>
+        </div>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="schedule-row">
+        <div class="schedule-date">
+          <span class="day">01</span>
+          <span class="month">Nov 2026</span>
+        </div>
+
+        <div class="schedule-content">
+          <h3>Day 2 – Lateral Movement and Privilege Escalation</h3>
+          <p>Lateral Movement, Domain Privilege Escalation and Persistence</p>
+        </div>
+      </div>
+
+      <!-- ROW 3 -->
+      <div class="schedule-row">
+        <div class="schedule-date">
+          <span class="day">02</span>
+          <span class="month">Nov 2026</span>
+        </div>
+
+        <div class="schedule-content">
+          <h3>Day 3 – Enterprise Dominance and Defense Evasion</h3>
+          <p>
+            Domain Persistence, Dominance and Escalation to Enterprise Admins.<br>
+            Defenses, Monitoring and Bypassing Defenses
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>  
+<section class="top-section" id="prerequisites">
+
+<div class="container">
+
+<span class="section-eyebrow">Requirements</span>
+
+<h2 class="curriculum-title">Prerequisites and Skills Required Before Attending This Training</h2>
+
+<p class="learn-intro">
+Make sure you are comfortable with the following before attending the training.
+</p>
+
+<ul class="prereq-list">
+
+<li>
+<span class="check-icon">✓</span>
+Basic understanding of Active Directory
+</li>
+
+<li>
+<span class="check-icon">✓</span>
+Ability to use Windows command line tools (PowerShell / CMD)
+</li>
+
+<li>
+<span class="check-icon">✓</span>
+Familiarity with Windows administration concepts
+</li>
+<li>
+<span class="check-icon">✓</span>
+Bring Your Own Laptops with Windows 10 /11 or recent MacOS
+</li>
+<li>
+<span class="check-icon">✓</span>
+A recent web-browser (Chrome would be preferred)
+</li>
+</ul>
+
+</div>
+
+</section>    
+<section class="up-section" id="enroll">
+
+  <div class="container">
+    <span class="section-eyebrow">Purchase</span>
+    <h2 class="curriculum-title">Enroll in CRTP® Training and Secure Your Seat</h2>
+    <p class="learn-intro">
+      Hands-on Red Team training with enterprise labs, certification, and lifetime learning access.
+    </p>
+
+    <div class="pricing-grid">
+
+      <!-- EARLY BIRD -->
+      <div class="pricing-card highlight">
+
+        <div class="badge">Early Bird - 10% OFF</div>
+
+        <h3>Early Bird Price</h3>
+
+        <div class="price">
+          ₹35,999 <span>+ GST</span>
+        </div>
+        <p class="note-text">Only 50 seats are left</p>
+        <!-- FEATURES -->
+        <ul class="features-list">
+          <li>60 Days Lab Access</li>
+          <li>Course Completion Certificate</li>
+          <li>Lifetime Course Material Access</li>
+          <li>1 Certification Exam Attempt</li>
+          <li>Instructor-led Sessions</li>
+        </ul>
+
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-primary full">
+          Enroll Now
+        </a>
+
+      </div>
+
+      <!-- REGULAR -->
+      <div class="pricing-card">
+
+        <h3>Regular Price</h3>
+        
+        <div class="price">
+          ₹39,999 <span>+ GST</span>
+        </div>
+         <p class="note-text">Available after early bird offers ends</p>
+        
+
+        <a href="#" class="btn-outline full disabled">
+  Enroll Now
+      </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>  
 <section class="top-section" id="labs">
 
   <div class="container">
@@ -3960,7 +4040,97 @@ privilege escalation, persistence, and enterprise attack paths in Active Directo
 
   </div>
 
+</section>
+
+<section class="up-section">
+
+<div class="container">
+
+<span class="section-eyebrow">Social Proof</span>
+
+<h2 class="curriculum-title">
+Trusted by Security Professionals and Organizations Worldwide
+</h2>
+
+<!-- Trust Metrics -->
+
+<div class="trust-metrics">
+
+<div class="metric">
+<span class="metric-number">50,000+</span>
+<span class="metric-label">Professionals Trained Across Red Team and Security Domains</span>
+</div>
+
+<div class="metric">
+<span class="metric-number">130+</span>
+<span class="metric-label">Countries with Active Learners and Security Teams</span>
+</div>
+
+<div class="metric">
+<span class="metric-number">600+</span>
+<span class="metric-label">Organizations Using Our Training and Programs</span>
+</div>
+
+<div class="metric">
+<span class="metric-number">5000+</span>
+<span class="metric-label">Hands-On Attack Simulations Practiced Every Day</span>
+</div>
+
+</div>
+
+
+<!-- Testimonials -->
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+
+<p class="testimonial-text">
+“The labs simulate real enterprise Active Directory environments.
+One of the most practical Red Team trainings I have attended.”
+</p>
+
+<p class="testimonial-author">
+Senior Security Engineer
+</p>
+
+</div>
+
+
+<div class="testimonial-card">
+
+<p class="testimonial-text">
+“Clear explanations and hands-on labs make this course extremely valuable
+for anyone learning Red Team tradecraft.”
+</p>
+
+<p class="testimonial-author">
+Red Team Operator
+</p>
+
+</div>
+
+
+<div class="testimonial-card">
+
+<p class="testimonial-text">
+“Excellent coverage of Active Directory attacks with practical
+techniques that can be applied in real-world environments.”
+</p>
+
+<p class="testimonial-author">
+Penetration Tester
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>  
+
+
 <section class="up-section" id="instructor">
 
 <div class="container">
@@ -4073,155 +4243,14 @@ Instructor Content Grid
 
 </div>
 
-</section>  
-<section class="up-section">
+</section>
+<!-- =========================
+Social Proof Section
+========================= -->
 
-<div class="container">
-
-<span class="section-eyebrow">Social Proof</span>
-
-<h2 class="curriculum-title">
-Trusted by Security Professionals and Organizations Worldwide
-</h2>
-
-<!-- Trust Metrics -->
-
-<div class="trust-metrics">
-
-<div class="metric">
-<span class="metric-number">50,000+</span>
-<span class="metric-label">Professionals Trained Across Red Team and Security Domains</span>
-</div>
-
-<div class="metric">
-<span class="metric-number">130+</span>
-<span class="metric-label">Countries with Active Learners and Security Teams</span>
-</div>
-
-<div class="metric">
-<span class="metric-number">600+</span>
-<span class="metric-label">Organizations Using Our Training and Programs</span>
-</div>
-
-<div class="metric">
-<span class="metric-number">5000+</span>
-<span class="metric-label">Hands-On Attack Simulations Practiced Every Day</span>
-</div>
-
-</div>
-
-
-<!-- Testimonials -->
-
-<div class="testimonial-grid">
-
-<div class="testimonial-card">
-
-<p class="testimonial-text">
-“The labs simulate real enterprise Active Directory environments.
-One of the most practical Red Team trainings I have attended.”
-</p>
-
-<p class="testimonial-author">
-Senior Security Engineer
-</p>
-
-</div>
-
-
-<div class="testimonial-card">
-
-<p class="testimonial-text">
-“Clear explanations and hands-on labs make this course extremely valuable
-for anyone learning Red Team tradecraft.”
-</p>
-
-<p class="testimonial-author">
-Red Team Operator
-</p>
-
-</div>
-
-
-<div class="testimonial-card">
-
-<p class="testimonial-text">
-“Excellent coverage of Active Directory attacks with practical
-techniques that can be applied in real-world environments.”
-</p>
-
-<p class="testimonial-author">
-Penetration Tester
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>    
-<section class="up-section" id="certification">
-
-  <div class="container">
-
-    <!-- HEADING -->
-    <div class="cert-intro">
-      <span class="section-eyebrow">CERTIFICATION</span>
-      <h2 class="learn-intro">Build Recognized Red Team Credentials Through This Training</h2>
-      <p class="lead">
-        Participants who complete the training can attempt the Certified Red Team
-        Professional (CRTP®) certification - a hands-on exam focused on Active
-        Directory attack tradecraft.
-      </p>
-    </div>
-
-    <!-- IMAGE + CARD PAIRS -->
-    <div class="cert-pair">
-
-      <!-- ITEM 1 -->
-      <div class="cert-item">
-
-        <div class="cert-image">
-          <img src="https://redteamverse.github.io/red-team-training/images/CRTP_Certificate.png" alt="CRTP Certification">
-        </div>
-
-        <div class="cert-card">
-          <h3>Earn CRTP® Certification for Real-World Active Directory Skills</h3>
-          <ul>
-            <li>Industry recognized Red Team certification</li>
-            <li>Hands-on Active Directory attack exam</li>
-            <li>Demonstrates practical Red Team skills</li>
-            <li>Focus on enumeration, privilege escalation and lateral movement</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- ITEM 2 -->
-      <div class="cert-item">
-
-        <div class="cert-image">
-          <img src="https://redteamverse.github.io/red-team-training/images/demo-cert.avif" alt="Course Completion Certificate">
-        </div>
-
-        <div class="cert-card">
-          <h3>Course Completion Certificate Recognizing Your Hands-On Training Achievement</h3>
-          <ul>
-            <li>Issued after completing the training</li>
-            <li>Confirms participation in hands-on labs</li>
-            <li>Validates knowledge of Red Team fundamentals</li>
-            <li>Shareable credential for professional profiles</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>    
+<!-- =========================
+Social Proof Section
+========================= -->
 <section class="top-section" id="audience">
 
   <div class="container">
@@ -4301,183 +4330,7 @@ Penetration Tester
 
   </div>
 
-</section>  
-<section class="top-section" id="prerequisites">
-
-<div class="container">
-
-<span class="section-eyebrow">Requirements</span>
-
-<h2 class="curriculum-title">Prerequisites and Skills Required Before Attending This Training</h2>
-
-<p class="learn-intro">
-Make sure you are comfortable with the following before attending the training.
-</p>
-
-<ul class="prereq-list">
-
-<li>
-<span class="check-icon">✓</span>
-Basic understanding of Active Directory
-</li>
-
-<li>
-<span class="check-icon">✓</span>
-Ability to use Windows command line tools (PowerShell / CMD)
-</li>
-
-<li>
-<span class="check-icon">✓</span>
-Familiarity with Windows administration concepts
-</li>
-<li>
-<span class="check-icon">✓</span>
-Bring Your Own Laptops with Windows 10 /11 or recent MacOS
-</li>
-<li>
-<span class="check-icon">✓</span>
-A recent web-browser (Chrome would be preferred)
-</li>
-</ul>
-
-</div>
-
-</section>   
-<section class="top-section" id="schedule">
-
-  <div class="container">
-    <span class="section-eyebrow" >Training Schedule</span>
-    <!-- HEADER -->
-    <h2 class="curriculum-title">3-Day Red Team Training Schedule with Practical Skill Progression</h2>
-
-    <p class="section-subtitle">
-      Daily 8-hour sessions from <strong>09:00 AM</strong> to <strong>05:00 PM IST</strong>.
-    </p>
-
-    <!-- SCHEDULE TABLE -->
-    <div class="schedule-table">
-
-      <!-- ROW 1 -->
-      <div class="schedule-row">
-        <div class="schedule-date">
-          <span class="day">31</span>
-          <span class="month">Oct 2026</span>
-        </div>
-
-        <div class="schedule-content">
-          <h3>Day 1 – Foundations of Enumeration and Tradecraft</h3>
-          <p>Enumeration, Offensive PowerShell and .NET Tradecraft</p>
-        </div>
-      </div>
-
-      <!-- ROW 2 -->
-      <div class="schedule-row">
-        <div class="schedule-date">
-          <span class="day">01</span>
-          <span class="month">Nov 2026</span>
-        </div>
-
-        <div class="schedule-content">
-          <h3>Day 2 – Lateral Movement and Privilege Escalation</h3>
-          <p>Lateral Movement, Domain Privilege Escalation and Persistence</p>
-        </div>
-      </div>
-
-      <!-- ROW 3 -->
-      <div class="schedule-row">
-        <div class="schedule-date">
-          <span class="day">02</span>
-          <span class="month">Nov 2026</span>
-        </div>
-
-        <div class="schedule-content">
-          <h3>Day 3 – Enterprise Dominance and Defense Evasion</h3>
-          <p>
-            Domain Persistence, Dominance and Escalation to Enterprise Admins.<br>
-            Defenses, Monitoring and Bypassing Defenses
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>  
-   
-<section class="up-section" id="enroll">
-
-  <div class="container">
-    <span class="section-eyebrow">Purchase</span>
-    <h2 class="curriculum-title">Enroll in CRTP® Training and Secure Your Seat</h2>
-    <p class="learn-intro">
-      Hands-on Red Team training with enterprise labs, certification, and lifetime learning access.
-    </p>
-
-    <div class="pricing-grid">
-
-      <!-- EARLY BIRD -->
-      <div class="pricing-card highlight">
-
-        <div class="badge">Early Bird - 10% OFF</div>
-
-        <h3>Early Bird Price</h3>
-
-        <div class="price">
-          ₹35,999 <span>+ GST</span>
-        </div>
-        <p class="note-text">Only 50 seats are left</p>
-        <!-- FEATURES -->
-        <ul class="features-list">
-          <li>60 Days Lab Access</li>
-          <li>Course Completion Certificate</li>
-          <li>Lifetime Course Material Access</li>
-          <li>1 Certification Exam Attempt</li>
-          <li>Instructor-led Sessions</li>
-        </ul>
-
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-primary full">
-          Enroll Now
-        </a>
-
-      </div>
-
-      <!-- REGULAR -->
-      <div class="pricing-card">
-
-        <h3>Regular Price</h3>
-        
-        <div class="price">
-          ₹39,999 <span>+ GST</span>
-        </div>
-         <p class="note-text">Available after early bird offers ends</p>
-        
-
-        <a href="#" class="btn-outline full disabled">
-  Enroll Now
-      </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>  
-
-
-
-
-
-
-<!-- =========================
-Social Proof Section
-========================= -->
-
-<!-- =========================
-Social Proof Section
-========================= -->
-
+</section>
 <section class="up-section" id="venue">
 
   <div class="container">
