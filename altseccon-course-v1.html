@@ -269,6 +269,102 @@ html, body {
   text-align: left;
 }
 
+/* RIGHT SIDE */
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CARD */
+.visual-card {
+  position: relative;
+
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+
+  padding: 24px;
+
+  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+
+  max-width: 620px; /* 🔥 increased */
+  width: 100%;
+}
+@media (max-width: 768px) {
+
+  .visual-img-wrap img {
+    transform: scale(1.08); /* slight boost only */
+  }
+
+}
+/* IMAGE WRAPPER */
+.visual-img-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* IMAGE FIX (NO CROP) */
+.visual-img-wrap img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  /* 🔥 make it feel bigger WITHOUT cropping */
+  transform: scale(1.05);
+}
+
+/* BADGE */
+.visual-badge {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+
+  background: #B91C1C;
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  box-shadow: 0 6px 16px rgba(185,28,28,0.3);
+}
+
+/* CAPTION */
+.visual-caption {
+  font-size: 13px;
+  color: #6B7280;
+  margin-top: 14px;
+  text-align: center;
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+
+  .visual-card {
+    max-width: 100%;
+    padding: 14px;
+  }
+
+  .visual-img-wrap {
+    height: 180px; /* smaller but still strong */
+  }
+
+  .visual-img-wrap img {
+    width: 120%; /* more zoom on mobile */
+  }
+
+  .visual-caption {
+    font-size: 12px;
+  }
+}
 /* =========================
    RIGHT IMAGE
 ========================= */
@@ -3678,6 +3774,105 @@ RESPONSIVE
   color: #1E3A8A;  
   stroke-width: 2;  
   }  
+/* =========================
+   HERO CONTENT WRAPPER (ONE BLOCK)
+========================= */
+.hero-content {
+  max-width: 620px;
+  margin: 0 auto;
+
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  
+  border-radius: 14px;
+
+  padding: 26px 22px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+
+  text-align: center;
+}
+
+/* =========================
+   HEADLINE (HIGHLIGHT)
+========================= */
+.hero-highlight {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+.hero-description {
+  font-size: 14px;
+  color: #4B5563;
+  line-height: 1.6;
+
+  margin-bottom: 18px;
+}
+
+/* =========================
+   BENEFITS WRAPPER
+========================= */
+.hero-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* =========================
+   SINGLE BENEFIT ROW
+========================= */
+.hero-benefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 12px;
+  border-radius: 8px;
+
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+
+  font-size: 14px;
+  color: #374151;
+}
+
+/* ICON */
+.hero-benefit svg {
+  width: 16px;
+  height: 16px;
+  color: #B91C1C;
+  flex-shrink: 0;
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+@media (max-width: 768px) {
+
+  .hero-content {
+    padding: 20px 16px;
+  }
+
+  .hero-highlight {
+    font-size: 18px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-benefit {
+    font-size: 13px;
+    padding: 9px 10px;
+  }
+}  
 </style>
 </head>
 
@@ -3766,7 +3961,7 @@ Hero Section
 
   <div class="hero-benefit">
     <i data-lucide="check"></i>
-    <span>Practice in enterprise-grade lab environments</span>
+    <span>Train in a fully configured enterprise lab</span>
   </div>
 
   <div class="hero-benefit">
@@ -3822,13 +4017,23 @@ Hero Feature Modules
 
 <!-- HERO IMAGE -->
 
-<div class="hero-image">
+<div class="hero-visual">
 
-  <img src="https://static.wixstatic.com/media/470c31_33920ce03254499483e54c9df75654ce~mv2.png" alt="CRTP Certificate">
+  <div class="visual-card">
 
-  <p class="hero-caption">
-    Earn the <strong>Certified Red Team Professional (CRTP®)</strong> certification
-  </p>
+    <div class="visual-badge">
+      Live Enterprise Lab
+    </div>
+
+    <div class="visual-img-wrap">
+      <img src="https://static.wixstatic.com/media/470c31_33920ce03254499483e54c9df75654ce~mv2.png" alt="AD Lab Diagram">
+    </div>
+
+    <p class="visual-caption">
+      Real enterprise Active Directory attack paths simulated in lab
+    </p>
+
+  </div>
 
 </div>
 
