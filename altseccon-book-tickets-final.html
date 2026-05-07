@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>AltSecCON 2026 - Booking</title>
+<title>AltSecCON 2026 Booking</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,34 +16,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <style>
 
-/* =========================
-ROOT
-========================= */
-
 :root{
 
   --bg:#040816;
-
   --card:#081120;
-  --card2:#0B1325;
-
   --border:#17233D;
 
   --text:#F8FAFC;
   --muted:#94A3B8;
 
   --red:#C1121F;
-  --red2:#EF4444;
-
   --green:#22C55E;
   --blue:#2563EB;
   --purple:#A855F7;
 
 }
-
-/* =========================
-BASE
-========================= */
 
 *{
   margin:0;
@@ -58,58 +45,42 @@ body{
   background:
   radial-gradient(circle at top right,
   rgba(193,18,31,.12),
-  transparent 28%),
+  transparent 30%),
 
-  linear-gradient(180deg,#030712 0%, #071126 100%);
+  linear-gradient(180deg,#020617 0%, #071126 100%);
 
   color:var(--text);
 
 }
 
-button,
-input,
-select{
-  font-family:'Inter',sans-serif;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-/* =========================
-PAGE
-========================= */
-
-.altx-booking-page{
+.altx-wrap{
 
   max-width:1450px;
   margin:auto;
 
-  padding:44px 22px;
+  padding:42px 22px;
 
 }
 
-.altx-header{
+.altx-head{
 
   text-align:center;
-
-  margin-bottom:34px;
+  margin-bottom:36px;
 
 }
 
-.altx-header span{
+.altx-head span{
 
   color:#60A5FA;
 
   font-size:12px;
-  font-weight:700;
-
   letter-spacing:.22em;
   text-transform:uppercase;
+  font-weight:700;
 
 }
 
-.altx-header h1{
+.altx-head h1{
 
   font-size:58px;
   line-height:1.05;
@@ -120,11 +91,11 @@ PAGE
 
 }
 
-.altx-header h1 strong{
+.altx-head h1 strong{
   color:#EF4444;
 }
 
-.altx-header p{
+.altx-head p{
 
   max-width:840px;
   margin:18px auto 0;
@@ -136,20 +107,18 @@ PAGE
 
 }
 
-/* =========================
-OFFER BAR
-========================= */
+/* ===================== */
 
-.altx-offer{
+.altx-top-offer{
 
-  margin:26px auto 42px;
+  max-width:950px;
 
-  max-width:940px;
+  margin:0 auto 42px;
 
   background:
   linear-gradient(135deg,
-  rgba(193,18,31,.15),
-  rgba(37,99,235,.10));
+  rgba(193,18,31,.12),
+  rgba(37,99,235,.08));
 
   border:1px solid rgba(255,255,255,.08);
 
@@ -166,34 +135,29 @@ OFFER BAR
 
 }
 
-.altx-offer i{
+.altx-top-offer i{
 
   color:#22C55E;
   font-size:22px;
 
 }
 
-.altx-offer h4{
+.altx-top-offer h4{
 
   font-size:17px;
-  font-weight:800;
-
   margin-bottom:5px;
 
 }
 
-.altx-offer p{
+.altx-top-offer p{
 
   color:#CBD5E1;
-
-  font-size:14px;
   line-height:1.6;
+  font-size:14px;
 
 }
 
-/* =========================
-LAYOUT
-========================= */
+/* ===================== */
 
 .altx-layout{
 
@@ -213,9 +177,7 @@ LAYOUT
 
 }
 
-/* =========================
-CARD
-========================= */
+/* ===================== */
 
 .altx-card{
 
@@ -224,13 +186,13 @@ CARD
 
   border:1px solid #17233D;
 
-  border-radius:26px;
+  border-radius:28px;
 
   padding:22px;
 
-  overflow:hidden;
-
   position:relative;
+
+  overflow:hidden;
 
 }
 
@@ -250,21 +212,19 @@ CARD
 
 }
 
-.altx-card.training{
-  border-color:rgba(34,197,94,.22);
+.altx-training{
+  border-color:rgba(34,197,94,.24);
 }
 
-.altx-card.combo{
-  border-color:rgba(168,85,247,.26);
+.altx-combo{
+  border-color:rgba(168,85,247,.24);
 }
 
-.altx-card.conf{
-  border-color:rgba(37,99,235,.25);
+.altx-conf{
+  border-color:rgba(37,99,235,.24);
 }
 
-/* =========================
-BADGE
-========================= */
+/* ===================== */
 
 .altx-badge{
 
@@ -276,43 +236,39 @@ BADGE
 
   border-radius:999px;
 
-  background:rgba(255,255,255,.04);
-
   border:1px solid rgba(255,255,255,.08);
+
+  background:rgba(255,255,255,.04);
 
   margin-bottom:18px;
 
   font-size:11px;
   font-weight:800;
 
-  letter-spacing:.08em;
   text-transform:uppercase;
+  letter-spacing:.08em;
 
 }
 
-.training .altx-badge{
+.altx-training .altx-badge{
   color:#4ADE80;
 }
 
-.combo .altx-badge{
+.altx-combo .altx-badge{
   color:#C084FC;
 }
 
-.conf .altx-badge{
+.altx-conf .altx-badge{
   color:#60A5FA;
 }
 
-/* =========================
-TITLE
-========================= */
+/* ===================== */
 
 .altx-title{
 
-  font-size:38px;
+  font-size:28px;
   line-height:1.05;
-
   font-weight:800;
-
   margin-bottom:14px;
 
 }
@@ -323,7 +279,7 @@ TITLE
   align-items:center;
   gap:10px;
 
-  margin-bottom:20px;
+  margin-bottom:22px;
 
   color:#E2E8F0;
 
@@ -336,11 +292,9 @@ TITLE
   color:#22C55E;
 }
 
-/* =========================
-FEATURES
-========================= */
+/* ===================== */
 
-.altx-features{
+.altx-list{
 
   list-style:none;
 
@@ -351,29 +305,27 @@ FEATURES
 
 }
 
-.altx-features li{
+.altx-list li{
 
   display:flex;
   align-items:flex-start;
   gap:12px;
 
-  color:#E2E8F0;
-
   font-size:14px;
   line-height:1.5;
 
+  color:#E2E8F0;
+
 }
 
-.altx-features i{
+.altx-list i{
 
   color:#22C55E;
   margin-top:3px;
 
 }
 
-/* =========================
-LABEL
-========================= */
+/* ===================== */
 
 .altx-mini{
 
@@ -383,15 +335,13 @@ LABEL
 
   color:#94A3B8;
 
-  margin-bottom:14px;
+  margin-bottom:12px;
 
   font-weight:700;
 
 }
 
-/* =========================
-COURSE SELECT
-========================= */
+/* ===================== */
 
 .altx-select{
 
@@ -400,25 +350,23 @@ COURSE SELECT
 
   border-radius:14px;
 
-  background:#0A1326;
-
   border:1px solid rgba(255,255,255,.08);
+
+  background:#0A1326;
 
   color:#fff;
 
   padding:0 16px;
 
-  font-size:14px;
+  margin-bottom:18px;
 
-  margin-bottom:16px;
+  font-size:14px;
 
 }
 
-/* =========================
-PRICE CARD
-========================= */
+/* ===================== */
 
-.altx-price-card{
+.altx-price-main{
 
   background:
   linear-gradient(135deg,
@@ -427,31 +375,34 @@ PRICE CARD
 
   border:1px solid rgba(255,255,255,.07);
 
-  border-radius:18px;
+  border-radius:20px;
 
-  padding:16px;
+  padding:18px;
 
 }
 
-.altx-price-top{
+.altx-main-top{
 
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  gap:10px;
+  gap:12px;
+
+  align-items:flex-start;
 
 }
 
-.altx-pass{
+.altx-main-top h4{
 
   font-size:18px;
   font-weight:800;
 
+  margin-bottom:8px;
+
 }
 
-.altx-price{
+.altx-current{
 
-  font-size:34px;
+  font-size:28px;
   font-weight:800;
 
   color:#22C55E;
@@ -460,53 +411,85 @@ PRICE CARD
 
 }
 
-/* =========================
-INFO BOX
-========================= */
+.altx-old{
 
-.altx-info{
+  color:#94A3B8;
 
-  margin-top:10px;
+  font-size:15px;
+
+  text-decoration:line-through;
+
+  margin-top:7px;
+
+}
+
+/* ===================== */
+
+.altx-offer-box{
+
+  margin-top:14px;
+
+  border-top:1px solid rgba(255,255,255,.07);
+
+  padding-top:14px;
+
+  display:grid;
+  gap:10px;
+
+}
+
+.altx-offer-row{
 
   background:
   linear-gradient(135deg,
-  rgba(34,197,94,.08),
-  rgba(37,99,235,.08));
+  rgba(255,255,255,.03),
+  rgba(255,255,255,.015));
 
   border:1px solid rgba(255,255,255,.06);
 
   border-radius:14px;
 
-  padding:12px 14px;
+  padding:14px;
 
 }
 
-.altx-info h5{
+.altx-offer-row h5{
 
-  font-size:13px;
+  font-size:15px;
   font-weight:800;
 
-  margin-bottom:6px;
+  margin-bottom:4px;
 
 }
 
-.altx-info p{
+.altx-offer-row p{
 
   color:#CBD5E1;
 
   font-size:12px;
-  line-height:1.6;
+  line-height:1.5;
 
 }
 
-/* =========================
-BUTTON
-========================= */
+.altx-offer-row strong{
+
+  display:block;
+
+  margin-top:8px;
+
+  color:#22C55E;
+
+  font-size:22px;
+  font-weight:800;
+
+}
+
+/* ===================== */
 
 .altx-btn{
 
   width:100%;
-  height:48px;
+  height:50px;
 
   border:none;
   border-radius:14px;
@@ -521,13 +504,11 @@ BUTTON
 
   cursor:pointer;
 
-  margin-top:14px;
+  margin-top:18px;
 
 }
 
-/* =========================
-SUMMARY
-========================= */
+/* ===================== */
 
 .altx-summary{
 
@@ -539,7 +520,7 @@ SUMMARY
 
   border:1px solid #17233D;
 
-  border-radius:26px;
+  border-radius:28px;
 
   padding:24px;
 
@@ -547,24 +528,20 @@ SUMMARY
 
 .altx-summary h3{
 
-  font-size:26px;
+  font-size:28px;
   margin-bottom:18px;
 
 }
 
-/* =========================
-ITEMS
-========================= */
+/* ===================== */
 
-.altx-items{
+.altx-cart{
 
   display:grid;
   gap:12px;
 
-  max-height:500px;
+  max-height:520px;
   overflow:auto;
-
-  scroll-behavior:smooth;
 
 }
 
@@ -586,7 +563,7 @@ ITEMS
 
   border-radius:18px;
 
-  padding:15px;
+  padding:16px;
 
 }
 
@@ -638,7 +615,7 @@ ITEMS
 
 }
 
-.altx-qty-box{
+.altx-qty{
 
   display:flex;
   align-items:center;
@@ -646,7 +623,7 @@ ITEMS
 
 }
 
-.altx-qty-btn{
+.altx-qty button{
 
   width:30px;
   height:30px;
@@ -658,19 +635,9 @@ ITEMS
 
   color:#fff;
 
-  cursor:pointer;
-
   font-weight:800;
 
-}
-
-.altx-qty{
-
-  min-width:16px;
-  text-align:center;
-
-  font-size:14px;
-  font-weight:700;
+  cursor:pointer;
 
 }
 
@@ -688,15 +655,13 @@ ITEMS
 
 }
 
-/* =========================
-TOTAL
-========================= */
+/* ===================== */
 
 .altx-total{
 
   margin-top:22px;
 
-  padding-top:20px;
+  padding-top:22px;
 
   border-top:1px solid rgba(255,255,255,.08);
 
@@ -724,13 +689,11 @@ TOTAL
 
 }
 
-/* =========================
-LOGIN
-========================= */
+/* ===================== */
 
 .altx-login{
 
-  margin-top:20px;
+  margin-top:22px;
 
   background:
   linear-gradient(135deg,
@@ -745,23 +708,21 @@ LOGIN
 
 }
 
-.altx-login-title{
+.altx-login h4{
 
-  font-size:15px;
-  font-weight:800;
-
+  font-size:16px;
   margin-bottom:14px;
 
 }
 
-.altx-login-form{
+.altx-login-grid{
 
   display:grid;
   gap:12px;
 
 }
 
-.altx-login-form input{
+.altx-login-grid input{
 
   width:100%;
   height:50px;
@@ -772,11 +733,9 @@ LOGIN
 
   background:#0A1326;
 
-  padding:0 15px;
-
   color:#fff;
 
-  font-size:14px;
+  padding:0 15px;
 
 }
 
@@ -800,9 +759,7 @@ LOGIN
 
 }
 
-/* =========================
-RESPONSIVE
-========================= */
+/* ===================== */
 
 @media(max-width:1260px){
 
@@ -827,11 +784,11 @@ RESPONSIVE
 
 @media(max-width:640px){
 
-  .altx-booking-page{
+  .altx-wrap{
     padding:28px 14px;
   }
 
-  .altx-header h1{
+  .altx-head h1{
     font-size:38px;
   }
 
@@ -839,7 +796,7 @@ RESPONSIVE
     font-size:30px;
   }
 
-  .altx-price{
+  .altx-current{
     font-size:28px;
   }
 
@@ -853,28 +810,28 @@ RESPONSIVE
 </head>
 <body>
 
-<section class="altx-booking-page">
+<section class="altx-wrap">
 
   <!-- HEADER -->
 
-  <div class="altx-header">
+  <div class="altx-head">
 
     <span>AltSecCON 2026</span>
 
     <h1>
-      Reserve Your <strong>Training & Conference</strong> Seat
+      Secure Your <strong>Training & Conference</strong> Seat
     </h1>
 
     <p>
       Choose your preferred pass, select your training track,
-      and secure your hands-on red team experience.
+      and reserve your hands-on red team experience.
     </p>
 
   </div>
 
   <!-- OFFER -->
 
-  <div class="altx-offer">
+  <div class="altx-top-offer">
 
     <i class="fa-solid fa-bolt"></i>
 
@@ -886,12 +843,14 @@ RESPONSIVE
         Training: 20% OFF • Conference: 20% OFF •
         Combo Pass: Training 20% OFF + Conference 40% OFF
         <br>
-        Valid till 30 June 2026
+        Offer valid till 30 June 2026
       </p>
 
     </div>
 
   </div>
+
+  <!-- LAYOUT -->
 
   <div class="altx-layout">
 
@@ -899,11 +858,9 @@ RESPONSIVE
 
     <div class="altx-grid">
 
-      <!-- =========================
-      TRAINING
-      ========================= -->
+      <!-- TRAINING -->
 
-      <div class="altx-card training">
+      <div class="altx-card altx-training">
 
         <div class="altx-badge">
           <i class="fa-solid fa-laptop-code"></i>
@@ -911,7 +868,7 @@ RESPONSIVE
         </div>
 
         <h2 class="altx-title">
-          3-Day Training
+          3-Day Training Pass
         </h2>
 
         <div class="altx-date">
@@ -919,11 +876,11 @@ RESPONSIVE
           24–26 Oct 2026
         </div>
 
-        <ul class="altx-features">
+        <ul class="altx-list">
 
-          <li><i class="fa-solid fa-check"></i> Enterprise-grade AD & Azure labs</li>
+          <li><i class="fa-solid fa-check"></i> Enterprise AD & Azure attack labs</li>
 
-          <li><i class="fa-solid fa-check"></i> Hands-on red team attack paths</li>
+          <li><i class="fa-solid fa-check"></i> Real-world red team techniques</li>
 
           <li><i class="fa-solid fa-check"></i> 60 days extended lab access</li>
 
@@ -938,43 +895,42 @@ RESPONSIVE
         <select class="altx-select" id="trainingCourse">
 
           <option value="CRTP®">CRTP® - Active Directory Attacks</option>
-
           <option value="CRTE®">CRTE® - Red Team Expert</option>
-
           <option value="CARTP®">CARTP® - Azure Red Team</option>
-
           <option value="CARTE®">CARTE® - Azure Expert</option>
-
           <option value="CETP®">CETP® - Evasion Techniques</option>
 
         </select>
 
-        <div class="altx-price-card">
+        <div class="altx-price-main">
 
-          <div class="altx-price-top">
+          <div class="altx-main-top">
 
-            <div class="altx-pass">
-              Training Pass
+            <div>
+
+              
+
+              <div class="altx-current">
+                ₹39,999
+              </div>
+
+              <div class="altx-old">
+                ₹49,999
+              </div>
+              <div class="altx-offer-row">
+
+              <h5>Super Early Bird Active</h5>
+
+              <p>
+               •Offer ends on 30 June
+              </p>              
+
             </div>
-
-            <div class="altx-price">
-              ₹39,999
             </div>
 
           </div>
 
-          <div class="altx-info">
-
-            <h5>
-              Super Early Bird Active
-            </h5>
-
-            <p>
-              20% OFF on all training tracks •
-              Limited-time pricing till 30 June 2026
-            </p>
-
-          </div>
+          
 
           <button class="altx-btn"
           onclick="addTraining()">
@@ -982,14 +938,38 @@ RESPONSIVE
           </button>
 
         </div>
+<div class="altx-offer-box">
 
+            <div class="altx-offer-row">
+
+              <h5>Early Bird</h5>
+
+              <p>
+                15% OFF • Till 30 August
+              </p>
+
+              <strong>₹42,499</strong>
+
+            </div>
+
+            <div class="altx-offer-row">
+
+              <h5>Regular Pass</h5>
+
+              <p>
+                After offer ends
+              </p>
+
+              <strong>₹49,999</strong>
+
+            </div>
+
+          </div>
       </div>
 
-      <!-- =========================
-      COMBO
-      ========================= -->
+      <!-- COMBO -->
 
-      <div class="altx-card combo">
+      <div class="altx-card altx-combo">
 
         <div class="altx-badge">
           <i class="fa-solid fa-crown"></i>
@@ -997,7 +977,7 @@ RESPONSIVE
         </div>
 
         <h2 class="altx-title">
-          Training + Conference
+          Training + Conference Pass
         </h2>
 
         <div class="altx-date">
@@ -1005,13 +985,13 @@ RESPONSIVE
           24–27 Oct 2026
         </div>
 
-        <ul class="altx-features">
+        <ul class="altx-list">
 
           <li><i class="fa-solid fa-check"></i> Complete AltSecCON experience</li>
 
-          <li><i class="fa-solid fa-check"></i> Training + conference access</li>
+          <li><i class="fa-solid fa-check"></i> Conference + training access</li>
 
-          <li><i class="fa-solid fa-check"></i> Conference networking & keynotes</li>
+          <li><i class="fa-solid fa-check"></i> Networking & expert keynotes</li>
 
           <li><i class="fa-solid fa-check"></i> Certification + labs included</li>
 
@@ -1024,43 +1004,42 @@ RESPONSIVE
         <select class="altx-select" id="comboCourse">
 
           <option value="CRTP®">CRTP® - Active Directory Attacks</option>
-
           <option value="CRTE®">CRTE® - Red Team Expert</option>
-
           <option value="CARTP®">CARTP® - Azure Red Team</option>
-
           <option value="CARTE®">CARTE® - Azure Expert</option>
-
           <option value="CETP®">CETP® - Evasion Techniques</option>
 
         </select>
 
-        <div class="altx-price-card">
+        <div class="altx-price-main">
 
-          <div class="altx-price-top">
+          <div class="altx-main-top">
 
-            <div class="altx-pass">
-              Combo Access Pass
+            <div>
+
+              
+
+              <div class="altx-current">
+                ₹44,798
+              </div>
+
+              <div class="altx-old">
+                ₹54,798.4
+              </div>
+ <div class="altx-offer-row">
+
+              <h5>Super Early Bird Active</h5>
+
+              <p>
+               •Offer ends on 30 June
+              </p>              
+
             </div>
-
-            <div class="altx-price">
-              ₹44,798
             </div>
 
           </div>
 
-          <div class="altx-info">
-
-            <h5>
-              Super Early Bird Combo Pricing
-            </h5>
-
-            <p>
-              Training receives 20% OFF and conference access gets
-              an additional 40% OFF
-            </p>
-
-          </div>
+       
 
           <button class="altx-btn"
           onclick="addCombo()">
@@ -1068,14 +1047,38 @@ RESPONSIVE
           </button>
 
         </div>
+   <div class="altx-offer-box">
 
+            <div class="altx-offer-row">
+
+              <h5>Early Bird</h5>
+
+              <p>
+                Training 15% + Conference 40% • Till 30 August
+              </p>
+
+              <strong>₹47,298</strong>
+
+            </div>
+
+            <div class="altx-offer-row">
+
+              <h5>Regular</h5>
+
+              <p>
+                40% Conference discount included
+              </p>
+
+              <strong>₹54,798</strong>
+
+            </div>
+
+          </div>
       </div>
 
-      <!-- =========================
-      CONFERENCE
-      ========================= -->
+      <!-- CONFERENCE -->
 
-      <div class="altx-card conf">
+      <div class="altx-card altx-conf">
 
         <div class="altx-badge">
           <i class="fa-solid fa-microphone-lines"></i>
@@ -1083,7 +1086,7 @@ RESPONSIVE
         </div>
 
         <h2 class="altx-title">
-          1-Day Conference
+          1-Day Conference Pass
         </h2>
 
         <div class="altx-date">
@@ -1091,9 +1094,9 @@ RESPONSIVE
           27 Oct 2026
         </div>
 
-        <ul class="altx-features">
+        <ul class="altx-list">
 
-          <li><i class="fa-solid fa-check"></i> Global security keynotes & talks</li>
+          <li><i class="fa-solid fa-check"></i> Global security keynotes</li>
 
           <li><i class="fa-solid fa-check"></i> Red team case studies</li>
 
@@ -1105,29 +1108,37 @@ RESPONSIVE
 
         <!-- STUDENT -->
 
-        <div class="altx-price-card" style="margin-bottom:14px;">
+        <div class="altx-price-main"
+        style="margin-bottom:16px;">
 
-          <div class="altx-price-top">
+          <div class="altx-main-top">
 
-            <div class="altx-pass">
-              Student Pass
+            <div>
+            
+
+              <div class="altx-current">
+                ₹3,999
+              </div>
+               <div class="altx-offer-row">
+
+              
+                <h5>Super Early Bird Active</h5>
+              <p>
+               •Offer ends on 30 June
+              </p>  
+               <p>
+               •20 Students Tickets Only
+              </p> 
+                  <p>
+               •Students ID Card Needed
+              </p>
+
             </div>
+              <div class="altx-old">
+                ₹7,999
+              </div>
 
-            <div class="altx-price">
-              ₹3,999
             </div>
-
-          </div>
-
-          <div class="altx-info">
-
-            <h5>
-              Student Conference Offer
-            </h5>
-
-            <p>
-              50% OFF • Limited to first 20 student tickets
-            </p>
 
           </div>
 
@@ -1138,34 +1149,37 @@ RESPONSIVE
 
         </div>
 
-        <!-- NORMAL -->
+        <!-- REGULAR -->
 
-        <div class="altx-price-card">
+        <div class="altx-price-main">
 
-          <div class="altx-price-top">
+          <div class="altx-main-top">
 
-            <div class="altx-pass">
-              Conference Pass
-            </div>
+            <div>
 
-            <div class="altx-price">
-              ₹6,399
+              
+
+              <div class="altx-current">
+                ₹6,399
+              </div>
+
+              <div class="altx-old">
+                ₹7,999
+              </div>
+ <div class="altx-offer-row">
+
+              <h5>Super Early Bird Active</h5>
+
+              <p>
+               •Offer ends on 30 June
+              </p>              
+
+            </div> 
             </div>
 
           </div>
 
-          <div class="altx-info">
-
-            <h5>
-              Super Early Bird Active
-            </h5>
-
-            <p>
-              20% OFF conference pricing •
-              Valid till 30 June 2026
-            </p>
-
-          </div>
+          
 
           <button class="altx-btn"
           onclick="addConference()">
@@ -1173,20 +1187,48 @@ RESPONSIVE
           </button>
 
         </div>
+<div class="altx-offer-box">
 
+            <div class="altx-offer-row">
+
+              <h5>Early Bird</h5>
+
+              <p>
+                15% OFF • Till 30 August
+              </p>
+
+              <strong>₹6,799</strong>
+
+            </div>
+
+            <div class="altx-offer-row">
+
+              <h5>Regular</h5>
+
+              <p>
+                After offer ends
+              </p>
+
+              <strong>₹7,999</strong>
+
+            </div>
+
+          </div>
       </div>
 
     </div>
 
     <!-- SUMMARY -->
 
-    <aside class="altx-summary" id="summarySection">
+    <aside class="altx-summary"
+    id="summaryBox">
 
       <h3>
         Your Selection
       </h3>
 
-      <div class="altx-items" id="cartItems">
+      <div class="altx-cart"
+      id="cartItems">
 
         <div class="altx-empty">
           No passes selected yet.
@@ -1208,21 +1250,22 @@ RESPONSIVE
 
       </div>
 
-      <!-- LOGIN -->
-
       <div class="altx-login">
 
-        <div class="altx-login-title">
-          Login / Booking Details
-        </div>
+        <h4>
+          Booking Details
+        </h4>
 
-        <div class="altx-login-form">
+        <div class="altx-login-grid">
 
-          <input type="text" placeholder="Full Name">
+          <input type="text"
+          placeholder="Full Name">
 
-          <input type="email" placeholder="Email Address">
+          <input type="email"
+          placeholder="Email Address">
 
-          <input type="tel" placeholder="Phone Number">
+          <input type="tel"
+          placeholder="Phone Number">
 
           <button class="altx-checkout">
             Proceed to Checkout
@@ -1242,9 +1285,7 @@ RESPONSIVE
 
 let cart = [];
 
-/* =========================
-ADD ITEMS
-========================= */
+/* ==================== */
 
 function addTraining(){
 
@@ -1285,24 +1326,21 @@ function addConference(){
 function addConferenceStudent(){
 
   addItem(
-    "Student Conference Pass",
-    "Student Access",
+    "Student Pass",
+    "Student Conference Access",
     3999
   );
 
 }
 
-/* =========================
-CART LOGIC
-========================= */
+/* ==================== */
 
 function addItem(name,course,price){
 
-  const existing = cart.find(
-    item =>
-    item.name === name &&
-    item.course === course
-  );
+  const existing =
+  cart.find(item =>
+  item.name === name &&
+  item.course === course);
 
   if(existing){
 
@@ -1321,18 +1359,17 @@ function addItem(name,course,price){
 
   renderCart();
 
-  // auto scroll to summary
-
   document
-  .getElementById("summarySection")
+  .getElementById("summaryBox")
   .scrollIntoView({
-    behavior:"smooth",
-    block:"start"
+    behavior:"smooth"
   });
 
 }
 
-function increaseQty(index){
+/* ==================== */
+
+function increase(index){
 
   cart[index].qty += 1;
 
@@ -1340,7 +1377,7 @@ function increaseQty(index){
 
 }
 
-function decreaseQty(index){
+function decrease(index){
 
   if(cart[index].qty > 1){
 
@@ -1364,13 +1401,11 @@ function removeItem(index){
 
 }
 
-/* =========================
-RENDER
-========================= */
+/* ==================== */
 
 function renderCart(){
 
-  const container =
+  const cartEl =
   document.getElementById("cartItems");
 
   const totalEl =
@@ -1378,7 +1413,7 @@ function renderCart(){
 
   if(cart.length === 0){
 
-    container.innerHTML = `
+    cartEl.innerHTML = `
       <div class="altx-empty">
         No passes selected yet.
       </div>
@@ -1425,19 +1460,15 @@ function renderCart(){
 
         <div class="altx-item-bottom">
 
-          <div class="altx-qty-box">
+          <div class="altx-qty">
 
-            <button class="altx-qty-btn"
-            onclick="decreaseQty(${index})">
+            <button onclick="decrease(${index})">
               -
             </button>
 
-            <div class="altx-qty">
-              ${item.qty}
-            </div>
+            <span>${item.qty}</span>
 
-            <button class="altx-qty-btn"
-            onclick="increaseQty(${index})">
+            <button onclick="increase(${index})">
               +
             </button>
 
@@ -1456,7 +1487,7 @@ function renderCart(){
 
   });
 
-  container.innerHTML = html;
+  cartEl.innerHTML = html;
 
   totalEl.innerText =
   "₹" + total.toLocaleString("en-IN");
