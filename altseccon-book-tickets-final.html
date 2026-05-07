@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AltSecCON Booking</title>
+
+<style>
+
+:root{
+  --primary:#B91C1C;
+  --primary-light:#EA3037;
+  --bg:#fff;
+  --bg-light:#F9FAFB;
+  --border:#E5E7EB;
+  --text:#111827;
+  --muted:#6B7280;
+  --green:#16A34A;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:system-ui;
+  background:#fff;
+  color:var(--text);
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* HEADER */
+
+.page-title{
+  font-size:48px;
+  margin-bottom:30px;
+  font-weight:800;
+}
+
+/* SUMMARY */
+
+.summary{
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:25px;
+  background:var(--bg-light);
+
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  margin-bottom:30px;
+}
+
+.summary-left{
+  flex:1;
+}
+
+.summary-right{
+  width:220px;
+  text-align:right;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:15px;
+}
+
+.summary-right h2{
+  font-size:42px;
+  color:#000;
+}
+
+.summary-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:12px 0;
+  border-bottom:1px solid #eee;
+}
+
+.remove{
+  color:red;
+  cursor:pointer;
+  font-size:14px;
+}
+
+/* BUTTON */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  height:56px;
+  padding:0 24px;
+
+  border:none;
+  border-radius:12px;
+
+  background:var(--primary);
+  color:#fff;
+
+  font-size:16px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.btn:hover{
+  background:var(--primary-light);
+}
+
+/* TOGGLE */
+
+.toggle{
+  display:flex;
+  gap:12px;
+  margin-bottom:30px;
+  flex-wrap:wrap;
+}
+
+.toggle button{
+  height:48px;
+  padding:0 20px;
+
+  border:1px solid var(--border);
+  background:#fff;
+
+  border-radius:12px;
+  cursor:pointer;
+
+  font-weight:600;
+}
+
+.toggle .active{
+  background:var(--primary);
+  color:#fff;
+  border-color:var(--primary);
+}
+
+/* GRID */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+/* COURSE */
+
+.course{
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  background:#fff;
+}
+
+.offer-box{
+  display:inline-block;
+  background:#FEF2F2;
+  color:var(--primary);
+
+  border-radius:999px;
+
+  padding:8px 14px;
+
+  font-size:13px;
+  font-weight:700;
+
+  margin-bottom:16px;
+}
+
+.course h4{
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.course p{
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:12px;
+}
+
+.course-price{
+  font-size:32px;
+  font-weight:800;
+  margin-bottom:18px;
+  color:#000;
+}
+
+/* QTY */
+
+.qty{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.qty-controls{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.qty button{
+  width:34px;
+  height:34px;
+
+  border:none;
+  border-radius:8px;
+
+  background:var(--primary);
+  color:#fff;
+
+  cursor:pointer;
+  font-size:18px;
+}
+
+.qty span{
+  min-width:20px;
+  text-align:center;
+}
+
+/* CONFERENCE */
+
+.conf-wrap{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+}
+
+.conf-card{
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:24px;
+  background:#fff;
+}
+
+.conf-card h3{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.conf-card p{
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+.conf-price{
+  font-size:42px;
+  font-weight:800;
+  color:#000;
+  margin-bottom:18px;
+}
+
+.conf-note{
+  display:inline-block;
+  background:#FEF2F2;
+  color:var(--primary);
+
+  border-radius:999px;
+
+  padding:8px 14px;
+
+  font-size:13px;
+  font-weight:700;
+
+  margin-bottom:20px;
+}
+
+/* STUDENT INPUT */
+
+.student-box{
+  margin-top:20px;
+  display:none;
+}
+
+.student-box input{
+  width:100%;
+  height:50px;
+
+  border:1px solid var(--border);
+  border-radius:10px;
+
+  padding:0 14px;
+  margin-bottom:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .page-title{
+    font-size:38px;
+  }
+
+  .summary{
+    flex-direction:column;
+  }
+
+  .summary-right{
+    width:100%;
+    text-align:left;
+  }
+
+  .summary-right h2{
+    font-size:34px;
+  }
+
+  .toggle{
+    flex-direction:column;
+  }
+
+  .toggle button{
+    width:100%;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="page-title">Book Your Ticket</h1>
+
+<!-- SUMMARY -->
+
+<div class="summary">
+
+  <div class="summary-left">
+
+    <h3>Your Selection</h3>
+
+    <div id="summaryList">
+      Nothing selected
+    </div>
+
+  </div>
+
+  <div class="summary-right">
+
+    <h2 id="total">₹0</h2>
+
+    <button class="btn">
+      Proceed
+    </button>
+
+  </div>
+
+</div>
+
+<!-- TOGGLE -->
+
+<div class="toggle">
+
+  <button class="active" data-type="training">
+    Training Only
+  </button>
+
+  <button data-type="combo">
+    Training + Conference
+  </button>
+
+  <button data-type="conference">
+    Conference Only
+  </button>
+
+</div>
+
+<!-- TRAINING -->
+
+<div id="coursesSection">
+
+  <div class="grid" id="courses"></div>
+
+</div>
+
+<!-- CONFERENCE -->
+
+<div id="conferenceSection" style="display:none;">
+
+  <div class="conf-wrap">
+
+    <!-- STUDENT -->
+
+    <div class="conf-card">
+
+      <div class="conf-note">
+        Student Offer • 50% OFF
+      </div>
+
+      <h3>Student Pass</h3>
+
+      <p>
+        Access the full conference at a discounted student rate.
+      </p>
+
+      <div class="conf-price">
+        ₹3,999
+      </div>
+
+      <div class="qty">
+
+        <span>Quantity</span>
+
+        <div class="qty-controls">
+
+          <button onclick="updateStudent(-1)">-</button>
+
+          <span id="studentQty">0</span>
+
+          <button onclick="updateStudent(1)">+</button>
+
+        </div>
+
+      </div>
+
+      <div class="student-box" id="studentBox">
+
+        <input type="text" placeholder="College Name">
+
+        <input type="file">
+
+      </div>
+
+    </div>
+
+    <!-- REGULAR -->
+
+    <div class="conf-card">
+
+      <div class="conf-note">
+        Super Early Bird Active • 20% OFF
+      </div>
+
+      <h3>Regular Pass</h3>
+
+      <p>
+        Conference access with networking, keynotes, and real-world talks.
+      </p>
+
+      <div class="conf-price">
+        ₹6,399
+      </div>
+
+      <div class="qty">
+
+        <span>Quantity</span>
+
+        <div class="qty-controls">
+
+          <button onclick="updateRegular(-1)">-</button>
+
+          <span id="regularQty">0</span>
+
+          <button onclick="updateRegular(1)">+</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+<script>
+
+const courses = [
+
+  {
+    code:"CRTP",
+    name:"Active Directory Attacks for Red and Blue Teams - Beginner's Edition",
+    price:39999
+  },
+
+  {
+    code:"CRTE",
+    name:"Active Directory Attacks for Red and Blue Teams - Advanced Edition",
+    price:39999
+  },
+
+  {
+    code:"CETP",
+    name:"Evasion Techniques for Red Teams",
+    price:39999
+  },
+
+  {
+    code:"CARTP",
+    name:"Cloud Red Team Tactics for Attacking and Defending Azure",
+    price:39999
+  }
+
+];
+
+let type = "training";
+
+let selected = {
+
+  training:{},
+  combo:{},
+
+  conference:{
+    student:0,
+    regular:0
+  }
+
+};
+
+courses.forEach(c=>{
+  selected.training[c.code]=0;
+  selected.combo[c.code]=0;
+});
+
+const container = document.getElementById("courses");
+
+/* RENDER */
+
+function renderCourses(){
+
+  container.innerHTML = "";
+
+  courses.forEach(c=>{
+
+    let displayPrice = c.price;
+    let title = c.code;
+    let offerText = "Super Early Bird Active • 20% OFF";
+
+    if(type === "combo"){
+      displayPrice = c.price + 4799;
+      title = c.code + " + Conference";
+      offerText = "Super Early Bird Active • Training 20% OFF + Conference 40% OFF";
+    }
+
+    container.innerHTML += `
+
+    <div class="course">
+
+      <div class="offer-box">
+        ${offerText}
+      </div>
+
+      <h4>${title}</h4>
+
+      <p>${c.name}</p>
+
+      <div class="course-price">
+        ₹${displayPrice}
+      </div>
+
+      <div class="qty">
+
+        <span>Quantity</span>
+
+        <div class="qty-controls">
+
+          <button onclick="update('${c.code}',-1)">-</button>
+
+          <span>${selected[type][c.code]}</span>
+
+          <button onclick="update('${c.code}',1)">+</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    `;
+  });
+}
+
+/* UPDATE */
+
+function update(code,change){
+
+  let val = selected[type][code];
+
+  val = Math.max(0, Math.min(9, val + change));
+
+  selected[type][code] = val;
+
+  renderCourses();
+  renderSummary();
+}
+
+/* STUDENT */
+
+function updateStudent(change){
+
+  let val = selected.conference.student;
+
+  val = Math.max(0, Math.min(9, val + change));
+
+  selected.conference.student = val;
+
+  document.getElementById("studentQty").innerText = val;
+
+  document.getElementById("studentBox").style.display =
+    val > 0 ? "block" : "none";
+
+  renderSummary();
+}
+
+/* REGULAR */
+
+function updateRegular(change){
+
+  let val = selected.conference.regular;
+
+  val = Math.max(0, Math.min(9, val + change));
+
+  selected.conference.regular = val;
+
+  document.getElementById("regularQty").innerText = val;
+
+  renderSummary();
+}
+
+/* REMOVE */
+
+function removeItem(mode, code){
+
+  if(mode === "student"){
+    selected.conference.student = 0;
+    document.getElementById("studentQty").innerText = 0;
+    document.getElementById("studentBox").style.display = "none";
+  }
+
+  else if(mode === "regular"){
+    selected.conference.regular = 0;
+    document.getElementById("regularQty").innerText = 0;
+  }
+
+  else{
+    selected[mode][code] = 0;
+  }
+
+  renderCourses();
+  renderSummary();
+}
+
+/* TOGGLE */
+
+document.querySelectorAll(".toggle button").forEach(btn=>{
+
+  btn.onclick = ()=>{
+
+    document.querySelectorAll(".toggle button")
+    .forEach(b=>b.classList.remove("active"));
+
+    btn.classList.add("active");
+
+    type = btn.dataset.type;
+
+    document.getElementById("coursesSection").style.display =
+      type === "conference" ? "none" : "block";
+
+    document.getElementById("conferenceSection").style.display =
+      type === "conference" ? "block" : "none";
+
+    renderCourses();
+    renderSummary();
+  };
+
+});
+
+/* SUMMARY */
+
+function renderSummary(){
+
+  let html = "";
+  let total = 0;
+
+  courses.forEach(c=>{
+
+    let q = selected.training[c.code];
+
+    if(q > 0){
+
+      let price = c.price * q;
+
+      total += price;
+
+      html += `
+      <div class="summary-item">
+        <span>${c.code} x${q}</span>
+        <span>
+          ₹${price}
+          <span class="remove"
+          onclick="removeItem('training','${c.code}')">✖</span>
+        </span>
+      </div>
+      `;
+    }
+
+  });
+
+  courses.forEach(c=>{
+
+    let q = selected.combo[c.code];
+
+    if(q > 0){
+
+      let price = (c.price + 4799) * q;
+
+      total += price;
+
+      html += `
+      <div class="summary-item">
+        <span>${c.code} Combo x${q}</span>
+        <span>
+          ₹${price}
+          <span class="remove"
+          onclick="removeItem('combo','${c.code}')">✖</span>
+        </span>
+      </div>
+      `;
+    }
+
+  });
+
+  if(selected.conference.student > 0){
+
+    let price = selected.conference.student * 3999;
+
+    total += price;
+
+    html += `
+    <div class="summary-item">
+      <span>Student Pass x${selected.conference.student}</span>
+
+      <span>
+        ₹${price}
+        <span class="remove"
+        onclick="removeItem('student')">✖</span>
+      </span>
+    </div>
+    `;
+  }
+
+  if(selected.conference.regular > 0){
+
+    let price = selected.conference.regular * 6399;
+
+    total += price;
+
+    html += `
+    <div class="summary-item">
+      <span>Conference Pass x${selected.conference.regular}</span>
+
+      <span>
+        ₹${price}
+        <span class="remove"
+        onclick="removeItem('regular')">✖</span>
+      </span>
+    </div>
+    `;
+  }
+
+  document.getElementById("summaryList").innerHTML =
+    html || "Nothing selected";
+
+  document.getElementById("total").innerText = "₹" + total;
+}
+
+renderCourses();
+renderSummary();
+
+</script>
+
+</body>
+</html>
