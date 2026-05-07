@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>AltSecCON Booking</title>
+<title>AltSecCON 2026 - Booking</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
 
 <style>
 
+/* =========================
+ROOT
+========================= */
+
 :root{
-  --primary:#B91C1C;
-  --primary-light:#EA3037;
-  --bg:#fff;
-  --bg-light:#F9FAFB;
-  --border:#E5E7EB;
-  --text:#111827;
-  --muted:#6B7280;
-  --green:#16A34A;
+
+  --bg:#040816;
+
+  --card:#081120;
+  --card2:#0B1325;
+
+  --border:#17233D;
+
+  --text:#F8FAFC;
+  --muted:#94A3B8;
+
+  --red:#C1121F;
+  --red2:#EF4444;
+
+  --green:#22C55E;
+  --blue:#2563EB;
+  --purple:#A855F7;
+
 }
+
+/* =========================
+BASE
+========================= */
 
 *{
   margin:0;
@@ -26,448 +52,1125 @@
 }
 
 body{
-  font-family:system-ui;
-  background:#fff;
+
+  font-family:'Inter',sans-serif;
+
+  background:
+  radial-gradient(circle at top right,
+  rgba(193,18,31,.12),
+  transparent 28%),
+
+  linear-gradient(180deg,#030712 0%, #071126 100%);
+
   color:var(--text);
+
 }
 
-.container{
-  max-width:1100px;
+button,
+input,
+select{
+  font-family:'Inter',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+/* =========================
+PAGE
+========================= */
+
+.altx-booking-page{
+
+  max-width:1450px;
   margin:auto;
-  padding:40px 20px;
+
+  padding:44px 22px;
+
 }
 
-/* HEADER */
+.altx-header{
 
-.page-title{
-  font-size:48px;
-  margin-bottom:30px;
-  font-weight:800;
+  text-align:center;
+
+  margin-bottom:34px;
+
 }
 
-/* SUMMARY */
+.altx-header span{
 
-.summary{
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:25px;
-  background:var(--bg-light);
+  color:#60A5FA;
 
-  display:flex;
-  justify-content:space-between;
-  gap:30px;
-  margin-bottom:30px;
-}
-
-.summary-left{
-  flex:1;
-}
-
-.summary-right{
-  width:220px;
-  text-align:right;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:15px;
-}
-
-.summary-right h2{
-  font-size:42px;
-  color:#000;
-}
-
-.summary-item{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:12px 0;
-  border-bottom:1px solid #eee;
-}
-
-.remove{
-  color:red;
-  cursor:pointer;
-  font-size:14px;
-}
-
-/* BUTTON */
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  height:56px;
-  padding:0 24px;
-
-  border:none;
-  border-radius:12px;
-
-  background:var(--primary);
-  color:#fff;
-
-  font-size:16px;
+  font-size:12px;
   font-weight:700;
 
-  cursor:pointer;
+  letter-spacing:.22em;
+  text-transform:uppercase;
 
-  transition:.3s;
 }
 
-.btn:hover{
-  background:var(--primary-light);
+.altx-header h1{
+
+  font-size:58px;
+  line-height:1.05;
+
+  margin-top:18px;
+
+  font-weight:800;
+
 }
 
-/* TOGGLE */
+.altx-header h1 strong{
+  color:#EF4444;
+}
 
-.toggle{
+.altx-header p{
+
+  max-width:840px;
+  margin:18px auto 0;
+
+  color:#94A3B8;
+
+  font-size:17px;
+  line-height:1.7;
+
+}
+
+/* =========================
+OFFER BAR
+========================= */
+
+.altx-offer{
+
+  margin:26px auto 42px;
+
+  max-width:940px;
+
+  background:
+  linear-gradient(135deg,
+  rgba(193,18,31,.15),
+  rgba(37,99,235,.10));
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:22px;
+
+  padding:20px 24px;
+
   display:flex;
-  gap:12px;
-  margin-bottom:30px;
-  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+
+  text-align:center;
+
 }
 
-.toggle button{
-  height:48px;
-  padding:0 20px;
+.altx-offer i{
 
-  border:1px solid var(--border);
-  background:#fff;
+  color:#22C55E;
+  font-size:22px;
 
-  border-radius:12px;
-  cursor:pointer;
-
-  font-weight:600;
 }
 
-.toggle .active{
-  background:var(--primary);
-  color:#fff;
-  border-color:var(--primary);
+.altx-offer h4{
+
+  font-size:17px;
+  font-weight:800;
+
+  margin-bottom:5px;
+
 }
 
-/* GRID */
+.altx-offer p{
 
-.grid{
+  color:#CBD5E1;
+
+  font-size:14px;
+  line-height:1.6;
+
+}
+
+/* =========================
+LAYOUT
+========================= */
+
+.altx-layout{
+
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns:1fr 360px;
   gap:20px;
+
+  align-items:start;
+
 }
 
-/* COURSE */
+.altx-grid{
 
-.course{
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:20px;
-  background:#fff;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+
 }
 
-.offer-box{
-  display:inline-block;
-  background:#FEF2F2;
-  color:var(--primary);
+/* =========================
+CARD
+========================= */
 
-  border-radius:999px;
+.altx-card{
+
+  background:
+  linear-gradient(180deg,#07101F 0%, #040816 100%);
+
+  border:1px solid #17233D;
+
+  border-radius:26px;
+
+  padding:22px;
+
+  overflow:hidden;
+
+  position:relative;
+
+}
+
+.altx-card::before{
+
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+  radial-gradient(circle at top right,
+  rgba(255,255,255,.04),
+  transparent 30%);
+
+  pointer-events:none;
+
+}
+
+.altx-card.training{
+  border-color:rgba(34,197,94,.22);
+}
+
+.altx-card.combo{
+  border-color:rgba(168,85,247,.26);
+}
+
+.altx-card.conf{
+  border-color:rgba(37,99,235,.25);
+}
+
+/* =========================
+BADGE
+========================= */
+
+.altx-badge{
+
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
 
   padding:8px 14px;
 
-  font-size:13px;
-  font-weight:700;
+  border-radius:999px;
 
-  margin-bottom:16px;
-}
+  background:rgba(255,255,255,.04);
 
-.course h4{
-  font-size:22px;
-  margin-bottom:10px;
-}
+  border:1px solid rgba(255,255,255,.08);
 
-.course p{
-  color:var(--muted);
-  line-height:1.6;
-  margin-bottom:12px;
-}
-
-.course-price{
-  font-size:32px;
-  font-weight:800;
   margin-bottom:18px;
-  color:#000;
+
+  font-size:11px;
+  font-weight:800;
+
+  letter-spacing:.08em;
+  text-transform:uppercase;
+
 }
 
-/* QTY */
-
-.qty{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.training .altx-badge{
+  color:#4ADE80;
 }
 
-.qty-controls{
+.combo .altx-badge{
+  color:#C084FC;
+}
+
+.conf .altx-badge{
+  color:#60A5FA;
+}
+
+/* =========================
+TITLE
+========================= */
+
+.altx-title{
+
+  font-size:38px;
+  line-height:1.05;
+
+  font-weight:800;
+
+  margin-bottom:14px;
+
+}
+
+.altx-date{
+
   display:flex;
   align-items:center;
   gap:10px;
+
+  margin-bottom:20px;
+
+  color:#E2E8F0;
+
+  font-size:15px;
+  font-weight:700;
+
 }
 
-.qty button{
-  width:34px;
-  height:34px;
+.altx-date i{
+  color:#22C55E;
+}
+
+/* =========================
+FEATURES
+========================= */
+
+.altx-features{
+
+  list-style:none;
+
+  display:grid;
+  gap:12px;
+
+  margin-bottom:22px;
+
+}
+
+.altx-features li{
+
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+
+  color:#E2E8F0;
+
+  font-size:14px;
+  line-height:1.5;
+
+}
+
+.altx-features i{
+
+  color:#22C55E;
+  margin-top:3px;
+
+}
+
+/* =========================
+LABEL
+========================= */
+
+.altx-mini{
+
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+
+  color:#94A3B8;
+
+  margin-bottom:14px;
+
+  font-weight:700;
+
+}
+
+/* =========================
+COURSE SELECT
+========================= */
+
+.altx-select{
+
+  width:100%;
+  height:52px;
+
+  border-radius:14px;
+
+  background:#0A1326;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  color:#fff;
+
+  padding:0 16px;
+
+  font-size:14px;
+
+  margin-bottom:16px;
+
+}
+
+/* =========================
+PRICE CARD
+========================= */
+
+.altx-price-card{
+
+  background:
+  linear-gradient(135deg,
+  rgba(255,255,255,.03),
+  rgba(255,255,255,.015));
+
+  border:1px solid rgba(255,255,255,.07);
+
+  border-radius:18px;
+
+  padding:16px;
+
+}
+
+.altx-price-top{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+
+}
+
+.altx-pass{
+
+  font-size:18px;
+  font-weight:800;
+
+}
+
+.altx-price{
+
+  font-size:34px;
+  font-weight:800;
+
+  color:#22C55E;
+
+  line-height:1;
+
+}
+
+/* =========================
+INFO BOX
+========================= */
+
+.altx-info{
+
+  margin-top:10px;
+
+  background:
+  linear-gradient(135deg,
+  rgba(34,197,94,.08),
+  rgba(37,99,235,.08));
+
+  border:1px solid rgba(255,255,255,.06);
+
+  border-radius:14px;
+
+  padding:12px 14px;
+
+}
+
+.altx-info h5{
+
+  font-size:13px;
+  font-weight:800;
+
+  margin-bottom:6px;
+
+}
+
+.altx-info p{
+
+  color:#CBD5E1;
+
+  font-size:12px;
+  line-height:1.6;
+
+}
+
+/* =========================
+BUTTON
+========================= */
+
+.altx-btn{
+
+  width:100%;
+  height:48px;
 
   border:none;
-  border-radius:8px;
+  border-radius:14px;
 
-  background:var(--primary);
+  background:
+  linear-gradient(135deg,#EF4444,#C1121F);
+
+  color:#fff;
+
+  font-size:14px;
+  font-weight:800;
+
+  cursor:pointer;
+
+  margin-top:14px;
+
+}
+
+/* =========================
+SUMMARY
+========================= */
+
+.altx-summary{
+
+  position:sticky;
+  top:18px;
+
+  background:
+  linear-gradient(180deg,#07101F 0%, #040816 100%);
+
+  border:1px solid #17233D;
+
+  border-radius:26px;
+
+  padding:24px;
+
+}
+
+.altx-summary h3{
+
+  font-size:26px;
+  margin-bottom:18px;
+
+}
+
+/* =========================
+ITEMS
+========================= */
+
+.altx-items{
+
+  display:grid;
+  gap:12px;
+
+  max-height:500px;
+  overflow:auto;
+
+  scroll-behavior:smooth;
+
+}
+
+.altx-empty{
+
+  color:#94A3B8;
+  font-size:14px;
+
+}
+
+.altx-item{
+
+  background:
+  linear-gradient(135deg,
+  rgba(255,255,255,.04),
+  rgba(255,255,255,.015));
+
+  border:1px solid rgba(255,255,255,.07);
+
+  border-radius:18px;
+
+  padding:15px;
+
+}
+
+.altx-item-top{
+
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+
+}
+
+.altx-item-name{
+
+  font-size:15px;
+  font-weight:800;
+
+  line-height:1.4;
+
+}
+
+.altx-item-course{
+
+  color:#CBD5E1;
+
+  font-size:13px;
+
+  margin-top:5px;
+
+}
+
+.altx-item-price{
+
+  color:#22C55E;
+
+  font-size:22px;
+  font-weight:800;
+
+  white-space:nowrap;
+
+}
+
+.altx-item-bottom{
+
+  margin-top:14px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+}
+
+.altx-qty-box{
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+}
+
+.altx-qty-btn{
+
+  width:30px;
+  height:30px;
+
+  border:none;
+  border-radius:10px;
+
+  background:#0F172A;
+
   color:#fff;
 
   cursor:pointer;
-  font-size:18px;
-}
 
-.qty span{
-  min-width:20px;
-  text-align:center;
-}
-
-/* CONFERENCE */
-
-.conf-wrap{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
-}
-
-.conf-card{
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:24px;
-  background:#fff;
-}
-
-.conf-card h3{
-  font-size:28px;
-  margin-bottom:8px;
-}
-
-.conf-card p{
-  color:var(--muted);
-  margin-bottom:20px;
-}
-
-.conf-price{
-  font-size:42px;
   font-weight:800;
-  color:#000;
-  margin-bottom:18px;
+
 }
 
-.conf-note{
-  display:inline-block;
-  background:#FEF2F2;
-  color:var(--primary);
+.altx-qty{
 
-  border-radius:999px;
+  min-width:16px;
+  text-align:center;
 
-  padding:8px 14px;
-
-  font-size:13px;
+  font-size:14px;
   font-weight:700;
 
-  margin-bottom:20px;
 }
 
-/* STUDENT INPUT */
+.altx-remove{
 
-.student-box{
+  border:none;
+  background:none;
+
+  color:#EF4444;
+
+  cursor:pointer;
+
+  font-size:12px;
+  font-weight:700;
+
+}
+
+/* =========================
+TOTAL
+========================= */
+
+.altx-total{
+
+  margin-top:22px;
+
+  padding-top:20px;
+
+  border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.altx-total-row{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+}
+
+.altx-total-row span{
+
+  color:#CBD5E1;
+  font-size:15px;
+
+}
+
+.altx-total-row strong{
+
+  font-size:44px;
+  font-weight:800;
+
+}
+
+/* =========================
+LOGIN
+========================= */
+
+.altx-login{
+
   margin-top:20px;
-  display:none;
+
+  background:
+  linear-gradient(135deg,
+  rgba(193,18,31,.12),
+  rgba(37,99,235,.08));
+
+  border:1px solid rgba(255,255,255,.07);
+
+  border-radius:18px;
+
+  padding:18px;
+
 }
 
-.student-box input{
+.altx-login-title{
+
+  font-size:15px;
+  font-weight:800;
+
+  margin-bottom:14px;
+
+}
+
+.altx-login-form{
+
+  display:grid;
+  gap:12px;
+
+}
+
+.altx-login-form input{
+
   width:100%;
   height:50px;
 
-  border:1px solid var(--border);
-  border-radius:10px;
+  border-radius:14px;
 
-  padding:0 14px;
-  margin-bottom:12px;
+  border:1px solid rgba(255,255,255,.08);
+
+  background:#0A1326;
+
+  padding:0 15px;
+
+  color:#fff;
+
+  font-size:14px;
+
 }
 
-/* MOBILE */
+.altx-checkout{
 
-@media(max-width:768px){
+  width:100%;
+  height:54px;
 
-  .page-title{
+  border:none;
+  border-radius:16px;
+
+  background:
+  linear-gradient(135deg,#EF4444,#C1121F);
+
+  color:#fff;
+
+  font-size:15px;
+  font-weight:800;
+
+  cursor:pointer;
+
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:1260px){
+
+  .altx-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:980px){
+
+  .altx-layout{
+    grid-template-columns:1fr;
+  }
+
+  .altx-summary{
+    position:relative;
+    top:auto;
+  }
+
+}
+
+@media(max-width:640px){
+
+  .altx-booking-page{
+    padding:28px 14px;
+  }
+
+  .altx-header h1{
     font-size:38px;
   }
 
-  .summary{
-    flex-direction:column;
+  .altx-title{
+    font-size:30px;
   }
 
-  .summary-right{
-    width:100%;
-    text-align:left;
+  .altx-price{
+    font-size:28px;
   }
 
-  .summary-right h2{
+  .altx-total-row strong{
     font-size:34px;
-  }
-
-  .toggle{
-    flex-direction:column;
-  }
-
-  .toggle button{
-    width:100%;
   }
 
 }
 
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<section class="altx-booking-page">
 
-<h1 class="page-title">Book Your Ticket</h1>
+  <!-- HEADER -->
 
-<!-- SUMMARY -->
+  <div class="altx-header">
 
-<div class="summary">
+    <span>AltSecCON 2026</span>
 
-  <div class="summary-left">
+    <h1>
+      Reserve Your <strong>Training & Conference</strong> Seat
+    </h1>
 
-    <h3>Your Selection</h3>
+    <p>
+      Choose your preferred pass, select your training track,
+      and secure your hands-on red team experience.
+    </p>
 
-    <div id="summaryList">
-      Nothing selected
+  </div>
+
+  <!-- OFFER -->
+
+  <div class="altx-offer">
+
+    <i class="fa-solid fa-bolt"></i>
+
+    <div>
+
+      <h4>Super Early Bird Active</h4>
+
+      <p>
+        Training: 20% OFF • Conference: 20% OFF •
+        Combo Pass: Training 20% OFF + Conference 40% OFF
+        <br>
+        Valid till 30 June 2026
+      </p>
+
     </div>
 
   </div>
 
-  <div class="summary-right">
+  <div class="altx-layout">
 
-    <h2 id="total">₹0</h2>
+    <!-- LEFT -->
 
-    <button class="btn">
-      Proceed
-    </button>
+    <div class="altx-grid">
 
-  </div>
+      <!-- =========================
+      TRAINING
+      ========================= -->
 
-</div>
+      <div class="altx-card training">
 
-<!-- TOGGLE -->
+        <div class="altx-badge">
+          <i class="fa-solid fa-laptop-code"></i>
+          Training Pass
+        </div>
 
-<div class="toggle">
+        <h2 class="altx-title">
+          3-Day Training
+        </h2>
 
-  <button class="active" data-type="training">
-    Training Only
-  </button>
+        <div class="altx-date">
+          <i class="fa-regular fa-calendar"></i>
+          24–26 Oct 2026
+        </div>
 
-  <button data-type="combo">
-    Training + Conference
-  </button>
+        <ul class="altx-features">
 
-  <button data-type="conference">
-    Conference Only
-  </button>
+          <li><i class="fa-solid fa-check"></i> Enterprise-grade AD & Azure labs</li>
 
-</div>
+          <li><i class="fa-solid fa-check"></i> Hands-on red team attack paths</li>
 
-<!-- TRAINING -->
+          <li><i class="fa-solid fa-check"></i> 60 days extended lab access</li>
 
-<div id="coursesSection">
+          <li><i class="fa-solid fa-check"></i> Certification path included</li>
 
-  <div class="grid" id="courses"></div>
+        </ul>
 
-</div>
+        <div class="altx-mini">
+          Choose Training Track
+        </div>
 
-<!-- CONFERENCE -->
+        <select class="altx-select" id="trainingCourse">
 
-<div id="conferenceSection" style="display:none;">
+          <option value="CRTP®">CRTP® - Active Directory Attacks</option>
 
-  <div class="conf-wrap">
+          <option value="CRTE®">CRTE® - Red Team Expert</option>
 
-    <!-- STUDENT -->
+          <option value="CARTP®">CARTP® - Azure Red Team</option>
 
-    <div class="conf-card">
+          <option value="CARTE®">CARTE® - Azure Expert</option>
 
-      <div class="conf-note">
-        Student Offer • 50% OFF
-      </div>
+          <option value="CETP®">CETP® - Evasion Techniques</option>
 
-      <h3>Student Pass</h3>
+        </select>
 
-      <p>
-        Access the full conference at a discounted student rate.
-      </p>
+        <div class="altx-price-card">
 
-      <div class="conf-price">
-        ₹3,999
-      </div>
+          <div class="altx-price-top">
 
-      <div class="qty">
+            <div class="altx-pass">
+              Training Pass
+            </div>
 
-        <span>Quantity</span>
+            <div class="altx-price">
+              ₹39,999
+            </div>
 
-        <div class="qty-controls">
+          </div>
 
-          <button onclick="updateStudent(-1)">-</button>
+          <div class="altx-info">
 
-          <span id="studentQty">0</span>
+            <h5>
+              Super Early Bird Active
+            </h5>
 
-          <button onclick="updateStudent(1)">+</button>
+            <p>
+              20% OFF on all training tracks •
+              Limited-time pricing till 30 June 2026
+            </p>
+
+          </div>
+
+          <button class="altx-btn"
+          onclick="addTraining()">
+            Add Training Pass
+          </button>
 
         </div>
 
       </div>
 
-      <div class="student-box" id="studentBox">
+      <!-- =========================
+      COMBO
+      ========================= -->
 
-        <input type="text" placeholder="College Name">
+      <div class="altx-card combo">
 
-        <input type="file">
+        <div class="altx-badge">
+          <i class="fa-solid fa-crown"></i>
+          Full Access Pass
+        </div>
+
+        <h2 class="altx-title">
+          Training + Conference
+        </h2>
+
+        <div class="altx-date">
+          <i class="fa-regular fa-calendar"></i>
+          24–27 Oct 2026
+        </div>
+
+        <ul class="altx-features">
+
+          <li><i class="fa-solid fa-check"></i> Complete AltSecCON experience</li>
+
+          <li><i class="fa-solid fa-check"></i> Training + conference access</li>
+
+          <li><i class="fa-solid fa-check"></i> Conference networking & keynotes</li>
+
+          <li><i class="fa-solid fa-check"></i> Certification + labs included</li>
+
+        </ul>
+
+        <div class="altx-mini">
+          Choose Training Track
+        </div>
+
+        <select class="altx-select" id="comboCourse">
+
+          <option value="CRTP®">CRTP® - Active Directory Attacks</option>
+
+          <option value="CRTE®">CRTE® - Red Team Expert</option>
+
+          <option value="CARTP®">CARTP® - Azure Red Team</option>
+
+          <option value="CARTE®">CARTE® - Azure Expert</option>
+
+          <option value="CETP®">CETP® - Evasion Techniques</option>
+
+        </select>
+
+        <div class="altx-price-card">
+
+          <div class="altx-price-top">
+
+            <div class="altx-pass">
+              Combo Access Pass
+            </div>
+
+            <div class="altx-price">
+              ₹44,798
+            </div>
+
+          </div>
+
+          <div class="altx-info">
+
+            <h5>
+              Super Early Bird Combo Pricing
+            </h5>
+
+            <p>
+              Training receives 20% OFF and conference access gets
+              an additional 40% OFF
+            </p>
+
+          </div>
+
+          <button class="altx-btn"
+          onclick="addCombo()">
+            Add Combo Pass
+          </button>
+
+        </div>
 
       </div>
 
-    </div>
+      <!-- =========================
+      CONFERENCE
+      ========================= -->
 
-    <!-- REGULAR -->
+      <div class="altx-card conf">
 
-    <div class="conf-card">
+        <div class="altx-badge">
+          <i class="fa-solid fa-microphone-lines"></i>
+          Conference Pass
+        </div>
 
-      <div class="conf-note">
-        Super Early Bird Active • 20% OFF
-      </div>
+        <h2 class="altx-title">
+          1-Day Conference
+        </h2>
 
-      <h3>Regular Pass</h3>
+        <div class="altx-date">
+          <i class="fa-regular fa-calendar"></i>
+          27 Oct 2026
+        </div>
 
-      <p>
-        Conference access with networking, keynotes, and real-world talks.
-      </p>
+        <ul class="altx-features">
 
-      <div class="conf-price">
-        ₹6,399
-      </div>
+          <li><i class="fa-solid fa-check"></i> Global security keynotes & talks</li>
 
-      <div class="qty">
+          <li><i class="fa-solid fa-check"></i> Red team case studies</li>
 
-        <span>Quantity</span>
+          <li><i class="fa-solid fa-check"></i> Networking opportunities</li>
 
-        <div class="qty-controls">
+          <li><i class="fa-solid fa-check"></i> Conference materials included</li>
 
-          <button onclick="updateRegular(-1)">-</button>
+        </ul>
 
-          <span id="regularQty">0</span>
+        <!-- STUDENT -->
 
-          <button onclick="updateRegular(1)">+</button>
+        <div class="altx-price-card" style="margin-bottom:14px;">
+
+          <div class="altx-price-top">
+
+            <div class="altx-pass">
+              Student Pass
+            </div>
+
+            <div class="altx-price">
+              ₹3,999
+            </div>
+
+          </div>
+
+          <div class="altx-info">
+
+            <h5>
+              Student Conference Offer
+            </h5>
+
+            <p>
+              50% OFF • Limited to first 20 student tickets
+            </p>
+
+          </div>
+
+          <button class="altx-btn"
+          onclick="addConferenceStudent()">
+            Add Student Pass
+          </button>
+
+        </div>
+
+        <!-- NORMAL -->
+
+        <div class="altx-price-card">
+
+          <div class="altx-price-top">
+
+            <div class="altx-pass">
+              Conference Pass
+            </div>
+
+            <div class="altx-price">
+              ₹6,399
+            </div>
+
+          </div>
+
+          <div class="altx-info">
+
+            <h5>
+              Super Early Bird Active
+            </h5>
+
+            <p>
+              20% OFF conference pricing •
+              Valid till 30 June 2026
+            </p>
+
+          </div>
+
+          <button class="altx-btn"
+          onclick="addConference()">
+            Add Conference Pass
+          </button>
 
         </div>
 
@@ -475,315 +1178,290 @@ body{
 
     </div>
 
+    <!-- SUMMARY -->
+
+    <aside class="altx-summary" id="summarySection">
+
+      <h3>
+        Your Selection
+      </h3>
+
+      <div class="altx-items" id="cartItems">
+
+        <div class="altx-empty">
+          No passes selected yet.
+        </div>
+
+      </div>
+
+      <div class="altx-total">
+
+        <div class="altx-total-row">
+
+          <span>Total</span>
+
+          <strong id="cartTotal">
+            ₹0
+          </strong>
+
+        </div>
+
+      </div>
+
+      <!-- LOGIN -->
+
+      <div class="altx-login">
+
+        <div class="altx-login-title">
+          Login / Booking Details
+        </div>
+
+        <div class="altx-login-form">
+
+          <input type="text" placeholder="Full Name">
+
+          <input type="email" placeholder="Email Address">
+
+          <input type="tel" placeholder="Phone Number">
+
+          <button class="altx-checkout">
+            Proceed to Checkout
+          </button>
+
+        </div>
+
+      </div>
+
+    </aside>
+
   </div>
 
-</div>
-
-</div>
+</section>
 
 <script>
 
-const courses = [
+let cart = [];
 
-  {
-    code:"CRTP",
-    name:"Active Directory Attacks for Red and Blue Teams - Beginner's Edition",
-    price:39999
-  },
+/* =========================
+ADD ITEMS
+========================= */
 
-  {
-    code:"CRTE",
-    name:"Active Directory Attacks for Red and Blue Teams - Advanced Edition",
-    price:39999
-  },
+function addTraining(){
 
-  {
-    code:"CETP",
-    name:"Evasion Techniques for Red Teams",
-    price:39999
-  },
+  const course =
+  document.getElementById("trainingCourse").value;
 
-  {
-    code:"CARTP",
-    name:"Cloud Red Team Tactics for Attacking and Defending Azure",
-    price:39999
+  addItem(
+    "Training Pass",
+    course,
+    39999
+  );
+
+}
+
+function addCombo(){
+
+  const course =
+  document.getElementById("comboCourse").value;
+
+  addItem(
+    "Training + Conference",
+    course,
+    44798
+  );
+
+}
+
+function addConference(){
+
+  addItem(
+    "Conference Pass",
+    "Conference Access",
+    6399
+  );
+
+}
+
+function addConferenceStudent(){
+
+  addItem(
+    "Student Conference Pass",
+    "Student Access",
+    3999
+  );
+
+}
+
+/* =========================
+CART LOGIC
+========================= */
+
+function addItem(name,course,price){
+
+  const existing = cart.find(
+    item =>
+    item.name === name &&
+    item.course === course
+  );
+
+  if(existing){
+
+    existing.qty += 1;
+
+  } else {
+
+    cart.push({
+      name,
+      course,
+      price,
+      qty:1
+    });
+
   }
 
-];
+  renderCart();
 
-let type = "training";
+  // auto scroll to summary
 
-let selected = {
-
-  training:{},
-  combo:{},
-
-  conference:{
-    student:0,
-    regular:0
-  }
-
-};
-
-courses.forEach(c=>{
-  selected.training[c.code]=0;
-  selected.combo[c.code]=0;
-});
-
-const container = document.getElementById("courses");
-
-/* RENDER */
-
-function renderCourses(){
-
-  container.innerHTML = "";
-
-  courses.forEach(c=>{
-
-    let displayPrice = c.price;
-    let title = c.code;
-    let offerText = "Super Early Bird Active • 20% OFF";
-
-    if(type === "combo"){
-      displayPrice = c.price + 4799;
-      title = c.code + " + Conference";
-      offerText = "Super Early Bird Active • Training 20% OFF + Conference 40% OFF";
-    }
-
-    container.innerHTML += `
-
-    <div class="course">
-
-      <div class="offer-box">
-        ${offerText}
-      </div>
-
-      <h4>${title}</h4>
-
-      <p>${c.name}</p>
-
-      <div class="course-price">
-        ₹${displayPrice}
-      </div>
-
-      <div class="qty">
-
-        <span>Quantity</span>
-
-        <div class="qty-controls">
-
-          <button onclick="update('${c.code}',-1)">-</button>
-
-          <span>${selected[type][c.code]}</span>
-
-          <button onclick="update('${c.code}',1)">+</button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    `;
+  document
+  .getElementById("summarySection")
+  .scrollIntoView({
+    behavior:"smooth",
+    block:"start"
   });
+
 }
 
-/* UPDATE */
+function increaseQty(index){
 
-function update(code,change){
+  cart[index].qty += 1;
 
-  let val = selected[type][code];
+  renderCart();
 
-  val = Math.max(0, Math.min(9, val + change));
-
-  selected[type][code] = val;
-
-  renderCourses();
-  renderSummary();
 }
 
-/* STUDENT */
+function decreaseQty(index){
 
-function updateStudent(change){
+  if(cart[index].qty > 1){
 
-  let val = selected.conference.student;
+    cart[index].qty -= 1;
 
-  val = Math.max(0, Math.min(9, val + change));
+  } else {
 
-  selected.conference.student = val;
+    cart.splice(index,1);
 
-  document.getElementById("studentQty").innerText = val;
-
-  document.getElementById("studentBox").style.display =
-    val > 0 ? "block" : "none";
-
-  renderSummary();
-}
-
-/* REGULAR */
-
-function updateRegular(change){
-
-  let val = selected.conference.regular;
-
-  val = Math.max(0, Math.min(9, val + change));
-
-  selected.conference.regular = val;
-
-  document.getElementById("regularQty").innerText = val;
-
-  renderSummary();
-}
-
-/* REMOVE */
-
-function removeItem(mode, code){
-
-  if(mode === "student"){
-    selected.conference.student = 0;
-    document.getElementById("studentQty").innerText = 0;
-    document.getElementById("studentBox").style.display = "none";
   }
 
-  else if(mode === "regular"){
-    selected.conference.regular = 0;
-    document.getElementById("regularQty").innerText = 0;
-  }
+  renderCart();
 
-  else{
-    selected[mode][code] = 0;
-  }
-
-  renderCourses();
-  renderSummary();
 }
 
-/* TOGGLE */
+function removeItem(index){
 
-document.querySelectorAll(".toggle button").forEach(btn=>{
+  cart.splice(index,1);
 
-  btn.onclick = ()=>{
+  renderCart();
 
-    document.querySelectorAll(".toggle button")
-    .forEach(b=>b.classList.remove("active"));
+}
 
-    btn.classList.add("active");
+/* =========================
+RENDER
+========================= */
 
-    type = btn.dataset.type;
+function renderCart(){
 
-    document.getElementById("coursesSection").style.display =
-      type === "conference" ? "none" : "block";
+  const container =
+  document.getElementById("cartItems");
 
-    document.getElementById("conferenceSection").style.display =
-      type === "conference" ? "block" : "none";
+  const totalEl =
+  document.getElementById("cartTotal");
 
-    renderCourses();
-    renderSummary();
-  };
+  if(cart.length === 0){
 
-});
+    container.innerHTML = `
+      <div class="altx-empty">
+        No passes selected yet.
+      </div>
+    `;
 
-/* SUMMARY */
+    totalEl.innerText = "₹0";
 
-function renderSummary(){
+    return;
+  }
 
   let html = "";
   let total = 0;
 
-  courses.forEach(c=>{
+  cart.forEach((item,index)=>{
 
-    let q = selected.training[c.code];
+    const itemTotal =
+    item.price * item.qty;
 
-    if(q > 0){
+    total += itemTotal;
 
-      let price = c.price * q;
+    html += `
 
-      total += price;
+      <div class="altx-item">
 
-      html += `
-      <div class="summary-item">
-        <span>${c.code} x${q}</span>
-        <span>
-          ₹${price}
-          <span class="remove"
-          onclick="removeItem('training','${c.code}')">✖</span>
-        </span>
+        <div class="altx-item-top">
+
+          <div>
+
+            <div class="altx-item-name">
+              ${item.name}
+            </div>
+
+            <div class="altx-item-course">
+              ${item.course}
+            </div>
+
+          </div>
+
+          <div class="altx-item-price">
+            ₹${itemTotal.toLocaleString("en-IN")}
+          </div>
+
+        </div>
+
+        <div class="altx-item-bottom">
+
+          <div class="altx-qty-box">
+
+            <button class="altx-qty-btn"
+            onclick="decreaseQty(${index})">
+              -
+            </button>
+
+            <div class="altx-qty">
+              ${item.qty}
+            </div>
+
+            <button class="altx-qty-btn"
+            onclick="increaseQty(${index})">
+              +
+            </button>
+
+          </div>
+
+          <button class="altx-remove"
+          onclick="removeItem(${index})">
+            Remove
+          </button>
+
+        </div>
+
       </div>
-      `;
-    }
+
+    `;
 
   });
 
-  courses.forEach(c=>{
+  container.innerHTML = html;
 
-    let q = selected.combo[c.code];
+  totalEl.innerText =
+  "₹" + total.toLocaleString("en-IN");
 
-    if(q > 0){
-
-      let price = (c.price + 4799) * q;
-
-      total += price;
-
-      html += `
-      <div class="summary-item">
-        <span>${c.code} Combo x${q}</span>
-        <span>
-          ₹${price}
-          <span class="remove"
-          onclick="removeItem('combo','${c.code}')">✖</span>
-        </span>
-      </div>
-      `;
-    }
-
-  });
-
-  if(selected.conference.student > 0){
-
-    let price = selected.conference.student * 3999;
-
-    total += price;
-
-    html += `
-    <div class="summary-item">
-      <span>Student Pass x${selected.conference.student}</span>
-
-      <span>
-        ₹${price}
-        <span class="remove"
-        onclick="removeItem('student')">✖</span>
-      </span>
-    </div>
-    `;
-  }
-
-  if(selected.conference.regular > 0){
-
-    let price = selected.conference.regular * 6399;
-
-    total += price;
-
-    html += `
-    <div class="summary-item">
-      <span>Conference Pass x${selected.conference.regular}</span>
-
-      <span>
-        ₹${price}
-        <span class="remove"
-        onclick="removeItem('regular')">✖</span>
-      </span>
-    </div>
-    `;
-  }
-
-  document.getElementById("summaryList").innerHTML =
-    html || "Nothing selected";
-
-  document.getElementById("total").innerText = "₹" + total;
 }
-
-renderCourses();
-renderSummary();
 
 </script>
 
