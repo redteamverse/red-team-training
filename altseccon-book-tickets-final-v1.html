@@ -3391,6 +3391,29 @@ body.modal-open{
   }
 
 }  
+  
+/* ========================================== */
+/* TERMS ERROR */
+/* ========================================== */
+
+.altx-terms-error{
+
+  display:none;
+
+  margin-top:10px;
+
+  color:#F87171;
+
+  font-size:12px;
+  font-weight:600;
+
+  line-height:1.5;
+
+}
+
+.altx-terms-error.show{
+  display:block;
+}  
 </style>
 </head>
 <body>
@@ -4167,31 +4190,7 @@ id="couponSuccess">
 </div>
 
 </div>
-<div class="altx-terms-wrap">
 
-  <label class="altx-terms-check">
-
-    <input type="checkbox"
-    id="termsCheck">
-
-    <span class="altx-custom-check"></span>
-
-    <span class="altx-terms-text">
-
-      I agree to the
-      <a href="#">
-        Terms
-      </a>
-      &
-      <a href="#">
-        Refund Policy
-      </a>
-
-    </span>
-
-  </label>
-
-</div>
           <button class="altx-checkout"
           onclick="openAttendeeModal()">
 
@@ -4288,7 +4287,38 @@ id="attendeeModal">
     id="attendeeGrid">
 
     </div>
+<div class="altx-terms-wrap">
 
+  <label class="altx-terms-check">
+
+      <input type="checkbox"
+    id="termsCheck">
+
+    <span class="altx-custom-check"></span>
+
+    <span class="altx-terms-text">
+
+      I agree to the
+      <a href="#">
+        Terms
+      </a>
+      &
+      <a href="#">
+        Refund Policy
+      </a>
+
+    </span>
+
+  </label>
+
+</div>
+
+<div class="altx-terms-error"
+id="termsError">
+
+  Please accept Terms & Refund Policy to continue.
+
+</div>
     <button class="altx-final-btn"
     onclick="openPaymentModal()">
 
@@ -5495,29 +5525,69 @@ function copyBookingInfo(index){
 /* UPDATE openPaymentModal() */
 /* ========================================== */
 
+/* ========================================== */
+/* OPEN PAYMENT MODAL */
+/* ========================================== */
+
+/* ========================================== */
+/* OPEN PAYMENT MODAL */
+/* ========================================== */
+
 function openPaymentModal(){
+
+  /* ====================================== */
+  /* TERMS VALIDATION */
+  /* ====================================== */
 
   const termsAccepted =
   document.getElementById("termsCheck").checked;
 
+  const termsError =
+  document.getElementById("termsError");
+
   if(!termsAccepted){
 
-    alert(
-      "Please accept Terms & Refund Policy."
+    termsError.classList.add("show");
+
+    return;
+
+  }
+
+  termsError.classList.remove("show");
+
+  /* ====================================== */
+  /* EMPTY CART */
+  /* ====================================== */
+
+  if(cart.length === 0){
+
+    showToast(
+      "Please select at least one pass."
     );
 
     return;
 
   }
 
+  /* ====================================== */
+  /* TOTALS */
+  /* ====================================== */
+
   let finalTotal = 0;
+
   let originalTotal = 0;
 
   let breakdownHTML = "";
 
+  /* ====================================== */
+  /* LOOP */
+  /* ====================================== */
+
   cart.forEach(item=>{
 
     let original = item.price;
+
+    /* ORIGINAL PRICES */
 
     if(item.name === "Training Pass"){
       original = 49999;
@@ -5531,18 +5601,19 @@ function openPaymentModal(){
       original = 7999;
     }
 
+    /* TOTALS */
+
     const subtotal =
     item.price * item.qty;
 
     const originalSubtotal =
     original * item.qty;
 
-    const saved =
-    originalSubtotal - subtotal;
-
     finalTotal += subtotal;
 
     originalTotal += originalSubtotal;
+
+    /* CARD */
 
     breakdownHTML += `
 
@@ -5569,41 +5640,7 @@ function openPaymentModal(){
         </div>
 
         <div class="altx-order-price">
-          ₹${item.price.toLocaleString("en-IN")} each
-        </div>
-
-        <div class="altx-order-meta">
-
-          <div class="altx-order-line">
-
-            <span>Original Price</span>
-
-            <strong>
-              ₹${originalSubtotal.toLocaleString("en-IN")}
-            </strong>
-
-          </div>
-
-          <div class="altx-order-line">
-
-            <span>You Saved</span>
-
-            <strong class="altx-order-save">
-              ₹${saved.toLocaleString("en-IN")}
-            </strong>
-
-          </div>
-
-          <div class="altx-order-line">
-
-            <span>Taxes</span>
-
-            <strong class="altx-order-gst">
-              included
-            </strong>
-
-          </div>
-
+          ₹${item.price.toLocaleString("en-IN")} per ticket
         </div>
 
       </div>
@@ -5612,23 +5649,39 @@ function openPaymentModal(){
 
   });
 
+  /* ====================================== */
+  /* SAVINGS */
+  /* ====================================== */
+
   const totalSaved =
   originalTotal - finalTotal;
 
-  document.getElementById("orderBreakdown")
-  .innerHTML = breakdownHTML;
+  /* ====================================== */
+  /* UPDATE UI */
+  /* ====================================== */
 
-  document.getElementById("originalPrice")
-  .innerText =
+  document.getElementById(
+    "orderBreakdown"
+  ).innerHTML = breakdownHTML;
+
+  document.getElementById(
+    "originalPrice"
+  ).innerText =
   "₹" + originalTotal.toLocaleString("en-IN");
 
-  document.getElementById("savedAmount")
-  .innerText =
+  document.getElementById(
+    "savedAmount"
+  ).innerText =
   "₹" + totalSaved.toLocaleString("en-IN");
 
-  document.getElementById("paymentAmount")
-  .innerText =
+  document.getElementById(
+    "paymentAmount"
+  ).innerText =
   "₹" + finalTotal.toLocaleString("en-IN");
+
+  /* ====================================== */
+  /* OPEN PAYMENT */
+  /* ====================================== */
 
   closeModal("attendeeModal");
 
@@ -5815,6 +5868,33 @@ updateMobileBar();
 function openTrackModal(){
 
   openModal("trackModal");
+
+}  
+  
+/* ========================================== */
+/* TERMS AUTO VALIDATION */
+/* ========================================== */
+
+const termsCheckbox =
+document.getElementById("termsCheck");
+
+if(termsCheckbox){
+
+  termsCheckbox.addEventListener(
+    "change",
+    function(){
+
+      const termsError =
+      document.getElementById("termsError");
+
+      if(this.checked){
+
+        termsError.classList.remove("show");
+
+      }
+
+    }
+  );
 
 }  
 </script>
