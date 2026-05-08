@@ -3512,7 +3512,7 @@ body.modal-open{
 <!-- ACCESS SELECTION -->
 <!-- ========================================== -->
 
-<div class="altx-access-wrap">
+<div class="altx-access-wrap" id="accessSection">
 
   <div class="altx-access-head">
 
@@ -3860,7 +3860,7 @@ body.modal-open{
 
     <!-- SIDEBAR -->
 
-    <aside class="altx-summary">
+    <aside class="altx-summary" id="selectionSection">
 
       <h3>Your Selection</h3>
 
@@ -4652,17 +4652,7 @@ function updateMobileBar(){
 /* MOBILE BUTTON ACTION */
 /* ========================================== */
 
-/* ========================================== */
-/* MOBILE STICKY CTA ACTION */
-/* ========================================== */
 
-/* ========================================== */
-/* MOBILE STICKY CTA ACTION */
-/* ========================================== */
-
-/* ========================================== */
-/* MOBILE STICKY CTA ACTION */
-/* ========================================== */
 
 function scrollToSelectionMobileBar(){
 
@@ -4875,15 +4865,7 @@ function renderCart(){
 /* MOBILE VIEW SELECTION */
 /* ========================================== */
 
-function scrollToSelectionMobileBar(){
 
-  document.querySelector(".altx-summary")
-  .scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
-
-}  
 /* ===================================== */
 /* ADD THIS FUNCTION */
 /* ===================================== */
