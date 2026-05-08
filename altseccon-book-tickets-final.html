@@ -188,14 +188,14 @@ body.modal-open{
   grid-template-columns:1.3fr 1fr 1fr 1fr 170px;
 
   background:#0B1528;
-
+  
 }
 
 .altx-price-table-header div{
 
   padding:18px;
 
-  font-size:13px;
+  font-size:15px;
   font-weight:700;
 
 }
@@ -466,7 +466,8 @@ body.modal-open{
 
   border:1px solid rgba(255,255,255,.08);
 
-  background:#081120;
+  background:#1E3A8A;
+;
 
   color:#CBD5E1;
 
@@ -2192,6 +2193,225 @@ body.modal-open{
   }
 
 }  
+/* ========================================== */
+/* CORPORATE BANNER */
+/* ========================================== */
+
+.altx-corporate-banner{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  gap:18px;
+
+  padding:20px 22px;
+
+  margin-bottom:18px;
+
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(37,99,235,.08),
+    rgba(193,18,31,.05)
+  );
+
+  border:1px solid rgba(255,255,255,.06);
+
+}
+
+.altx-corporate-left{
+
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+
+}
+
+.altx-corporate-icon{
+
+  width:54px;
+  height:54px;
+
+  min-width:54px;
+
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  rgba(37,99,235,.10);
+
+  border:1px solid rgba(37,99,235,.14);
+
+  color:#60A5FA;
+
+  font-size:20px;
+
+}
+
+.altx-corporate-title{
+
+  font-size:18px;
+  font-weight:800;
+
+  margin-bottom:6px;
+
+}
+
+.altx-corporate-sub{
+
+  font-size:13px;
+  line-height:1.7;
+
+  color:#94A3B8;
+
+  max-width:720px;
+
+}
+
+.altx-corporate-btn{
+
+  height:48px;
+
+  padding:0 18px;
+
+  border:none;
+  border-radius:14px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563EB,
+    #1D4ED8
+  );
+
+  color:#fff;
+
+  font-size:13px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  white-space:nowrap;
+
+}
+
+/* ========================================== */
+/* RESPONSIVE */
+/* ========================================== */
+
+@media(max-width:768px){
+
+  .altx-corporate-banner{
+
+    flex-direction:column;
+    align-items:flex-start;
+
+    padding:18px;
+
+  }
+
+  .altx-corporate-left{
+    width:100%;
+  }
+
+  .altx-corporate-btn{
+
+    width:100%;
+
+  }
+
+}  
+/* ========================================== */
+/* CORPORATE MODAL */
+/* ========================================== */
+
+.altx-corp-grid{
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:16px;
+
+}
+
+.altx-corp-field{
+
+  display:grid;
+  gap:8px;
+
+}
+
+.altx-corp-field label{
+
+  font-size:13px;
+  font-weight:600;
+
+  color:#CBD5E1;
+
+}
+
+.altx-corp-field input{
+
+  width:100%;
+  height:50px;
+
+  border-radius:14px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:#081120;
+
+  color:#fff;
+
+  padding:0 14px;
+
+}
+
+.altx-corp-note{
+
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+
+  margin-top:18px;
+
+  padding:16px;
+
+  border-radius:16px;
+
+  background:
+  rgba(37,99,235,.08);
+
+  border:1px solid rgba(37,99,235,.10);
+
+  color:#CBD5E1;
+
+  font-size:13px;
+  line-height:1.7;
+
+}
+
+.altx-corp-note i{
+
+  color:#60A5FA;
+
+  margin-top:2px;
+
+}
+
+@media(max-width:768px){
+
+  .altx-corp-grid{
+    grid-template-columns:1fr;
+  }
+
+}  
 </style>
 </head>
 <body>
@@ -2214,7 +2434,48 @@ body.modal-open{
     </p>
 
   </div>
+<!-- ========================================== -->
+<!-- CORPORATE / TEAM BOOKING BANNER -->
+<!-- ADD THIS ABOVE PRICING PHASE TABLE -->
+<!-- ========================================== -->
 
+<div class="altx-corporate-banner">
+
+  <div class="altx-corporate-left">
+
+    <div class="altx-corporate-icon">
+
+      <i class="fa-solid fa-building"></i>
+
+    </div>
+
+    <div>
+
+      <div class="altx-corporate-title">
+
+        Booking for a Security Team?
+
+      </div>
+
+      <div class="altx-corporate-sub">
+
+        Bulk booking support available for enterprises,
+        internal security teams, and corporate training programs.
+        Atleast 5 Minimum tickets to buy  
+      </div>
+
+    </div>
+
+  </div>
+
+  <button class="altx-corporate-btn"
+  onclick="openCorporateModal()">
+
+    Team / Corporate Booking
+
+  </button>
+
+</div>
   <!-- MOBILE HINT -->
 
   <div class="altx-mobile-hint">
@@ -2234,10 +2495,10 @@ body.modal-open{
 
       <div class="altx-price-table-header">
 
-        <div>Pricing Phase</div>
-        <div>Training Pass</div>
-        <div>Training + Conference</div>
-        <div>Conference Pass</div>
+        <div><strong>Pricing Phase</strong></div>
+        <div><strong>Training Pass</strong></div>
+        <div><strong>Training + Conference</strong></div>
+        <div><strong>Conference Pass</strong></div>
         <div></div>
 
       </div>
@@ -2326,12 +2587,12 @@ body.modal-open{
 
       <div class="altx-tabs">
 
-        <button class="altx-tab-btn active"
+        <button class="altx-tab-btn "
         onclick="showTab('trainingTab',this)">
           Training Pass
         </button>
 
-        <button class="altx-tab-btn"
+        <button class="altx-tab-btn active"
         onclick="showTab('comboTab',this)">
           Training + Conference
         </button>
@@ -2345,7 +2606,7 @@ body.modal-open{
 
       <!-- TRAINING -->
 
-      <div class="altx-tab-content active"
+      <div class="altx-tab-content"
       id="trainingTab">
 
         <div class="altx-pass-card altx-training-card">
@@ -2470,7 +2731,7 @@ body.modal-open{
 
       <!-- COMBO -->
 
-      <div class="altx-tab-content"
+      <div class="altx-tab-content active"
       id="comboTab">
 
         <div class="altx-pass-card altx-combo-card">
@@ -2770,11 +3031,7 @@ body.modal-open{
 
       <div class="altx-coupon-title">
         Have a Coupon or Referral Code?
-      </div>
-
-      <div class="altx-coupon-sub">
-        Apply community, influencer, or partner codes
-      </div>
+      </div>   
 
     </div>
 
@@ -3119,11 +3376,121 @@ id="mobileStickyBar">
   </button>
 
 </div>  
+  
+<!-- ========================================== -->
+<!-- CORPORATE MODAL -->
+<!-- ADD BEFORE </body> -->
+<!-- ========================================== -->
+
+<div class="altx-modal"
+id="corporateModal">
+
+  <div class="altx-modal-box"
+  style="max-width:760px;">
+
+    <div class="altx-modal-top">
+
+      <h3>Corporate / Team Booking</h3>
+
+      <button class="altx-close"
+      onclick="closeModal('corporateModal')">
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+    </div>
+
+    <div class="altx-corp-grid">
+
+      <div class="altx-corp-field">
+
+        <label>Company Name</label>
+
+        <input type="text"
+        placeholder="Enter company name">
+
+      </div>
+
+      <div class="altx-corp-field">
+
+        <label>GSTIN</label>
+
+        <input type="text"
+        placeholder="Enter GST number">
+
+      </div>
+
+      <div class="altx-corp-field">
+
+        <label>Team Size</label>
+
+        <input type="number"
+        placeholder="Number of attendees">
+
+      </div>
+
+      <div class="altx-corp-field">
+
+        <label>Contact Person</label>
+
+        <input type="text"
+        placeholder="Full name">
+
+      </div>
+
+      <div class="altx-corp-field">
+
+        <label>Work Email</label>
+
+        <input type="email"
+        placeholder="name@company.com">
+
+      </div>
+
+      <div class="altx-corp-field">
+
+        <label>Phone Number</label>
+
+        <input type="tel"
+        placeholder="+91">
+
+      </div>
+
+    </div>
+
+    <div class="altx-corp-note">
+
+      <i class="fa-solid fa-circle-info"></i>
+
+      Team attendees can be assigned later after booking confirmation.
+
+    </div>
+
+    <button class="altx-final-btn">
+
+      Request Corporate Booking
+
+    </button>
+
+  </div>
+
+</div>  
 <script>
 
 /* ========================= */
 /* TABS */
 /* ========================= */
+  
+/* ========================================== */
+/* CORPORATE MODAL */
+/* ========================================== */
+
+function openCorporateModal(){
+
+  openModal("corporateModal");
+
+}  
 
 function showTab(tabId,button){
 
@@ -3809,10 +4176,10 @@ function openPaymentModal(){
 
           <div class="altx-order-line">
 
-            <span>GST</span>
+            <span>Taxes</span>
 
             <strong class="altx-order-gst">
-              Calculated at checkout
+              included
             </strong>
 
           </div>
@@ -3853,6 +4220,10 @@ function openPaymentModal(){
 /* MODAL */
 /* ========================= */
 
+/* ========================================== */
+/* MODAL */
+/* ========================================== */
+
 function openModal(id){
 
   document
@@ -3860,6 +4231,15 @@ function openModal(id){
   .classList.add("active");
 
   document.body.classList.add("modal-open");
+
+  /* HIDE MOBILE STICKY BAR */
+
+  const mobileBar =
+  document.getElementById("mobileStickyBar");
+
+  if(mobileBar){
+    mobileBar.style.display = "none";
+  }
 
 }
 
@@ -3870,6 +4250,19 @@ function closeModal(id){
   .classList.remove("active");
 
   document.body.classList.remove("modal-open");
+
+  /* SHOW AGAIN ONLY ON MOBILE */
+
+  if(window.innerWidth <= 768){
+
+    const mobileBar =
+    document.getElementById("mobileStickyBar");
+
+    if(mobileBar){
+      mobileBar.style.display = "flex";
+    }
+
+  }
 
 }
 
