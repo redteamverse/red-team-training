@@ -4248,26 +4248,27 @@ id="altxToast">
 <div class="altx-mobile-bar"
 id="mobileStickyBar">
 
-<div class="altx-mobile-bar-price">
+  <div class="altx-mobile-bar-price">
 
-  <span id="mobileBarLabel">
-  Pass Started From
-  </span>
+    <span id="mobileBarLabel">
+      No Pass Selected
+    </span>
 
-  <strong id="mobileBarAmount">
-  ₹39,999
-  </strong>
+    <strong id="mobileBarAmount">
+      —
+    </strong>
 
-</div>
+  </div>
 
   <button class="altx-mobile-bar-btn"
+  id="mobileBarBtn"
   onclick="scrollToSelectionMobileBar()">
 
-    View Selection
+    Select Pass
 
   </button>
 
-</div>  
+</div>
   
 <!-- ========================================== -->
 <!-- CORPORATE MODAL -->
@@ -4584,6 +4585,10 @@ function addConference(){
 /* MOBILE STICKY BAR */
 /* ========================================== */
 
+/* ========================================== */
+/* MOBILE STICKY BAR */
+/* ========================================== */
+
 function updateMobileBar(){
 
   const mobileBar =
@@ -4595,6 +4600,17 @@ function updateMobileBar(){
   const mobileLabel =
   document.getElementById("mobileBarLabel");
 
+  const mobileBtn =
+  document.getElementById("mobileBarBtn");
+
+  /* ALWAYS SHOW ON MOBILE */
+
+  if(window.innerWidth <= 768){
+
+    mobileBar.classList.add("show");
+
+  }
+
   /* EMPTY CART */
 
   if(cart.length === 0){
@@ -4604,19 +4620,14 @@ function updateMobileBar(){
 
     mobileAmount.innerText = "—";
 
-    mobileBar.classList.remove("show");
+    mobileBtn.innerText =
+    "Select Pass";
 
     return;
 
   }
 
-  /* SHOW BAR */
-
-  if(window.innerWidth <= 768){
-
-    mobileBar.classList.add("show");
-
-  }
+  /* HAS ITEMS */
 
   let total = 0;
 
@@ -4631,6 +4642,69 @@ function updateMobileBar(){
 
   mobileAmount.innerText =
   "₹" + total.toLocaleString("en-IN");
+
+  mobileBtn.innerText =
+  "View Selection";
+
+}
+
+/* ========================================== */
+/* MOBILE BUTTON ACTION */
+/* ========================================== */
+
+/* ========================================== */
+/* MOBILE STICKY CTA ACTION */
+/* ========================================== */
+
+/* ========================================== */
+/* MOBILE STICKY CTA ACTION */
+/* ========================================== */
+
+/* ========================================== */
+/* MOBILE STICKY CTA ACTION */
+/* ========================================== */
+
+function scrollToSelectionMobileBar(){
+
+  const mobileBtn =
+  document.getElementById("mobileBarBtn");
+
+  /* SELECT PASS */
+
+  if(
+    mobileBtn.innerText.trim() ===
+    "Select Pass"
+  ){
+
+    const accessSection =
+    document.querySelector(".altx-access-wrap");
+
+    if(accessSection){
+
+      accessSection.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
+    }
+
+    return;
+
+  }
+
+  /* VIEW SELECTION */
+
+  const selectionSection =
+  document.querySelector(".altx-summary");
+
+  if(selectionSection){
+
+    selectionSection.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+  }
 
 }
 function addItem(name,course,price,qty){
@@ -5387,6 +5461,7 @@ function removeCoupon(){
   .classList.remove("show");
 
 }
+updateMobileBar();  
 </script>
 
 </body>
