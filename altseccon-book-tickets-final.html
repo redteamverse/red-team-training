@@ -2167,7 +2167,91 @@ function renderCart(){
   "₹" + total.toLocaleString("en-IN");
 
 }
+/* ===================================== */
+/* ADD THIS FUNCTION */
+/* ===================================== */
 
+function scrollToSelectionMobile(){
+
+  if(window.innerWidth <= 1100){
+
+    setTimeout(()=>{
+
+      document.querySelector(".altx-summary")
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
+    },250);
+
+  }
+
+}
+
+/* ===================================== */
+/* UPDATE THESE 3 FUNCTIONS */
+/* ===================================== */
+
+function addTraining(){
+
+  const qty =
+  parseInt(
+  document.getElementById("trainingQty").innerText
+  );
+
+  const course =
+  document.getElementById("trainingCourse").value;
+
+  addItem(
+    "Training Pass",
+    course,
+    39999,
+    qty
+  );
+
+  scrollToSelectionMobile();
+
+}
+
+function addCombo(){
+
+  const qty =
+  parseInt(
+  document.getElementById("comboQty").innerText
+  );
+
+  const course =
+  document.getElementById("comboCourse").value;
+
+  addItem(
+    "Training + Conference",
+    course,
+    44798,
+    qty
+  );
+
+  scrollToSelectionMobile();
+
+}
+
+function addConference(){
+
+  const qty =
+  parseInt(
+  document.getElementById("conferenceQty").innerText
+  );
+
+  addItem(
+    "Conference Pass",
+    "Conference Access",
+    6399,
+    qty
+  );
+
+  scrollToSelectionMobile();
+
+}
 /* ========================= */
 /* ATTENDEE MODAL */
 /* ========================= */
