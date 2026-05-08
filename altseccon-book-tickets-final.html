@@ -121,6 +121,10 @@ body.modal-open{
 /* MOBILE HINT */
 /* ========================= */
 
+/* ========================================== */
+/* ONLY SHOW TABLE SWIPE HINT FOR 5 SECONDS */
+/* ========================================== */
+
 .altx-mobile-hint{
 
   display:none;
@@ -135,12 +139,101 @@ body.modal-open{
 
   margin-bottom:10px;
 
+  animation:
+  swipeBlink 1.8s infinite,
+  hideSwipeHint .4s ease forwards;
+
+  animation-delay:
+  0s,
+  5s;
+
 }
 
 .altx-mobile-hint i{
+
   color:#60A5FA;
+
+  animation:swipeMove 1.2s infinite;
+
 }
 
+/* TABLE EDGE GLOW */
+
+.altx-table-wrap::after{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  right:0;
+
+  width:40px;
+  height:100%;
+
+  background:
+  linear-gradient(
+    to left,
+    rgba(37,99,235,.28),
+    transparent
+  );
+
+  pointer-events:none;
+
+  opacity:0;
+
+  animation:edgeGlowOnce 5s ease forwards;
+
+}
+
+/* ========================================== */
+/* GLOW ONLY FOR FIRST 5 SECONDS */
+/* ========================================== */
+
+@keyframes edgeGlowOnce{
+
+  0%{
+    opacity:.15;
+  }
+
+  10%{
+    opacity:.9;
+  }
+
+  20%{
+    opacity:.2;
+  }
+
+  30%{
+    opacity:.9;
+  }
+
+  40%{
+    opacity:.2;
+  }
+
+  50%{
+    opacity:.9;
+  }
+
+  60%{
+    opacity:.2;
+  }
+
+  70%{
+    opacity:.8;
+  }
+
+  80%{
+    opacity:.15;
+  }
+
+  100%{
+    opacity:0;
+    visibility:hidden;
+  }
+
+}
 /* ========================= */
 /* TABLE */
 /* ========================= */
@@ -247,14 +340,6 @@ body.modal-open{
 
 }
 
-.altx-price-note{
-
-  font-size:12px;
-  color:#CBD5E1;
-
-  line-height:1.45;
-
-}
 
 .altx-green{
   color:#22C55E;
@@ -1227,7 +1312,216 @@ body.modal-open{
   }
 
 }
+/* ========================================== */
+/* 2. MOBILE SWIPE HINT ANIMATION */
+/* ========================================== */
 
+.altx-mobile-hint{
+
+  display:none;
+
+  align-items:center;
+  gap:10px;
+
+  color:#94A3B8;
+
+  font-size:12px;
+  font-weight:600;
+
+  margin-bottom:10px;
+
+  animation:swipeBlink 1.8s infinite;
+
+}
+
+.altx-mobile-hint i{
+
+  color:#60A5FA;
+
+  animation:swipeMove 1.2s infinite;
+
+}
+
+@keyframes swipeBlink{
+
+  0%{
+    opacity:.55;
+  }
+
+  50%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:.55;
+  }
+
+}
+
+@keyframes swipeMove{
+
+  0%{
+    transform:translateX(0);
+  }
+
+  50%{
+    transform:translateX(6px);
+  }
+
+  100%{
+    transform:translateX(0);
+  }
+
+}
+
+/* ========================================== */
+/* 3. OPTIONAL TABLE GLOW HINT */
+/* ========================================== */
+
+.altx-table-wrap{
+
+  overflow-x:auto;
+
+  border-radius:24px;
+
+  -ms-overflow-style:none;
+  scrollbar-width:none;
+
+  cursor:grab;
+
+  position:relative;
+
+}
+
+.altx-table-wrap::after{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  right:0;
+
+  width:36px;
+  height:100%;
+
+  background:
+  linear-gradient(
+    to left,
+    rgba(37,99,235,.22),
+    transparent
+  );
+
+  pointer-events:none;
+
+  animation:edgeGlow 1.5s infinite;
+
+}
+
+@keyframes edgeGlow{
+
+  0%{
+    opacity:.15;
+  }
+
+  50%{
+    opacity:.9;
+  }
+
+  100%{
+    opacity:.15;
+  }
+
+}
+
+/* MOBILE ONLY */
+
+@media(min-width:769px){
+
+  .altx-table-wrap::after{
+    display:none;
+  }
+
+}
+/* ========================================== */
+/* 4. UPDATE PRICE STRIKE STYLE */
+/* ========================================== */
+
+.altx-old-price{
+
+  color:#94A3B8;
+
+  text-decoration:line-through;
+
+  font-size:13px;
+
+  font-weight:600;
+
+  margin-top:4px;
+
+}
+
+/* ========================================== */
+/* 5. PAYMENT SUMMARY BOX */
+/* ========================================== */
+
+.altx-payment-summary{
+
+  background:#0B1528;
+
+  border:1px solid rgba(255,255,255,.06);
+
+  border-radius:18px;
+
+  padding:18px;
+
+  margin-bottom:18px;
+
+}
+
+.altx-payment-line{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:12px;
+
+  font-size:14px;
+
+}
+
+.altx-payment-line:last-child{
+  margin-bottom:0;
+}
+
+.altx-payment-save{
+
+  color:#22C55E;
+  font-weight:700;
+
+}
+
+.altx-payment-final{
+
+  font-size:34px;
+  font-weight:800;
+
+  color:#22C55E;
+
+}
+
+/* ========================================== */
+/* 6. MOBILE */
+/* ========================================== */
+
+@media(max-width:768px){
+
+  .altx-mobile-hint{
+    display:flex;
+  }
+
+}  
 </style>
 </head>
 <body>
@@ -1296,11 +1590,7 @@ body.modal-open{
 
           <div class="altx-price altx-green">
             ₹39,999
-          </div>
-
-          <div class="altx-price-note">
-            Training: 20% OFF
-          </div>
+          </div>       
 
         </div>
 
@@ -1310,9 +1600,7 @@ body.modal-open{
             ₹44,798
           </div>
 
-          <div class="altx-price-note">
-            Training 20% + Conference 40% OFF
-          </div>
+        
 
         </div>
 
@@ -1322,9 +1610,6 @@ body.modal-open{
             ₹6,399
           </div>
 
-          <div class="altx-price-note">
-            Conference: 20% OFF
-          </div>
 
         </div>
 
@@ -1463,37 +1748,45 @@ body.modal-open{
 
           </div>
 
-          <div class="altx-phase-info">
+          <!-- ========================================== -->
+<!-- REPLACE TRAINING PHASE INFO -->
+<!-- ========================================== -->
 
-            <div class="altx-phase-row">
+<div class="altx-phase-info">
 
-              <div class="altx-phase-title">
-                Early Bird (15% off)
-              </div>
+  <div class="altx-phase-row">
 
-              <div class="altx-phase-valid">
-                Valid till 30 August
-              </div>
+    <div class="altx-phase-title">
+      Early Bird
+    </div>
 
-              <div class="altx-phase-price">
-                ₹42,499.15
-              </div>
+    <div class="altx-phase-valid">
+      Valid till 30 August
+    </div>
 
-            </div>
+    <div class="altx-phase-price">
+      ₹42,499
+    </div>
 
-            <div class="altx-phase-row">
+    <div class="altx-old-price">
+      ₹49,999
+    </div>
 
-              <div class="altx-phase-title">
-                Regular
-              </div>
+  </div>
 
-              <div class="altx-phase-price">
-                ₹49,999
-              </div>
+  <div class="altx-phase-row">
 
-            </div>
+    <div class="altx-phase-title">
+      Regular
+    </div>
 
-          </div>
+    <div class="altx-phase-price">
+      ₹49,999
+    </div>
+
+  </div>
+
+</div>
 
         </div>
 
@@ -1580,37 +1873,45 @@ body.modal-open{
 
           </div>
 
-          <div class="altx-phase-info">
+          <!-- ========================================== -->
+<!-- REPLACE COMBO PHASE INFO -->
+<!-- ========================================== -->
 
-            <div class="altx-phase-row">
+<div class="altx-phase-info">
 
-              <div class="altx-phase-title">
-                Early Bird (15% + 40% Conference)
-              </div>
+  <div class="altx-phase-row">
 
-              <div class="altx-phase-valid">
-                Till 30 August
-              </div>
+    <div class="altx-phase-title">
+      Early Bird
+    </div>
 
-              <div class="altx-phase-price">
-                ₹47,298.55
-              </div>
+    <div class="altx-phase-valid">
+      Till 30 August
+    </div>
 
-            </div>
+    <div class="altx-phase-price">
+      ₹47,298
+    </div>
 
-            <div class="altx-phase-row">
+    <div class="altx-old-price">
+      ₹54,798
+    </div>
 
-              <div class="altx-phase-title">
-                Regular + Conference Included
-              </div>
+  </div>
 
-              <div class="altx-phase-price">
-                ₹54,798.40
-              </div>
+  <div class="altx-phase-row">
 
-            </div>
+    <div class="altx-phase-title">
+      Regular + Conference
+    </div>
 
-          </div>
+    <div class="altx-phase-price">
+      ₹54,798
+    </div>
+
+  </div>
+
+</div>
 
         </div>
 
@@ -1682,37 +1983,45 @@ body.modal-open{
 
           </div>
 
-          <div class="altx-phase-info">
+          <!-- ========================================== -->
+<!-- REPLACE CONFERENCE PHASE INFO -->
+<!-- ========================================== -->
 
-            <div class="altx-phase-row">
+<div class="altx-phase-info">
 
-              <div class="altx-phase-title">
-                Early Bird (15% off)
-              </div>
+  <div class="altx-phase-row">
 
-              <div class="altx-phase-valid">
-                Till 30 August
-              </div>
+    <div class="altx-phase-title">
+      Early Bird
+    </div>
 
-              <div class="altx-phase-price">
-                ₹6,799.15
-              </div>
+    <div class="altx-phase-valid">
+      Till 30 August
+    </div>
 
-            </div>
+    <div class="altx-phase-price">
+      ₹6,799
+    </div>
 
-            <div class="altx-phase-row">
+    <div class="altx-old-price">
+      ₹7,999
+    </div>
 
-              <div class="altx-phase-title">
-                Regular
-              </div>
+  </div>
 
-              <div class="altx-phase-price">
-                ₹7,999
-              </div>
+  <div class="altx-phase-row">
 
-            </div>
+    <div class="altx-phase-title">
+      Conference
+    </div>
 
-          </div>
+    <div class="altx-phase-price">
+      ₹7,999
+    </div>
+
+  </div>
+
+</div>
 
         </div>
 
@@ -1841,20 +2150,49 @@ id="paymentModal">
 
     </div>
 
-    <div class="altx-payment-box">
+    <!-- ========================================== -->
+<!-- REPLACE PAYMENT BOX WITH THIS -->
+<!-- ========================================== -->
 
-      <div class="altx-payment-label">
-        Total Payable
-      </div>
+<div class="altx-payment-summary">
 
-      <div class="altx-payment-amount"
-      id="paymentAmount">
+  <div class="altx-payment-line">
 
-        ₹0
+    <span>Original Price</span>
 
-      </div>
+    <strong id="originalPrice">
+      ₹0
+    </strong>
 
-    </div>
+  </div>
+
+  <div class="altx-payment-line">
+
+    <span>You Saved</span>
+
+    <strong class="altx-payment-save"
+    id="savedAmount">
+
+      ₹0
+
+    </strong>
+
+  </div>
+
+  <div class="altx-payment-line">
+
+    <span>Final Amount</span>
+
+    <strong class="altx-payment-final"
+    id="paymentAmount">
+
+      ₹0
+
+    </strong>
+
+  </div>
+
+</div>
 
     <div class="altx-payment-options">
 
@@ -2389,14 +2727,53 @@ function copyBookingInfo(index){
 /* ========================= */
 /* PAYMENT */
 /* ========================= */
+/* ========================================== */
+/* UPDATE PAYMENT MODAL FUNCTION */
+/* ========================================== */
 
 function openPaymentModal(){
 
-  const total =
-  document.getElementById("cartTotal").innerText;
+  let finalTotal = 0;
+  let originalTotal = 0;
+
+  cart.forEach(item=>{
+
+    finalTotal += item.price * item.qty;
+
+    /* ORIGINAL PRICES */
+
+    let original = item.price;
+
+    if(item.name === "Training Pass"){
+      original = 49999;
+    }
+
+    if(item.name === "Training + Conference"){
+      original = 54798;
+    }
+
+    if(item.name === "Conference Pass"){
+      original = 7999;
+    }
+
+    originalTotal += original * item.qty;
+
+  });
+
+  const saved =
+  originalTotal - finalTotal;
+
+  document.getElementById("originalPrice")
+  .innerText =
+  "₹" + originalTotal.toLocaleString("en-IN");
+
+  document.getElementById("savedAmount")
+  .innerText =
+  "₹" + saved.toLocaleString("en-IN");
 
   document.getElementById("paymentAmount")
-  .innerText = total;
+  .innerText =
+  "₹" + finalTotal.toLocaleString("en-IN");
 
   closeModal("attendeeModal");
 
