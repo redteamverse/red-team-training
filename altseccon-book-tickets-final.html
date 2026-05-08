@@ -149,94 +149,7 @@ body.modal-open{
 
 }
 
-.altx-mobile-hint i{
 
-  color:#60A5FA;
-
-  animation:swipeMove 1.2s infinite;
-
-}
-
-/* TABLE EDGE GLOW */
-
-.altx-table-wrap::after{
-
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  right:0;
-
-  width:40px;
-  height:100%;
-
-  background:
-  linear-gradient(
-    to left,
-    rgba(37,99,235,.28),
-    transparent
-  );
-
-  pointer-events:none;
-
-  opacity:0;
-
-  animation:edgeGlowOnce 5s ease forwards;
-
-}
-
-/* ========================================== */
-/* GLOW ONLY FOR FIRST 5 SECONDS */
-/* ========================================== */
-
-@keyframes edgeGlowOnce{
-
-  0%{
-    opacity:.15;
-  }
-
-  10%{
-    opacity:.9;
-  }
-
-  20%{
-    opacity:.2;
-  }
-
-  30%{
-    opacity:.9;
-  }
-
-  40%{
-    opacity:.2;
-  }
-
-  50%{
-    opacity:.9;
-  }
-
-  60%{
-    opacity:.2;
-  }
-
-  70%{
-    opacity:.8;
-  }
-
-  80%{
-    opacity:.15;
-  }
-
-  100%{
-    opacity:0;
-    visibility:hidden;
-  }
-
-}
-/* ========================= */
-/* TABLE */
-/* ========================= */
 
 .altx-table-wrap{
 
@@ -321,7 +234,7 @@ body.modal-open{
   font-weight:800;
 
   margin-bottom:8px;
-
+  color:#22C55E;
 }
 
 .altx-row-sub{
@@ -364,27 +277,135 @@ body.modal-open{
 
 }
 
+/* ========================================== */
+/* ACTIVE NOW BLINK EFFECT */
+/* ========================================== */
+
 .altx-live{
 
   display:inline-flex;
   align-items:center;
   gap:6px;
 
-  padding:7px 10px;
+  padding:7px 12px;
 
   border-radius:999px;
 
   background:rgba(34,197,94,.10);
 
-  border:1px solid rgba(34,197,94,.16);
+  border:1px solid rgba(34,197,94,.18);
 
   color:#22C55E;
 
   font-size:11px;
   font-weight:700;
 
+  position:relative;
+
+  animation:activePulse 1.4s infinite;
+
 }
 
+/* INNER GLOW */
+
+.altx-live::before{
+
+  content:"";
+
+  position:absolute;
+  inset:-1px;
+
+  border-radius:999px;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(34,197,94,.35),
+    transparent 70%
+  );
+
+  opacity:.4;
+
+  z-index:-1;
+
+  animation:activeGlow 1.4s infinite;
+
+}
+
+/* ICON FLASH */
+
+.altx-live i{
+
+  animation:boltBlink 1.2s infinite;
+
+}
+
+/* ========================================== */
+/* ANIMATIONS */
+/* ========================================== */
+
+@keyframes activePulse{
+
+  0%{
+
+    box-shadow:
+    0 0 0 rgba(34,197,94,0);
+
+    transform:scale(1);
+
+  }
+
+  50%{
+
+    box-shadow:
+    0 0 16px rgba(34,197,94,.28);
+
+    transform:scale(1.04);
+
+  }
+
+  100%{
+
+    box-shadow:
+    0 0 0 rgba(34,197,94,0);
+
+    transform:scale(1);
+
+  }
+
+}
+
+@keyframes activeGlow{
+
+  0%{
+    opacity:.15;
+  }
+
+  50%{
+    opacity:.9;
+  }
+
+  100%{
+    opacity:.15;
+  }
+
+}
+
+@keyframes boltBlink{
+
+  0%{
+    opacity:.5;
+  }
+
+  50%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:.5;
+  }
+
+}
 .altx-register-btn{
 
   height:42px;
@@ -1316,24 +1337,6 @@ body.modal-open{
 /* 2. MOBILE SWIPE HINT ANIMATION */
 /* ========================================== */
 
-.altx-mobile-hint{
-
-  display:none;
-
-  align-items:center;
-  gap:10px;
-
-  color:#94A3B8;
-
-  font-size:12px;
-  font-weight:600;
-
-  margin-bottom:10px;
-
-  animation:swipeBlink 1.8s infinite;
-
-}
-
 .altx-mobile-hint i{
 
   color:#60A5FA;
@@ -1393,56 +1396,7 @@ body.modal-open{
 
 }
 
-.altx-table-wrap::after{
 
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  right:0;
-
-  width:36px;
-  height:100%;
-
-  background:
-  linear-gradient(
-    to left,
-    rgba(37,99,235,.22),
-    transparent
-  );
-
-  pointer-events:none;
-
-  animation:edgeGlow 1.5s infinite;
-
-}
-
-@keyframes edgeGlow{
-
-  0%{
-    opacity:.15;
-  }
-
-  50%{
-    opacity:.9;
-  }
-
-  100%{
-    opacity:.15;
-  }
-
-}
-
-/* MOBILE ONLY */
-
-@media(min-width:769px){
-
-  .altx-table-wrap::after{
-    display:none;
-  }
-
-}
 /* ========================================== */
 /* 4. UPDATE PRICE STRIKE STYLE */
 /* ========================================== */
@@ -1522,6 +1476,447 @@ body.modal-open{
   }
 
 }  
+  
+/* ========================================== */
+/* SAVE TAG */
+/* ========================================== */
+
+.altx-save-tag{
+
+  display:inline-flex;
+  align-items:center;
+
+  margin-top:8px;
+
+  padding:5px 10px;
+
+  border-radius:999px;
+
+  background:rgba(34,197,94,.10);
+
+  border:1px solid rgba(34,197,94,.12);
+
+  color:#22C55E;
+
+  font-size:11px;
+  font-weight:700;
+
+  width:max-content;
+
+}  
+/* ========================================== */
+/* TOAST */
+/* ========================================== */
+
+.altx-toast{
+
+  position:fixed;
+
+  top:18px;
+  right:18px;
+
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+
+  width:320px;
+
+  padding:16px;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(7,16,31,.96),
+    rgba(11,21,40,.96)
+  );
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.35);
+
+  z-index:999999;
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:
+  translateY(-12px)
+  scale(.96);
+
+  transition:
+  opacity .28s ease,
+  transform .28s ease,
+  visibility .28s ease;
+
+}
+
+.altx-toast.show{
+
+  opacity:1;
+  visibility:visible;
+
+  transform:
+  translateY(0)
+  scale(1);
+
+}
+
+.altx-toast-icon{
+
+  width:42px;
+  height:42px;
+
+  min-width:42px;
+
+  border-radius:14px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  rgba(34,197,94,.12);
+
+  border:1px solid rgba(34,197,94,.16);
+
+  color:#22C55E;
+
+  font-size:15px;
+
+}
+
+.altx-toast-title{
+
+  font-size:14px;
+  font-weight:700;
+
+  margin-bottom:4px;
+
+}
+
+.altx-toast-text{
+
+  font-size:13px;
+  line-height:1.5;
+
+  color:#94A3B8;
+
+}
+
+@media(max-width:640px){
+
+  .altx-toast{
+
+    width:calc(100% - 24px);
+
+    right:12px;
+    top:12px;
+
+  }
+
+}  
+  
+/* ========================================== */
+/* TRUST SIGNALS */
+/* ========================================== */
+
+.altx-trust-wrap{
+
+  margin-top:18px;
+
+  display:grid;
+  gap:10px;
+
+}
+
+.altx-trust-item{
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding:12px 14px;
+
+  border-radius:14px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,.02),
+    rgba(255,255,255,.01)
+  );
+
+  border:1px solid rgba(255,255,255,.05);
+
+}
+
+.altx-trust-icon{
+
+  width:34px;
+  height:34px;
+
+  min-width:34px;
+
+  border-radius:10px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  rgba(37,99,235,.10);
+
+  border:1px solid rgba(37,99,235,.14);
+
+  color:#60A5FA;
+
+  font-size:13px;
+
+}
+
+.altx-trust-item span{
+
+  font-size:13px;
+  font-weight:600;
+
+  color:#CBD5E1;
+
+  line-height:1.4;
+
+}  
+/* ========================================== */
+/* TERMS */
+/* ========================================== */
+
+.altx-terms-wrap{
+
+  margin-top:22px;
+
+  padding:16px 18px;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,.02),
+    rgba(255,255,255,.01)
+  );
+
+  border:1px solid rgba(255,255,255,.06);
+
+}
+
+.altx-terms-check{
+
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+
+  cursor:pointer;
+
+}
+
+.altx-terms-check input{
+  display:none;
+}
+
+.altx-custom-check{
+
+  width:20px;
+  height:20px;
+
+  min-width:20px;
+
+  border-radius:6px;
+
+  border:1px solid rgba(255,255,255,.16);
+
+  background:#0F172A;
+
+  position:relative;
+
+  margin-top:1px;
+
+  transition:.2s ease;
+
+}
+
+.altx-custom-check::after{
+
+  content:"";
+
+  position:absolute;
+
+  top:4px;
+  left:7px;
+
+  width:4px;
+  height:8px;
+
+  border:
+  solid #fff;
+
+  border-width:
+  0 2px 2px 0;
+
+  transform:
+  rotate(45deg);
+
+  opacity:0;
+
+}
+
+.altx-terms-check input:checked
++ .altx-custom-check{
+
+  background:#22C55E;
+
+  border-color:#22C55E;
+
+}
+
+.altx-terms-check input:checked
++ .altx-custom-check::after{
+
+  opacity:1;
+
+}
+
+.altx-terms-text{
+
+  font-size:13px;
+  line-height:1.6;
+
+  color:#CBD5E1;
+
+}
+
+.altx-terms-text a{
+
+  color:#60A5FA;
+
+  text-decoration:none;
+
+  font-weight:600;
+
+}
+
+.altx-terms-text a:hover{
+  text-decoration:underline;
+}  
+  
+/* ========================================== */
+/* ORDER BREAKDOWN */
+/* ========================================== */
+
+.altx-order-breakdown{
+
+  display:grid;
+  gap:14px;
+
+  margin-bottom:18px;
+
+}
+
+.altx-order-card{
+
+  background:#0B1528;
+
+  border:1px solid rgba(255,255,255,.06);
+
+  border-radius:18px;
+
+  padding:16px;
+
+}
+
+.altx-order-top{
+
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+
+  margin-bottom:10px;
+
+}
+
+.altx-order-name{
+
+  font-size:14px;
+  font-weight:700;
+
+  margin-bottom:4px;
+
+}
+
+.altx-order-qty{
+
+  font-size:12px;
+
+  color:#94A3B8;
+
+}
+
+.altx-order-total{
+
+  font-size:18px;
+  font-weight:800;
+
+  color:#22C55E;
+
+}
+
+.altx-order-price{
+
+  font-size:13px;
+  color:#CBD5E1;
+
+}
+
+.altx-order-meta{
+
+  margin-top:14px;
+
+  padding-top:14px;
+
+  border-top:1px solid rgba(255,255,255,.06);
+
+  display:grid;
+  gap:10px;
+
+}
+
+.altx-order-line{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  font-size:13px;
+
+}
+
+.altx-order-line span{
+  color:#94A3B8;
+}
+
+.altx-order-line strong{
+  color:#F8FAFC;
+}
+
+.altx-order-save{
+
+  color:#22C55E !important;
+}
+
+.altx-order-gst{
+
+  color:#60A5FA !important;
+}  
 </style>
 </head>
 <body>
@@ -1577,7 +1972,7 @@ body.modal-open{
         <div>
 
           <div class="altx-row-title">
-            Super Early Bird
+             <i class="fa-solid fa-bolt"></i> Super Early Bird
           </div>
 
           <div class="altx-row-sub">
@@ -1591,7 +1986,9 @@ body.modal-open{
           <div class="altx-price altx-green">
             ₹39,999
           </div>       
-
+          <div class="altx-old-price">
+            ₹49,999
+          </div>
         </div>
 
         <div>
@@ -1599,7 +1996,9 @@ body.modal-open{
           <div class="altx-price altx-purple">
             ₹44,798
           </div>
-
+           <div class="altx-old-price">
+    ₹54,798
+  </div>
         
 
         </div>
@@ -1609,7 +2008,9 @@ body.modal-open{
           <div class="altx-price altx-blue">
             ₹6,399
           </div>
-
+<div class="altx-old-price">
+    ₹7,999
+  </div>
 
         </div>
 
@@ -2075,7 +2476,37 @@ body.modal-open{
           <input type="tel"
           id="bookingPhone"
           placeholder="Phone Number">
+<!-- ========================================== -->
+<!-- ADD THIS ABOVE -->
+<!-- "Proceed to Payment" BUTTON -->
+<!-- INSIDE ATTENDEE MODAL -->
+<!-- ========================================== -->
 
+<div class="altx-terms-wrap">
+
+  <label class="altx-terms-check">
+
+    <input type="checkbox"
+    id="termsCheck">
+
+    <span class="altx-custom-check"></span>
+
+    <span class="altx-terms-text">
+
+      I agree to the
+      <a href="#">
+        Terms
+      </a>
+      &
+      <a href="#">
+        Refund Policy
+      </a>
+
+    </span>
+
+  </label>
+
+</div>
           <button class="altx-checkout"
           onclick="openAttendeeModal()">
 
@@ -2087,7 +2518,62 @@ body.modal-open{
 
       </div>
 
-    </aside>
+    <!-- ========================================== -->
+<!-- ADD THIS BELOW BOOKING DETAILS SECTION -->
+<!-- INSIDE .altx-summary -->
+<!-- ========================================== -->
+
+<div class="altx-trust-wrap">
+
+  <div class="altx-trust-item">
+
+    <div class="altx-trust-icon">
+
+      <i class="fa-solid fa-shield-halved"></i>
+
+    </div>
+
+    <span>Secure Payment</span>
+
+  </div>
+
+  <div class="altx-trust-item">
+
+    <div class="altx-trust-icon">
+
+      <i class="fa-solid fa-file-invoice"></i>
+
+    </div>
+
+    <span>GST Invoice Available</span>
+
+  </div>
+
+  <div class="altx-trust-item">
+
+    <div class="altx-trust-icon">
+
+      <i class="fa-solid fa-users"></i>
+
+    </div>
+
+    <span>Trusted by 10,000+ Professionals</span>
+
+  </div>
+
+  <div class="altx-trust-item">
+
+    <div class="altx-trust-icon">
+
+      <i class="fa-solid fa-building"></i>
+
+    </div>
+
+    <span>Corporate Purchase Supported</span>
+
+  </div>
+
+</div></aside>
 
   </div>
 
@@ -2153,7 +2639,10 @@ id="paymentModal">
     <!-- ========================================== -->
 <!-- REPLACE PAYMENT BOX WITH THIS -->
 <!-- ========================================== -->
+<div class="altx-order-breakdown"
+id="orderBreakdown">
 
+</div>
 <div class="altx-payment-summary">
 
   <div class="altx-payment-line">
@@ -2239,7 +2728,35 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <i class="fa-solid fa-arrow-up"></i>
 
 </button>
+<!-- ========================================== -->
+<!-- ADD THIS BEFORE </body> -->
+<!-- ========================================== -->
 
+<div class="altx-toast"
+id="altxToast">
+
+  <div class="altx-toast-icon">
+
+    <i class="fa-solid fa-check"></i>
+
+  </div>
+
+  <div>
+
+    <div class="altx-toast-title">
+      Pass Added Successfully
+    </div>
+
+    <div class="altx-toast-text"
+    id="toastMessage">
+
+      Training Pass added to your selection
+
+    </div>
+
+  </div>
+
+</div>
 <script>
 
 /* ========================= */
@@ -2527,6 +3044,31 @@ function scrollToSelectionMobile(){
 
 }
 
+/* ========================================== */
+/* TOAST FUNCTION */
+/* ========================================== */
+
+function showToast(message){
+
+  const toast =
+  document.getElementById("altxToast");
+
+  const toastMessage =
+  document.getElementById("toastMessage");
+
+  toastMessage.innerText = message;
+
+  toast.classList.add("show");
+
+  clearTimeout(toast.hideTimeout);
+
+  toast.hideTimeout = setTimeout(()=>{
+
+    toast.classList.remove("show");
+
+  },2600);
+
+}  
 /* ===================================== */
 /* UPDATE THESE 3 FUNCTIONS */
 /* ===================================== */
@@ -2547,7 +3089,9 @@ function addTraining(){
     39999,
     qty
   );
-
+    showToast(
+    `${qty} Training Pass added`
+  );
   scrollToSelectionMobile();
 
 }
@@ -2568,7 +3112,9 @@ function addCombo(){
     44798,
     qty
   );
-
+    showToast(
+    `${qty} Combo Pass added`
+  );
   scrollToSelectionMobile();
 
 }
@@ -2586,7 +3132,9 @@ function addConference(){
     6399,
     qty
   );
-
+    showToast(
+    `${qty} Conference Pass added`
+  );
   scrollToSelectionMobile();
 
 }
@@ -2731,16 +3279,35 @@ function copyBookingInfo(index){
 /* UPDATE PAYMENT MODAL FUNCTION */
 /* ========================================== */
 
+/* ========================================== */
+/* UPDATE openPaymentModal() */
+/* ========================================== */
+
+/* ========================================== */
+/* UPDATE openPaymentModal() */
+/* ========================================== */
+
 function openPaymentModal(){
+
+  const termsAccepted =
+  document.getElementById("termsCheck").checked;
+
+  if(!termsAccepted){
+
+    alert(
+      "Please accept Terms & Refund Policy."
+    );
+
+    return;
+
+  }
 
   let finalTotal = 0;
   let originalTotal = 0;
 
+  let breakdownHTML = "";
+
   cart.forEach(item=>{
-
-    finalTotal += item.price * item.qty;
-
-    /* ORIGINAL PRICES */
 
     let original = item.price;
 
@@ -2756,12 +3323,92 @@ function openPaymentModal(){
       original = 7999;
     }
 
-    originalTotal += original * item.qty;
+    const subtotal =
+    item.price * item.qty;
+
+    const originalSubtotal =
+    original * item.qty;
+
+    const saved =
+    originalSubtotal - subtotal;
+
+    finalTotal += subtotal;
+
+    originalTotal += originalSubtotal;
+
+    breakdownHTML += `
+
+      <div class="altx-order-card">
+
+        <div class="altx-order-top">
+
+          <div>
+
+            <div class="altx-order-name">
+              ${item.name}
+            </div>
+
+            <div class="altx-order-qty">
+              Quantity: ${item.qty}
+            </div>
+
+          </div>
+
+          <div class="altx-order-total">
+            ₹${subtotal.toLocaleString("en-IN")}
+          </div>
+
+        </div>
+
+        <div class="altx-order-price">
+          ₹${item.price.toLocaleString("en-IN")} each
+        </div>
+
+        <div class="altx-order-meta">
+
+          <div class="altx-order-line">
+
+            <span>Original Price</span>
+
+            <strong>
+              ₹${originalSubtotal.toLocaleString("en-IN")}
+            </strong>
+
+          </div>
+
+          <div class="altx-order-line">
+
+            <span>You Saved</span>
+
+            <strong class="altx-order-save">
+              ₹${saved.toLocaleString("en-IN")}
+            </strong>
+
+          </div>
+
+          <div class="altx-order-line">
+
+            <span>GST</span>
+
+            <strong class="altx-order-gst">
+              Calculated at checkout
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
 
   });
 
-  const saved =
+  const totalSaved =
   originalTotal - finalTotal;
+
+  document.getElementById("orderBreakdown")
+  .innerHTML = breakdownHTML;
 
   document.getElementById("originalPrice")
   .innerText =
@@ -2769,7 +3416,7 @@ function openPaymentModal(){
 
   document.getElementById("savedAmount")
   .innerText =
-  "₹" + saved.toLocaleString("en-IN");
+  "₹" + totalSaved.toLocaleString("en-IN");
 
   document.getElementById("paymentAmount")
   .innerText =
