@@ -1917,6 +1917,281 @@ body.modal-open{
 
   color:#60A5FA !important;
 }  
+/* ========================================== */
+/* COUPON */
+/* ========================================== */
+
+.altx-coupon-box{
+
+  margin-top:22px;
+
+  padding:18px;
+
+  border-radius:20px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(37,99,235,.05),
+    rgba(37,99,235,.02)
+  );
+
+  border:1px solid rgba(37,99,235,.10);
+
+}
+
+.altx-coupon-top{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+
+  margin-bottom:16px;
+
+}
+
+.altx-coupon-title{
+
+  font-size:14px;
+  font-weight:700;
+
+  margin-bottom:5px;
+
+}
+
+.altx-coupon-sub{
+
+  font-size:12px;
+  color:#94A3B8;
+
+  line-height:1.5;
+
+}
+
+.altx-coupon-row{
+
+  display:flex;
+  gap:10px;
+
+}
+
+.altx-coupon-row input{
+
+  flex:1;
+
+  height:48px;
+
+  border-radius:14px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:#081120;
+
+  color:#fff;
+
+  padding:0 14px;
+
+  font-size:14px;
+
+}
+
+.altx-coupon-row button{
+
+  height:48px;
+
+  padding:0 18px;
+
+  border:none;
+  border-radius:14px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563EB,
+    #1D4ED8
+  );
+
+  color:#fff;
+
+  font-size:13px;
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+/* ========================================== */
+/* COUPON SUCCESS */
+/* ========================================== */
+
+.altx-coupon-success{
+
+  margin-top:14px;
+
+  display:none;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+
+  padding:12px 14px;
+
+  border-radius:14px;
+
+  background:rgba(34,197,94,.08);
+
+  border:1px solid rgba(34,197,94,.10);
+
+  color:#22C55E;
+
+  font-size:13px;
+  font-weight:600;
+
+}
+
+.altx-coupon-success.show{
+  display:flex;
+}
+
+.altx-coupon-success-left{
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  line-height:1.5;
+
+}
+
+.altx-remove-coupon{
+
+  border:none;
+
+  background:none;
+
+  color:#EF4444;
+
+  font-size:12px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  white-space:nowrap;
+
+}
+
+@media(max-width:640px){
+
+  .altx-coupon-success{
+
+    flex-direction:column;
+    align-items:flex-start;
+
+  }
+
+}
+/* ========================================== */
+/* MOBILE STICKY CTA */
+/* ========================================== */
+
+.altx-mobile-bar{
+
+  position:fixed;
+
+  left:12px;
+  right:12px;
+  bottom:12px;
+
+  height:68px;
+
+  display:none;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:14px;
+
+  padding:12px 14px;
+
+  border-radius:20px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(7,16,31,.96),
+    rgba(11,21,40,.96)
+  );
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+  0 18px 40px rgba(0,0,0,.38);
+
+  backdrop-filter:blur(10px);
+
+  z-index:99999;
+
+}
+
+.altx-mobile-bar-price{
+
+  display:flex;
+  flex-direction:column;
+
+}
+
+.altx-mobile-bar-price span{
+
+  font-size:11px;
+  color:#94A3B8;
+
+  margin-bottom:3px;
+
+}
+
+.altx-mobile-bar-price strong{
+
+  font-size:20px;
+  font-weight:800;
+
+  color:#22C55E;
+
+  line-height:1;
+
+}
+
+.altx-mobile-bar-btn{
+
+  height:44px;
+
+  padding:0 16px;
+
+  border:none;
+  border-radius:14px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #EF4444,
+    #C1121F
+  );
+
+  color:#fff;
+
+  font-size:13px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  white-space:nowrap;
+
+}
+
+@media(max-width:768px){
+
+  .altx-mobile-bar{
+    display:flex;
+  }
+
+}  
 </style>
 </head>
 <body>
@@ -2481,7 +2756,67 @@ body.modal-open{
 <!-- "Proceed to Payment" BUTTON -->
 <!-- INSIDE ATTENDEE MODAL -->
 <!-- ========================================== -->
+<!-- ========================================== -->
+<!-- ADD THIS ABOVE -->
+<!-- TERMS & REFUND POLICY SECTION -->
+<!-- INSIDE ATTENDEE MODAL -->
+<!-- ========================================== -->
 
+<div class="altx-coupon-box">
+
+  <div class="altx-coupon-top">
+
+    <div>
+
+      <div class="altx-coupon-title">
+        Have a Coupon or Referral Code?
+      </div>
+
+      <div class="altx-coupon-sub">
+        Apply community, influencer, or partner codes
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="altx-coupon-row">
+
+    <input type="text"
+    id="couponCode"
+    placeholder="Enter coupon code">
+
+    <button type="button"
+    onclick="applyCoupon()">
+
+      Apply
+
+    </button>
+
+  </div>
+
+ <div class="altx-coupon-success"
+id="couponSuccess">
+
+  <div class="altx-coupon-success-left">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="couponSuccessText"></span>
+
+  </div>
+
+  <button type="button"
+  class="altx-remove-coupon"
+  onclick="removeCoupon()">
+
+    Remove
+
+  </button>
+
+</div>
+
+</div>
 <div class="altx-terms-wrap">
 
   <label class="altx-terms-check">
@@ -2757,6 +3092,33 @@ id="altxToast">
   </div>
 
 </div>
+<!-- ========================================== -->
+<!-- ADD THIS BEFORE </body> -->
+<!-- ========================================== -->
+
+<div class="altx-mobile-bar"
+id="mobileStickyBar">
+
+<div class="altx-mobile-bar-price">
+
+  <span id="mobileBarLabel">
+  Pass Started From
+  </span>
+
+  <strong id="mobileBarAmount">
+  ₹39,999
+  </strong>
+
+</div>
+
+  <button class="altx-mobile-bar-btn"
+  onclick="scrollToSelectionMobileBar()">
+
+    View Selection
+
+  </button>
+
+</div>  
 <script>
 
 /* ========================= */
@@ -2866,6 +3228,44 @@ function addConference(){
 
 }
 
+/* ========================================== */
+/* MOBILE STICKY BAR */
+/* ========================================== */
+
+function updateMobileBar(){
+
+  const mobileAmount =
+  document.getElementById("mobileBarAmount");
+
+  const mobileLabel =
+  document.getElementById("mobileBarLabel");
+
+  if(cart.length === 0){
+
+    mobileLabel.innerText =
+    "No Pass Selected";
+
+    mobileAmount.innerText = "—";
+
+    return;
+
+  }
+
+  let total = 0;
+
+  cart.forEach(item=>{
+
+    total += item.price * item.qty;
+
+  });
+
+  mobileLabel.innerText =
+  "Your Selection";
+
+  mobileAmount.innerText =
+  "₹" + total.toLocaleString("en-IN");
+
+}
 function addItem(name,course,price,qty){
 
   const existing =
@@ -2948,6 +3348,9 @@ function renderCart(){
 
     totalEl.innerText = "₹0";
 
+    /* UPDATE MOBILE BAR */
+    updateMobileBar();
+
     return;
   }
 
@@ -3021,7 +3424,25 @@ function renderCart(){
   totalEl.innerText =
   "₹" + total.toLocaleString("en-IN");
 
+  /* UPDATE MOBILE BAR */
+  updateMobileBar();
+
 }
+
+  
+/* ========================================== */
+/* MOBILE VIEW SELECTION */
+/* ========================================== */
+
+function scrollToSelectionMobileBar(){
+
+  document.querySelector(".altx-summary")
+  .scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}  
 /* ===================================== */
 /* ADD THIS FUNCTION */
 /* ===================================== */
@@ -3517,7 +3938,62 @@ slider.addEventListener("touchmove",(e)=>{
   slider.scrollLeft = touchScrollLeft - walk;
 
 },{ passive:true });
+/* ========================================== */
+/* COUPON */
+/* ========================================== */
 
+/* ========================================== */
+/* UPDATE applyCoupon() */
+/* ========================================== */
+
+let appliedCoupon = null;
+
+function applyCoupon(){
+
+  const couponInput =
+  document.getElementById("couponCode");
+
+  const successBox =
+  document.getElementById("couponSuccess");
+
+  const successText =
+  document.getElementById("couponSuccessText");
+
+  const code =
+  couponInput.value.trim();
+
+  if(code === ""){
+
+    alert("Please enter a coupon code.");
+
+    return;
+
+  }
+
+  appliedCoupon = code;
+
+  successBox.classList.add("show");
+
+  successText.innerHTML =
+  `Coupon "<strong>${code}</strong>" applied successfully`;
+
+}
+
+/* ========================================== */
+/* REMOVE COUPON */
+/* ========================================== */
+
+function removeCoupon(){
+
+  appliedCoupon = null;
+
+  document.getElementById("couponCode").value = "";
+
+  document
+  .getElementById("couponSuccess")
+  .classList.remove("show");
+
+}
 </script>
 
 </body>
