@@ -3211,6 +3211,186 @@ body.modal-open{
   }
 
 }  
+  
+/* ========================================== */
+/* SELECT HEADER */
+/* ========================================== */
+
+.altx-select-head{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+
+  margin-bottom:10px;
+
+}
+
+.altx-select-head label{
+
+  font-size:12px;
+  font-weight:700;
+
+  letter-spacing:.08em;
+  text-transform:uppercase;
+
+  color:#94A3B8;
+
+}
+
+.altx-curriculum-btn{
+
+  height:34px;
+
+  padding:0 12px;
+
+  border:none;
+  border-radius:10px;
+
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  background:
+  rgba(37,99,235,.10);
+
+  border:1px solid rgba(37,99,235,.14);
+
+  color:#60A5FA;
+
+  font-size:11px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.2s ease;
+
+}
+
+.altx-curriculum-btn:hover{
+
+  background:
+  rgba(37,99,235,.16);
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-select-head{
+
+    align-items:flex-start;
+
+  }
+
+  .altx-curriculum-btn{
+
+    height:32px;
+
+    padding:0 10px;
+
+    font-size:10px;
+
+  }
+
+}  
+/* ========================================== */
+/* TRACK MODAL */
+/* ========================================== */
+
+.altx-track-grid{
+
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:16px;
+
+}
+
+.altx-track-card{
+
+  padding:18px;
+
+  border-radius:20px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,.02),
+    rgba(255,255,255,.01)
+  );
+
+  border:1px solid rgba(255,255,255,.06);
+
+}
+
+.altx-track-tag{
+
+  display:inline-flex;
+
+  margin-bottom:14px;
+
+  padding:5px 10px;
+
+  border-radius:999px;
+
+  background:
+  rgba(37,99,235,.10);
+
+  border:1px solid rgba(37,99,235,.14);
+
+  color:#60A5FA;
+
+  font-size:10px;
+  font-weight:700;
+
+}
+
+.altx-track-card h4{
+
+  font-size:20px;
+  font-weight:800;
+
+  margin-bottom:10px;
+
+}
+
+.altx-track-card p{
+
+  font-size:13px;
+
+  line-height:1.7;
+
+  color:#94A3B8;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-track-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .altx-track-card{
+
+    padding:16px;
+
+  }
+
+  .altx-track-card h4{
+
+    font-size:18px;
+
+  }
+
+}  
 </style>
 </head>
 <body>
@@ -3285,7 +3465,7 @@ body.modal-open{
 
     <i class="fa-solid fa-hand-point-right"></i>
 
-    Swipe horizontally to compare pricing
+    Swipe horizontally to compare all offers pricing
 
   </div>
   <div class="altx-table-wrap"
@@ -3631,9 +3811,30 @@ body.modal-open{
 
           </ul>
 
-          <div class="altx-course-label">
-            Choose Training Track
-          </div>
+         <!-- ========================================== -->
+<!-- TRAINING SELECT HEADER -->
+<!-- REPLACE OLD LABEL BLOCK WITH THIS -->
+<!-- ========================================== -->
+
+<div class="altx-select-head">
+
+  <label>
+
+    Choose Training Track
+
+  </label>
+
+  <button type="button"
+  class="altx-curriculum-btn"
+  onclick="openTrackModal()">
+
+    <i class="fa-solid fa-book-open"></i>
+
+    View Curriculum
+
+  </button>
+
+</div>
 
           <select class="altx-course-select"
           id="trainingCourse">
@@ -4369,6 +4570,130 @@ id="corporateModal">
   </div>
 
 </div>  
+<!-- ========================================== -->
+<!-- TRAINING TRACK MODAL -->
+<!-- ADD BEFORE </body> -->
+<!-- ========================================== -->
+
+<div class="altx-modal"
+id="trackModal">
+
+  <div class="altx-modal-box"
+  style="max-width:860px;">
+
+    <div class="altx-modal-top">
+
+      <h3>Training Tracks</h3>
+
+      <button class="altx-close"
+      onclick="closeModal('trackModal')">
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+    </div>
+
+    <div class="altx-track-grid">
+
+      <!-- CRTP -->
+
+      <div class="altx-track-card">
+
+        <div class="altx-track-tag">
+          Active Directory
+        </div>
+
+        <h4>CRTP®</h4>
+
+        <p>
+          Learn practical Active Directory attack
+          techniques, privilege escalation,
+          persistence, lateral movement,
+          and enterprise attack paths.
+        </p>
+
+      </div>
+
+      <!-- CRTE -->
+
+      <div class="altx-track-card">
+
+        <div class="altx-track-tag">
+          Red Team Operations
+        </div>
+
+        <h4>CRTE®</h4>
+
+        <p>
+          Advanced enterprise red team tradecraft,
+          evasion, C2 operations, OPSEC,
+          and realistic adversary simulation.
+        </p>
+
+      </div>
+
+      <!-- CARTP -->
+
+      <div class="altx-track-card">
+
+        <div class="altx-track-tag">
+          Azure AD
+        </div>
+
+        <h4>CARTP®</h4>
+
+        <p>
+          Offensive Azure AD attacks, hybrid identity
+          abuse, cloud privilege escalation,
+          and Azure attack methodology.
+        </p>
+
+      </div>
+
+      <!-- CARTE -->
+
+      <div class="altx-track-card">
+
+        <div class="altx-track-tag">
+          Advanced Azure
+        </div>
+
+        <h4>CARTE®</h4>
+
+        <p>
+          Advanced Azure AD red teaming,
+          persistence, cross-tenant abuse,
+          enterprise cloud attack paths,
+          and advanced cloud operations.
+        </p>
+
+      </div>
+
+      <!-- CETP -->
+
+      <div class="altx-track-card">
+
+        <div class="altx-track-tag">
+          Enterprise Tradecraft
+        </div>
+
+        <h4>CETP®</h4>
+
+        <p>
+          Enterprise offensive security methodology,
+          adversary emulation,
+          attack operations,
+          and real-world tradecraft execution.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>  
 <script>
 
 /* ========================= */
@@ -4478,22 +4803,61 @@ function openCorporateModal(){
 
 }  
 
+/* ========================================== */
+/* SHOW TAB */
+/* ========================================== */
+
 function showTab(tabId,button){
 
-  document.querySelectorAll(".altx-tab-content")
-  .forEach(tab=>{
-    tab.classList.remove("active");
-  });
+  /* REMOVE ACTIVE */
 
-  document.getElementById(tabId)
-  .classList.add("active");
-
-  document.querySelectorAll(".altx-tab-btn")
+  document
+  .querySelectorAll(".altx-tab-btn")
   .forEach(btn=>{
+
     btn.classList.remove("active");
+
   });
 
   button.classList.add("active");
+
+  /* HIDE TABS */
+
+  document
+  .querySelectorAll(".altx-tab-content")
+  .forEach(tab=>{
+
+    tab.style.display = "none";
+
+  });
+
+  /* SHOW ACTIVE TAB */
+
+  const activeTab =
+  document.getElementById(tabId);
+
+  activeTab.style.display = "block";
+
+  /* ====================================== */
+  /* MOBILE AUTO SCROLL TO CARD */
+  /* ====================================== */
+
+  if(window.innerWidth <= 768){
+
+    setTimeout(()=>{
+
+      window.scrollTo({
+
+        top:
+        activeTab.offsetTop - 18,
+
+        behavior:"smooth"
+
+      });
+
+    },120);
+
+  }
 
 }
 
@@ -5444,6 +5808,15 @@ function removeCoupon(){
 
 }
 updateMobileBar();  
+/* ========================================== */
+/* TRACK MODAL */
+/* ========================================== */
+
+function openTrackModal(){
+
+  openModal("trackModal");
+
+}  
 </script>
 
 </body>
