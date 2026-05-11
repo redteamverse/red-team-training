@@ -299,7 +299,7 @@ body.modal-open{
 
   font-size:11px;
   font-weight:700;
-
+ margin-bottom:2px;
   position:relative;
 
   animation:activePulse 1.4s infinite;
@@ -2931,7 +2931,7 @@ body.modal-open{
   display:flex;
   flex-direction:column;
   align-items:flex-end;
-
+ justify-content:center;
   gap:10px;
 
 }
@@ -3518,8 +3518,9 @@ body.modal-open{
   color:#94A3B8;
 
   line-height:1.5;
-
+  max-width:120px;
 }
+  
 
 /* MOBILE */
 
@@ -3533,11 +3534,13 @@ body.modal-open{
 
   }
 
-  .altx-head-sub{
+   .altx-head-sub{
 
-    font-size:10px;
+    max-width:100px;
 
-    line-height:1.4;
+    font-size:9px;
+
+    line-height:1.35;
 
   }
 
@@ -3937,7 +3940,7 @@ body.modal-open{
 
       <div class="altx-corporate-title">
 
-        Booking for a Security Team?
+        Booking for a Security Team or Bulk Booking? 
 
       </div>
 
@@ -3955,7 +3958,7 @@ body.modal-open{
   <button class="altx-corporate-btn"
   onclick="openCorporateModal()">
 
-    Team / Corporate Booking
+   Select Pass
 
   </button>
 
@@ -4125,11 +4128,12 @@ body.modal-open{
 
       </div>
 
-      <button class="altx-register-btn" onclick="scrollToSelectionMobileBar()">
+<button class="altx-register-btn"
+onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smooth'})">
 
-        Select Pass
+  Select Pass
 
-      </button>
+</button>
 
     </div>
 
