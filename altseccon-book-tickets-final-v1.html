@@ -681,13 +681,32 @@ body.modal-open{
 
 }
 
+/* ========================================== */
+/* QUANTITY SELECTOR */
+/* ========================================== */
+
 .altx-qty{
 
   display:flex;
   align-items:center;
-  gap:10px;
+
+  gap:8px;
+
+  padding:5px;
+
+  border-radius:14px;
+
+  background:
+  rgba(255,255,255,.03);
+
+  border:
+  1px solid rgba(255,255,255,.06);
+
+  width:fit-content;
 
 }
+
+/* BUTTONS */
 
 .altx-qty button{
 
@@ -697,22 +716,74 @@ body.modal-open{
   border:none;
   border-radius:10px;
 
-  background:#0F172A;
+  background:
+  rgba(255,255,255,.05);
 
   color:#fff;
 
-  font-size:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:16px;
+  font-weight:700;
 
   cursor:pointer;
 
+  transition:.2s ease;
+
 }
+
+.altx-qty button:hover{
+
+  background:
+  rgba(37,99,235,.16);
+
+}
+
+/* NUMBER */
 
 .altx-qty span{
 
-  min-width:20px;
+  min-width:22px;
+
   text-align:center;
 
+  font-size:15px;
   font-weight:700;
+
+  color:#fff;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-qty{
+
+    gap:6px;
+
+    padding:4px;
+
+    border-radius:12px;
+
+  }
+
+  .altx-qty button{
+
+    width:30px;
+    height:30px;
+
+    font-size:14px;
+
+  }
+
+  .altx-qty span{
+
+    font-size:14px;
+
+  }
 
 }
 
@@ -876,7 +947,7 @@ body.modal-open{
 
   color:#22C55E;
 
-  font-size:18px;
+ 
   font-weight:800;
 
 }
@@ -2898,11 +2969,23 @@ body.modal-open{
 
 @media(max-width:768px){
 
-  .altx-table-wrap{
+.altx-table-wrap{
 
-    margin-bottom:20px;
+  margin-bottom:20px;
 
-  }
+  padding:0 10px;
+
+  overflow-x:auto;
+
+  -webkit-overflow-scrolling:touch;
+
+  scrollbar-width:none;
+
+}
+
+.altx-table-wrap::-webkit-scrollbar{
+  display:none;
+}
 
   .altx-price-table{
 
@@ -3384,6 +3467,432 @@ body.modal-open{
 .altx-terms-error.show{
   display:block;
 }  
+.altx-hero-sub{
+
+  max-width:760px;
+
+  margin:16px auto 0;
+
+  font-size:16px;
+  line-height:1.8;
+
+  color:#94A3B8;
+
+}
+
+@media(max-width:768px){
+
+  .altx-hero-sub{
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    margin-top:14px;
+
+  }
+
+} 
+  
+/* ========================================== */
+/* TABLE HEADER */
+/* ========================================== */
+
+.altx-head-title{
+
+  font-size:14px;
+  font-weight:700;
+
+  color:#F8FAFC;
+
+  margin-bottom:6px;
+
+  line-height:1.35;
+
+}
+
+.altx-head-sub{
+
+  font-size:11px;
+
+  color:#94A3B8;
+
+  line-height:1.5;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-head-title{
+
+    font-size:12px;
+
+    margin-bottom:4px;
+
+  }
+
+  .altx-head-sub{
+
+    font-size:10px;
+
+    line-height:1.4;
+
+  }
+
+}  
+  
+/* ========================================== */
+/* PACKAGE FOCUS */
+/* ========================================== */
+
+.altx-tab-content{
+
+  transition:
+  transform .28s ease,
+  box-shadow .28s ease,
+  border-color .28s ease;
+
+}
+
+.altx-tab-content.focused{
+
+  transform:translateY(-2px);
+
+  border-color:
+  rgba(37,99,235,.24);
+
+  box-shadow:
+  0 0 0 1px rgba(37,99,235,.12),
+  0 18px 40px rgba(0,0,0,.28);
+
+}  
+/* ========================================== */
+/* SELECTED PREVIEW */
+/* ========================================== */
+
+.altx-selected-preview{
+
+  margin-bottom:18px;
+
+  padding:18px;
+
+  border-radius:20px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(37,99,235,.06),
+    rgba(193,18,31,.04)
+  );
+
+  border:1px solid rgba(255,255,255,.06);
+
+}
+
+.altx-selected-label{
+
+  font-size:11px;
+  font-weight:700;
+
+  letter-spacing:.12em;
+  text-transform:uppercase;
+
+  color:#60A5FA;
+
+  margin-bottom:10px;
+
+}
+
+.altx-selected-name{
+
+  font-size:18px;
+  font-weight:800;
+
+  line-height:1.35;
+
+  margin-bottom:8px;
+
+}
+
+.altx-selected-meta{
+
+  font-size:13px;
+
+  color:#94A3B8;
+
+  line-height:1.7;
+
+}  
+/* ========================================== */
+/* HIDE SCROLLBAR */
+/* ========================================== */
+
+.altx-cart-items{
+
+  scrollbar-width:none;
+
+}
+
+.altx-cart-items::-webkit-scrollbar{
+  display:none;
+}  
+  
+/* ========================================== */
+/* COMPACT CART */
+/* ========================================== */
+
+
+
+.altx-item-top{
+
+  margin-bottom:12px;
+
+}
+
+.altx-item-name{ 
+
+  margin-bottom:4px;
+
+}
+
+
+.altx-item-price{
+
+  font-size:16px;
+
+}
+
+.altx-item-bottom{
+
+  gap:10px;
+
+}
+
+.altx-qty button{
+
+  width:34px;
+  height:34px;
+
+  font-size:14px;
+
+}
+
+.altx-qty span{
+
+  min-width:26px;
+
+  font-size:16px;
+
+}  
+  
+/* ========================================== */
+/* CHECKOUT TRUST */
+/* ========================================== */
+
+.altx-checkout-trust{
+
+  margin-top:16px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:10px;
+
+}
+
+.altx-checkout-trust-item{
+
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  padding:10px 12px;
+
+  border-radius:14px;
+
+  background:
+  rgba(255,255,255,.02);
+
+  border:
+  1px solid rgba(255,255,255,.05);
+
+  color:#CBD5E1;
+
+  font-size:11px;
+  font-weight:600;
+
+  line-height:1.4;
+
+}
+
+.altx-checkout-trust-item i{
+
+  color:#22C55E;
+
+  font-size:12px;
+
+  flex-shrink:0;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-checkout-trust{
+
+    grid-template-columns:1fr;
+
+  }
+
+}  
+  
+/* ========================================== */
+/* INCLUDED LABEL */
+/* ========================================== */
+
+.altx-included-label{
+
+  margin:18px 0 12px;
+
+  padding-top:14px;
+
+  border-top:
+  1px solid rgba(255,255,255,.06);
+
+  color:#60A5FA;
+
+  font-size:11px;
+  font-weight:700;
+
+  letter-spacing:.12em;
+  text-transform:uppercase;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-included-label{
+
+    margin:16px 0 10px;
+
+    padding-top:12px;
+
+    font-size:10px;
+
+  }
+
+}  
+  
+/* ========================================== */
+/* TABLE WRAP */
+/* ========================================== */
+
+.altx-table-wrap{
+
+  position:relative;
+
+}
+
+
+  
+/* ========================================== */
+/* STICKY FIRST COLUMN */
+/* ========================================== */
+/* ========================================== */
+/* STICKY FIRST COLUMN */
+/* ========================================== */
+
+.altx-table-head > div:first-child,
+.altx-price-row > div:first-child{
+
+  position:sticky;
+
+  left:0;
+
+  z-index:4;
+
+  min-width:150px;
+
+  padding-right:16px;
+
+  background:
+  #07101F;
+
+  box-shadow:
+  14px 0 24px rgba(3,10,24,.92);
+
+}
+
+/* ACTIVE ROW */
+
+.altx-price-row.active
+> div:first-child{
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(193,18,31,.14),
+    rgba(37,99,235,.04)
+  );
+
+}
+
+/* HEADER */
+
+.altx-table-head > div:first-child{
+
+  z-index:5;
+
+}
+
+/* ACTIVE ROW */
+
+.altx-price-row.active
+> div:first-child{
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(193,18,31,.16),
+    rgba(37,99,235,.06)
+  );
+
+}  
+  
+/* ========================================== */
+/* SWIPE HINT */
+/* ========================================== */
+
+.altx-mobile-hint{
+
+  animation:
+  altxSwipeHint 2s ease infinite;
+
+}
+
+@keyframes altxSwipeHint{
+
+  0%{
+    transform:translateX(0);
+  }
+
+  50%{
+    transform:translateX(6px);
+  }
+
+  100%{
+    transform:translateX(0);
+  }
+
+}  
 </style>
 </head>
 <body>
@@ -3397,9 +3906,15 @@ body.modal-open{
     <span>Secure • Train • Network</span>
 
     <h1>
-      Reserve Your <strong>AltSecCON 2026</strong> Pass
+      Choose and Book Your <strong>AltSecCON 2026</strong> Pass      
     </h1>
+     
+    
+  <p class="altx-hero-sub">
 
+    Choose hands-on training, conference access, or the complete AltSecCON experience.
+
+  </p>
   
 
   </div>
@@ -3453,29 +3968,82 @@ body.modal-open{
 <!-- ========================================== -->
 
 
-  <!-- TABLE -->
- <div class="altx-mobile-hint">
+<div class="altx-mobile-hint">
 
-    <i class="fa-solid fa-hand-point-right"></i>
+  <i class="fa-solid fa-arrows-left-right"></i>
 
-    Swipe horizontally to compare all offers pricing
+  Swipe to compare all pricing options
 
-  </div>
+</div>
   <div class="altx-table-wrap"
   id="dragTable">
 <div class="altx-price-table">
 
   <!-- HEADER -->
 
-  <div class="altx-table-head">
+  <!-- HEADER -->
 
-    <div>Pricing Phase</div>
-    <div>Training Pass</div>
-    <div>Training + Conference</div>
-    <div>Conference Pass</div>
-    <div></div>
+<div class="altx-table-head">
+
+  <!-- PHASE -->
+
+  <div>
+
+    <div class="altx-head-title">
+      Pricing Phase
+    </div>
+
+    <div class="altx-head-sub">
+      Current pricing timeline
+    </div>
 
   </div>
+
+  <!-- TRAINING -->
+
+  <div>
+
+    <div class="altx-head-title">
+      Training Pass
+    </div>
+
+    <div class="altx-head-sub">
+      Hands-On Red Team Training
+    </div>
+
+  </div>
+
+  <!-- COMBO -->
+
+  <div>
+
+    <div class="altx-head-title">
+      Training + Conference
+    </div>
+
+    <div class="altx-head-sub">
+      Complete AltSecCON Experience
+    </div>
+
+  </div>
+
+  <!-- CONFERENCE -->
+
+  <div>
+
+    <div class="altx-head-title">
+      Conference Pass
+    </div>
+
+    <div class="altx-head-sub">
+      Talks, Networking & Sessions
+    </div>
+
+  </div>
+
+  <div></div>
+
+</div>
 
   <!-- SUPER EARLY BIRD -->
 
@@ -3559,7 +4127,7 @@ body.modal-open{
 
       <button class="altx-register-btn" onclick="scrollToSelectionMobileBar()">
 
-        Register Now
+        Select Pass
 
       </button>
 
@@ -3705,8 +4273,7 @@ body.modal-open{
 
       <p>
 
-        Choose the access level that best fits your
-        training and conference goals.
+        Choose between hands-on training, conference access, or the complete AltSecCON experience
 
       </p>
 
@@ -3726,9 +4293,9 @@ body.modal-open{
       </span>
 
       <span class="altx-tab-sub">
-        3-Day Hands-on Labs
+        Hands-On Red Team Training
       </span>
-
+       
     </button>
 
     <!-- COMBO -->
@@ -3747,7 +4314,7 @@ body.modal-open{
       </span>
 
       <span class="altx-tab-sub">
-        Full Event Access
+        Training + Conference Access
       </span>
 
     </button>
@@ -3762,7 +4329,7 @@ body.modal-open{
       </span>
 
       <span class="altx-tab-sub">
-        Talks & Networking
+        Conference Talks & Networking
       </span>
 
     </button>
@@ -3791,7 +4358,11 @@ body.modal-open{
             <i class="fa-regular fa-calendar"></i>
             24–26 Oct 2026
           </div>
+<div class="altx-included-label">
 
+  What's Included
+
+</div>
           <ul class="altx-pass-list">
 
             <li><i class="fa-solid fa-check"></i> Enterprise Active Directory labs</li>
@@ -3904,7 +4475,11 @@ body.modal-open{
             24–26 Oct 2026 -- Training 
             <br><i class="fa-regular fa-calendar"></i>27 Oct 2026 -- Conference
           </div>
+           <div class="altx-included-label">
 
+  What's Included
+
+</div>
           <ul class="altx-pass-list">
 
             <li><i class="fa-solid fa-check"></i> Full AltSecCON access</li>
@@ -3960,7 +4535,7 @@ body.modal-open{
 
             <button class="altx-cta"
             onclick="addCombo()">
-              Add Combo Pass
+              Add Full Access Pass
             </button>
 
           </div>
@@ -3995,7 +4570,11 @@ body.modal-open{
             <i class="fa-regular fa-calendar"></i>
             27 Oct 2026
           </div>
+<div class="altx-included-label">
 
+  What's Included
+
+</div>
           <ul class="altx-pass-list">
 
             <li><i class="fa-solid fa-check"></i> Global security keynotes</li>
@@ -4081,7 +4660,34 @@ body.modal-open{
         </div>
 
       </div>
+<!-- ========================================== -->
+<!-- SELECTED PACKAGE PREVIEW -->
+<!-- ========================================== -->
 
+<div class="altx-selected-preview"
+id="selectedPreview">
+
+  <div class="altx-selected-label">
+
+    Selected Pass
+
+  </div>
+
+  <div class="altx-selected-name"
+  id="selectedPreviewName">
+
+    No pass selected yet
+
+  </div>
+
+  <div class="altx-selected-meta"
+  id="selectedPreviewMeta">
+
+    Choose a pass to continue booking
+
+  </div>
+
+</div>
       <div class="altx-user">
 
         <h4>Booking Details</h4>
@@ -4168,7 +4774,45 @@ id="couponSuccess">
             Proceed to Checkout
 
           </button>
+<!-- ========================================== -->
+<!-- CHECKOUT TRUST STRIP -->
+<!-- ========================================== -->
 
+<div class="altx-checkout-trust">
+
+  <div class="altx-checkout-trust-item">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    Instant confirmation
+
+  </div>
+
+  <div class="altx-checkout-trust-item">
+
+    <i class="fa-solid fa-file-invoice"></i>
+
+    GST invoice included
+
+  </div>
+
+  <div class="altx-checkout-trust-item">
+
+    <i class="fa-solid fa-shield-halved"></i>
+
+    Secure payment
+
+  </div>
+
+  <div class="altx-checkout-trust-item">
+
+    <i class="fa-solid fa-headset"></i>
+
+    Team support available
+
+  </div>
+
+</div>
         </div>
 
       </div>
@@ -4178,57 +4822,7 @@ id="couponSuccess">
 <!-- INSIDE .altx-summary -->
 <!-- ========================================== -->
 
-<div class="altx-trust-wrap">
-
-  <div class="altx-trust-item">
-
-    <div class="altx-trust-icon">
-
-      <i class="fa-solid fa-shield-halved"></i>
-
-    </div>
-
-    <span>Secure Payment</span>
-
-  </div>
-
-  <div class="altx-trust-item">
-
-    <div class="altx-trust-icon">
-
-      <i class="fa-solid fa-file-invoice"></i>
-
-    </div>
-
-    <span>GST Invoice Available</span>
-
-  </div>
-
-  <div class="altx-trust-item">
-
-    <div class="altx-trust-icon">
-
-      <i class="fa-solid fa-users"></i>
-
-    </div>
-
-    <span>Trusted by 10,000+ Professionals</span>
-
-  </div>
-
-  <div class="altx-trust-item">
-
-    <div class="altx-trust-icon">
-
-      <i class="fa-solid fa-building"></i>
-
-    </div>
-
-    <span>Corporate Purchase Supported</span>
-
-  </div>
-
-</div></aside>
+</aside>
 
   </div>
 
@@ -4377,7 +4971,45 @@ id="orderBreakdown">
         Pay with Razorpay
 
       </button>
+       <!-- ========================================== -->
+<!-- CHECKOUT TRUST STRIP -->
+<!-- ========================================== -->
 
+<div class="altx-checkout-trust">
+
+  <div class="altx-checkout-trust-item">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    Instant confirmation
+
+  </div>
+
+  <div class="altx-checkout-trust-item">
+
+    <i class="fa-solid fa-file-invoice"></i>
+
+    GST invoice included
+
+  </div>
+
+  <div class="altx-checkout-trust-item">
+
+    <i class="fa-solid fa-shield-halved"></i>
+
+    Secure payment
+
+  </div>
+
+  <div class="altx-checkout-trust-item">
+
+    <i class="fa-solid fa-headset"></i>
+
+    Team support available
+
+  </div>
+
+</div>
       <button class="altx-checkout"
       style="
       background:#0F172A;
@@ -4696,7 +5328,71 @@ id="trackModal">
 
 </div>  
 <script>
+/* ========================================== */
+/* UPDATE SELECTED PREVIEW */
+/* ========================================== */
 
+/* ========================================== */
+/* UPDATE SELECTED PREVIEW */
+/* ========================================== */
+
+/* ========================================== */
+/* UPDATE SELECTED PREVIEW */
+/* ========================================== */
+
+function updateSelectedPreview(){
+
+  const previewName =
+  document.getElementById(
+    "selectedPreviewName"
+  );
+
+  const previewMeta =
+  document.getElementById(
+    "selectedPreviewMeta"
+  );
+
+  /* EMPTY CART */
+
+  if(cart.length === 0){
+
+    previewName.innerText =
+    "No pass selected yet";
+
+    previewMeta.innerText =
+    "Choose a pass to continue booking";
+
+    return;
+
+  }
+
+  /* TOTAL QTY */
+
+  let totalQty = 0;
+
+  cart.forEach(item=>{
+
+    totalQty += item.qty;
+
+  });
+
+  /* UNIQUE PASSES */
+
+  const uniquePasses =
+  [...new Set(
+    cart.map(item=>item.name)
+  )];
+
+  /* PREVIEW */
+
+  previewName.innerText =
+  totalQty + " Passes Selected";
+
+  previewMeta.innerText =
+  uniquePasses.join(" + ") +
+  " • 24–26 Oct 2026";
+
+}
 /* ========================= */
 /* TABS */
 /* ========================= */
@@ -4808,9 +5504,17 @@ function openCorporateModal(){
 /* SHOW TAB */
 /* ========================================== */
 
+/* ========================================== */
+/* SHOW TAB */
+/* ========================================== */
+
+/* ========================================== */
+/* SHOW TAB */
+/* ========================================== */
+
 function showTab(tabId,button){
 
-  /* REMOVE ACTIVE */
+  /* REMOVE ACTIVE BUTTON */
 
   document
   .querySelectorAll(".altx-tab-btn")
@@ -4822,13 +5526,16 @@ function showTab(tabId,button){
 
   button.classList.add("active");
 
-  /* HIDE TABS */
+  /* HIDE ALL TABS */
 
   document
   .querySelectorAll(".altx-tab-content")
   .forEach(tab=>{
 
-    tab.style.display = "none";
+    tab.classList.remove(
+      "active",
+      "focused"
+    );
 
   });
 
@@ -4837,28 +5544,32 @@ function showTab(tabId,button){
   const activeTab =
   document.getElementById(tabId);
 
-  activeTab.style.display = "block";
+  activeTab.classList.add("active");
 
-  /* ====================================== */
-  /* MOBILE AUTO SCROLL TO CARD */
-  /* ====================================== */
+  /* AUTO SCROLL */
 
-  if(window.innerWidth <= 768){
+  setTimeout(()=>{
+
+    window.scrollTo({
+
+      top:
+      activeTab.offsetTop - 18,
+
+      behavior:"smooth"
+
+    });
+
+    /* FOCUS EFFECT */
+
+    activeTab.classList.add("focused");
 
     setTimeout(()=>{
 
-      window.scrollTo({
+      activeTab.classList.remove("focused");
 
-        top:
-        activeTab.offsetTop - 18,
+    },1800);
 
-        behavior:"smooth"
-
-      });
-
-    },120);
-
-  }
+  },80);
 
 }
 
@@ -5009,7 +5720,7 @@ function updateMobileBar(){
   "₹" + total.toLocaleString("en-IN");
 
   mobileBtn.innerText =
-  "View Selection";
+  "Continue Booking";
 
 }
 
@@ -5089,7 +5800,7 @@ function addItem(name,course,price,qty){
   }
 
   renderCart();
-
+   updateSelectedPreview();
 }
 
 function increase(index){
@@ -5123,7 +5834,7 @@ function removeItem(index){
   cart.splice(index,1);
 
   renderCart();
-
+ 
 }
 
 function renderCart(){
@@ -5136,19 +5847,23 @@ function renderCart(){
 
   if(cart.length === 0){
 
-    cartEl.innerHTML = `
-      <div class="altx-empty">
-        No passes selected yet.
-      </div>
-    `;
+  cartEl.innerHTML = `
+    <div class="altx-empty">
+      No passes selected yet.
+    </div>
+  `;
 
-    totalEl.innerText = "₹0";
+  totalEl.innerText = "₹0";
 
-    /* UPDATE MOBILE BAR */
-    updateMobileBar();
+  /* IMPORTANT */
 
-    return;
-  }
+  updateSelectedPreview();
+
+  updateMobileBar();
+
+  return;
+
+}
 
   let html = "";
   let total = 0;
