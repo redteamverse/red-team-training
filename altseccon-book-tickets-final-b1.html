@@ -4615,107 +4615,6 @@ margin-top:4px;
   padding-right:54px;
 
 }
-/* =========================================================
-   CONFERENCE OFFER STACK
-========================================================= */
-
-.altx-conference-offers{
-
-  display:flex;
-  flex-direction:column;
-
-  gap:16px;
-
-}
-
-/* =========================================================
-   STUDENT PASS BOX
-========================================================= */
-
-.altx-student-box{
-
-  background:
-  linear-gradient(
-    135deg,
-    rgba(37,99,235,.08),
-    rgba(37,99,235,.03)
-  );
-
-  border:1px solid rgba(37,99,235,.14);
-
-}
-
-/* =========================================================
-   TOP
-========================================================= */
-
-.altx-student-top{
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  gap:12px;
-
-  margin-bottom:10px;
-
-}
-
-/* =========================================================
-   LIMIT TAG
-========================================================= */
-
-.altx-student-limit{
-
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  height:28px;
-
-  padding:0 10px;
-
-  border-radius:999px;
-
-  background:rgba(37,99,235,.10);
-
-  border:1px solid rgba(37,99,235,.14);
-
-  color:var(--color-secondary-light);
-
-  font-size:11px;
-  font-weight:700;
-
-  white-space:nowrap;
-
-}
-
-/* =========================================================
-   OFFER ACTIONS
-========================================================= */
-
-.altx-offer-actions{
-
-  margin-top:18px;
-
-}
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:768px){
-
-  .altx-student-top{
-
-    flex-direction:column;
-    align-items:flex-start;
-
-    gap:8px;
-
-  }
-
-}  
 </style>
 </head>
 <body>
@@ -5400,100 +5299,74 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
 
           </ul>
 
-<!-- CONFERENCE PASS PRICING -->
+          <div class="altx-current-box">
 
-<div class="altx-conference-offers">
+            <h4>Super Early Bird Active</h4>
 
-  <!-- SUPER EARLY BIRD -->
+            <div class="altx-current-price">
 
-  <div class="altx-current-box">
+              <strong>₹6,399</strong>
 
-    <h4>Super Early Bird Active</h4>
+              <span>₹7,999</span>
 
-    <div class="altx-current-price">
+            </div>
 
-      <strong>₹6,399</strong>
+          </div>
 
-      <span>₹7,999</span>
+          <div class="altx-inline-actions">
 
-    </div>
+            <div class="altx-qty">
 
-    <div class="altx-inline-actions altx-offer-actions">
+              <button onclick="changeQty('conferenceQty',-1)">-</button>
 
-      <div class="altx-qty">
+              <span id="conferenceQty">1</span>
 
-        <button onclick="changeQty('conferenceQty',-1)">-</button>
+              <button onclick="changeQty('conferenceQty',1)">+</button>
 
-        <span id="conferenceQty">1</span>
+            </div>
 
-        <button onclick="changeQty('conferenceQty',1)">+</button>
-
-      </div>
-
-      <button class="altx-cta"
-      onclick="addConference()">
-
-        Add Conference Pass
-
-      </button>
-
-    </div>
-
-  </div>
-
-  <!-- STUDENT PASS -->
-
-  <div class="altx-current-box altx-student-box">
-
-    <div class="altx-student-top">
-
-      <h4>Student Pass</h4>
-
-      <span class="altx-student-limit">
-        Only 20 Tickets
-      </span>
-
-    </div>
-
-    <div class="altx-current-price">
-
-      <strong>₹3,999</strong>
-
-      <span>₹7,999</span>
-
-    </div>
-
-    <div class="altx-inline-actions altx-offer-actions">
-
-      <div class="altx-qty">
-
-        <button onclick="changeQty('studentConferenceQty',-1)">-</button>
-
-        <span id="studentConferenceQty">1</span>
-
-        <button onclick="changeQty('studentConferenceQty',1)">+</button>
-
-      </div>
-
-      <button class="altx-cta"
-      onclick="addStudentConference()">
-
-        Add Student Pass
-
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
+            <button class="altx-cta"
+            onclick="addConference()">
+              Add Conference Pass
+            </button>
 
           </div>
 
           <!-- ========================================== -->
 <!-- REPLACE CONFERENCE PHASE INFO -->
 <!-- ========================================== -->
+    <div class="altx-current-box">
 
+            <h4>Student Pass</h4>
+
+            <div class="altx-current-price">
+
+              <strong>₹3,999</strong>
+
+              <span>₹7,999</span>
+
+            </div>
+
+          </div>
+
+          <div class="altx-inline-actions">
+
+            <div class="altx-qty">
+
+              <button onclick="changeQty('conferenceQty',-1)">-</button>
+
+              <span id="conferenceQty">1</span>
+
+              <button onclick="changeQty('conferenceQty',1)">+</button>
+
+            </div>
+
+            <button class="altx-cta"
+            onclick="addConference()">
+              Add Conference Pass
+            </button>
+
+          </div>
 
 
         </div>
@@ -6203,11 +6076,6 @@ id="trackModal">
 /* ========================================== */
 /* UPDATE SELECTED PREVIEW */
 /* ========================================== */
-  
-/* =========================
-   ADD STUDENT CONFERENCE
-========================= */
-
 
 function updateSelectedPreview(){
 
@@ -6525,37 +6393,7 @@ function addConference(){
   );
 
 }
-/* =========================
-   ADD STUDENT CONFERENCE
-========================= */
 
-function addStudentConference(){
-
-  const qty =
-  parseInt(
-    document.getElementById("studentConferenceQty").innerText
-  );
-
-  cart.push({
-
-    pass:"Student Conference Pass",
-
-    course:"Conference Only",
-
-    price:3999,
-
-    qty:qty
-
-  });
-
-  updateCart();
-
-  showToast(
-    "Student Pass Added",
-    qty + " Student Conference Pass added"
-  );
-
-}
 /* ========================================== */
 /* MOBILE STICKY BAR */
 /* ========================================== */
@@ -6961,28 +6799,6 @@ function addConference(){
   scrollToSelectionMobile();
 
 }
-  
-function addStudentConference(){
-
-  const qty =
-  parseInt(
-    document.getElementById("studentConferenceQty").innerText
-  );
-
-  addItem(
-    "Student Conference Pass",
-    "Student Conference Access",
-    3999,
-    qty
-  );
-
-  showToast(
-    `${qty} Student Conference Pass added`
-  );
-
-  scrollToSelectionMobile();
-
-}  
 /* ========================= */
 /* ATTENDEE MODAL */
 /* ========================= */
