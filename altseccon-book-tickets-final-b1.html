@@ -5353,16 +5353,16 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
 
             <div class="altx-qty">
 
-              <button onclick="changeQty('conferenceQty',-1)">-</button>
+              <button onclick="changeQty('conferenceStuQty',-1)">-</button>
 
-              <span id="conferenceQty">1</span>
+              <span id="conferenceStuQty">1</span>
 
-              <button onclick="changeQty('conferenceQty',1)">+</button>
+              <button onclick="changeQty('conferenceStuQty',1)">+</button>
 
             </div>
 
             <button class="altx-cta"
-            onclick="addConference()">
+            onclick="addStudentConference()">
               Add Conference Pass
             </button>
 
@@ -6393,6 +6393,22 @@ function addConference(){
   );
 
 }
+  
+function addStudentConference(){
+
+  const qty =
+  parseInt(
+  document.getElementById("conferenceStuQty").innerText
+  );
+
+  addItem(
+    "Conference Pass",
+    "Conference Access",
+    3999,
+    qty
+  );
+
+}  
 
 /* ========================================== */
 /* MOBILE STICKY BAR */
@@ -6799,6 +6815,26 @@ function addConference(){
   scrollToSelectionMobile();
 
 }
+  
+function addStudentConference(){
+
+  const qty =
+  parseInt(
+  document.getElementById("conferenceStuQty").innerText
+  );
+
+  addItem(
+    "Conference Pass",
+    "Conference Access",
+    3999,
+    qty
+  );
+    showToast(
+    `${qty} Conference Pass added`
+  );
+  scrollToSelectionMobile();
+
+}  
 /* ========================= */
 /* ATTENDEE MODAL */
 /* ========================= */
