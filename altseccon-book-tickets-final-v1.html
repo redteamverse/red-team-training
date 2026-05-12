@@ -26,7 +26,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   --muted:#94A3B8;
 
   --red:#C1121F;
-  --green:#22C55E;
+  --green:var(--color-success);
   --blue:#2563EB;
   --purple:#C084FC;
 
@@ -81,7 +81,7 @@ body.modal-open{
 
 .altx-head span{
 
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 
   font-size:11px;
   letter-spacing:.22em;
@@ -182,7 +182,7 @@ body.modal-open{
 
 }
 
-.altx-price-table-header{
+.altx-table-head{
 
   display:grid;
   grid-template-columns:1.3fr 1fr 1fr 1fr 170px;
@@ -191,7 +191,7 @@ body.modal-open{
   
 }
 
-.altx-price-table-header div{
+.altx-table-head div{
 
   padding:18px;
 
@@ -224,7 +224,7 @@ body.modal-open{
   rgba(193,18,31,.08),
   rgba(37,99,235,.03));
 
-  border-left:4px solid #22C55E;
+  border-left:4px solid var(--color-success);
 
 }
 
@@ -234,7 +234,7 @@ body.modal-open{
   font-weight:800;
 
   margin-bottom:8px;
-  color:#22C55E;
+  color:var(--color-success);
 }
 
 .altx-row-sub{
@@ -255,7 +255,7 @@ body.modal-open{
 
 
 .altx-green{
-  color:#22C55E;
+  color:var(--color-success);
 }
 
 .altx-purple{
@@ -263,7 +263,7 @@ body.modal-open{
 }
 
 .altx-blue{
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 }
 
 .altx-action-col{
@@ -295,11 +295,11 @@ body.modal-open{
 
   border:1px solid rgba(34,197,94,.18);
 
-  color:#22C55E;
+  color:var(--color-success);
 
   font-size:11px;
   font-weight:700;
- margin-bottom:2px;
+
   position:relative;
 
   animation:activePulse 1.4s infinite;
@@ -526,7 +526,7 @@ body.modal-open{
 }
 
 .altx-conf-card .altx-badge{
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 }
 
 .altx-pass-title{
@@ -576,7 +576,7 @@ body.modal-open{
 }
 
 .altx-pass-list i{
-  color:#22C55E;
+  color:var(--color-success);
 }
 
 .altx-course-label{
@@ -634,7 +634,7 @@ body.modal-open{
   font-size:15px;
   margin-bottom:10px;
 
-  color:#22C55E;
+  color:var(--color-success);
 
 }
 
@@ -651,7 +651,7 @@ body.modal-open{
   font-size:32px;
   line-height:1;
 
-  color:#22C55E;
+  color:var(--color-success);
 
 }
 
@@ -859,7 +859,7 @@ body.modal-open{
   font-size:22px;
   font-weight:800;
 
-  color:#22C55E;
+  color:var(--color-success);
 
 }
 
@@ -945,7 +945,7 @@ body.modal-open{
 
 .altx-item-price{
 
-  color:#22C55E;
+  color:var(--color-success);
 
  
   font-weight:800;
@@ -1191,7 +1191,7 @@ body.modal-open{
 }
 
 .altx-copy-row input{
-  accent-color:#22C55E;
+  accent-color:var(--color-success);
 }
 
 .altx-attendee-form{
@@ -1272,7 +1272,7 @@ body.modal-open{
   font-size:40px;
   font-weight:800;
 
-  color:#22C55E;
+  color:var(--color-success);
 
 }
 
@@ -1380,7 +1380,7 @@ body.modal-open{
 
 .altx-mobile-hint i{
 
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 
   animation:swipeMove 1.2s infinite;
 
@@ -1492,7 +1492,7 @@ body.modal-open{
 
 .altx-payment-save{
 
-  color:#22C55E;
+  color:var(--color-success);
   font-weight:700;
 
 }
@@ -1502,7 +1502,7 @@ body.modal-open{
   font-size:34px;
   font-weight:800;
 
-  color:#22C55E;
+  color:var(--color-success);
 
 }
 
@@ -1537,7 +1537,7 @@ body.modal-open{
 
   border:1px solid rgba(34,197,94,.12);
 
-  color:#22C55E;
+  color:var(--color-success);
 
   font-size:11px;
   font-weight:700;
@@ -1623,7 +1623,7 @@ body.modal-open{
 
   border:1px solid rgba(34,197,94,.16);
 
-  color:#22C55E;
+  color:var(--color-success);
 
   font-size:15px;
 
@@ -1712,7 +1712,7 @@ body.modal-open{
 
   border:1px solid rgba(37,99,235,.14);
 
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 
   font-size:13px;
 
@@ -1814,9 +1814,9 @@ body.modal-open{
 .altx-terms-check input:checked
 + .altx-custom-check{
 
-  background:#22C55E;
+  background:var(--color-success);
 
-  border-color:#22C55E;
+  border-color:var(--color-success);
 
 }
 
@@ -1838,7 +1838,7 @@ body.modal-open{
 
 .altx-terms-text a{
 
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 
   text-decoration:none;
 
@@ -1907,7 +1907,7 @@ body.modal-open{
   font-size:18px;
   font-weight:800;
 
-  color:#22C55E;
+  color:var(--color-success);
 
 }
 
@@ -1951,12 +1951,12 @@ body.modal-open{
 
 .altx-order-save{
 
-  color:#22C55E !important;
+  color:var(--color-success) !important;
 }
 
 .altx-order-gst{
 
-  color:#60A5FA !important;
+  color:var(--color-secondary-light) !important;
 }  
 /* ========================================== */
 /* COUPON */
@@ -2082,7 +2082,7 @@ body.modal-open{
 
   border:1px solid rgba(34,197,94,.10);
 
-  color:#22C55E;
+  color:var(--color-success);
 
   font-size:13px;
   font-weight:600;
@@ -2193,7 +2193,7 @@ body.modal-open{
   font-size:20px;
   font-weight:800;
 
-  color:#22C55E;
+  color:var(--color-success);
 
   line-height:1;
 
@@ -2288,7 +2288,7 @@ body.modal-open{
 
   border:1px solid rgba(37,99,235,.14);
 
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 
   font-size:20px;
 
@@ -2441,7 +2441,7 @@ body.modal-open{
 
 .altx-corp-note i{
 
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 
   margin-top:2px;
 
@@ -2538,7 +2538,7 @@ body.modal-open{
 
 .altx-access-label{
 
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 
   font-size:11px;
   font-weight:700;
@@ -2686,7 +2686,7 @@ body.modal-open{
 
   border:1px solid rgba(34,197,94,.18);
 
-  color:#22C55E;
+  color:var(--color-success);
 
   font-size:10px;
   font-weight:700;
@@ -2826,7 +2826,7 @@ body.modal-open{
 
   width:3px;
 
-  background:#22C55E;
+  background:var(--color-success);
 
 }
 
@@ -2871,7 +2871,7 @@ body.modal-open{
 }
 
 .altx-green{
-  color:#22C55E;
+  color:var(--color-success);
 }
 
 .altx-purple{
@@ -2879,7 +2879,7 @@ body.modal-open{
 }
 
 .altx-blue{
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 }
 
 .altx-old-price{
@@ -2913,7 +2913,7 @@ body.modal-open{
   border:
   1px solid rgba(34,197,94,.12);
 
-  color:#22C55E;
+  color:var(--color-success);
 
   font-size:10px;
   font-weight:700;
@@ -2931,7 +2931,7 @@ body.modal-open{
   display:flex;
   flex-direction:column;
   align-items:flex-end;
- justify-content:center;
+
   gap:10px;
 
 }
@@ -3311,7 +3311,7 @@ body.modal-open{
 
   border:1px solid rgba(37,99,235,.14);
 
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 
   font-size:11px;
   font-weight:700;
@@ -3395,7 +3395,7 @@ body.modal-open{
 
   border:1px solid rgba(37,99,235,.14);
 
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 
   font-size:10px;
   font-weight:700;
@@ -3518,9 +3518,8 @@ body.modal-open{
   color:#94A3B8;
 
   line-height:1.5;
-  max-width:120px;
+
 }
-  
 
 /* MOBILE */
 
@@ -3534,13 +3533,11 @@ body.modal-open{
 
   }
 
-   .altx-head-sub{
+  .altx-head-sub{
 
-    max-width:100px;
+    font-size:10px;
 
-    font-size:9px;
-
-    line-height:1.35;
+    line-height:1.4;
 
   }
 
@@ -3602,7 +3599,7 @@ body.modal-open{
   letter-spacing:.12em;
   text-transform:uppercase;
 
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 
   margin-bottom:10px;
 
@@ -3735,7 +3732,7 @@ body.modal-open{
 
 .altx-checkout-trust-item i{
 
-  color:#22C55E;
+  color:var(--color-success);
 
   font-size:12px;
 
@@ -3768,7 +3765,7 @@ body.modal-open{
   border-top:
   1px solid rgba(255,255,255,.06);
 
-  color:#60A5FA;
+  color:var(--color-secondary-light);
 
   font-size:11px;
   font-weight:700;
@@ -3804,7 +3801,72 @@ body.modal-open{
 
 }
 
+/* LEFT FADE */
 
+.altx-table-wrap::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+  bottom:0;
+
+  width:28px;
+
+  z-index:3;
+
+  pointer-events:none;
+
+  background:
+  linear-gradient(
+    90deg,
+    #030A18 0%,
+    rgba(3,10,24,0) 100%
+  );
+
+}
+
+/* RIGHT FADE */
+
+.altx-table-wrap::after{
+
+  content:"";
+
+  position:absolute;
+
+  right:0;
+  top:0;
+  bottom:0;
+
+  width:36px;
+
+  z-index:3;
+
+  pointer-events:none;
+
+  background:
+  linear-gradient(
+    270deg,
+    #030A18 0%,
+    rgba(3,10,24,0) 100%
+  );
+
+}
+
+/* DESKTOP */
+
+@media(min-width:769px){
+
+  .altx-table-wrap::before,
+  .altx-table-wrap::after{
+
+    display:none;
+
+  }
+
+}  
   
 /* ========================================== */
 /* STICKY FIRST COLUMN */
@@ -3940,7 +4002,7 @@ body.modal-open{
 
       <div class="altx-corporate-title">
 
-        Booking for a Security Team or Bulk Booking? 
+        Booking for a Security Team?
 
       </div>
 
@@ -3948,7 +4010,7 @@ body.modal-open{
 
         Bulk booking support available for enterprises,
         internal security teams, and corporate training programs.
-        Atleast 5 Minimum tickets to buy  
+        Minimum 5 tickets required for bulk/team purchases.
       </div>
 
     </div>
@@ -3958,7 +4020,7 @@ body.modal-open{
   <button class="altx-corporate-btn"
   onclick="openCorporateModal()">
 
-   Book Now
+    Request Team Booking
 
   </button>
 
@@ -4128,12 +4190,11 @@ body.modal-open{
 
       </div>
 
-<button class="altx-register-btn"
-onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smooth'})">
+      <button class="altx-register-btn" onclick="scrollToSelectionMobileBar()">
 
-  Select Pass
+        Select Pass
 
-</button>
+      </button>
 
     </div>
 
@@ -4407,7 +4468,7 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
           <select class="altx-course-select"
           id="trainingCourse">
 
-            <option value="CRTP®">CRTP®</option>
+            <option value="CRTP®">CAIPT®</option>
             <option value="CRTE®">CRTE®</option>
             <option value="CARTP®">CARTP®</option>
             <option value="CARTE®">CARTE®</option>
@@ -4503,7 +4564,7 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
           <select class="altx-course-select"
           id="comboCourse">
 
-            <option value="CRTP®">CRTP®</option>
+            <option value="CRTP®">CAIPT</option>
             <option value="CRTE®">CRTE®</option>
             <option value="CARTP®">CARTP®</option>
             <option value="CARTE®">CARTE®</option>
@@ -5241,7 +5302,7 @@ id="trackModal">
           Active Directory
         </div>
 
-        <h4>CRTP®</h4>
+        <h4>CAIPT®</h4>
 
         <p>
           Learn practical Active Directory attack
