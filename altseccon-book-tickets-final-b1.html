@@ -4615,6 +4615,295 @@ margin-top:4px;
   padding-right:54px;
 
 }
+/* =========================================
+   SUCCESS MODAL
+========================================= */
+
+.altx-success-box{
+
+  width:100%;
+  max-width:640px;
+
+  background:var(--color-surface);
+
+  border:1px solid var(--color-border);
+
+  border-radius:28px;
+
+  padding:34px 30px;
+
+  text-align:center;
+
+}
+
+/* ICON */
+
+.altx-success-icon{
+
+  width:84px;
+  height:84px;
+
+  margin:0 auto 20px;
+
+  border-radius:999px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(16,185,129,.14),
+    rgba(16,185,129,.08)
+  );
+
+  border:1px solid rgba(16,185,129,.18);
+
+  color:var(--color-success);
+
+  font-size:34px;
+
+}
+
+/* LABEL */
+
+.altx-success-label{
+
+  display:inline-flex;
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+  background:rgba(16,185,129,.08);
+
+  border:1px solid rgba(16,185,129,.12);
+
+  color:var(--color-success);
+
+  font-size:12px;
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+
+  margin-bottom:18px;
+
+}
+
+/* TITLE */
+
+.altx-success-title{
+
+  font-size:34px;
+  line-height:1.18;
+
+  font-weight:800;
+
+  margin-bottom:14px;
+
+}
+
+/* SUB */
+
+.altx-success-sub{
+
+  max-width:520px;
+
+  margin:0 auto;
+
+  color:var(--color-text-body);
+
+  font-size:15px;
+
+  line-height:1.8;
+
+}
+
+/* REFERENCE */
+
+.altx-success-ref{
+
+  margin-top:26px;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  background:var(--color-bg-light);
+
+  border:1px solid var(--color-border);
+
+}
+
+.altx-success-ref span{
+
+  display:block;
+
+  font-size:12px;
+  font-weight:700;
+
+  color:var(--color-text-muted);
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+
+  margin-bottom:10px;
+
+}
+
+.altx-success-ref strong{
+
+  font-size:28px;
+  font-weight:800;
+
+  color:var(--color-secondary-light);
+
+}
+
+/* STEPS */
+
+.altx-success-steps{
+
+  display:grid;
+
+  gap:14px;
+
+  margin-top:24px;
+
+  text-align:left;
+
+}
+
+.altx-success-step{
+
+  display:flex;
+  align-items:flex-start;
+
+  gap:14px;
+
+  padding:16px;
+
+  border-radius:18px;
+
+  background:var(--color-bg-light);
+
+  border:1px solid var(--color-border);
+
+}
+
+.altx-success-step i{
+
+  width:40px;
+  height:40px;
+
+  min-width:40px;
+
+  border-radius:12px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(37,99,235,.08);
+
+  color:var(--color-secondary-light);
+
+  font-size:15px;
+
+}
+
+.altx-success-step strong{
+
+  display:block;
+
+  font-size:14px;
+  font-weight:700;
+
+  margin-bottom:5px;
+
+}
+
+.altx-success-step span{
+
+  display:block;
+
+  color:var(--color-text-body);
+
+  font-size:13px;
+
+  line-height:1.7;
+
+}
+
+/* ACTIONS */
+
+.altx-success-actions{
+
+  margin-top:28px;
+
+}
+
+.altx-success-btn{
+
+  width:100%;
+  height:54px;
+
+  border:none;
+  border-radius:16px;
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--color-primary-light),
+    var(--color-primary)
+  );
+
+  color:#fff;
+
+  font-size:14px;
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-success-box{
+
+    padding:26px 20px;
+
+    border-radius:24px;
+
+  }
+
+  .altx-success-title{
+
+    font-size:26px;
+
+  }
+
+  .altx-success-sub{
+
+    font-size:14px;
+
+    line-height:1.7;
+
+  }
+
+  .altx-success-ref strong{
+
+    font-size:22px;
+
+  }
+
+}  
 </style>
 </head>
 <body>
@@ -5708,7 +5997,7 @@ id="orderBreakdown">
 
     <div class="altx-payment-options">
 
-      <button class="altx-checkout">
+      <button class="altx-checkout" onclick="completePayment()">
 
         <i class="fa-solid fa-bolt"></i>
         Pay with Razorpay
@@ -5753,7 +6042,7 @@ id="orderBreakdown">
   </div>
 
 </div>
-      <button class="altx-checkout"
+      <button class="altx-checkout" onclick="completePayment()"
     >
 
         <i class="fa-solid fa-mobile-screen"></i>
@@ -5764,7 +6053,7 @@ id="orderBreakdown">
       <button class="altx-checkout"
       >
 
-        <i class="fa-solid fa-building-columns"></i>
+        <i class="fa-solid fa-building-columns" onclick="completePayment()"></i>
         Net Banking
 
       </button>
@@ -6058,6 +6347,127 @@ id="trackModal">
         </p>
 
       </div>
+
+    </div>
+
+  </div>
+
+</div>  
+  
+<!-- ========================================= -->
+<!-- SUCCESS MODAL -->
+<!-- ========================================= -->
+
+<div class="altx-modal"
+id="successModal">
+
+  <div class="altx-success-box">
+
+    <!-- ICON -->
+
+    <div class="altx-success-icon">
+
+      <i class="fa-solid fa-check"></i>
+
+    </div>
+
+    <!-- TITLE -->
+
+    <div class="altx-success-label">
+
+      Registration Reserved
+
+    </div>
+
+    <h2 class="altx-success-title">
+
+      Your AltSecCON 2026 booking has been successfully reserved.
+
+    </h2>
+
+    <p class="altx-success-sub">
+
+      A confirmation email with invoice details,
+      attendee information, and next steps has been sent.
+
+    </p>
+
+    <!-- REFERENCE -->
+
+    <div class="altx-success-ref">
+
+      <span>Booking Reference</span>
+
+      <strong id="bookingReference">
+        ALTX-2026-8421
+      </strong>
+
+    </div>
+
+    <!-- NEXT STEPS -->
+
+    <div class="altx-success-steps">
+
+      <div class="altx-success-step">
+
+        <i class="fa-regular fa-envelope"></i>
+
+        <div>
+
+          <strong>Email Confirmation</strong>
+
+          <span>
+            Booking confirmation will arrive within a few minutes.
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="altx-success-step">
+
+        <i class="fa-regular fa-file-lines"></i>
+
+        <div>
+
+          <strong>Invoice & Receipt</strong>
+
+          <span>
+            GST invoice and payment receipt will be shared by email.
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="altx-success-step">
+
+        <i class="fa-solid fa-laptop-code"></i>
+
+        <div>
+
+          <strong>Training & Event Access</strong>
+
+          <span>
+            Event instructions and attendee access details will be shared before the event.
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ACTIONS -->
+
+    <div class="altx-success-actions">
+
+      <button class="altx-success-btn"
+      onclick="closeModal('successModal')">
+
+        Continue Browsing
+
+      </button>
 
     </div>
 
@@ -7359,7 +7769,43 @@ if(termsCheckbox){
   );
 
 }  
-</script>
+/* =========================================
+   SUCCESS MODAL
+========================================= */
+function openSuccessModal(){
+
+  const ref =
+  "ALTX-2026-" +
+  Math.floor(
+    1000 + Math.random() * 9000
+  );
+
+  document.getElementById(
+    "bookingReference"
+  ).innerText = ref;
+
+  closeModal("paymentModal");
+
+  openModal("successModal");
+
+}
+
+function completePayment(){
+
+  showToast(
+    "Payment Successful"
+  );
+
+  setTimeout(()=>{
+
+    openSuccessModal();
+
+  },700);
+
+}
+
+  
+  </script>
 
 </body>
 </html>
