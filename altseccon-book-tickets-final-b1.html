@@ -34,7 +34,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   --color-text-main:#111827;
   --color-text-body:#4B5563;
   --color-text-muted:#6B7280;
-
+ --color-text-soft-white:#CBD5E1;
   --color-text-white:#FFFFFF;
 
   /* =========================
@@ -2036,12 +2036,7 @@ body.modal-open{
   border:none;
   border-radius:14px;
 
-  background:
-  linear-gradient(
-    135deg,
-    var(--color-secondary-light),
-    #1D4ED8
-  );
+  background:var(--color-secondary);  
 
   color:#fff;
 
@@ -2100,7 +2095,7 @@ body.modal-open{
 
   background:none;
 
-  color:var(--color-primary-light);
+  color:var(--color-text-body);
 
   font-size:12px;
   font-weight:700;
@@ -2639,6 +2634,11 @@ background:var(--color-secondary);
 
 }
 
+  
+.altx-phase-name i  
+  {
+    color:var(--color-secondary-light);
+  }
 /* ========================================== */
 /* PRICE */
 /* ========================================== */
@@ -2778,9 +2778,9 @@ background:var(--color-secondary);
 /* ========================================== */
  .altx-table-head div{
 
-    font-size:14px;
+    font-size:15px;
 
-    line-height:1.3;
+    line-height:1.2;
     font-weight:900;
 
   }
@@ -2810,10 +2810,10 @@ background:var(--color-secondary);
 
   .altx-table-head div{
 
-    font-size:12px;
+    font-size:13px;
 
-    line-height:1.3;
-    font-weight:900;
+    line-height:1.2;
+    font-weight:800;
 
   }
 
@@ -3153,22 +3153,7 @@ background:var(--color-secondary);
 
 } 
   
-/* ========================================== */
-/* TABLE HEADER */
-/* ========================================== */
 
-.altx-head-title{
-
-  font-size:14px;
-  font-weight:700;
-
-  color:var(--color-text-main);
-
-  margin-bottom:6px;
-
-  line-height:1.35;
-
-}
 
 .altx-head-sub{
 
@@ -3191,8 +3176,7 @@ background:var(--color-secondary);
 
   .altx-head-title{
 
-    font-size:12px;
-
+    font-size:18px;
     margin-bottom:4px;
 
   }
@@ -3821,9 +3805,8 @@ margin-top:4px;
 .altx-head-title{
 
   font-size:14px;
-  font-weight:700;
-
-  color:var(--color-text-white);
+  font-weight:900;
+  color:var(--color-text-soft-white);
 
   margin-bottom:6px;
 
@@ -4050,7 +4033,7 @@ margin-top:4px;
 
   border:1px solid rgba(34,197,94,.18);
 
-  color:var(--color-text-white);
+  color:var(--color-text-soft-white);
 
   font-size:11px;
   font-weight:700;
@@ -4163,13 +4146,6 @@ margin-top:4px;
 
   }
 
-  .altx-head-title{
-
-    font-size:12px;
-
-    margin-bottom:4px;
-
-  }
 
   .altx-head-sub{
 
@@ -4368,9 +4344,9 @@ margin-top:4px;
 
   border:1px solid rgba(16,185,129,.18);
 
-  color:var(--color-text-white);
+  color:var(--color-text-soft-white);
 
-  font-size:10px;
+  font-size:12px;
   font-weight:700;
 
   line-height:1;
@@ -4626,8 +4602,7 @@ margin-top:4px;
 
   background:var(--color-secondary);
 
-  color:#fff;
-
+  color:var(--color-text-soft-white);
   font-size:10px;
   font-weight:700;
 
@@ -4787,8 +4762,8 @@ Bulk booking support available for 5 or more registrations.
 
     <div>
 
-      <div class="altx-phase-name">
-        Super Early Bird
+      <div class="altx-phase-name">        
+        <i class="fa-solid fa-bullhorn"></i>  Super Early Bird
       </div>
 
       <div class="altx-phase-date">
