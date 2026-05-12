@@ -4904,6 +4904,125 @@ margin-top:4px;
   }
 
 }  
+  
+/* =========================================
+   SCARCITY ALERT
+========================================= */
+
+.altx-phase-alert,
+.altx-seat-warning,
+.altx-student-limit{
+
+  display:inline-flex;
+  align-items:center;
+
+  gap:7px;
+
+  
+
+  padding:7px 12px;
+
+  border-radius:999px;
+
+  
+
+  border:1px solid rgba(185,28,28,.14);
+
+  font-size:11px;
+  font-weight:700;
+
+  line-height:1;
+
+}
+
+.altx-phase-alert i,
+.altx-seat-warning i,
+.altx-student-limit i{
+
+  font-size:10px;
+  color: var(--color-secondary-light);
+  
+
+}  
+  .altx-student-limit{
+    margin-bottom: 15px;
+    margin-top:0px;
+  }
+  
+  
+.altx-phase-alert,
+.altx-student-limit{ 
+
+  border:1px solid var(--color-text-muted);
+
+  color:var(--color-text-muted);
+
+}  
+  
+.altx-phase-alert,
+.altx-student-limit{
+
+  padding:6px 10px;
+
+  font-size:10px;
+
+  gap:6px;
+
+}  
+.altx-student-box{
+
+  padding-bottom:18px;
+
+}  
+.altx-student-box .altx-current-price{
+
+  margin-bottom:14px;
+
+}  
+  
+.altx-validity{
+
+  margin-top:6px;
+  margin-bottom:14px;
+
+  font-size:12px;
+  font-weight:600;
+
+  color:var(--color-text-muted);
+
+}  
+  
+.altx-card-phase{
+
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  margin-bottom:11px;
+
+  font-size:12px;
+  font-weight:700;
+  
+  color:var(--color-text-muted);
+  
+  letter-spacing:.02em;
+
+}
+  
+
+  
+
+.altx-phase-dot{
+
+  width:8px;
+  height:8px;
+
+  border-radius:999px;
+
+  background:var(--color-secondary-light); 
+
+}  
 </style>
 </head>
 <body>
@@ -5058,7 +5177,7 @@ Bulk booking support available for 5 or more registrations.
       <div class="altx-phase-date">
         Till 30 June 2026
       </div>
-
+     
     </div>
 
     <!-- TRAINING -->
@@ -5350,7 +5469,13 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
             <i class="fa-solid fa-laptop-code"></i>
             Training Pass
           </div>
+           <div class="altx-card-phase">
 
+  <i class="fa-solid fa-bolt"></i>
+
+  Super Early Bird · Till 30 June
+
+</div>
           <h2 class="altx-pass-title">
             3-Day Hands-on Training
           </h2>
@@ -5414,7 +5539,7 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
 
           <div class="altx-current-box">
 
-            <h4>Super Early Bird Active</h4>
+            
 
             <div class="altx-current-price">
 
@@ -5463,10 +5588,17 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
         <div class="altx-pass-card altx-conf-card">
 
           <div class="altx-badge">
+            
             <i class="fa-solid fa-crown"></i>
             Full Access Pass
           </div>
+            <div class="altx-card-phase">
 
+  <i class="fa-solid fa-bolt"></i>
+
+  Super Early Bird · Till 30 June
+
+</div>
           <h2 class="altx-pass-title">
             Training + Conference
           </h2>
@@ -5510,8 +5642,7 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
 
           <div class="altx-current-box">
 
-            <h4>Super Early Bird Active</h4>
-
+            
             <div class="altx-current-price">
 
               <strong>₹44,798</strong>
@@ -5562,7 +5693,13 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
             <i class="fa-solid fa-microphone-lines"></i>
             Conference Pass
           </div>
+            <div class="altx-card-phase">
 
+  <i class="fa-solid fa-bolt"></i>
+
+  Super Early Bird · Till 30 June
+
+</div>
           <h2 class="altx-pass-title">
             1-Day Conference
           </h2>
@@ -5590,7 +5727,7 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
 
           <div class="altx-current-box">
 
-            <h4>Super Early Bird Active</h4>
+            
 
             <div class="altx-current-price">
 
@@ -5625,7 +5762,13 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
 <!-- REPLACE CONFERENCE PHASE INFO -->
 <!-- ========================================== -->
     <div class="altx-current-box">
+              <div class="altx-student-limit">
 
+  <i class="fa-solid fa-clock"></i>
+
+  Almost Sold Out · 20 Tickets Left
+
+</div>
             <h4>Student Pass</h4>          
 
             <div class="altx-current-price">
