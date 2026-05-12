@@ -5007,6 +5007,37 @@ color:var(--color-success);
   background:var(--color-secondary-light); 
 
 }  
+/* =========================================
+   LIVE WRAP
+========================================= */
+
+.altx-live-wrap{
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:flex-end;
+
+  gap:8px;
+
+}
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+.altx-countdown{
+
+  font-size:11px;
+  font-weight:600;
+  margin-top: 5px;
+  color:var(--color-text-muted);
+
+  line-height:1.4;
+
+  text-align:left;
+
+}    
 </style>
 </head>
 <body>
@@ -5161,7 +5192,11 @@ Bulk booking support available for 5 or more registrations.
       <div class="altx-phase-date">
         Till 30 June 2026
       </div>
-     
+     <div class="altx-countdown countdownTimer" >
+
+    Price increases in 08 Days
+
+  </div>
     </div>
 
     <!-- TRAINING -->
@@ -5219,6 +5254,8 @@ Bulk booking support available for 5 or more registrations.
         Active Now
 
       </div>
+        
+  
 
 <button class="altx-register-btn"
 onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smooth'})">
@@ -5440,11 +5477,16 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
       id="trainingTab">
 
         <div class="altx-pass-card altx-conf-card">
+            <div class="altx-countdown countdownTimer" >
+
+    Price increases in 08 Days
+
+  </div>
            <div class="altx-card-phase">
 
   <i class="fa-solid fa-check-circle"></i>
 
-  Super Early Bird · Till 30 June
+  Super Early Bird Active
 
 </div>
           <div class="altx-badge">
@@ -5562,11 +5604,16 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
       id="comboTab">
 
         <div class="altx-pass-card altx-conf-card">
+            <div class="altx-countdown countdownTimer" >
+
+    Price increases in 08 Days
+
+  </div>
            <div class="altx-card-phase">
 
   <i class="fa-solid fa-check-circle"></i>
 
-  Super Early Bird · Till 30 June
+  Super Early Bird Active
 
 </div>
           <div class="altx-badge">
@@ -5664,11 +5711,16 @@ onclick="document.getElementById('accessSection').scrollIntoView({behavior:'smoo
       id="conferenceTab">
 
         <div class="altx-pass-card altx-conf-card">
+            <div class="altx-countdown countdownTimer" >
+
+    Price increases in 08 Days
+
+  </div>
             <div class="altx-card-phase">
 
    <i class="fa-solid fa-check-circle"></i>
 
-  Super Early Bird · Till 30 June
+  Super Early Bird Active
 
 </div>
           <div class="altx-badge">
@@ -7923,7 +7975,63 @@ function completePayment(){
 
 }
 
-  
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+function updateCountdown(){
+
+  const endDate =
+  new Date("2026-06-30T23:59:59");
+
+  const now = new Date();
+
+  const diff =
+  endDate - now;
+
+  const timers =
+  document.getElementsByClassName(
+    "countdownTimer"
+  );
+
+  if(diff <= 0){
+
+    Array.from(timers).forEach(timer=>{
+
+      timer.innerText =
+      "Pricing update coming soon";
+
+    });
+
+    return;
+
+  }
+
+  const days =
+  Math.floor(
+    diff / (1000 * 60 * 60 * 24)
+  );
+
+  const hours =
+  Math.floor(
+    (diff / (1000 * 60 * 60)) % 24
+  );
+
+  Array.from(timers).forEach(timer=>{
+
+    timer.innerText =
+    `Price increases in ${days} Days ${hours} Hours`;
+
+  });
+
+}
+
+updateCountdown();
+
+setInterval(
+  updateCountdown,
+  1000 * 60
+); 
   </script>
 
 </body>
