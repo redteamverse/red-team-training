@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2005,8 +2006,8 @@ gap:22px;
 .nav {
   display: flex;
   align-items: center;
-  justify-content: center; 
-  gap: 18px;
+  justify-content:center;
+  gap: 38px;
   width: 100%;
   margin: 0 auto;
   flex-wrap: nowrap;   /* 🔥 prevent wrapping */
@@ -6106,6 +6107,73 @@ MOBILE
   }
 
 }
+    
+nav a.active-link{
+
+  position:relative;
+
+
+}
+
+nav a.active-link::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:50%;
+  bottom:-5px;
+
+  transform:translateX(-50%);
+
+  width:50px;
+  height:2px;
+
+  border-radius:999px;
+  background:#B91C1C;
+
+}    
+    
+.mobile-menu a.mobile-active-link{
+
+  position:relative;
+
+ 
+
+}
+
+.mobile-menu a.mobile-active-link::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:5%;
+  bottom:-1px;
+
+  transform:translateX(-50%);
+
+  width:50px;
+  height:2px;
+
+  border-radius:999px;
+
+  background:#B91C1C;
+
+}    
+    
+  
+    
+   
+    
+/* REMOVE GLOBAL HOVER EFFECT ONLY FOR PASS LINK */
+
+nav a.active-link:hover::after,
+nav a.active-link:focus-visible::after{
+
+  width:0px !important;
+
+}   
 </style>
 </head>
 
@@ -6163,27 +6231,17 @@ MOBILE
         <a href="#" class="dropdown-toggle">Conference ▾</a>
 
         <div class="dropdown-menu">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Overview</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Why Attend</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Speakers</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Agenda</a>
-          <a href="#tickets">Pass</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-final.html">Overview</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-final.html">Why Attend</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-final.html">Speakers</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-final.html">Agenda</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-final.html#pass">Pass</a>
           <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
         </div>
       </div>     
 
-      <!-- 🔥 AltSecCON 2026 DROPDOWN -->
-      <div class="nav-item dropdown">
-        <a href="#" class="dropdown-toggle">AltSecCON 2026 ▾</a>
-
-        <div class="dropdown-menu">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon26-v3.html">Overview</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
-        </div>
-      </div>
-       <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Passes</a>
+    
+       <a href="#tickets" class="active-link">Passes</a>
 
       <!-- 🔥 Past Events DROPDOWN -->
       <div class="nav-item dropdown">
@@ -6193,11 +6251,12 @@ MOBILE
           <a href="https://redteamverse.github.io/red-team-training/altseccon25-v1.html">
             AltSecCON 2025 (Bengaluru)
           </a>
-        </div>
+              <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Experience</a>
+        </div>       
       </div>
 
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Experience</a>
-
+     
+      <a href="#venue">Venue</a>
       <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>
 
     </nav>
@@ -6205,7 +6264,7 @@ MOBILE
 <div class="header-cta">
 
   <!-- CART ICON -->
-  <div class="cart-icon" onclick="window.location.href='https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html'">
+  <div class="cart-icon" onclick="window.location.href='https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-b1.html'">
     🛒
     <span id="cartCount">0</span>
   </div>
@@ -6265,19 +6324,9 @@ MOBILE
 
     
 
-    <!-- AltSecCON 2026 -->
-    <div class="nav-item dropdown">
-      <a href="#" class="dropdown-toggle">AltSecCON 2026 ▾</a>
 
-      <div class="dropdown-menu">
-        <a href="https://redteamverse.github.io/red-team-training/altseccon26-final.html">Overview</a>
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
-      </div>
-    </div>
     
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">Passes</a>
+    <a href="#tickets" class="mobile-active-link">Passes</a>
 
     <!-- Past Events -->
     <div class="nav-item dropdown">
@@ -6287,11 +6336,12 @@ MOBILE
         <a href="https://redteamverse.github.io/red-team-training/altseccon25-v1.html">
           AltSecCON 2025 (Bengaluru)
         </a>
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Experience</a>  
       </div>
     </div>
 
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Experience</a>
-
+    
+    <a href="#venue">Venue</a>  
     <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>  
 
     <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Get Passes</a>
@@ -6365,15 +6415,14 @@ MOBILE
  <div class="actions">
 
   <!-- PRIMARY CTA -->
-  <a href="#training" class="btn btn-primary">
+  <a href="#tickets" class="btn btn-primary">
     Secure Early Bird Pass
   </a>
 
 
 
   <!-- SECONDARY CTA -->
-  <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-final.html" 
-     class="btn btn-ghost">
+  <a href="#training" class="btn btn-ghost">
     View Training Details
   </a>
 
@@ -6513,7 +6562,7 @@ MOBILE
 </section>
   
  <div class="expect-cta">
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn btn-primary">Reserve Your Seat</a>
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-b1.html" class="btn btn-primary">Reserve Your Seat</a>
    <p class="trust-note">
       Prices increase soon • Limited hands-on lab seats
     </p>
@@ -6678,11 +6727,11 @@ MOBILE
       <div class="course-card">
         <img src="https://static.wixstatic.com/media/470c31_1207916d21b14a428a92b4ff90a74f8a~mv2.png" class="course-img">
         <div class="course-signal-name">
-        <span class="course-badge">CRTP</span>
+        <span class="course-badge">To Be Decided</span>
         
       </div>     
          
-        <h3>Active Directory Attacks for Red and Blue Teams - Beginner's Edition</h3>
+        <h3>To Be Decided</h3>
          
         <div class="course-signal supporting-body">
         Perform AD enumeration, privilege escalation, and Kerberos attacks in real lab environments.  
@@ -6711,7 +6760,7 @@ MOBILE
 
         <div class="course-actions">
           <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Curriculum →</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Secure Seat</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-b1.html" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
@@ -6753,7 +6802,7 @@ MOBILE
 
         <div class="course-actions">
           <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Curriculum →</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Secure Seat</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-b1.html" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
@@ -6796,7 +6845,7 @@ MOBILE
 
         <div class="course-actions">
           <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Curriculum →</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Secure Seat</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-b1.html" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
@@ -6838,7 +6887,7 @@ MOBILE
 
        <div class="course-actions">
           <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Curriculum →</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Secure Seat</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-b1.html" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
@@ -6879,7 +6928,7 @@ MOBILE
 
       <div class="course-actions">
           <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Curriculum →</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn-book">Secure Seat</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-b1.html" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
@@ -7308,7 +7357,7 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
 
         </div>
 
-        <a href="#" class="altx-main-btn blue-btn">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-b1.html" class="altx-main-btn blue-btn">
           Choose Training Pass
         </a>
 
@@ -7371,7 +7420,7 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
 
         </div>
 
-        <a href="#" class="altx-main-btn blue-btn">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-b1.html" class="altx-main-btn blue-btn">
           Get Full Access
         </a>
 
@@ -7438,7 +7487,7 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
 
         </div>
 
-        <a href="#" class="altx-main-btn blue-btn">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-b1.html" class="altx-main-btn blue-btn">
           Choose Conference Pass
         </a>
 
@@ -7540,7 +7589,7 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
   </p>
 
 
-    <a href="#" class="btn-tertiary">Explore Training Programs →</a>
+    <a href="https://redteamverse.github.io/red-team-training/altseccon-training.html" class="btn-tertiary">Explore Training Programs →</a>
 
 
 </div>
@@ -7757,7 +7806,7 @@ Thanks,
     </div>
 
     <div class="gallery-cta ">
-      <a href="/gallery" class="btn-tertiary">
+      <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html" class="btn-tertiary">
         View Full Gallery →
       </a>
     </div>
