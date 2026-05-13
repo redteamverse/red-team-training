@@ -1265,33 +1265,6 @@ body.modal-open{
 }  
   
 /* ========================================== */
-/* SAVE TAG */
-/* ========================================== */
-
-.altx-save-tag{
-
-  display:inline-flex;
-  align-items:center;
-
-  margin-top:8px;
-
-  padding:5px 10px;
-
-  border-radius:999px;
-
-  background:rgba(34,197,94,.10);
-
-  border:1px solid rgba(34,197,94,.12);
-
-  color:var(--color-success);
-
-  font-size:11px;
-  font-weight:700;
-
-  width:max-content;
-
-}  
-/* ========================================== */
 /* TOAST */
 /* ========================================== */
 
@@ -3293,13 +3266,6 @@ body.modal-open{
    TABLE
 ========================================================= */
 
-.altx-price-table{
-
-  min-width:600px;
-
-  color:#fff;
-
-}
 
 /* =========================================================
    HEADER
@@ -3384,11 +3350,7 @@ padding-right: 10px;
     rgba(29,78,216,.04)
   );
 
-  border-top:
-  1px solid rgba(168,85,247,.10);
 
-  border-bottom:
-  1px solid rgba(168,85,247,.10);
 
 }
 
@@ -3450,18 +3412,7 @@ padding-right: 10px;
    PRICE
 ========================================================= */
 
-.altx-price{
 
-  font-size:24px;
-  font-weight:800;
-
-  line-height:1;
-
-  margin-bottom:10px;
-
-  letter-spacing:-.03em;
-
-}
 
 .altx-white{
   color:#F8FAFC;
@@ -3501,30 +3452,6 @@ padding-right: 10px;
    SAVE TAG
 ========================================================= */
 
-.altx-save-tag{
-
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  padding:7px 12px;
-
-  border-radius:999px;
-
-  background:
-  rgba(16,185,129,.08);
-
-  border:
-  1px solid rgba(16,185,129,.14);
-
-  color:#34D399;
-
-  font-size:11px;
-  font-weight:700;
-
-  white-space:nowrap;
-
-}
 
 /* =========================================================
    ACTION
@@ -3618,6 +3545,16 @@ padding-right: 10px;
 
   } 
   
+.altx-price{
+
+  font-size:24px;
+  font-weight:800; 
+
+  margin-bottom:10px;
+
+  letter-spacing:-.03em;
+
+}  
 @media(max-width:768px){
 
   .altx-table-wrap{
@@ -3635,42 +3572,17 @@ padding-right: 10px;
 
   }
 
-}
-
-
-
   .altx-phase-name{
 
     font-size:18px;
 
-  }
-
-  .altx-phase-date{
-
-    font-size:12px;
-
-  }
+  } 
 
   .altx-price{
 
-    font-size:20px;
+    font-size:18px;
 
   }
-
-  .altx-old-price{
-
-    font-size:14px;
-
-  }
-
-  .altx-save-tag{
-
-    font-size:10px;
-
-    padding:6px 10px;
-
-  }
-
 }  
   
  
@@ -3679,114 +3591,7 @@ padding-right: 10px;
    COMPACT MOBILE TABLE
 ========================================================= */
 
-@media(max-width:768px){
 
-  .altx-price-table{
-
-    min-width:700px;
-
-  }
-
-  .altx-table-head{
-
-    grid-template-columns:
-    150px
-    130px
-    150px
-    130px
-    120px;
-
-  }
-
-  .altx-price-row{
-
-    grid-template-columns:
-    150px
-    130px
-    150px
-    130px
-    120px;
-
-    min-height:96px;
-
-  }
-
-  .altx-table-head > div,
-  .altx-price-row > div{
-
-    padding:16px 14px;
-
-  }
-
- 
-
-  .altx-phase-name{
-
-    font-size:15px;
-
-    margin-bottom:6px;
-
-  }
-
-  .altx-phase-date{
-
-    font-size:11px;
-
-    line-height:1.45;
-
-  }
-
-  .altx-price{
-
-    font-size:18px;
-
-    margin-bottom:6px;
-
-  }
-
-  .altx-old-price{
-
-    font-size:12px;
-
-    margin-bottom:6px;
-
-  }
-
-  .altx-save-tag{
-
-    font-size:9px;
-
-    padding:5px 8px;
-
-  }
-
-  .altx-live{
-
-    font-size:9px;
-
-    padding:6px 9px;
-
-  }
-
-  .altx-register-btn{
-
-    height:36px;
-
-    padding:0 12px;
-
-    font-size:11px;
-
-    border-radius:10px;
-
-  }
-
-  .altx-table-action{
-
-    gap:8px;
-
-  }
-
-}  
 /* =========================================================
    SUPER EARLY BIRD GLOW
 ========================================================= */
@@ -3824,7 +3629,7 @@ padding-right: 10px;
   transform:skewX(-18deg);
 
   animation:
-  altxFlash 4.8s ease-in-out infinite;
+  altxFlash 2.0s ease-in-out infinite;
 
   pointer-events:none;
 
@@ -3968,7 +3773,128 @@ padding-right: 10px;
   }
 
 }
+/* =========================================================
+   COMPACT MOBILE TABLE
+========================================================= */
 
+@media(max-width:768px){
+
+  .altx-price-table{
+
+    min-width:630px;
+
+  }
+
+  .altx-table-head{
+
+    grid-template-columns:
+    145px
+    120px
+    135px
+    120px
+    120px;
+
+  }
+
+  .altx-price-row{
+
+    grid-template-columns:
+    145px
+    120px
+    135px
+    120px
+    120px;
+
+    min-height:88px;
+
+  }
+
+  .altx-table-head > div,
+  .altx-price-row > div{
+
+    padding:14px 12px;
+
+  }
+
+  /* HEADER */
+
+  .altx-head-title{
+
+    font-size:12px;
+
+    line-height:1.3;
+
+  }
+
+  /* PHASE */
+
+  .altx-phase-name{
+
+    font-size:14px;
+
+    line-height:1.25;
+
+    margin-bottom:4px;
+
+  }
+
+  .altx-phase-name i{
+
+    font-size:14px;
+
+  }
+
+  .altx-phase-date{
+
+    font-size:12px;
+
+    line-height:1.4;
+
+  } /* PRICE */
+
+ 
+
+  .altx-old-price{
+
+    font-size:13px;
+
+    margin-bottom:0;
+
+  }
+
+  /* ACTION */
+
+  .altx-table-action{
+
+    gap:8px;
+
+    min-width:110px;
+
+  }
+
+  .altx-live{
+
+    font-size:9px;
+
+    padding:5px 8px;
+
+    gap:5px;
+
+  }
+
+  .altx-register-btn{
+
+    height:34px;
+
+    padding:0 10px;
+
+    font-size:10px;
+
+    border-radius:10px;
+
+  }
+
+}
 </style>
 </head>
 <body>
