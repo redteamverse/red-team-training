@@ -81,7 +81,7 @@ body.modal-open{
 
 .altx-head span{
 
-  color:#10B981;
+  color:#CBD5E1;
   font-size:11px;
   letter-spacing:.22em;
   text-transform:uppercase;
@@ -204,7 +204,7 @@ body.modal-open{
   border-radius:24px;
 
   padding:22px;
-
+  position:relative;
 }
 
 .altx-training-card{
@@ -2224,7 +2224,7 @@ body.modal-open{
 
 .altx-access-label{
 
-  color:var(--color-secondary-light);
+  color:#CBD5E1;
 
   font-size:11px;
   font-weight:700;
@@ -3800,21 +3800,102 @@ padding-right: 10px;
   top:12px;
   right:12px;
 
-  width:22px;
-  height:22px;
+  width:15px;
+  height:15px;
 
   border-radius:999px;
 
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#10B981;
+  background:#EA3037;
   color:#fff;
   font-size:10px;
   font-weight:700;
 
 }
   
+
+    
+  .altx-limited{
+
+  position:absolute;
+
+  top:22px;
+  right:22px;
+
+  display:inline-flex;
+  align-items:center;
+
+  gap:6px;
+
+  height:34px;
+
+  padding:0 14px;
+
+  border:1px solid rgba(255,255,255,.10);
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,.02);
+
+  font-size:13px;
+  font-weight:600;
+
+  color:#CBD5E1;
+
+  letter-spacing:.01em;
+
+  white-space:nowrap;
+
+}
+
+.altx-limited i{
+
+  font-size:11px;
+
+  color:#EA3037;
+
+}  
+  
+
+
+.altx-student-limit{
+
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:7px 12px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.02);
+  letter-spacing:.01em;
+  white-space:nowrap;
+  border-radius: 999px;
+  font-size:11px;
+  font-weight:500;
+  color: #CBD5E1;
+  margin-bottom: 5px;
+}
+
+
+.altx-student-limit i{
+
+  font-size:10px;
+  color: #EA3037;
+  
+
+}  
+  
+
+ 
+ 
+.altx-student-box{
+
+  padding-bottom:18px;
+
+}  
+ 
+
 </style>
 </head>
 <body>
@@ -4249,7 +4330,10 @@ padding-right: 10px;
       id="trainingTab">
 
         <div class="altx-pass-card altx-training-card">
+               <div class="altx-limited">   
+    <i class="fa-regular fa-check-circle"></i> Limited Seats
 
+  </div>
           <div class="altx-badge">
             <i class="fa-solid fa-laptop-code"></i>
             Training Pass
@@ -4318,7 +4402,7 @@ padding-right: 10px;
 
           <div class="altx-current-box">
 
-            <h4>Super Early Bird Active</h4>
+            <div class="altx-student-limit"><i class="fa-regular fa-check-circle"></i> Super Early Bird Price </div>
 
             <div class="altx-current-price">
 
@@ -4365,7 +4449,10 @@ padding-right: 10px;
       id="comboTab">
 
         <div class="altx-pass-card altx-combo-card">
+<div class="altx-limited">   
+    <i class="fa-regular fa-check-circle"></i> Limited Seats
 
+  </div>
           <div class="altx-badge">
             <i class="fa-solid fa-crown"></i>
             Full Access Pass
@@ -4415,7 +4502,7 @@ padding-right: 10px;
 
           <div class="altx-current-box">
 
-            <h4>Super Early Bird Active</h4>
+            <div class="altx-student-limit"><i class="fa-regular fa-check-circle"></i> Super Early Bird Price </div>
 
             <div class="altx-current-price">
 
@@ -4462,7 +4549,10 @@ padding-right: 10px;
       id="conferenceTab">
 
         <div class="altx-pass-card altx-conf-card">
+<div class="altx-limited">   
+    <i class="fa-regular fa-check-circle"></i> Limited Seats
 
+  </div>
           <div class="altx-badge">
             <i class="fa-solid fa-microphone-lines"></i>
             Conference Pass
@@ -4495,7 +4585,7 @@ padding-right: 10px;
 
           <div class="altx-current-box">
 
-            <h4>Super Early Bird Active</h4>
+            <div class="altx-student-limit"><i class="fa-regular fa-check-circle"></i> Super Early Bird Price </div>
 
             <div class="altx-current-price">
 
@@ -4529,7 +4619,44 @@ padding-right: 10px;
           <!-- ========================================== -->
 <!-- REPLACE CONFERENCE PHASE INFO -->
 <!-- ========================================== -->
+ <div class="altx-current-box">
+              <div class="altx-student-limit">
 
+  <i class="fa-solid fa-clock"></i>
+
+  Almost Sold Out · 20 Tickets Left
+
+</div>
+            <h4>Student Pass</h4>          
+
+            <div class="altx-current-price">
+
+              <strong>₹3,999</strong>
+
+              <span>₹7,999</span>
+
+            </div>
+
+          </div>
+
+          <div class="altx-inline-actions">
+
+            <div class="altx-qty">
+
+              <button onclick="changeQty('conferenceStuQty',-1)">-</button>
+
+              <span id="conferenceStuQty">1</span>
+
+              <button onclick="changeQty('conferenceStuQty',1)">+</button>
+
+            </div>
+
+            <button class="altx-cta"
+            onclick="addStudentConference()">
+              Add Conference Pass
+            </button>
+
+          </div>
 
 
         </div>
@@ -5677,6 +5804,22 @@ function addConference(){
 
 }
 
+function addStudentConference(){
+
+  const qty =
+  parseInt(
+  document.getElementById("conferenceStuQty").innerText
+  );
+
+  addItem(
+    "Conference Pass",
+    "Conference Access",
+    3999,
+    qty
+  );
+
+}  
+  
 /* ========================================== */
 /* MOBILE STICKY BAR */
 /* ========================================== */
@@ -6039,7 +6182,25 @@ function addTraining(){
   scrollToSelectionMobile();
 
 }
+function addStudentConference(){
 
+  const qty =
+  parseInt(
+  document.getElementById("conferenceStuQty").innerText
+  );
+
+  addItem(
+    "Conference Pass",
+    "Conference Access",
+    3999,
+    qty
+  );
+    showToast(
+    `${qty} Conference Pass added`
+  );
+  scrollToSelectionMobile();
+
+} 
 function addCombo(){
 
   const qty =
