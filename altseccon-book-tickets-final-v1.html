@@ -81,8 +81,7 @@ body.modal-open{
 
 .altx-head span{
 
-  color:var(--color-secondary-light);
-
+  color:#10B981;
   font-size:11px;
   letter-spacing:.22em;
   text-transform:uppercase;
@@ -104,16 +103,14 @@ body.modal-open{
 .altx-head h1 strong{
   color:#EF4444;
 }
+  
+  .highlight-text{
+    color:#EF4444;
+  }  
 
 .altx-head p{
 
-  max-width:760px;
-  margin:14px auto 0;
 
-  color:#94A3B8;
-
-  font-size:14px;
-  line-height:1.7;
 
 }
 
@@ -151,281 +148,9 @@ body.modal-open{
 
 
 
-.altx-table-wrap{
-
-  overflow-x:auto;
-
-  border-radius:24px;
-
-  -ms-overflow-style:none;
-  scrollbar-width:none;
-
-  cursor:grab;
-
-}
-
-.altx-table-wrap::-webkit-scrollbar{
-  display:none;
-}
-
-.altx-price-table{
-
-  min-width:1040px;
-
-  background:#07101F;
-
-  border:1px solid rgba(255,255,255,.06);
-
-  border-radius:24px;
-
-  overflow:hidden;
-
-}
-
-.altx-table-head{
-
-  display:grid;
-  grid-template-columns:1.3fr 1fr 1fr 1fr 170px;
-
-  background:#0B1528;
-  
-}
-
-.altx-table-head div{
-
-  padding:18px;
-
-  font-size:15px;
-  font-weight:700;
-
-}
-
-.altx-price-table-row{
-
-  display:grid;
-  grid-template-columns:1.3fr 1fr 1fr 1fr 170px;
-
-  align-items:center;
-
-  min-height:120px;
-
-}
-
-.altx-price-table-row > div{
-
-  padding:20px 18px;
-
-}
-
-.altx-price-table-row.active-phase{
-
-  background:
-  linear-gradient(90deg,
-  rgba(193,18,31,.08),
-  rgba(37,99,235,.03));
-
-  border-left:4px solid var(--color-success);
-
-}
-
-.altx-row-title{
-
-  font-size:16px;
-  font-weight:800;
-
-  margin-bottom:8px;
-  color:var(--color-success);
-}
-
-.altx-row-sub{
-
-  font-size:13px;
-  color:#94A3B8;
-
-}
-
-.altx-price{
-
-  font-size:20px;
-  font-weight:800;
-
-  margin-bottom:6px;
-
-}
-
-
-.altx-green{
-  color:var(--color-success);
-}
-
-.altx-purple{
-  color:#C084FC;
-}
-
-.altx-blue{
-  color:var(--color-secondary-light);
-}
-
-.altx-action-col{
-
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-  justify-content:center;
-
-  gap:10px;
-
-}
-
 /* ========================================== */
 /* ACTIVE NOW BLINK EFFECT */
 /* ========================================== */
-
-.altx-live{
-
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-
-  padding:7px 12px;
-
-  border-radius:999px;
-
-  background:rgba(34,197,94,.10);
-
-  border:1px solid rgba(34,197,94,.18);
-
-  color:var(--color-success);
-
-  font-size:11px;
-  font-weight:700;
-
-  position:relative;
-
-  animation:activePulse 1.4s infinite;
-
-}
-
-/* INNER GLOW */
-
-.altx-live::before{
-
-  content:"";
-
-  position:absolute;
-  inset:-1px;
-
-  border-radius:999px;
-
-  background:
-  radial-gradient(
-    circle,
-    rgba(34,197,94,.35),
-    transparent 70%
-  );
-
-  opacity:.4;
-
-  z-index:-1;
-
-  animation:activeGlow 1.4s infinite;
-
-}
-
-/* ICON FLASH */
-
-.altx-live i{
-
-  animation:boltBlink 1.2s infinite;
-
-}
-
-/* ========================================== */
-/* ANIMATIONS */
-/* ========================================== */
-
-@keyframes activePulse{
-
-  0%{
-
-    box-shadow:
-    0 0 0 rgba(34,197,94,0);
-
-    transform:scale(1);
-
-  }
-
-  50%{
-
-    box-shadow:
-    0 0 16px rgba(34,197,94,.28);
-
-    transform:scale(1.04);
-
-  }
-
-  100%{
-
-    box-shadow:
-    0 0 0 rgba(34,197,94,0);
-
-    transform:scale(1);
-
-  }
-
-}
-
-@keyframes activeGlow{
-
-  0%{
-    opacity:.15;
-  }
-
-  50%{
-    opacity:.9;
-  }
-
-  100%{
-    opacity:.15;
-  }
-
-}
-
-@keyframes boltBlink{
-
-  0%{
-    opacity:.5;
-  }
-
-  50%{
-    opacity:1;
-  }
-
-  100%{
-    opacity:.5;
-  }
-
-}
-.altx-register-btn{
-
-  height:42px;
-
-  padding:0 16px;
-
-  border:none;
-  border-radius:12px;
-
-  background:
-  linear-gradient(135deg,#EF4444,#C1121F);
-
-  color:#fff;
-
-  font-size:13px;
-  font-weight:700;
-
-  cursor:pointer;
-
-}
 
 /* ========================= */
 /* MAIN */
@@ -1418,43 +1143,6 @@ body.modal-open{
 
 }
 
-/* ========================================== */
-/* 3. OPTIONAL TABLE GLOW HINT */
-/* ========================================== */
-
-.altx-table-wrap{
-
-  overflow-x:auto;
-
-  border-radius:24px;
-
-  -ms-overflow-style:none;
-  scrollbar-width:none;
-
-  cursor:grab;
-
-  position:relative;
-
-}
-
-
-/* ========================================== */
-/* 4. UPDATE PRICE STRIKE STYLE */
-/* ========================================== */
-
-.altx-old-price{
-
-  color:#94A3B8;
-
-  text-decoration:line-through;
-
-  font-size:13px;
-
-  font-weight:600;
-
-  margin-top:4px;
-
-}
 
 /* ========================================== */
 /* 5. PAYMENT SUMMARY BOX */
@@ -2305,7 +1993,18 @@ body.modal-open{
 
 .altx-corporate-sub{
 
-  font-size:13px;
+  font-size:14px;
+  line-height:1.7;
+  color:#94A3B8;
+  max-width:720px;
+
+}
+  
+  @media(max-width:768px){
+
+ .altx-corporate-sub{
+
+  font-size:12px;
   line-height:1.7;
 
   color:#94A3B8;
@@ -2314,11 +2013,13 @@ body.modal-open{
 
 }
 
+} 
+  
+
 .altx-corporate-btn{
 
   height:48px;
-
-  padding:0 18px;
+  width: 200px;
 
   border:none;
   border-radius:14px;
@@ -2364,7 +2065,7 @@ body.modal-open{
   .altx-corporate-btn{
 
     width:100%;
-    margin-left: 55px;
+   
 
   }
 
@@ -2674,25 +2375,33 @@ body.modal-open{
 
   position:absolute;
 
-  top:12px;
-  right:12px;
-
+  top:-10px;
+  left:50%;
+  transform:translateX(-50%);
+   display:inline-flex;
+  
+  justify-content:center;
   padding:5px 8px;
 
   border-radius:999px;
 
-  background:
-  rgba(34,197,94,.12);
+  background:#EA3037;
+  
 
   border:1px solid rgba(34,197,94,.18);
 
-  color:var(--color-success);
+  color:#fff;
 
   font-size:10px;
   font-weight:700;
 
 }
 
+.altx-tab-btn.active{
+
+  padding-right:54px;
+
+}  
 /* ========================================== */
 /* MOBILE */
 /* ========================================== */
@@ -2714,560 +2423,9 @@ body.modal-open{
   }
 
 }  
-/* ========================================== */
-/* PRICING TABLE */
-/* ========================================== */
-/* ========================================== */
-/* COMPACT PRICING TABLE */
-/* ========================================== */
 
-.altx-price-table{
 
-  border-radius:24px;
 
-  overflow:hidden;
-
-  border:1px solid rgba(255,255,255,.06);
-
-  background:
-  linear-gradient(
-    180deg,
-    rgba(7,16,31,.96),
-    rgba(3,10,24,.98)
-  );
-
-}
-
-/* ========================================== */
-/* HEADER */
-/* ========================================== */
-
-.altx-table-head{
-
-  display:grid;
-
-  grid-template-columns:
-  1.15fr
-  .9fr
-  .95fr
-  .9fr
-  140px;
-
-  gap:14px;
-
-  padding:14px 18px;
-
-  background:
-  rgba(255,255,255,.02);
-
-  border-bottom:
-  1px solid rgba(255,255,255,.06);
-
-}
-
-
-
-/* ========================================== */
-/* ROW */
-/* ========================================== */
-
-.altx-price-row{
-
-  display:grid;
-
-  grid-template-columns:
-  1.15fr
-  .9fr
-  .95fr
-  .9fr
-  140px;
-
-  gap:14px;
-
-  align-items:center;
-
-  padding:18px;
-
-  border-bottom:
-  1px solid rgba(255,255,255,.05);
-
-  position:relative;
-
-}
-
-.altx-price-row:last-child{
-  border-bottom:none;
-}
-
-/* ========================================== */
-/* ACTIVE */
-/* ========================================== */
-
-.altx-price-row.active{
-
-  background:
-  linear-gradient(
-    135deg,
-    rgba(193,18,31,.07),
-    rgba(37,99,235,.03)
-  );
-
-}
-
-.altx-price-row.active::before{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  top:0;
-  bottom:0;
-
-  width:3px;
-
-  background:var(--color-success);
-
-}
-
-/* ========================================== */
-/* PHASE */
-/* ========================================== */
-
-.altx-phase-name{
-
-  font-size:16px;
-  font-weight:800;
-
-  margin-bottom:5px;
-
-  line-height:1.25;
-
-}
-
-.altx-phase-date{
-
-  font-size:12px;
-
-  color:#94A3B8;
-
-  line-height:1.45;
-
-}
-
-/* ========================================== */
-/* PRICE */
-/* ========================================== */
-
-.altx-price{
-
-  font-size:18px;
-  font-weight:800;
-
-  margin-bottom:4px;
-
-  line-height:1.1;
-
-}
-
-.altx-green{
-  color:var(--color-success);
-}
-
-.altx-purple{
-  color:#C084FC;
-}
-
-.altx-blue{
-  color:var(--color-secondary-light);
-}
-
-.altx-old-price{
-
-  font-size:11px;
-
-  color:#94A3B8;
-
-  text-decoration:line-through;
-
-  margin-bottom:6px;
-
-}
-
-/* ========================================== */
-/* SAVE */
-/* ========================================== */
-
-.altx-save-tag{
-
-  display:inline-flex;
-  align-items:center;
-
-  padding:4px 8px;
-
-  border-radius:999px;
-
-  background:
-  rgba(34,197,94,.08);
-
-  border:
-  1px solid rgba(34,197,94,.12);
-
-  color:var(--color-success);
-
-  font-size:10px;
-  font-weight:700;
-
-  white-space:nowrap;
-
-}
-
-/* ========================================== */
-/* ACTION */
-/* ========================================== */
-
-.altx-table-action{
-
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-
-  gap:10px;
-
-}
-
-.altx-register-btn{
-
-  height:38px;
-
-  padding:0 14px;
-
-  border:none;
-  border-radius:12px;
-
-  background:
-  linear-gradient(
-    135deg,
-    #EF4444,
-    #C1121F
-  );
-
-  color:#fff;
-
-  font-size:12px;
-  font-weight:700;
-
-  cursor:pointer;
-
-  white-space:nowrap;
-
-}
-
-/* ========================================== */
-/* MOBILE */
-/* ========================================== */
-
-@media(max-width:768px){
-
-.altx-table-wrap{
-
-  margin-bottom:20px;
-
-  padding:0 10px;
-
-  overflow-x:auto;
-
-  -webkit-overflow-scrolling:touch;
-
-  scrollbar-width:none;
-
-}
-
-.altx-table-wrap::-webkit-scrollbar{
-  display:none;
-}
-
-  .altx-price-table{
-
-    min-width:820px;
-
-  }
-
-  .altx-table-head{
-
-    grid-template-columns:
-    180px
-    140px
-    170px
-    140px
-    120px;
-
-    padding:12px 14px;
-
-    gap:12px;
-
-  }
-
-  .altx-price-row{
-
-    grid-template-columns:
-    180px
-    140px
-    170px
-    140px
-    120px;
-
-    padding:16px 14px;
-
-    gap:12px;
-
-  }
-
- 
-  .altx-phase-name{
-
-    font-size:14px;
-
-  }
-
-  .altx-phase-date{
-
-    font-size:11px;
-
-  }
-
-  .altx-price{
-
-    font-size:16px;
-
-  }
-
-  .altx-old-price{
-
-    font-size:10px;
-
-  }
-
-  .altx-save-tag{
-
-    font-size:9px;
-
-    padding:3px 7px;
-
-  }
-
-  .altx-register-btn{
-
-    height:34px;
-
-    padding:0 12px;
-
-    font-size:11px;
-
-  }
-
-}
-/* ========================================== */
-/* EXTRA COMPACT MOBILE TABLE */
-/* ========================================== */
- .altx-table-head div{
-
-    font-size:14px;
-
-    line-height:1.3;
-    font-weight:900;
-
-  }
-  
-@media(max-width:768px){
-
-  .altx-price-table{
-
-    min-width:720px;
-
-  }
-
-  .altx-table-head{
-
-    grid-template-columns:
-    150px
-    115px
-    145px
-    115px
-    95px;
-
-    padding:10px 12px;
-
-    gap:10px;
-
-  }
-
-  .altx-price-row{
-
-    grid-template-columns:
-    150px
-    115px
-    145px
-    115px
-    95px;
-
-    padding:14px 12px;
-
-    gap:10px;
-
-  }
-
-  .altx-table-head div{
-
-    font-size:12px;
-
-    line-height:1.3;
-    font-weight:900;
-
-  }
-
-  .altx-phase-name{
-
-    font-size:13px;
-
-    margin-bottom:4px;
-
-  }
-
-  .altx-phase-date{
-
-    font-size:10px;
-
-    line-height:1.4;
-
-  }
-
-  .altx-price{
-
-    font-size:15px;
-
-    margin-bottom:3px;
-
-  }
-
-  .altx-old-price{
-
-    font-size:9px;
-
-    margin-bottom:0;
-
-  }
-
-  /* HIDE SAVE TAG */
-
-  .altx-save-tag{
-    display:none;
-  }
-
-  .altx-live{
-
-    padding:5px 8px;
-
-    font-size:9px;
-
-  }
-
-  .altx-register-btn{
-
-    height:30px;
-
-    padding:0 10px;
-
-    font-size:10px;
-
-    border-radius:10px;
-
-  }
-
-}  
-/* ========================================== */
-/* COMPACT MOBILE CORPORATE CARD */
-/* ========================================== */
-
-@media(max-width:768px){
-
-  .altx-corporate-banner{
-
-    padding:16px;
-
-    gap:14px;
-
-    border-radius:20px;
-
-  }
-
-  .altx-head h1{
-  margin-top:14px;
-  font-size:20px;
-  line-height:1.08;
-  font-weight:800;
-
-}
-  .altx-corporate-left{
-
-    gap:12px;
-
-  }
-
-  .altx-corporate-icon{
-
-    width:46px;
-    height:46px;
-
-    min-width:46px;
-
-    border-radius:14px;
-
-    font-size:16px;
-
-  }
-
-  .altx-corporate-title{
-
-    font-size:15px;
-
-    line-height:1.3;
-
-    margin-bottom:5px;
-
-  }
-
-  .altx-corporate-sub{
-
-    font-size:12px;
-
-    line-height:1.6;
-
-  }
-
-  /* BUTTON */
-
-  .altx-corporate-btn{
-
-    width:auto;
-
-    height:40px;
-
-    padding:0 14px;
-
-    border-radius:12px;
-
-    font-size:12px;
-
-    align-self:flex-start;
-
-  }
-
-}  
-  
-/* ========================================== */
-/* SELECT HEADER */
-/* ========================================== */
 
 .altx-select-head{
 
@@ -3467,13 +2625,14 @@ body.modal-open{
 .altx-terms-error.show{
   display:block;
 }  
+  
 .altx-hero-sub{
 
   max-width:760px;
 
   margin:16px auto 0;
 
-  font-size:16px;
+  font-size:18px;
   line-height:1.8;
 
   color:#94A3B8;
@@ -3494,54 +2653,8 @@ body.modal-open{
 
 } 
   
-/* ========================================== */
-/* TABLE HEADER */
-/* ========================================== */
 
-.altx-head-title{
 
-  font-size:14px;
-  font-weight:700;
-
-  color:#F8FAFC;
-
-  margin-bottom:6px;
-
-  line-height:1.35;
-
-}
-
-.altx-head-sub{
-
-  font-size:11px;
-
-  color:#94A3B8;
-
-  line-height:1.5;
-
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-  .altx-head-title{
-
-    font-size:12px;
-
-    margin-bottom:4px;
-
-  }
-
-  .altx-head-sub{
-
-    font-size:10px;
-
-    line-height:1.4;
-
-  }
-
-}  
   
 /* ========================================== */
 /* PACKAGE FOCUS */
@@ -3791,150 +2904,7 @@ body.modal-open{
 
 }  
   
-/* ========================================== */
-/* TABLE WRAP */
-/* ========================================== */
 
-.altx-table-wrap{
-
-  position:relative;
-
-}
-
-/* LEFT FADE */
-
-.altx-table-wrap::before{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  top:0;
-  bottom:0;
-
-  width:28px;
-
-  z-index:3;
-
-  pointer-events:none;
-
-  background:
-  linear-gradient(
-    90deg,
-    #030A18 0%,
-    rgba(3,10,24,0) 100%
-  );
-
-}
-
-/* RIGHT FADE */
-
-.altx-table-wrap::after{
-
-  content:"";
-
-  position:absolute;
-
-  right:0;
-  top:0;
-  bottom:0;
-
-  width:36px;
-
-  z-index:3;
-
-  pointer-events:none;
-
-  background:
-  linear-gradient(
-    270deg,
-    #030A18 0%,
-    rgba(3,10,24,0) 100%
-  );
-
-}
-
-/* DESKTOP */
-
-@media(min-width:769px){
-
-  .altx-table-wrap::before,
-  .altx-table-wrap::after{
-
-    display:none;
-
-  }
-
-}  
-  
-/* ========================================== */
-/* STICKY FIRST COLUMN */
-/* ========================================== */
-/* ========================================== */
-/* STICKY FIRST COLUMN */
-/* ========================================== */
-
-.altx-table-head > div:first-child,
-.altx-price-row > div:first-child{
-
-  position:sticky;
-
-  left:0;
-
-  z-index:4;
-
-  min-width:150px;
-
-  padding-right:16px;
-
-  background:
-  #07101F;
-
-  box-shadow:
-  14px 0 24px rgba(3,10,24,.92);
-
-}
-
-/* ACTIVE ROW */
-
-.altx-price-row.active
-> div:first-child{
-
-  background:
-  linear-gradient(
-    135deg,
-    rgba(193,18,31,.14),
-    rgba(37,99,235,.04)
-  );
-
-}
-
-/* HEADER */
-
-.altx-table-head > div:first-child{
-
-  z-index:5;
-
-}
-
-/* ACTIVE ROW */
-
-.altx-price-row.active
-> div:first-child{
-
-  background:
-  linear-gradient(
-    135deg,
-    rgba(193,18,31,.16),
-    rgba(37,99,235,.06)
-  );
-
-}  
-  
-/* ========================================== */
-/* SWIPE HINT */
-/* ========================================== */
 
 .altx-mobile-hint{
 
@@ -3958,6 +2928,925 @@ body.modal-open{
   }
 
 }  
+/* =========================================
+   SUCCESS MODAL
+========================================= */
+
+.altx-success-box{
+
+  width:100%;
+  max-width:640px;
+
+  background:var(--color-surface);
+
+  border:1px solid var(--color-border);
+
+  border-radius:28px;
+
+  padding:34px 30px;
+
+  text-align:center;
+
+}
+
+/* ICON */
+
+.altx-success-icon{
+
+  width:84px;
+  height:84px;
+
+  margin:0 auto 20px;
+
+  border-radius:999px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(16,185,129,.14),
+    rgba(16,185,129,.08)
+  );
+
+  border:1px solid rgba(16,185,129,.18);
+
+  color:var(--color-success);
+
+  font-size:34px;
+
+}
+
+/* LABEL */
+
+.altx-success-label{
+
+  display:inline-flex;
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+  background:rgba(16,185,129,.08);
+
+  border:1px solid rgba(16,185,129,.12);
+
+  color:var(--color-success);
+
+  font-size:12px;
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+
+  margin-bottom:18px;
+
+}
+
+/* TITLE */
+
+.altx-success-title{
+
+  font-size:34px;
+  line-height:1.18;
+
+  font-weight:800;
+
+  margin-bottom:14px;
+
+}
+
+/* SUB */
+
+.altx-success-sub{
+
+  max-width:520px;
+
+  margin:0 auto;
+
+  color:var(--color-text-body);
+
+  font-size:15px;
+
+  line-height:1.8;
+
+}
+
+/* REFERENCE */
+
+.altx-success-ref{
+
+  margin-top:26px;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  background:var(--color-bg-light);
+
+  border:1px solid var(--color-border);
+
+}
+
+.altx-success-ref span{
+
+  display:block;
+
+  font-size:12px;
+  font-weight:700;
+
+  color:var(--color-text-muted);
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+
+  margin-bottom:10px;
+
+}
+
+.altx-success-ref strong{
+
+  font-size:28px;
+  font-weight:800;
+
+  color:var(--color-secondary-light);
+
+}
+
+/* STEPS */
+
+.altx-success-steps{
+
+  display:grid;
+
+  gap:14px;
+
+  margin-top:24px;
+
+  text-align:left;
+
+}
+
+.altx-success-step{
+
+  display:flex;
+  align-items:flex-start;
+
+  gap:14px;
+
+  padding:16px;
+
+  border-radius:18px;
+
+  background:var(--color-bg-light);
+
+  border:1px solid var(--color-border);
+
+}
+
+.altx-success-step i{
+
+  width:40px;
+  height:40px;
+
+  min-width:40px;
+
+  border-radius:12px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(37,99,235,.08);
+
+  color:var(--color-secondary-light);
+
+  font-size:15px;
+
+}
+
+.altx-success-step strong{
+
+  display:block;
+
+  font-size:14px;
+  font-weight:700;
+
+  margin-bottom:5px;
+
+}
+
+.altx-success-step span{
+
+  display:block;
+
+  color:var(--color-text-body);
+
+  font-size:13px;
+
+  line-height:1.7;
+
+}
+
+/* ACTIONS */
+
+.altx-success-actions{
+
+  margin-top:28px;
+
+}
+
+.altx-success-btn{
+
+  width:100%;
+  height:54px;
+
+  border:none;
+  border-radius:16px;
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--color-primary-light),
+    var(--color-primary)
+  );
+
+  color:#fff;
+
+  font-size:14px;
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-success-box{
+
+    padding:26px 20px;
+
+    border-radius:24px;
+
+  }
+
+  .altx-success-title{
+
+    font-size:26px;
+
+  }
+
+  .altx-success-sub{
+
+    font-size:14px;
+
+    line-height:1.7;
+
+  }
+
+  .altx-success-ref strong{
+
+    font-size:22px;
+
+  }
+
+}  
+  
+/* =========================================================
+   TABLE WRAP
+========================================================= */
+
+.altx-table-wrap{
+
+  overflow-x:auto;
+
+  border-radius:28px;
+
+  border:1px solid rgba(255,255,255,.06);
+
+  background:
+  linear-gradient(
+    180deg,
+    #07111F,
+    #0A1326
+  );
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.28);
+
+  -ms-overflow-style:none;
+  scrollbar-width:none;
+
+}
+
+.altx-table-wrap::-webkit-scrollbar{
+  display:none;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.altx-price-table{
+
+  min-width:980px;
+
+  color:#fff;
+
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.altx-table-head{
+
+  display:grid;
+
+  grid-template-columns:
+  1.2fr
+  1fr
+  1fr
+  1fr
+  160px;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(13,24,45,.98),
+    rgba(9,18,35,.98)
+  );
+
+  border-bottom:
+  1px solid rgba(255,255,255,.06);
+
+}
+
+.altx-table-head > div{
+
+  padding:24px 22px;
+
+}
+
+/* =========================================================
+   HEADER TITLE
+========================================================= */
+
+.altx-head-title{
+
+  font-size:16px;
+  font-weight:600;
+
+  color:#CBD5E1;
+
+  line-height:1.5;
+
+}
+
+/* =========================================================
+   ROW
+========================================================= */
+
+.altx-price-row{
+
+  display:grid;
+
+  grid-template-columns:
+  1.2fr
+  1fr
+  1fr
+  1fr
+  160px;
+
+  align-items:center;
+
+  min-height:132px;
+
+  border-bottom:
+  1px solid rgba(255,255,255,.05);
+
+  background:
+  rgba(255,255,255,.01);
+
+}
+
+.altx-price-row:last-child{
+  border-bottom:none;
+}
+
+.altx-price-row > div{
+
+ padding-left: 10px;
+padding-right: 10px;  
+
+}
+
+/* =========================================================
+   ACTIVE ROW
+========================================================= */
+
+.altx-price-row.active{
+
+  position:relative;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(124,58,237,.10),
+    rgba(29,78,216,.04)
+  );
+
+  border-top:
+  1px solid rgba(168,85,247,.10);
+
+  border-bottom:
+  1px solid rgba(168,85,247,.10);
+
+}
+
+.altx-price-row.active::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+  bottom:0;
+
+  width:3px;
+
+  background:#10B981;
+ 
+
+}
+
+/* =========================================================
+   PHASE
+========================================================= */
+
+.altx-phase-name{
+
+  font-size:20px;
+  font-weight:600;
+  line-height:1.2;
+  color:#fff;
+  margin-bottom:10px;
+  
+}
+  
+.altx-phase-name.active{
+
+  font-size:22px;
+  font-weight:800;
+  line-height:1.2;
+  color:#10B981;
+  margin-bottom:10px;
+  
+}  
+  
+  
+
+.altx-phase-date{
+
+  font-size:13px;
+  font-weight:500;
+
+  color:rgba(255,255,255,.62);
+
+  line-height:1.6;
+
+}
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.altx-price{
+
+  font-size:24px;
+  font-weight:800;
+
+  line-height:1;
+
+  margin-bottom:10px;
+
+  letter-spacing:-.03em;
+
+}
+
+.altx-white{
+  color:#F8FAFC;
+}
+
+.altx-green{
+  color:#10B981;
+} 
+  
+  
+.altx-purple{
+  color:#C084FC;
+}
+
+.altx-blue{
+  color:#E2E8F0;
+}
+ 
+/* =========================================================
+   OLD PRICE
+========================================================= */
+
+.altx-old-price{
+
+  font-size:16px;
+  font-weight:600;
+
+  color:rgba(255,255,255,.42);
+
+  text-decoration:line-through;
+
+  margin-bottom:12px;
+
+}
+
+/* =========================================================
+   SAVE TAG
+========================================================= */
+
+.altx-save-tag{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:7px 12px;
+
+  border-radius:999px;
+
+  background:
+  rgba(16,185,129,.08);
+
+  border:
+  1px solid rgba(16,185,129,.14);
+
+  color:#34D399;
+
+  font-size:11px;
+  font-weight:700;
+
+  white-space:nowrap;
+
+}
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.altx-table-action{
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:flex-end;
+
+  gap:14px;
+
+}
+
+/* =========================================================
+   LIVE
+========================================================= */
+
+.altx-live{
+
+  display:inline-flex;
+  align-items:center;
+
+  gap:7px;
+
+  padding:9px 14px;
+
+  border-radius:999px;
+
+
+
+  border:
+  1px solid rgba(124,58,237,.18);
+
+  color:#10B981;
+
+  font-size:11px;
+  font-weight:700;
+
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.altx-register-btn{
+
+  height:44px;
+
+  padding:0 18px;
+
+  border:none;
+  border-radius:14px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #DC2626,
+    #B91C1C
+  );
+
+  color:#fff;
+
+  font-size:13px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  white-space:nowrap;
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+  .altx-table-wrap{
+
+    border-radius:22px;
+
+  }
+
+
+
+  }
+
+  .altx-head-title{
+
+    font-size:14px;
+    font-weight: 700; 
+
+    line-height:1.5;
+
+    white-space:normal;
+
+  }
+
+  .altx-phase-name{
+
+    font-size:18px;
+
+  }
+
+  .altx-phase-date{
+
+    font-size:12px;
+
+  }
+
+  .altx-price{
+
+    font-size:20px;
+
+  }
+
+  .altx-old-price{
+
+    font-size:14px;
+
+  }
+
+  .altx-save-tag{
+
+    font-size:10px;
+
+    padding:6px 10px;
+
+  }
+
+}  
+.altx-phase-name i  
+  {
+    color:#10B981;
+    padding-right:2px;
+
+  }  
+  
+/* =========================================================
+   COMPACT MOBILE TABLE
+========================================================= */
+
+@media(max-width:768px){
+
+  .altx-price-table{
+
+    min-width:700px;
+
+  }
+
+  .altx-table-head{
+
+    grid-template-columns:
+    150px
+    130px
+    150px
+    130px
+    120px;
+
+  }
+
+  .altx-price-row{
+
+    grid-template-columns:
+    150px
+    130px
+    150px
+    130px
+    120px;
+
+    min-height:96px;
+
+  }
+
+  .altx-table-head > div,
+  .altx-price-row > div{
+
+    padding:16px 14px;
+
+  }
+
+  .altx-head-title{
+
+    font-size:13px;
+
+    line-height:1.35;
+
+  }
+
+  .altx-phase-name{
+
+    font-size:15px;
+
+    margin-bottom:6px;
+
+  }
+
+  .altx-phase-date{
+
+    font-size:11px;
+
+    line-height:1.45;
+
+  }
+
+  .altx-price{
+
+    font-size:18px;
+
+    margin-bottom:6px;
+
+  }
+
+  .altx-old-price{
+
+    font-size:12px;
+
+    margin-bottom:6px;
+
+  }
+
+  .altx-save-tag{
+
+    font-size:9px;
+
+    padding:5px 8px;
+
+  }
+
+  .altx-live{
+
+    font-size:9px;
+
+    padding:6px 9px;
+
+  }
+
+  .altx-register-btn{
+
+    height:36px;
+
+    padding:0 12px;
+
+    font-size:11px;
+
+    border-radius:10px;
+
+  }
+
+  .altx-table-action{
+
+    gap:8px;
+
+  }
+
+}  
+/* =========================================================
+   SUPER EARLY BIRD GLOW
+========================================================= */
+
+.altx-price-row.active{
+
+  position:relative;
+
+  overflow:clip;
+
+}
+
+/* SOFT MOVING LIGHT */
+
+.altx-price-row.active::after{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-120%;
+
+  width:60%;
+  height:100%;
+
+  background:
+  linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.06),
+    transparent
+  );
+
+  transform:skewX(-18deg);
+
+  animation:
+  altxFlash 4.8s ease-in-out infinite;
+
+  pointer-events:none;
+
+}
+
+/* ANIMATION */
+
+@keyframes altxFlash{
+
+  0%{
+    left:-120%;
+  }
+
+  45%{
+    left:-120%;
+  }
+
+  100%{
+    left:160%;
+  }
+
+}  
+  
+.altx-tab-btn.active::after{
+
+  content:"✓";
+
+  position:absolute;
+
+  top:12px;
+  right:12px;
+
+  width:22px;
+  height:22px;
+
+  border-radius:999px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#10B981;
+  color:#fff;
+  font-size:10px;
+  font-weight:700;
+
+}
+  
 </style>
 </head>
 <body>
@@ -4002,15 +3891,14 @@ body.modal-open{
 
       <div class="altx-corporate-title">
 
-        Booking for a Security Team?
+        Booking for a Team or Group?
 
       </div>
 
       <div class="altx-corporate-sub">
 
-        Bulk booking support available for enterprises,
-        internal security teams, and corporate training programs.
-        Minimum 5 tickets required for bulk/team purchases.
+       Bulk booking support available for enterprises, internal security teams, 
+    and corporate training programs. Minimum 5 tickets required for bulk/team purchases.
       </div>
 
     </div>
@@ -4058,9 +3946,7 @@ body.modal-open{
       Pricing Phase
     </div>
 
-    <div class="altx-head-sub">
-      Current pricing timeline
-    </div>
+
 
   </div>
 
@@ -4072,9 +3958,7 @@ body.modal-open{
       Training Pass
     </div>
 
-    <div class="altx-head-sub">
-      Hands-On Red Team Training
-    </div>
+
 
   </div>
 
@@ -4086,9 +3970,7 @@ body.modal-open{
       Training + Conference
     </div>
 
-    <div class="altx-head-sub">
-      Complete AltSecCON Experience
-    </div>
+ 
 
   </div>
 
@@ -4098,10 +3980,6 @@ body.modal-open{
 
     <div class="altx-head-title">
       Conference Pass
-    </div>
-
-    <div class="altx-head-sub">
-      Talks, Networking & Sessions
     </div>
 
   </div>
@@ -4116,8 +3994,8 @@ body.modal-open{
 
     <div>
 
-      <div class="altx-phase-name">
-        Super Early Bird
+      <div class="altx-phase-name ">
+         <i class="fa-solid fa-bullhorn"></i>  Super Early Bird
       </div>
 
       <div class="altx-phase-date">
@@ -4138,9 +4016,7 @@ body.modal-open{
         ₹49,999
       </div>
 
-      <div class="altx-save-tag">
-        Save ₹10,000
-      </div>
+      
 
     </div>
 
@@ -4148,7 +4024,7 @@ body.modal-open{
 
     <div>
 
-      <div class="altx-price altx-purple">
+      <div class="altx-price altx-green">
         ₹44,798
       </div>
 
@@ -4156,9 +4032,7 @@ body.modal-open{
         ₹54,798
       </div>
 
-      <div class="altx-save-tag">
-        Save ₹10,000
-      </div>
+      
 
     </div>
 
@@ -4166,7 +4040,7 @@ body.modal-open{
 
     <div>
 
-      <div class="altx-price altx-blue">
+      <div class="altx-price altx-green">
         ₹6,399
       </div>
 
@@ -4174,9 +4048,7 @@ body.modal-open{
         ₹7,999
       </div>
 
-      <div class="altx-save-tag">
-        Save ₹1,600
-      </div>
+      
 
     </div>
 
@@ -4218,7 +4090,7 @@ body.modal-open{
 
     <div>
 
-      <div class="altx-price altx-green">
+      <div class="altx-price altx-white">
         ₹42,499
       </div>
 
@@ -4230,7 +4102,7 @@ body.modal-open{
 
     <div>
 
-      <div class="altx-price altx-purple">
+      <div class="altx-price altx-white">
         ₹47,298
       </div>
 
@@ -4274,7 +4146,7 @@ body.modal-open{
 
     <div>
 
-      <div class="altx-price altx-green">
+      <div class="altx-price altx-white">
         ₹49,999
       </div>
 
@@ -4282,7 +4154,7 @@ body.modal-open{
 
     <div>
 
-      <div class="altx-price altx-purple">
+      <div class="altx-price altx-white">
         ₹54,798
       </div>
 
@@ -4332,7 +4204,7 @@ body.modal-open{
 
       <h2>
 
-        Select Your AltSecCON 2026 Pass
+        Select Your <span class="highlight-text">AltSecCON 2026</span> Pass
 
       </h2>
 
@@ -4767,9 +4639,7 @@ id="selectedPreview">
           id="bookingEmail"
           placeholder="Email Address">
 
-          <input type="tel"
-          id="bookingPhone"
-          placeholder="Phone Number">
+       
 <!-- ========================================== -->
 <!-- ADD THIS ABOVE -->
 <!-- "Proceed to Payment" BUTTON -->
@@ -5030,7 +4900,7 @@ id="orderBreakdown">
 
     <div class="altx-payment-options">
 
-      <button class="altx-checkout">
+      <button class="altx-checkout" onclick="completePayment()">
 
         <i class="fa-solid fa-bolt"></i>
         Pay with Razorpay
@@ -5075,7 +4945,7 @@ id="orderBreakdown">
   </div>
 
 </div>
-      <button class="altx-checkout"
+      <button class="altx-checkout" onclick="completePayment()"
       style="
       background:#0F172A;
       border:1px solid rgba(255,255,255,.08);
@@ -5086,7 +4956,7 @@ id="orderBreakdown">
 
       </button>
 
-      <button class="altx-checkout"
+      <button class="altx-checkout" onclick="completePayment()"
       style="
       background:#0F172A;
       border:1px solid rgba(255,255,255,.08);
@@ -5386,6 +5256,122 @@ id="trackModal">
         </p>
 
       </div>
+
+    </div>
+
+  </div>
+
+</div>  
+<div class="altx-modal"
+id="successModal">
+
+  <div class="altx-success-box">
+
+    <!-- ICON -->
+
+    <div class="altx-success-icon">
+
+      <i class="fa-solid fa-check"></i>
+
+    </div>
+
+    <!-- TITLE -->
+
+    <div class="altx-success-label">
+
+      Registration Reserved
+
+    </div>
+
+    <h2 class="altx-success-title">
+
+      Your AltSecCON 2026 booking has been successfully reserved.
+
+    </h2>
+
+    <p class="altx-success-sub">
+
+      A confirmation email with invoice details,
+      attendee information, and next steps has been sent.
+
+    </p>
+
+    <!-- REFERENCE -->
+
+    <div class="altx-success-ref">
+
+      <span>Booking Reference</span>
+
+      <strong id="bookingReference">
+        ALTX-2026-8421
+      </strong>
+
+    </div>
+
+    <!-- NEXT STEPS -->
+
+    <div class="altx-success-steps">
+
+      <div class="altx-success-step">
+
+        <i class="fa-regular fa-envelope"></i>
+
+        <div>
+
+          <strong>Email Confirmation</strong>
+
+          <span>
+            Booking confirmation will arrive within a few minutes.
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="altx-success-step">
+
+        <i class="fa-regular fa-file-lines"></i>
+
+        <div>
+
+          <strong>Invoice & Receipt</strong>
+
+          <span>
+            GST invoice and payment receipt will be shared by email.
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="altx-success-step">
+
+        <i class="fa-solid fa-laptop-code"></i>
+
+        <div>
+
+          <strong>Training & Event Access</strong>
+
+          <span>
+            Event instructions and attendee access details will be shared before the event.
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ACTIONS -->
+
+    <div class="altx-success-actions">
+
+      <button class="altx-success-btn"
+      onclick="closeModal('successModal')">
+
+        Continue Browsing
+
+      </button>
 
     </div>
 
@@ -6139,13 +6125,9 @@ function openAttendeeModal(){
   const bookingEmail =
   document.getElementById("bookingEmail").value;
 
-  const bookingPhone =
-  document.getElementById("bookingPhone").value;
-
   if(
     bookingName === "" ||
-    bookingEmail === "" ||
-    bookingPhone === ""
+    bookingEmail === ""   
   ){
 
     alert("Please fill booking details first.");
@@ -6211,11 +6193,7 @@ function openAttendeeModal(){
 
           <input type="email"
           id="attendeeEmail${index}"
-          placeholder="Email Address">
-
-          <input type="tel"
-          id="attendeePhone${index}"
-          placeholder="Phone Number">
+          placeholder="Email Address">    
 
           <input type="text"
           value="${attendee.pass}"
@@ -6256,8 +6234,7 @@ function copyBookingInfo(index){
   document.getElementById(`attendeeEmail${index}`).value =
   document.getElementById("bookingEmail").value;
 
-  document.getElementById(`attendeePhone${index}`).value =
-  document.getElementById("bookingPhone").value;
+
 
 }
 
@@ -6648,6 +6625,42 @@ if(termsCheckbox){
   );
 
 }  
+  
+/* =========================================
+   SUCCESS MODAL
+========================================= */
+function openSuccessModal(){
+
+  const ref =
+  "ALTX-2026-" +
+  Math.floor(
+    1000 + Math.random() * 9000
+  );
+
+  document.getElementById(
+    "bookingReference"
+  ).innerText = ref;
+
+  closeModal("paymentModal");
+
+  openModal("successModal");
+
+}
+
+function completePayment(){
+
+  showToast(
+    "Payment Successful"
+  );
+
+  setTimeout(()=>{
+
+    openSuccessModal();
+
+  },700);
+
+}
+  
 </script>
 
 </body>
