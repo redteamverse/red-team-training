@@ -824,7 +824,60 @@ body.modal-open{
   padding:20px;
 
 }
+/* =========================================================
+   SUCCESS MODAL MOBILE FIX ONLY
+========================================================= */
 
+#successModal{
+
+  overflow-y:auto;
+
+}
+
+#successModal .altx-success-box{
+
+  width:100%;
+  max-width:640px;
+
+  max-height:calc(100vh - 40px);
+
+  overflow-y:auto;
+
+  -webkit-overflow-scrolling:touch;
+
+}
+
+/* HIDE SCROLLBAR */
+
+#successModal .altx-success-box::-webkit-scrollbar{
+  width:0;
+}
+
+#successModal .altx-success-box{
+  scrollbar-width:none;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  #successModal{
+
+    align-items:flex-start;
+
+    padding:14px;
+
+  }
+
+  #successModal .altx-success-box{
+
+    margin-top:10px;
+
+    padding-bottom:40px;
+
+  }
+
+}
 .altx-modal.active{
   display:flex;
 }
@@ -862,6 +915,8 @@ body.modal-open{
   font-size:28px;
 
 }
+  
+  
 
 .altx-close{
 
@@ -3894,7 +3949,23 @@ padding-right: 10px;
   padding-bottom:18px;
 
 }  
- 
+  
+ @media(max-width:768px){
+
+  .altx-limited{
+
+    top:18px;
+    right:18px;
+
+    height:30px;
+
+    padding:0 12px;
+
+    font-size:11px;
+
+  }
+
+}
 
 </style>
 </head>
