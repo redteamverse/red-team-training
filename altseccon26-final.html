@@ -3315,8 +3315,8 @@ RESPONSIVE
 
 /* CRTP BADGE */
 .course-badge {
-  background: rgba(185,28,28,0.1);
-  color: #B91C1C;
+  background: #B91C1C;
+  color: #FFF;
   font-size: 11px;
   font-weight: 600;
   padding: 4px 8px;
@@ -6213,6 +6213,380 @@ nav a.active-link:focus-visible::after{
   transform:translateY(-50%);
 
 } 
+  
+/* ==========================================
+CURRICULUM MODAL
+========================================== */
+
+.curriculum-modal{
+
+  position:fixed;
+  inset:0;
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(2,6,23,.88);
+
+  backdrop-filter:blur(10px);
+
+  z-index:99999;
+
+  padding:20px;
+
+}
+
+.curriculum-modal.active{
+
+  display:flex;
+
+}
+
+.curriculum-box{
+
+  width:100%;
+  max-width:920px;
+
+  max-height:88vh;
+
+  overflow:auto;
+
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+    180deg,
+    #071325,
+    #020617
+  );
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  padding:28px;
+
+}
+
+.curriculum-top{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+
+  margin-bottom:30px;
+
+}
+
+.curriculum-top h2{
+
+  margin-top:12px;
+
+  color:#fff;
+
+}
+
+.curriculum-top button{
+
+  border:none;
+  background:none;
+
+  color:#fff;
+
+  font-size:24px;
+
+  cursor:pointer;
+
+}
+
+.curriculum-body section{
+
+  margin-bottom:28px;
+
+}
+
+.curriculum-body h3{
+
+  color:#EF4444;
+
+  margin-bottom:12px;
+
+}
+
+.curriculum-body p,
+.curriculum-body li{
+
+  color:#CBD5E1;
+
+  line-height:1.8;
+
+}
+
+.curriculum-body ul{
+
+  padding-left:20px;
+
+}
+
+@media(max-width:768px){
+
+  .curriculum-box{
+
+    padding:18px;
+
+  }
+
+  .curriculum-top h2{
+
+    font-size:24px;
+
+  }
+
+}  
+  
+/* ==========================================
+CURRICULUM ACCORDION
+========================================== */
+
+.curriculum-module{
+
+  margin-bottom:14px;
+
+  border-radius:16px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:
+  rgba(255,255,255,.02);
+
+}
+
+.curriculum-toggle{
+
+  width:100%;
+
+  padding:18px 20px;
+
+  border:none;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  background:none;
+
+  color:#fff;
+
+  font-size:15px;
+  font-weight:800;
+
+  cursor:pointer;
+
+}
+
+.curriculum-toggle i{
+
+  transition:.3s;
+
+}
+
+.curriculum-module.active i{
+
+  transform:rotate(180deg);
+
+}
+
+.curriculum-content{
+
+  max-height:0;
+
+  overflow:hidden;
+
+  transition:.35s ease;
+
+}
+
+.curriculum-content ul{
+
+  padding:
+  0 22px 22px 42px;
+
+}
+
+.curriculum-content li{
+
+  margin-bottom:10px;
+
+  color:#CBD5E1;
+
+  line-height:1.6;
+
+}  
+  
+/* ==========================================
+INTRO
+========================================== */
+
+.curriculum-intro{
+
+  margin-bottom:28px;
+
+}
+
+.curriculum-intro h2{
+
+  font-size:30px;
+
+  line-height:1.15;
+
+  color:#fff;
+
+  margin-bottom:14px;
+
+}
+
+.curriculum-desc{
+
+  font-size:15px;
+
+  line-height:1.8;
+
+  color:#CBD5E1;
+
+}
+
+/* ==========================================
+OVERVIEW
+========================================== */
+
+.curriculum-overview{
+
+  margin-bottom:30px;
+
+}
+
+.curriculum-overview h3,
+.curriculum-prereq h3{
+
+  margin-bottom:12px;
+
+  color:#EF4444;
+
+}
+
+.curriculum-overview p{
+
+  line-height:1.8;
+
+  color:#CBD5E1;
+
+}
+
+/* ==========================================
+STATS
+========================================== */
+
+.curriculum-stats{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:12px;
+
+  margin-bottom:30px;
+
+}
+
+.curriculum-stat{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  text-align:center;
+
+  gap:8px;
+
+  padding:16px;
+
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,.03);
+
+  border:
+  1px solid rgba(255,255,255,.06);
+
+}
+
+.curriculum-stat svg{
+
+  width:18px;
+  height:18px;
+
+  color:#60A5FA;
+
+}
+
+.curriculum-stat span{
+
+  font-size:13px;
+
+  color:#E2E8F0;
+
+  font-weight:700;
+
+}
+
+/* ==========================================
+PREREQUISITES
+========================================== */
+
+.curriculum-prereq{
+
+  margin-bottom:28px;
+
+}
+
+.curriculum-prereq ul{
+
+  padding-left:20px;
+
+}
+
+.curriculum-prereq li{
+
+  color:#CBD5E1;
+
+  margin-bottom:10px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .curriculum-intro h2{
+
+    font-size:24px;
+
+  }
+
+  .curriculum-stats{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+  }
+
+}  
 </style>
 </head>
 
@@ -6257,11 +6631,11 @@ nav a.active-link:focus-visible::after{
         <a href="#" class="dropdown-toggle">Programs ▾</a>
 
         <div class="dropdown-menu">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTP</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTE</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CETP</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTP</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTE</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTP®</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTE®</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CETP®</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTP®</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTE®</a>
         </div>
       </div>
 
@@ -6340,11 +6714,11 @@ nav a.active-link:focus-visible::after{
         <a href="#" class="dropdown-toggle">Programs ▾</a>
 
         <div class="dropdown-menu">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTP</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTE</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CETP</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTP</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTE</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CAIPT®</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTE®</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CETP®</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTP®</a>
+          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTE®</a>
         </div>
       </div>  
 
@@ -6807,7 +7181,7 @@ nav a.active-link:focus-visible::after{
       <div class="course-card">
         <img src="https://static.wixstatic.com/media/470c31_d20991e40bc749a5b5e34cc98f82ff70~mv2.png" class="course-img">
         <div class="course-signal-name">
-        <span class="course-badge">CRTE</span>
+        <span class="course-badge">CRTE®</span>
         
       </div>   
 
@@ -6840,7 +7214,9 @@ nav a.active-link:focus-visible::after{
 </div>
 
         <div class="course-actions">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">View Curriculum →</a>
+          <a href="#" onclick="openCurriculumModal()">
+  View Curriculum →
+</a>
           <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-v1.html" class="btn-book">Secure Seat</a>
         </div>
       </div>
@@ -6849,7 +7225,7 @@ nav a.active-link:focus-visible::after{
       <div class="course-card">
         <img src="https://static.wixstatic.com/media/98ad8e_81fec46cf0d2498bb860aeabc27e397e~mv2.png" class="course-img">
          <div class="course-signal-name">
-        <span class="course-badge">CETP</span>
+        <span class="course-badge">CETP®</span>
         
       </div>   
 
@@ -6892,7 +7268,7 @@ nav a.active-link:focus-visible::after{
       <div class="course-card">
         <img src="https://static.wixstatic.com/media/470c31_c03d5a63cde444b18d44bdb541748fa9~mv2.png" class="course-img">
          <div class="course-signal-name">
-        <span class="course-badge">CARTP</span>
+        <span class="course-badge">CARTP®</span>
         
       </div>
 
@@ -6934,7 +7310,7 @@ nav a.active-link:focus-visible::after{
       <div class="course-card">
         <img src="https://static.wixstatic.com/media/628794_0836557da1044632b5ea9eea3e469295~mv2.png" class="course-img">
          <div class="course-signal-name">
-        <span class="course-badge">CARTE</span>
+        <span class="course-badge">CARTE®</span>
         
       </div>
      
@@ -7361,7 +7737,7 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
 
         <ul class="altx-feature-list blue-list">
           <li>3 days of intensive training</li>
-          <li>CAIPT / CRTE / CARTP tracks</li>
+          <li>CAIPT® / CRTE® / CARTP® tracks</li>
           <li>Hands-on enterprise labs</li>
           <li>Course completion certificate</li>
           <li>60 days lab access</li>
@@ -8213,11 +8589,11 @@ If you’re unsure which option is right for you, you can also submit your detai
     <div class="footer-block">     
       <p class="supporting-body"><strong>Training Programs</strong></p>
       <ul>
-        <li><a href="/training/crtp">CRTP</a></li>
-        <li><a href="/training/crte">CRTE</a></li>
-        <li><a href="/training/cetp">CETP</a></li>
-        <li><a href="/training/cartp">CARTP</a></li>
-        <li><a href="/training/carte">CARTE</a></li>
+        <li><a href="/training/crtp">CAITP®</a></li>
+        <li><a href="/training/crte">CRTE®</a></li>
+        <li><a href="/training/cetp">CETP®</a></li>
+        <li><a href="/training/cartp">CARTP®</a></li>
+        <li><a href="/training/carte">CARTE®</a></li>
       </ul>
     </div>
  <!-- Event -->
@@ -8299,9 +8675,400 @@ If you’re unsure which option is right for you, you can also submit your detai
 </div>
 
 
- 
+<!-- ==========================================
+CURRICULUM MODAL
+========================================== -->
+
+<div class="curriculum-modal" id="curriculumModal">
+
+  <div class="curriculum-box">
+
+    <div class="curriculum-top">
+
+      <div>
+
+        <span class="course-badge">
+          CRTE®
+        </span>      
+
+      </div>
+
+      <button onclick="closeCurriculumModal()">
+
+        ✕
+
+      </button>
+
+    </div>
+
+    <div class="curriculum-body">
+<!-- ==========================================
+COURSE OVERVIEW
+========================================== -->
+
+<div class="curriculum-intro">
+
+  <h2>
+    Active Directory Attacks for Red and Blue Teams — Advanced Edition
+  </h2>
+
+  <p class="curriculum-desc">
+
+    A deep dive into Red Teaming — practice attacks with focus on OPSEC,
+    Living Off The Land techniques, and bypassing security controls like
+    MDI, WDAC and more in a secure multi-forest Active Directory lab
+    environment.
+
+    Earn the <strong>CRTE certification.</strong>
+
+  </p>
+
+</div>
+
+
+<!-- ==========================================
+WHAT YOU WILL LEARN
+========================================== -->
+
+<div class="curriculum-overview">
+
+  <h3>
+    What You Will Learn
+  </h3>
+
+  <p>
+
+    This 3-day class is designed to help security professionals understand,
+    analyze and practice threats and attacks in a modern multi-forest
+    Active Directory environment with fully patched Server 2019 machines.
+
+  </p>
+
+</div>
+
+
+<!-- ==========================================
+COURSE STATS
+========================================== -->
+
+<div class="curriculum-stats">
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="calendar"></i>
+
+    <span>3 Days Class</span>
+
+  </div>
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="clock-3"></i>
+
+    <span>8 Hrs Per Session</span>
+
+  </div>
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="monitor"></i>
+
+    <span>8 Weeks Lab Access</span>
+
+  </div>
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="flag"></i>
+
+    <span>60 Flags To Be Collected</span>
+
+  </div>
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="terminal"></i>
+
+    <span>31 Lab Exercises</span>
+
+  </div>
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="award"></i>
+
+    <span>1 CRTE Attempt</span>
+
+  </div>
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="play-circle"></i>
+
+    <span>Video Course Included</span>
+
+  </div>
+
+</div>
+
+
+<!-- ==========================================
+PREREQUISITES
+========================================== -->
+
+<div class="curriculum-prereq">
+
+  <h3>
+    Prerequisites
+  </h3>
+
+  <ul>
+
+    <li>
+      Good understanding of Active Directory security
+    </li>
+
+    <li>
+      Ability to use command line tools
+    </li>
+
+  </ul>
+
+</div>
+  <!-- MODULE I -->
+
+  <div class="curriculum-module">
+
+    <button class="curriculum-toggle">
+
+      <span>Module I</span>
+
+      <i data-lucide="chevron-down"></i>
+
+    </button>
+
+    <div class="curriculum-content">
+
+      <ul>
+
+        <li>Introduction to OPSEC and stealth techniques</li>
+
+        <li>Active Directory attack methodology and tradecraft</li>
+
+        <li>Domain Enumeration (Attacks & Defense)</li>
+
+        <li>Enumerating useful attack information with minimal footprint</li>
+
+        <li>Identify properties and attack paths while avoiding detection</li>
+
+        <li>Enumerate trust relationships across forests</li>
+
+        <li>Privilege escalation using OU Delegation, Restricted Groups, LAPS and Nested Groups</li>
+
+        <li>Hunting for privileges using remote access protocols</li>
+
+        <li>Credential Replay Attacks</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- MODULE II -->
+
+  <div class="curriculum-module">
+
+    <button class="curriculum-toggle">
+
+      <span>Module II</span>
+
+      <i data-lucide="chevron-down"></i>
+
+    </button>
+
+    <div class="curriculum-content">
+
+      <ul>
+
+        <li>Microsoft Defender for Endpoint (MDE)</li>
+
+        <li>Evading WDAC application whitelisting</li>
+
+        <li>Credential extraction with MDE + WDAC enabled</li>
+
+        <li>Unconstrained Delegation abuse</li>
+
+        <li>Constrained Delegation abuse</li>
+
+        <li>Resource-Based Constrained Delegation (RBCD)</li>
+
+        <li>Domain Persistence techniques</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- MODULE III -->
+
+  <div class="curriculum-module">
+
+    <button class="curriculum-toggle">
+
+      <span>Module III</span>
+
+      <i data-lucide="chevron-down"></i>
+
+    </button>
+
+    <div class="curriculum-content">
+
+      <ul>
+
+        <li>Advanced Cross Domain attacks</li>
+
+        <li>Domain Admin → Enterprise Admin escalation</li>
+
+        <li>Hybrid Identity attacks</li>
+
+        <li>Advanced Cross Forest attacks</li>
+
+        <li>Kerberoast and SID filtering abuse</li>
+
+        <li>SQL Server cross-forest attacks</li>
+
+        <li>Foreign Security Principals abuse</li>
+
+        <li>PAM Trust and Shadow Security Principals</li>
+
+        <li>Trust transitivity attacks</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- MODULE IV -->
+
+  <div class="curriculum-module">
+
+    <button class="curriculum-toggle">
+
+      <span>Module IV</span>
+
+      <i data-lucide="chevron-down"></i>
+
+    </button>
+
+    <div class="curriculum-content">
+
+      <ul>
+
+        <li>Microsoft Identity Protection (MDI)</li>
+
+        <li>Telemetry collection and anomaly detection</li>
+
+        <li>Bypassing MDI detections</li>
+
+        <li>Elastic Stack and Sysmon</li>
+
+        <li>Bypassing Sysmon logs</li>
+
+        <li>Privilege account security settings</li>
+
+        <li>Privilege Administrative Workstation (PAW)</li>
+
+        <li>JIT & JEA administration</li>
+
+        <li>Tier Model & ESAE</li>
+
+        <li>Credential Guard, WDAC, LAPS, Protected Users</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+</div> 
 
 <button id="scrollTopBtn" class="scroll-top-btn">↑</button>  
+  
+<script>
+  
+function openCurriculumModal(){
+
+  document
+  .getElementById("curriculumModal")
+  .classList.add("active");
+
+  document.body.style.overflow="hidden";
+
+}
+
+function closeCurriculumModal(){
+
+  document
+  .getElementById("curriculumModal")
+  .classList.remove("active");
+
+  document.body.style.overflow="";
+
+}  
+  
+document
+.querySelectorAll(".curriculum-toggle")
+.forEach(button=>{
+
+  button.addEventListener(
+    "click",
+    ()=>{
+
+      const module =
+      button.parentElement;
+
+      module.classList.toggle(
+        "active"
+      );
+
+      const content =
+      module.querySelector(
+        ".curriculum-content"
+      );
+
+      if(module.classList.contains(
+        "active"
+      )){
+
+        content.style.maxHeight =
+        content.scrollHeight + "px";
+
+      }
+
+      else{
+
+        content.style.maxHeight =
+        null;
+
+      }
+
+    }
+  );
+
+});
+
+lucide.createIcons();  
+</script>  
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
