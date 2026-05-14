@@ -6244,14 +6244,21 @@ CURRICULUM MODAL
 
 }
 
+/* ==========================================
+MODAL BOX
+========================================== */
+
 .curriculum-box{
 
   width:100%;
   max-width:920px;
 
-  max-height:88vh;
+  height:88vh;
 
-  overflow:auto;
+  display:flex;
+  flex-direction:column;
+
+  overflow:hidden;
 
   border-radius:24px;
 
@@ -6265,17 +6272,32 @@ CURRICULUM MODAL
   border:
   1px solid rgba(255,255,255,.08);
 
-  padding:28px;
-
 }
+/* ==========================================
+STICKY HEADER
+========================================== */
 
 .curriculum-top{
 
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
+  position:sticky;
 
-  margin-bottom:30px;
+  top:0;
+
+  z-index:20;
+
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+
+  padding:24px;
+
+  background:
+  rgba(7,19,37,.97);
+
+  backdrop-filter:blur(10px);
+
+  border-bottom:
+  1px solid rgba(255,255,255,.06);
 
 }
 
@@ -6283,23 +6305,62 @@ CURRICULUM MODAL
 
   margin-top:12px;
 
+  font-size:28px;
+
   color:#fff;
 
 }
 
 .curriculum-top button{
 
+  width:42px;
+  height:42px;
+
   border:none;
-  background:none;
+
+  border-radius:12px;
+
+  background:
+  rgba(255,255,255,.05);
 
   color:#fff;
-
-  font-size:24px;
 
   cursor:pointer;
 
 }
+  
+.curriculum-scroll{
 
+  flex:1;
+
+  overflow-y:auto;
+
+  overflow-x:hidden;
+
+  }
+  
+curriculum-body{
+
+  padding:26px;
+
+}
+
+/* SCROLLBAR */
+
+.curriculum-scroll::-webkit-scrollbar{
+
+  width:8px;
+
+}
+
+.curriculum-scroll::-webkit-scrollbar-thumb{
+
+  background:
+  rgba(255,255,255,.15);
+
+  border-radius:999px;
+
+}  
 .curriculum-body section{
 
   margin-bottom:28px;
@@ -6345,6 +6406,35 @@ CURRICULUM MODAL
 
 }  
   
+@media(max-width:768px){
+
+  .curriculum-box{
+
+    height:100vh;
+
+    border-radius:0;
+
+  }
+
+  .curriculum-top{
+
+    padding:18px;
+
+  }
+
+  .curriculum-body{
+
+    padding:18px;
+
+  }
+
+  .curriculum-top h2{
+
+    font-size:22px;
+
+  }
+
+}  
 /* ==========================================
 CURRICULUM ACCORDION
 ========================================== */
@@ -8701,7 +8791,9 @@ CURRICULUM MODAL
         </span>      
 
       </div>
-
+ <h2>
+    Active Directory Attacks for Red and Blue Teams - Advanced Edition
+  </h2>
       <button onclick="closeCurriculumModal()">
 
         ✕
@@ -8709,7 +8801,7 @@ CURRICULUM MODAL
       </button>
 
     </div>
-
+ <div class="curriculum-scroll">
     <div class="curriculum-body">
 <!-- ==========================================
 COURSE OVERVIEW
@@ -8717,13 +8809,11 @@ COURSE OVERVIEW
 
 <div class="curriculum-intro">
 
-  <h2>
-    Active Directory Attacks for Red and Blue Teams — Advanced Edition
-  </h2>
+ 
 
   <p class="curriculum-desc">
 
-    A deep dive into Red Teaming — practice attacks with focus on OPSEC,
+    A deep dive into Red Teaming - practice attacks with focus on OPSEC,
     Living Off The Land techniques, and bypassing security controls like
     MDI, WDAC and more in a secure multi-forest Active Directory lab
     environment.
@@ -9011,7 +9101,7 @@ PREREQUISITES
   </div>
 
 </div>
-
+    </div>
   </div>
 
 </div> 
@@ -9020,13 +9110,31 @@ PREREQUISITES
   
 <script>
   
+/* ==========================================
+CURRICULUM MODAL
+========================================== */
+
+let savedScrollPosition = 0;
+
 function openCurriculumModal(){
+
+  savedScrollPosition =
+  window.scrollY;
 
   document
   .getElementById("curriculumModal")
   .classList.add("active");
 
-  document.body.style.overflow="hidden";
+  /* lock page without moving it */
+
+  document.body.style.position =
+  "fixed";
+
+  document.body.style.top =
+  `-${savedScrollPosition}px`;
+
+  document.body.style.width =
+  "100%";
 
 }
 
@@ -9036,9 +9144,26 @@ function closeCurriculumModal(){
   .getElementById("curriculumModal")
   .classList.remove("active");
 
-  document.body.style.overflow="";
+  /* restore page */
 
-}  
+  document.body.style.position =
+  "";
+
+  document.body.style.top =
+  "";
+
+  document.body.style.width =
+  "";
+
+  window.scrollTo({
+
+    top:savedScrollPosition,
+
+    behavior:"instant"
+
+  });
+
+} 
   
 document
 .querySelectorAll(".curriculum-toggle")
