@@ -1849,9 +1849,10 @@ body.modal-open{
   }
 
 }
-/* ========================================== */
-/* MOBILE STICKY CTA */
-/* ========================================== */
+  
+/* ==========================================
+   MOBILE STICKY CTA
+========================================== */
 
 .altx-mobile-bar{
 
@@ -1863,7 +1864,7 @@ body.modal-open{
 
   height:68px;
 
-  display:none;
+  display:flex;
   align-items:center;
   justify-content:space-between;
 
@@ -1889,72 +1890,31 @@ body.modal-open{
 
   z-index:99999;
 
-}
+  transform:translateY(140%);
 
-.altx-mobile-bar-price{
-
-  display:flex;
-  flex-direction:column;
+  transition:transform .28s ease;
 
 }
 
-.altx-mobile-bar-price span{
+/* SHOW */
 
-  font-size:11px;
-  color:#94A3B8;
+.altx-mobile-bar.show{
 
-  margin-bottom:3px;
-
-}
-
-.altx-mobile-bar-price strong{
-
-  font-size:20px;
-  font-weight:800;
-
-  color:var(--color-success);
-
-  line-height:1;
+  transform:translateY(0);
 
 }
 
-.altx-mobile-bar-btn{
+/* HIDE ON DESKTOP */
 
-  height:44px;
+@media(min-width:769px){
 
-  padding:0 16px;
+  .altx-mobile-bar{
 
-  border:none;
-  border-radius:14px;
+    display:none;
 
-  background:
-  linear-gradient(
-    135deg,
-    #EF4444,
-    #C1121F
-  );
-
-  color:#fff;
-
-  font-size:13px;
-  font-weight:700;
-
-  cursor:pointer;
-
-  white-space:nowrap;
-
-}
-
-@media(max-width:768px){
-
-  .altx-mobile-bar.show{
-    display:flex;
   }
 
-} 
-/* ========================================== */
-/* CORPORATE BANNER */
-/* ========================================== */
+}  
 
 .altx-corporate-banner{
 
@@ -4077,6 +4037,58 @@ padding-right: 10px;
   }
 
 }  
+  
+
+.altx-mobile-bar-btn{
+
+  appearance:none;
+  -webkit-appearance:none;
+
+  min-width:140px;
+
+  height:44px;
+
+  padding:0 18px;
+
+  border:none;
+  outline:none;
+
+  border-radius:14px;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  linear-gradient(
+    135deg,
+    #EF4444,
+    #C1121F
+  );
+
+  color:#fff;
+
+  font-size:13px;
+  font-weight:700;
+
+  line-height:1;
+
+  white-space:nowrap;
+
+  cursor:pointer;
+
+  flex-shrink:0;
+
+  box-shadow:
+  0 10px 24px rgba(193,18,31,.28);
+
+}  
+.altx-mobile-bar-price strong{
+
+  color:#10B981;
+  font-size: 18px;
+
+}  
 </style>
 </head>
 <body>
@@ -4410,7 +4422,7 @@ padding-right: 10px;
 <!-- ACCESS SELECTION -->
 <!-- ========================================== -->
 
-<div class="altx-access-wrap" id="accessSection">
+<div class="altx-access-wrap" id="tickets">
 
   <div class="altx-access-head">
 
@@ -5707,6 +5719,7 @@ id="successModal">
 /* ========================================== */
 /* UPDATE SELECTED PREVIEW */
 /* ========================================== */
+let passSelected = false;  
 
 function updateSelectedPreview(){
 
@@ -6022,7 +6035,7 @@ function addConference(){
     6999,
     qty
   );
-
+enableStickyBarSelection();
 }
 
 function addStudentConference(){
@@ -6063,13 +6076,6 @@ function updateMobileBar(){
   const mobileBtn =
   document.getElementById("mobileBarBtn");
 
-  /* ALWAYS SHOW ON MOBILE */
-
-  if(window.innerWidth <= 768){
-
-    mobileBar.classList.add("show");
-
-  }
 
   /* EMPTY CART */
 
@@ -6400,6 +6406,7 @@ function addTraining(){
     showToast(
     `${qty} Training Pass added`
   );
+  enableStickyBarSelection();
   scrollToSelectionMobile();
 
 }
@@ -6419,6 +6426,7 @@ function addStudentConference(){
     showToast(
     `${qty} Conference Pass added`
   );
+  enableStickyBarSelection();
   scrollToSelectionMobile();
 
 } 
@@ -6441,6 +6449,7 @@ function addCombo(){
     showToast(
     `${qty} Combo Pass added`
   );
+   enableStickyBarSelection();
   scrollToSelectionMobile();
 
 }
@@ -6461,6 +6470,7 @@ function addConference(){
     showToast(
     `${qty} Conference Pass added`
   );
+  enableStickyBarSelection();
   scrollToSelectionMobile();
 
 }
@@ -7011,6 +7021,120 @@ function completePayment(){
   },700);
 
 }
+/* =========================================================
+   MOBILE STICKY BAR LOGIC
+========================================================= */
+
+const mobileBar =
+document.getElementById("mobileStickyBar");
+
+const pricingSection =
+document.getElementById("tickets");
+
+const accessSection =
+document.getElementById("selectionSection");
+
+
+/* CALL THIS AFTER PASS SELECT */
+
+function enableStickyBarSelection(){
+
+  passSelected = true;
+
+  const mobileBar =
+  document.getElementById("mobileStickyBar");
+
+  const mobileBtn =
+  document.getElementById("mobileBarBtn");
+
+  if(mobileBar){
+
+    mobileBar.classList.add("show");
+
+  }
+
+  if(mobileBtn){
+
+    mobileBtn.innerText =
+    "Continue Booking";
+
+  }
+
+}
+
+/* SCROLL LOGIC */
+
+/* =========================================================
+   MOBILE STICKY BAR
+========================================================= */
+
+
+function handleMobileStickyBar(){
+
+  if(window.innerWidth > 768){
+
+    mobileBar.classList.remove("show");
+
+    return;
+
+  }
+
+  /* =====================================
+     AFTER PASS SELECTED
+  ===================================== */
+
+  if(passSelected){
+
+    mobileBar.classList.add("show");
+
+    return;
+
+  }
+
+  /* =====================================
+     BEFORE TICKET SECTION
+  ===================================== */
+
+  if(!pricingSection){
+    return;
+  }
+
+  const pricingTop =
+  pricingSection.getBoundingClientRect().top;
+
+  if(pricingTop > 120){
+
+    mobileBar.classList.remove("show");
+
+    return;
+
+  }
+
+  /* =====================================
+     NORMAL SHOW
+  ===================================== */
+
+  mobileBar.classList.add("show");
+
+}
+
+window.addEventListener(
+  "scroll",
+  handleMobileStickyBar
+);
+
+window.addEventListener(
+  "resize",
+  handleMobileStickyBar
+);
+
+/* INITIAL RUN */
+/* =========================================================
+   STICKY BAR SELECTION STATE
+========================================================= */
+
+handleMobileStickyBar();
+
   
 </script>
 
