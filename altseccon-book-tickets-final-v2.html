@@ -4264,7 +4264,7 @@ padding-right: 10px;
   <button class="altx-register-btn"
   onclick="scrollToSelectionMobileBar()">
 
-    Select Pass
+    Select Pass    
 
   </button>
 
@@ -5372,7 +5372,7 @@ id="mobileStickyBar">
   <div class="altx-mobile-bar-price">
 
     <span id="mobileBarLabel">
-      No Pass Selected
+      No Pass Added  
     </span>
 
     <strong id="mobileBarAmount">
@@ -5385,7 +5385,7 @@ id="mobileStickyBar">
   id="mobileBarBtn"
   onclick="scrollToSelectionMobileBar()">
 
-    Select Pass
+    Get Pass
 
   </button>
 
@@ -6105,12 +6105,12 @@ function updateMobileBar(){
   if(cart.length === 0){
 
     mobileLabel.innerText =
-    "No Pass Selected";
+    "No Pass Added";
 
     mobileAmount.innerText = "—";
 
     mobileBtn.innerText =
-    "Select Pass";
+    "Get Pass";
 
     return;
 
@@ -6152,11 +6152,11 @@ function scrollToSelectionMobileBar(){
 
   if(
     mobileBtn.innerText.trim() ===
-    "Select Pass"
+    "Get Pass"
   ){
 
     const accessSection =
-    document.querySelector(".altx-access-wrap");
+    document.querySelector(".altx-tabs");
 
     if(accessSection){
 
