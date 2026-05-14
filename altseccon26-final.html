@@ -6406,35 +6406,76 @@ curriculum-body{
 
 }  
   
+/* =========================================================
+   SMALL MOBILE CURRICULUM HEADER FIX
+========================================================= */
+
 @media(max-width:768px){
-
-  .curriculum-box{
-
-    height:100vh;
-
-    border-radius:0;
-
-  }
 
   .curriculum-top{
 
-    padding:18px;
+    padding:12px 14px;
+
+    align-items:center;
+
+    gap:10px;
 
   }
 
-  .curriculum-body{
+  /* badge */
 
-    padding:18px;
+  .curriculum-top .course-badge{
+
+    padding:4px 10px;
+
+    font-size:10px;
+
+    margin-bottom:6px;
 
   }
+
+  /* title */
 
   .curriculum-top h2{
 
-    font-size:22px;
+    font-size:18px;
+
+    line-height:1.2;
+
+    margin-top:0;
+
+    margin-bottom:0;
+
+    max-width:85%;
 
   }
 
-}  
+  /* close */
+
+  .curriculum-top button{
+
+    width:34px;
+    height:34px;
+
+    min-width:34px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    flex-shrink:0;
+
+  }
+
+  /* body */
+
+  .curriculum-body{
+
+    padding:16px;
+
+  }
+
+}
 /* ==========================================
 CURRICULUM ACCORDION
 ========================================== */
