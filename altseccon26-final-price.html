@@ -13633,7 +13633,7 @@ MOBILE EARLY BIRD BAR
 <script>
 
 /* =========================================
-MOBILE OFFER COUNTDOWN
+COUNTDOWN
 ========================================= */
 
 const mobileOfferEnd =
@@ -13695,12 +13695,7 @@ setInterval(
 );
 
 /* =========================================
-CLOSE OFFER
-========================================= */
-
-
-/* =========================================
-REMEMBER CLOSE STATE
+SHOW AFTER 5 SEC
 ========================================= */
 
 window.addEventListener(
@@ -13712,7 +13707,7 @@ window.addEventListener(
       "mobileOfferBar"
     );
 
-    /* CLOSED */
+    /* CLOSED BEFORE */
 
     if(
       localStorage.getItem(
@@ -13737,7 +13732,9 @@ window.addEventListener(
   }
 );
 
-/* CLOSE */
+/* =========================================
+CLOSE
+========================================= */
 
 function closeMobileOffer(){
 
@@ -13756,6 +13753,7 @@ function closeMobileOffer(){
   );
 
 }
+
 
 </script>  
 </body>
