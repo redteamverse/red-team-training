@@ -11977,13 +11977,14 @@ id="mobileOfferBar">
 
     <!-- CTA -->
 
-    <a
-    href="#tickets"
-    class="altx-mobile-offer-btn">
+<a
+href="#ticketSection"
+class="altx-mobile-offer-btn"
+onclick="closeMobileOffer()">
 
-      Get Early Bird Pass
+  Get Early Bird Pass
 
-    </a>
+</a>
 
   </div>
 
@@ -13710,7 +13711,7 @@ window.addEventListener(
     /* CLOSED BEFORE */
 
     if(
-      localStorage.getItem(
+      sessionStorage.getItem(
         "altxOfferClosed"
       ) === "true"
     ){
@@ -13735,7 +13736,6 @@ window.addEventListener(
 /* =========================================
 CLOSE
 ========================================= */
-
 function closeMobileOffer(){
 
   const offerBar =
@@ -13747,7 +13747,7 @@ function closeMobileOffer(){
     "show"
   );
 
-  localStorage.setItem(
+  sessionStorage.setItem(
     "altxOfferClosed",
     "true"
   );
