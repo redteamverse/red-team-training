@@ -8531,42 +8531,9 @@ ADD PASS FLASH EFFECT
 MOBILE EARLY BIRD BAR
 ========================================= */
 
-.altx-mobile-offer{
-
-  position:fixed;
-
-  left:14px;
-  right:14px;
-  bottom:14px;
-
-  z-index:99999;
-
-  display:none;
-
-  border-radius:24px;
-
-  padding:18px;
-
-  background:
-  linear-gradient(
-    135deg,
-    rgba(127,29,29,.98),
-    rgba(185,28,28,.98)
-  );
-
-  border:
-  1px solid rgba(255,255,255,.08);
-
-  box-shadow:
-  0 20px 60px rgba(0,0,0,.4);
-
-  backdrop-filter:
-  blur(20px);
-
-  animation:
-  mobileOfferIn .5s ease;
-
-}
+/* =========================================
+MOBILE EARLY BIRD OFFER
+========================================= */
 
 /* SHOW ONLY MOBILE */
 
@@ -8574,31 +8541,76 @@ MOBILE EARLY BIRD BAR
 
   .altx-mobile-offer{
 
-    display:block;
+    position:fixed;
+
+    left:14px;
+    right:14px;
+    bottom:14px;
+
+    z-index:99999;
+
+    border-radius:24px;
+
+    padding:18px;
+
+    background:
+    linear-gradient(
+      135deg,
+      rgba(127,29,29,.98),
+      rgba(185,28,28,.98)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.4);
+
+    backdrop-filter:
+    blur(20px);
+
+    /* HIDDEN INITIALLY */
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transform:
+    translateY(30px);
+
+    transition:
+    opacity .45s ease,
+    transform .45s ease,
+    visibility .45s;
+
+  }
+
+  /* SHOW */
+
+  .altx-mobile-offer.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+    transform:
+    translateY(0);
 
   }
 
 }
 
-/* ANIMATION */
+/* HIDE DESKTOP */
 
-@keyframes mobileOfferIn{
+@media(min-width:769px){
 
-  from{
+  .altx-mobile-offer{
 
-    opacity:0;
-
-    transform:
-    translateY(40px);
-
-  }
-
-  to{
-
-    opacity:1;
-
-    transform:
-    translateY(0);
+    display:none;
 
   }
 
@@ -8807,7 +8819,9 @@ MOBILE EARLY BIRD BAR
     transform:scale(1);
   }
 
-}  
+}
+
+
 </style>
 </head>
 
@@ -10241,7 +10255,7 @@ onclick="proceedTrainingBooking()">
               <strong>Regular</strong>
               <span>Conference discount included</span>
             </div>
-            <b>₹54,999</b>
+            <b>₹57,999</b>
           </div>
 
         </div>
@@ -13684,19 +13698,6 @@ setInterval(
 CLOSE OFFER
 ========================================= */
 
-function closeMobileOffer(){
-
-  document.getElementById(
-    "mobileOfferBar"
-  ).style.display =
-  "none";
-
-  localStorage.setItem(
-    "altxOfferClosed",
-    "true"
-  );
-
-}
 
 /* =========================================
 REMEMBER CLOSE STATE
@@ -13706,21 +13707,55 @@ window.addEventListener(
   "load",
   ()=>{
 
+    const offerBar =
+    document.getElementById(
+      "mobileOfferBar"
+    );
+
+    /* CLOSED */
+
     if(
       localStorage.getItem(
         "altxOfferClosed"
       ) === "true"
     ){
 
-      document.getElementById(
-        "mobileOfferBar"
-      ).style.display =
-      "none";
+      return;
 
     }
 
+    /* SHOW AFTER 5 SEC */
+
+    setTimeout(()=>{
+
+      offerBar.classList.add(
+        "show"
+      );
+
+    },5000);
+
   }
 );
+
+/* CLOSE */
+
+function closeMobileOffer(){
+
+  const offerBar =
+  document.getElementById(
+    "mobileOfferBar"
+  );
+
+  offerBar.classList.remove(
+    "show"
+  );
+
+  localStorage.setItem(
+    "altxOfferClosed",
+    "true"
+  );
+
+}
 
 </script>  
 </body>
