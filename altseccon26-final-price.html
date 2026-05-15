@@ -8526,6 +8526,288 @@ ADD PASS FLASH EFFECT
   }
 
 }  
+  
+/* =========================================
+MOBILE EARLY BIRD BAR
+========================================= */
+
+.altx-mobile-offer{
+
+  position:fixed;
+
+  left:14px;
+  right:14px;
+  bottom:14px;
+
+  z-index:99999;
+
+  display:none;
+
+  border-radius:24px;
+
+  padding:18px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(127,29,29,.98),
+    rgba(185,28,28,.98)
+  );
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+  0 20px 60px rgba(0,0,0,.4);
+
+  backdrop-filter:
+  blur(20px);
+
+  animation:
+  mobileOfferIn .5s ease;
+
+}
+
+/* SHOW ONLY MOBILE */
+
+@media(max-width:768px){
+
+  .altx-mobile-offer{
+
+    display:block;
+
+  }
+
+}
+
+/* ANIMATION */
+
+@keyframes mobileOfferIn{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateY(40px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+  }
+
+}
+
+/* CLOSE */
+
+.altx-mobile-offer-close{
+
+  position:absolute;
+
+  top:10px;
+  right:10px;
+
+  width:32px;
+  height:32px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:
+  rgba(255,255,255,.12);
+
+  color:#fff;
+
+  font-size:14px;
+
+  cursor:pointer;
+
+}
+
+/* CONTENT */
+
+.altx-mobile-offer-content{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  text-align:center;
+
+}
+
+/* TOP */
+
+.altx-mobile-offer-top{
+
+  font-size:11px;
+  font-weight:800;
+
+  letter-spacing:.08em;
+
+  color:#FECACA;
+
+  margin-bottom:10px;
+
+}
+
+/* HEADING */
+
+.altx-mobile-offer-heading{
+
+  font-size:22px;
+  font-weight:800;
+
+  color:#fff;
+
+  line-height:1.2;
+
+  margin-bottom:16px;
+
+}
+
+/* PRICE */
+
+.altx-mobile-offer-price{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin-bottom:18px;
+
+}
+
+.altx-mobile-offer-price span{
+
+  font-size:16px;
+
+  color:#FCA5A5;
+
+  text-decoration:line-through;
+
+}
+
+.altx-mobile-offer-price strong{
+
+  font-size:34px;
+  font-weight:900;
+
+  color:#10B981;
+
+}
+
+/* TIMER */
+
+.altx-mobile-offer-timer{
+
+  display:flex;
+
+  gap:10px;
+
+  margin-bottom:20px;
+
+}
+
+.altx-mobile-time{
+
+  width:58px;
+  height:58px;
+
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,.08);
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+}
+
+.altx-mobile-time b{
+
+  font-size:20px;
+
+  color:#fff;
+
+  line-height:1;
+
+}
+
+.altx-mobile-time span{
+
+  font-size:10px;
+
+  color:#FECACA;
+
+  margin-top:4px;
+
+}
+
+/* CTA */
+
+.altx-mobile-offer-btn{
+
+  width:100%;
+
+  height:54px;
+
+  border-radius:18px;
+
+  background:#fff;
+
+  color:#B91C1C !important;
+
+  font-size:15px;
+  font-weight:800;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  text-decoration:none;
+
+  animation:
+  mobileOfferPulse 2.5s infinite;
+
+}
+
+/* PULSE */
+
+@keyframes mobileOfferPulse{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.03);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
+}  
 </style>
 </head>
 
@@ -11599,7 +11881,99 @@ id="corporateModal">
   </div>
 
 </div>   
-  
+<div
+class="altx-mobile-offer"
+id="mobileOfferBar">
+
+  <!-- CLOSE -->
+
+  <button
+  class="altx-mobile-offer-close"
+  onclick="closeMobileOffer()">
+
+    ✕
+    
+  </button>
+
+  <!-- CONTENT -->
+
+  <div class="altx-mobile-offer-content">
+
+    <div class="altx-mobile-offer-top">
+
+      🔥 SUPER EARLY BIRD LIVE
+
+    </div>
+
+    <div class="altx-mobile-offer-heading">
+
+      Save ₹10,000 Before 30 June
+
+    </div>
+
+    <!-- PRICE -->
+
+    <div class="altx-mobile-offer-price">
+
+      <span>
+        ₹49,999
+      </span>
+
+      <strong>
+        ₹39,999
+      </strong>
+
+    </div>
+
+    <!-- TIMER -->
+
+    <div class="altx-mobile-offer-timer">
+
+      <div class="altx-mobile-time">
+
+        <b id="mobileOfferDays">
+          12
+        </b>
+
+        <span>D</span>
+
+      </div>
+
+      <div class="altx-mobile-time">
+
+        <b id="mobileOfferHours">
+          08
+        </b>
+
+        <span>H</span>
+
+      </div>
+
+      <div class="altx-mobile-time">
+
+        <b id="mobileOfferMinutes">
+          41
+        </b>
+
+        <span>M</span>
+
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+
+    <a
+    href="#tickets"
+    class="altx-mobile-offer-btn">
+
+      Get Early Bird Pass
+
+    </a>
+
+  </div>
+
+</div>  
 <script>
   
 function openCorporateModal(){
@@ -13237,6 +13611,117 @@ document.addEventListener('click', function (e) {
   }
 });
 </script>
+<!-- =========================================
+MOBILE EARLY BIRD BAR
+========================================= -->
 
+
+<script>
+
+/* =========================================
+MOBILE OFFER COUNTDOWN
+========================================= */
+
+const mobileOfferEnd =
+new Date(
+  "June 30, 2026 23:59:59"
+).getTime();
+
+function updateMobileOffer(){
+
+  const now =
+  new Date().getTime();
+
+  const distance =
+  mobileOfferEnd - now;
+
+  const days =
+  Math.floor(
+    distance /
+    (1000 * 60 * 60 * 24)
+  );
+
+  const hours =
+  Math.floor(
+    (
+      distance %
+      (1000 * 60 * 60 * 24)
+    ) /
+    (1000 * 60 * 60)
+  );
+
+  const minutes =
+  Math.floor(
+    (
+      distance %
+      (1000 * 60 * 60)
+    ) /
+    (1000 * 60)
+  );
+
+  document.getElementById(
+    "mobileOfferDays"
+  ).innerText = days;
+
+  document.getElementById(
+    "mobileOfferHours"
+  ).innerText = hours;
+
+  document.getElementById(
+    "mobileOfferMinutes"
+  ).innerText = minutes;
+
+}
+
+updateMobileOffer();
+
+setInterval(
+  updateMobileOffer,
+  60000
+);
+
+/* =========================================
+CLOSE OFFER
+========================================= */
+
+function closeMobileOffer(){
+
+  document.getElementById(
+    "mobileOfferBar"
+  ).style.display =
+  "none";
+
+  localStorage.setItem(
+    "altxOfferClosed",
+    "true"
+  );
+
+}
+
+/* =========================================
+REMEMBER CLOSE STATE
+========================================= */
+
+window.addEventListener(
+  "load",
+  ()=>{
+
+    if(
+      localStorage.getItem(
+        "altxOfferClosed"
+      ) === "true"
+    ){
+
+      document.getElementById(
+        "mobileOfferBar"
+      ).style.display =
+      "none";
+
+    }
+
+  }
+);
+
+</script>  
 </body>
 </html>
