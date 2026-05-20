@@ -1,0 +1,4549 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+    <!-- GOOGLE FONT -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- LUCIDE -->
+
+<script src="https://unpkg.com/lucide@latest"></script>    
+     <style>
+    
+    /* =========================================
+ROOT VARIABLES
+========================================= */
+
+:root{
+
+  /* =========================================
+  BRAND COLORS
+  ========================================= */
+
+  --color-primary:#B91C1C;
+  --color-primary-light:#EA3037;
+
+  --color-secondary:#2B2B50;
+  --color-secondary-light:#1E3A8A;
+
+  /* =========================================
+  TEXT COLORS
+  ========================================= */
+
+  --color-text-main:#111827;
+  --color-text-body:#4B5563;
+  --color-text-muted:#6B7280;
+
+  /* =========================================
+  BACKGROUND COLORS
+  ========================================= */
+
+  --color-bg:#FFFFFF;
+  --color-bg-light:#F9FAFB;
+
+  /* =========================================
+  BORDER
+  ========================================= */
+
+  --color-border:#E5E7EB;
+
+  /* =========================================
+  STATUS COLORS
+  ========================================= */
+
+  --color-success:#10B981;
+  --color-warning:#F59E0B;
+  --color-error:#EF4444;
+
+  /* =========================================
+  FONT
+  ========================================= */
+
+  --font-primary:'Space Grotesk',sans-serif;
+
+  /* =========================================
+  CONTAINER
+  ========================================= */
+
+  --container-width:1440px;
+
+  /* =========================================
+  RADIUS
+  ========================================= */
+
+  --radius-sm:12px;
+  --radius-md:18px;
+  --radius-lg:24px;
+  --radius-full:999px;
+
+  /* =========================================
+  SHADOW
+  ========================================= */
+
+  --shadow-primary:
+  0 20px 50px rgba(185,28,28,0.08);
+
+  /* =========================================
+  SPACING
+  ========================================= */
+
+  --space-xs:8px;
+  --space-sm:12px;
+  --space-md:18px;
+  --space-lg:24px;
+  --space-xl:32px;
+  --space-2xl:48px;
+  --space-3xl:72px;
+
+}
+
+/* =========================================
+GLOBAL
+========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+
+  font-family:var(--font-primary);
+
+  background:var(--color-bg);
+
+  color:var(--color-text-main);
+
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+
+  width:100%;
+
+  max-width:var(--container-width);
+
+  margin:auto;
+
+  padding-inline:24px;
+}
+
+/* =========================================
+BLOG CATEGORY HERO SECTION
+========================================= */
+
+.blog-category-hero{
+
+  padding:
+  var(--space-xl)
+  0
+  var(--space-3xl);
+
+  background:var(--color-bg);
+}
+
+/* =========================================
+BREADCRUMB
+========================================= */
+
+.blog-breadcrumb{
+
+  display:flex;
+  align-items:center;
+
+  flex-wrap:wrap;
+
+  gap:var(--space-sm);
+
+  margin-bottom:var(--space-2xl);
+}
+
+.breadcrumb-link{
+
+  color:var(--color-text-muted);
+
+  font-size:15px;
+
+  font-weight:500;
+
+  transition:0.3s ease;
+}
+
+.breadcrumb-link:hover{
+
+  color:var(--color-primary);
+}
+
+.breadcrumb-separator{
+
+  color:var(--color-text-muted);
+
+  font-size:14px;
+}
+
+.breadcrumb-current{
+
+  color:var(--color-text-main);
+
+  font-size:15px;
+
+  font-weight:700;
+}
+
+/* =========================================
+HERO CONTENT
+========================================= */
+
+.blog-category-hero-content{
+
+  max-width:980px;
+
+  margin:auto;
+
+  text-align:center;
+}
+
+/* =========================================
+LABEL
+========================================= */
+
+.blog-category-label{
+
+  width:fit-content;
+
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  margin:
+  0 auto
+  var(--space-lg);
+
+  padding:
+  10px
+  18px;
+
+  border-radius:var(--radius-full);
+
+  background:
+  rgba(185,28,28,0.08);
+
+  border:
+  1px solid
+  rgba(185,28,28,0.12);
+
+  color:var(--color-primary);
+
+  font-size:13px;
+
+  font-weight:700;
+
+  letter-spacing:0.3px;
+}
+
+.blog-category-label-dot{
+
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:var(--color-primary-light);
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.blog-category-title{
+
+  font-size:72px;
+
+  line-height:1.02;
+
+  letter-spacing:-2px;
+
+  font-weight:700;
+
+  margin-bottom:var(--space-lg);
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.blog-category-description{
+
+  max-width:900px;
+
+  margin:auto;
+
+  color:var(--color-text-body);
+
+  font-size:19px;
+
+  line-height:1.9;
+}
+
+/* =========================================
+STICKY CATEGORY SECTION
+========================================= */
+
+.sticky-blog-category{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:999;
+
+  padding:
+  22px
+  0;
+
+  background:
+  rgba(255,255,255,0.94);
+
+  backdrop-filter:blur(12px);
+
+  border-top:
+  1px solid
+  var(--color-border);
+
+  border-bottom:
+  1px solid
+  var(--color-border);
+}
+
+/* =========================================
+CATEGORY SCROLL
+========================================= */
+
+.sticky-category-scroll{
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:14px;
+
+  overflow-x:auto;
+
+  overflow-y:visible;
+
+  scrollbar-width:none;
+
+  -webkit-overflow-scrolling:touch;
+}
+
+.sticky-category-scroll::-webkit-scrollbar{
+
+  display:none;
+}
+
+/* =========================================
+CATEGORY PILL
+========================================= */
+
+.sticky-category-pill{
+
+  flex:0 0 auto;
+
+  height:52px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding-inline:24px;
+
+  border-radius:var(--radius-full);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  background:var(--color-bg-light);
+
+  color:var(--color-text-main);
+
+  font-size:14px;
+
+  font-weight:700;
+
+  white-space:nowrap;
+
+  transition:0.3s ease;
+}
+
+.sticky-category-pill:hover,
+.sticky-category-pill.active{
+
+  background:var(--color-primary);
+
+  border-color:var(--color-primary);
+
+  color:#ffffff;
+}
+
+/* =========================================
+EXPLORE
+========================================= */
+
+.sticky-category-explore{
+
+  position:relative;
+
+  flex:0 0 auto;
+}
+
+/* =========================================
+EXPLORE BUTTON
+========================================= */
+
+.sticky-explore-button{
+
+  height:52px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  padding-inline:24px;
+
+  border-radius:var(--radius-full);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  background:var(--color-bg-light);
+
+  color:var(--color-text-main);
+
+  font-family:var(--font-primary);
+
+  font-size:14px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+}
+
+.sticky-explore-button:hover{
+
+  background:var(--color-primary);
+
+  border-color:var(--color-primary);
+
+  color:#ffffff;
+}
+
+/* =========================================
+EXPLORE DROPDOWN
+========================================= */
+
+.sticky-explore-dropdown{
+
+  position:absolute;
+
+  top:calc(100% + 14px);
+
+  right:0;
+
+  width:260px;
+
+  padding:14px;
+
+  border-radius:var(--radius-lg);
+
+  background:var(--color-bg);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,0.08);
+
+  opacity:0;
+
+  visibility:hidden;
+
+  transform:translateY(10px);
+
+  transition:0.3s ease;
+
+  z-index:999;
+}
+
+.sticky-category-explore:hover
+.sticky-explore-dropdown{
+
+  opacity:1;
+
+  visibility:visible;
+
+  transform:translateY(0);
+}
+
+/* =========================================
+DROPDOWN ITEM
+========================================= */
+
+.sticky-dropdown-item{
+
+  display:flex;
+  align-items:center;
+
+  width:100%;
+
+  padding:
+  14px
+  16px;
+
+  border-radius:14px;
+
+  color:var(--color-text-main);
+
+  font-size:14px;
+
+  font-weight:600;
+
+  transition:0.25s ease;
+}
+
+.sticky-dropdown-item:hover{
+
+  background:
+  rgba(185,28,28,0.08);
+
+  color:var(--color-primary);
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+  .blog-category-title{
+
+    font-size:42px;
+
+    line-height:1.12;
+  }
+
+  .blog-category-description{
+
+    font-size:16px;
+  }
+
+  .sticky-category-scroll{
+
+    justify-content:flex-start;
+
+    padding-bottom:8px;
+  }
+
+}
+   
+   /* =========================================
+STICKY CATEGORY SECTION
+FIXED MOBILE SCROLL + WORKING DROPDOWN
+========================================= */
+
+.sticky-blog-category{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:999;
+
+  width:100%;
+
+  background:
+  rgba(255,255,255,0.96);
+
+  backdrop-filter:blur(12px);
+
+  border-top:
+  1px solid
+  var(--color-border);
+
+  border-bottom:
+  1px solid
+  var(--color-border);
+
+  overflow:visible;
+}
+
+/* =========================================
+SCROLL WRAPPER
+========================================= */
+
+.sticky-category-scroll{
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+
+  width:100%;
+
+  overflow-x:auto;
+  overflow-y:visible;
+
+  white-space:nowrap;
+
+  scrollbar-width:none;
+
+  -webkit-overflow-scrolling:touch;
+
+  padding:
+  20px 0;
+
+  position:relative;
+}
+
+.sticky-category-scroll::-webkit-scrollbar{
+
+  display:none;
+}
+
+/* =========================================
+CATEGORY BUTTON
+========================================= */
+
+.sticky-category-pill{
+
+  flex:0 0 auto;
+
+  height:54px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:
+  0 24px;
+
+  border-radius:999px;
+
+  border:
+  1px solid
+  var(--color-border);
+
+  background:
+  var(--color-bg-light);
+
+  color:
+  var(--color-text-main);
+
+  font-size:14px;
+
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.sticky-category-pill:hover,
+.sticky-category-pill.active{
+
+  background:
+  var(--color-primary);
+
+  border-color:
+  var(--color-primary);
+
+  color:#ffffff;
+}
+
+/* =========================================
+EXPLORE WRAPPER
+========================================= */
+
+.sticky-category-explore{
+
+  position:relative;
+
+  flex:0 0 auto;
+}
+
+/* =========================================
+EXPLORE BUTTON
+========================================= */
+
+.sticky-explore-button{
+
+  height:54px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  padding:
+  0 26px;
+
+  border-radius:999px;
+
+  border:
+  1px solid
+  var(--color-border);
+
+  background:
+  var(--color-bg-light);
+
+  color:
+  var(--color-text-main);
+
+  font-family:
+  var(--font-primary);
+
+  font-size:14px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+
+  white-space:nowrap;
+}
+
+.sticky-explore-button svg{
+
+  width:18px;
+  height:18px;
+
+  transition:0.3s ease;
+}
+
+/* =========================================
+BUTTON HOVER
+========================================= */
+
+.sticky-category-explore:hover
+.sticky-explore-button{
+
+  background:
+  var(--color-primary);
+
+  border-color:
+  var(--color-primary);
+
+  color:#ffffff;
+}
+
+.sticky-category-explore:hover
+.sticky-explore-button svg{
+
+  transform:rotate(180deg);
+}
+
+/* =========================================
+DROPDOWN
+========================================= */
+
+.sticky-explore-dropdown{
+
+  position:absolute;
+
+  top:calc(100% + 14px);
+
+  right:0;
+
+  width:280px;
+
+  padding:14px;
+
+  border-radius:24px;
+
+  background:#ffffff;
+
+  border:
+  1px solid
+  var(--color-border);
+
+  box-shadow:
+  0 24px 60px rgba(0,0,0,0.10);
+
+  opacity:0;
+
+  visibility:hidden;
+
+  pointer-events:none;
+
+  transform:
+  translateY(10px);
+
+  transition:0.25s ease;
+
+  z-index:9999;
+}
+
+/* =========================================
+SHOW DROPDOWN
+========================================= */
+
+.sticky-category-explore:hover
+.sticky-explore-dropdown{
+
+  opacity:1;
+
+  visibility:visible;
+
+  pointer-events:auto;
+
+  transform:
+  translateY(0);
+}
+
+/* =========================================
+DROPDOWN ITEM
+========================================= */
+
+.sticky-dropdown-item{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  width:100%;
+
+  padding:
+  14px
+  16px;
+
+  border-radius:16px;
+
+  color:
+  var(--color-text-main);
+
+  font-size:14px;
+
+  font-weight:600;
+
+  transition:0.25s ease;
+}
+
+.sticky-dropdown-item::after{
+
+  content:"↗";
+
+  opacity:0;
+
+  transition:0.25s ease;
+}
+
+.sticky-dropdown-item:hover{
+
+  background:
+  rgba(185,28,28,0.08);
+
+  color:
+  var(--color-primary);
+
+  transform:
+  translateX(4px);
+}
+
+.sticky-dropdown-item:hover::after{
+
+  opacity:1;
+}
+
+/* =========================================
+MOBILE FIX
+========================================= */
+
+@media(max-width:768px){
+
+  .sticky-blog-category{
+
+    overflow:visible;
+  }
+
+  .sticky-blog-category .container{
+
+    padding-right:0;
+
+    overflow:visible;
+  }
+
+  .sticky-category-scroll{
+
+    justify-content:flex-start;
+
+    padding-left:20px;
+    padding-right:20px;
+
+    overflow-x:auto;
+
+    overflow-y:visible;
+
+    scroll-snap-type:x proximity;
+  }
+
+  .sticky-category-pill,
+  .sticky-explore-button{
+
+    flex:0 0 auto;
+
+    scroll-snap-align:start;
+  }
+
+  /* =========================================
+  MOBILE RIGHT FADE
+  ========================================= */
+
+  .sticky-blog-category::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:70px;
+    height:100%;
+
+    background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,1) 100%
+    );
+
+    pointer-events:none;
+
+    z-index:2;
+  }
+
+  /* =========================================
+  MOBILE DROPDOWN POSITION
+  ========================================= */
+
+  .sticky-explore-dropdown{
+
+    right:0;
+
+    left:auto;
+
+    width:240px;
+  }
+
+}      
+/* =========================================
+FEATURED CATEGORY BLOG SECTION
+========================================= */
+
+.featured-category-blog-section{
+
+  padding:
+  var(--space-3xl)
+  0;
+}
+
+/* =========================================
+SECTION HEADER
+========================================= */
+
+.featured-category-heading-wrap{
+
+  max-width:980px;
+
+  margin:
+  0 auto
+  var(--space-3xl);
+
+  text-align:center;
+}
+
+.featured-category-label{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:
+  10px
+  18px;
+
+  border-radius:
+  var(--radius-full);
+
+  background:
+  rgba(185,28,28,0.08);
+
+  border:
+  1px solid
+  rgba(185,28,28,0.12);
+
+  color:
+  var(--color-primary);
+
+  font-size:13px;
+
+  font-weight:700;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+.featured-category-heading{
+
+  font-size:58px;
+
+  line-height:1.08;
+
+  letter-spacing:-1.5px;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+.featured-category-description{
+
+  color:
+  var(--color-text-body);
+
+  font-size:18px;
+
+  line-height:1.9;
+}
+
+/* =========================================
+2 HERO GRID
+========================================= */
+
+.featured-hero-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,minmax(0,1fr));
+
+  gap:28px;
+
+  margin-bottom:30px;
+}
+
+/* =========================================
+HERO CARD
+========================================= */
+
+.featured-hero-card{
+
+  display:flex;
+  flex-direction:column;
+
+  background:
+  var(--color-bg);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  border-radius:
+  32px;
+
+  overflow:hidden;
+
+  transition:0.35s ease;
+}
+
+.featured-hero-card:hover{
+
+  transform:
+  translateY(-6px);
+
+  border-color:
+  var(--color-primary-light);
+
+  box-shadow:
+  var(--shadow-primary);
+}
+
+/* =========================================
+HERO IMAGE
+========================================= */
+
+.featured-hero-image{
+
+  width:100%;
+
+  height:280px;
+
+  background:
+  var(--color-bg-light);
+}
+
+.featured-hero-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+}
+
+/* =========================================
+HERO CONTENT
+========================================= */
+
+.featured-hero-content{
+
+  display:flex;
+  flex-direction:column;
+
+  flex:1;
+
+  padding:32px;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.featured-hero-title{
+
+  font-size:40px;
+
+  line-height:1.12;
+
+  letter-spacing:-1px;
+
+  margin-bottom:
+  var(--space-lg);
+
+  transition:0.3s ease;
+}
+
+.featured-hero-card:hover
+.featured-hero-title{
+
+  color:
+  var(--color-primary);
+
+  text-decoration:underline;
+}
+
+/* =========================================
+TEXT
+========================================= */
+
+.featured-hero-text{
+
+  color:
+  var(--color-text-body);
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+CATEGORY
+========================================= */
+
+.featured-hero-category-wrap{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+.featured-hero-category{
+
+  padding:
+  9px
+  14px;
+
+  border-radius:
+  var(--radius-full);
+
+  background:
+  rgba(185,28,28,0.08);
+
+  color:
+  var(--color-primary);
+
+  font-size:11px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+}
+
+/* =========================================
+META
+========================================= */
+
+.featured-hero-meta{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+.featured-hero-meta-item{
+
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  padding:
+  10px
+  14px;
+
+  border-radius:
+  14px;
+
+  background:
+  var(--color-bg-light);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  color:
+  var(--color-text-body);
+
+  font-size:13px;
+
+  font-weight:600;
+}
+
+.featured-hero-meta-item svg{
+
+  width:16px;
+  height:16px;
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+.featured-hero-footer{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:18px;
+
+  margin-top:auto;
+
+  padding-top:
+  var(--space-lg);
+
+  border-top:
+  1px solid
+  var(--color-border);
+}
+
+/* =========================================
+AUTHOR
+========================================= */
+
+.featured-hero-author{
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+}
+
+.featured-hero-author-image{
+
+  width:52px;
+  height:52px;
+
+  border-radius:50%;
+
+  overflow:hidden;
+
+  border:
+  2px solid
+  var(--color-primary-light);
+}
+
+.featured-hero-author-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.featured-hero-author-info h4{
+
+  font-size:15px;
+
+  margin-bottom:4px;
+}
+
+.featured-hero-author-info span{
+
+  color:
+  var(--color-text-muted);
+
+  font-size:13px;
+}
+
+/* =========================================
+STATS
+========================================= */
+
+.featured-hero-stats{
+
+  display:flex;
+
+  gap:18px;
+}
+
+.featured-hero-stat{
+
+  display:flex;
+  align-items:center;
+
+  gap:7px;
+
+  color:
+  var(--color-text-body);
+
+  font-size:13px;
+
+  font-weight:700;
+}
+
+.featured-hero-stat svg{
+
+  width:16px;
+  height:16px;
+}
+
+/* =========================================
+SECONDARY GRID
+========================================= */
+
+.secondary-feature-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,minmax(0,1fr));
+
+  gap:26px;
+}
+
+/* =========================================
+SECONDARY CARD
+========================================= */
+
+.secondary-feature-card{
+
+  display:flex;
+  flex-direction:column;
+
+  background:
+  var(--color-bg);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  border-radius:
+  28px;
+
+  overflow:hidden;
+
+  transition:0.35s ease;
+}
+
+.secondary-feature-card:hover{
+
+  transform:
+  translateY(-5px);
+
+  border-color:
+  var(--color-primary-light);
+
+  box-shadow:
+  var(--shadow-primary);
+}
+
+/* =========================================
+SECONDARY IMAGE
+========================================= */
+
+.secondary-feature-image{
+
+  width:100%;
+
+  height:210px;
+
+  background:
+  var(--color-bg-light);
+}
+
+.secondary-feature-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+}
+
+/* =========================================
+SECONDARY CONTENT
+========================================= */
+
+.secondary-feature-content{
+
+  display:flex;
+  flex-direction:column;
+
+  flex:1;
+
+  padding:26px;
+}
+
+/* =========================================
+SECONDARY TITLE
+========================================= */
+
+.secondary-feature-title{
+
+  font-size:28px;
+
+  line-height:1.22;
+
+  margin-bottom:
+  var(--space-md);
+
+  transition:0.3s ease;
+}
+
+.secondary-feature-card:hover
+.secondary-feature-title{
+
+  color:
+  var(--color-primary);
+
+  text-decoration:underline;
+}
+
+/* =========================================
+SECONDARY TEXT
+========================================= */
+
+.secondary-feature-text{
+
+  color:
+  var(--color-text-body);
+
+  font-size:15px;
+
+  line-height:1.9;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+SECONDARY CATEGORY
+========================================= */
+
+.secondary-feature-category-wrap{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+.secondary-feature-category{
+
+  padding:
+  8px
+  14px;
+
+  border-radius:
+  var(--radius-full);
+
+  background:
+  rgba(185,28,28,0.08);
+
+  color:
+  var(--color-primary);
+
+  font-size:11px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+}
+
+/* =========================================
+SECONDARY META
+========================================= */
+
+.secondary-feature-meta{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+.secondary-feature-meta-item{
+
+  padding:
+  10px
+  14px;
+
+  border-radius:
+  14px;
+
+  background:
+  var(--color-bg-light);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  color:
+  var(--color-text-body);
+
+  font-size:12px;
+
+  font-weight:600;
+}
+
+/* =========================================
+SECONDARY FOOTER
+========================================= */
+
+.secondary-feature-footer{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:14px;
+
+  margin-top:auto;
+
+  padding-top:
+  var(--space-lg);
+
+  border-top:
+  1px solid
+  var(--color-border);
+}
+
+.secondary-feature-author{
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+}
+
+.secondary-feature-author-image{
+
+  width:46px;
+  height:46px;
+
+  border-radius:50%;
+
+  overflow:hidden;
+
+  border:
+  2px solid
+  var(--color-primary-light);
+}
+
+.secondary-feature-author-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.secondary-feature-author-info h4{
+
+  font-size:14px;
+
+  margin-bottom:4px;
+}
+
+.secondary-feature-author-info span{
+
+  color:
+  var(--color-text-muted);
+
+  font-size:12px;
+}
+
+.secondary-feature-stats{
+
+  display:flex;
+
+  gap:16px;
+}
+
+.secondary-feature-stat{
+
+  color:
+  var(--color-text-body);
+
+  font-size:12px;
+
+  font-weight:700;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .featured-hero-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .secondary-feature-grid{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .featured-category-heading{
+
+    font-size:40px;
+
+    line-height:1.12;
+  }
+
+  .featured-category-description{
+
+    font-size:16px;
+  }
+
+  .featured-hero-title{
+
+    font-size:30px;
+  }
+
+  .secondary-feature-title{
+
+    font-size:24px;
+  }
+
+  .featured-hero-footer,
+  .secondary-feature-footer{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+
+} 
+         
+/* =========================================
+LATEST RED TEAM BLOG SECTION
+========================================= */
+
+.latest-redteam-blog-section{
+
+ 
+}
+
+/* =========================================
+SECTION HEADER
+========================================= */
+
+.latest-redteam-heading-wrap{
+
+  padding-top: 60px;
+  max-width:920px;
+  margin: 0 auto;
+
+  text-align:center;
+}
+
+/* =========================================
+LABEL
+========================================= */
+
+.latest-redteam-label{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:
+  10px
+  18px;
+
+  border-radius:
+  var(--radius-full);
+
+  background:
+  rgba(185,28,28,0.08);
+
+  border:
+  1px solid
+  rgba(185,28,28,0.12);
+
+  color:
+  var(--color-primary);
+
+  font-size:13px;
+
+  font-weight:700;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+HEADING
+========================================= */
+
+.latest-redteam-heading{
+
+  font-size:58px;
+
+  line-height:1.08;
+
+  letter-spacing:-1.5px;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.latest-redteam-description{
+
+  color:
+  var(--color-text-body);
+
+  font-size:18px;
+
+  line-height:1.9;
+}
+
+/* =========================================
+GRID
+========================================= */
+
+.latest-redteam-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,minmax(0,1fr));
+
+  gap:28px;
+}
+
+/* =========================================
+CARD
+========================================= */
+
+.latest-redteam-card{
+
+  display:flex;
+  flex-direction:column;
+
+  background:
+  var(--color-bg);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  border-radius:
+  28px;
+
+  overflow:hidden;
+
+  transition:0.35s ease;
+}
+
+.latest-redteam-card:hover{
+
+  transform:
+  translateY(-5px);
+
+  border-color:
+  var(--color-primary-light);
+
+  box-shadow:
+  var(--shadow-primary);
+}
+
+/* =========================================
+IMAGE
+========================================= */
+
+.latest-redteam-image{
+
+  width:100%;
+
+  height:220px;
+
+  background:
+  var(--color-bg-light);
+}
+
+.latest-redteam-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+}
+
+/* =========================================
+CONTENT
+========================================= */
+
+.latest-redteam-content{
+
+  display:flex;
+  flex-direction:column;
+
+  flex:1;
+
+  padding:26px;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.latest-redteam-title{
+
+  font-size:30px;
+
+  line-height:1.2;
+
+  letter-spacing:-0.5px;
+
+  margin-bottom:
+  var(--space-md);
+
+  transition:0.3s ease;
+}
+
+.latest-redteam-card:hover
+.latest-redteam-title{
+
+  color:
+  var(--color-primary);
+
+  text-decoration:underline;
+}
+
+/* =========================================
+TEXT
+========================================= */
+
+.latest-redteam-text{
+
+  color:
+  var(--color-text-body);
+
+  font-size:15px;
+
+  line-height:1.9;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+CATEGORY
+========================================= */
+
+.latest-redteam-category-wrap{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+.latest-redteam-category{
+
+  padding:
+  8px
+  14px;
+
+  border-radius:
+  var(--radius-full);
+
+  background:
+  rgba(185,28,28,0.08);
+
+  color:
+  var(--color-primary);
+
+  font-size:11px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+}
+
+/* =========================================
+META
+========================================= */
+
+.latest-redteam-meta{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+.latest-redteam-meta-item{
+
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  padding:
+  10px
+  14px;
+
+  border-radius:
+  14px;
+
+  background:
+  var(--color-bg-light);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  color:
+  var(--color-text-body);
+
+  font-size:12px;
+
+  font-weight:600;
+}
+
+.latest-redteam-meta-item svg{
+
+  width:16px;
+  height:16px;
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+.latest-redteam-footer{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:16px;
+
+  margin-top:auto;
+
+  padding-top:
+  var(--space-lg);
+
+  border-top:
+  1px solid
+  var(--color-border);
+}
+
+/* =========================================
+AUTHOR
+========================================= */
+
+.latest-redteam-author{
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+}
+
+.latest-redteam-author-image{
+
+  width:48px;
+  height:48px;
+
+  border-radius:50%;
+
+  overflow:hidden;
+
+  border:
+  2px solid
+  var(--color-primary-light);
+}
+
+.latest-redteam-author-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.latest-redteam-author-info h4{
+
+  font-size:14px;
+
+  margin-bottom:4px;
+}
+
+.latest-redteam-author-info span{
+
+  color:
+  var(--color-text-muted);
+
+  font-size:12px;
+}
+
+/* =========================================
+STATS
+========================================= */
+
+.latest-redteam-stats{
+
+  display:flex;
+
+  gap:16px;
+}
+
+.latest-redteam-stat{
+
+  display:flex;
+  align-items:center;
+
+  gap:6px;
+
+  color:
+  var(--color-text-body);
+
+  font-size:12px;
+
+  font-weight:700;
+}
+
+.latest-redteam-stat svg{
+
+  width:15px;
+  height:15px;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .latest-redteam-grid{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .latest-redteam-heading{
+
+    font-size:40px;
+
+    line-height:1.12;
+  }
+
+  .latest-redteam-description{
+
+    font-size:16px;
+  }
+
+  .latest-redteam-title{
+
+    font-size:24px;
+  }
+
+  .latest-redteam-footer{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+
+}    
+         
+/* =========================================
+BLOG PAGINATION SECTION
+========================================= */
+
+.blog-pagination-section{
+
+  padding:
+  var(--space-3xl)
+  0;
+}
+
+/* =========================================
+PAGINATION WRAPPER
+========================================= */
+
+.blog-pagination-wrapper{
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:14px;
+}
+
+/* =========================================
+PAGINATION ITEM
+========================================= */
+
+.blog-pagination-item{
+
+  width:54px;
+  height:54px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:18px;
+
+  background:
+  var(--color-bg);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  color:
+  var(--color-text-main);
+
+  font-size:15px;
+
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+/* =========================================
+PAGINATION ITEM HOVER
+========================================= */
+
+.blog-pagination-item:hover{
+
+  transform:
+  translateY(-3px);
+
+  border-color:
+  var(--color-primary);
+
+  color:
+  var(--color-primary);
+
+  box-shadow:
+  0 12px 30px rgba(185,28,28,0.12);
+}
+
+/* =========================================
+ACTIVE ITEM
+========================================= */
+
+.blog-pagination-item.active{
+
+  background:
+  var(--color-primary);
+
+  border-color:
+  var(--color-primary);
+
+  color:#ffffff;
+
+  box-shadow:
+  0 14px 34px rgba(185,28,28,0.18);
+}
+
+/* =========================================
+NAV BUTTON
+========================================= */
+
+.blog-pagination-nav{
+
+  width:54px;
+  height:54px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:18px;
+
+  background:
+  var(--color-bg-light);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  color:
+  var(--color-text-main);
+
+  transition:0.3s ease;
+}
+
+/* =========================================
+NAV ICON
+========================================= */
+
+.blog-pagination-nav svg{
+
+  width:20px;
+  height:20px;
+}
+
+/* =========================================
+NAV HOVER
+========================================= */
+
+.blog-pagination-nav:hover{
+
+  background:
+  var(--color-primary);
+
+  border-color:
+  var(--color-primary);
+
+  color:#ffffff;
+
+  transform:
+  translateY(-3px);
+}
+
+/* =========================================
+DISABLED
+========================================= */
+
+.blog-pagination-nav.disabled{
+
+  opacity:0.45;
+
+  pointer-events:none;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+  .blog-pagination-wrapper{
+
+    gap:10px;
+  }
+
+  .blog-pagination-item,
+  .blog-pagination-nav{
+
+    width:48px;
+    height:48px;
+
+    border-radius:16px;
+
+    font-size:14px;
+  }
+
+}         
+/* =========================================
+NEWSLETTER + CERTIFICATION SECTION
+========================================= */
+
+.newsletter-certification-section{
+
+  padding:
+  var(--space-3xl)
+  0
+  calc(var(--space-3xl) + 20px);
+}
+
+/* =========================================
+GRID
+========================================= */
+
+.newsletter-certification-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  1.2fr
+  0.8fr;
+
+  gap:28px;
+}
+
+/* =========================================
+COMMON CARD
+========================================= */
+
+.newsletter-compact-card,
+.certification-compact-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:32px;
+
+  padding:40px;
+
+  border:
+  1px solid
+  var(--color-border);
+}
+
+/* =========================================
+NEWSLETTER CARD
+========================================= */
+
+.newsletter-compact-card{
+
+  background:
+  linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fafafa 100%
+  );
+}
+
+/* =========================================
+NEWSLETTER TOP
+========================================= */
+
+.newsletter-compact-top{
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+/* =========================================
+ICON
+========================================= */
+
+.newsletter-compact-icon{
+
+  width:54px;
+  height:54px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:18px;
+
+  background:
+  rgba(185,28,28,0.08);
+
+  color:
+  var(--color-primary);
+}
+
+.newsletter-compact-icon svg{
+
+  width:24px;
+  height:24px;
+}
+
+/* =========================================
+LABEL
+========================================= */
+
+.newsletter-compact-label{
+
+  color:
+  var(--color-primary);
+
+  font-size:13px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  letter-spacing:0.5px;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.newsletter-compact-title{
+
+  font-size:42px;
+
+  line-height:1.1;
+
+  letter-spacing:-1px;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.newsletter-compact-description{
+
+  color:
+  var(--color-text-body);
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+/* =========================================
+FORM
+========================================= */
+
+.newsletter-compact-form{
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+}
+
+/* =========================================
+INPUT
+========================================= */
+
+.newsletter-compact-form input{
+
+  flex:1;
+
+  height:60px;
+
+  border-radius:18px;
+
+  border:
+  1px solid
+  var(--color-border);
+
+  background:#ffffff;
+
+  padding:
+  0 20px;
+
+  outline:none;
+
+  font-family:
+  var(--font-primary);
+
+  font-size:15px;
+
+  transition:0.3s ease;
+}
+
+.newsletter-compact-form input:focus{
+
+  border-color:
+  var(--color-primary-light);
+
+  box-shadow:
+  0 0 0 4px rgba(185,28,28,0.08);
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.newsletter-compact-form button{
+
+  height:60px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  padding:
+  0 24px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:
+  var(--color-primary);
+
+  color:#ffffff;
+
+  font-family:
+  var(--font-primary);
+
+  font-size:14px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+}
+
+.newsletter-compact-form button:hover{
+
+  background:
+  var(--color-primary-light);
+
+  transform:
+  translateY(-3px);
+}
+
+/* =========================================
+CERTIFICATION CARD
+========================================= */
+
+.certification-compact-card{
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    #1d1d38 100%
+  );
+
+  color:#ffffff;
+}
+
+/* =========================================
+CERTIFICATION LABEL
+========================================= */
+
+.certification-compact-label{
+
+  display:inline-flex;
+
+  padding:
+  10px
+  18px;
+
+  border-radius:
+  var(--radius-full);
+
+  background:
+  rgba(255,255,255,0.10);
+
+  color:#ffffff;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+/* =========================================
+CERTIFICATION TITLE
+========================================= */
+
+.certification-compact-title{
+
+  font-size:40px;
+
+  line-height:1.08;
+
+  letter-spacing:-1px;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+CERTIFICATION DESCRIPTION
+========================================= */
+
+.certification-compact-description{
+
+  color:
+  rgba(255,255,255,0.78);
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+/* =========================================
+CTA BUTTON
+========================================= */
+
+.certification-compact-button{
+
+  width:fit-content;
+
+  height:58px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  padding:
+  0 24px;
+
+  border-radius:18px;
+
+  background:
+  var(--color-primary);
+
+  color:#ffffff;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.certification-compact-button:hover{
+
+  background:
+  var(--color-primary-light);
+
+  transform:
+  translateY(-3px);
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .newsletter-certification-grid{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .newsletter-compact-card,
+  .certification-compact-card{
+
+    padding:30px;
+  }
+
+  .newsletter-compact-title,
+  .certification-compact-title{
+
+    font-size:32px;
+
+    line-height:1.12;
+  }
+
+  .newsletter-compact-form{
+
+    flex-direction:column;
+  }
+
+  .newsletter-compact-form input,
+  .newsletter-compact-form button{
+
+    width:100%;
+  }
+
+}   
+        
+  /* =========================================
+3 CTA SECTION
+========================================= */
+
+.compact-blog-cta-section{
+
+  padding:
+  var(--space-3xl)
+  0;
+}
+
+/* =========================================
+GRID
+========================================= */
+
+.compact-blog-cta-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,minmax(0,1fr));
+
+  gap:24px;
+}
+
+/* =========================================
+CARD
+========================================= */
+
+.compact-blog-cta-card{
+
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:24px;
+
+  padding:32px;
+
+  border-radius:28px;
+
+  background:
+  var(--color-bg);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  overflow:hidden;
+
+  transition:0.35s ease;
+}
+
+/* =========================================
+CARD HOVER
+========================================= */
+
+.compact-blog-cta-card:hover{
+
+  transform:
+  translateY(-6px);
+
+  border-color:
+  var(--color-primary-light);
+
+  box-shadow:
+  var(--shadow-primary);
+}
+
+/* =========================================
+TOP ICON
+========================================= */
+
+.compact-blog-cta-icon{
+
+  width:64px;
+  height:64px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:20px;
+
+  background:
+  rgba(185,28,28,0.08);
+
+  color:
+  var(--color-primary);
+
+  transition:0.3s ease;
+}
+
+.compact-blog-cta-icon svg{
+
+  width:28px;
+  height:28px;
+}
+
+/* =========================================
+ICON HOVER
+========================================= */
+
+.compact-blog-cta-card:hover
+.compact-blog-cta-icon{
+
+  background:
+  var(--color-primary);
+
+  color:#ffffff;
+}
+
+/* =========================================
+LABEL
+========================================= */
+
+.compact-blog-cta-label{
+
+  display:inline-flex;
+
+  margin-bottom:
+  var(--space-sm);
+
+  color:
+  var(--color-primary);
+
+  font-size:12px;
+
+  font-weight:700;
+
+  letter-spacing:0.4px;
+
+  text-transform:uppercase;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.compact-blog-cta-title{
+
+  font-size:32px;
+
+  line-height:1.12;
+
+  letter-spacing:-0.8px;
+
+  margin-bottom:
+  var(--space-md);
+
+  transition:0.3s ease;
+}
+
+/* =========================================
+TITLE HOVER
+========================================= */
+
+.compact-blog-cta-card:hover
+.compact-blog-cta-title{
+
+  color:
+  var(--color-primary);
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.compact-blog-cta-description{
+
+  color:
+  var(--color-text-body);
+
+  font-size:15px;
+
+  line-height:1.9;
+}
+
+/* =========================================
+ARROW
+========================================= */
+
+.compact-blog-cta-arrow{
+
+  width:52px;
+  height:52px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:16px;
+
+  background:
+  var(--color-bg-light);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  color:
+  var(--color-text-main);
+
+  margin-top:auto;
+
+  transition:0.3s ease;
+}
+
+.compact-blog-cta-arrow svg{
+
+  width:20px;
+  height:20px;
+}
+
+/* =========================================
+ARROW HOVER
+========================================= */
+
+.compact-blog-cta-card:hover
+.compact-blog-cta-arrow{
+
+  background:
+  var(--color-primary);
+
+  border-color:
+  var(--color-primary);
+
+  color:#ffffff;
+
+  transform:
+  translateY(-2px);
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .compact-blog-cta-grid{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .compact-blog-cta-card{
+
+    padding:28px;
+  }
+
+  .compact-blog-cta-title{
+
+    font-size:28px;
+  }
+
+}
+        
+        </style>    
+    </head>
+   
+    <body><!-- =========================================
+BLOG CATEGORY HERO SECTION
+========================================= -->
+
+<section class="blog-category-hero">
+
+  <div class="container">
+
+    <!-- =========================================
+    BREADCRUMB
+    ========================================= -->
+
+    <div class="blog-breadcrumb">
+
+      <a href="#" class="breadcrumb-link">
+        Altered Security
+      </a>
+
+      <span class="breadcrumb-separator">
+        
+      </span>
+
+      <a href="#" class="breadcrumb-link">
+        Blog
+      </a>
+
+      <span class="breadcrumb-separator">
+        
+      </span>
+
+      <span class="breadcrumb-current">
+        Active Directory Attacks
+      </span>
+
+    </div>
+
+    <!-- =========================================
+    HERO CONTENT
+    ========================================= -->
+
+    <div class="blog-category-hero-content">     
+
+      <!-- TITLE -->
+
+      <h1 class="blog-category-title">
+        Active Directory Security
+      </h1>
+
+      <!-- DESCRIPTION -->
+
+      <p class="blog-category-description">
+        Advanced offensive security research, Active Directory attack techniques,
+        Azure Red Team operations, cloud security, detection engineering,
+        and enterprise tradecraft.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+STICKY BLOG CATEGORY
+========================================= -->
+
+<section class="sticky-blog-category">
+
+  <div class="container">
+
+    <div class="sticky-category-scroll">
+
+      <!-- ACTIVE -->
+
+      <a href="#" class="sticky-category-pill active">
+        Active Directory Security
+      </a>
+
+      <!-- CATEGORY -->
+
+      <a href="#" class="sticky-category-pill">
+        Azure Red Team
+      </a>
+
+      <!-- CATEGORY -->
+
+      <a href="#" class="sticky-category-pill">
+        Offensive Tradecraft
+      </a>
+
+      <!-- CATEGORY -->
+
+      <a href="#" class="sticky-category-pill">
+        Red Lab
+      </a>
+
+      <!-- CATEGORY -->
+
+      <a href="#" class="sticky-category-pill">
+        Certifications
+      </a>
+
+      <!-- EXPLORE MORE -->
+
+  <!-- =========================================
+EXPLORE MORE
+========================================= -->
+
+<div class="sticky-category-explore">
+
+  <!-- BUTTON -->
+
+  <button class="sticky-explore-button">
+
+    Explore More
+
+    <i data-lucide="chevron-down"></i>
+
+  </button>
+
+  <!-- DROPDOWN -->
+
+  <div class="sticky-explore-dropdown">
+
+    <a href="#" class="sticky-dropdown-item">
+      Red Team Operation
+    </a>    
+
+  </div>
+
+</div>
+
+    </div>
+
+  </div>
+
+</section>
+        
+<!-- =========================================
+FEATURED CATEGORY BLOG SECTION
+2 LARGE HERO BLOG + 3 SECONDARY BLOG
+========================================= -->
+
+<section class="featured-category-blog-section">
+
+  <div class="container">
+
+    <!-- =========================================
+    SECTION HEADER
+    ========================================= -->
+
+  
+
+    <!-- =========================================
+    2 LARGE FEATURE BLOG
+    ========================================= -->
+
+    <div class="featured-hero-grid">
+
+      <!-- =========================================
+      HERO BLOG 1
+      ========================================= -->
+
+      <a href="#" class="featured-hero-card">
+
+        <!-- IMAGE -->
+
+        <div class="featured-hero-image">
+
+          <img
+            src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="featured-hero-content">
+
+          <!-- TITLE -->
+
+          <h3 class="featured-hero-title">
+            Exploiting Misconfigured Active Directory Certificate Services
+          </h3>
+
+          <!-- DESCRIPTION -->
+
+          <p class="featured-hero-text">
+            Learn how attackers abuse AD CS misconfigurations to escalate privileges,
+            forge authentication certificates, and compromise enterprise environments.
+          </p>
+
+          <!-- CATEGORY -->
+
+          <div class="featured-hero-category-wrap">
+
+           
+
+            <div class="featured-hero-category">
+              Active Directory
+            </div>
+
+          </div>
+
+          <!-- META -->
+
+          <div class="featured-hero-meta">
+
+            <div class="featured-hero-meta-item">
+
+              <i data-lucide="calendar-days"></i>
+
+              May 18, 2026
+
+            </div>
+
+            <div class="featured-hero-meta-item">
+
+              <i data-lucide="flame"></i>
+
+              Advanced
+
+            </div>
+
+            <div class="featured-hero-meta-item">
+
+              <i data-lucide="clock-3"></i>
+
+              12 Min Read
+
+            </div>
+
+          </div>
+
+          <!-- FOOTER -->
+
+          <div class="featured-hero-footer">
+
+            <!-- AUTHOR -->
+
+            <div class="featured-hero-author">
+
+              <div class="featured-hero-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=12">
+
+              </div>
+
+              <div class="featured-hero-author-info">
+
+                <h4>Alex Carter</h4>
+
+                <span>Red Team Operator</span>
+
+              </div>
+
+            </div>
+
+            <!-- STATS -->
+
+           
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- =========================================
+      HERO BLOG 2
+      ========================================= -->
+
+      <a href="#" class="featured-hero-card">
+
+        <div class="featured-hero-image">
+
+          <img
+            src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <div class="featured-hero-content">
+
+          <h3 class="featured-hero-title">
+            Advanced Kerberos Delegation Abuse Techniques in Enterprise Networks
+          </h3>
+
+          <p class="featured-hero-text">
+            Explore advanced Kerberos delegation attack paths attackers use
+            to escalate privileges and move laterally across enterprise domains.
+          </p>
+
+          <div class="featured-hero-category-wrap">
+
+            <div class="featured-hero-category">
+              Active Directory
+            </div>
+
+            
+
+          </div>
+
+          <div class="featured-hero-meta">
+
+            <div class="featured-hero-meta-item">
+
+              <i data-lucide="calendar-days"></i>
+
+              April 29, 2026
+
+            </div>
+
+            <div class="featured-hero-meta-item">
+
+              <i data-lucide="flame"></i>
+
+              Advanced
+
+            </div>
+
+            <div class="featured-hero-meta-item">
+
+              <i data-lucide="clock-3"></i>
+
+              10 Min Read
+
+            </div>
+
+          </div>
+
+          <div class="featured-hero-footer">
+
+            <div class="featured-hero-author">
+
+              <div class="featured-hero-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=32">
+
+              </div>
+
+              <div class="featured-hero-author-info">
+
+                <h4>Sarah Mitchell</h4>
+
+                <span>Offensive Security Engineer</span>
+
+              </div>
+
+            </div>
+
+         
+
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+    <!-- =========================================
+    3 SECONDARY FEATURE BLOG
+    ========================================= -->
+  <div class="latest-redteam-heading-wrap">
+
+      <span class="latest-redteam-label">
+        Latest Offensive Security Research
+      </span>
+
+      <h2 class="latest-redteam-heading">
+        Our Latest  Active Directory Blog
+      </h2>
+
+      <p class="latest-redteam-description">
+        Explore the latest offensive security research, Active Directory attack
+        techniques, Azure Red Team operations, enterprise tradecraft,
+        detection engineering, and adversary simulation insights.
+      </p>
+
+    </div>
+
+  
+
+  </div>
+
+</section>      
+<!-- =========================================
+LATEST BLOG SECTION
+6 BLOG GRID
+========================================= -->
+
+<section class="latest-redteam-blog-section">
+
+  <div class="container"> 
+
+    <div class="latest-redteam-grid">
+
+  <!-- =========================================
+  BLOG CARD 1
+  ========================================= -->
+
+  <a href="#" class="latest-redteam-card">
+
+    <div class="latest-redteam-image">
+
+      <img
+        src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+    </div>
+
+    <div class="latest-redteam-content">
+
+      <h3 class="latest-redteam-title">
+        Azure Red Team Operations & Enterprise Cloud Attack Paths
+      </h3>
+
+      <p class="latest-redteam-text">
+        Understand how attackers exploit weak IAM permissions and
+        cloud misconfigurations in enterprise Azure environments.
+      </p>
+
+      <div class="latest-redteam-category-wrap">
+
+        <div class="latest-redteam-category">
+          Azure
+        </div>
+
+        <div class="latest-redteam-category">
+          Active Directory
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-meta">
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="calendar-days"></i>
+
+          March 15, 2026
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="flame"></i>
+
+          Intermediate
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="clock-3"></i>
+
+          7 Min Read
+
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-footer">
+
+        <div class="latest-redteam-author">
+
+          <div class="latest-redteam-author-image">
+
+            <img src="https://i.pravatar.cc/100?img=24">
+
+          </div>
+
+          <div class="latest-redteam-author-info">
+
+            <h4>David Reynolds</h4>
+
+            <span>Cloud Security Researcher</span>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </a>
+
+  <!-- =========================================
+  BLOG CARD 2
+  ========================================= -->
+
+  <a href="#" class="latest-redteam-card">
+
+    <div class="latest-redteam-image">
+
+      <img
+        src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+    </div>
+
+    <div class="latest-redteam-content">
+
+      <h3 class="latest-redteam-title">
+        Modern Active Directory Lateral Movement Techniques
+      </h3>
+
+      <p class="latest-redteam-text">
+        Explore advanced techniques attackers use to pivot through
+        enterprise Active Directory environments while avoiding detection.
+      </p>
+
+      <div class="latest-redteam-category-wrap">
+
+        <div class="latest-redteam-category">
+          Lateral Movement
+        </div>
+
+        <div class="latest-redteam-category">
+          Active Directory
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-meta">
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="calendar-days"></i>
+
+          April 29, 2026
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="flame"></i>
+
+          Advanced
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="clock-3"></i>
+
+          10 Min Read
+
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-footer">
+
+        <div class="latest-redteam-author">
+
+          <div class="latest-redteam-author-image">
+
+            <img src="https://i.pravatar.cc/100?img=32">
+
+          </div>
+
+          <div class="latest-redteam-author-info">
+
+            <h4>Sarah Mitchell</h4>
+
+            <span>Offensive Security Engineer</span>
+
+          </div>
+
+        </div>
+
+ 
+
+      </div>
+
+    </div>
+
+  </a>
+
+  <!-- =========================================
+  BLOG CARD 3
+  ========================================= -->
+
+  <a href="#" class="latest-redteam-card">
+
+    <div class="latest-redteam-image">
+
+      <img
+        src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+    </div>
+
+    <div class="latest-redteam-content">
+
+      <h3 class="latest-redteam-title">
+        Building Stealthy Command & Control Infrastructure
+      </h3>
+
+      <p class="latest-redteam-text">
+        Discover OPSEC-focused C2 infrastructure design strategies
+        used during modern adversary simulation engagements.
+      </p>
+
+      <div class="latest-redteam-category-wrap">
+
+        <div class="latest-redteam-category">
+          C2 Framework
+        </div>
+
+        <div class="latest-redteam-category">
+          Active Directory
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-meta">
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="calendar-days"></i>
+
+          February 2, 2026
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="flame"></i>
+
+          Advanced
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="clock-3"></i>
+
+          12 Min Read
+
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-footer">
+
+        <div class="latest-redteam-author">
+
+          <div class="latest-redteam-author-image">
+
+            <img src="https://i.pravatar.cc/100?img=44">
+
+          </div>
+
+          <div class="latest-redteam-author-info">
+
+            <h4>Michael Ross</h4>
+
+            <span>Adversary Simulation Lead</span>
+
+          </div>
+
+        </div>
+
+    
+
+      </div>
+
+    </div>
+
+  </a>
+
+  <!-- =========================================
+  BLOG CARD 4
+  ========================================= -->
+
+  <a href="#" class="latest-redteam-card">
+
+    <div class="latest-redteam-image">
+
+      <img
+        src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+    </div>
+
+    <div class="latest-redteam-content">
+
+      <h3 class="latest-redteam-title">
+        Enterprise Kerberos Delegation Abuse Detection Strategies
+      </h3>
+
+      <p class="latest-redteam-text">
+        Build advanced detection logic for enterprise Kerberos abuse
+        and privilege escalation attack techniques.
+      </p>
+
+      <div class="latest-redteam-category-wrap">
+
+        <div class="latest-redteam-category">
+          Active Directory
+        </div>
+
+        <div class="latest-redteam-category">
+          Kerberos
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-meta">
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="calendar-days"></i>
+
+          January 10, 2026
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="flame"></i>
+
+          Intermediate
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="clock-3"></i>
+
+          8 Min Read
+
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-footer">
+
+        <div class="latest-redteam-author">
+
+          <div class="latest-redteam-author-image">
+
+            <img src="https://i.pravatar.cc/100?img=15">
+
+          </div>
+
+          <div class="latest-redteam-author-info">
+
+            <h4>Emma Watson</h4>
+
+            <span>Detection Engineer</span>
+
+          </div>
+
+        </div>
+
+     
+
+      </div>
+
+    </div>
+
+  </a>
+
+  <!-- =========================================
+  BLOG CARD 5
+  ========================================= -->
+
+  <a href="#" class="latest-redteam-card">
+
+    <div class="latest-redteam-image">
+
+      <img
+        src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+    </div>
+
+    <div class="latest-redteam-content">
+
+      <h3 class="latest-redteam-title">
+        Enterprise AD CS Exploitation & Certificate Abuse Tradecraft
+      </h3>
+
+      <p class="latest-redteam-text">
+        Learn how attackers abuse enterprise certificate services
+        to achieve persistence and domain compromise.
+      </p>
+
+      <div class="latest-redteam-category-wrap">
+
+        <div class="latest-redteam-category">
+          AD CS
+        </div>
+
+        <div class="latest-redteam-category">
+          Active Directory
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-meta">
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="calendar-days"></i>
+
+          December 18, 2025
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="flame"></i>
+
+          Advanced
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="clock-3"></i>
+
+          11 Min Read
+
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-footer">
+
+        <div class="latest-redteam-author">
+
+          <div class="latest-redteam-author-image">
+
+            <img src="https://i.pravatar.cc/100?img=28">
+
+          </div>
+
+          <div class="latest-redteam-author-info">
+
+            <h4>Daniel Brooks</h4>
+
+            <span>Enterprise Red Team Operator</span>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </a>
+
+  <!-- =========================================
+  BLOG CARD 6
+  ========================================= -->
+
+  <a href="#" class="latest-redteam-card">
+
+    <div class="latest-redteam-image">
+
+      <img
+        src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+    </div>
+
+    <div class="latest-redteam-content">
+
+      <h3 class="latest-redteam-title">
+        Detection Engineering for Modern Adversary Simulation Operations
+      </h3>
+
+      <p class="latest-redteam-text">
+        Understand how blue teams build modern detection pipelines
+        against advanced red team operations.
+      </p>
+
+      <div class="latest-redteam-category-wrap">
+
+        <div class="latest-redteam-category">
+          Active Directory
+        </div>
+
+        <div class="latest-redteam-category">
+          Blue Team
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-meta">
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="calendar-days"></i>
+
+          November 22, 2025
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="flame"></i>
+
+          Beginner
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="clock-3"></i>
+
+          6 Min Read
+
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-footer">
+
+        <div class="latest-redteam-author">
+
+          <div class="latest-redteam-author-image">
+
+            <img src="https://i.pravatar.cc/100?img=11">
+
+          </div>
+
+          <div class="latest-redteam-author-info">
+
+            <h4>Ryan Cooper</h4>
+
+            <span>Security Research Analyst</span>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </a>
+      <a href="#" class="latest-redteam-card">
+
+    <div class="latest-redteam-image">
+
+      <img
+        src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+    </div>
+
+    <div class="latest-redteam-content">
+
+      <h3 class="latest-redteam-title">
+        Detection Engineering for Modern Adversary Simulation Operations
+      </h3>
+
+      <p class="latest-redteam-text">
+        Understand how blue teams build modern detection pipelines
+        against advanced red team operations.
+      </p>
+
+      <div class="latest-redteam-category-wrap">
+
+        <div class="latest-redteam-category">
+          Active Directory
+        </div>
+
+        <div class="latest-redteam-category">
+          Blue Team
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-meta">
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="calendar-days"></i>
+
+          November 22, 2025
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="flame"></i>
+
+          Beginner
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="clock-3"></i>
+
+          6 Min Read
+
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-footer">
+
+        <div class="latest-redteam-author">
+
+          <div class="latest-redteam-author-image">
+
+            <img src="https://i.pravatar.cc/100?img=11">
+
+          </div>
+
+          <div class="latest-redteam-author-info">
+
+            <h4>Ryan Cooper</h4>
+
+            <span>Security Research Analyst</span>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </a>
+      <a href="#" class="latest-redteam-card">
+
+    <div class="latest-redteam-image">
+
+      <img
+        src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+    </div>
+
+    <div class="latest-redteam-content">
+
+      <h3 class="latest-redteam-title">
+        Detection Engineering for Modern Adversary Simulation Operations
+      </h3>
+
+      <p class="latest-redteam-text">
+        Understand how blue teams build modern detection pipelines
+        against advanced red team operations.
+      </p>
+
+      <div class="latest-redteam-category-wrap">
+
+        <div class="latest-redteam-category">
+          Active Directory
+        </div>
+
+        <div class="latest-redteam-category">
+          Blue Team
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-meta">
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="calendar-days"></i>
+
+          November 22, 2025
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="flame"></i>
+
+          Beginner
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="clock-3"></i>
+
+          6 Min Read
+
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-footer">
+
+        <div class="latest-redteam-author">
+
+          <div class="latest-redteam-author-image">
+
+            <img src="https://i.pravatar.cc/100?img=11">
+
+          </div>
+
+          <div class="latest-redteam-author-info">
+
+            <h4>Ryan Cooper</h4>
+
+            <span>Security Research Analyst</span>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </a>
+<a href="#" class="latest-redteam-card">
+
+    <div class="latest-redteam-image">
+
+      <img
+        src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+    </div>
+
+    <div class="latest-redteam-content">
+
+      <h3 class="latest-redteam-title">
+        Detection Engineering for Modern Adversary Simulation Operations
+      </h3>
+
+      <p class="latest-redteam-text">
+        Understand how blue teams build modern detection pipelines
+        against advanced red team operations.
+      </p>
+
+      <div class="latest-redteam-category-wrap">
+
+        <div class="latest-redteam-category">
+          Active Directory
+        </div>
+
+        <div class="latest-redteam-category">
+          Blue Team
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-meta">
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="calendar-days"></i>
+
+          November 22, 2025
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="flame"></i>
+
+          Beginner
+
+        </div>
+
+        <div class="latest-redteam-meta-item">
+
+          <i data-lucide="clock-3"></i>
+
+          6 Min Read
+
+        </div>
+
+      </div>
+
+      <div class="latest-redteam-footer">
+
+        <div class="latest-redteam-author">
+
+          <div class="latest-redteam-author-image">
+
+            <img src="https://i.pravatar.cc/100?img=11">
+
+          </div>
+
+          <div class="latest-redteam-author-info">
+
+            <h4>Ryan Cooper</h4>
+
+            <span>Security Research Analyst</span>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </a>
+</div>
+
+  </div>
+
+</section>        
+<!-- =========================================
+BLOG PAGINATION SECTION
+========================================= -->
+
+<section class="blog-pagination-section">
+
+  <div class="container">
+
+    <div class="blog-pagination-wrapper">
+
+      <!-- PREVIOUS -->
+
+      <a href="#" class="blog-pagination-nav disabled">
+
+        <i data-lucide="chevron-left"></i>
+
+      </a>
+
+      <!-- PAGE 1 -->
+
+      <a href="#" class="blog-pagination-item active">
+        1
+      </a>
+
+      <!-- PAGE 2 -->
+
+      <a href="#" class="blog-pagination-item">
+        2
+      </a>
+
+      <!-- PAGE 3 -->
+
+      <a href="#" class="blog-pagination-item">
+        3
+      </a>
+
+      <!-- PAGE 4 -->
+
+      <a href="#" class="blog-pagination-item">
+        4
+      </a>
+
+      <!-- PAGE 5 -->
+
+      <a href="#" class="blog-pagination-item">
+        5
+      </a>
+
+      <!-- NEXT -->
+
+      <a href="#" class="blog-pagination-nav">
+
+        <i data-lucide="chevron-right"></i>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>    
+<!-- =========================================
+NEWSLETTER + CERTIFICATION CTA SECTION
+========================================= -->
+
+<section class="newsletter-certification-section">
+
+  <div class="container">
+
+    <div class="newsletter-certification-grid">
+
+      <!-- =========================================
+      NEWSLETTER CARD
+      ========================================= -->
+
+      <div class="newsletter-compact-card">
+
+        <!-- TOP -->
+
+        <div class="newsletter-compact-top">
+
+          <div class="newsletter-compact-icon">
+
+            <i data-lucide="mail"></i>
+
+          </div>
+
+          <span class="newsletter-compact-label">
+            Offensive Security Newsletter
+          </span>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="newsletter-compact-content">
+
+          <h2 class="newsletter-compact-title">
+            Get the Latest Offensive Security Research & Red Team Tradecraft
+          </h2>
+
+          <p class="newsletter-compact-description">
+            Receive advanced Active Directory attack techniques, Azure Red Team operations,
+            enterprise tradecraft, and detection engineering insights directly in your inbox.
+          </p>
+
+        </div>
+
+        <!-- FORM -->
+
+        <form class="newsletter-compact-form">
+
+          <input type="email"
+            placeholder="Enter your email address">
+
+          <button type="submit">
+
+            Subscribe
+
+            <i data-lucide="arrow-right"></i>
+
+          </button>
+
+        </form>
+
+      </div>
+
+      <!-- =========================================
+      CERTIFICATION CTA
+      ========================================= -->
+
+      <div class="certification-compact-card">
+
+        <!-- LABEL -->
+
+        <span class="certification-compact-label">
+          Hands-On Red Team Training
+        </span>
+
+        <!-- TITLE -->
+
+        <h2 class="certification-compact-title">
+          Advance Your Red Teaming Skills Through Hands-On Certifications
+        </h2>
+
+        <!-- DESCRIPTION -->
+
+        <p class="certification-compact-description">
+          Master Active Directory attacks, Azure tradecraft,
+          enterprise offensive security, and adversary simulation
+          through practical certifications and labs.
+        </p>
+
+        <!-- BUTTON -->
+
+        <a href="#" class="certification-compact-button">
+
+          Get Started
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>      
+        
+<!-- =========================================
+3 CTA SECTION
+========================================= -->
+
+<section class="compact-blog-cta-section">
+
+  <div class="container">
+
+    <!-- =========================================
+    CTA GRID
+    ========================================= -->
+
+    <div class="compact-blog-cta-grid">
+
+      <!-- =========================================
+      CTA 1
+      ========================================= -->
+
+      <a href="#" class="compact-blog-cta-card">
+
+        <!-- ICON -->
+
+        <div class="compact-blog-cta-icon">
+
+          <i data-lucide="messages-square"></i>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="compact-blog-cta-content">
+
+          <span class="compact-blog-cta-label">
+            Community
+          </span>
+
+          <h3 class="compact-blog-cta-title">
+            Join Channel
+          </h3>
+
+          <p class="compact-blog-cta-description">
+            Get the latest offensive security research,
+            attack tradecraft, lab updates, and community discussions.
+          </p>
+
+        </div>
+
+        <!-- ARROW -->
+
+        <div class="compact-blog-cta-arrow">
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </div>
+
+      </a>
+
+      <!-- =========================================
+      CTA 2
+      ========================================= -->
+
+      <a href="#" class="compact-blog-cta-card">
+
+        <!-- ICON -->
+
+        <div class="compact-blog-cta-icon">
+
+          <i data-lucide="flask-conical"></i>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="compact-blog-cta-content">
+
+          <span class="compact-blog-cta-label">
+            Hands-On Labs
+          </span>
+
+          <h3 class="compact-blog-cta-title">
+            Access Free Labs
+          </h3>
+
+          <p class="compact-blog-cta-description">
+            Practice real-world Active Directory attacks,
+            Azure exploitation, and red team tradecraft.
+          </p>
+
+        </div>
+
+        <!-- ARROW -->
+
+        <div class="compact-blog-cta-arrow">
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </div>
+
+      </a>
+
+      <!-- =========================================
+      CTA 3
+      ========================================= -->
+
+      <a href="#" class="compact-blog-cta-card">
+
+        <!-- ICON -->
+
+        <div class="compact-blog-cta-icon">
+
+          <i data-lucide="shield-check"></i>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="compact-blog-cta-content">
+
+          <span class="compact-blog-cta-label">
+            Training
+          </span>
+
+          <h3 class="compact-blog-cta-title">
+            Explore Red Team Training
+          </h3>
+
+          <p class="compact-blog-cta-description">
+            Advance your offensive security skills
+            through practical enterprise-focused certifications.
+          </p>
+
+        </div>
+
+        <!-- ARROW -->
+
+        <div class="compact-blog-cta-arrow">
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>        
+<script>
+  lucide.createIcons();
+</script>     
+        
+    </body>
+</html>

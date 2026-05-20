@@ -1,0 +1,1199 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Nikhil Mittal | Red Team Expert - Offensive Security & Adversary Simulation</title>
+    <meta name="description" content="Nikhil Mittal is a Red Team Expert and founder of Altered Security, specializing in Active Directory, Azure, and advanced adversary simulation training. Trusted by 50K+ students globally.">
+    <meta name="keywords" content="Red Team, Offensive Security, Adversary Simulation, Azure Security, Active Directory, Nikhil Mittal, Altered Security, Penetration Testing, CRTP">
+    <meta name="author" content="Nikhil Mittal">
+    
+    <!-- Open Graph/Social Meta Tags -->
+    <meta property="og:title" content="Nikhil Mittal - Red Team Expert">
+    <meta property="og:description" content="Train with a Red Team specialist. Build practical skills and certifications to accelerate your career.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.example.com">
+    <meta property="og:image" content="https://picsum.photos/id/1/1200/630">
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com">
+        // --- 11. Active Tab Sync + Scroll Spy ---
+        const sections = document.querySelectorAll("section[id]");
+        const tabLinks = document.querySelectorAll(".tab-link, nav a[href^='#']");
+
+        function activateTab(id) {
+            tabLinks.forEach(link => {
+                link.classList.remove("bg-primary", "text-white");
+                link.classList.add("text-neutral-heading", "dark:text-gray-300");
+                if (link.getAttribute("href") === "#" + id) {
+                    link.classList.add("bg-primary", "text-white");
+                }
+            });
+        }
+
+        window.addEventListener("hashchange", () => {
+            const id = location.hash.replace("#", "");
+            if (id) activateTab(id);
+        });
+
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    history.replaceState(null, "", "#" + entry.target.id);
+                    activateTab(entry.target.id);
+                }
+            });
+        }, { threshold: 0.6 });
+
+        sections.forEach(section => spy.observe(section));
+
+    
+        // --- 12. Animated Tab Indicator + ARIA + Section Progress ---
+        const indicator = document.getElementById("tab-indicator");
+        const allTabs = document.querySelectorAll(".tab-link");
+
+        function moveIndicator(tab) {
+            if (!indicator || !tab) return;
+            const rect = tab.getBoundingClientRect();
+            const parentRect = tab.parentElement.getBoundingClientRect();
+            indicator.style.width = rect.width + "px";
+            indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;
+        }
+
+        function updateAria(activeTab) {
+            allTabs.forEach(t => t.setAttribute("aria-selected", "false"));
+            if (activeTab) activeTab.setAttribute("aria-selected", "true");
+        }
+
+        allTabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                moveIndicator(tab);
+                updateAria(tab);
+            });
+        });
+
+        // Initial indicator position
+        window.addEventListener("load", () => {
+            const active = document.querySelector(".tab-link[href='" + location.hash + "']") || allTabs[0];
+            moveIndicator(active);
+            updateAria(active);
+        });
+
+        // Section scroll progress bar
+        const progressBar = document.createElement("div");
+        progressBar.style.position = "fixed";
+        progressBar.style.top = "0";
+        progressBar.style.left = "0";
+        progressBar.style.height = "3px";
+        progressBar.style.background = "#EA3037";
+        progressBar.style.zIndex = "100";
+        document.body.appendChild(progressBar);
+
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + "%";
+        });
+
+    </script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#EA3037',      // Red (10%)
+                        secondary: '#2B2B50',    // Blue (10%)
+                        'hero-bg': '#0E0F22',    // Specific Hero Background
+                        neutral: {
+                            white: '#FFFFFF',
+                            offWhite: '#F9FAFB',
+                            border: '#E5E7EB',
+                            paragraph: '#6B7280',
+                            heading: '#111827'
+                        },
+                        accent: {
+                            trust: '#1E3A8A',
+                            success: '#10B981',
+                            warning: '#F59E0B',
+                            error: '#EF4444'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+                    }
+                }
+            }
+        }
+    
+        // --- 11. Active Tab Sync + Scroll Spy ---
+        const sections = document.querySelectorAll("section[id]");
+        const tabLinks = document.querySelectorAll(".tab-link, nav a[href^='#']");
+
+        function activateTab(id) {
+            tabLinks.forEach(link => {
+                link.classList.remove("bg-primary", "text-white");
+                link.classList.add("text-neutral-heading", "dark:text-gray-300");
+                if (link.getAttribute("href") === "#" + id) {
+                    link.classList.add("bg-primary", "text-white");
+                }
+            });
+        }
+
+        window.addEventListener("hashchange", () => {
+            const id = location.hash.replace("#", "");
+            if (id) activateTab(id);
+        });
+
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    history.replaceState(null, "", "#" + entry.target.id);
+                    activateTab(entry.target.id);
+                }
+            });
+        }, { threshold: 0.6 });
+
+        sections.forEach(section => spy.observe(section));
+
+    
+        // --- 12. Animated Tab Indicator + ARIA + Section Progress ---
+        const indicator = document.getElementById("tab-indicator");
+        const allTabs = document.querySelectorAll(".tab-link");
+
+        function moveIndicator(tab) {
+            if (!indicator || !tab) return;
+            const rect = tab.getBoundingClientRect();
+            const parentRect = tab.parentElement.getBoundingClientRect();
+            indicator.style.width = rect.width + "px";
+            indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;
+        }
+
+        function updateAria(activeTab) {
+            allTabs.forEach(t => t.setAttribute("aria-selected", "false"));
+            if (activeTab) activeTab.setAttribute("aria-selected", "true");
+        }
+
+        allTabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                moveIndicator(tab);
+                updateAria(tab);
+            });
+        });
+
+        // Initial indicator position
+        window.addEventListener("load", () => {
+            const active = document.querySelector(".tab-link[href='" + location.hash + "']") || allTabs[0];
+            moveIndicator(active);
+            updateAria(active);
+        });
+
+        // Section scroll progress bar
+        const progressBar = document.createElement("div");
+        progressBar.style.position = "fixed";
+        progressBar.style.top = "0";
+        progressBar.style.left = "0";
+        progressBar.style.height = "3px";
+        progressBar.style.background = "#EA3037";
+        progressBar.style.zIndex = "100";
+        document.body.appendChild(progressBar);
+
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + "%";
+        });
+
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF; /* Explicit White Body */
+            color: #111827;
+        }
+
+        /* Dark Mode Overrides */
+        .dark body {
+            background-color: #111827;
+            color: #F9FAFB;
+        }
+        .dark .bg-white { background-color: #1F2937; }
+        .dark .bg-neutral-offWhite { background-color: #111827; }
+        .dark .text-neutral-heading { color: #FFFFFF; }
+        .dark .text-neutral-paragraph { color: #D1D5DB; }
+        .dark .border-neutral-border { border-color: #374151; }
+
+        /* Smooth Scroll Padding for Sticky Header */
+        html {
+            scroll-padding-top: 80px;
+        }
+
+        /* Print Styles */
+        @media print {
+            nav, .no-print, #contact, footer { display: none; }
+            body { color: black; background: white; }
+            a { text-decoration: underline; color: #1E3A8A; }
+        }
+        
+        /* Modal Transition */
+        .modal {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="antialiased transition-colors duration-300">
+
+    <!-- 1) Header / Nav -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary tracking-tight">
+                        Nikhil<span class="text-secondary dark:text-white">Mittal</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Tab Navigation -->
+                <nav role="tablist" aria-label="Main Navigation" class="hidden md:flex relative bg-neutral-offWhite dark:bg-gray-800 rounded-full p-1 border border-neutral-border">
+                    <a href="#hero" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Hero</a>
+                    <a href="#profile" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Profile</a>
+                    <a href="#expertise" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Expertise</a>
+                    <a href="#events" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Events</a>
+                    <a href="#testimonials" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Testimonials</a>
+                    <a href="#services" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Services</a>
+                    <a href="#contact" role="tab" aria-selected="false" class="tab-link px-4 py-2 rounded-full text-sm font-semibold text-neutral-heading dark:text-gray-300 hover:bg-primary hover:text-white transition">Contact</a>
+                
+                    <span id="tab-indicator" class="absolute bottom-0 h-1 bg-primary rounded-full transition-all duration-300"></span>
+
+                </nav>
+
+                <!-- Controls -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition" aria-label="Toggle Dark Mode">
+                        <!-- Sun Icon -->
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+                        <!-- Moon Icon -->
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="hidden">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Horizontal Swipe Tabs -->
+        <div id="mobile-menu" class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+            <div class="flex overflow-x-auto no-scrollbar gap-2 px-4 py-3">
+                <a href="#hero" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Overview</a>
+                <a href="#profile" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Profile</a>
+                <a href="#expertise" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Expertise</a>
+                <a href="#events" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Events</a>
+                <a href="#testimonials" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Testimonials</a>
+                <a href="#services" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Services</a>
+                <a href="#contact" class="tab-link flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-neutral-offWhite dark:bg-gray-800 text-neutral-heading dark:text-gray-200">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2) Hero Section -->
+    <section id="hero" class="relative bg-hero-bg text-white py-20 lg:py-28 overflow-hidden">
+        <!-- The container now uses a responsive grid for 2 columns on desktop -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-24">
+            
+            <!-- === COLUMN 1: Content (Left Side) === -->
+            <div class="text-center md:text-left mb-10 md:mb-0">
+                
+                <!-- Animated Badge (Layout Fixed: Added h-8 to prevent jump) -->
+                <!-- Alignment adjusted: center on mobile, left on desktop -->
+                <div class="inline-flex md:justify-start items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-gray-600 mb-6 animate-fade-in-up h-8">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    <span id="typing-text" class="text-sm font-medium tracking-wide">DEF CON / Black Hat Speaker</span>
+                </div>
+
+                <!-- Heading -->
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Advance Red Team skills.<br class="hidden md:block" /> Taught by the pioneer.
+                </h1>
+
+                <!-- Rating / Social Proof (Updated with Avatars) -->
+                <!-- Alignment adjusted: center on mobile, left on desktop -->
+                <div class="flex flex-col items-center md:items-start justify-center gap-2 mb-8">
+                    <div class="flex items-center gap-4 bg-secondary/30 px-6 py-2 rounded-full border border-gray-700 backdrop-blur-sm">
+                        <!-- Rating Star -->
+                        <div class="flex items-center gap-2 text-white font-bold text-lg">
+                            <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <span>4.8 rating</span>
+                        </div>
+                        
+                        <div class="h-6 w-px bg-gray-500 mx-2"></div>
+
+                        <!-- Avatar Group -->
+                        <div class="flex -space-x-3">
+                            <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/64/100/100" alt="Student">
+                            <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/65/100/100" alt="Student">
+                            <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/91/100/100" alt="Student">
+                            <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/177/100/100" alt="Student">
+                        </div>
+                    </div>
+                    
+                    <div class="text-gray-300 text-sm mt-2">
+                        Trusted by <span class="text-white font-bold">50K+</span> students from <span class="text-white font-bold">130+</span> countries
+                    </div>
+                </div>
+
+                <!-- Subheading -->
+                <p class="max-w-3xl mx-auto md:mx-0 text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
+                    Learn from a Red Team specialist who builds real offensive skills and industry-ready certifications—so you can advance faster, deliver real impact, and lead sophisticated Red Team assessments.
+                </p>
+
+                <!-- CTAs -->
+                <!-- Alignment adjusted: center on mobile, left on desktop -->
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                    <a href="#services" class="px-8 py-3.5 bg-primary hover:bg-red-700 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                        Explore Services
+                    </a>
+                    <a href="#contact" class="px-8 py-3.5 border-2 border-gray-500 hover:border-white text-white font-bold rounded-lg transition hover:bg-white hover:text-black">
+                        Contact Now
+                    </a>
+                </div>
+            </div>
+
+             <!-- === COLUMN 2: Author Profile Photo (Right Side) === -->
+            <!-- Replaced custom SVG with a real human placeholder photo (image ID 451) -->
+            <div class="order-first md:order-last flex justify-center p-6 md:p-0">
+                <div class="w-full max-w-sm md:max-w-none aspect-[4/5] rounded-xl shadow-2xl border-4 border-primary/50 transform hover:scale-[1.02] transition-transform duration-500 overflow-hidden bg-secondary/50 flex items-center justify-center">
+                    <img src="https://static.wixstatic.com/media/470c31_f5cd02f8e548433c84b440f39bdabf9c~mv2.png/v1/crop/x_153,y_350,w_367,h_554/fill/w_231,h_366,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/BruCON-2022-66.png" 
+                         alt="Nikhil Mittal - Red Team Expert Portrait" 
+                         class="object-c w-full h-full"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x500/111827/F9FAFB?text=N.Mittal+Photo+Fallback';"
+                    >
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+   <!-- 3) Profile Section -->
+    <section id="profile" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div class="order-2 lg:order-1 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-primary rounded-full blur-2xl opacity-20"></div>
+                        <img src="https://static.wixstatic.com/media/470c31_f5cd02f8e548433c84b440f39bdabf9c~mv2.png/v1/crop/x_153,y_350,w_367,h_554/fill/w_231,h_366,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/BruCON-2022-66.png?auto=format&fit=crop&w=500&q=80" alt="Nikhil Mittal" class="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full object-contain border-4 border-white dark:border-gray-800 shadow-2xl">
+                    </div>
+                </div>
+
+                <!-- Bio -->
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-3xl font-bold text-neutral-heading mb-2">Nikhil Mittal</h2>
+                    <p class="text-lg text-primary font-medium mb-6">Red Team Lead / Altered Security Founder</p>
+                    
+                    <div class="prose dark:prose-invert text-neutral-paragraph mb-8">
+                        <p class="mb-4">
+                            Nikhil Mittal is the founder of Altered Security and a Red Team expert with over 15 years of experience specializing in Active Directory, Azure, Offensive PowerShell, and Red Teaming.
+                        </p>
+                        <p>
+                            As a global leader in cybersecurity education, he has nurtured the field, helping bring it from niche groups to the mainstream.
+                        </p>
+                    </div>
+
+                    <!-- Socials -->
+                    <div class="flex space-x-6 mb-10">
+                        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-accent-trust transition transform hover:scale-110">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.518-4 0v5.604h-3v-11h3v1.765c1.398-2.603 7-2.784 7 2.628v6.607z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-accent-trust transition transform hover:scale-110">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.791-1.574 2.162-2.722-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.592 0-6.492 2.901-6.492 6.493 0 .513.057 1.012.167 1.496-5.404-.271-10.21-2.868-13.425-6.839-.564.974-.887 2.11-.887 3.324 0 2.278 1.159 4.286 2.919 5.464-.854-.027-1.656-.261-2.36-.648-.002.028-.002.056-.002.085 0 3.15 2.24 5.786 5.211 6.384-.544.148-1.117.217-1.702.217-.417 0-.822-.041-1.22-.116.827 2.571 3.235 4.45 6.092 4.493-2.227 1.748-5.041 2.808-8.082 2.808-.521 0-1.042-.03-1.551-.087 2.895 1.879 6.306 2.969 9.983 2.969 12.155 0 18.783-10.027 18.783-18.783 0-.317-.008-.633-.02-.947.818-.592 1.534-1.334 2.096-2.173z"/></svg>
+                        </a>
+                        <a href="#" aria-label="GitHub" class="text-gray-400 hover:text-accent-trust transition transform hover:scale-110">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.08-.731.084-.716.084-.716 1.192.084 1.816 1.233 1.816 1.233 1.06 1.815 2.784 1.294 3.488.992.107-.775.418-1.294.762-1.593-2.651-.309-5.438-1.325-5.438-5.926 0-1.31.467-2.381 1.233-3.221-.124-.309-.533-1.524.114-3.178 0 0 1.007-.323 3.303 1.233.959-.266 1.96-.399 2.959-.399 1 0 2.001.133 2.96.399 2.294-1.556 3.301-1.233 3.301-1.233.648 1.654.238 2.869.115 3.178.765.84 1.232 1.911 1.232 3.221 0 4.61-2.791 5.613-5.441 5.923.427.365.818 1.08.818 2.182v3.232c0 .315.192.693.8.576 4.765-1.589 8.2-6.089 8.2-11.385 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators (Moved Here & Interactive) -->
+                    <div id="stats-section" class="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-neutral-border pt-8">
+                        <div>
+                            <span class="block text-3xl font-bold text-primary stat-counter" data-target="15" data-suffix="+">0</span>
+                            <span class="text-sm text-neutral-paragraph">Years in Red Team operations</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-primary stat-counter" data-target="50000" data-suffix="+">0</span>
+                            <span class="text-sm text-neutral-paragraph">professionals trained globally</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-primary stat-counter" data-target="500" data-suffix="+">0</span>
+                            <span class="text-sm text-neutral-paragraph">Fortune 500 bootcamps led</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4) Expertise Section -->
+    <section id="expertise" class="py-20 bg-neutral-offWhite dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-neutral-heading mb-12">Expertise</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Active Directory -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center text-secondary dark:text-blue-300 mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-heading mb-3">Active Directory</h3>
+                    <p class="text-neutral-paragraph text-sm mb-4">Deep understanding of AD architecture, forest trusts, and lateral movement paths.</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Azure -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-blue-50 dark:bg-blue-800 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-200 mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-heading mb-3">Azure</h3>
+                    <p class="text-neutral-paragraph text-sm mb-4">Securing and exploiting hybrid cloud identities and cloud-native infrastructure.</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Offensive PowerShell -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-300 mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-heading mb-3">Offensive PowerShell</h3>
+                    <p class="text-neutral-paragraph text-sm mb-4">Developing custom tooling and weaponizing scripts for post-exploitation success.</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 92%"></div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Red Teaming -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center text-primary mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.131A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.2-2.85.56-4.161m1.968-3.04a11.97 11.97 0 011.69-2.071"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-heading mb-3">Red Teaming</h3>
+                    <p class="text-neutral-paragraph text-sm mb-4">Full-scope adversary simulation to test detection and response capabilities.</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5) Conference & Events -->
+    <section id="events" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-neutral-heading mb-8">Conferences & Events</h2>
+            
+            <!-- Filter -->
+            <div class="flex justify-center gap-4 mb-12">
+                <button onclick="filterEvents('all')" class="filter-btn active px-6 py-2 rounded-full text-sm font-medium transition bg-primary text-white">All</button>
+                <button onclick="filterEvents('talk')" class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200">Talks</button>
+                <button onclick="filterEvents('workshop')" class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200">Workshops</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="event-grid">
+                
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2022</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">BruCON</h3>
+                    <p class="text-sm text-primary font-medium">0wn-premises: Bypassing Microsoft Defender for Identity</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2017</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">44CON</h3>
+                    <p class="text-sm text-primary font-medium">Red Team Revenge - Attacking Microsoft ATA</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2015</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">BlackHat Europe & DeepSec</h3>
+                    <p class="text-sm text-primary font-medium">Continuous Intrusion: Why CI tools are an Attacker's Best Friends</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2013</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">BlackHat Europe</h3>
+                    <p class="text-sm text-primary font-medium">PowerShell for Penetration Testers</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2019</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">DEF CON</h3>
+                    <p class="text-sm text-primary font-medium">RACE - Minimal Rights and ACE for Active Directory Dominance</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2017</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">BlackHat USA & BruCON</h3>
+                    <p class="text-sm text-primary font-medium">Evading Microsoft ATA for Active Directory Domination</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card workshop bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-secondary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2015</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">HITB, Amsterdam</h3>
+                    <p class="text-sm text-primary font-medium">Workshop: PowerShell for Penetration Testers</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2012</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">EuSec West'12</h3>
+                    <p class="text-sm text-primary font-medium">Owning Windows 8 with Human Interface Devices</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2018</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">BruCON</h3>
+                    <p class="text-sm text-primary font-medium">Forging Trusts for Deception in Active Directory</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2017</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">x33fcon</h3>
+                    <p class="text-sm text-primary font-medium">PowerShell for Practical Purple Teaming</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2014</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">DeepSec</h3>
+                    <p class="text-sm text-primary font-medium">Lethal Client Side Attacks using PowerShell</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2012</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">RSA China'12</h3>
+                    <p class="text-sm text-primary font-medium">Hacking the future with USB HID</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2018</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">IT Defense</h3>
+                    <p class="text-sm text-primary font-medium">Hacked? Pray that the Attacker used PowerShell</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+                
+                 <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2016</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">BlackHat USA</h3>
+                    <p class="text-sm text-primary font-medium">AMSI: How Windows 10 Plans to Stop Script-Based Attacks</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+                 <div class="event-card talk bg-neutral-offWhite dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
+                    <span class="text-xs font-bold text-gray-500 uppercase">2013</span>
+                    <h3 class="text-lg font-bold text-neutral-heading mt-1">DEF CON 21</h3>
+                    <p class="text-sm text-primary font-medium">Powerpreter: Post Exploitation like a Boss</p>
+                    <a href="#" class="text-xs text-accent-trust mt-3 inline-block hover:underline">Slide Deck →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6) Testimonials -->
+    <section id="testimonials" class="py-20 bg-neutral-offWhite dark:bg-gray-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-neutral-heading mb-12">What People Say</h2>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Carousel Container -->
+                <div id="carousel-track" class="flex transition-transform duration-500 ease-out">
+                    <!-- Slide 1 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center">
+                            <img src="https://picsum.photos/id/1005/100/100" class="w-16 h-16 rounded-full mx-auto mb-4 object-cover" alt="Student">
+                            <p class="text-lg text-neutral-paragraph italic mb-6">"Overall, I found the course to be very comprehensive and satisfying. Although I had some knowledge of Microsoft Azure, the course surprised me with several new insights....The content of the course is very complete and covers a lot of commonly used Azure services and how they can be exploited."</p>
+                            <h4 class="font-bold text-neutral-heading">CRTP Student</h4>
+                            <span class="text-xs text-primary">Self-paced Course</span>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center">
+                            <img src="https://picsum.photos/id/1025/100/100" class="w-16 h-16 rounded-full mx-auto mb-4 object-cover" alt="Attendee">
+                            <p class="text-lg text-neutral-paragraph italic mb-6">"The bootcamp is led by experienced instructors who have real-world experience in dealing with cyber threats. The instructors will provide hands-on training and practical examples to help participants understand how to analyze and practice threats and attacks in a multi-forest Active Directory environment."</p>
+                            <h4 class="font-bold text-neutral-heading">Security Analyst</h4>
+                            <span class="text-xs text-primary">Bootcamp Attendee</span>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center">
+                            <img src="https://picsum.photos/id/1011/100/100" class="w-16 h-16 rounded-full mx-auto mb-4 object-cover" alt="CISO">
+                            <p class="text-lg text-neutral-paragraph italic mb-6">"A valuable credential for individuals looking to specialize in Azure cloud security. It helps demonstrate proficiency in red teaming."</p>
+                            <h4 class="font-bold text-neutral-heading">Cloud Architect</h4>
+                            <span class="text-xs text-primary">Azure Certification</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button id="prev-slide" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-700 p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none" aria-label="Previous">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button id="next-slide" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-700 p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none" aria-label="Next">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7) Services Section -->
+    <section id="services" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-neutral-heading mb-12">Altered Security Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="flex flex-col bg-neutral-offWhite dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 dark:border-gray-700">
+                    <img src="https://picsum.photos/id/3/800/400" alt="Bootcamp" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-neutral-heading mb-2">Live Red Teaming Bootcamp</h3>
+                        <p class="text-neutral-paragraph text-sm mb-4 flex-1">A 4-week live Red Teaming Bootcamp for security professionals looking to advance their offensive skill set through realistic enterprise lab exercises and expert-led instruction from an experienced Red Team operator</p>
+                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                            <li class="flex items-center"><span class="text-accent-success mr-2">✔</span> 4 Weeks Live</li>
+                            <li class="flex items-center"><span class="text-accent-success mr-2">✔</span> Enterprise Labs</li>
+                        </ul>
+                        <button onclick="openModal('Live Red Teaming Bootcamp')" class="w-full py-2 bg-primary text-white font-bold rounded hover:bg-red-700 transition">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="flex flex-col bg-neutral-offWhite dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 dark:border-gray-700">
+                    <img src="https://picsum.photos/id/60/800/400" alt="Training" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-neutral-heading mb-2">Beginner to Advance Red Team Training</h3>
+                        <p class="text-neutral-paragraph text-sm mb-4 flex-1">Our training is fully hands-on and delivered by world-renowned experts who regularly speak and teach at DEF CON, Black Hat, and other leading security conferences. All programs are available both on-site and virtually.</p>
+                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                            <li class="flex items-center"><span class="text-accent-success mr-2">✔</span> On-site / Virtual</li>
+                            <li class="flex items-center"><span class="text-accent-success mr-2">✔</span> Expert Instructors</li>
+                        </ul>
+                        <button onclick="openModal('Beginner to Advance Red Team Training')" class="w-full py-2 bg-secondary text-white font-bold rounded hover:bg-blue-900 transition">Contact Now</button>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="flex flex-col bg-neutral-offWhite dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 dark:border-gray-700">
+                    <img src="https://picsum.photos/id/4/800/400" alt="Courses" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-neutral-heading mb-2">Red Team Certification - Beginner to Pro</h3>
+                        <p class="text-neutral-paragraph text-sm mb-4 flex-1">Advanced Red Team courses and hands-on labs designed to help security professionals build real offensive capabilities. Learn structured attack workflows, practice in enterprise-grade lab environments, and develop the technical depth required to execute and lead Red Team operations.</p>
+                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                            <li class="flex items-center"><span class="text-accent-success mr-2">✔</span> Self-Paced</li>
+                            <li class="flex items-center"><span class="text-accent-success mr-2">✔</span> Certification Track</li>
+                        </ul>
+                        <button onclick="openModal('Red Team Certification - Beginner to Pro')" class="w-full py-2 bg-primary text-white font-bold rounded hover:bg-red-700 transition">Start Learning Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8) Contact Section -->
+    <section id="contact" class="py-20 bg-neutral-offWhite dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-neutral-heading mb-12">Get in Touch</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Card -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md h-full">
+                    <h3 class="text-xl font-bold text-neutral-heading mb-6">Contact Information</h3>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="text-primary mt-1 mr-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-neutral-heading font-medium">Email</p>
+                                <a href="mailto:contact@alteredsecurity.com" class="text-accent-trust hover:underline">contact@alteredsecurity.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-primary mt-1 mr-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-neutral-heading font-medium">Location</p>
+                                <p class="text-neutral-paragraph">Global / Remote</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Map Placeholder -->
+                    <div class="w-full h-48 bg-gray-200 rounded-lg overflow-hidden relative">
+                         <img src="https://picsum.photos/id/122/600/300" alt="Map Location" class="w-full h-full object-cover opacity-80">
+                         <div class="absolute inset-0 flex items-center justify-center">
+                             <span class="bg-white/80 px-3 py-1 rounded text-sm font-bold text-gray-800">Global Operations</span>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="contact-form" class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-neutral-paragraph mb-1">Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-neutral-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-neutral-paragraph mb-1">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-neutral-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition">
+                    </div>
+                    <div class="mb-4">
+                        <label for="subject" class="block text-sm font-medium text-neutral-paragraph mb-1">Subject</label>
+                        <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-neutral-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-neutral-paragraph mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-neutral-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition"></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-red-700 transition disabled:opacity-50 disabled:cursor-not-allowed">
+                        Send Message
+                    </button>
+                    <p id="form-status" class="mt-4 text-center text-sm hidden"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9) Footer -->
+    <footer class="bg-secondary text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p>&copy; <span id="year"></span> Nikhil Mittal. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Proposal Modal -->
+    <div id="proposal-modal" class="modal fixed inset-0 z-[100] flex items-center justify-center">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="closeModal()"></div>
+        
+        <!-- Content -->
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-2xl p-8 w-full max-w-md relative z-10 transform transition-all scale-100">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            
+            <h3 class="text-2xl font-bold text-neutral-heading mb-2">Request Proposal</h3>
+            <p class="text-sm text-neutral-paragraph mb-6">Interested in: <span id="modal-interest" class="font-bold text-primary">General</span></p>
+            
+            <form id="modal-form">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-neutral-paragraph mb-1">Name</label>
+                    <input type="text" required class="w-full px-4 py-2 border border-neutral-border rounded focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-neutral-paragraph mb-1">Work Email</label>
+                    <input type="email" required class="w-full px-4 py-2 border border-neutral-border rounded focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white">
+                </div>
+                <button type="submit" class="w-full py-2 bg-primary text-white font-bold rounded hover:bg-red-700 transition">Request Info</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // --- 1. Dark Mode Logic ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const html = document.documentElement;
+
+        // Check local storage or system preference
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            lightIcon.classList.remove('hidden');
+        } else {
+            html.classList.remove('dark');
+            darkIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            lightIcon.classList.toggle('hidden');
+            darkIcon.classList.toggle('hidden');
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    html.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    html.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    html.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+
+        // --- 2. Mobile Menu ---
+        // Mobile uses always-visible horizontal tab navigation
+
+        // --- 3. Typing Effect (Hero) ---
+        const textElement = document.getElementById('typing-text');
+        const phrases = ["DEF CON Speaker", "Black Hat Speaker", "Security Pioneer"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true;
+                setTimeout(type, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', type);
+
+        // --- 4. Event Filtering ---
+        function filterEvents(category) {
+            const cards = document.querySelectorAll('.event-card');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            // Update buttons
+            btns.forEach(b => {
+                b.classList.remove('bg-primary', 'text-white');
+                b.classList.add('bg-gray-100', 'text-gray-600', 'dark:bg-gray-800', 'dark:text-gray-300');
+                if((category === 'all' && b.innerText === 'All') || (b.innerText.toLowerCase().includes(category))) {
+                    b.classList.remove('bg-gray-100', 'text-gray-600', 'dark:bg-gray-800', 'dark:text-gray-300');
+                    b.classList.add('bg-primary', 'text-white');
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    card.classList.contains(category) ? card.style.display = 'block' : card.style.display = 'none';
+                }
+            });
+        }
+
+        // --- 5. Testimonial Carousel ---
+        const track = document.getElementById('carousel-track');
+        const nextBtn = document.getElementById('next-slide');
+        const prevBtn = document.getElementById('prev-slide');
+        let index = 0;
+        const totalSlides = 3;
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            index = (index + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            index = (index - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        // Auto play
+        let autoPlay = setInterval(() => {
+            index = (index + 1) % totalSlides;
+            updateCarousel();
+        }, 6000);
+
+        track.parentElement.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        track.parentElement.addEventListener('mouseleave', () => {
+            autoPlay = setInterval(() => {
+                index = (index + 1) % totalSlides;
+                updateCarousel();
+            }, 6000);
+        });
+
+        // --- 6. Modal Logic ---
+        const modal = document.getElementById('proposal-modal');
+        const interestSpan = document.getElementById('modal-interest');
+        const firstInput = modal.querySelector('input');
+
+        function openModal(interest) {
+            interestSpan.textContent = interest;
+            modal.classList.remove('hidden');
+            // Trigger reflow
+            void modal.offsetWidth; 
+            modal.classList.add('active');
+            firstInput.focus();
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Trap focus
+        modal.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Mock Modal Submit
+        document.getElementById('modal-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.innerText = 'Request Sent!';
+                setTimeout(() => {
+                    closeModal();
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    e.target.reset();
+                }, 1000);
+            }, 1000);
+        });
+
+        // --- 7. Contact Form Logic ---
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const statusMsg = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Basic validation
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(email)) {
+                statusMsg.textContent = "Please enter a valid email.";
+                statusMsg.className = "mt-4 text-center text-sm text-accent-error";
+                statusMsg.classList.remove('hidden');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            statusMsg.classList.add('hidden');
+
+            // Mock Fetch
+            setTimeout(() => {
+                // Success state
+                statusMsg.textContent = "Message sent successfully!";
+                statusMsg.className = "mt-4 text-center text-sm text-accent-success";
+                statusMsg.classList.remove('hidden');
+                submitBtn.textContent = 'Sent';
+                contactForm.reset();
+                
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                    statusMsg.classList.add('hidden');
+                }, 3000);
+            }, 1500);
+        });
+
+        // --- 8. Footer Year ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- 9. Image Lazy Loading ---
+        // Native loading="lazy" used in HTML tags, but ensuring JS support if needed
+        document.querySelectorAll('img').forEach(img => img.setAttribute('loading', 'lazy'));
+
+        // --- 10. Interactive Stats (New Logic) ---
+        const statsSection = document.getElementById('stats-section');
+        const statCounters = document.querySelectorAll('.stat-counter');
+        let statsAnimated = false;
+
+        function animateStats() {
+            statCounters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const suffix = counter.getAttribute('data-suffix');
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps
+
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.innerText = Math.floor(current).toLocaleString() + suffix;
+                }, 16);
+            });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !statsAnimated) {
+                    animateStats();
+                    statsAnimated = true;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+    
+        // --- 11. Active Tab Sync + Scroll Spy ---
+        const sections = document.querySelectorAll("section[id]");
+        const tabLinks = document.querySelectorAll(".tab-link, nav a[href^='#']");
+
+        function activateTab(id) {
+            tabLinks.forEach(link => {
+                link.classList.remove("bg-primary", "text-white");
+                link.classList.add("text-neutral-heading", "dark:text-gray-300");
+                if (link.getAttribute("href") === "#" + id) {
+                    link.classList.add("bg-primary", "text-white");
+                }
+            });
+        }
+
+        window.addEventListener("hashchange", () => {
+            const id = location.hash.replace("#", "");
+            if (id) activateTab(id);
+        });
+
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    history.replaceState(null, "", "#" + entry.target.id);
+                    activateTab(entry.target.id);
+                }
+            });
+        }, { threshold: 0.6 });
+
+        sections.forEach(section => spy.observe(section));
+
+    
+        // --- 12. Animated Tab Indicator + ARIA + Section Progress ---
+        const indicator = document.getElementById("tab-indicator");
+        const allTabs = document.querySelectorAll(".tab-link");
+
+        function moveIndicator(tab) {
+            if (!indicator || !tab) return;
+            const rect = tab.getBoundingClientRect();
+            const parentRect = tab.parentElement.getBoundingClientRect();
+            indicator.style.width = rect.width + "px";
+            indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;
+        }
+
+        function updateAria(activeTab) {
+            allTabs.forEach(t => t.setAttribute("aria-selected", "false"));
+            if (activeTab) activeTab.setAttribute("aria-selected", "true");
+        }
+
+        allTabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                moveIndicator(tab);
+                updateAria(tab);
+            });
+        });
+
+        // Initial indicator position
+        window.addEventListener("load", () => {
+            const active = document.querySelector(".tab-link[href='" + location.hash + "']") || allTabs[0];
+            moveIndicator(active);
+            updateAria(active);
+        });
+
+        // Section scroll progress bar
+        const progressBar = document.createElement("div");
+        progressBar.style.position = "fixed";
+        progressBar.style.top = "0";
+        progressBar.style.left = "0";
+        progressBar.style.height = "3px";
+        progressBar.style.background = "#EA3037";
+        progressBar.style.zIndex = "100";
+        document.body.appendChild(progressBar);
+
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + "%";
+        });
+
+    </script>
+</body>
+</html>

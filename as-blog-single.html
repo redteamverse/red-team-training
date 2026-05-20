@@ -1,0 +1,3462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>
+    Exploiting Misconfigured Active Directory Certificate Services
+  </title>
+
+  <!-- =========================================
+  GOOGLE FONT
+  ========================================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- =========================================
+  LUCIDE ICON
+  ========================================= -->
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+
+    /* =========================================
+    ROOT
+    ========================================= */
+
+    :root {
+
+      /* BRAND */
+
+      --color-primary: #B91C1C;
+      --color-primary-light: #EA3037;
+
+      --color-secondary: #2B2B50;
+      --color-secondary-light: #1E3A8A;
+
+      /* TEXT */
+
+      --color-text-main: #111827;
+      --color-text-body: #4B5563;
+      --color-text-muted: #6B7280;
+
+      /* BG */
+
+      --color-bg: #FFFFFF;
+      --color-bg-light: #F9FAFB;
+
+      /* BORDER */
+
+      --color-border: #E5E7EB;
+
+      /* STATUS */
+
+      --color-success: #10B981;
+      --color-warning: #F59E0B;
+      --color-error: #EF4444;
+
+      /* FONT */
+
+      --font-primary: 'Space Grotesk', sans-serif;
+
+      /* CONTAINER */
+
+      --container-width: 1280px;
+
+      /* RADIUS */
+
+      --radius-sm: 14px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-full: 999px;
+
+      /* SPACE */
+
+      --space-xs: 8px;
+      --space-sm: 14px;
+      --space-md: 20px;
+      --space-lg: 28px;
+      --space-xl: 40px;
+      --space-2xl: 64px;
+      --space-3xl: 90px;
+
+    }
+
+    /* =========================================
+    GLOBAL
+    ========================================= */
+
+    * {
+
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+
+      font-family: var(--font-primary);
+
+      background: var(--color-bg);
+
+      color: var(--color-text-main);
+
+      overflow-x: hidden;
+    }
+
+    img {
+
+      width: 100%;
+
+      display: block;
+    }
+
+    a {
+
+      text-decoration: none;
+
+      color: inherit;
+    }
+
+    .container {
+
+      width: 100%;
+
+      max-width: var(--container-width);
+
+      margin: auto;
+
+      padding-inline: 24px;
+    }
+
+    /* =========================================
+    BLOG CATEGORY STICKY
+    ========================================= */
+
+    .single-blog-category-sticky {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 999;
+
+      background: rgba(255, 255, 255, 0.95);
+
+      backdrop-filter: blur(10px);
+
+      border-bottom:
+        1px solid var(--color-border);
+    }
+
+    .single-blog-category-scroll {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      overflow-x: auto;
+
+      padding:
+        18px 0;
+
+      scrollbar-width: none;
+    }
+
+    .single-blog-category-scroll::-webkit-scrollbar {
+
+      display: none;
+    }
+
+    .single-blog-pill {
+
+      flex: 0 0 auto;
+
+      padding:
+        12px 18px;
+
+      border-radius:
+        var(--radius-full);
+
+      border:
+        1px solid var(--color-border);
+
+      background:
+        var(--color-bg-light);
+
+      color:
+        var(--color-text-main);
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      transition: 0.3s ease;
+    }
+
+    .single-blog-pill:hover,
+    .single-blog-pill.active {
+
+      background:
+        var(--color-primary);
+
+      border-color:
+        var(--color-primary);
+
+      color: #ffffff;
+    }
+
+    /* =========================================
+    HERO SECTION
+    ========================================= */
+
+    .single-blog-hero {
+
+      padding:
+        50px 0 70px;
+    }
+
+    /* =========================================
+    BREADCRUMB
+    ========================================= */
+
+    .single-blog-breadcrumb {
+
+      display: flex;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-bottom:
+        var(--space-xl);
+    }
+
+    .single-blog-breadcrumb a {
+
+      color:
+        var(--color-text-muted);
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      transition: 0.3s ease;
+    }
+
+    .single-blog-breadcrumb a:hover {
+
+      color:
+        var(--color-primary);
+    }
+
+    .single-blog-breadcrumb span {
+
+      color:
+        var(--color-text-muted);
+
+      font-size: 13px;
+    }
+
+    /* =========================================
+    HERO CONTENT
+    ========================================= */
+
+    .single-blog-hero-wrap {
+
+      max-width: 1100px;
+
+      margin: auto;
+    }
+
+    /* =========================================
+    CATEGORY
+    ========================================= */
+
+    .single-blog-category-wrap {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-bottom:
+        var(--space-xl);
+    }
+
+    .single-blog-category {
+
+      padding:
+        10px 16px;
+
+      border-radius:
+        var(--radius-full);
+
+      background:
+        rgba(185, 28, 28, 0.08);
+
+      color:
+        var(--color-primary);
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+    }
+
+    /* =========================================
+    TITLE
+    ========================================= */
+
+    .single-blog-title {
+
+      font-size: 74px;
+
+      line-height: 1.04;
+
+      letter-spacing: -2px;
+
+      margin-bottom:
+        var(--space-xl);
+    }
+
+    /* =========================================
+    META GRID
+    ========================================= */
+
+    .single-blog-meta-grid {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      margin-bottom:
+        var(--space-2xl);
+    }
+
+    .single-blog-meta-item {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding:
+        14px 18px;
+
+      border-radius:
+        18px;
+
+      border:
+        1px solid var(--color-border);
+
+      background:
+        var(--color-bg-light);
+
+      color:
+        var(--color-text-body);
+
+      font-size: 14px;
+
+      font-weight: 600;
+    }
+
+    .single-blog-meta-item svg {
+
+      width: 18px;
+      height: 18px;
+    }
+
+    /* =========================================
+    AUTHOR SECTION
+    ========================================= */
+
+    .single-blog-author-grid {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding:
+        28px;
+
+      border:
+        1px solid var(--color-border);
+
+      border-radius:
+        28px;
+
+      background:
+        var(--color-bg-light);
+
+      margin-bottom:
+        var(--space-2xl);
+    }
+
+    /* =========================================
+    AUTHOR LEFT
+    ========================================= */
+
+    .single-blog-author-left {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 18px;
+    }
+
+    .single-blog-author-image {
+
+      width: 72px;
+      height: 72px;
+
+      border-radius: 50%;
+
+      overflow: hidden;
+
+      border:
+        3px solid var(--color-primary-light);
+    }
+
+    .single-blog-author-image img {
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+    .single-blog-author-info h4 {
+
+      font-size: 18px;
+
+      margin-bottom: 6px;
+    }
+
+    .single-blog-author-info span {
+
+      color:
+        var(--color-text-muted);
+
+      font-size: 14px;
+
+      display: block;
+
+      margin-bottom: 10px;
+    }
+
+    .single-blog-author-link {
+
+      color:
+        var(--color-primary);
+
+      font-size: 14px;
+
+      font-weight: 700;
+    }
+
+    /* =========================================
+    CONTRIBUTOR
+    ========================================= */
+
+    .single-blog-contributor {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+    }
+
+    .single-blog-contributor-images {
+
+      display: flex;
+
+      align-items: center;
+    }
+
+    .single-blog-contributor-images img {
+
+      width: 42px;
+      height: 42px;
+
+      border-radius: 50%;
+
+      object-fit: cover;
+
+      border:
+        2px solid #ffffff;
+
+      margin-left: -10px;
+    }
+
+    .single-blog-contributor-images img:first-child {
+
+      margin-left: 0;
+    }
+
+    .single-blog-contributor-text h5 {
+
+      font-size: 14px;
+
+      margin-bottom: 4px;
+    }
+
+    .single-blog-contributor-text span {
+
+      color:
+        var(--color-text-muted);
+
+      font-size: 13px;
+    }
+
+    /* =========================================
+    FEATURE IMAGE
+    ========================================= */
+
+    .single-blog-feature-image {
+
+      border-radius:
+        34px;
+
+      overflow: hidden;
+
+      border:
+        1px solid var(--color-border);
+    }
+
+    .single-blog-feature-image img {
+
+      width: 100%;
+
+      object-fit: contain;
+    }
+
+    /* =========================================
+    RESPONSIVE
+    ========================================= */
+
+    @media(max-width:992px) {
+
+      .single-blog-title {
+
+        font-size: 54px;
+      }
+
+      .single-blog-author-grid {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+    }
+
+    @media(max-width:768px) {
+
+      .single-blog-title {
+
+        font-size: 40px;
+
+        line-height: 1.1;
+      }
+
+      .single-blog-meta-grid {
+
+        gap: 10px;
+      }
+
+      .single-blog-meta-item {
+
+        width: 100%;
+      }
+
+      .single-blog-author-left {
+
+        align-items: flex-start;
+      }
+
+    }
+/* =========================================
+BLOG CONTENT SECTION
+========================================= */
+
+.single-blog-content-section{
+
+  padding:
+  var(--space-1xl)
+  0;
+}
+
+.single-blog-main-content{
+
+  max-width:980px;
+
+  margin:auto;
+}
+
+/* =========================================
+CONTENT BLOCK
+========================================= */
+
+.single-blog-content-block{
+
+  margin-bottom:
+  var(--space-3xl);
+}
+
+/* =========================================
+LABEL
+========================================= */
+
+.single-blog-content-label{
+
+  display:inline-flex;
+
+  margin-bottom:
+  var(--space-lg);
+
+  color:
+  var(--color-primary);
+
+  font-size:13px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  letter-spacing:0.5px;
+}
+
+/* =========================================
+HEADING
+========================================= */
+
+.single-blog-content-heading{
+
+  font-size:46px;
+
+  line-height:1.1;
+
+  letter-spacing:-1px;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+TEXT
+========================================= */
+
+.single-blog-content-text{
+
+  color:
+  var(--color-text-body);
+
+  font-size:18px;
+
+  line-height:2;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+TOC
+========================================= */
+
+.single-blog-toc{
+
+  margin-bottom:
+  var(--space-3xl);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  border-radius:
+  28px;
+
+  overflow:hidden;
+}
+
+.single-blog-toc-header{
+
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:
+  24px 28px;
+
+  border:none;
+
+  background:
+  var(--color-bg-light);
+
+  font-family:
+  var(--font-primary);
+
+  cursor:pointer;
+}
+
+.single-blog-toc-left{
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+
+  font-size:16px;
+
+  font-weight:700;
+}
+
+.single-blog-toc-content{
+
+  padding:
+  24px 28px;
+}
+
+.single-blog-toc-item{
+
+  display:block;
+
+  color:
+  var(--color-text-body);
+
+  transition:0.3s ease;
+}
+
+.single-blog-toc-item:hover{
+
+  color:
+  var(--color-primary);
+}
+
+.single-blog-toc-item.h2{
+
+  font-size:16px;
+
+  font-weight:700;
+
+  margin-bottom:18px;
+}
+
+.single-blog-toc-item.h3{
+
+  font-size:15px;
+
+  margin-left:20px;
+
+  margin-bottom:14px;
+}
+
+/* =========================================
+TECHNIQUES
+========================================= */
+
+.single-blog-technique-wrap{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:14px;
+}
+
+.single-blog-technique-pill{
+
+  padding:
+  12px 18px;
+
+  border-radius:
+  var(--radius-full);
+
+  background:
+  rgba(185,28,28,0.08);
+
+  color:
+  var(--color-primary);
+
+  font-size:13px;
+
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.single-blog-technique-pill:hover{
+
+  background:
+  var(--color-primary);
+
+  color:#ffffff;
+}
+
+/* =========================================
+QUOTE
+========================================= */
+
+.single-blog-quote{
+
+  padding:
+  30px;
+
+  border-left:
+  4px solid
+  var(--color-primary);
+
+  background:
+  var(--color-bg-light);
+
+  border-radius:
+  20px;
+
+  color:
+  var(--color-text-main);
+
+  font-size:22px;
+
+  line-height:1.8;
+
+  margin:
+  var(--space-xl)
+  0;
+}
+
+/* =========================================
+INLINE IMAGE
+========================================= */
+
+.single-blog-inline-image{
+
+  border-radius:
+  28px;
+
+  overflow:hidden;
+
+  border:
+  1px solid
+  var(--color-border);
+
+  margin-top:
+  var(--space-xl);
+}
+
+/* =========================================
+REFERENCES
+========================================= */
+
+.single-blog-reference-list{
+
+  display:flex;
+  flex-direction:column;
+
+  gap:16px;
+}
+
+.single-blog-reference-item{
+
+  padding:
+  20px 24px;
+
+  border-radius:
+  20px;
+
+  border:
+  1px solid
+  var(--color-border);
+
+  background:
+  var(--color-bg-light);
+
+  font-weight:600;
+
+  transition:0.3s ease;
+}
+
+.single-blog-reference-item:hover{
+
+  border-color:
+  var(--color-primary);
+
+  color:
+  var(--color-primary);
+}
+
+/* =========================================
+AUTHOR BOX
+========================================= */
+
+.single-blog-author-box{
+
+  display:flex;
+
+  gap:28px;
+
+  padding:
+  36px;
+
+  border:
+  1px solid
+  var(--color-border);
+
+  border-radius:
+  30px;
+
+  background:
+  var(--color-bg-light);
+
+  margin-bottom:
+  var(--space-3xl);
+}
+
+.single-blog-author-box-image{
+
+  width:120px;
+  height:120px;
+
+  flex-shrink:0;
+
+  border-radius:50%;
+
+  overflow:hidden;
+
+  border:
+  4px solid
+  var(--color-primary-light);
+}
+
+.single-blog-author-box-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.single-blog-author-box-title{
+
+  font-size:34px;
+
+  margin-bottom:
+  var(--space-md);
+}
+
+.single-blog-author-box-text{
+
+  color:
+  var(--color-text-body);
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+.single-blog-author-box-link{
+
+  color:
+  var(--color-primary);
+
+  font-weight:700;
+}
+
+/* =========================================
+SOCIAL GRID
+========================================= */
+
+.single-blog-social-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,minmax(0,1fr));
+
+  gap:24px;
+
+  margin-bottom:
+  var(--space-3xl);
+}
+
+.single-blog-social-card{
+
+  padding:
+  30px;
+
+  border:
+  1px solid
+  var(--color-border);
+
+  border-radius:
+  28px;
+}
+
+.single-blog-social-links{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:14px;
+}
+
+.single-blog-social-link{
+
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  padding:
+  12px 18px;
+
+  border-radius:
+  var(--radius-full);
+
+  background:
+  var(--color-bg-light);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  font-size:14px;
+
+  font-weight:600;
+
+  transition:0.3s ease;
+}
+
+.single-blog-social-link:hover{
+
+  background:
+  var(--color-primary);
+
+  border-color:
+  var(--color-primary);
+
+  color:#ffffff;
+}
+
+/* =========================================
+RELATED ARTICLES
+========================================= */
+
+.single-blog-related-section{
+
+  margin-bottom:
+  var(--space-3xl);
+}
+
+.single-blog-related-header{
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+.single-blog-related-title{
+
+  font-size:44px;
+
+  line-height:1.1;
+}
+
+.single-blog-related-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,minmax(0,1fr));
+
+  gap:24px;
+}
+
+.single-blog-related-card{
+
+  border:
+  1px solid
+  var(--color-border);
+
+  border-radius:
+  28px;
+
+  overflow:hidden;
+
+  transition:0.3s ease;
+}
+
+.single-blog-related-card:hover{
+
+  transform:
+  translateY(-4px);
+
+  border-color:
+  var(--color-primary-light);
+}
+
+.single-blog-related-image{
+
+  height:220px;
+
+  background:
+  var(--color-bg-light);
+}
+
+.single-blog-related-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+}
+
+.single-blog-related-content{
+
+  padding:24px;
+}
+
+.single-blog-related-content h3{
+
+  font-size:24px;
+
+  line-height:1.3;
+
+  transition:0.3s ease;
+}
+
+.single-blog-related-card:hover
+.single-blog-related-content h3{
+
+  color:
+  var(--color-primary);
+
+  text-decoration:underline;
+}
+
+/* =========================================
+CERTIFICATION CTA
+========================================= */
+
+.single-blog-certification-cta{
+
+  padding:
+  50px;
+
+  border-radius:
+  36px;
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    #1f1f3c 100%
+  );
+
+  color:#ffffff;
+}
+
+.single-blog-certification-title{
+
+  font-size:52px;
+
+  line-height:1.08;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+.single-blog-certification-text{
+
+  color:
+  rgba(255,255,255,0.78);
+
+  font-size:18px;
+
+  line-height:1.9;
+
+  max-width:760px;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+.single-blog-certification-button{
+
+  width:fit-content;
+
+  height:60px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:12px;
+
+  padding:
+  0 28px;
+
+  border-radius:
+  18px;
+
+  background:
+  var(--color-primary);
+
+  color:#ffffff;
+
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.single-blog-certification-button:hover{
+
+  background:
+  var(--color-primary-light);
+
+  transform:
+  translateY(-3px);
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+  .single-blog-content-heading,
+  .single-blog-related-title,
+  .single-blog-certification-title{
+
+    font-size:34px;
+
+    line-height:1.12;
+  }
+
+  .single-blog-content-text{
+
+    font-size:16px;
+  }
+
+  .single-blog-author-box{
+
+    flex-direction:column;
+  }
+
+  .single-blog-social-grid,
+  .single-blog-related-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .single-blog-certification-cta{
+
+    padding:34px;
+  }
+
+}      
+/* =========================================
+TABLE OF CONTENTS
+========================================= */
+
+.single-blog-toc{
+
+  margin-bottom:
+  var(--space-3xl);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  border-radius:
+  28px;
+
+  overflow:hidden;
+
+  background:
+  #ffffff;
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+.single-blog-toc-header{
+
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:
+  24px 28px;
+
+  border:none;
+
+  background:
+  var(--color-bg-light);
+
+  cursor:pointer;
+
+  font-family:
+  var(--font-primary);
+
+  transition:0.3s ease;
+}
+
+.single-blog-toc-header:hover{
+
+  background:
+  rgba(185,28,28,0.05);
+}
+
+/* =========================================
+LEFT
+========================================= */
+
+.single-blog-toc-left{
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  color:
+  var(--color-text-main);
+}
+
+/* =========================================
+ARROW
+========================================= */
+
+.toc-arrow{
+
+  transition:0.3s ease;
+}
+
+/* =========================================
+ACTIVE ARROW
+========================================= */
+
+.single-blog-toc.active
+.toc-arrow{
+
+  transform:rotate(180deg);
+}
+
+/* =========================================
+CONTENT
+========================================= */
+
+.single-blog-toc-content{
+
+  max-height:0;
+
+  overflow:hidden;
+
+  transition:
+  max-height 0.4s ease,
+  padding 0.3s ease;
+
+  padding:
+  0 28px;
+
+  background:#ffffff;
+}
+
+/* =========================================
+ACTIVE CONTENT
+========================================= */
+
+.single-blog-toc.active
+.single-blog-toc-content{
+
+  max-height:600px;
+
+  padding:
+  24px 28px;
+}
+
+/* =========================================
+ITEM
+========================================= */
+
+.single-blog-toc-item{
+
+  display:block;
+
+  color:
+  var(--color-text-body);
+
+  transition:0.3s ease;
+}
+
+.single-blog-toc-item:hover{
+
+  color:
+  var(--color-primary);
+}
+
+/* =========================================
+H2
+========================================= */
+
+.single-blog-toc-item.h2{
+
+  font-size:16px;
+
+  font-weight:700;
+
+  margin-bottom:18px;
+}
+
+/* =========================================
+H3
+========================================= */
+
+.single-blog-toc-item.h3{
+
+  font-size:15px;
+
+  margin-left:20px;
+
+  margin-bottom:14px;
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .single-blog-toc-header{
+
+    padding:
+    20px;
+  }
+
+  .single-blog-toc.active
+  .single-blog-toc-content{
+
+    padding:
+    20px;
+  }
+
+}
+      
+/* =========================================
+SUBHEADING
+========================================= */
+
+.single-blog-subheading{
+
+  font-size:34px;
+
+  line-height:1.2;
+
+  letter-spacing:-0.5px;
+
+  margin-top:
+  var(--space-2xl);
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+CODE BLOCK
+========================================= */
+
+.single-blog-code-block{
+
+  margin:
+  var(--space-xl)
+  0;
+
+  border-radius:
+  24px;
+
+  overflow:hidden;
+
+  border:
+  1px solid
+  rgba(255,255,255,0.06);
+
+  background:
+  #0f172a;
+}
+
+.single-blog-code-block pre{
+
+  margin:0;
+
+  padding:28px;
+
+  overflow:auto;
+}
+
+.single-blog-code-block code{
+
+  color:#e2e8f0;
+
+  font-size:14px;
+
+  line-height:1.9;
+
+  font-family:
+  Consolas,
+  Monaco,
+  monospace;
+}
+
+/* =========================================
+CHECKLIST
+========================================= */
+
+.single-blog-checklist{
+
+  display:flex;
+  flex-direction:column;
+
+  gap:16px;
+
+  margin-top:
+  var(--space-2xl);
+}
+
+.single-blog-checklist-item{
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+
+  padding:
+  18px 22px;
+
+  border-radius:
+  18px;
+
+  background:
+  var(--color-bg-light);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  font-size:15px;
+
+  font-weight:600;
+
+  color:
+  var(--color-text-main);
+}
+
+.single-blog-checklist-item svg{
+
+  width:20px;
+  height:20px;
+
+  color:
+  var(--color-success);
+
+  flex-shrink:0;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+  .single-blog-subheading{
+
+    font-size:28px;
+  }
+
+  .single-blog-code-block pre{
+
+    padding:22px;
+  }
+
+}     
+    
+
+.newsletter-certification-section{
+
+
+}
+
+/* =========================================
+GRID
+========================================= */
+
+.newsletter-certification-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  1.2fr
+  0.8fr;
+
+  gap:28px;
+}
+
+/* =========================================
+COMMON CARD
+========================================= */
+
+.newsletter-compact-card,
+.certification-compact-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:32px;
+
+  padding:40px;
+
+  border:
+  1px solid
+  var(--color-border);
+}
+
+/* =========================================
+NEWSLETTER CARD
+========================================= */
+
+.newsletter-compact-card{
+
+  background:
+  linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fafafa 100%
+  );
+}
+
+/* =========================================
+NEWSLETTER TOP
+========================================= */
+
+.newsletter-compact-top{
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+/* =========================================
+ICON
+========================================= */
+
+.newsletter-compact-icon{
+
+  width:54px;
+  height:54px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:18px;
+
+  background:
+  rgba(185,28,28,0.08);
+
+  color:
+  var(--color-primary);
+}
+
+.newsletter-compact-icon svg{
+
+  width:24px;
+  height:24px;
+}
+
+/* =========================================
+LABEL
+========================================= */
+
+.newsletter-compact-label{
+
+  color:
+  var(--color-primary);
+
+  font-size:13px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  letter-spacing:0.5px;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.newsletter-compact-title{
+
+  font-size:42px;
+
+  line-height:1.1;
+
+  letter-spacing:-1px;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.newsletter-compact-description{
+
+  color:
+  var(--color-text-body);
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+/* =========================================
+FORM
+========================================= */
+
+.newsletter-compact-form{
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+}
+
+/* =========================================
+INPUT
+========================================= */
+
+.newsletter-compact-form input{
+
+  flex:1;
+
+  height:60px;
+
+  border-radius:18px;
+
+  border:
+  1px solid
+  var(--color-border);
+
+  background:#ffffff;
+
+  padding:
+  0 20px;
+
+  outline:none;
+
+  font-family:
+  var(--font-primary);
+
+  font-size:15px;
+
+  transition:0.3s ease;
+}
+
+.newsletter-compact-form input:focus{
+
+  border-color:
+  var(--color-primary-light);
+
+  box-shadow:
+  0 0 0 4px rgba(185,28,28,0.08);
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.newsletter-compact-form button{
+
+  height:60px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  padding:
+  0 24px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:
+  var(--color-primary);
+
+  color:#ffffff;
+
+  font-family:
+  var(--font-primary);
+
+  font-size:14px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+}
+
+.newsletter-compact-form button:hover{
+
+  background:
+  var(--color-primary-light);
+
+  transform:
+  translateY(-3px);
+}
+
+/* =========================================
+CERTIFICATION CARD
+========================================= */
+
+.certification-compact-card{
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    #1d1d38 100%
+  );
+
+  color:#ffffff;
+}
+
+/* =========================================
+CERTIFICATION LABEL
+========================================= */
+
+.certification-compact-label{
+
+  display:inline-flex;
+
+  padding:
+  10px
+  18px;
+
+  border-radius:
+  var(--radius-full);
+
+  background:
+  rgba(255,255,255,0.10);
+
+  color:#ffffff;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+/* =========================================
+CERTIFICATION TITLE
+========================================= */
+
+.certification-compact-title{
+
+  font-size:40px;
+
+  line-height:1.08;
+
+  letter-spacing:-1px;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+CERTIFICATION DESCRIPTION
+========================================= */
+
+.certification-compact-description{
+
+  color:
+  rgba(255,255,255,0.78);
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+/* =========================================
+CTA BUTTON
+========================================= */
+
+.certification-compact-button{
+
+  width:fit-content;
+
+  height:58px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  padding:
+  0 24px;
+
+  border-radius:18px;
+
+  background:
+  var(--color-primary);
+
+  color:#ffffff;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.certification-compact-button:hover{
+
+  background:
+  var(--color-primary-light);
+
+  transform:
+  translateY(-3px);
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .newsletter-certification-grid{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .newsletter-compact-card,
+  .certification-compact-card{
+
+    padding:30px;
+  }
+
+  .newsletter-compact-title,
+  .certification-compact-title{
+
+    font-size:32px;
+
+    line-height:1.12;
+  }
+
+  .newsletter-compact-form{
+
+    flex-direction:column;
+  }
+
+  .newsletter-compact-form input,
+  .newsletter-compact-form button{
+
+    width:100%;
+  }
+
+}   
+        
+  /* =========================================
+3 CTA SECTION
+========================================= */
+
+.compact-blog-cta-section{
+
+  padding:
+  var(--space-3xl)
+  0;
+}
+
+/* =========================================
+GRID
+========================================= */
+
+.compact-blog-cta-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,minmax(0,1fr));
+
+  gap:24px;
+}
+
+/* =========================================
+CARD
+========================================= */
+
+.compact-blog-cta-card{
+
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:24px;
+
+  padding:32px;
+
+  border-radius:28px;
+
+  background:
+  var(--color-bg);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  overflow:hidden;
+
+  transition:0.35s ease;
+}
+
+/* =========================================
+CARD HOVER
+========================================= */
+
+.compact-blog-cta-card:hover{
+
+  transform:
+  translateY(-6px);
+
+  border-color:
+  var(--color-primary-light);
+
+  box-shadow:
+  var(--shadow-primary);
+}
+
+/* =========================================
+TOP ICON
+========================================= */
+
+.compact-blog-cta-icon{
+
+  width:64px;
+  height:64px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:20px;
+
+  background:
+  rgba(185,28,28,0.08);
+
+  color:
+  var(--color-primary);
+
+  transition:0.3s ease;
+}
+
+.compact-blog-cta-icon svg{
+
+  width:28px;
+  height:28px;
+}
+
+/* =========================================
+ICON HOVER
+========================================= */
+
+.compact-blog-cta-card:hover
+.compact-blog-cta-icon{
+
+  background:
+  var(--color-primary);
+
+  color:#ffffff;
+}
+
+/* =========================================
+LABEL
+========================================= */
+
+.compact-blog-cta-label{
+
+  display:inline-flex;
+
+  margin-bottom:
+  var(--space-sm);
+
+  color:
+  var(--color-primary);
+
+  font-size:12px;
+
+  font-weight:700;
+
+  letter-spacing:0.4px;
+
+  text-transform:uppercase;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.compact-blog-cta-title{
+
+  font-size:32px;
+
+  line-height:1.12;
+
+  letter-spacing:-0.8px;
+
+  margin-bottom:
+  var(--space-md);
+
+  transition:0.3s ease;
+}
+
+/* =========================================
+TITLE HOVER
+========================================= */
+
+.compact-blog-cta-card:hover
+.compact-blog-cta-title{
+
+  color:
+  var(--color-primary);
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.compact-blog-cta-description{
+
+  color:
+  var(--color-text-body);
+
+  font-size:15px;
+
+  line-height:1.9;
+}
+
+/* =========================================
+ARROW
+========================================= */
+
+.compact-blog-cta-arrow{
+
+  width:52px;
+  height:52px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:16px;
+
+  background:
+  var(--color-bg-light);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  color:
+  var(--color-text-main);
+
+  margin-top:auto;
+
+  transition:0.3s ease;
+}
+
+.compact-blog-cta-arrow svg{
+
+  width:20px;
+  height:20px;
+}
+
+/* =========================================
+ARROW HOVER
+========================================= */
+
+.compact-blog-cta-card:hover
+.compact-blog-cta-arrow{
+
+  background:
+  var(--color-primary);
+
+  border-color:
+  var(--color-primary);
+
+  color:#ffffff;
+
+  transform:
+  translateY(-2px);
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .compact-blog-cta-grid{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .compact-blog-cta-card{
+
+    padding:28px;
+  }
+
+  .compact-blog-cta-title{
+
+    font-size:28px;
+  }
+
+}
+         
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =========================================
+  STICKY CATEGORY
+  ========================================= -->
+
+  <section class="single-blog-category-sticky">
+
+    <div class="container">
+
+      <div class="single-blog-category-scroll">
+
+        <a href="#" class="single-blog-pill active">
+          Active Directory
+        </a>
+
+        <a href="#" class="single-blog-pill">
+          Red Team
+        </a>
+
+        <a href="#" class="single-blog-pill">
+          Kerberos
+        </a>
+
+        <a href="#" class="single-blog-pill">
+          Detection Engineering
+        </a>
+
+        <a href="#" class="single-blog-pill">
+          Enterprise Tradecraft
+        </a>
+
+        <a href="#" class="single-blog-pill">
+          Azure Red Team
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+  HERO SECTION
+  ========================================= -->
+
+  <section class="single-blog-hero">
+
+    <div class="container">
+
+      <div class="single-blog-hero-wrap">
+
+        <!-- =========================================
+        BREADCRUMB
+        ========================================= -->
+
+        <div class="single-blog-breadcrumb">
+
+          <a href="#">
+            Blog
+          </a>
+
+          <span>></span>
+
+          <a href="#">
+            Active Directory
+          </a>   
+
+         
+
+          <span>></span>
+
+          <span>
+            Exploiting Misconfigured Active Directory Certificate Services
+          </span>
+
+        </div>
+
+        <!-- =========================================
+        CATEGORY
+        ========================================= -->
+
+        <div class="single-blog-category-wrap">
+
+          <div class="single-blog-category">
+            Active Directory
+          </div>        
+
+        </div>
+
+        <!-- =========================================
+        TITLE
+        ========================================= -->
+
+        <h1 class="single-blog-title">
+          Exploiting Misconfigured Active Directory Certificate Services
+          for Enterprise Privilege Escalation
+        </h1>
+
+        <!-- =========================================
+        META
+        ========================================= -->
+
+        <div class="single-blog-meta-grid">
+
+          <div class="single-blog-meta-item">
+
+            <i data-lucide="clock-3"></i>
+
+            12 Min Read
+
+          </div>
+
+          <div class="single-blog-meta-item">
+
+            <i data-lucide="calendar-days"></i>
+
+            May 18, 2026
+
+          </div>
+
+          <div class="single-blog-meta-item">
+
+            <i data-lucide="flame"></i>
+
+            Advanced
+
+          </div>
+          
+
+          <div class="single-blog-meta-item">
+
+            <i data-lucide="share-2"></i>
+
+            Share
+
+          </div>
+
+        </div>
+
+        <!-- =========================================
+        AUTHOR
+        ========================================= -->
+
+        <div class="single-blog-author-grid">
+
+          <!-- AUTHOR -->
+
+          <a href="#" class="single-blog-author-left">
+
+            <div class="single-blog-author-image">
+
+              <img src="https://i.pravatar.cc/100?img=12">
+
+            </div>
+
+            <div class="single-blog-author-info">
+
+              <h4>
+                Alex Carter
+              </h4>
+
+              <span>
+                Red Team Operator & Offensive Security Researcher
+              </span>
+
+              <div class="single-blog-author-link">
+                View Research Profile
+              </div>
+
+            </div>
+
+          </a>
+
+          <!-- CONTRIBUTORS -->
+
+          <div class="single-blog-contributor">
+
+            <div class="single-blog-contributor-images">
+
+              <img src="https://i.pravatar.cc/100?img=32">
+
+              <img src="https://i.pravatar.cc/100?img=24">
+
+              <img src="https://i.pravatar.cc/100?img=44">
+
+            </div>
+
+            <div class="single-blog-contributor-text">
+
+              <h5>
+                Contributors & Researchers
+              </h5>
+
+              <span>
+                Sarah Mitchell, David Reynolds & Michael Ross
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- =========================================
+        FEATURE IMAGE
+        ========================================= -->
+
+        <div class="single-blog-feature-image">
+
+          <img
+            src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+<!-- =========================================
+BLOG CONTENT LAYOUT SECTION
+========================================= -->
+
+<section class="single-blog-content-section">
+
+  <div class="container">
+
+    <div class="single-blog-content-layout">
+
+      <!-- =========================================
+      MAIN CONTENT
+      ========================================= -->
+
+      <div class="single-blog-main-content">
+
+        <!-- =========================================
+        INTRODUCTION
+        ========================================= -->
+
+        <div class="single-blog-content-block">
+
+
+          <h2 class="single-blog-content-heading">
+            Understanding Enterprise AD CS Attack Paths
+          </h2>
+
+          <p class="single-blog-content-text">
+            Active Directory Certificate Services (AD CS) remains one of the most
+            commonly overlooked enterprise attack surfaces. Misconfigured templates,
+            dangerous enrollment permissions, and weak certificate mapping controls
+            allow attackers to escalate privileges, impersonate users, and achieve
+            long-term persistence inside enterprise Active Directory environments.
+          </p>
+
+          <p class="single-blog-content-text">
+            This research explores real-world attack techniques attackers use
+            during enterprise red team operations to abuse AD CS infrastructure
+            and compromise domain environments.
+          </p>
+
+        </div>
+<!-- =========================================
+TABLE OF CONTENTS
+========================================= -->
+
+<div class="single-blog-toc">
+
+  <!-- TOGGLE HEADER -->
+
+  <button class="single-blog-toc-header" id="tocToggle">
+
+    <div class="single-blog-toc-left">
+
+      <i data-lucide="list-tree"></i>
+
+      <span>
+        Table of Contents
+      </span>
+
+    </div>
+
+    <i data-lucide="chevron-down" class="toc-arrow"></i>
+
+  </button>
+
+  <!-- TOC CONTENT -->
+
+  <div class="single-blog-toc-content" id="tocContent">
+
+    <!-- H2 -->
+
+    <a href="#" class="single-blog-toc-item h2">
+      Introduction to AD CS Abuse
+    </a>
+
+    <!-- H3 -->
+
+    <a href="#" class="single-blog-toc-item h3">
+      ESC1 Vulnerable Templates
+    </a>
+
+    <!-- H3 -->
+
+    <a href="#" class="single-blog-toc-item h3">
+      Certificate Enrollment Permissions
+    </a>
+
+    <!-- H2 -->
+
+    <a href="#" class="single-blog-toc-item h2">
+      Enterprise Attack Paths
+    </a>
+
+    <!-- H3 -->
+
+    <a href="#" class="single-blog-toc-item h3">
+      Persistence Through Certificates
+    </a>
+
+    <!-- H3 -->
+
+    <a href="#" class="single-blog-toc-item h3">
+      Lateral Movement Tradecraft
+    </a>
+
+    <!-- H2 -->
+
+    <a href="#" class="single-blog-toc-item h2">
+      Detection & Defensive Strategies
+    </a>
+
+  </div>
+
+</div>
+        <!-- =========================================
+        RELATED TECHNIQUES
+        ========================================= -->
+
+        <div class="single-blog-content-block">
+
+          <span class="single-blog-content-label">
+            Related Techniques
+          </span>
+
+          <div class="single-blog-technique-wrap">
+
+            <a href="#" class="single-blog-technique-pill">
+              Kerberos Delegation Abuse
+            </a>
+
+            <a href="#" class="single-blog-technique-pill">
+              ESC1 Certificate Abuse
+            </a>
+
+            <a href="#" class="single-blog-technique-pill">
+              Enterprise Persistence
+            </a>
+
+            <a href="#" class="single-blog-technique-pill">
+              AD CS Enumeration
+            </a>
+
+            <a href="#" class="single-blog-technique-pill">
+              Lateral Movement
+            </a>
+
+            <a href="#" class="single-blog-technique-pill">
+              Privilege Escalation
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- =========================================
+        MAIN CONTENT
+        ========================================= -->
+
+        <div class="single-blog-content-block">
+
+  <!-- =========================================
+  H2
+  ========================================= -->
+
+  <h2 class="single-blog-content-heading">
+    Exploiting Vulnerable Enterprise Certificate Templates
+  </h2>
+
+  <p class="single-blog-content-text">
+    Attackers frequently target enterprise certificate templates configured
+    with weak enrollment permissions and dangerous EKU settings. By abusing
+    ESC1 or ESC2 style template misconfigurations, attackers can request
+    certificates on behalf of privileged accounts and authenticate directly
+    to Active Directory services.
+  </p>
+
+  <p class="single-blog-content-text">
+    Modern enterprise environments often deploy Active Directory Certificate
+    Services without fully understanding the impact of dangerous certificate
+    template configurations. During red team operations, AD CS becomes one of
+    the most effective attack surfaces for privilege escalation, persistence,
+    and stealthy authentication abuse.
+  </p>
+
+  <!-- =========================================
+  QUOTE
+  ========================================= -->
+
+  <blockquote class="single-blog-quote">
+    “Certificate-based persistence remains one of the stealthiest enterprise
+    persistence mechanisms in modern Active Directory environments.”
+  </blockquote>
+
+  <p class="single-blog-content-text">
+    During adversary simulations, these attack paths are often combined
+    with Kerberos abuse, delegation attacks, and lateral movement tradecraft
+    to compromise domain environments while maintaining operational stealth.
+  </p>
+
+  <!-- =========================================
+  IMAGE
+  ========================================= -->
+
+  <div class="single-blog-inline-image">
+
+    <img
+      src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+  </div>
+
+  <!-- =========================================
+  H3
+  ========================================= -->
+
+  <h3 class="single-blog-subheading">
+    Understanding ESC1 Template Misconfigurations
+  </h3>
+
+  <p class="single-blog-content-text">
+    ESC1 vulnerabilities occur when certificate templates allow low-privileged
+    users to supply arbitrary Subject Alternative Names (SANs). Attackers can
+    abuse this configuration to request certificates impersonating privileged
+    users such as Domain Admins or Enterprise Administrators.
+  </p>
+
+  <p class="single-blog-content-text">
+    Once a malicious certificate is issued, attackers can authenticate through
+    Kerberos PKINIT and gain access to enterprise resources without ever knowing
+    the target account password. This dramatically reduces operational noise
+    compared to traditional credential theft techniques.
+  </p>
+
+  <!-- =========================================
+  H3
+  ========================================= -->
+
+  <h3 class="single-blog-subheading">
+    Dangerous Enrollment Permissions in Enterprise PKI
+  </h3>
+
+  <p class="single-blog-content-text">
+    Many organizations unintentionally expose dangerous enrollment permissions
+    to Authenticated Users or Domain Users groups. Combined with weak template
+    security settings, this allows attackers to enroll certificates capable
+    of client authentication or smartcard logon operations.
+  </p>
+
+  <p class="single-blog-content-text">
+    Enterprise PKI environments frequently inherit legacy template configurations
+    that remain active for years without security reviews. During red team
+    engagements, these outdated templates often provide direct paths to
+    enterprise privilege escalation.
+  </p>
+
+  <!-- =========================================
+  CODE BLOCK
+  ========================================= -->
+
+  <div class="single-blog-code-block">
+
+<pre><code>certipy find -u user@corp.local -p Password123
+certipy req -template VulnerableTemplate
+certipy auth -pfx administrator.pfx</code></pre>
+
+  </div>
+
+  <!-- =========================================
+  H2
+  ========================================= -->
+
+  <h2 class="single-blog-content-heading">
+    Enterprise Attack Paths & Lateral Movement
+  </h2>
+
+  <p class="single-blog-content-text">
+    Certificate-based authentication enables attackers to move laterally
+    across enterprise environments without triggering traditional password
+    reset or Kerberos pre-authentication alerts. This provides highly stealthy
+    operational tradecraft during adversary simulations.
+  </p>
+
+  <p class="single-blog-content-text">
+    Attackers commonly combine AD CS abuse with Kerberos delegation attacks,
+    constrained delegation abuse, and shadow credentials to build resilient
+    persistence mechanisms across enterprise domains.
+  </p>
+
+  <!-- =========================================
+  H3
+  ========================================= -->
+
+  <h3 class="single-blog-subheading">
+    Persistence Through Certificate Abuse
+  </h3>
+
+  <p class="single-blog-content-text">
+    Unlike passwords, certificates often remain valid for extended periods,
+    enabling attackers to maintain access even after password resets or account
+    remediation efforts. This creates significant challenges for blue teams
+    attempting to fully evict adversaries from enterprise environments.
+  </p>
+
+  <p class="single-blog-content-text">
+    Attackers frequently store malicious certificates offline and reintroduce
+    them later during follow-on operations. In mature enterprise environments,
+    certificate-based persistence can remain undetected for long periods
+    without dedicated PKI monitoring capabilities.
+  </p>
+
+  <!-- =========================================
+  IMAGE
+  ========================================= -->
+
+  <div class="single-blog-inline-image">
+
+    <img
+      src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+  </div>
+
+  <!-- =========================================
+  H3
+  ========================================= -->
+
+  <h3 class="single-blog-subheading">
+    Operational Security During Red Team Engagements
+  </h3>
+
+  <p class="single-blog-content-text">
+    Mature red team operators avoid noisy exploitation techniques that trigger
+    authentication anomalies or password reset events. Certificate-based
+    authentication enables stealthier access patterns while blending into
+    legitimate enterprise authentication traffic.
+  </p>
+
+  <p class="single-blog-content-text">
+    Operational security considerations include limiting certificate requests,
+    avoiding abnormal template usage patterns, and carefully managing issued
+    certificate lifetimes during long-term enterprise operations.
+  </p>
+
+  <!-- =========================================
+  H2
+  ========================================= -->
+
+  <h2 class="single-blog-content-heading">
+    Detection Engineering & Defensive Strategies
+  </h2>
+
+  <p class="single-blog-content-text">
+    Defenders should continuously audit certificate templates, enrollment
+    permissions, EKU configurations, and CA security settings. Monitoring
+    certificate issuance events and unusual PKINIT authentication patterns
+    is critical for identifying enterprise certificate abuse.
+  </p>
+
+  <p class="single-blog-content-text">
+    Blue teams should also monitor for suspicious certificate enrollments
+    originating from low-privileged accounts or systems outside normal
+    enrollment baselines. Enterprise PKI monitoring remains an essential
+    capability for defending against modern Active Directory attack paths.
+  </p>
+
+  <!-- =========================================
+  CHECKLIST
+  ========================================= -->
+
+  <div class="single-blog-checklist">
+
+    <div class="single-blog-checklist-item">
+
+      <i data-lucide="check-circle-2"></i>
+
+      Audit all enterprise certificate templates
+
+    </div>
+
+    <div class="single-blog-checklist-item">
+
+      <i data-lucide="check-circle-2"></i>
+
+      Remove dangerous enrollment permissions
+
+    </div>
+
+    <div class="single-blog-checklist-item">
+
+      <i data-lucide="check-circle-2"></i>
+
+      Monitor PKINIT authentication anomalies
+
+    </div>
+
+    <div class="single-blog-checklist-item">
+
+      <i data-lucide="check-circle-2"></i>
+
+      Review long-lived certificate validity periods
+
+    </div>
+
+  </div>
+
+</div>
+
+        <!-- =========================================
+        REFERENCES
+        ========================================= -->
+
+        <div class="single-blog-content-block">
+
+          <span class="single-blog-content-label">
+            References
+          </span>
+
+          <div class="single-blog-reference-list">
+
+            <a href="#" class="single-blog-reference-item">
+              SpecterOps - Certified Pre-Owned Whitepaper
+            </a>
+
+            <a href="#" class="single-blog-reference-item">
+              Microsoft AD CS Documentation
+            </a>
+
+            <a href="#" class="single-blog-reference-item">
+              Enterprise PKI Attack Surface Research
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- =========================================
+        AUTHOR BOX
+        ========================================= -->
+
+        <div class="single-blog-author-box">
+
+          <div class="single-blog-author-box-image">
+
+            <img src="https://i.pravatar.cc/100?img=12">
+
+          </div>
+
+          <div class="single-blog-author-box-content">
+
+            <span class="single-blog-content-label">
+              Author
+            </span>
+
+            <h3 class="single-blog-author-box-title">
+              Alex Carter
+            </h3>
+
+            <p class="single-blog-author-box-text">
+              Alex Carter is an Offensive Security Researcher focused on
+              Active Directory attacks, enterprise tradecraft,
+              Azure Red Team operations, and detection engineering.
+            </p>
+
+            <a href="#" class="single-blog-author-box-link">
+              View Research Profile
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- =========================================
+        DISCUSS & SHARE
+        ========================================= -->
+
+        <div class="single-blog-social-grid">
+
+          <!-- DISCUSS -->
+
+          <div class="single-blog-social-card">
+
+            <span class="single-blog-content-label">
+              Discuss This Research
+            </span>
+
+            <div class="single-blog-social-links">
+
+              <a href="#" class="single-blog-social-link">
+
+                <i data-lucide="linkedin"></i>
+
+                LinkedIn
+
+              </a>
+
+              <a href="#" class="single-blog-social-link">
+
+                <i data-lucide="messages-square"></i>
+
+                Discord
+
+              </a>
+
+            </div>
+
+          </div>
+
+          <!-- SHARE -->
+
+          <div class="single-blog-social-card">
+
+            <span class="single-blog-content-label">
+              Share This Research
+            </span>
+
+            <div class="single-blog-social-links">
+
+              <a href="#" class="single-blog-social-link">
+
+                <i data-lucide="linkedin"></i>
+
+                LinkedIn
+
+              </a>
+
+              <a href="#" class="single-blog-social-link">
+
+                <i data-lucide="twitter"></i>
+
+                X
+
+              </a>
+
+              <a href="#" class="single-blog-social-link">
+
+                <i data-lucide="reddit"></i>
+
+                Reddit
+
+              </a>
+
+              <a href="#" class="single-blog-social-link">
+
+                <i data-lucide="copy"></i>
+
+                Copy Link
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- =========================================
+        RELATED ARTICLES
+        ========================================= -->
+
+        <div class="single-blog-related-section">
+
+          <div class="single-blog-related-header">
+
+            <span class="single-blog-content-label">
+              Related Blog
+            </span>
+
+            <h2 class="single-blog-related-title">
+              Continue Reading Related Blog
+            </h2>
+
+          </div>
+
+          <div class="single-blog-related-grid">
+
+            <!-- CARD -->
+
+            <a href="#" class="single-blog-related-card">
+
+              <div class="single-blog-related-image">
+
+                <img
+                  src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+              </div>
+
+              <div class="single-blog-related-content">
+
+                <h3>
+                  Kerberos Delegation Abuse in Enterprise Networks
+                </h3>
+
+              </div>
+
+            </a>
+
+            <!-- CARD -->
+
+            <a href="#" class="single-blog-related-card">
+
+              <div class="single-blog-related-image">
+
+                <img
+                  src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+              </div>
+
+              <div class="single-blog-related-content">
+
+                <h3>
+                  Enterprise AD CS Persistence Techniques
+                </h3>
+
+              </div>
+
+            </a>
+    <a href="#" class="single-blog-related-card">
+
+              <div class="single-blog-related-image">
+
+                <img
+                  src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+              </div>
+
+              <div class="single-blog-related-content">
+
+                <h3>
+                  Enterprise AD CS Persistence Techniques
+                </h3>
+
+              </div>
+
+            </a>
+                <a href="#" class="single-blog-related-card">
+
+              <div class="single-blog-related-image">
+
+                <img
+                  src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+              </div>
+
+              <div class="single-blog-related-content">
+
+                <h3>
+                  Enterprise AD CS Persistence Techniques
+                </h3>
+
+              </div>
+
+            </a>
+          </div>
+
+        </div>    
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>    
+  
+
+<section class="newsletter-certification-section">
+
+  <div class="container">
+
+    <div class="newsletter-certification-grid">
+
+      <!-- =========================================
+      NEWSLETTER CARD
+      ========================================= -->
+
+      <div class="newsletter-compact-card">
+
+        <!-- TOP -->
+
+        <div class="newsletter-compact-top">
+
+          <div class="newsletter-compact-icon">
+
+            <i data-lucide="mail"></i>
+
+          </div>
+
+          <span class="newsletter-compact-label">
+            Offensive Security Newsletter
+          </span>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="newsletter-compact-content">
+
+          <h2 class="newsletter-compact-title">
+            Get the Latest Offensive Security Research & Red Team Tradecraft
+          </h2>
+
+          <p class="newsletter-compact-description">
+            Receive advanced Active Directory attack techniques, Azure Red Team operations,
+            enterprise tradecraft, and detection engineering insights directly in your inbox.
+          </p>
+
+        </div>
+
+        <!-- FORM -->
+
+        <form class="newsletter-compact-form">
+
+          <input type="email"
+            placeholder="Enter your email address">
+
+          <button type="submit">
+
+            Subscribe
+
+            <i data-lucide="arrow-right"></i>
+
+          </button>
+
+        </form>
+
+      </div>
+
+      <!-- =========================================
+      CERTIFICATION CTA
+      ========================================= -->
+
+      <div class="certification-compact-card">
+
+        <!-- LABEL -->
+
+        <span class="certification-compact-label">
+          Hands-On Red Team Training
+        </span>
+
+        <!-- TITLE -->
+
+        <h2 class="certification-compact-title">
+          Advance Your Red Teaming Skills Through Hands-On Certifications
+        </h2>
+
+        <!-- DESCRIPTION -->
+
+        <p class="certification-compact-description">
+          Master Active Directory attacks, Azure tradecraft,
+          enterprise offensive security, and adversary simulation
+          through practical certifications and labs.
+        </p>
+
+        <!-- BUTTON -->
+
+        <a href="#" class="certification-compact-button">
+
+          Get Started
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>      
+        
+<!-- =========================================
+3 CTA SECTION
+========================================= -->
+
+<section class="compact-blog-cta-section">
+
+  <div class="container">
+
+    <!-- =========================================
+    CTA GRID
+    ========================================= -->
+
+    <div class="compact-blog-cta-grid">
+
+      <!-- =========================================
+      CTA 1
+      ========================================= -->
+
+      <a href="#" class="compact-blog-cta-card">
+
+        <!-- ICON -->
+
+        <div class="compact-blog-cta-icon">
+
+          <i data-lucide="messages-square"></i>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="compact-blog-cta-content">
+
+          <span class="compact-blog-cta-label">
+            Community
+          </span>
+
+          <h3 class="compact-blog-cta-title">
+            Join Channel
+          </h3>
+
+          <p class="compact-blog-cta-description">
+            Get the latest offensive security research,
+            attack tradecraft, lab updates, and community discussions.
+          </p>
+
+        </div>
+
+        <!-- ARROW -->
+
+        <div class="compact-blog-cta-arrow">
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </div>
+
+      </a>
+
+      <!-- =========================================
+      CTA 2
+      ========================================= -->
+
+      <a href="#" class="compact-blog-cta-card">
+
+        <!-- ICON -->
+
+        <div class="compact-blog-cta-icon">
+
+          <i data-lucide="flask-conical"></i>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="compact-blog-cta-content">
+
+          <span class="compact-blog-cta-label">
+            Hands-On Labs
+          </span>
+
+          <h3 class="compact-blog-cta-title">
+            Access Free Labs
+          </h3>
+
+          <p class="compact-blog-cta-description">
+            Practice real-world Active Directory attacks,
+            Azure exploitation, and red team tradecraft.
+          </p>
+
+        </div>
+
+        <!-- ARROW -->
+
+        <div class="compact-blog-cta-arrow">
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </div>
+
+      </a>
+
+      <!-- =========================================
+      CTA 3
+      ========================================= -->
+
+      <a href="#" class="compact-blog-cta-card">
+
+        <!-- ICON -->
+
+        <div class="compact-blog-cta-icon">
+
+          <i data-lucide="shield-check"></i>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="compact-blog-cta-content">
+
+          <span class="compact-blog-cta-label">
+            Training
+          </span>
+
+          <h3 class="compact-blog-cta-title">
+            Explore Red Team Training
+          </h3>
+
+          <p class="compact-blog-cta-description">
+            Advance your offensive security skills
+            through practical enterprise-focused certifications.
+          </p>
+
+        </div>
+
+        <!-- ARROW -->
+
+        <div class="compact-blog-cta-arrow">
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>  
+  <!-- =========================================
+  LUCIDE INIT
+  ========================================= -->
+
+  <script>
+
+    lucide.createIcons();
+
+  </script>
+<!-- =========================================
+TABLE OF CONTENT TOGGLE SCRIPT
+========================================= -->
+
+<script>
+
+  const tocToggle =
+    document.getElementById("tocToggle");
+
+  const toc =
+    document.querySelector(".single-blog-toc");
+
+  tocToggle.addEventListener("click", () => {
+
+    toc.classList.toggle("active");
+
+  });
+
+</script>
+</body>
+
+</html>
