@@ -607,7 +607,7 @@ BLOG CONTENT SECTION
 .single-blog-content-section{
 
   padding:
-  var(--space-3xl)
+  var(--space-1xl)
   0;
 }
 
@@ -1612,7 +1612,680 @@ RESPONSIVE
     padding:22px;
   }
 
-}      
+}     
+    
+
+.newsletter-certification-section{
+
+
+}
+
+/* =========================================
+GRID
+========================================= */
+
+.newsletter-certification-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  1.2fr
+  0.8fr;
+
+  gap:28px;
+}
+
+/* =========================================
+COMMON CARD
+========================================= */
+
+.newsletter-compact-card,
+.certification-compact-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:32px;
+
+  padding:40px;
+
+  border:
+  1px solid
+  var(--color-border);
+}
+
+/* =========================================
+NEWSLETTER CARD
+========================================= */
+
+.newsletter-compact-card{
+
+  background:
+  linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fafafa 100%
+  );
+}
+
+/* =========================================
+NEWSLETTER TOP
+========================================= */
+
+.newsletter-compact-top{
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+/* =========================================
+ICON
+========================================= */
+
+.newsletter-compact-icon{
+
+  width:54px;
+  height:54px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:18px;
+
+  background:
+  rgba(185,28,28,0.08);
+
+  color:
+  var(--color-primary);
+}
+
+.newsletter-compact-icon svg{
+
+  width:24px;
+  height:24px;
+}
+
+/* =========================================
+LABEL
+========================================= */
+
+.newsletter-compact-label{
+
+  color:
+  var(--color-primary);
+
+  font-size:13px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  letter-spacing:0.5px;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.newsletter-compact-title{
+
+  font-size:42px;
+
+  line-height:1.1;
+
+  letter-spacing:-1px;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.newsletter-compact-description{
+
+  color:
+  var(--color-text-body);
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+/* =========================================
+FORM
+========================================= */
+
+.newsletter-compact-form{
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+}
+
+/* =========================================
+INPUT
+========================================= */
+
+.newsletter-compact-form input{
+
+  flex:1;
+
+  height:60px;
+
+  border-radius:18px;
+
+  border:
+  1px solid
+  var(--color-border);
+
+  background:#ffffff;
+
+  padding:
+  0 20px;
+
+  outline:none;
+
+  font-family:
+  var(--font-primary);
+
+  font-size:15px;
+
+  transition:0.3s ease;
+}
+
+.newsletter-compact-form input:focus{
+
+  border-color:
+  var(--color-primary-light);
+
+  box-shadow:
+  0 0 0 4px rgba(185,28,28,0.08);
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.newsletter-compact-form button{
+
+  height:60px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  padding:
+  0 24px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:
+  var(--color-primary);
+
+  color:#ffffff;
+
+  font-family:
+  var(--font-primary);
+
+  font-size:14px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+}
+
+.newsletter-compact-form button:hover{
+
+  background:
+  var(--color-primary-light);
+
+  transform:
+  translateY(-3px);
+}
+
+/* =========================================
+CERTIFICATION CARD
+========================================= */
+
+.certification-compact-card{
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    #1d1d38 100%
+  );
+
+  color:#ffffff;
+}
+
+/* =========================================
+CERTIFICATION LABEL
+========================================= */
+
+.certification-compact-label{
+
+  display:inline-flex;
+
+  padding:
+  10px
+  18px;
+
+  border-radius:
+  var(--radius-full);
+
+  background:
+  rgba(255,255,255,0.10);
+
+  color:#ffffff;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+/* =========================================
+CERTIFICATION TITLE
+========================================= */
+
+.certification-compact-title{
+
+  font-size:40px;
+
+  line-height:1.08;
+
+  letter-spacing:-1px;
+
+  margin-bottom:
+  var(--space-lg);
+}
+
+/* =========================================
+CERTIFICATION DESCRIPTION
+========================================= */
+
+.certification-compact-description{
+
+  color:
+  rgba(255,255,255,0.78);
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  margin-bottom:
+  var(--space-xl);
+}
+
+/* =========================================
+CTA BUTTON
+========================================= */
+
+.certification-compact-button{
+
+  width:fit-content;
+
+  height:58px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  padding:
+  0 24px;
+
+  border-radius:18px;
+
+  background:
+  var(--color-primary);
+
+  color:#ffffff;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.certification-compact-button:hover{
+
+  background:
+  var(--color-primary-light);
+
+  transform:
+  translateY(-3px);
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .newsletter-certification-grid{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .newsletter-compact-card,
+  .certification-compact-card{
+
+    padding:30px;
+  }
+
+  .newsletter-compact-title,
+  .certification-compact-title{
+
+    font-size:32px;
+
+    line-height:1.12;
+  }
+
+  .newsletter-compact-form{
+
+    flex-direction:column;
+  }
+
+  .newsletter-compact-form input,
+  .newsletter-compact-form button{
+
+    width:100%;
+  }
+
+}   
+        
+  /* =========================================
+3 CTA SECTION
+========================================= */
+
+.compact-blog-cta-section{
+
+  padding:
+  var(--space-3xl)
+  0;
+}
+
+/* =========================================
+GRID
+========================================= */
+
+.compact-blog-cta-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,minmax(0,1fr));
+
+  gap:24px;
+}
+
+/* =========================================
+CARD
+========================================= */
+
+.compact-blog-cta-card{
+
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:24px;
+
+  padding:32px;
+
+  border-radius:28px;
+
+  background:
+  var(--color-bg);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  overflow:hidden;
+
+  transition:0.35s ease;
+}
+
+/* =========================================
+CARD HOVER
+========================================= */
+
+.compact-blog-cta-card:hover{
+
+  transform:
+  translateY(-6px);
+
+  border-color:
+  var(--color-primary-light);
+
+  box-shadow:
+  var(--shadow-primary);
+}
+
+/* =========================================
+TOP ICON
+========================================= */
+
+.compact-blog-cta-icon{
+
+  width:64px;
+  height:64px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:20px;
+
+  background:
+  rgba(185,28,28,0.08);
+
+  color:
+  var(--color-primary);
+
+  transition:0.3s ease;
+}
+
+.compact-blog-cta-icon svg{
+
+  width:28px;
+  height:28px;
+}
+
+/* =========================================
+ICON HOVER
+========================================= */
+
+.compact-blog-cta-card:hover
+.compact-blog-cta-icon{
+
+  background:
+  var(--color-primary);
+
+  color:#ffffff;
+}
+
+/* =========================================
+LABEL
+========================================= */
+
+.compact-blog-cta-label{
+
+  display:inline-flex;
+
+  margin-bottom:
+  var(--space-sm);
+
+  color:
+  var(--color-primary);
+
+  font-size:12px;
+
+  font-weight:700;
+
+  letter-spacing:0.4px;
+
+  text-transform:uppercase;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.compact-blog-cta-title{
+
+  font-size:32px;
+
+  line-height:1.12;
+
+  letter-spacing:-0.8px;
+
+  margin-bottom:
+  var(--space-md);
+
+  transition:0.3s ease;
+}
+
+/* =========================================
+TITLE HOVER
+========================================= */
+
+.compact-blog-cta-card:hover
+.compact-blog-cta-title{
+
+  color:
+  var(--color-primary);
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.compact-blog-cta-description{
+
+  color:
+  var(--color-text-body);
+
+  font-size:15px;
+
+  line-height:1.9;
+}
+
+/* =========================================
+ARROW
+========================================= */
+
+.compact-blog-cta-arrow{
+
+  width:52px;
+  height:52px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:16px;
+
+  background:
+  var(--color-bg-light);
+
+  border:
+  1px solid
+  var(--color-border);
+
+  color:
+  var(--color-text-main);
+
+  margin-top:auto;
+
+  transition:0.3s ease;
+}
+
+.compact-blog-cta-arrow svg{
+
+  width:20px;
+  height:20px;
+}
+
+/* =========================================
+ARROW HOVER
+========================================= */
+
+.compact-blog-cta-card:hover
+.compact-blog-cta-arrow{
+
+  background:
+  var(--color-primary);
+
+  border-color:
+  var(--color-primary);
+
+  color:#ffffff;
+
+  transform:
+  translateY(-2px);
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .compact-blog-cta-grid{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .compact-blog-cta-card{
+
+    padding:28px;
+  }
+
+  .compact-blog-cta-title{
+
+    font-size:28px;
+  }
+
+}
+         
   </style>
 
 </head>
@@ -1703,15 +2376,7 @@ RESPONSIVE
 
           <div class="single-blog-category">
             Active Directory
-          </div>
-
-          <div class="single-blog-category">
-            Red Team
-          </div>
-
-          <div class="single-blog-category">
-            AD CS
-          </div>
+          </div>        
 
         </div>
 
@@ -2409,11 +3074,11 @@ certipy auth -pfx administrator.pfx</code></pre>
           <div class="single-blog-related-header">
 
             <span class="single-blog-content-label">
-              Related Articles
+              Related Blog
             </span>
 
             <h2 class="single-blog-related-title">
-              Continue Reading Related Research
+              Continue Reading Related Blog
             </h2>
 
           </div>
@@ -2461,40 +3126,45 @@ certipy auth -pfx administrator.pfx</code></pre>
               </div>
 
             </a>
+    <a href="#" class="single-blog-related-card">
 
+              <div class="single-blog-related-image">
+
+                <img
+                  src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+              </div>
+
+              <div class="single-blog-related-content">
+
+                <h3>
+                  Enterprise AD CS Persistence Techniques
+                </h3>
+
+              </div>
+
+            </a>
+                <a href="#" class="single-blog-related-card">
+
+              <div class="single-blog-related-image">
+
+                <img
+                  src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+              </div>
+
+              <div class="single-blog-related-content">
+
+                <h3>
+                  Enterprise AD CS Persistence Techniques
+                </h3>
+
+              </div>
+
+            </a>
           </div>
 
-        </div>
-
-        <!-- =========================================
-        CERTIFICATION CTA
-        ========================================= -->
-
-        <div class="single-blog-certification-cta">
-
-          <span class="single-blog-content-label">
-            Hands-On Red Team Training
-          </span>
-
-          <h2 class="single-blog-certification-title">
-            Advance Your Red Teaming Skills Through Hands-On Certifications
-          </h2>
-
-          <p class="single-blog-certification-text">
-            Master Active Directory attacks, Azure Red Teaming,
-            enterprise offensive security, and adversary simulation
-            through practical training and labs.
-          </p>
-
-          <a href="#" class="single-blog-certification-button">
-
-            Get Started
-
-            <i data-lucide="arrow-up-right"></i>
-
-          </a>
-
-        </div>
+        </div>    
 
       </div>
 
@@ -2503,7 +3173,262 @@ certipy auth -pfx administrator.pfx</code></pre>
   </div>
 
 </section>    
-    
+  
+
+<section class="newsletter-certification-section">
+
+  <div class="container">
+
+    <div class="newsletter-certification-grid">
+
+      <!-- =========================================
+      NEWSLETTER CARD
+      ========================================= -->
+
+      <div class="newsletter-compact-card">
+
+        <!-- TOP -->
+
+        <div class="newsletter-compact-top">
+
+          <div class="newsletter-compact-icon">
+
+            <i data-lucide="mail"></i>
+
+          </div>
+
+          <span class="newsletter-compact-label">
+            Offensive Security Newsletter
+          </span>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="newsletter-compact-content">
+
+          <h2 class="newsletter-compact-title">
+            Get the Latest Offensive Security Research & Red Team Tradecraft
+          </h2>
+
+          <p class="newsletter-compact-description">
+            Receive advanced Active Directory attack techniques, Azure Red Team operations,
+            enterprise tradecraft, and detection engineering insights directly in your inbox.
+          </p>
+
+        </div>
+
+        <!-- FORM -->
+
+        <form class="newsletter-compact-form">
+
+          <input type="email"
+            placeholder="Enter your email address">
+
+          <button type="submit">
+
+            Subscribe
+
+            <i data-lucide="arrow-right"></i>
+
+          </button>
+
+        </form>
+
+      </div>
+
+      <!-- =========================================
+      CERTIFICATION CTA
+      ========================================= -->
+
+      <div class="certification-compact-card">
+
+        <!-- LABEL -->
+
+        <span class="certification-compact-label">
+          Hands-On Red Team Training
+        </span>
+
+        <!-- TITLE -->
+
+        <h2 class="certification-compact-title">
+          Advance Your Red Teaming Skills Through Hands-On Certifications
+        </h2>
+
+        <!-- DESCRIPTION -->
+
+        <p class="certification-compact-description">
+          Master Active Directory attacks, Azure tradecraft,
+          enterprise offensive security, and adversary simulation
+          through practical certifications and labs.
+        </p>
+
+        <!-- BUTTON -->
+
+        <a href="#" class="certification-compact-button">
+
+          Get Started
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>      
+        
+<!-- =========================================
+3 CTA SECTION
+========================================= -->
+
+<section class="compact-blog-cta-section">
+
+  <div class="container">
+
+    <!-- =========================================
+    CTA GRID
+    ========================================= -->
+
+    <div class="compact-blog-cta-grid">
+
+      <!-- =========================================
+      CTA 1
+      ========================================= -->
+
+      <a href="#" class="compact-blog-cta-card">
+
+        <!-- ICON -->
+
+        <div class="compact-blog-cta-icon">
+
+          <i data-lucide="messages-square"></i>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="compact-blog-cta-content">
+
+          <span class="compact-blog-cta-label">
+            Community
+          </span>
+
+          <h3 class="compact-blog-cta-title">
+            Join Channel
+          </h3>
+
+          <p class="compact-blog-cta-description">
+            Get the latest offensive security research,
+            attack tradecraft, lab updates, and community discussions.
+          </p>
+
+        </div>
+
+        <!-- ARROW -->
+
+        <div class="compact-blog-cta-arrow">
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </div>
+
+      </a>
+
+      <!-- =========================================
+      CTA 2
+      ========================================= -->
+
+      <a href="#" class="compact-blog-cta-card">
+
+        <!-- ICON -->
+
+        <div class="compact-blog-cta-icon">
+
+          <i data-lucide="flask-conical"></i>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="compact-blog-cta-content">
+
+          <span class="compact-blog-cta-label">
+            Hands-On Labs
+          </span>
+
+          <h3 class="compact-blog-cta-title">
+            Access Free Labs
+          </h3>
+
+          <p class="compact-blog-cta-description">
+            Practice real-world Active Directory attacks,
+            Azure exploitation, and red team tradecraft.
+          </p>
+
+        </div>
+
+        <!-- ARROW -->
+
+        <div class="compact-blog-cta-arrow">
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </div>
+
+      </a>
+
+      <!-- =========================================
+      CTA 3
+      ========================================= -->
+
+      <a href="#" class="compact-blog-cta-card">
+
+        <!-- ICON -->
+
+        <div class="compact-blog-cta-icon">
+
+          <i data-lucide="shield-check"></i>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="compact-blog-cta-content">
+
+          <span class="compact-blog-cta-label">
+            Training
+          </span>
+
+          <h3 class="compact-blog-cta-title">
+            Explore Red Team Training
+          </h3>
+
+          <p class="compact-blog-cta-description">
+            Advance your offensive security skills
+            through practical enterprise-focused certifications.
+          </p>
+
+        </div>
+
+        <!-- ARROW -->
+
+        <div class="compact-blog-cta-arrow">
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>  
   <!-- =========================================
   LUCIDE INIT
   ========================================= -->
