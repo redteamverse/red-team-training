@@ -888,6 +888,13 @@ INPUT
 /* =========================================
 BUTTON
 ========================================= */
+  
+input[type="email"] {
+  height: 50px;
+  width: 100%;  
+ 
+
+}
 
 .newsletter-form button{
 
@@ -1112,12 +1119,16 @@ RESPONSIVE
 
     width:100%;
     
-  }
-  
- 
-
+  } 
+   
 }    
-    
+  
+@media (max-width: 768px) {
+  input[type="email"] {
+    height: 72px; /* Increased height for easier tapping on mobile */
+    font-size:20px; /* Prevents iOS from automatically zooming in on focus */
+  }
+}  
 /* =========================================
 DESKTOP DEFAULT
 SIDEBAR ON RIGHT
