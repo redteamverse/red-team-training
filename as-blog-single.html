@@ -339,57 +339,13 @@
     META GRID
     ========================================= */
 
-    .single-blog-meta-grid {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 14px;
-
-      margin-bottom:
-        var(--space-2xl);
-    }
-
-    .single-blog-meta-item {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 10px;
-
-      padding:
-        14px 18px;
-
-      border-radius:
-        18px;
-
-      border:
-        1px solid var(--color-border);
-
-      background:
-        var(--color-bg-light);
-
-      color:
-        var(--color-text-body);
-
-      font-size: 14px;
-
-      font-weight: 600;
-    }
-
-    .single-blog-meta-item svg {
-
-      width: 18px;
-      height: 18px;
-    }
-
     /* =========================================
     AUTHOR SECTION
     ========================================= */
 
     .single-blog-author-grid {
+
+      margin-top: 50px;
 
       display: flex;
 
@@ -584,15 +540,8 @@
         line-height: 1.1;
       }
 
-      .single-blog-meta-grid {
-
-        gap: 10px;
-      }
-
-      .single-blog-meta-item {
-
-        width: 100%;
-      }
+    
+   
 
       .single-blog-author-left {
 
@@ -2285,6 +2234,98 @@ RESPONSIVE
   }
 
 }
+/* =========================================
+META GRID
+INLINE BOTH MOBILE + DESKTOP
+========================================= */
+
+.single-blog-meta-grid {
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  align-items:center;
+
+  gap:14px;
+
+  margin-bottom:
+  var(--space-1xl);
+
+}
+
+/* =========================================
+META ITEM
+========================================= */
+
+.single-blog-meta-item {
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:
+  14px 18px;
+
+  border-radius:
+  18px;
+
+  border:
+  1px solid
+  var(--color-border);
+
+  background:
+  var(--color-bg-light);
+
+  color:
+  var(--color-text-body);
+
+  font-size:14px;
+
+  font-weight:600;
+
+  white-space:nowrap;
+
+}
+
+/* =========================================
+ICON
+========================================= */
+
+.single-blog-meta-item svg{
+
+  width:18px;
+
+  height:18px;
+
+  flex-shrink:0;
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .single-blog-meta-grid{
+
+    gap:10px;
+
+  }
+
+  .single-blog-meta-item{
+
+    padding:
+    12px 16px;
+
+    font-size:13px;
+
+  }
+
+}    
          
   </style>
 
