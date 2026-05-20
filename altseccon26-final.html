@@ -2006,8 +2006,8 @@ gap:22px;
 .nav {
   display: flex;
   align-items: center;
-  justify-content: center; 
-  gap: 18px;
+  justify-content:center;
+  gap: 38px;
   width: 100%;
   margin: 0 auto;
   flex-wrap: nowrap;   /* 🔥 prevent wrapping */
@@ -3315,8 +3315,8 @@ RESPONSIVE
 
 /* CRTP BADGE */
 .course-badge {
-  background: rgba(185,28,28,0.1);
-  color: #B91C1C;
+  background: #B91C1C;
+  color: #FFF;
   font-size: 11px;
   font-weight: 600;
   padding: 4px 8px;
@@ -6107,6 +6107,2721 @@ MOBILE
   }
 
 }
+    
+nav a.active-link{
+
+  position:relative;
+
+
+}
+
+nav a.active-link::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:50%;
+  bottom:-5px;
+
+  transform:translateX(-50%);
+
+  width:50px;
+  height:2px;
+
+  border-radius:999px;
+  background:#B91C1C;
+
+}    
+    
+.mobile-menu a.mobile-active-link{
+
+  position:relative;
+
+ 
+
+}
+
+.mobile-menu a.mobile-active-link::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:5%;
+  bottom:-1px;
+
+  transform:translateX(-50%);
+
+  width:50px;
+  height:2px;
+
+  border-radius:999px;
+
+  background:#B91C1C;
+
+}    
+    
+  
+    
+   
+    
+/* REMOVE GLOBAL HOVER EFFECT ONLY FOR PASS LINK */
+
+nav a.active-link:hover::after,
+nav a.active-link:focus-visible::after{
+
+  width:0px !important;
+
+}   
+  
+
+
+
+.altx-price-row small{
+
+  display:block;
+
+  margin-top:4px;
+
+  font-size:14px;
+  font-weight:600;
+
+  color:rgba(255,255,255,.45);
+
+  position:relative;
+
+}
+
+/* CUSTOM STRIKE */
+
+.altx-price-row small::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:0;
+
+  top:50%;
+
+  height:1.5px;
+
+  background:rgba(255,255,255,.45);
+
+  transform:translateY(-50%);
+
+} 
+  
+/* ==========================================
+CURRICULUM MODAL
+========================================== */
+
+.curriculum-modal{
+
+  position:fixed;
+  inset:0;
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(2,6,23,.88);
+
+  backdrop-filter:blur(10px);
+
+  z-index:99999;
+
+  padding:20px;
+
+}
+
+.curriculum-modal.active{
+
+  display:flex;
+
+}
+
+/* ==========================================
+MODAL BOX
+========================================== */
+
+.curriculum-box{
+
+  width:100%;
+  max-width:920px;
+ padding: 10px;
+  height:88vh;
+
+  display:flex;
+  flex-direction:column;
+
+  overflow:hidden;
+
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+    180deg,
+    #071325,
+    #020617
+  );
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+}
+/* ==========================================
+STICKY HEADER
+========================================== */
+
+.curriculum-top{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:20;
+
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+
+  
+
+  background:
+  rgba(7,19,37,.97);
+
+  backdrop-filter:blur(10px);
+
+  border-bottom:
+  1px solid rgba(255,255,255,.06);
+
+}
+
+.curriculum-top h2{
+
+  margin-top:12px;
+
+  font-size:28px;
+
+  color:#fff;
+
+}
+
+.curriculum-top button{
+
+  width:42px;
+  height:42px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:
+  rgba(255,255,255,.05);
+
+  color:#fff;
+
+  cursor:pointer;
+
+}
+  
+.curriculum-scroll{
+
+  flex:1;
+
+  overflow-y:auto;
+
+  overflow-x:hidden;
+
+  }
+  
+curriculum-body{
+
+  padding:26px;
+
+}
+
+/* SCROLLBAR */
+
+.curriculum-scroll::-webkit-scrollbar{
+
+  width:8px;
+
+}
+
+.curriculum-scroll::-webkit-scrollbar-thumb{
+
+  background:
+  rgba(255,255,255,.15);
+
+  border-radius:999px;
+
+}  
+.curriculum-body section{
+
+  margin-bottom:28px;
+
+}
+
+.curriculum-body h3{
+
+  color:#EF4444;
+
+  margin-bottom:12px;
+
+}
+
+.curriculum-body p,
+.curriculum-body li{
+
+  color:#CBD5E1;
+
+  line-height:1.8;
+
+}
+
+.curriculum-body ul{
+
+  padding-left:20px;
+
+}
+
+@media(max-width:768px){
+
+  .curriculum-box{
+
+
+
+  }
+
+  .curriculum-top h2{
+
+    font-size:24px;
+
+  }
+
+}  
+  
+/* =========================================================
+   SMALL MOBILE CURRICULUM HEADER FIX
+========================================================= */
+
+@media(max-width:768px){
+
+  .curriculum-top{
+
+  
+
+    align-items:center;
+
+    gap:10px;
+
+  }
+
+  /* badge */
+
+  .curriculum-top .course-badge{
+
+    padding:4px 10px;
+
+    font-size:10px;
+
+    margin-bottom:6px;
+
+  }
+
+  /* title */
+
+  .curriculum-top h2{
+
+    font-size:18px;
+
+    line-height:1.2;
+
+    margin-top:0;
+
+    margin-bottom:0;
+
+    max-width:85%;
+
+  }
+
+  /* close */
+
+  .curriculum-top button{
+
+    width:34px;
+    height:34px;
+
+    min-width:34px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    flex-shrink:0;
+
+  }
+
+  /* body */
+
+  .curriculum-body{
+
+   
+
+  }
+
+}
+/* ==========================================
+CURRICULUM ACCORDION
+========================================== */
+
+.curriculum-module{
+
+  margin-bottom:14px;
+
+  border-radius:16px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:
+  rgba(255,255,255,.02);
+
+}
+
+.curriculum-toggle{
+
+  width:100%;
+
+  padding:18px 20px;
+
+  border:none;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  background:none;
+
+  color:#fff;
+
+  font-size:15px;
+  font-weight:800;
+
+  cursor:pointer;
+
+}
+
+.curriculum-toggle i{
+
+  transition:.3s;
+
+}
+
+.curriculum-module.active i{
+
+  transform:rotate(180deg);
+
+}
+
+.curriculum-content{
+
+  max-height:0;
+
+  overflow:hidden;
+
+  transition:.35s ease;
+
+}
+
+.curriculum-content ul{
+
+  padding:
+  0 22px 22px 42px;
+
+}
+
+.curriculum-content li{
+
+  margin-bottom:10px;
+
+  color:#CBD5E1;
+
+  line-height:1.6;
+
+}  
+  
+/* ==========================================
+INTRO
+========================================== */
+
+.curriculum-intro{
+
+  margin-bottom:28px;
+
+}
+
+.curriculum-intro h2{
+
+  font-size:30px;
+
+  line-height:1.15;
+
+  color:#fff;
+
+  margin-bottom:14px;
+
+}
+
+.curriculum-desc{
+
+  font-size:15px;
+
+  line-height:1.8;
+
+  color:#CBD5E1;
+
+}
+
+/* ==========================================
+OVERVIEW
+========================================== */
+
+.curriculum-overview{
+
+  margin-bottom:30px;
+
+}
+
+.curriculum-overview h3,
+.curriculum-prereq h3{
+
+  margin-bottom:12px;
+
+  color:#EF4444;
+
+}
+
+.curriculum-overview p{
+
+  line-height:1.8;
+
+  color:#CBD5E1;
+  padding: 10px;
+
+}
+
+/* ==========================================
+STATS
+========================================== */
+
+.curriculum-stats{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:12px;
+
+  margin-bottom:30px;
+
+}
+
+.curriculum-stat{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  text-align:center;
+
+  gap:8px;
+
+  padding:16px;
+
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,.03);
+
+  border:
+  1px solid rgba(255,255,255,.06);
+
+}
+
+.curriculum-stat svg{
+
+  width:18px;
+  height:18px;
+
+  color:#60A5FA;
+
+}
+
+.curriculum-stat span{
+
+  font-size:13px;
+
+  color:#E2E8F0;
+
+  font-weight:700;
+
+}
+
+/* ==========================================
+PREREQUISITES
+========================================== */
+
+.curriculum-prereq{
+
+  margin-bottom:28px;
+
+}
+
+.curriculum-prereq ul{
+
+  padding-left:20px;
+
+}
+
+.curriculum-prereq li{
+
+  color:#CBD5E1;
+
+  margin-bottom:10px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .curriculum-intro h2{
+
+    font-size:24px;
+
+  }
+
+  .curriculum-stats{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+  }
+
+}  
+/* =========================================================
+   QUICK BUY ROW
+========================================================= */
+
+.altx-price-info{
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+
+  width:100%;
+
+}
+
+/* ACTION AREA */
+
+.altx-row-action{
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+
+  width:100%;
+
+  margin-top:14px;
+
+}
+
+/* MINI QTY */
+
+.altx-mini-qty{
+
+  display:flex;
+  align-items:center;
+
+  height:42px;
+
+  border-radius:12px;
+
+  overflow:hidden;
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  background:
+  rgba(255,255,255,.03);
+
+}
+
+.altx-mini-qty button{
+
+  width:40px;
+  height:40px;
+
+  border:none;
+
+  background:none;
+
+  color:#fff;
+
+  font-size:18px;
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+.altx-mini-qty span{
+
+  width:42px;
+
+  text-align:center;
+
+  color:#fff;
+
+  font-size:14px;
+  font-weight:700;
+
+}
+
+/* CTA */
+
+.altx-row-btn{
+
+  flex:1;
+
+  height:52px;
+   padding: 10px;
+  border:none;
+
+  border-radius:12px;
+
+  background:#EA3037;
+
+  color:#fff;
+
+  font-size:13px;
+  font-weight:800;
+
+  cursor:pointer;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-price-info{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+  }
+
+  .altx-price-side{
+
+    width:30%;
+
+  }
+
+  .altx-row-action{
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+  }
+
+  .altx-row-btn{
+
+    width:auto;
+    
+
+  }
+
+}  
+  
+ 
+/* =========================================
+MODAL
+========================================= */
+
+.altx-modal{
+
+  position:fixed;
+  inset:0;
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
+
+  background:
+  rgba(2,6,23,.84);
+
+  backdrop-filter:blur(8px);
+
+  z-index:99999;
+
+  padding:20px;
+
+}
+
+.altx-modal.active{
+
+  display:flex;
+
+}
+
+.altx-modal-box{
+
+  width:100%;
+  max-width:520px;
+
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+    180deg,
+    #071325,
+    #020617
+  );
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  padding:24px;
+
+}
+
+.altx-modal-top{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:24px;
+    position:relative;
+
+  z-index:20;
+
+  flex-shrink:0;
+}
+
+.altx-modal-top h3{
+
+  color:#fff;
+
+}
+
+.altx-modal-top button{
+
+  width:38px;
+  height:38px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:
+  rgba(255,255,255,.05);
+
+  color:#fff;
+
+  cursor:pointer;
+
+}
+
+.altx-booking-form{
+
+  display:flex;
+  flex-direction:column;
+
+  gap:14px;
+
+}
+
+.altx-booking-form input{
+
+  height:52px;
+
+  padding:0 16px;
+
+  border-radius:14px;
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  background:
+  rgba(255,255,255,.03);
+
+  color:#fff;
+
+}
+
+.altx-modal-btn{
+
+  height:52px;
+  padding: 10px;
+  border:none;
+
+  border-radius:14px;
+
+  background:#EA3037;
+
+  color:#fff;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+/* =========================================
+TOAST
+========================================= */
+
+.altx-toast{
+
+  position:fixed;
+
+  left:50%;
+  bottom:24px;
+
+  transform:
+  translateX(-50%)
+  translateY(120px);
+
+  padding:14px 20px;
+
+  border-radius:14px;
+
+  background:#071325;
+
+  color:#fff;
+
+  z-index:999999;
+
+  transition:.3s;
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+}
+
+.altx-toast.show{
+
+  transform:
+  translateX(-50%)
+  translateY(0);
+
+}  
+  
+/* =========================================
+ATTENDEE MODAL
+========================================= */
+
+.altx-attendee-card{
+
+  padding:18px;
+
+  border-radius:18px;
+
+  background:
+  rgba(255,255,255,.03);
+
+  border:
+  1px solid rgba(255,255,255,.06);
+
+  margin-bottom:18px;
+
+}
+
+.altx-attendee-card h4{
+
+  margin-bottom:14px;
+
+  color:#fff;
+
+  font-size:18px;
+
+}
+
+/* COPY ROW */
+
+.altx-copy-row{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin-bottom:16px;
+
+  color:#CBD5E1;
+
+  font-size:14px;
+
+}
+
+.altx-copy-row input{
+
+  width:16px;
+  height:16px;
+
+}
+
+/* FORM */
+
+.altx-attendee-form{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:14px;
+
+}
+
+/* INPUTS */
+
+.altx-attendee-form input{
+
+  height:50px;
+
+  padding:0 14px;
+
+  border-radius:14px;
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  background:
+  rgba(255,255,255,.04);
+
+  color:#fff;
+
+  font-size:14px;
+
+  outline:none;
+
+}
+
+/* READONLY */
+
+.altx-attendee-form input[readonly]{
+
+  background:
+  rgba(255,255,255,.02);
+
+  color:#94A3B8;
+
+}
+
+/* PLACEHOLDER */
+
+.altx-attendee-form input::placeholder{
+
+  color:#64748B;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-attendee-form{
+
+    grid-template-columns:1fr;
+
+  }
+
+}  
+  
+/* =========================================
+ATTENDEE MODAL LAYOUT
+========================================= */
+
+.altx-attendee-box{
+
+  width:100%;
+  max-width:760px;
+
+  height:88vh;
+
+  display:flex;
+  flex-direction:column;
+
+  overflow:hidden;
+
+}
+
+/* SCROLL AREA */
+.altx-attendee-scroll{
+
+  flex:1;
+
+  overflow-y:auto;
+
+  overflow-x:hidden;
+
+  padding:22px;
+
+  min-height:0;
+
+}
+
+/* FOOTER */
+
+.altx-attendee-footer{
+
+  
+    position:relative;
+
+  z-index:20;
+
+  flex-shrink:0;
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:16px;
+
+  padding:20px 24px;
+
+  border-top:
+  1px solid rgba(255,255,255,.06);
+
+  background:
+  rgba(2,6,23,.92);
+
+}
+
+/* TOTAL */
+
+.altx-attendee-total{
+
+  display:flex;
+  flex-direction:column;
+
+}
+
+.altx-attendee-total span{
+
+  font-size:12px;
+
+  color:#94A3B8;
+
+  margin-bottom:4px;
+
+}
+
+.altx-attendee-total strong{
+
+  font-size:22px;
+  font-weight:800;
+
+  color:#10B981;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-attendee-box{
+
+    height:100vh;
+
+    border-radius:0;
+
+  }
+
+  .altx-attendee-footer{
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+    padding:18px;
+
+  }
+
+}  
+  
+/* =========================================
+PAYMENT MODAL
+========================================= */
+
+.altx-payment-box{
+
+  max-width:560px;
+
+}
+
+/* SUMMARY */
+
+.altx-payment-summary{
+
+  padding:20px;
+
+  border-radius:18px;
+
+  background:
+  rgba(255,255,255,.03);
+
+  border:
+  1px solid rgba(255,255,255,.06);
+
+  margin-bottom:24px;
+
+}
+
+.altx-payment-line{
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:14px;
+
+}
+
+.altx-payment-line:last-child{
+
+  margin-bottom:0;
+
+}
+
+.altx-payment-line span{
+
+  color:#94A3B8;
+
+}
+
+.altx-payment-line strong{
+
+  color:#fff;
+
+}
+
+.altx-payment-total{
+
+  color:#10B981 !important;
+
+  font-size:26px;
+
+}
+
+/* METHODS */
+
+.altx-payment-methods{
+
+  display:flex;
+  flex-direction:column;
+
+  gap:12px;
+
+  margin-bottom:24px;
+
+}
+
+.altx-pay-btn{
+
+  height:54px;
+
+  border:none;
+
+  border-radius:16px;
+
+  background:#EA3037;
+
+  color:#fff;
+
+  font-size:15px;
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+.altx-pay-btn-dark{
+
+  background:
+  rgba(255,255,255,.04);
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+}
+
+/* TRUST */
+
+.altx-payment-trust{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:10px;
+
+  margin-bottom:24px;
+
+}
+
+.altx-payment-trust div{
+
+  padding:12px;
+
+  border-radius:14px;
+
+  text-align:center;
+
+  font-size:12px;
+
+  color:#CBD5E1;
+
+  background:
+  rgba(255,255,255,.03);
+
+}
+
+/* FINAL CTA */
+
+/* =========================================
+PAYMENT CTA FIX
+========================================= */
+
+.altx-payment-final-btn{
+
+  width:100%;
+
+  min-height:56px;
+
+  padding:0 28px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #EF4444,
+    #C1121F
+  );
+
+  color:#fff;
+
+  font-size:16px;
+  font-weight:800;
+
+  white-space:nowrap;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+
+  transition:.25s ease;
+
+  box-shadow:
+  0 10px 30px rgba(239,68,68,.18);
+
+}
+
+.altx-payment-final-btn:hover{
+
+  transform:translateY(-2px);
+
+  box-shadow:
+  0 16px 40px rgba(239,68,68,.26);
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-payment-final-btn{
+
+    width:100%;
+
+    font-size:15px;
+
+    min-height:54px;
+
+  }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-payment-trust{
+
+    grid-template-columns:1fr;
+
+  }
+
+}  
+  
+/* =========================================
+FINAL MODAL FIX
+========================================= */
+
+.altx-modal{
+
+  overflow:hidden;
+
+}
+
+.altx-modal-box{
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+.altx-attendee-scroll{
+
+  position:relative;
+
+  z-index:1;
+
+}
+
+.altx-attendee-footer{
+
+  position:relative;
+
+  z-index:5;
+
+}
+
+.altx-modal-top{
+
+  position:relative;
+
+  z-index:5;
+
+}  
+  
+/* =========================================
+SUCCESS MODAL
+========================================= */
+
+.altx-success-icon{
+
+  width:88px;
+  height:88px;
+
+  margin:0 auto 24px;
+
+  border-radius:999px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:42px;
+  font-weight:800;
+
+  color:#10B981;
+
+  background:
+  rgba(16,185,129,.12);
+
+  border:
+  1px solid rgba(16,185,129,.28);
+
+}
+
+/* TITLE */
+
+.altx-success-title{
+
+  text-align:center;
+
+  font-size:38px;
+  line-height:1.1;
+  font-weight:800;
+
+  color:#FFFFFF;
+
+  margin-bottom:16px;
+
+}
+
+/* SUBTEXT */
+
+.altx-success-sub{
+
+  text-align:center;
+
+  font-size:17px;
+  line-height:1.7;
+
+  color:#CBD5E1;
+
+  margin-bottom:26px;
+
+}
+
+/* REFERENCE */
+
+.altx-success-ref{
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:20px;
+
+  border-radius:18px;
+
+  margin-bottom:28px;
+
+  background:
+  rgba(255,255,255,.03);
+
+  border:
+  1px solid rgba(255,255,255,.06);
+
+}
+
+.altx-success-ref span{
+
+  font-size:13px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+
+  color:#94A3B8;
+
+}
+
+.altx-success-ref strong{
+
+  font-size:30px;
+  font-weight:800;
+
+  color:#10B981;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-success-title{
+
+    font-size:28px;
+
+  }
+
+  .altx-success-sub{
+
+    font-size:15px;
+
+  }
+
+  .altx-success-ref strong{
+
+    font-size:24px;
+
+  }
+
+}  
+  
+/* =========================================
+BOOKING SUMMARY
+========================================= */
+
+.altx-booking-summary{
+
+  padding:18px;
+
+  border-radius:18px;
+
+  margin-bottom:22px;
+
+  background:
+  rgba(255,255,255,.03);
+
+  border:
+  1px solid rgba(255,255,255,.06);
+
+}
+
+/* TOP */
+
+.altx-booking-summary-top{
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:18px;
+
+}
+
+.altx-booking-summary-top span{
+
+  color:#94A3B8;
+
+  font-size:13px;
+
+}
+
+.altx-booking-summary-top strong{
+
+  color:#fff;
+
+  font-size:16px;
+  font-weight:700;
+
+}
+
+/* BOTTOM */
+
+.altx-booking-summary-bottom{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+}
+
+.altx-booking-summary-bottom div{
+
+  display:flex;
+  flex-direction:column;
+
+}
+
+.altx-booking-summary-bottom small{
+
+  color:#64748B;
+
+  font-size:12px;
+
+  margin-bottom:6px;
+
+}
+
+.altx-booking-summary-bottom strong{
+
+  color:#fff;
+
+  font-size:18px;
+  font-weight:800;
+
+}
+
+.altx-booking-amount{
+
+  color:#10B981 !important;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-booking-summary-bottom{
+
+    flex-direction:column;
+
+    gap:14px;
+
+  }
+
+}  
+  
+/* =========================================
+PAYMENT SUMMARY V2
+========================================= */
+
+.altx-payment-summary-top{
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:18px;
+
+}
+
+.altx-payment-summary-top span{
+
+  color:#94A3B8;
+
+  font-size:13px;
+
+}
+
+.altx-payment-summary-top strong{
+
+  color:#fff;
+
+  font-size:16px;
+  font-weight:700;
+
+}
+
+.altx-payment-summary-bottom{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+}
+
+.altx-payment-summary-bottom div{
+
+  display:flex;
+  flex-direction:column;
+
+}
+
+.altx-payment-summary-bottom small{
+
+  color:#64748B;
+
+  font-size:12px;
+
+  margin-bottom:6px;
+
+}
+
+.altx-payment-summary-bottom strong{
+
+  color:#fff;
+
+  font-size:18px;
+  font-weight:800;
+
+}
+
+.altx-payment-total{
+
+  color:#10B981 !important;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-payment-summary-bottom{
+
+    flex-direction:column;
+
+    gap:14px;
+
+  }
+
+}  
+  
+/* =========================================
+SELECTED PASS PREVIEW
+========================================= */
+
+/* =========================================
+SELECTED PASS SUMMARY
+========================================= */
+
+.altx-selected-preview{
+
+  padding:22px;
+
+  margin-top:22px;
+
+  border-radius:22px;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(255,255,255,.03),
+    rgba(255,255,255,.015)
+  );
+
+  border:
+  1px solid rgba(255,255,255,.06);
+
+}
+
+/* TOP */
+
+.altx-selected-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-bottom:24px;
+
+}
+
+.altx-selected-top span{
+
+  display:block;
+
+  font-size:14px;
+
+  color:#94A3B8;
+
+  margin-bottom:8px;
+
+}
+
+.altx-selected-top strong{
+
+  color:#fff;
+
+  font-size:34px;
+  font-weight:800;
+
+  line-height:1.05;
+
+}
+
+/* BOTTOM */
+.altx-selected-bottom{
+
+  display:grid;
+
+  grid-template-columns:
+  1fr auto;
+
+  gap:20px;
+
+  align-items:end;
+
+}
+
+/* LEFT SIDE */
+
+.altx-selected-left-side{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+
+}
+
+/* REMOVE */
+
+.altx-selected-remove-wrap{
+
+  margin-top:6px;
+
+}
+
+
+
+.altx-selected-bottom small{
+
+  display:block;
+
+  color:#64748B;
+
+  font-size:13px;
+
+  margin-bottom:8px;
+
+}
+
+/* QTY */
+
+#trainingSelectedQty{
+
+  color:#fff;
+
+  font-size:34px;
+  font-weight:800;
+
+}
+
+/* PRICE */
+
+.altx-selected-price-wrap{
+
+  text-align:right;
+
+}
+
+.altx-selected-price{
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:flex-end;
+
+  gap:6px;
+
+}
+
+/* OLD PRICE */
+
+.altx-selected-old{
+
+  font-size:16px;
+  font-weight:600;
+
+  color:#94A3B8;
+
+  text-decoration:line-through;
+
+}
+
+/* FINAL PRICE */
+
+#trainingSelectedPrice{
+
+  color:#10B981;
+
+  font-size:42px;
+  font-weight:900;
+
+  line-height:1;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .altx-selected-preview{
+
+    padding:18px;
+
+  }
+
+  .altx-selected-top strong{
+
+    font-size:24px;
+
+  }
+
+  #trainingSelectedQty{
+
+    font-size:28px;
+
+  }
+
+  #trainingSelectedPrice{
+
+    font-size:34px;
+
+  }
+
+  .altx-selected-old{
+
+    font-size:14px;
+
+  }
+
+}
+  
+.altx-pass-btn{
+
+  width:100%;
+
+  height:56px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #EF4444,
+    #C1121F
+  );
+
+  color:#fff;
+
+  font-size:16px;
+  font-weight:800;
+
+  cursor:pointer;
+
+  margin-top:18px;
+
+  transition:.25s ease;
+
+}
+
+.altx-pass-btn:hover{
+
+  transform:translateY(-2px);
+
+}  
+  #trainingSelectedTrack{
+
+  display:block;
+
+  margin-top:8px;
+
+  color:#94A3B8;
+
+  font-size:14px;
+
+}
+  
+/* REMOVE BUTTON */
+
+.altx-selected-remove-wrap{
+
+  display:flex;
+
+  align-items:flex-end;
+
+}
+
+.altx-selected-remove{
+
+  border:none;
+
+  background:none;
+
+  color:#EF4444;
+
+  font-size:14px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.2s ease;
+
+}
+
+.altx-selected-remove:hover{
+
+  opacity:.75;
+
+}  
+.altx-pass-btn:disabled{
+
+  opacity:.5;
+
+  cursor:not-allowed;
+
+}  
+  
+/* ATTENDEE MODAL LAYOUT */
+
+.altx-attendee-box{
+
+  display:flex;
+
+  flex-direction:column;
+
+  height:88vh;
+
+}
+
+/* SCROLL AREA */
+
+.altx-attendee-scroll{
+
+  flex:1;
+
+  overflow-y:auto;
+
+  min-height:0;
+
+  padding:22px;
+
+}
+
+/* FOOTER */
+
+.altx-attendee-footer{
+
+  flex-shrink:0;
+
+  padding:20px 22px;
+
+  border-top:
+  1px solid rgba(255,255,255,.06);
+
+  background:
+  rgba(2,6,23,.96);
+
+} 
+  
+
+.altx-corporate-banner{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  gap:18px;
+
+  padding:20px 22px;
+
+  margin-bottom:50px;
+
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(37,99,235,.08),
+    rgba(193,18,31,.05)
+  );
+
+  border:1px solid rgba(255,255,255,.06);
+
+}
+
+.altx-corporate-left{
+
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+
+}
+
+
+  
+  .altx-corporate-icon i{ 
+    color:#EA3037;
+  }
+
+.altx-corporate-title{
+
+  font-size:18px;
+  font-weight:800;
+
+  margin-bottom:6px;
+
+}
+
+.altx-corporate-sub{
+
+  font-size:14px;
+  line-height:1.7;
+  color:#94A3B8;
+  max-width:720px;
+
+}
+  
+  @media(max-width:768px){
+
+ .altx-corporate-sub{
+
+  font-size:12px;
+  line-height:1.7;
+
+  color:#94A3B8;
+
+  max-width:720px;
+
+}
+
+} 
+  
+
+.altx-corporate-btn{
+
+  height:48px;
+  width: 200px;
+
+  border:none;
+  border-radius:14px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563EB,
+    #1D4ED8
+  );
+
+  color:#fff;
+
+  font-size:13px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  white-space:nowrap;
+  
+
+}
+
+/* ========================================== */
+/* RESPONSIVE */
+/* ========================================== */
+
+@media(max-width:768px){
+
+  .altx-corporate-banner{
+
+    flex-direction:column;
+    align-items:flex-start;
+
+    padding:18px;
+
+  }
+
+  .altx-corporate-left{
+    width:100%;
+  }
+
+  .altx-corporate-btn{
+
+    width:100%;
+   
+
+  }
+
+}  
+/* ========================================== */
+/* CORPORATE MODAL */
+/* ========================================== */
+
+.altx-corp-grid{
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:16px;
+
+}
+
+.altx-corp-field{
+
+  display:grid;
+  gap:8px;
+
+}
+
+.altx-corp-field label{
+
+  font-size:13px;
+  font-weight:600;
+
+  color:#CBD5E1;
+
+}
+
+.altx-corp-field input{
+
+  width:100%;
+  height:50px;
+
+  border-radius:14px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:#081120;
+
+  color:#fff;
+
+  padding:0 14px;
+
+}
+
+.altx-corp-note{
+
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+
+  margin-top:18px;
+
+  padding:16px;
+
+  border-radius:16px;
+
+  background:
+  rgba(37,99,235,.08);
+
+  border:1px solid rgba(37,99,235,.10);
+
+  color:#CBD5E1;
+
+  font-size:13px;
+  line-height:1.7;
+
+}
+
+.altx-corp-note i{
+
+  color:var(--color-secondary-light);
+
+  margin-top:2px;
+
+}
+
+@media(max-width:768px){
+
+  .altx-corp-grid{
+    grid-template-columns:1fr;
+  }
+
+}    
+  
+
+.altx-final-btn{
+
+  width:100%;
+  height:54px;
+
+  margin-top:22px;
+
+  border:none;
+  border-radius:16px;
+
+  background:
+  linear-gradient(135deg,#EF4444,#C1121F);
+
+  color:#fff;
+
+  font-size:15px;
+  font-weight:800;
+
+  cursor:pointer;
+
+}  
+  
+/* =========================================
+ADD PASS FLASH EFFECT
+========================================= */
+
+.altx-row-btn{
+
+  position:relative;
+
+  overflow:hidden;
+
+  isolation:isolate;
+
+}
+
+/* GLOW PULSE */
+
+.altx-row-btn::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-2px;
+
+  border-radius:inherit;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(255,255,255,0),
+    rgba(255,255,255,.38),
+    rgba(255,255,255,0)
+  );
+
+  transform:
+  translateX(-140%);
+
+  animation:
+  altxFlash 2.8s linear infinite;
+
+  z-index:-1;
+
+}
+
+/* SOFT PULSE */
+
+.altx-row-btn{
+
+  animation:
+  altxPulse 2.2s ease-in-out infinite;
+
+}
+
+/* FLASH MOVE */
+
+@keyframes altxFlash{
+
+  100%{
+
+    transform:
+    translateX(140%);
+
+  }
+
+}
+
+/* PULSE */
+
+@keyframes altxPulse{
+
+  0%{
+
+    box-shadow:
+    0 0 0 rgba(239,68,68,0);
+
+  }
+
+  50%{
+
+    box-shadow:
+    0 0 24px rgba(239,68,68,.35);
+
+  }
+
+  100%{
+
+    box-shadow:
+    0 0 0 rgba(239,68,68,0);
+
+  }
+
+}  
+  
+/* =========================================
+MOBILE EARLY BIRD BAR
+========================================= */
+
+/* =========================================
+MOBILE EARLY BIRD OFFER
+========================================= */
+
+/* SHOW ONLY MOBILE */
+
+@media(max-width:768px){
+
+  .altx-mobile-offer{
+
+    position:fixed;
+
+    left:14px;
+    right:14px;
+    bottom:14px;
+
+    z-index:99999;
+
+    border-radius:24px;
+
+    padding:18px;
+
+    background:
+    linear-gradient(
+      135deg,
+      rgba(127,29,29,.98),
+      rgba(185,28,28,.98)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.4);
+
+    backdrop-filter:
+    blur(20px);
+
+    /* HIDDEN INITIALLY */
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transform:
+    translateY(30px);
+
+    transition:
+    opacity .45s ease,
+    transform .45s ease,
+    visibility .45s;
+
+  }
+
+  /* SHOW */
+
+  .altx-mobile-offer.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+    transform:
+    translateY(0);
+
+  }
+
+}
+
+/* HIDE DESKTOP */
+
+@media(min-width:769px){
+
+  .altx-mobile-offer{
+
+    display:none;
+
+  }
+
+}
+
+/* CLOSE */
+
+.altx-mobile-offer-close{
+
+  position:absolute;
+
+  top:10px;
+  right:10px;
+
+  width:32px;
+  height:32px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:
+  rgba(255,255,255,.12);
+
+  color:#fff;
+
+  font-size:14px;
+
+  cursor:pointer;
+
+}
+
+/* CONTENT */
+
+.altx-mobile-offer-content{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  text-align:center;
+
+}
+
+/* TOP */
+
+.altx-mobile-offer-top{
+
+  font-size:11px;
+  font-weight:800;
+
+  letter-spacing:.08em;
+
+  color:#FECACA;
+
+  margin-bottom:10px;
+
+}
+
+/* HEADING */
+
+.altx-mobile-offer-heading{
+
+  font-size:22px;
+  font-weight:800;
+
+  color:#fff;
+
+  line-height:1.2;
+
+  margin-bottom:16px;
+
+}
+
+/* PRICE */
+
+.altx-mobile-offer-price{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin-bottom:18px;
+
+}
+
+.altx-mobile-offer-price span{
+
+  font-size:16px;
+
+  color:#FCA5A5;
+
+  text-decoration:line-through;
+
+}
+
+.altx-mobile-offer-price strong{
+
+  font-size:34px;
+  font-weight:900;
+
+  color:#10B981;
+
+}
+
+/* TIMER */
+
+.altx-mobile-offer-timer{
+
+  display:flex;
+
+  gap:10px;
+
+  margin-bottom:20px;
+
+}
+
+.altx-mobile-time{
+
+  width:58px;
+  height:58px;
+
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,.08);
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+}
+
+.altx-mobile-time b{
+
+  font-size:20px;
+
+  color:#fff;
+
+  line-height:1;
+
+}
+
+.altx-mobile-time span{
+
+  font-size:10px;
+
+  color:#FECACA;
+
+  margin-top:4px;
+
+}
+
+/* CTA */
+
+.altx-mobile-offer-btn{
+
+  width:100%;
+
+  height:54px;
+
+  border-radius:18px;
+
+  background:#fff;
+
+  color:#B91C1C !important;
+
+  font-size:15px;
+  font-weight:800;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  text-decoration:none;
+
+  animation:
+  mobileOfferPulse 2.5s infinite;
+
+}
+
+/* PULSE */
+
+@keyframes mobileOfferPulse{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.03);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
+}
+
+
 </style>
 </head>
 
@@ -6136,7 +8851,7 @@ MOBILE
     <!-- LEFT: LOGO -->
     <div class="header-left">
       <div class="logo">
-        <a href="https://redteamverse.github.io/red-team-training/altseccon26-final.html">
+        <a href="#">
           <img src="https://static.wixstatic.com/media/98ad8e_5fe5742cfaf44db197695e76018055d2~mv2.png" alt="AltSecCON Logo">
           <span>AltSecCON</span>
         </a>
@@ -6151,11 +8866,11 @@ MOBILE
         <a href="#" class="dropdown-toggle">Programs ▾</a>
 
         <div class="dropdown-menu">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTP</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTE</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CETP</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTP</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTE</a>
+          <a href="#caipt-course">CAIPT®</a>
+          <a href="#crte-course">CRTE®</a>
+          <a href="#cetp-course">CETP®</a>
+          <a href="#cartp-course">CARTP®</a>
+          <a href="#carte-course">CARTE®</a>
         </div>
       </div>
 
@@ -6164,49 +8879,38 @@ MOBILE
         <a href="#" class="dropdown-toggle">Conference ▾</a>
 
         <div class="dropdown-menu">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Overview</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Why Attend</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Speakers</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Agenda</a>
+          <a href="#conference">Overview</a>
+          <a href="#experience">Why Attend</a>
+          <a href="#instructors">Speakers</a>        
           <a href="#tickets">Pass</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
         </div>
       </div>     
 
-      <!-- 🔥 AltSecCON 2026 DROPDOWN -->
-      <div class="nav-item dropdown">
-        <a href="#" class="dropdown-toggle">AltSecCON 2026 ▾</a>
-
-        <div class="dropdown-menu">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon26-v3.html">Overview</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
-        </div>
-      </div>
-       <a href="#tickets">Passes</a>
+    
+       <a href="#tickets" class="active-link">Passes</a>
 
       <!-- 🔥 Past Events DROPDOWN -->
       <div class="nav-item dropdown">
         <a href="#" class="dropdown-toggle">Past Edition ▾</a>
 
         <div class="dropdown-menu">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon25-v1.html">
+          <a href="#glimpse">
             AltSecCON 2025 (Bengaluru)
           </a>
-        </div>
+              <a href="#gallery">Experience</a>
+        </div>       
       </div>
 
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Experience</a>
-
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>
+     
+      <a href="#venue">Venue</a>
+      <a href="#contact">Contact</a>
 
     </nav>
 
 <div class="header-cta">
 
   <!-- CART ICON -->
-  <div class="cart-icon" onclick="window.location.href='https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html'">
+  <div class="cart-icon" onclick="window.location.href='#tickets'">
     🛒
     <span id="cartCount">0</span>
   </div>
@@ -6243,11 +8947,11 @@ MOBILE
         <a href="#" class="dropdown-toggle">Programs ▾</a>
 
         <div class="dropdown-menu">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTP</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CRTE</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CETP</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTP</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v1.html">CARTE</a>
+          <a href="#caipt-course">CAIPT®</a>
+          <a href="#crte-course">CRTE®</a>
+          <a href="#cetp-course">CETP®</a>
+          <a href="#cartp-course">CARTP®</a>
+          <a href="#carte-course">CARTE®</a>
         </div>
       </div>  
 
@@ -6256,46 +8960,36 @@ MOBILE
         <a href="#" class="dropdown-toggle">Conference ▾</a>
 
         <div class="dropdown-menu">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Overview</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Why Attend</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Speakers</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Agenda</a>
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-conference-v1.html">Pass</a>
+          <a href="#conference">Overview</a>
+          <a href="#experience">Why Attend</a>
+          <a href="#instructors">Speakers</a>        
+          <a href="#tickets">Pass</a>
         </div>
       </div>
 
     
 
-    <!-- AltSecCON 2026 -->
-    <div class="nav-item dropdown">
-      <a href="#" class="dropdown-toggle">AltSecCON 2026 ▾</a>
 
-      <div class="dropdown-menu">
-        <a href="https://redteamverse.github.io/red-team-training/altseccon26-final.html">Overview</a>
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html">Event Schedule</a>
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-venue.html">Venue</a>
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-faq.html">FAQs</a>
-      </div>
-    </div>
     
-    <a href="#tickets">Passes</a>
+    <a href="#tickets" class="mobile-active-link">Passes</a>
 
     <!-- Past Events -->
     <div class="nav-item dropdown">
       <a href="#" class="dropdown-toggle">Past Edition ▾</a>
 
       <div class="dropdown-menu">
-        <a href="https://redteamverse.github.io/red-team-training/altseccon25-v1.html">
+        <a href="#glimpse">
           AltSecCON 2025 (Bengaluru)
         </a>
+        <a href="#gallery">Experience</a>  
       </div>
     </div>
 
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html">Experience</a>
+    
+    <a href="#venue">Venue</a>  
+    <a href="#contact">Contact</a>  
 
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-contact.html">Contact</a>  
-
-    <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html" class="btn">Get Passes</a>
+    <a href="#tickets" class="btn">Get Passes</a>
 
    
 
@@ -6373,8 +9067,7 @@ MOBILE
 
 
   <!-- SECONDARY CTA -->
-  <a href="#training" 
-     class="btn btn-ghost">
+  <a href="#training" class="btn btn-ghost">
     View Training Details
   </a>
 
@@ -6676,14 +9369,14 @@ MOBILE
     <div class="course-grid">
 
       <!-- CRTP -->
-      <div class="course-card">
+      <div class="course-card" id="caipt-course">
         <img src="https://redteamverse.github.io/red-team-training/images/caipt.webp" class="course-img">
         <div class="course-signal-name">
-        <span class="course-badge">CRTP</span>
+        <span class="course-badge">CAIPT</span>
         
       </div>     
          
-        <h3>Active Directory Attacks for Red and Blue Teams - Beginner's Edition</h3>
+        <h3>To Be Decided</h3>
          
         <div class="course-signal supporting-body">
         Perform AD enumeration, privilege escalation, and Kerberos attacks in real lab environments.  
@@ -6701,7 +9394,7 @@ MOBILE
             <span class="discount-badge">Save ₹10,000</span>
           </div>
            <div class="seat-badge"><i data-lucide="users"></i>Only limited lab seats available</div>
-          <div class="price">₹39999.2</div>
+          <div class="price">₹39999</div>
 
           <div class="price-sub">Super Early Bird Price</div>
            <div class="price-note">
@@ -6711,16 +9404,18 @@ MOBILE
       </div>
 
         <div class="course-actions">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v2.html">View Curriculum →</a>
+          <a href="#" onclick="openCurriculumModal()">
+  View Curriculum →
+</a>
           <a href="#tickets" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
       <!-- CRTE -->
-      <div class="course-card">
+      <div class="course-card" id="crte-course">
         <img src="https://static.wixstatic.com/media/470c31_d20991e40bc749a5b5e34cc98f82ff70~mv2.png" class="course-img">
         <div class="course-signal-name">
-        <span class="course-badge">CRTE</span>
+        <span class="course-badge">CRTE®</span>
         
       </div>   
 
@@ -6743,7 +9438,7 @@ MOBILE
     <span class="discount-badge">Save ₹10,000</span>
   </div>
   <div class="seat-badge"><i data-lucide="users"></i>Only limited lab seats available</div>
-  <div class="price">₹39,999.2</div>
+  <div class="price">₹39,999</div>
 
   <div class="price-sub">Super Early Bird Price</div>
    <div class="price-note">
@@ -6753,16 +9448,18 @@ MOBILE
 </div>
 
         <div class="course-actions">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v2.html">View Curriculum →</a>
+          <a href="#" onclick="openCurriculumModal()">
+  View Curriculum →
+</a>
           <a href="#tickets" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
       <!-- CETP -->
-      <div class="course-card">
+      <div class="course-card" id="cetp-course">
         <img src="https://static.wixstatic.com/media/98ad8e_81fec46cf0d2498bb860aeabc27e397e~mv2.png" class="course-img">
          <div class="course-signal-name">
-        <span class="course-badge">CETP</span>
+        <span class="course-badge">CETP®</span>
         
       </div>   
 
@@ -6786,7 +9483,7 @@ MOBILE
     <span class="discount-badge">Save ₹10,000</span>
   </div>
   <div class="seat-badge"><i data-lucide="users"></i>Only limited lab seats available</div>
-  <div class="price">₹39,999.2</div>
+  <div class="price">₹39,999</div>
 
   <div class="price-sub">Super Early Bird Price</div>
    <div class="price-note">
@@ -6796,16 +9493,18 @@ MOBILE
 </div>
 
         <div class="course-actions">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v2.html">View Curriculum →</a>
+           <a href="#" onclick="openCurriculumModal()">
+  View Curriculum →
+</a>
           <a href="#tickets" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
       <!-- CARTP -->
-      <div class="course-card">
+      <div class="course-card" id="cartp-course">
         <img src="https://static.wixstatic.com/media/470c31_c03d5a63cde444b18d44bdb541748fa9~mv2.png" class="course-img">
          <div class="course-signal-name">
-        <span class="course-badge">CARTP</span>
+        <span class="course-badge">CARTP®</span>
         
       </div>
 
@@ -6838,16 +9537,18 @@ MOBILE
 </div>
 
        <div class="course-actions">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v2.html">View Curriculum →</a>
+          <a href="#" onclick="openCurriculumModal()">
+  View Curriculum →
+</a>
           <a href="#tickets" class="btn-book">Secure Seat</a>
         </div>
       </div>
 
       <!-- CARTE -->
-      <div class="course-card">
+      <div class="course-card" id="carte-course">
         <img src="https://static.wixstatic.com/media/628794_0836557da1044632b5ea9eea3e469295~mv2.png" class="course-img">
          <div class="course-signal-name">
-        <span class="course-badge">CARTE</span>
+        <span class="course-badge">CARTE®</span>
         
       </div>
      
@@ -6869,7 +9570,7 @@ MOBILE
     <span class="discount-badge">Save ₹10,000</span>
   </div>
   <div class="seat-badge"><i data-lucide="users"></i>Only limited lab seats available</div>
-  <div class="price">₹39,999.2</div>
+  <div class="price">₹39,999</div>
 
   <div class="price-sub">Early Bird Price</div>
    <div class="price-note">
@@ -6879,7 +9580,9 @@ MOBILE
 </div>
 
       <div class="course-actions">
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-course-v2.html">View Curriculum →</a>
+          <a href="#" onclick="openCurriculumModal()">
+  View Curriculum →
+</a>
           <a href="#tickets" class="btn-book">Secure Seat</a>
         </div>
       </div>
@@ -6887,7 +9590,7 @@ MOBILE
     </div>
 
     <div class="course-grid-cta">
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-training.html" class="btn-tertiary">Explore Full Curriculum →</a>
+
     </div>
 
   </div>
@@ -7050,9 +9753,12 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
 <div class="conference-gallery">
 </div>
 
-<div class="conference-cta">
-<a href="https://redteamverse.github.io/red-team-training/altseccon-conference-final-v1.html" class="btn-tertiary ->">View Conference Details →</a>
-</div>
+<div class="expect-cta">
+    <a href="#tickets" class="btn btn-primary">Reserve Your Seat</a>
+   <p class="trust-note">
+      Prices increase soon • Limited hands-on lab seats
+    </p>
+  </div>
 
 </div>
 
@@ -7191,7 +9897,7 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
       <div class="flow-content-item" data-step="4">
         <h3>Certification</h3>
         <p>Earn certification after completing hands-on labs and exercises.</p>
-          <img src="https://redteamverse.github.io/red-team-training/images/demo-cert.avif">
+          <img src="https://redteamverse.github.io/red-team-training/images/AltSecCON_Certificate.webp">
       </div>
 
       <div class="flow-content-item" data-step="5">
@@ -7252,7 +9958,42 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
       </div>
 
     </div>
+<div class="altx-corporate-banner">
 
+  <div class="altx-corporate-left">
+
+    <div class="altx-corporate-icon">
+
+      <i class="fa-solid fa-building"></i>
+
+    </div>
+
+    <div>
+
+      <div class="altx-corporate-title">
+
+        Booking for a Team or Group?
+
+      </div>
+
+      <div class="altx-corporate-sub">
+
+       Bulk booking support available for enterprises, internal security teams, 
+    and corporate training programs. Minimum 5 tickets required for bulk/team purchases.
+      </div>
+
+    </div>
+
+  </div>
+
+  <button class="altx-corporate-btn"
+  onclick="openCorporateModal()">
+
+    Request Team Booking
+
+  </button>
+
+</div>
     <!-- CARD GRID -->
     <div class="altx-pass-grid">
 
@@ -7274,7 +10015,7 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
 
         <ul class="altx-feature-list blue-list">
           <li>3 days of intensive training</li>
-          <li>CRTP / CRTE / CARTP tracks</li>
+          <li>CAIPT® / CRTE® / CARTP® tracks</li>
           <li>Hands-on enterprise labs</li>
           <li>Course completion certificate</li>
           <li>60 days lab access</li>
@@ -7284,19 +10025,65 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
         <div class="altx-price-stack">
 
           <div class="altx-price-row">
-            <div>
-              <strong>Super Early Bird</strong>
-              <span>20% OFF • Till 30 June</span>
-            </div>
-            <b>₹39,999</b>
-          </div>
+
+  <div class="altx-price-info" >
+
+    <div>
+
+      <strong>Super Early Bird</strong>
+
+      <span>Till 30 June</span>
+
+    </div>
+
+    <div class="altx-price-side">
+
+      <b>₹39,999</b>
+
+      <small>₹49,999</small>
+
+    </div>
+
+  </div>
+
+  <!-- ACTIONS -->
+
+  <div class="altx-row-action">
+
+    <div class="altx-mini-qty">
+
+      <button onclick="changeQty('trainingQty',-1)">
+        -
+      </button>
+
+      <span id="trainingQty">
+        1
+      </span>
+
+      <button onclick="changeQty('trainingQty',1)">
+        +
+      </button>
+
+    </div>
+
+   <button class="altx-row-btn"
+onclick="addTrainingSelection()">
+
+ Add Pass
+
+</button>
+
+  </div>
+
+</div>
 
           <div class="altx-price-row">
             <div>
               <strong>Early Bird</strong>
-              <span>15% OFF • Till 30 August</span>
+              <span>Till 30 August</span>
             </div>
-            <b>₹42,499</b>
+            <b>₹42,999</b>
+            <small>₹49,999</small>
           </div>
 
           <div class="altx-price-row">
@@ -7309,9 +10096,108 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
 
         </div>
 
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-v2.html" class="altx-main-btn blue-btn">
-          Choose Training Pass
-        </a>
+        <!-- SELECTED PASS -->
+
+<!-- SELECTED PASS SUMMARY -->
+
+<div class="altx-selected-preview">
+
+  <!-- TOP -->
+
+  <div class="altx-selected-top">
+
+    <div>
+
+      <span>
+        Selected Pass
+      </span>
+
+      <strong id="trainingSelectedName">
+
+        No Pass Selected
+
+      </strong>
+<span id="trainingSelectedTrack">
+
+</span>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+
+<div class="altx-selected-bottom">
+
+  <!-- LEFT -->
+
+  <div class="altx-selected-left-side">
+
+    <div>
+
+      <small>
+        Quantity
+      </small>
+
+      <strong id="trainingSelectedQty">
+
+        0
+
+      </strong>
+
+    </div>
+
+    <div class="altx-selected-remove-wrap">
+
+      <button
+      class="altx-selected-remove"
+      onclick="removeTrainingSelection()">
+
+        Remove
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+
+  <div class="altx-selected-price-wrap">
+
+    <small>
+      Total Amount
+    </small>
+
+    <div class="altx-selected-price">
+
+      <span
+      class="altx-selected-old"
+      id="trainingSelectedOldPrice">
+
+        ₹0
+
+      </span>
+
+      <strong id="trainingSelectedPrice">
+
+        ₹0
+
+      </strong>
+
+    </div>
+
+  </div>
+
+</div>  
+</div>
+        
+<button
+class="altx-pass-btn"
+onclick="proceedTrainingBooking()">
+
+  Continue Booking
+
+</button>
 
       </div>
 
@@ -7349,30 +10235,32 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
           <div class="altx-price-row purple-row">
             <div>
               <strong>Super Early Bird</strong>
-              <span>Training 20% + Conference 40% • Till 30 June</span>
+              <span>Till 30 June</span>
             </div>
-            <b>₹44,798</b>
+            <b>₹44,999</b>
+            <small>₹54,999</small>
           </div>
 
           <div class="altx-price-row purple-row">
             <div>
               <strong>Early Bird</strong>
-              <span>Training 15% + Conference 40% • Till 30 August</span>
+              <span>Till 30 August</span>
             </div>
-            <b>₹47,298</b>
+            <b>₹47,999</b>
+            <small>₹54,999</small>
           </div>
 
           <div class="altx-price-row purple-row">
             <div>
               <strong>Regular</strong>
-              <span>40% Conference discount included</span>
+              <span>Conference discount included</span>
             </div>
-            <b>₹54,798</b>
+            <b>₹57,999</b>
           </div>
 
         </div>
 
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-v2.html" class="altx-main-btn blue-btn">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-v1.html" class="altx-main-btn blue-btn">
           Get Full Access
         </a>
 
@@ -7408,25 +10296,28 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
           <div class="altx-price-row blue-row">
             <div>
               <strong>Student Pass</strong>
-              <span>50% OFF • 20 tickets only</span>
+              <span>20 tickets Left</span>
             </div>
             <b>₹3,999</b>
+            <small>₹7,999</small>
           </div>
 
           <div class="altx-price-row blue-row">
             <div>
               <strong>Super Early Bird</strong>
-              <span>20% OFF • Till 30 June</span>
+              <span>Till 30 June</span>
             </div>
-            <b>₹6,399</b>
+            <b>₹5,999</b>
+            <small>₹7,999</small>
           </div>
 
           <div class="altx-price-row blue-row">
             <div>
               <strong>Early Bird</strong>
-              <span>15% OFF • Till 30 August</span>
+              <span>Till 30 August</span>
             </div>
-            <b>₹6,799</b>
+            <b>₹6,999</b>
+            <small>₹7,999</small>
           </div>
 
           <div class="altx-price-row blue-row">
@@ -7439,7 +10330,7 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
 
         </div>
 
-        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-v2.html" class="altx-main-btn blue-btn">
+        <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-v1.html" class="altx-main-btn blue-btn">
           Choose Conference Pass
         </a>
 
@@ -7465,11 +10356,12 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
 
       <div class="altx-team-discounts">   
 
-        <div class="">         
-          <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets-final-v2.html" class="btn btn-primary">
-          Request Team Plan
-        </a>
-        </div>
+       <button class="altx-corporate-btn"
+  onclick="openCorporateModal()">
+
+    Request Team Booking
+
+  </button>
 
       </div>
 
@@ -7541,7 +10433,7 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
   </p>
 
 
-    <a href="#training" class="btn-tertiary">Explore Training Programs →</a>
+  
 
 
 </div>
@@ -7606,9 +10498,6 @@ A dedicated conference day featuring real-world red teaming talks, practitioner 
         <div><strong>Breaks:</strong> Lunch + coffee breaks included</div>
       </div>
 
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-schedule.html" class="btn-tertiary">
-        View Full Event Details →
-      </a>
     </div>
 
     <div class="event-structure-image">
@@ -7758,9 +10647,7 @@ Thanks,
     </div>
 
     <div class="gallery-cta ">
-      <a href="https://redteamverse.github.io/red-team-training/altseccon-gallery.html" class="btn-tertiary">
-        View Full Gallery →
-      </a>
+    
     </div>
 
   </div>
@@ -8118,23 +11005,22 @@ If you’re unsure which option is right for you, you can also submit your detai
     <div class="footer-block">     
       <p class="supporting-body"><strong>Training Programs</strong></p>
       <ul>
-        <li><a href="/training/crtp">CRTP</a></li>
-        <li><a href="/training/crte">CRTE</a></li>
-        <li><a href="/training/cetp">CETP</a></li>
-        <li><a href="/training/cartp">CARTP</a></li>
-        <li><a href="/training/carte">CARTE</a></li>
+        <li><a href="#caipt-course">CAIPT®</a></li>
+        <li><a href="#crte-course">CRTE®</a></li>
+        <li><a href="#cetp-course">CETP®</a></li>
+        <li><a href="#cartp-course">CARTP®</a></li>
+        <li><a href="#carte-course">CARTE®</a></li>
       </ul>
     </div>
  <!-- Event -->
     <div class="footer-block">
       <p class="supporting-body"><strong>Conference</strong></p>
       <ul>
-        <li><a href="/instructors">Tickets</a></li>
-        <li><a href="/event-structure">Event Schedule</a></li>
-        <li><a href="/certification">Certification & Outcomes</a></li>
-        <li><a href="/gallery">Gallery</a></li>
-        <li><a href="/gallery">FAQs</a></li>
-        <li><a href="/2026">AltSecCON 2026</a></li>
+        <li><a href="#tickets">Tickets</a></li>
+        <li><a href="#event">Event Schedule</a></li>
+        <li><a href="#certification">Certification & Outcomes</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#faqs">FAQs</a></li>       
       </ul>
     </div>
     
@@ -8142,12 +11028,11 @@ If you’re unsure which option is right for you, you can also submit your detai
     <div class="footer-block">   
       <p class="supporting-body"><strong>Event</strong></p>
       <ul>
-        <li><a href="/instructors">Venue</a></li>
-        <li><a href="/event-structure">Event Schedule</a></li>
-        <li><a href="/certification">Tickets</a></li>
-        <li><a href="/gallery">Gallery</a></li>
-        <li><a href="/gallery">FAQs</a></li>
-        <li><a href="/2026">AltSecCON 2026</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#event">Event Schedule</a></li>
+        <li><a href="#certification">Tickets</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#faqs">FAQs</a></li>       
       </ul>
     </div>
     
@@ -8156,9 +11041,9 @@ If you’re unsure which option is right for you, you can also submit your detai
     <div class="footer-block">     
       <p class="supporting-body"><strong>Information</strong></p>
       <ul>
-        <li><a href="/code-of-conduct">Code of Conduct</a></li>
-        <li><a href="/policy">Policy</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="#">Code of Conduct</a></li>
+        <li><a href="#">Policy</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
 
@@ -8166,15 +11051,15 @@ If you’re unsure which option is right for you, you can also submit your detai
   <p class="supporting-body"><strong>Follow Us</strong></p>
   <div class="footer-social">
 
-    <a href="https://twitter.com/AlteredSecurity" target="_blank" class="social-icon twitter" aria-label="Twitter">
+    <a href="#" target="_blank" class="social-icon twitter" aria-label="Twitter">
       <i class="fab fa-x-twitter"></i>
     </a>
 
-    <a href="https://www.linkedin.com/company/alteredsecurity/" target="_blank" class="social-icon linkedin" aria-label="LinkedIn">
+    <a href="#" target="_blank" class="social-icon linkedin" aria-label="LinkedIn">
       <i class="fab fa-linkedin-in"></i>
     </a>
 
-    <a href="https://discord.com/invite/vcEwaRMwJe" target="_blank" class="social-icon discord" aria-label="Discord">
+    <a href="#" target="_blank" class="social-icon discord" aria-label="Discord">
       <i class="fab fa-discord"></i>
     </a>
 
@@ -8204,9 +11089,2034 @@ If you’re unsure which option is right for you, you can also submit your detai
 </div>
 
 
+<!-- ==========================================
+CURRICULUM MODAL
+========================================== -->
+
+<div class="curriculum-modal" id="curriculumModal">
+
+  <div class="curriculum-box">
+
+    <div class="curriculum-top">
+
+      <div>
+
+           
+
+      </div>
+ <h2>
+    Active Directory Attacks for Red and Blue Teams - Advanced Edition
+  </h2>
+      <button onclick="closeCurriculumModal()">
+
+        ✕
+
+      </button>
+
+    </div>
+ <div class="curriculum-scroll">
+    <div class="curriculum-body">
+<!-- ==========================================
+COURSE OVERVIEW
+========================================== -->
+
+<div class="curriculum-intro">
+
  
 
+  <p class="curriculum-desc">
+
+    A deep dive into Red Teaming - practice attacks with focus on OPSEC,
+    Living Off The Land techniques, and bypassing security controls like
+    MDI, WDAC and more in a secure multi-forest Active Directory lab
+    environment.
+
+    Earn the <strong>CRTE certification.</strong>
+
+  </p>
+
+</div>
+
+
+<!-- ==========================================
+WHAT YOU WILL LEARN
+========================================== -->
+
+
+
+
+<!-- ==========================================
+COURSE STATS
+========================================== -->
+
+<div class="curriculum-stats">
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="calendar"></i>
+
+    <span>3 Days Class</span>
+
+  </div>
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="clock-3"></i>
+
+    <span>8 Hrs Per Session</span>
+
+  </div>
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="monitor"></i>
+
+    <span>8 Weeks Lab Access</span>
+
+  </div>
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="flag"></i>
+
+    <span>60 Flags To Be Collected</span>
+
+  </div>
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="terminal"></i>
+
+    <span>31 Lab Exercises</span>
+
+  </div>
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="award"></i>
+
+    <span>1 CRTE Attempt</span>
+
+  </div>
+
+  <div class="curriculum-stat">
+
+    <i data-lucide="play-circle"></i>
+
+    <span>Video Course Included</span>
+
+  </div>
+
+</div>
+
+<div class="curriculum-overview">
+
+  <h3>
+    What You Will Learn
+  </h3>
+
+  <p>
+
+    This 3-day class is designed to help security professionals understand,
+    analyze and practice threats and attacks in a modern multi-forest
+    Active Directory environment with fully patched Server 2019 machines.
+
+  </p>
+  
+  <p>
+   In addition to learning the popular tactics, techniques and procedures (TTPs), you will also see how they change for attacks across forest trusts. You will also learn how to abuse or bypass modern Windows defenses like Advanced Threat Analytics, Local Administrator Password Solution (LAPS), Just Enough Administration (JEA), Resource-Based Constrained Delegation (RBCD), Windows Defender Application Control (WDAC), Application Whitelisting (AWL), Constrained Language Mode (CLM), virtualization and more.
+
+  </p>
+
+</div>
+<!-- ==========================================
+PREREQUISITES
+========================================== -->
+
+<div class="curriculum-prereq">
+
+  <h3>
+    Prerequisites
+  </h3>
+
+  <ul>
+
+    <li>
+      Good understanding of Active Directory security
+    </li>
+
+    <li>
+      Ability to use command line tools
+    </li>
+
+  </ul>
+
+</div>
+  <!-- MODULE I -->
+
+  <div class="curriculum-module">
+
+    <button class="curriculum-toggle">
+
+      <span>Module I</span>
+
+      <i data-lucide="chevron-down"></i>
+
+    </button>
+
+    <div class="curriculum-content">
+
+      <ul>
+
+        <li>Introduction to OPSEC and stealth techniques</li>
+
+        <li>Active Directory attack methodology and tradecraft</li>
+
+        <li>Domain Enumeration (Attacks & Defense)</li>
+
+        <li>Enumerating useful attack information with minimal footprint</li>
+
+        <li>Identify properties and attack paths while avoiding detection</li>
+
+        <li>Enumerate trust relationships across forests</li>
+
+        <li>Privilege escalation using OU Delegation, Restricted Groups, LAPS and Nested Groups</li>
+
+        <li>Hunting for privileges using remote access protocols</li>
+
+        <li>Credential Replay Attacks</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- MODULE II -->
+
+  <div class="curriculum-module">
+
+    <button class="curriculum-toggle">
+
+      <span>Module II</span>
+
+      <i data-lucide="chevron-down"></i>
+
+    </button>
+
+    <div class="curriculum-content">
+
+      <ul>
+
+        <li>Microsoft Defender for Endpoint (MDE)</li>
+
+        <li>Evading WDAC application whitelisting</li>
+
+        <li>Credential extraction with MDE + WDAC enabled</li>
+
+        <li>Unconstrained Delegation abuse</li>
+
+        <li>Constrained Delegation abuse</li>
+
+        <li>Resource-Based Constrained Delegation (RBCD)</li>
+
+        <li>Domain Persistence techniques</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- MODULE III -->
+
+  <div class="curriculum-module">
+
+    <button class="curriculum-toggle">
+
+      <span>Module III</span>
+
+      <i data-lucide="chevron-down"></i>
+
+    </button>
+
+    <div class="curriculum-content">
+
+      <ul>
+
+        <li>Advanced Cross Domain attacks</li>
+
+        <li>Domain Admin → Enterprise Admin escalation</li>
+
+        <li>Hybrid Identity attacks</li>
+
+        <li>Advanced Cross Forest attacks</li>
+
+        <li>Kerberoast and SID filtering abuse</li>
+
+        <li>SQL Server cross-forest attacks</li>
+
+        <li>Foreign Security Principals abuse</li>
+
+        <li>PAM Trust and Shadow Security Principals</li>
+
+        <li>Trust transitivity attacks</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- MODULE IV -->
+
+  <div class="curriculum-module">
+
+    <button class="curriculum-toggle">
+
+      <span>Module IV</span>
+
+      <i data-lucide="chevron-down"></i>
+
+    </button>
+
+    <div class="curriculum-content">
+
+      <ul>
+
+        <li>Microsoft Identity Protection (MDI)</li>
+
+        <li>Telemetry collection and anomaly detection</li>
+
+        <li>Bypassing MDI detections</li>
+
+        <li>Elastic Stack and Sysmon</li>
+
+        <li>Bypassing Sysmon logs</li>
+
+        <li>Privilege account security settings</li>
+
+        <li>Privilege Administrative Workstation (PAW)</li>
+
+        <li>JIT & JEA administration</li>
+
+        <li>Tier Model & ESAE</li>
+
+        <li>Credential Guard, WDAC, LAPS, Protected Users</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+    </div>
+  </div>
+
+</div> 
+
 <button id="scrollTopBtn" class="scroll-top-btn">↑</button>  
+ 
+<!-- =========================================
+PAYMENT MODAL
+========================================= -->
+
+<div class="altx-modal"
+id="paymentModal">
+
+  <div class="altx-modal-box altx-payment-box">
+
+    <!-- HEADER -->
+
+    <div class="altx-modal-top">
+
+      <h3>
+        Complete Payment
+      </h3>
+
+      <button
+      onclick="closeModal('paymentModal')">
+
+        ✕
+
+      </button>
+
+    </div>
+
+    <!-- ORDER SUMMARY -->
+
+   <!-- ORDER SUMMARY -->
+
+<div class="altx-payment-summary">
+
+  <div class="altx-payment-summary-top">
+
+    <span>
+      Selected Pass
+    </span>
+
+    <strong id="paymentPass">
+
+      Training Pass
+
+    </strong>
+
+  </div>
+
+  <div class="altx-payment-summary-bottom">
+
+    <div>
+
+      <small>
+        Quantity
+      </small>
+
+      <strong id="paymentQty">
+
+        1
+
+      </strong>
+
+    </div>
+
+    <div>
+
+      <small>
+        Total Amount
+      </small>
+
+      <strong
+      class="altx-payment-total"
+      id="paymentAmount">
+
+        ₹39,999
+
+      </strong>
+
+    </div>
+
+  </div>
+
+</div>
+
+    <!-- PAYMENT OPTIONS -->
+
+    <div class="altx-payment-methods">
+
+      <button class="altx-pay-btn" onclick="completePayment()">
+
+        <i class="fa-solid fa-bolt"></i>
+
+        Pay with Razorpay
+
+      </button>
+
+      <button class="altx-pay-btn altx-pay-btn-dark">
+
+        <i class="fa-solid fa-mobile-screen"></i>
+
+        Pay via UPI
+
+      </button>
+
+      <button class="altx-pay-btn altx-pay-btn-dark">
+
+        <i class="fa-solid fa-building-columns"></i>
+
+        Net Banking
+
+      </button>
+
+    </div>
+
+    <!-- TRUST -->
+
+    <div class="altx-payment-trust">
+
+      <div>
+        ✓ Instant Confirmation
+      </div>
+
+      <div>
+        ✓ GST Invoice Included
+      </div>
+
+      <div>
+        ✓ Secure Payment
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+
+    <button
+    class="altx-payment-final-btn"
+    onclick="completePayment()">
+
+      Complete Secure Payment
+
+    </button>
+
+  </div>
+
+</div>
+ <!-- =========================================
+ATTENDEE MODAL
+========================================= -->
+
+<div class="altx-modal"
+id="attendeeModal">
+
+  <div class="altx-modal-box altx-attendee-box">
+
+    <!-- HEADER -->
+
+    <div class="altx-modal-top">
+
+      <h3>
+        Attendee Details
+      </h3>
+
+      <button
+      onclick="closeModal('attendeeModal')">
+
+        ✕
+
+      </button>
+
+    </div>
+
+    <!-- BODY -->
+
+    <div class="altx-attendee-scroll">
+
+      <div id="attendeeGrid"></div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="altx-attendee-footer">
+
+      <div class="altx-attendee-total">
+
+        <span>
+          Total Amount
+        </span>
+
+        <strong id="attendeeTotal">
+
+          ₹0
+
+        </strong>
+
+      </div>
+
+      <button
+      class="altx-modal-btn"
+      onclick="openPaymentModal()">
+
+        Proceed to Payment
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  <!-- =========================================
+BOOKING MODAL
+========================================= -->
+
+<div class="altx-modal"
+id="bookingModal">
+
+  <div class="altx-modal-box">
+
+    <div class="altx-modal-top">
+
+      <h3>
+        Complete Your Booking
+      </h3>
+
+      <button onclick="closeBookingModal()">
+
+        ✕
+
+      </button>
+
+    </div>
+<!-- SELECTED PASS SUMMARY -->
+
+<div class="altx-booking-summary">
+
+  <div class="altx-booking-summary-top">
+
+    <span>
+      Selected Pass
+    </span>
+
+    <strong id="bookingPassName">
+
+      Training Pass
+
+    </strong>
+
+  </div>
+
+  <div class="altx-booking-summary-bottom">
+
+    <div>
+
+      <small>
+        Quantity
+      </small>
+
+      <strong id="bookingQty">
+
+        1
+
+      </strong>
+
+    </div>
+
+    <div>
+
+      <small>
+        Total Amount
+      </small>
+
+      <strong
+      class="altx-booking-amount"
+      id="bookingAmount">
+
+        ₹39,999
+
+      </strong>
+
+    </div>
+
+  </div>
+
+</div>
+    <div class="altx-booking-form">
+
+      <input
+      type="text" 
+       id="bookingName"
+      placeholder="Full Name">
+
+      <input
+      type="email" 
+       id="bookingEmail"
+      placeholder="Email Address">
+
+    
+
+      <button
+class="altx-modal-btn"
+onclick="openAttendeeModal()">
+
+  Continue to Payment
+
+</button>
+
+    </div>
+
+  </div>
+
+</div>
+  
+  <!-- =========================================
+TOAST
+========================================= -->
+
+<div class="altx-toast"
+id="altxToast">
+
+  <span id="toastMessage">
+
+    Pass Added
+
+  </span>
+
+</div>
+  
+  
+<div class="altx-modal"
+id="successModal">
+
+  <div class="altx-modal-box">
+
+    <div class="altx-success-icon">
+
+       <i class="fa-solid fa-check"></i>
+
+    </div>
+
+    <h2 class="altx-success-title">
+
+      Booking Confirmed
+
+    </h2>
+
+    <p class="altx-success-sub">
+
+      Your AltSecCON 2026 booking has been successfully completed.
+
+    </p>
+
+    <div class="altx-success-ref">
+
+      <span>
+        Booking Reference
+      </span>
+
+      <strong id="bookingReference">
+
+        ALTX-2026-0000
+
+      </strong>
+
+    </div>
+
+    <button
+    class="altx-payment-final-btn"
+    onclick="closeModal('successModal')">
+
+      Done
+
+    </button>
+
+  </div>
+
+</div>  
+  
+  
+  
+<div class="altx-modal"
+id="corporateModal">
+
+  <div class="altx-modal-box"
+  style="max-width:760px;">
+
+    <div class="altx-modal-top">
+
+      <h3>Corporate / Team Booking</h3>
+
+      <button class="altx-close"
+      onclick="closeModal('corporateModal')">
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+    </div>
+
+    <div class="altx-corp-grid">
+
+      <div class="altx-corp-field">
+
+        <label>Company Name</label>
+
+        <input type="text"
+        placeholder="Enter company name">
+
+      </div>
+
+      <div class="altx-corp-field">
+
+        <label>GSTIN</label>
+
+        <input type="text"
+        placeholder="Enter GST number">
+
+      </div>
+
+      <div class="altx-corp-field">
+
+        <label>Team Size</label>
+
+        <input type="number"
+        placeholder="Number of attendees">
+
+      </div>
+
+      <div class="altx-corp-field">
+
+        <label>Contact Person</label>
+
+        <input type="text"
+        placeholder="Full name">
+
+      </div>
+
+      <div class="altx-corp-field">
+
+        <label>Work Email</label>
+
+        <input type="email"
+        placeholder="name@company.com">
+
+      </div>
+
+      <div class="altx-corp-field">
+
+        <label>Phone Number</label>
+
+        <input type="tel"
+        placeholder="+91">
+
+      </div>
+
+    </div>
+
+    <div class="altx-corp-note">
+
+      <i class="fa-solid fa-circle-info"></i>
+
+      Team attendees can be assigned later after booking confirmation.
+
+    </div>
+
+    <button class="altx-final-btn">
+
+      Request Corporate Booking
+
+    </button>
+
+  </div>
+
+</div>   
+<div
+class="altx-mobile-offer"
+id="mobileOfferBar">
+
+  <!-- CLOSE -->
+
+  <button
+  class="altx-mobile-offer-close"
+  onclick="closeMobileOffer()">
+
+    ✕
+    
+  </button>
+
+  <!-- CONTENT -->
+
+  <div class="altx-mobile-offer-content">
+
+    <div class="altx-mobile-offer-top">
+
+      🔥 SUPER EARLY BIRD LIVE
+
+    </div>
+
+    <div class="altx-mobile-offer-heading">
+
+      Save ₹10,000 Before 30 June
+
+    </div>
+
+    <!-- PRICE -->
+
+    <div class="altx-mobile-offer-price">
+
+      <span>
+        ₹49,999
+      </span>
+
+      <strong>
+        ₹39,999
+      </strong>
+
+    </div>
+
+    <!-- TIMER -->
+
+    <div class="altx-mobile-offer-timer">
+
+      <div class="altx-mobile-time">
+
+        <b id="mobileOfferDays">
+          12
+        </b>
+
+        <span>D</span>
+
+      </div>
+
+      <div class="altx-mobile-time">
+
+        <b id="mobileOfferHours">
+          08
+        </b>
+
+        <span>H</span>
+
+      </div>
+
+      <div class="altx-mobile-time">
+
+        <b id="mobileOfferMinutes">
+          41
+        </b>
+
+        <span>M</span>
+
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+
+<a
+href="#tickets"
+class="altx-mobile-offer-btn"
+onclick="closeMobileOffer()">
+
+  Get Early Bird Pass
+
+</a>
+
+  </div>
+
+</div>  
+<script>
+  
+function openCorporateModal(){
+
+  openModal("corporateModal");
+
+} 
+  </script>  
+  <script>  
+   
+  
+
+/* =========================================================
+   GLOBAL CART
+========================================================= */
+
+let cart = [];
+
+let passSelected = false;
+
+/* =========================================================
+   QTY CHANGE
+========================================================= */
+
+function changeQty(id,change){
+
+  const el =
+  document.getElementById(id);
+
+  if(!el){
+    return;
+  }
+
+  let qty =
+  parseInt(el.innerText);
+
+  qty += change;
+
+  if(qty < 1){
+    qty = 1;
+  }
+
+  if(qty > 9){
+    qty = 9;
+  }
+
+  el.innerText = qty;
+
+}
+
+
+    
+function closeBookingModal(){
+
+  const modal =
+  document.getElementById("bookingModal");
+
+  if(modal){
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+  }
+
+}
+
+function updateTrainingPreview(
+  name,
+  track,
+  price
+){
+
+  document.getElementById(
+    "trainingSelectedName"
+  ).innerText = name;
+
+  document.getElementById(
+    "trainingSelectedTrack"
+  ).innerText = track;
+
+  document.getElementById(
+    "trainingSelectedPrice"
+  ).innerText =
+  "₹" + price.toLocaleString("en-IN");
+
+}
+/* =========================================
+   SAFE TOAST
+========================================= */
+
+function showToast(message){
+
+  const toast =
+  document.getElementById("altxToast");
+
+  const toastMessage =
+  document.getElementById("toastMessage");
+
+  if(!toast || !toastMessage){
+    alert(message);
+    return;
+  }
+
+  toastMessage.innerText = message;
+
+  toast.classList.add("show");
+
+  clearTimeout(toast.hideTimeout);
+
+  toast.hideTimeout = setTimeout(()=>{
+
+    toast.classList.remove("show");
+
+  },2500);
+
+}
+  
+
+    
+    
+
+/* =========================================================
+   ADD ITEM
+========================================================= */
+
+function addItem(name,course,price,qty){
+
+  const existing =
+  cart.find(item =>
+    item.name === name &&
+    item.course === course
+  );
+
+  if(existing){
+
+    existing.qty += qty;
+
+    if(existing.qty > 9){
+      existing.qty = 9;
+    }
+
+  }
+
+  else{
+
+    cart.push({
+      name,
+      course,
+      price,
+      qty
+    });
+
+  }
+
+  renderCart();
+
+}
+    
+function removeTrainingSelection(){
+
+  /* RESET */
+
+  selectedTraining = null;
+
+  cart = [];
+
+  /* RESET SUMMARY */
+
+  document.getElementById(
+    "trainingSelectedName"
+  ).innerText =
+  "No Pass Selected";
+
+  document.getElementById(
+    "trainingSelectedTrack"
+  ).innerText =
+  " ";
+
+  document.getElementById(
+    "trainingSelectedQty"
+  ).innerText = "0";
+
+  document.getElementById(
+    "trainingSelectedOldPrice"
+  ).innerText = "₹0";
+
+  document.getElementById(
+    "trainingSelectedPrice"
+  ).innerText = "₹0";
+
+  /* UPDATE */
+
+  renderCart();
+
+  updateMobileBar();
+
+  showToast(
+    "Selection Removed"
+  );
+
+
+
+document.querySelector(
+  ".altx-selected-remove"
+).style.display =
+"none";
+  
+document.querySelector(
+  ".altx-pass-btn"
+).disabled = true;  
+  
+}    
+/* =========================================
+REMOVE TRAINING
+========================================= */
+
+
+/* =========================================================
+   RENDER CART
+========================================================= */
+
+function renderCart(){
+
+  const cartEl =
+  document.getElementById("cartItems");
+
+  const totalEl =
+  document.getElementById("cartTotal");
+
+  if(!cartEl || !totalEl){
+    return;
+  }
+
+  if(cart.length === 0){
+
+    cartEl.innerHTML = `
+
+      <div class="altx-empty">
+        No passes selected yet.
+      </div>
+
+    `;
+
+    totalEl.innerText = "₹0";
+
+    updateMobileBar();
+
+    return;
+
+  }
+
+  let html = "";
+
+  let total = 0;
+
+  cart.forEach((item,index)=>{
+
+    const itemTotal =
+    item.price * item.qty;
+
+    total += itemTotal;
+
+    html += `
+
+      <div class="altx-item">
+
+        <div class="altx-item-top">
+
+          <div>
+
+            <div class="altx-item-name">
+              ${item.name}
+            </div>
+
+            <div class="altx-item-course">
+              ${item.course}
+            </div>
+
+          </div>
+
+          <div class="altx-item-price">
+            ₹${itemTotal.toLocaleString("en-IN")}
+          </div>
+
+        </div>
+
+        <div class="altx-item-bottom">
+
+          <div class="altx-qty">
+
+            <button onclick="decrease(${index})">
+              -
+            </button>
+
+            <span>${item.qty}</span>
+
+            <button onclick="increase(${index})">
+              +
+            </button>
+
+          </div>
+
+          <button class="altx-remove"
+          onclick="removeItem(${index})">
+
+            Remove
+
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+  cartEl.innerHTML = html;
+
+  totalEl.innerText =
+  "₹" + total.toLocaleString("en-IN");
+
+  updateMobileBar();
+
+}
+
+/* =========================================================
+   CART ACTIONS
+========================================================= */
+
+function increase(index){
+
+  if(cart[index].qty < 9){
+    cart[index].qty += 1;
+  }
+
+  renderCart();
+
+}
+
+function decrease(index){
+
+  if(cart[index].qty > 1){
+
+    cart[index].qty -= 1;
+
+  }
+
+  else{
+
+    cart.splice(index,1);
+
+  }
+
+  /* RESET IF EMPTY */
+
+  if(cart.length === 0){
+
+    removeTrainingSelection();
+
+    return;
+
+  }
+
+  renderCart();
+
+}
+
+function removeItem(index){
+
+  cart.splice(index,1);
+
+  /* RESET IF EMPTY */
+
+  if(cart.length === 0){
+
+    selectedTraining = null;
+
+    document.getElementById(
+      "trainingSelectedName"
+    ).innerText =
+    "No Pass Selected";
+
+    document.getElementById(
+      "trainingSelectedTrack"
+    ).innerText = "";
+
+    document.getElementById(
+      "trainingSelectedQty"
+    ).innerText = "0";
+
+    document.getElementById(
+      "trainingSelectedOldPrice"
+    ).innerText = "₹0";
+
+    document.getElementById(
+      "trainingSelectedPrice"
+    ).innerText = "₹0";
+
+    document.querySelector(
+      ".altx-selected-remove"
+    ).style.display =
+    "none";
+
+    document.querySelector(
+      ".altx-pass-btn"
+    ).disabled = true;
+
+  }
+
+  renderCart();
+
+}
+
+/* =========================================================
+   BOOKING MODAL
+========================================================= */
+
+function openBookingModal(){
+
+  let total = 0;
+
+  
+
+  let passName = "";
+  let qty = 0;
+
+  cart.forEach(item=>{
+
+    total +=
+    item.price * item.qty;
+
+    qty += item.qty;
+
+    passName += item.name + " ";
+
+  });
+ 
+  
+  const bookingAmount =
+  document.getElementById(
+    "bookingAmount"
+  );
+
+  const bookingQty =
+  document.getElementById(
+    "bookingQty"
+  );
+
+  const bookingPassName =
+  document.getElementById(
+    "bookingPassName"
+  );
+
+  if(bookingAmount){
+
+    bookingAmount.innerText =
+    "₹" + total.toLocaleString("en-IN");
+
+  }
+
+  if(bookingQty){
+
+    bookingQty.innerText = qty;
+
+  }
+
+  if(bookingPassName){
+
+    bookingPassName.innerText =
+    passName;
+
+  }
+
+  openModal("bookingModal");
+
+}
+
+/* =========================================================
+   ATTENDEE MODAL
+========================================================= */
+
+function openAttendeeModal(){
+
+  const bookingName =
+  document.getElementById("bookingName").value;
+
+  const bookingEmail =
+  document.getElementById("bookingEmail").value;
+
+  if(
+    bookingName === "" ||
+    bookingEmail === ""
+  ){
+
+    showToast(
+      "Please complete booking details"
+    );
+
+    return;
+
+  }
+
+  let attendees = [];
+
+  cart.forEach(item=>{
+
+    for(let i=1;i<=item.qty;i++){
+
+      attendees.push({
+        pass:item.name,
+        course:item.course
+      });
+
+    }
+
+  });
+
+  const attendeeGrid =
+  document.getElementById("attendeeGrid");
+
+  let html = "";
+
+  attendees.forEach((attendee,index)=>{
+
+    html += `
+
+      <div class="altx-attendee-card">
+
+        <h4>
+          Attendee ${index + 1}
+        </h4>
+
+        <div class="altx-copy-row">
+
+          <input type="checkbox"
+          onchange="copyBookingInfo(${index})"
+          id="copyCheck${index}">
+
+          Same as booking details
+
+        </div>
+
+        <div class="altx-attendee-form">
+
+          <input type="text"
+          id="attendeeName${index}"
+          placeholder="Full Name">
+
+          <input type="email"
+          id="attendeeEmail${index}"
+          placeholder="Email Address">
+
+          <input type="text"
+          value="${attendee.pass}"
+          readonly>
+
+          <input type="text"
+          value="${attendee.course}"
+          readonly>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+  attendeeGrid.innerHTML = html;
+/* TOTAL */
+
+let total = 0;
+
+cart.forEach(item=>{
+
+  total +=
+  item.price * item.qty;
+
+});
+
+const attendeeTotal =
+document.getElementById(
+  "attendeeTotal"
+);
+
+if(attendeeTotal){
+
+  attendeeTotal.innerText =
+  "₹" + total.toLocaleString("en-IN");
+
+}
+closeModal("bookingModal");
+  openModal("attendeeModal");
+}
+
+/* =========================================================
+   COPY BOOKING INFO
+========================================================= */
+
+function copyBookingInfo(index){
+
+  const checked =
+  document.getElementById(`copyCheck${index}`).checked;
+
+  if(!checked) return;
+
+  document.getElementById(`attendeeName${index}`).value =
+  document.getElementById("bookingName").value;
+
+  document.getElementById(`attendeeEmail${index}`).value =
+  document.getElementById("bookingEmail").value;
+
+}
+
+/* =========================================================
+   PAYMENT MODAL
+========================================================= */
+function openPaymentModal(){
+
+  let total = 0;
+
+  let passName = "";
+
+  let qty = 0;
+
+  cart.forEach(item=>{
+
+    total +=
+    item.price * item.qty;
+
+    qty += item.qty;
+
+    passName += item.name + " ";
+
+  });
+
+  const paymentQty =
+  document.getElementById(
+    "paymentQty"
+  );
+
+  const amount =
+  document.getElementById(
+    "paymentAmount"
+  );
+
+  const pass =
+  document.getElementById(
+    "paymentPass"
+  );
+
+  if(amount){
+
+    amount.innerText =
+    "₹" + total.toLocaleString("en-IN");
+
+  }
+
+  if(pass){
+
+    pass.innerText = passName;
+
+  }
+
+  if(paymentQty){
+
+    paymentQty.innerText = qty;
+
+  }
+
+  closeModal("attendeeModal");
+
+  openModal("paymentModal");
+
+}
+/* =========================================================
+   SUCCESS MODAL
+========================================================= */
+
+function completePayment(){
+
+  showToast(
+    "Payment Successful"
+  );
+
+  setTimeout(()=>{
+
+    openSuccessModal();
+
+  },700);
+
+}
+
+function openSuccessModal(){
+
+  const ref =
+  "ALTX-2026-" +
+  Math.floor(
+    1000 + Math.random() * 9000
+  );
+
+  const bookingRef =
+  document.getElementById(
+    "bookingReference"
+  );
+
+  if(bookingRef){
+
+    bookingRef.innerText = ref;
+
+  }
+
+  closeModal("paymentModal");
+
+  openModal("successModal");
+
+}
+
+/* =========================================================
+   MODALS
+========================================================= */
+function openModal(id){
+
+  const modal =
+  document.getElementById(id);
+
+  if(!modal) return;
+
+  modal.classList.add("active");
+
+  document.body.style.overflow = "hidden";
+
+}
+
+function closeModal(id){
+
+  const modal =
+  document.getElementById(id);
+
+  if(!modal) return;
+
+  modal.classList.remove("active");
+
+  document.body.style.overflow = "";
+
+}
+
+/* =========================================================
+   MOBILE STICKY BAR
+========================================================= */
+
+function enableStickyBarSelection(){
+
+  passSelected = true;
+
+  const mobileBar =
+  document.getElementById("mobileStickyBar");
+
+  const mobileBtn =
+  document.getElementById("mobileBarBtn");
+
+  if(mobileBar){
+
+    mobileBar.classList.add("show");
+
+  }
+
+  if(mobileBtn){
+
+    mobileBtn.innerText =
+    "View Selection";
+
+  }
+
+}
+
+function updateMobileBar(){
+
+  const mobileAmount =
+  document.getElementById("mobileBarAmount");
+
+  const mobileLabel =
+  document.getElementById("mobileBarLabel");
+
+  const mobileBtn =
+  document.getElementById("mobileBarBtn");
+
+  if(!mobileAmount || !mobileLabel || !mobileBtn){
+    return;
+  }
+
+  if(cart.length === 0){
+
+    mobileLabel.innerText =
+    "No Pass Selected";
+
+    mobileAmount.innerText = "—";
+
+    mobileBtn.innerText =
+    "Select Pass";
+
+    return;
+
+  }
+
+  let total = 0;
+
+  cart.forEach(item=>{
+
+    total += item.price * item.qty;
+
+  });
+
+  mobileLabel.innerText =
+  "Your Selection";
+
+  mobileAmount.innerText =
+  "₹" + total.toLocaleString("en-IN");
+
+  if(passSelected){
+
+    mobileBtn.innerText =
+    "View Selection";
+
+  }
+
+}
+/* =========================================
+TRAINING SELECTION
+========================================= */
+
+let selectedTraining = null;
+
+function addTrainingSelection(){
+
+  const qty =
+  parseInt(
+    document.getElementById(
+      "trainingQty"
+    ).innerText
+  );
+
+  /* CHECK EXISTING */
+
+  let existing =
+  cart.find(
+    item =>
+    item.name === "Training Pass"
+  );
+
+  if(existing){
+
+    existing.qty += qty;
+
+  } else {
+
+    cart.push({
+
+      name:"Training Pass",
+
+      course:"CRTE®",
+
+      price:39999,
+
+      qty:qty
+
+    });
+
+  }
+
+  /* SAVE CURRENT */
+
+  selectedTraining = {
+
+    name:"Training Pass",
+
+    track:"CRTE®",
+
+    price:39999,
+
+    qty:
+    existing
+    ? existing.qty
+    : qty
+
+  };
+/* QTY */
+
+document.getElementById(
+  "trainingSelectedQty"
+).innerText =
+selectedTraining.qty;
+
+/* ORIGINAL PRICE */
+
+const original =
+49999 *
+selectedTraining.qty;
+
+document.getElementById(
+  "trainingSelectedOldPrice"
+).innerText =
+"₹" +
+original.toLocaleString("en-IN");
+  /* TOTAL */
+
+  const total =
+  selectedTraining.price *
+  selectedTraining.qty;
+
+  /* UPDATE PREVIEW */
+
+  document.getElementById(
+    "trainingSelectedName"
+  ).innerText =
+  selectedTraining.name;
+
+  document.getElementById(
+    "trainingSelectedTrack"
+  ).innerText =
+  selectedTraining.track;
+
+  document.getElementById(
+    "trainingSelectedPrice"
+  ).innerText =
+  "₹" +
+  total.toLocaleString("en-IN");
+
+  /* UPDATE UI */
+
+  renderCart();
+
+  updateMobileBar();
+
+  enableStickyBarSelection();
+
+  /* RESET QTY SELECTOR */
+
+  /* INIT BUTTON STATE */
+
+
+  
+  document.getElementById(
+    "trainingQty"
+  ).innerText = 1;
+
+  /* FEEDBACK */
+/* SHOW REMOVE */
+
+document.querySelector(
+  ".altx-selected-remove"
+).style.display =
+"inline-flex";
+  
+  showToast(
+    "Training Pass Added"
+  );
+
+
+
+document.querySelector(
+  ".altx-pass-btn"
+).disabled = false;
+}
+
+/* =========================================
+CONTINUE BOOKING
+========================================= */
+
+function proceedTrainingBooking(){
+
+  if(!selectedTraining){
+
+    showToast(
+      "Please add a pass first"
+    );
+
+    return;
+
+  }
+
+  openBookingModal();
+
+}
+/* =========================================================
+   MOBILE BUTTON ACTION
+========================================================= */
+
+function scrollToSelectionMobileBar(){
+
+  const selectionSection =
+  document.querySelector(".altx-summary");
+
+  if(selectionSection){
+
+    selectionSection.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+  }
+
+}
+
+
+
+/* =========================================================
+   INIT
+========================================================= */
+
+renderCart();
+
+updateMobileBar();
+
+
+/* INITIAL STATE */
+
+document.querySelector(
+  ".altx-pass-btn"
+).disabled = true;
+
+document.querySelector(
+  ".altx-selected-remove"
+).style.display =
+"none";
+
+
+  </script>
+<script>
+/* ==========================================
+CURRICULUM MODAL
+========================================== */
+
+let savedScrollPosition = 0;
+
+function openCurriculumModal(){
+
+  savedScrollPosition =
+  window.scrollY;
+
+  document
+  .getElementById("curriculumModal")
+  .classList.add("active");
+
+  /* lock page without moving it */
+
+  document.body.style.position =
+  "fixed";
+
+  document.body.style.top =
+  `-${savedScrollPosition}px`;
+
+  document.body.style.width =
+  "100%";
+
+}
+
+function closeCurriculumModal(){
+
+  document
+  .getElementById("curriculumModal")
+  .classList.remove("active");
+
+  /* restore page */
+
+  document.body.style.position =
+  "";
+
+  document.body.style.top =
+  "";
+
+  document.body.style.width =
+  "";
+
+  window.scrollTo({
+
+    top:savedScrollPosition,
+
+    behavior:"instant"
+
+  });
+
+} 
+  
+document
+.querySelectorAll(".curriculum-toggle")
+.forEach(button=>{
+
+  button.addEventListener(
+    "click",
+    ()=>{
+
+      const module =
+      button.parentElement;
+
+      module.classList.toggle(
+        "active"
+      );
+
+      const content =
+      module.querySelector(
+        ".curriculum-content"
+      );
+
+      if(module.classList.contains(
+        "active"
+      )){
+
+        content.style.maxHeight =
+        content.scrollHeight + "px";
+
+      }
+
+      else{
+
+        content.style.maxHeight =
+        null;
+
+      }
+
+    }
+  );
+
+});
+
+</script>  
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -8716,6 +13626,135 @@ document.addEventListener('click', function (e) {
   }
 });
 </script>
- 
+<!-- =========================================
+MOBILE EARLY BIRD BAR
+========================================= -->
+
+
+<script>
+
+/* =========================================
+COUNTDOWN
+========================================= */
+
+const mobileOfferEnd =
+new Date(
+  "June 30, 2026 23:59:59"
+).getTime();
+
+function updateMobileOffer(){
+
+  const now =
+  new Date().getTime();
+
+  const distance =
+  mobileOfferEnd - now;
+
+  const days =
+  Math.floor(
+    distance /
+    (1000 * 60 * 60 * 24)
+  );
+
+  const hours =
+  Math.floor(
+    (
+      distance %
+      (1000 * 60 * 60 * 24)
+    ) /
+    (1000 * 60 * 60)
+  );
+
+  const minutes =
+  Math.floor(
+    (
+      distance %
+      (1000 * 60 * 60)
+    ) /
+    (1000 * 60)
+  );
+
+  document.getElementById(
+    "mobileOfferDays"
+  ).innerText = days;
+
+  document.getElementById(
+    "mobileOfferHours"
+  ).innerText = hours;
+
+  document.getElementById(
+    "mobileOfferMinutes"
+  ).innerText = minutes;
+
+}
+
+updateMobileOffer();
+
+setInterval(
+  updateMobileOffer,
+  60000
+);
+
+/* =========================================
+SHOW AFTER 5 SEC
+========================================= */
+
+window.addEventListener(
+  "load",
+  ()=>{
+
+    const offerBar =
+    document.getElementById(
+      "mobileOfferBar"
+    );
+
+    /* CLOSED BEFORE */
+
+    if(
+      sessionStorage.getItem(
+        "altxOfferClosed"
+      ) === "true"
+    ){
+
+      return;
+
+    }
+
+    /* SHOW AFTER 5 SEC */
+
+    setTimeout(()=>{
+
+      offerBar.classList.add(
+        "show"
+      );
+
+    },5000);
+
+  }
+);
+
+/* =========================================
+CLOSE
+========================================= */
+function closeMobileOffer(){
+
+  const offerBar =
+  document.getElementById(
+    "mobileOfferBar"
+  );
+
+  offerBar.classList.remove(
+    "show"
+  );
+
+  sessionStorage.setItem(
+    "altxOfferClosed",
+    "true"
+  );
+
+}
+
+
+</script>  
 </body>
 </html>
