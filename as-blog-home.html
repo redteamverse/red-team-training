@@ -1,0 +1,4395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Altered Security Blog</title>
+
+<!-- GOOGLE FONT -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- LUCIDE -->
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+
+/* =========================================
+RESET
+========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  background:#030712;
+
+  color:#ffffff;
+
+  font-family:'Space Grotesk',sans-serif;
+
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* =========================================
+GLOBAL
+========================================= */
+
+.container{
+
+  width:100%;
+  max-width:1450px;
+
+  margin:auto;
+
+  padding:0 24px;
+}
+
+/* =========================================
+HERO SECTION
+========================================= */
+
+.blog-hero{
+
+  padding:90px 0 55px;
+
+  text-align:center;
+}
+
+/* BREADCRUMB */
+
+.blog-breadcrumb{
+
+  color:#94a3b8;
+
+  font-size:14px;
+
+  font-weight:500;
+
+  margin-bottom:26px;
+}
+
+/* HEADING */
+
+.blog-title{
+
+  max-width:1100px;
+
+  margin:auto auto 28px;
+
+  font-size:68px;
+
+  line-height:1.05;
+
+  font-weight:700;
+
+  letter-spacing:-2px;
+}
+
+/* DESCRIPTION */
+
+.blog-description{
+
+  max-width:980px;
+
+  margin:auto;
+
+  color:#94a3b8;
+
+  font-size:20px;
+
+  line-height:1.9;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+  .blog-hero{
+    padding:70px 0 40px;
+  }
+
+  .blog-title{
+
+    font-size:42px;
+
+    line-height:1.12;
+  }
+
+  .blog-description{
+
+    font-size:16px;
+
+    line-height:1.8;
+  }  
+  
+
+  }
+/* =========================================
+LATEST BLOG SECTION
+========================================= */
+
+.latest-blog-section{
+
+  padding:20px 0;
+}
+
+/* =========================================
+CENTER CONTAINER
+========================================= */
+
+.latest-blog-container{
+
+  width:100%;
+
+  max-width:1400px;
+
+  margin:0 auto;
+}
+
+/* =========================================
+HEADING WRAP
+========================================= */
+
+.latest-blog-heading-wrap{
+
+  max-width:980px;
+
+  margin:0 auto 50px;
+
+  text-align:center;
+}
+
+/* =========================================
+HEADING
+========================================= */
+
+.latest-blog-heading{
+
+  font-size:56px;
+
+  line-height:1.1;
+
+  font-weight:700;
+
+  letter-spacing:-1.5px;
+
+  margin-bottom:18px;
+
+  color:#ffffff;
+}
+
+/* =========================================
+SUBTITLE
+========================================= */
+
+.latest-blog-subtitle{
+
+  color:#94a3b8;
+
+  font-size:18px;
+
+  line-height:1.9;
+}
+
+/* =========================================
+BLOG GRID
+========================================= */
+
+.latest-blog-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,minmax(0,1fr));
+
+  gap:26px;
+
+  align-items:stretch;
+}
+
+/* =========================================
+BLOG CARD
+========================================= */
+
+.latest-blog-card{
+
+  display:flex;
+  flex-direction:column;
+
+  height:100%;
+
+  background:linear-gradient(
+    180deg,
+    #0d1425 0%,
+    #09111f 100%
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:26px;
+
+  overflow:hidden;
+
+  transition:0.35s ease;
+
+  cursor:pointer;
+}
+
+.latest-blog-card:hover{
+
+  transform:translateY(-5px);
+
+  border-color:rgba(168,85,247,0.45);
+
+  box-shadow:
+  0 18px 40px rgba(124,58,237,0.12);
+}
+
+/* =========================================
+IMAGE
+========================================= */
+
+.latest-blog-image{
+
+  width:100%;
+
+  height:190px;
+
+  background:#ffffff;
+
+  overflow:hidden;
+}
+
+.latest-blog-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+}
+
+/* =========================================
+CONTENT
+========================================= */
+
+.latest-blog-content{
+
+  display:flex;
+  flex-direction:column;
+
+  flex:1;
+
+  padding:24px;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.latest-blog-title{
+
+  font-size:28px;
+
+  line-height:1.25;
+
+  font-weight:700;
+
+  color:#ffffff;
+
+  margin-bottom:16px;
+
+  transition:0.3s ease;
+}
+
+.latest-blog-card:hover .latest-blog-title{
+
+  color:#a855f7;
+
+  text-decoration:underline;
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.latest-blog-description{
+
+  color:#94a3b8;
+
+  font-size:15px;
+
+  line-height:1.9;
+
+  margin-bottom:22px;
+}
+
+/* =========================================
+CATEGORY TAGS
+========================================= */
+
+.latest-blog-tags{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:22px;
+}
+
+.latest-tag{
+
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  padding:8px 14px;
+
+  border-radius:100px;
+
+  background: #1E3A8A;
+   
+
+  color:#ffffff;
+
+  font-size:10px;
+  font-weight:700;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+}
+
+.latest-tag svg{
+
+  width:14px;
+  height:14px;
+}
+
+/* =========================================
+META
+========================================= */
+
+.latest-blog-meta{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:26px;
+}
+
+.latest-meta-item{
+
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  background:#151d31;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  padding:10px 14px;
+
+  border-radius:14px;
+
+  color:#dbe4ff;
+
+  font-size:12px;
+  font-weight:600;
+}
+
+.latest-meta-item svg{
+
+  width:15px;
+  height:15px;
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+.latest-blog-footer{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:16px;
+
+  padding-top:20px;
+
+  border-top:1px solid rgba(255,255,255,0.06);
+
+  margin-top:auto;
+}
+
+/* =========================================
+AUTHOR
+========================================= */
+
+.latest-author{
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+}
+
+.latest-author-image{
+
+  width:46px;
+  height:46px;
+
+  border-radius:50%;
+
+  overflow:hidden;
+
+  border:2px solid rgba(168,85,247,0.65);
+}
+
+.latest-author-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.latest-author-info h4{
+
+  color:#ffffff;
+
+  font-size:14px;
+
+  margin-bottom:4px;
+}
+
+.latest-author-info span{
+
+  color:#94a3b8;
+
+  font-size:12px;
+}
+
+/* =========================================
+STATS
+========================================= */
+
+.latest-stats{
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+}
+
+.latest-stat{
+
+  display:flex;
+  align-items:center;
+
+  gap:6px;
+
+  color:#dbe4ff;
+
+  font-size:12px;
+  font-weight:600;
+}
+
+.latest-stat svg{
+
+  width:15px;
+  height:15px;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .latest-blog-grid{
+
+    grid-template-columns:
+    repeat(2,minmax(0,1fr));
+  }
+
+}
+
+@media(max-width:900px){
+
+  .latest-blog-grid{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .latest-blog-section{
+    padding:70px 0;
+  }
+
+  .latest-blog-heading{
+
+    font-size:40px;
+
+    line-height:1.2;
+  }
+
+  .latest-blog-subtitle{
+
+    font-size:16px;
+  }
+
+  .latest-blog-image{
+
+    height:210px;
+  }
+
+  .latest-blog-content{
+
+    padding:22px;
+  }
+
+  .latest-blog-title{
+
+    font-size:24px;
+
+    line-height:1.3;
+  }
+
+  .latest-blog-footer{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+
+}  
+    
+/* =========================================
+PAGINATION SECTION
+========================================= */
+
+.blog-pagination-section{
+
+  padding:20px 0 90px;
+}
+
+/* =========================================
+PAGINATION WRAP
+========================================= */
+
+.blog-pagination{
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:14px;
+}
+
+/* =========================================
+NUMBER BUTTON
+========================================= */
+
+.pagination-number{
+
+  width:54px;
+  height:54px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:16px;
+
+  background:#111827;
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  color:#dbe4ff;
+
+  font-size:15px;
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+/* =========================================
+ACTIVE + HOVER
+========================================= */
+
+.pagination-number:hover,
+.pagination-number.active{
+
+  background:linear-gradient(
+    135deg,
+    #7c3aed,
+    #9333ea
+  );
+
+  border-color:transparent;
+
+  color:#ffffff;
+
+  transform:translateY(-2px);
+
+  box-shadow:
+  0 12px 24px rgba(124,58,237,0.25);
+}
+
+/* =========================================
+ARROW
+========================================= */
+
+.pagination-arrow{
+
+  width:54px;
+  height:54px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:16px;
+
+  background:#111827;
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  color:#dbe4ff;
+
+  transition:0.3s ease;
+}
+
+.pagination-arrow:hover{
+
+  background:linear-gradient(
+    135deg,
+    #7c3aed,
+    #9333ea
+  );
+
+  border-color:transparent;
+
+  color:#ffffff;
+
+  transform:translateY(-2px);
+
+  box-shadow:
+  0 12px 24px rgba(124,58,237,0.25);
+}
+
+/* =========================================
+ICON
+========================================= */
+
+.pagination-arrow svg{
+
+  width:18px;
+  height:18px;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+  .blog-pagination{
+
+    gap:10px;
+  }
+
+  .pagination-number,
+  .pagination-arrow{
+
+    width:46px;
+    height:46px;
+
+    border-radius:14px;
+
+    font-size:14px;
+  }
+
+}  
+    
+/* =========================================
+NEWSLETTER SECTION
+========================================= */
+
+.newsletter-section{
+
+  padding:30px 0 40px;
+}
+
+/* =========================================
+CONTAINER
+========================================= */
+
+.newsletter-container{
+
+  width:100%;
+
+  max-width:1400px;
+
+  margin:0 auto;
+
+  padding:70px;
+
+  border-radius:34px;
+
+  background:linear-gradient(
+    135deg,
+    #7c3aed 0%,
+    #4c1d95 100%
+  );
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+/* =========================================
+CONTENT
+========================================= */
+
+.newsletter-content{
+
+  max-width:900px;
+}
+
+/* =========================================
+BADGE
+========================================= */
+
+.newsletter-badge{
+
+  width:fit-content;
+
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  padding:10px 18px;
+
+  border-radius:100px;
+
+  background:rgba(255,255,255,0.12);
+
+  border:1px solid rgba(255,255,255,0.18);
+
+  color:#ffffff;
+
+  font-size:13px;
+  font-weight:700;
+
+  margin-bottom:24px;
+
+  backdrop-filter:blur(10px);
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.newsletter-title{
+
+  font-size:32px;
+
+  line-height:1.08;
+
+  font-weight:700;
+
+  letter-spacing:-1.8px;
+
+  color:#ffffff;
+
+  margin-bottom:22px;
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.newsletter-description{
+
+  max-width:820px;
+
+  color:rgba(255,255,255,0.82);
+
+  font-size:18px;
+
+  line-height:1.9;
+
+  margin-bottom:34px;
+}
+
+/* =========================================
+FORM
+========================================= */
+
+.newsletter-form{
+
+  display:flex;
+  align-items:center;
+
+  gap:16px;
+
+  max-width:760px;
+}
+
+/* =========================================
+INPUT
+========================================= */
+
+.newsletter-form input{
+
+  flex:1;
+
+  height:64px;
+
+  border:none;
+  outline:none;
+
+  border-radius:18px;
+
+  padding:0 22px;
+
+  background:#ffffff;
+
+  color:#111827;
+
+  font-size:16px;
+
+  font-family:'Space Grotesk',sans-serif;
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.newsletter-form button{
+
+  height:64px;
+
+  padding:0 28px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:#111827;
+
+  color:#ffffff;
+
+  font-size:15px;
+  font-weight:700;
+
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+}
+
+.newsletter-form button:hover{
+
+  transform:translateY(-2px);
+
+  background:#000000;
+}
+
+/* =========================================
+CERTIFICATION SECTION
+========================================= */
+
+.certification-banner-section{
+
+  padding:20px 0 90px;
+}
+
+/* =========================================
+BANNER
+========================================= */
+
+.certification-banner{
+
+  width:100%;
+
+  max-width:1400px;
+
+  margin:0 auto;
+
+  padding:60px;
+
+  border-radius:34px;
+
+  background:linear-gradient(
+    180deg,
+    #0d1425 0%,
+    #09111f 100%
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:40px;
+}
+
+/* =========================================
+CONTENT
+========================================= */
+
+.certification-content{
+
+  max-width:900px;
+}
+
+/* =========================================
+BADGE
+========================================= */
+
+.certification-badge{
+
+  width:fit-content;
+
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  padding:10px 18px;
+
+  border-radius:100px;
+
+  background:rgba(124,58,237,0.12);
+
+  border:1px solid rgba(124,58,237,0.25);
+
+  color:#d8b4fe;
+
+  font-size:13px;
+  font-weight:700;
+
+  margin-bottom:24px;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.certification-title{
+
+  font-size:52px;
+
+  line-height:1.1;
+
+  font-weight:700;
+
+  letter-spacing:-1.5px;
+
+  color:#ffffff;
+
+  margin-bottom:20px;
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.certification-description{
+
+  color:#94a3b8;
+
+  font-size:18px;
+
+  line-height:1.9;
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.certification-button{
+
+  display:inline-flex;
+  align-items:center;
+
+  gap:12px;
+
+  padding:18px 28px;
+
+  border-radius:18px;
+
+  background:linear-gradient(
+    135deg,
+    #7c3aed,
+    #9333ea
+  );
+
+  color:#ffffff;
+
+  font-size:15px;
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.certification-button:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:
+  0 18px 30px rgba(124,58,237,0.25);
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .certification-banner{
+
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .newsletter-container,
+  .certification-banner{
+
+    padding:14px 14px;
+  }
+
+  .newsletter-title,
+  .certification-title{
+
+    font-size:20px;
+
+    line-height:1.15;
+  }
+
+  .newsletter-description,
+  .certification-description{
+
+    font-size:16px;
+  }
+
+  .newsletter-form{
+
+    flex-direction:column;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button{
+
+    width:100%;
+    
+  }
+  
+ 
+
+}    
+    
+/* =========================================
+DESKTOP DEFAULT
+SIDEBAR ON RIGHT
+========================================= */
+
+.blog-sidebar{
+
+  width:100%;
+
+  max-width:320px;
+
+  position:sticky;
+
+  top:110px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:24px;
+}
+
+/* =========================================
+MOBILE
+MOVE SIDEBAR BELOW PAGINATION
+========================================= */
+
+@media(max-width:1200px){
+
+  /* MAIN FEATURED LAYOUT */
+
+  .featured-layout-grid{
+
+    display:flex;
+
+    flex-direction:column;
+  }
+
+  /* REMOVE STICKY */
+
+  .blog-sidebar{
+
+    position:relative;
+
+    top:0;
+
+    max-width:100%;
+  }
+
+}
+
+/* =========================================
+MOBILE ORDER
+========================================= */
+
+@media(max-width:768px){
+
+  /* FEATURED AREA */
+
+  .featured-left-content{
+    order:1;
+  }
+
+  /* LATEST BLOG */
+
+  .latest-blog-section{
+    order:2;
+  }
+
+  /* PAGINATION */
+
+  .blog-pagination-section{
+    order:3;
+  }
+
+  /* SIDEBAR BELOW PAGINATION */
+
+  .blog-sidebar{
+
+    order:4;
+
+    width:100%;
+
+    max-width:100%;
+
+    margin-top:20px;
+  }
+
+  /* STACK SIDEBAR CARDS */
+
+  .sidebar-card{
+
+    width:100%;
+  }
+
+}    
+  /* =========================================
+STICKY CATEGORY SECTION
+========================================= */
+
+.sticky-category{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:999;
+
+  padding:26px 0;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(3,7,18,0.96) 0%,
+    rgba(3,7,18,0.88) 100%
+  );
+
+  backdrop-filter:blur(14px);
+
+  border-top:1px solid rgba(255,255,255,0.04);
+
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+/* =========================================
+CENTER SCROLL AREA
+========================================= */
+
+.category-scroll{
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:16px;
+
+  overflow-x:auto;
+  overflow-y:visible;
+
+  scrollbar-width:none;
+
+  -webkit-overflow-scrolling:touch;
+
+  padding-bottom:6px;
+}
+
+.category-scroll::-webkit-scrollbar{
+
+  display:none;
+}
+
+/* =========================================
+CATEGORY PILL
+========================================= */
+
+.category-pill{
+
+  flex:0 0 auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  height:52px;
+
+  padding:0 24px;
+
+  border-radius:100px;
+
+  background:#111827;
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  color:#dbe4ff;
+
+  font-size:15px;
+  font-weight:700;
+
+  white-space:nowrap;
+
+  transition:0.3s ease;
+}
+
+/* =========================================
+ACTIVE + HOVER
+========================================= */
+
+.category-pill:hover,
+.category-pill.active{
+
+  background:#1E3A8A;  
+
+  border-color:transparent;
+
+  color:#ffffff;
+
+  transform:translateY(-2px);
+
+  box-shadow:
+  0 12px 24px rgba(124,58,237,0.25);
+}
+
+/* =========================================
+EXPLORE WRAPPER
+========================================= */
+
+.explore-wrapper{
+
+  position:relative;
+
+  flex:0 0 auto;
+}
+
+/* =========================================
+EXPLORE BUTTON
+========================================= */
+
+.explore-btn{
+
+  height:52px;
+
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  padding:0 24px;
+
+  border:none;
+
+  border-radius:100px;
+
+  background:#111827;
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  color:#ffffff;
+
+  font-size:15px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+}
+
+.explore-btn:hover{
+
+  background:#1E3A8A;
+  
+  border-color:transparent;
+
+  transform:translateY(-2px);
+
+  box-shadow:
+  0 12px 24px rgba(124,58,237,0.25);
+}
+
+/* =========================================
+ICON
+========================================= */
+
+.explore-btn svg{
+
+  width:18px;
+  height:18px;
+
+  transition:0.3s ease;
+}
+
+.explore-wrapper:hover .explore-btn svg{
+
+  transform:rotate(180deg);
+}
+
+/* =========================================
+DROPDOWN
+========================================= */
+
+.explore-dropdown{
+
+  position:absolute;
+
+  top:calc(100% + 14px);
+
+  right:0;
+
+  width:280px;
+
+  padding:16px;
+
+  border-radius:24px;
+
+  background:#0f172a;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,0.45);
+
+  opacity:0;
+
+  visibility:hidden;
+
+  pointer-events:none;
+
+  transform:
+  translateY(10px);
+
+  transition:0.3s ease;
+
+  z-index:999;
+}
+
+/* =========================================
+SHOW DROPDOWN
+========================================= */
+
+.explore-wrapper:hover .explore-dropdown{
+
+  opacity:1;
+
+  visibility:visible;
+
+  pointer-events:auto;
+
+  transform:
+  translateY(0);
+}
+
+/* =========================================
+DROPDOWN ITEM
+========================================= */
+
+.dropdown-item{
+
+  display:flex;
+  align-items:center;
+
+  width:100%;
+
+  padding:14px 16px;
+
+  border-radius:14px;
+
+  color:#dbe4ff;
+
+  font-size:14px;
+  font-weight:600;
+
+  transition:0.25s ease;
+}
+
+/* =========================================
+DROPDOWN HOVER
+========================================= */
+
+.dropdown-item:hover{
+
+  background:
+  rgba(124,58,237,0.12);
+
+  color:#a855f7;
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .sticky-category{
+
+    padding:18px 0;
+  }
+
+  .category-scroll{
+
+    justify-content:flex-start;
+
+    padding-left:4px;
+    padding-right:14px;
+
+    gap:12px;
+  }
+
+  .category-pill,
+  .explore-btn{
+
+    height:48px;
+
+    padding:0 20px;
+
+    font-size:14px;
+  }
+
+  .explore-dropdown{
+
+    width:240px;
+
+    right:auto;
+    left:0;
+  }
+
+  .dropdown-item{
+
+    padding:12px 14px;
+
+    font-size:13px;
+  }
+
+}
+  
+/* =========================================
+MOBILE CATEGORY SCROLL FIX
+========================================= */
+
+@media(max-width:768px){
+
+  .sticky-category{
+
+    overflow:hidden;
+  }
+
+  .sticky-category .container{
+
+    padding-right:0;
+    padding-left:0;
+  }
+
+  .category-scroll{
+
+    width:100%;
+
+    display:flex;
+
+    flex-wrap:nowrap;
+
+    justify-content:flex-start;
+
+    overflow-x:auto;
+    overflow-y:visible;
+
+    -webkit-overflow-scrolling:touch;
+
+    scrollbar-width:none;
+
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:8px;
+
+    gap:12px;
+  }
+
+  .category-scroll::-webkit-scrollbar{
+
+    display:none;
+  }
+
+  /* IMPORTANT */
+
+  .category-pill,
+  .explore-wrapper{
+
+    flex:0 0 auto;
+  }
+
+  .category-pill,
+  .explore-btn{
+
+    white-space:nowrap;
+  }
+
+  /* DROPDOWN */
+
+  .explore-dropdown{
+
+    left:0;
+    right:auto;
+
+    width:240px;
+  }
+
+}  
+  
+/* =========================================
+EXPLORE MORE FIX
+DESKTOP + MOBILE WORKING
+========================================= */
+
+.explore-wrapper{
+
+  position:relative;
+
+  flex:0 0 auto;
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.explore-btn{
+
+  height:52px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  padding:0 24px;
+
+  border:none;
+  outline:none;
+
+  border-radius:100px;
+
+  background:#111827;
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  color:#ffffff;
+
+  font-size:15px;
+  font-weight:700;
+
+  white-space:nowrap;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+}
+
+.explore-btn:hover{
+
+  background:
+  linear-gradient(
+    135deg,
+    #7c3aed,
+    #9333ea
+  );
+
+  transform:translateY(-2px);
+}
+
+/* =========================================
+ICON
+========================================= */
+
+.explore-btn svg{
+
+  width:18px;
+  height:18px;
+
+  transition:0.3s ease;
+}
+
+.explore-wrapper:hover .explore-btn svg{
+
+  transform:rotate(180deg);
+}
+
+/* =========================================
+DROPDOWN
+========================================= */
+
+.explore-dropdown{
+
+  position:absolute;
+
+  top:calc(100% + 14px);
+
+  right:0;
+
+  width:260px;
+
+  padding:14px;
+
+  border-radius:22px;
+
+  background:#0f172a;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,0.45);
+
+  opacity:0;
+
+  visibility:hidden;
+
+  pointer-events:none;
+
+  transform:translateY(10px);
+
+  transition:
+  opacity 0.25s ease,
+  transform 0.25s ease,
+  visibility 0.25s ease;
+
+  z-index:9999;
+}
+
+/* =========================================
+SHOW DROPDOWN
+========================================= */
+
+.explore-wrapper:hover .explore-dropdown,
+.explore-wrapper:focus-within .explore-dropdown{
+
+  opacity:1;
+
+  visibility:visible;
+
+  pointer-events:auto;
+
+  transform:translateY(0);
+}
+
+/* =========================================
+DROPDOWN ITEM
+========================================= */
+
+.dropdown-item{
+
+  display:flex;
+  align-items:center;
+
+  width:100%;
+
+  padding:13px 14px;
+
+  border-radius:14px;
+
+  color:#dbe4ff;
+
+  font-size:14px;
+  font-weight:600;
+
+  transition:0.25s ease;
+}
+
+.dropdown-item:hover{
+
+  background:
+  rgba(124,58,237,0.12);
+
+  color:#a855f7;
+}
+
+/* =========================================
+IMPORTANT FIX
+PARENT MUST ALLOW OVERFLOW
+========================================= */
+
+.sticky-category,
+.category-scroll,
+.container{
+
+  overflow:visible !important;
+}
+
+/* =========================================
+MOBILE FIX
+========================================= */
+
+@media(max-width:768px){
+
+  .category-scroll{
+
+    overflow-x:auto;
+    overflow-y:visible;
+
+    flex-wrap:nowrap;
+
+    justify-content:flex-start;
+
+    -webkit-overflow-scrolling:touch;
+
+    scrollbar-width:none;
+
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .category-scroll::-webkit-scrollbar{
+
+    display:none;
+  }
+
+  .category-pill,
+  .explore-wrapper{
+
+    flex:0 0 auto;
+  }
+
+  .explore-dropdown{
+
+    left:0;
+    right:auto;
+
+    width:240px;
+  }
+
+}  
+  
+/* =========================================
+CENTER FEATURE SECTION
+========================================= */
+
+.featured-blog-section{
+
+  padding:70px 0 40px;
+}
+
+.featured-blog-container{
+
+  width:100%;
+
+  max-width:1400px;
+
+  margin:0 auto;
+}
+
+/* =========================================
+2 FEATURE BLOG
+========================================= */
+
+.top-feature-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,minmax(0,1fr));
+
+  gap:28px;
+
+  margin-bottom:30px;
+}
+
+/* =========================================
+3 SECONDARY BLOG
+========================================= */
+
+.secondary-featured-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,minmax(0,1fr));
+
+  gap:26px;
+}
+
+/* =========================================
+CTA SECTION
+========================================= */
+
+.cta-section{
+
+  padding:20px 0 90px;
+}
+
+.cta-container{
+
+  width:100%;
+
+  max-width:1400px;
+
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,minmax(0,1fr));
+
+  gap:26px;
+}
+
+/* =========================================
+CTA CARD
+========================================= */
+
+.cta-card{
+
+  background:linear-gradient(
+    180deg,
+    #0d1425 0%,
+    #09111f 100%
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:28px;
+
+  padding:34px;
+
+  transition:0.35s ease;
+}
+
+.cta-card:hover{
+
+  transform:translateY(-5px);
+
+  border-color:rgba(168,85,247,0.45);
+
+  box-shadow:
+  0 18px 40px rgba(124,58,237,0.12);
+}
+
+/* =========================================
+ICON
+========================================= */
+
+.cta-icon{
+
+  width:68px;
+  height:68px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:22px;
+
+  margin-bottom:24px;
+
+  background:linear-gradient(
+    135deg,
+    #7c3aed,
+    #9333ea
+  );
+}
+
+.cta-icon svg{
+
+  width:30px;
+  height:30px;
+
+  color:#ffffff;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.cta-title{
+
+  font-size:34px;
+
+  line-height:1.2;
+
+  font-weight:700;
+
+  margin-bottom:18px;
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.cta-description{
+
+  color:#94a3b8;
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  margin-bottom:26px;
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.cta-button{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  height:54px;
+
+  padding:0 24px;
+
+  border-radius:16px;
+
+  background:linear-gradient(
+    135deg,
+    #7c3aed,
+    #9333ea
+  );
+
+  color:#ffffff;
+
+  font-size:14px;
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.cta-button:hover{
+
+  transform:translateY(-2px);
+
+  box-shadow:
+  0 12px 24px rgba(124,58,237,0.25);
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .top-feature-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .secondary-featured-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .cta-container{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .featured-blog-section{
+    padding:50px 0 30px;
+  }
+
+  .cta-title{
+
+    font-size:28px;
+  }
+
+  .cta-card{
+
+    padding:28px;
+  }
+
+}  
+  
+/* =========================================
+FEATURE SECTION
+========================================= */
+
+.featured-blog-section{
+
+  padding:70px 0 40px;
+}
+
+.featured-blog-container{
+
+  width:100%;
+
+  max-width:1400px;
+
+  margin:0 auto;
+}
+
+/* =========================================
+TOP FEATURE GRID
+========================================= */
+
+.top-feature-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,minmax(0,1fr));
+
+  gap:28px;
+
+  margin-bottom:30px;
+}
+
+/* =========================================
+FEATURE BLOG CARD
+========================================= */
+
+.featured-blog-card{
+
+  display:flex;
+  flex-direction:column;
+
+  background:linear-gradient(
+    180deg,
+    #0d1425 0%,
+    #09111f 100%
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:28px;
+
+  overflow:hidden;
+
+  transition:0.35s ease;
+}
+
+.featured-blog-card:hover{
+
+  transform:translateY(-5px);
+
+  border-color:rgba(168,85,247,0.45);
+
+  box-shadow:
+  0 18px 40px rgba(124,58,237,0.12);
+}
+
+/* =========================================
+IMAGE
+========================================= */
+
+.featured-blog-image{
+
+  width:100%;
+
+  height:250px;
+
+  background:#ffffff;
+}
+
+.featured-blog-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+}
+
+/* =========================================
+CONTENT
+========================================= */
+
+.featured-blog-content{
+
+  display:flex;
+  flex-direction:column;
+
+  flex:1;
+
+  padding:28px;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.featured-blog-title{
+
+  font-size:36px;
+
+  line-height:1.15;
+
+  font-weight:700;
+
+  margin-bottom:16px;
+
+  transition:0.3s ease;
+}
+
+.featured-blog-card:hover .featured-blog-title{
+
+  color:#1E3A8A;
+
+  text-decoration:underline;
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.featured-blog-description{
+
+  color:#94a3b8;
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  margin-bottom:22px;
+}
+
+/* =========================================
+CATEGORY
+========================================= */
+
+.featured-blog-tags{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:22px;
+}
+
+.featured-tag{
+
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  padding:8px 14px;
+
+  border-radius:100px;
+
+  background:linear-gradient(
+    135deg,
+    #7c3aed,
+    #9333ea
+  );
+
+  color:#ffffff;
+
+  font-size:10px;
+  font-weight:700;
+
+  text-transform:uppercase;
+}
+
+/* =========================================
+META
+========================================= */
+
+.featured-blog-meta{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:24px;
+}
+
+.featured-meta-item{
+
+  background:#151d31;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  padding:10px 14px;
+
+  border-radius:14px;
+
+  font-size:12px;
+  font-weight:600;
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+.featured-blog-footer{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:16px;
+
+  padding-top:20px;
+
+  border-top:1px solid rgba(255,255,255,0.06);
+
+  margin-top:auto;
+}
+
+/* =========================================
+AUTHOR
+========================================= */
+
+.featured-author{
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+}
+
+.featured-author-image{
+
+  width:48px;
+  height:48px;
+
+  border-radius:50%;
+
+  overflow:hidden;
+
+  border:2px solid rgba(168,85,247,0.65);
+}
+
+.featured-author-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.featured-author-info h4{
+
+  font-size:14px;
+
+  margin-bottom:4px;
+}
+
+.featured-author-info span{
+
+  color:#94a3b8;
+
+  font-size:12px;
+}
+
+/* =========================================
+STATS
+========================================= */
+
+.featured-stats{
+
+  display:flex;
+  gap:14px;
+}
+
+.featured-stat{
+
+  display:flex;
+  align-items:center;
+
+  gap:6px;
+
+  font-size:12px;
+  font-weight:600;
+}
+
+/* =========================================
+SECONDARY GRID
+========================================= */
+
+.secondary-featured-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,minmax(0,1fr));
+
+  gap:26px;
+}
+
+/* =========================================
+SECONDARY CARD
+========================================= */
+
+.secondary-blog-card{
+
+  display:flex;
+  flex-direction:column;
+
+  background:linear-gradient(
+    180deg,
+    #0d1425 0%,
+    #09111f 100%
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:26px;
+
+  overflow:hidden;
+
+  transition:0.35s ease;
+}
+
+.secondary-blog-card:hover{
+
+  transform:translateY(-5px);
+
+  border-color:rgba(168,85,247,0.45);
+}
+
+/* =========================================
+SECONDARY IMAGE
+========================================= */
+
+.secondary-blog-image{
+
+  width:100%;
+
+  height:190px;
+
+  background:#ffffff;
+}
+
+.secondary-blog-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+}
+
+/* =========================================
+SECONDARY CONTENT
+========================================= */
+
+.secondary-blog-content{
+
+  display:flex;
+  flex-direction:column;
+
+  flex:1;
+
+  padding:24px;
+}
+
+/* =========================================
+SECONDARY TITLE
+========================================= */
+
+.secondary-blog-title{
+
+  font-size:28px;
+
+  line-height:1.25;
+
+  font-weight:700;
+
+  margin-bottom:16px;
+
+  transition:0.3s ease;
+}
+
+.secondary-blog-card:hover .secondary-blog-title{
+
+  color:#a855f7;
+
+  text-decoration:underline;
+}
+
+/* =========================================
+SECONDARY DESCRIPTION
+========================================= */
+
+.secondary-blog-description{
+
+  color:#94a3b8;
+
+  font-size:15px;
+
+  line-height:1.9;
+
+  margin-bottom:20px;
+}
+
+/* =========================================
+SECONDARY TAG
+========================================= */
+
+.secondary-blog-tags{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:20px;
+}
+
+.secondary-tag{
+
+  padding:8px 14px;
+
+  border-radius:100px;
+
+  background:linear-gradient(
+    135deg,
+    #7c3aed,
+    #9333ea
+  );
+
+  color:#ffffff;
+
+  font-size:10px;
+  font-weight:700;
+
+  text-transform:uppercase;
+}
+
+/* =========================================
+SECONDARY META
+========================================= */
+
+.secondary-blog-meta{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:24px;
+}
+
+.secondary-meta-item{
+
+  background:#151d31;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  padding:10px 14px;
+
+  border-radius:14px;
+
+  font-size:12px;
+  font-weight:600;
+}
+
+/* =========================================
+SECONDARY FOOTER
+========================================= */
+
+.secondary-blog-footer{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:16px;
+
+  padding-top:20px;
+
+  border-top:1px solid rgba(255,255,255,0.06);
+
+  margin-top:auto;
+}
+
+.secondary-author{
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+}
+
+.secondary-author-image{
+
+  width:46px;
+  height:46px;
+
+  border-radius:50%;
+
+  overflow:hidden;
+
+  border:2px solid rgba(168,85,247,0.65);
+}
+
+.secondary-author-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.secondary-author-info h4{
+
+  font-size:14px;
+
+  margin-bottom:4px;
+}
+
+.secondary-author-info span{
+
+  color:#94a3b8;
+
+  font-size:12px;
+}
+
+.secondary-stats{
+
+  display:flex;
+
+  gap:14px;
+}
+
+.secondary-stat{
+
+  font-size:12px;
+  font-weight:600;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .top-feature-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .secondary-featured-grid{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .featured-blog-title{
+
+    font-size:30px;
+  }
+
+  .secondary-blog-title{
+
+    font-size:24px;
+  }
+
+  .featured-blog-footer,
+  .secondary-blog-footer{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+
+}  
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================
+HERO SECTION
+========================================= -->
+
+<section class="blog-hero">
+
+  <div class="container">
+
+    <!-- BREADCRUMB -->
+
+    <div class="blog-breadcrumb">
+      Blog
+    </div>
+
+    <!-- HEADING -->
+
+    <h1 class="blog-title">
+      Red Teaming, Azure & Active Directory Security Blog
+    </h1>
+
+    <!-- DESCRIPTION -->
+
+    <p class="blog-description">
+      Advanced offensive security research, Active Directory attack techniques,
+      Azure Red Team operations, cloud security, detection engineering,
+      and enterprise tradecraft.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+STICKY CATEGORY BAR
+========================================= -->
+
+<!-- =========================================
+STICKY CATEGORY BAR
+========================================= -->
+
+<section class="sticky-category">
+
+  <div class="container">
+
+    <div class="category-scroll">
+
+      <!-- CATEGORY -->
+
+      <a href="#" class="category-pill active">
+        Active Directory
+      </a>
+
+      <a href="#" class="category-pill">
+        Azure Red Team
+      </a>
+
+      <a href="#" class="category-pill">
+        Cloud Security
+      </a>
+
+      <a href="#" class="category-pill">
+        Detection Engineering
+      </a>
+
+      <a href="#" class="category-pill">
+        Enterprise Tradecraft
+      </a>
+
+      <!-- EXPLORE MORE -->
+
+      <div class="explore-wrapper">
+
+        <button class="explore-btn">
+
+          Explore More
+
+          <i data-lucide="chevron-down"></i>
+
+        </button>
+
+        <!-- HOVER DROPDOWN -->
+
+        <div class="explore-dropdown">
+
+          <a href="#" class="dropdown-item">
+            Malware Research
+          </a>
+
+          <a href="#" class="dropdown-item">
+            Kerberos Attacks
+          </a>
+
+          <a href="#" class="dropdown-item">
+            C2 Infrastructure
+          </a>
+
+          <a href="#" class="dropdown-item">
+            OPSEC Tradecraft
+          </a>
+
+          <a href="#" class="dropdown-item">
+            Initial Access
+          </a>
+
+          <a href="#" class="dropdown-item">
+            Adversary Simulation
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+FEATURED BLOG SECTION
+2 FEATURE BLOG + 3 SECONDARY BLOG
+========================================= -->
+
+<section class="featured-blog-section">
+
+  <div class="featured-blog-container">
+
+    <!-- =========================================
+    TOP FEATURED BLOG GRID
+    ========================================= -->
+
+    <div class="top-feature-grid">
+
+      <!-- =========================================
+      FEATURE BLOG 1
+      ========================================= -->
+
+      <a href="#" class="featured-blog-card">
+
+        <!-- IMAGE -->
+
+        <div class="featured-blog-image">
+
+          <img src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="featured-blog-content">
+
+          <!-- TITLE -->
+
+          <h2 class="featured-blog-title">
+            Exploiting Misconfigured Active Directory Certificate Services
+          </h2>
+
+          <!-- DESCRIPTION -->
+
+          <p class="featured-blog-description">
+            Learn how attackers abuse AD CS misconfigurations to escalate privileges,
+            forge certificates, and compromise enterprise Active Directory environments.
+          </p>
+
+          <!-- CATEGORY -->
+
+          <div class="featured-blog-tags">
+
+            <div class="featured-tag">
+
+              <i data-lucide="shield"></i>
+
+              Red Team
+
+            </div>
+
+            <div class="featured-tag">
+
+              <i data-lucide="server"></i>
+
+              Active Directory
+
+            </div>
+
+          </div>
+
+          <!-- META -->
+
+          <div class="featured-blog-meta">
+
+            <div class="featured-meta-item">
+
+              <i data-lucide="calendar-days"></i>
+
+              May 18, 2026
+
+            </div>
+
+            <div class="featured-meta-item">
+
+              <i data-lucide="flame"></i>
+
+              Advanced
+
+            </div>
+
+            <div class="featured-meta-item">
+
+              <i data-lucide="clock-3"></i>
+
+              12 Min Read
+
+            </div>
+
+          </div>
+
+          <!-- FOOTER -->
+
+          <div class="featured-blog-footer">
+
+            <!-- AUTHOR -->
+
+            <div class="featured-author">
+
+              <div class="featured-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=12">
+
+              </div>
+
+              <div class="featured-author-info">
+
+                <h4>Alex Carter</h4>
+
+                <span>Red Team Operator</span>
+
+              </div>
+
+            </div>
+
+            <!-- STATS -->
+
+            <div class="featured-stats">
+
+              <div class="featured-stat">
+
+                <i data-lucide="eye"></i>
+
+                12.8K
+
+              </div>
+
+              <div class="featured-stat">
+
+                <i data-lucide="heart"></i>
+
+                1.2K
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- =========================================
+      FEATURE BLOG 2
+      ========================================= -->
+
+      <a href="#" class="featured-blog-card">
+
+        <div class="featured-blog-image">
+
+          <img src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <div class="featured-blog-content">
+
+          <h2 class="featured-blog-title">
+            Azure Red Team Operations & Enterprise Cloud Attack Paths
+          </h2>
+
+          <p class="featured-blog-description">
+            Learn how attackers exploit weak IAM permissions and cloud misconfigurations
+            inside enterprise Azure environments.
+          </p>
+
+          <div class="featured-blog-tags">
+
+            <div class="featured-tag">
+
+              <i data-lucide="cloud"></i>
+
+              Azure
+
+            </div>
+
+            <div class="featured-tag">
+
+              <i data-lucide="shield-check"></i>
+
+              Cloud Security
+
+            </div>
+
+          </div>
+
+          <div class="featured-blog-meta">
+
+            <div class="featured-meta-item">
+
+              <i data-lucide="calendar-days"></i>
+
+              March 15, 2026
+
+            </div>
+
+            <div class="featured-meta-item">
+
+              <i data-lucide="flame"></i>
+
+              Intermediate
+
+            </div>
+
+            <div class="featured-meta-item">
+
+              <i data-lucide="clock-3"></i>
+
+              7 Min Read
+
+            </div>
+
+          </div>
+
+          <div class="featured-blog-footer">
+
+            <div class="featured-author">
+
+              <div class="featured-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=24">
+
+              </div>
+
+              <div class="featured-author-info">
+
+                <h4>David Reynolds</h4>
+
+                <span>Cloud Security Researcher</span>
+
+              </div>
+
+            </div>
+
+            <div class="featured-stats">
+
+              <div class="featured-stat">
+
+                <i data-lucide="eye"></i>
+
+                15.2K
+
+              </div>
+
+              <div class="featured-stat">
+
+                <i data-lucide="heart"></i>
+
+                2.4K
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+    <!-- =========================================
+    SECONDARY BLOG GRID
+    ========================================= -->
+
+    <div class="secondary-featured-grid">
+
+      <!-- BLOG 1 -->
+
+      <a href="#" class="secondary-blog-card">
+
+        <div class="secondary-blog-image">
+
+          <img src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <div class="secondary-blog-content">
+
+          <h3 class="secondary-blog-title">
+            Modern Kerberos Delegation Abuse Techniques
+          </h3>
+
+          <p class="secondary-blog-description">
+            Explore advanced Kerberos attack paths attackers use to escalate privileges.
+          </p>
+
+          <div class="secondary-blog-tags">
+
+            <div class="secondary-tag">
+              Red Team
+            </div>
+
+            <div class="secondary-tag">
+              Kerberos
+            </div>
+
+          </div>
+
+          <div class="secondary-blog-meta">
+
+            <div class="secondary-meta-item">
+              April 29, 2026
+            </div>
+
+            <div class="secondary-meta-item">
+              Advanced
+            </div>
+
+            <div class="secondary-meta-item">
+              10 Min Read
+            </div>
+
+          </div>
+
+          <div class="secondary-blog-footer">
+
+            <div class="secondary-author">
+
+              <div class="secondary-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=32">
+
+              </div>
+
+              <div class="secondary-author-info">
+
+                <h4>Sarah Mitchell</h4>
+
+                <span>Offensive Security Engineer</span>
+
+              </div>
+
+            </div>
+
+            <div class="secondary-stats">
+
+              <div class="secondary-stat">
+                9.4K
+              </div>
+
+              <div class="secondary-stat">
+                870
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- BLOG 2 -->
+
+      <a href="#" class="secondary-blog-card">
+
+        <div class="secondary-blog-image">
+
+          <img src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <div class="secondary-blog-content">
+
+          <h3 class="secondary-blog-title">
+            Building Stealthy Command & Control Infrastructure
+          </h3>
+
+          <p class="secondary-blog-description">
+            Discover OPSEC-focused C2 infrastructure design strategies for red teams.
+          </p>
+
+          <div class="secondary-blog-tags">
+
+            <div class="secondary-tag">
+              C2
+            </div>
+
+            <div class="secondary-tag">
+              Evasion
+            </div>
+
+          </div>
+
+          <div class="secondary-blog-meta">
+
+            <div class="secondary-meta-item">
+              February 2, 2026
+            </div>
+
+            <div class="secondary-meta-item">
+              Advanced
+            </div>
+
+            <div class="secondary-meta-item">
+              12 Min Read
+            </div>
+
+          </div>
+
+          <div class="secondary-blog-footer">
+
+            <div class="secondary-author">
+
+              <div class="secondary-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=44">
+
+              </div>
+
+              <div class="secondary-author-info">
+
+                <h4>Michael Ross</h4>
+
+                <span>Adversary Simulation Lead</span>
+
+              </div>
+
+            </div>
+
+            <div class="secondary-stats">
+
+              <div class="secondary-stat">
+                18.9K
+              </div>
+
+              <div class="secondary-stat">
+                3.1K
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- BLOG 3 -->
+
+      <a href="#" class="secondary-blog-card">
+
+        <div class="secondary-blog-image">
+
+          <img src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <div class="secondary-blog-content">
+
+          <h3 class="secondary-blog-title">
+            Advanced Detection Engineering for Enterprise Environments
+          </h3>
+
+          <p class="secondary-blog-description">
+            Build modern detection strategies for enterprise adversary simulation engagements.
+          </p>
+
+          <div class="secondary-blog-tags">
+
+            <div class="secondary-tag">
+              Detection
+            </div>
+
+            <div class="secondary-tag">
+              Blue Team
+            </div>
+
+          </div>
+
+          <div class="secondary-blog-meta">
+
+            <div class="secondary-meta-item">
+              January 10, 2026
+            </div>
+
+            <div class="secondary-meta-item">
+              Intermediate
+            </div>
+
+            <div class="secondary-meta-item">
+              8 Min Read
+            </div>
+
+          </div>
+
+          <div class="secondary-blog-footer">
+
+            <div class="secondary-author">
+
+              <div class="secondary-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=15">
+
+              </div>
+
+              <div class="secondary-author-info">
+
+                <h4>Emma Watson</h4>
+
+                <span>Detection Engineer</span>
+
+              </div>
+
+            </div>
+
+            <div class="secondary-stats">
+
+              <div class="secondary-stat">
+                8.7K
+              </div>
+
+              <div class="secondary-stat">
+                920
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+CTA SECTION BELOW PAGINATION
+========================================= -->
+
+
+<!-- =========================================
+LATEST BLOG SECTION
+========================================= -->
+
+
+<section class="latest-blog-section">
+
+  <!-- CENTER CONTAINER -->
+
+  <div class="latest-blog-container">
+
+    <!-- =========================================
+    HEADING
+    ========================================= -->
+
+    <div class="latest-blog-heading-wrap">
+
+      <h2 class="latest-blog-heading">
+        Our Latest Red Teaming Blog
+      </h2>
+
+      <p class="latest-blog-subtitle">
+        Advanced offensive security research, enterprise attack tradecraft,
+        Active Directory exploitation, Azure Red Team operations,
+        and modern adversary simulation techniques.
+      </p>
+
+    </div>
+
+    <!-- =========================================
+    BLOG GRID
+    ========================================= -->
+
+    <div class="latest-blog-grid">
+
+      <!-- =========================================
+      BLOG CARD 1
+      ========================================= -->
+
+      <a href="#" class="latest-blog-card">
+
+        <!-- IMAGE -->
+
+        <div class="latest-blog-image">
+
+          <img src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="latest-blog-content">
+
+          <!-- TITLE -->
+
+          <h3 class="latest-blog-title">
+            Exploiting Misconfigured Active Directory Certificate Services
+          </h3>
+
+          <!-- DESCRIPTION -->
+
+          <p class="latest-blog-description">
+            Learn how attackers abuse AD CS misconfigurations to escalate privileges,
+            forge certificates, and compromise enterprise Active Directory environments.
+          </p>
+
+          <!-- CATEGORY -->
+
+          <div class="latest-blog-tags">
+
+            <div class="latest-tag">
+
+              <i data-lucide="shield"></i>
+
+              Red Team
+
+            </div>
+
+            <div class="latest-tag">
+
+              <i data-lucide="server"></i>
+
+              Active Directory
+
+            </div>
+
+          </div>
+
+          <!-- META -->
+
+          <div class="latest-blog-meta">
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="calendar-days"></i>
+
+              May 18, 2026
+
+            </div>
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="flame"></i>
+
+              Advanced
+
+            </div>
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="clock-3"></i>
+
+              12 Min Read
+
+            </div>
+
+          </div>
+
+          <!-- FOOTER -->
+
+          <div class="latest-blog-footer">
+
+            <!-- AUTHOR -->
+
+            <div class="latest-author">
+
+              <div class="latest-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=12">
+
+              </div>
+
+              <div class="latest-author-info">
+
+                <h4>Alex Carter</h4>
+
+                <span>Red Team Operator</span>
+
+              </div>
+
+            </div>
+
+            <!-- STATS -->
+
+            <div class="latest-stats">
+
+              <div class="latest-stat">
+
+                <i data-lucide="eye"></i>
+
+                12.8K
+
+              </div>
+
+              <div class="latest-stat">
+
+                <i data-lucide="heart"></i>
+
+                1.2K
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- =========================================
+      BLOG CARD 2
+      ========================================= -->
+
+      <a href="#" class="latest-blog-card">
+
+        <div class="latest-blog-image">
+
+          <img src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <div class="latest-blog-content">
+
+          <h3 class="latest-blog-title">
+            Modern Kerberos Delegation Abuse Techniques in Enterprise Environments
+          </h3>
+
+          <p class="latest-blog-description">
+            Explore advanced Kerberos attack paths attackers use to escalate privileges
+            and move laterally across enterprise Active Directory environments.
+          </p>
+
+          <div class="latest-blog-tags">
+
+            <div class="latest-tag">
+
+              <i data-lucide="shield"></i>
+
+              Red Team
+
+            </div>
+
+            <div class="latest-tag">
+
+              <i data-lucide="key-round"></i>
+
+              Kerberos
+
+            </div>
+
+          </div>
+
+          <div class="latest-blog-meta">
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="calendar-days"></i>
+
+              April 29, 2026
+
+            </div>
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="flame"></i>
+
+              Advanced
+
+            </div>
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="clock-3"></i>
+
+              10 Min Read
+
+            </div>
+
+          </div>
+
+          <div class="latest-blog-footer">
+
+            <div class="latest-author">
+
+              <div class="latest-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=32">
+
+              </div>
+
+              <div class="latest-author-info">
+
+                <h4>Sarah Mitchell</h4>
+
+                <span>Offensive Security Engineer</span>
+
+              </div>
+
+            </div>
+
+            <div class="latest-stats">
+
+              <div class="latest-stat">
+
+                <i data-lucide="eye"></i>
+
+                9.4K
+
+              </div>
+
+              <div class="latest-stat">
+
+                <i data-lucide="heart"></i>
+
+                870
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- =========================================
+      BLOG CARD 3
+      ========================================= -->
+
+      <a href="#" class="latest-blog-card">
+
+        <div class="latest-blog-image">
+
+          <img src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <div class="latest-blog-content">
+
+          <h3 class="latest-blog-title">
+            Azure Red Team Operations & Enterprise Cloud Attack Paths
+          </h3>
+
+          <p class="latest-blog-description">
+            Learn how attackers exploit weak IAM permissions and cloud misconfigurations
+            inside enterprise Azure environments.
+          </p>
+
+          <div class="latest-blog-tags">
+
+            <div class="latest-tag">
+
+              <i data-lucide="cloud"></i>
+
+              Azure
+
+            </div>
+
+            <div class="latest-tag">
+
+              <i data-lucide="shield-check"></i>
+
+              Cloud Security
+
+            </div>
+
+          </div>
+
+          <div class="latest-blog-meta">
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="calendar-days"></i>
+
+              March 15, 2026
+
+            </div>
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="flame"></i>
+
+              Intermediate
+
+            </div>
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="clock-3"></i>
+
+              7 Min Read
+
+            </div>
+
+          </div>
+
+          <div class="latest-blog-footer">
+
+            <div class="latest-author">
+
+              <div class="latest-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=24">
+
+              </div>
+
+              <div class="latest-author-info">
+
+                <h4>David Reynolds</h4>
+
+                <span>Cloud Security Researcher</span>
+
+              </div>
+
+            </div>
+
+            <div class="latest-stats">
+
+              <div class="latest-stat">
+
+                <i data-lucide="eye"></i>
+
+                15.2K
+
+              </div>
+
+              <div class="latest-stat">
+
+                <i data-lucide="heart"></i>
+
+                2.4K
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+<section class="latest-blog-section">
+
+  <!-- CENTER CONTAINER -->
+
+  <div class="latest-blog-container">   
+    <!-- =========================================
+    BLOG GRID
+    ========================================= -->
+
+    <div class="latest-blog-grid">
+
+      <!-- =========================================
+      BLOG CARD 1
+      ========================================= -->
+
+      <a href="#" class="latest-blog-card">
+
+        <!-- IMAGE -->
+
+        <div class="latest-blog-image">
+
+          <img src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="latest-blog-content">
+
+          <!-- TITLE -->
+
+          <h3 class="latest-blog-title">
+            Exploiting Misconfigured Active Directory Certificate Services
+          </h3>
+
+          <!-- DESCRIPTION -->
+
+          <p class="latest-blog-description">
+            Learn how attackers abuse AD CS misconfigurations to escalate privileges,
+            forge certificates, and compromise enterprise Active Directory environments.
+          </p>
+
+          <!-- CATEGORY -->
+
+          <div class="latest-blog-tags">
+
+            <div class="latest-tag">
+
+              <i data-lucide="shield"></i>
+
+              Red Team
+
+            </div>
+
+            <div class="latest-tag">
+
+              <i data-lucide="server"></i>
+
+              Active Directory
+
+            </div>
+
+          </div>
+
+          <!-- META -->
+
+          <div class="latest-blog-meta">
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="calendar-days"></i>
+
+              May 18, 2026
+
+            </div>
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="flame"></i>
+
+              Advanced
+
+            </div>
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="clock-3"></i>
+
+              12 Min Read
+
+            </div>
+
+          </div>
+
+          <!-- FOOTER -->
+
+          <div class="latest-blog-footer">
+
+            <!-- AUTHOR -->
+
+            <div class="latest-author">
+
+              <div class="latest-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=12">
+
+              </div>
+
+              <div class="latest-author-info">
+
+                <h4>Alex Carter</h4>
+
+                <span>Red Team Operator</span>
+
+              </div>
+
+            </div>
+
+            <!-- STATS -->
+
+            <div class="latest-stats">
+
+              <div class="latest-stat">
+
+                <i data-lucide="eye"></i>
+
+                12.8K
+
+              </div>
+
+              <div class="latest-stat">
+
+                <i data-lucide="heart"></i>
+
+                1.2K
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- =========================================
+      BLOG CARD 2
+      ========================================= -->
+
+      <a href="#" class="latest-blog-card">
+
+        <div class="latest-blog-image">
+
+          <img src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <div class="latest-blog-content">
+
+          <h3 class="latest-blog-title">
+            Modern Kerberos Delegation Abuse Techniques in Enterprise Environments
+          </h3>
+
+          <p class="latest-blog-description">
+            Explore advanced Kerberos attack paths attackers use to escalate privileges
+            and move laterally across enterprise Active Directory environments.
+          </p>
+
+          <div class="latest-blog-tags">
+
+            <div class="latest-tag">
+
+              <i data-lucide="shield"></i>
+
+              Red Team
+
+            </div>
+
+            <div class="latest-tag">
+
+              <i data-lucide="key-round"></i>
+
+              Kerberos
+
+            </div>
+
+          </div>
+
+          <div class="latest-blog-meta">
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="calendar-days"></i>
+
+              April 29, 2026
+
+            </div>
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="flame"></i>
+
+              Advanced
+
+            </div>
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="clock-3"></i>
+
+              10 Min Read
+
+            </div>
+
+          </div>
+
+          <div class="latest-blog-footer">
+
+            <div class="latest-author">
+
+              <div class="latest-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=32">
+
+              </div>
+
+              <div class="latest-author-info">
+
+                <h4>Sarah Mitchell</h4>
+
+                <span>Offensive Security Engineer</span>
+
+              </div>
+
+            </div>
+
+            <div class="latest-stats">
+
+              <div class="latest-stat">
+
+                <i data-lucide="eye"></i>
+
+                9.4K
+
+              </div>
+
+              <div class="latest-stat">
+
+                <i data-lucide="heart"></i>
+
+                870
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- =========================================
+      BLOG CARD 3
+      ========================================= -->
+
+      <a href="#" class="latest-blog-card">
+
+        <div class="latest-blog-image">
+
+          <img src="https://static.wixstatic.com/media/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png/v1/fill/w_740,h_261,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a6946_c7b41b6772f343549d2c2d48f55fe4e5~mv2.png">
+
+        </div>
+
+        <div class="latest-blog-content">
+
+          <h3 class="latest-blog-title">
+            Azure Red Team Operations & Enterprise Cloud Attack Paths
+          </h3>
+
+          <p class="latest-blog-description">
+            Learn how attackers exploit weak IAM permissions and cloud misconfigurations
+            inside enterprise Azure environments.
+          </p>
+
+          <div class="latest-blog-tags">
+
+            <div class="latest-tag">
+
+              <i data-lucide="cloud"></i>
+
+              Azure
+
+            </div>
+
+            <div class="latest-tag">
+
+              <i data-lucide="shield-check"></i>
+
+              Cloud Security
+
+            </div>
+
+          </div>
+
+          <div class="latest-blog-meta">
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="calendar-days"></i>
+
+              March 15, 2026
+
+            </div>
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="flame"></i>
+
+              Intermediate
+
+            </div>
+
+            <div class="latest-meta-item">
+
+              <i data-lucide="clock-3"></i>
+
+              7 Min Read
+
+            </div>
+
+          </div>
+
+          <div class="latest-blog-footer">
+
+            <div class="latest-author">
+
+              <div class="latest-author-image">
+
+                <img src="https://i.pravatar.cc/100?img=24">
+
+              </div>
+
+              <div class="latest-author-info">
+
+                <h4>David Reynolds</h4>
+
+                <span>Cloud Security Researcher</span>
+
+              </div>
+
+            </div>
+
+            <div class="latest-stats">
+
+              <div class="latest-stat">
+
+                <i data-lucide="eye"></i>
+
+                15.2K
+
+              </div>
+
+              <div class="latest-stat">
+
+                <i data-lucide="heart"></i>
+
+                2.4K
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>    
+<!-- =========================================
+PAGINATION SECTION
+========================================= -->
+
+<section class="blog-pagination-section">
+
+  <div class="blog-pagination">
+
+    <!-- PREVIOUS -->
+
+    <a href="#" class="pagination-arrow">
+
+      <i data-lucide="chevron-left"></i>
+
+    </a>
+
+    <!-- PAGE NUMBERS -->
+
+    <a href="#" class="pagination-number active">
+      1
+    </a>
+
+    <a href="#" class="pagination-number">
+      2
+    </a>
+
+    <a href="#" class="pagination-number">
+      3
+    </a>
+
+    <a href="#" class="pagination-number">
+      4
+    </a>
+
+    <a href="#" class="pagination-number">
+      5
+    </a>
+
+    <a href="#" class="pagination-number">
+      6
+    </a>
+
+    <a href="#" class="pagination-number">
+      7
+    </a>
+
+    <a href="#" class="pagination-number">
+      8
+    </a>
+
+    <a href="#" class="pagination-number">
+      9
+    </a>
+
+    <a href="#" class="pagination-number">
+      10
+    </a>
+
+    <!-- NEXT -->
+
+    <a href="#" class="pagination-arrow">
+
+      <i data-lucide="chevron-right"></i>
+
+    </a>
+
+  </div>
+
+</section>    
+  
+<section class="newsletter-section">
+
+  <div class="newsletter-container">
+
+    <!-- LEFT CONTENT -->
+
+    <div class="newsletter-content">
+
+      <div class="newsletter-badge">
+
+        <i data-lucide="mail"></i>
+
+       Altered Security Newsletter
+
+      </div>
+
+      <h2 class="newsletter-title">
+        Get the Latest Offensive Security Research & Red Team Tradecraft
+      </h2>
+
+      <p class="newsletter-description">
+        Receive enterprise attack techniques, Active Directory research,
+        Azure Red Team operations, detection engineering insights,
+        malware analysis, and offensive security tradecraft directly in your inbox.
+      </p>
+
+      <!-- FORM -->
+
+      <form class="newsletter-form">
+
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          required
+        >
+
+        <button type="submit">
+
+          Subscribe Now
+
+          <i data-lucide="arrow-right"></i>
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>  
+<section class="cta-section">
+
+  <div class="cta-container">
+
+    <!-- CTA 1 -->
+
+    <div class="cta-card">
+
+      <div class="cta-icon">
+        <i data-lucide="messages-square"></i>
+      </div>
+
+      <h3 class="cta-title">
+        Join Our Community Channel
+      </h3>
+
+      <p class="cta-description">
+        Get the latest offensive security research, attack tradecraft,
+        lab updates, and red team discussions.
+      </p>
+
+      <a href="#" class="cta-button">
+        Join Channel
+      </a>
+
+    </div>
+
+    <!-- CTA 2 -->
+
+    <div class="cta-card">
+
+      <div class="cta-icon">
+        <i data-lucide="flask-conical"></i>
+      </div>
+
+      <h3 class="cta-title">
+        Access Free Labs
+      </h3>
+
+      <p class="cta-description">
+        Practice real-world Active Directory attacks and Azure exploitation.
+      </p>
+
+      <a href="#" class="cta-button">
+        Start Practicing
+      </a>
+
+    </div>
+
+    <!-- CTA 3 -->
+
+    <div class="cta-card">
+
+      <div class="cta-icon">
+        <i data-lucide="shield-check"></i>
+      </div>
+
+      <h3 class="cta-title">
+        Explore Red Team Training
+      </h3>
+
+      <p class="cta-description">
+        Advance your offensive security skills with practical certifications.
+      </p>
+
+      <a href="#" class="cta-button">
+        View Training
+      </a>
+
+    </div>
+
+  </div>
+
+</section>  
+<!-- =========================================
+NEWSLETTER SECTION
+========================================= -->
+
+
+
+<!-- =========================================
+CERTIFICATION CTA SECTION
+========================================= -->
+
+<section class="certification-banner-section">
+
+  <div class="certification-banner">
+
+    <!-- LEFT -->
+
+    <div class="certification-content">
+
+      <div class="certification-badge">
+
+        <i data-lucide="shield-check"></i>
+
+        Red Team Certifications
+
+      </div>
+
+      <h2 class="certification-title">
+        Advance Your Red Teaming Skills Through Hands-On Certifications
+      </h2>
+
+      <p class="certification-description">
+        Master Active Directory attacks, Azure Red Team operations,
+        enterprise tradecraft, and modern adversary simulation techniques
+        through practical labs and real-world offensive security scenarios.
+      </p>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="certification-action">
+
+      <a href="#" class="certification-button">
+
+        Get Started
+
+        <i data-lucide="arrow-right"></i>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>    
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>
