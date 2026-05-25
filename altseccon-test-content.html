@@ -9193,6 +9193,218 @@ PASS TABS
 }
 
 }  
+  
+ /* =======================================
+MOBILE HERO CARD
+======================================= */
+
+.hero-mobile-card{
+
+display:none;
+
+}
+
+@media(max-width:768px){
+
+/* HIDE OLD */
+
+.authority{
+
+display:none;
+
+}
+
+.hero-event-info{
+
+display:none;
+
+}
+
+.edition{
+
+display:none;
+
+}
+
+/* CARD */
+
+.hero-mobile-card{
+
+display:block;
+
+padding:22px 18px;
+
+border-radius:24px;
+
+background:
+
+rgba(15,23,42,.72);
+
+backdrop-filter:
+
+blur(12px);
+
+border:
+
+1px solid
+rgba(255,255,255,.08);
+
+max-width:340px;
+
+margin:
+
+18px auto 0;
+  opacity: 0.9;
+}
+
+/* EYEBROW */
+
+.hero-mobile-eyebrow{
+
+font-size:10px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+text-transform:uppercase;
+
+color:#CBD5E1;
+
+padding:
+
+8px 14px;
+line-height:1.3;
+border-radius:999px;
+
+background:
+
+rgba(255,255,255,.06);
+
+display:inline-block;
+
+margin-bottom:18px;
+
+}
+
+/* SUBHEADING */
+
+.hero-mobile-card h2{
+
+font-size:22px;
+
+line-height:1.18;
+
+font-weight:800;
+max-width:280px;
+color:#fff;
+
+margin:
+
+0 auto 20px;
+
+}
+
+/* META */
+@media(max-width:768px){
+
+.hero-mobile-meta{
+
+display:flex;
+
+flex-direction:column;
+
+gap:0;
+
+}
+
+/* ROW */
+
+.hero-mobile-item{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+padding:
+
+16px 0;
+
+border-bottom:
+
+1px solid
+rgba(255,255,255,.06);
+
+}
+
+.hero-mobile-item:last-child{
+
+border:none;
+
+padding-bottom:0;
+
+}
+
+/* ICON */
+
+.hero-mobile-item i{
+
+width:18px;
+
+flex-shrink:0;
+
+font-size:15px;
+
+color:#F87171;
+
+opacity:.9;
+
+}
+
+/* CONTENT */
+
+.hero-mobile-item div{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+/* LABEL */
+
+.hero-mobile-item span{
+
+font-size:12px;
+
+color:#94A3B8;
+
+margin-bottom:4px;
+
+}
+
+/* VALUE */
+
+.hero-mobile-item strong{
+
+font-size:17px;
+
+line-height:1.25;
+
+font-weight:700;
+
+color:#fff;
+
+}
+
+}
+
+} 
+  
 </style>
 </head>
 
@@ -9377,9 +9589,90 @@ PASS TABS
   </video>
 
   <div class="hero-content"> 
+<!-- MOBILE HERO CARD -->
+
 
     <h1>AltSecCON 2026</h1>
+<div class="hero-mobile-card">
 
+  <!-- EYEBROW -->
+
+  <div class="hero-mobile-eyebrow">
+
+    3 Days Hands-On Red Team Training +
+    1 Conference Day
+
+  </div>
+
+  <!-- SUBHEADING -->
+
+  <h2>
+
+    Master Azure, On-Prem AD and AI Red Teaming Skills
+
+  </h2>
+
+  <!-- META -->
+
+  <div class="hero-mobile-meta">
+
+    <div class="hero-mobile-item">
+
+      <i class="fa-solid fa-calendar-days"></i>
+
+      <div>
+
+        <span>Training</span>
+
+        <strong>
+
+          24 Oct – 26 Oct 2026
+
+        </strong>
+
+      </div>
+
+    </div>
+
+    <div class="hero-mobile-item">
+
+      <i class="fa-solid fa-microphone"></i>
+
+      <div>
+
+        <span>Conference</span>
+
+        <strong>
+
+          27 Oct 2026
+
+        </strong>
+
+      </div>
+
+    </div>
+
+    <div class="hero-mobile-item">
+
+      <i class="fa-solid fa-location-dot"></i>
+
+      <div>
+
+        <span>Location</span>
+
+        <strong>
+
+          Hilton Hotel Bengaluru
+
+        </strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
     <div class="edition">3 Days Hands-On Red Team Training + 1 Conference Day</div>    
    <div class="authority">    
 
