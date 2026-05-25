@@ -5226,7 +5226,7 @@ SCROLL TO TOP BUTTON
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 
@@ -9197,6 +9197,9 @@ PASS TABS
  /* =======================================
 MOBILE HERO CARD
 ======================================= */
+/* =========================================
+MOBILE HERO CARD
+========================================= */
 
 .hero-mobile-card{
 
@@ -9206,7 +9209,13 @@ display:none;
 
 @media(max-width:768px){
 
-/* HIDE OLD */
+/* HIDE DESKTOP MOBILE DUPLICATES */
+
+.edition{
+
+display:none;
+
+}
 
 .authority{
 
@@ -9220,48 +9229,47 @@ display:none;
 
 }
 
-.edition{
-
-display:none;
-
-}
-
 /* CARD */
 
 .hero-mobile-card{
 
 display:block;
 
-padding:22px 18px;
+max-width:320px;
 
-border-radius:24px;
+margin:14px auto 0;
+
+padding:16px 18px;
+
+border-radius:22px;
 
 background:
 
-rgba(15,23,42,.72);
+rgba(15,23,42,.76);
 
 backdrop-filter:
 
-blur(12px);
+blur(14px);
 
 border:
 
 1px solid
 rgba(255,255,255,.08);
 
-max-width:340px;
+box-shadow:
 
-margin:
+0 18px 45px
+rgba(0,0,0,.18);
 
-18px auto 0;
-  opacity: 0.9;
 }
 
 /* EYEBROW */
 
 .hero-mobile-eyebrow{
 
-font-size:10px;
+display:inline-block;
+
+font-size:9px;
 
 font-weight:800;
 
@@ -9274,16 +9282,16 @@ color:#CBD5E1;
 padding:
 
 8px 14px;
-line-height:1.3;
+
 border-radius:999px;
 
 background:
 
 rgba(255,255,255,.06);
 
-display:inline-block;
+margin-bottom:14px;
 
-margin-bottom:18px;
+line-height:1.2;
 
 }
 
@@ -9291,22 +9299,26 @@ margin-bottom:18px;
 
 .hero-mobile-card h2{
 
-font-size:16px;
+font-size:18px;
 
 line-height:1.18;
 
 font-weight:800;
-max-width:280px;
+
 color:#fff;
 
 margin:
 
-0 auto 20px;
+0 auto
+14px;
+
+max-width:260px;
+
+text-align:center;
 
 }
 
 /* META */
-@media(max-width:768px){
 
 .hero-mobile-meta{
 
@@ -9326,16 +9338,16 @@ display:flex;
 
 align-items:center;
 
-gap:14px;
+gap:12px;
 
 padding:
 
-16px 0;
+10px 0;
 
 border-bottom:
 
 1px solid
-rgba(255,255,255,.06);
+rgba(255,255,255,.05);
 
 }
 
@@ -9351,11 +9363,11 @@ padding-bottom:0;
 
 .hero-mobile-item i{
 
-width:18px;
+width:16px;
 
 flex-shrink:0;
 
-font-size:15px;
+font-size:13px;
 
 color:#F87171;
 
@@ -9379,11 +9391,11 @@ align-items:flex-start;
 
 .hero-mobile-item span{
 
-font-size:12px;
+font-size:11px;
 
 color:#94A3B8;
 
-margin-bottom:4px;
+margin-bottom:2px;
 
 }
 
@@ -9393,17 +9405,63 @@ margin-bottom:4px;
 
 font-size:14px;
 
-line-height:1.25;
-
 font-weight:700;
+
+line-height:1.2;
 
 color:#fff;
 
 }
 
+/* HERO TITLE */
+
+.hero-content h1{
+
+font-size:54px;
+
+line-height:.95;
+
+margin-bottom:16px;
+
 }
 
-} 
+/* CTA */
+
+.actions{
+
+margin-top:18px;
+
+gap:10px;
+
+}
+
+/* BUTTON */
+
+.actions .btn{
+
+height:52px;
+
+font-size:15px;
+
+}
+
+/* TRUST LOGOS */
+
+.logo-slider{
+
+
+
+}
+
+.logo-label{
+
+font-size:11px;
+
+letter-spacing:.16em;
+
+}
+
+}
   
 </style>
 </head>
@@ -10067,9 +10125,10 @@ boundaries using live labs and real-world scenarios.        </div>
       </div>
 
         <div class="course-actions">
-          <a>
+      <div class="course-actions">
+          <a href="#" onclick="openCurriculumModal()">
   View Curriculum →
-</a>
+        </a></div>  
           <a href="#tickets" class="btn-book">Secure Seat</a>
         </div>
       </div>
