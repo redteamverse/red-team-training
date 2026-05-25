@@ -8948,6 +8948,308 @@ CURRICULUM CTA
 }
 
 }
+  /* =========================================
+PASS TABS
+========================================= */
+
+.altx-tabs{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:18px;
+
+  margin-top:32px;
+
+}
+
+/* CARD */
+
+.altx-tab-btn{
+
+  position:relative;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(8,15,35,.95),
+    rgba(12,24,58,.95)
+  );
+
+  border:
+
+  1px solid
+  rgba(255,255,255,.08);
+
+  border-radius:28px;
+
+  padding:
+  28px 26px;
+
+  min-height:135px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:flex-start;
+
+  cursor:pointer;
+
+  transition:.28s;
+
+  overflow:visible;
+
+}
+
+/* HOVER */
+
+.altx-tab-btn:hover{
+
+  transform:
+  translateY(-3px);
+
+  border-color:
+  rgba(239,68,68,.25);
+
+}
+
+/* ACTIVE */
+
+.altx-tab-btn.active{
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(75,0,20,.95),
+    rgba(45,0,15,.95)
+  );
+
+  border:
+
+  1px solid
+  rgba(239,68,68,.4);
+
+  box-shadow:
+
+  0 16px 40px
+  rgba(239,68,68,.15);
+
+}
+
+/* CHECK */
+
+.altx-tab-btn.active::after{
+
+  content:"✓";
+
+  position:absolute;
+
+  right:18px;
+
+  top:18px;
+
+  width:26px;
+  height:26px;
+
+  border-radius:50%;
+
+  background:#EF4444;
+
+  color:#fff;
+
+  font-size:13px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+}
+
+/* TITLE */
+
+.altx-tab-title{
+
+  font-size:22px;
+
+  font-weight:800;
+
+  color:#fff;
+
+  margin-bottom:10px;
+
+}
+
+/* SUB */
+
+.altx-tab-sub{
+
+  font-size:15px;
+
+  color:#A8B5D4;
+
+  line-height:1.45;
+
+}
+
+/* POPULAR */
+
+.altx-popular{
+
+  position:absolute;
+
+  top:-11px;
+
+  left:50%;
+
+  transform:
+  translateX(-50%);
+
+  background:
+
+  linear-gradient(
+    135deg,
+    #FF5252,
+    #EF4444
+  );
+
+  color:#fff;
+
+  padding:
+
+  6px 12px;
+
+  border-radius:999px;
+
+  font-size:11px;
+
+  font-weight:800;
+
+  white-space:nowrap;
+
+  box-shadow:
+
+  0 8px 20px
+  rgba(239,68,68,.25);
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.altx-tabs{
+
+  grid-template-columns:1fr;
+
+  gap:14px;
+
+}
+
+.altx-tab-btn{
+
+  min-height:auto;
+
+  padding:
+
+  24px 18px;
+
+  border-radius:22px;
+
+}
+
+.altx-tab-title{
+
+  font-size:18px;
+
+  margin-bottom:6px;
+
+}
+
+.altx-tab-sub{
+
+  font-size:13px;
+
+}
+
+.altx-popular{
+
+  font-size:10px;
+
+  padding:
+
+  5px 10px;
+
+}
+
+.altx-tab-btn.active::after{
+
+  width:22px;
+
+  height:22px;
+
+  font-size:11px;
+
+  top:16px;
+
+  right:16px;
+
+}
+
+}
+
+@keyframes altxFade{
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+  }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.altx-tabs{
+
+  grid-template-columns:1fr;
+
+  gap:14px;
+
+}
+
+.altx-tab-btn{
+
+  min-height:auto;
+
+  padding:
+  22px 18px;
+
+}
+
+.altx-tab-title{
+
+  font-size:18px;
+
+}
+
+.altx-tab-sub{
+
+  font-size:13px;
+
+}
+
+}  
 </style>
 </head>
 
@@ -10037,29 +10339,60 @@ Practice, learn, and connect through a fully hands-on experience
     </div>
 
     <!-- TOP FEATURES -->
-    <div class="altx-top-points">
+    <div class="altx-tabs">
 
-      <div class="altx-top-item">
-        <i data-lucide="flask-conical"></i>
-        <span>Hands-on Labs</span>
-      </div>
+    <!-- TRAINING -->
 
-      <div class="altx-top-item">
-        <i data-lucide="shield-check"></i>
-        <span>Industry Certifications</span>
-      </div>
+    <button class="altx-tab-btn"
+    onclick="showTab('trainingTab',this)">
 
-      <div class="altx-top-item">
-        <i data-lucide="users"></i>
-        <span>Expert Trainers</span>
-      </div>
+      <span class="altx-tab-title">
+        Training Pass
+      </span>
 
-      <div class="altx-top-item">
-        <i data-lucide="network"></i>
-        <span>Network & Learn</span>
-      </div>
+      <span class="altx-tab-sub">
+        Hands-On Red Team Training
+      </span>
+       
+    </button>
 
-    </div>
+    <!-- COMBO -->
+
+    <button class="altx-tab-btn active"
+    onclick="showTab('comboTab',this)">
+
+      <span  class="altx-popular">
+
+        Most Popular
+
+      </span >
+
+      <span class="altx-tab-title">
+        Training + Conference
+      </span>
+
+      <span class="altx-tab-sub">
+        Training + Conference Access
+      </span>
+
+    </button>
+
+    <!-- CONFERENCE -->
+
+    <button class="altx-tab-btn"
+    onclick="showTab('conferenceTab',this)">
+
+      <span class="altx-tab-title">
+        Conference Pass
+      </span>
+
+      <span class="altx-tab-sub">
+        Conference Talks & Networking
+      </span>
+
+    </button>
+
+  </div>
 <div class="altx-corporate-banner">
 
   <div class="altx-corporate-left">
@@ -10102,7 +10435,7 @@ Practice, learn, and connect through a fully hands-on experience
       <!-- =========================
            TRAINING
       ========================= -->
-      <div class="altx-pass-card blue-tag">
+      <div class="altx-pass-card blue-tag" id="trainingPassSection">
 
         <div class="altx-card-tag blue-tag">
           TRAINING PASS
@@ -10169,7 +10502,7 @@ Practice, learn, and connect through a fully hands-on experience
       <!-- =========================
            TRAINING + CONFERENCE
       ========================= -->
-      <div class="altx-pass-card blue-tag featured-pass">
+      <div class="altx-pass-card blue-tag featured-pass" id="comboPassSection">
 
         <div class="altx-popular-badge">
           MOST POPULAR
@@ -10233,7 +10566,7 @@ Practice, learn, and connect through a fully hands-on experience
       <!-- =========================
            CONFERENCE
       ========================= -->
-      <div class="altx-pass-card blue-tag">
+      <div class="altx-pass-card blue-tag" id="conferencePassSection">
 
         <div class="altx-card-tag blue-tag">
           CONFERENCE PASS
@@ -11836,7 +12169,88 @@ onclick="closeMobileOffer()">
   </div>
 
 </div>  
+  
 <script>
+/* =========================================
+TAB SWITCH
+========================================= */
+function showTab(
+tabId,
+button
+){
+
+  /* ACTIVE BUTTON */
+
+  document
+  .querySelectorAll(
+  ".altx-tab-btn"
+  )
+  .forEach(btn=>{
+
+    btn.classList.remove(
+      "active"
+    );
+
+  });
+
+  button.classList.add(
+    "active"
+  );
+
+  /* TARGET SECTION */
+
+  let target = "";
+
+  if(
+    tabId === "trainingTab"
+  ){
+
+    target =
+    "trainingPassSection";
+
+  }
+
+  if(
+    tabId === "comboTab"
+  ){
+
+    target =
+    "comboPassSection";
+
+  }
+
+  if(
+    tabId === "conferenceTab"
+  ){
+
+    target =
+    "conferencePassSection";
+
+  }
+
+  /* SCROLL */
+
+  const section =
+  document.getElementById(
+    target
+  );
+
+  if(section){
+
+    section.scrollIntoView({
+
+      behavior:"smooth",
+
+      block:"center"
+
+    });
+
+  }
+
+}
+  </script>  
+<script>
+  
   
 function openCorporateModal(){
 
