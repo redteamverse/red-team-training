@@ -11251,7 +11251,7 @@ Train in enterprise labs, learn practical techniques, and gain industry-recogniz
 
   <button
   class="curriculum-cta-btn"
-  onclick="window.location.href='#tickets'">
+  onclick="goToTickets()">
 
    Secure Your Seat
 
@@ -11843,6 +11843,32 @@ function openCorporateModal(){
   openModal("corporateModal");
 
 } 
+  
+function goToTickets(){
+
+  /* CLOSE MODAL */
+
+  closeCurriculumModal();
+
+  /* SMALL DELAY */
+
+  setTimeout(()=>{
+
+    document
+    .getElementById(
+      "tickets"
+    )
+    .scrollIntoView({
+
+      behavior:"smooth",
+
+      block:"start"
+
+    });
+
+  },200);
+
+}  
   </script>  
   <script>  
    
