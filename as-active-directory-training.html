@@ -123,14 +123,23 @@ letter-spacing:-2px;
 }
 
 h2{
-
-font-size:clamp(2rem,4vw,2.7rem);
-
+font-size:42px;
+line-height:1.15;
 font-weight:800;
-
-margin-bottom:18px;
-
+margin-bottom:24px;
 }
+    
+@media(max-width:768px){
+
+    h2 {    
+    font-size:28px;
+line-height:1.15;
+font-weight:800;
+margin-bottom:24px;
+
+  
+        }
+    }    
 
 h3{
 
@@ -770,7 +779,7 @@ gap:12px;
 
 margin-top:22px;
 
-font-size:.92rem;
+font-size:.72rem;
 
 font-weight:600;
 
@@ -780,11 +789,7 @@ align-items:center;
 
 }
 
-.delivery-signal .dot{
 
-opacity:.55;
-
-}
 
 @media(max-width:768px){
 
@@ -792,7 +797,7 @@ opacity:.55;
 
 justify-content:center;
 
-font-size:.85rem;
+font-size:.605rem;
 
 gap:8px;
 
@@ -4164,6 +4169,7 @@ max-width:720px;
 
 }
 
+
 .ad-security-points{
 
 display:flex;
@@ -5956,6 +5962,9 @@ font-size:24px;
 }
 
 }    
+    
+    
+  
 </style>
 
 </head>
@@ -6146,8 +6155,8 @@ Active Directory Training for Security Teams
 
 This training is built for security teams that need practical Active Directory attack-and-defense capability across offensive, defensive, SOC, detection, and infrastructure roles.
 
-Participants learn how identity-based attacks move through enterprise Windows environments, how AD attack paths are discovered and chained, and where defenders can improve monitoring, detection, hardening, and response.
-
+<p>Participants learn how identity-based attacks move through enterprise Windows environments, how AD attack paths are discovered and chained, and where defenders can improve monitoring, detection, hardening, and response.
+</p><p>
 The result is a shared technical baseline: red teams gain repeatable AD attack methodology, while blue teams and SOC teams gain better context for investigation, detection engineering, and defensive validation.
 </p>
 
@@ -6274,8 +6283,8 @@ Why Enterprise Teams Need Active Directory Security Training
 <p>
 
 Active Directory is still one of the most important identity systems inside modern organizations. When AD is misconfigured or poorly monitored, attackers can chain together excessive privileges, weak delegation, exposed credentials, Kerberos abuse, and trust relationships to move deeper into the environment.
-
-This training helps teams understand those attack paths in a controlled lab so they can improve assessment methodology, monitoring visibility, hardening priorities, and defensive response.
+    </p>
+<p>This training helps teams understand those attack paths in a controlled lab so they can improve assessment methodology, monitoring visibility, hardening priorities, and defensive response.
 </p>
 
 </div>
@@ -8871,41 +8880,7 @@ View Azure Training
 </a>
 
 </article>
-    <article class="card cert-card">
-
-<div class="cert-icon">
-
-<i data-lucide="shield-check"></i>
-
-</div>
-
-<h4>
-
-Team Training Plan
-
-
-
-
-
-</h4>
-
-<p>
-
-Plan a structured learning path for red, blue, SOC, detection, and infrastructure teams based on role and maturity.
-
-
-
-</p>
-
-<a href="#">
-
-Request Team Plan
-
-<i data-lucide="arrow-right"></i>
-
-</a>
-
-</article>
+ 
 </div>
 
 
