@@ -2047,132 +2047,6 @@ padding:10px 14px;
 }
 
 }    
-    
-.learning-outcomes-section{
-
-background:#F9FAFB;
-
-}
-
-.outcomes-grid{
-
-margin-top:56px;
-
-}
-
-.outcome-card{
-
-padding:34px;
-
-display:flex;
-
-flex-direction:column;
-
-height:100%;
-
-position:relative;
-
-overflow:hidden;
-
-transition:.25s;
-
-}
-
-.outcome-card:hover{
-
-transform:translateY(-6px);
-
-border-color:#FECACA;
-
-box-shadow:var(--shadow-md);
-
-}
-
-.outcome-card::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:4px;
-
-background:
-
-linear-gradient(
-90deg,
-#B91C1C,
-#EA3037
-);
-
-transform:scaleX(0);
-
-transition:.25s;
-
-}
-
-.outcome-card:hover::before{
-
-transform:scaleX(1);
-
-}
-
-.outcome-icon{
-
-width:58px;
-
-height:58px;
-
-border-radius:16px;
-
-background:#FEF2F2;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-margin-bottom:20px;
-
-}
-
-.outcome-icon svg{
-
-width:24px;
-
-height:24px;
-
-color:#B91C1C;
-
-}
-
-.outcome-card h3{
-
-margin-bottom:12px;
-
-font-size:1.15rem;
-
-line-height:1.4;
-
-}
-
-.outcome-card p{
-
-font-size:.95rem;
-
-line-height:1.75;
-
-color:var(--color-body);
-
-font-weight:500;
-
-}
 
 .learning-proof{
 
@@ -3937,7 +3811,2151 @@ gap:14px;
 }
 
 }    
+/* ==========================================
+ENTERPRISE TEAM TRAINING
+========================================== */
+
+/* ==========================
+TEAM TRAINING MODAL
+========================== */
+
+.team-training-modal{
+
+position:fixed;
+
+inset:0;
+
+background:
+rgba(0,0,0,.7);
+
+backdrop-filter:
+blur(8px);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:20px;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+z-index:99999;
+
+}
+
+.team-training-modal.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.team-training-box{
+
+width:100%;
+
+max-width:680px;
+
+background:#fff;
+
+border-radius:28px;
+
+padding:42px;
+
+position:relative;
+
+box-shadow:
+
+0 30px 90px
+rgba(0,0,0,.25);
+
+animation:
+modalUp .35s ease;
+
+}
+
+@keyframes modalUp{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+}
+
+.team-modal-close{
+
+position:absolute;
+
+top:18px;
+
+right:18px;
+
+width:42px;
+
+height:42px;
+
+border:none;
+
+cursor:pointer;
+
+border-radius:50%;
+
+background:#F3F4F6;
+
+font-size:18px;
+
+}
+
+.team-modal-head span{
+
+font-size:12px;
+
+font-weight:800;
+
+color:#B91C1C;
+
+text-transform:uppercase;
+
+letter-spacing:.08em;
+
+}
+
+.team-modal-head h3{
+
+font-size:36px;
+
+margin:12px 0;
+
+color:#111827;
+
+}
+
+.team-modal-head p{
+
+color:#6B7280;
+
+margin-bottom:28px;
+
+}
+
+.team-training-form{
+
+display:grid;
+
+grid-template-columns:
+
+1fr 1fr;
+
+gap:16px;
+
+}
+
+.team-training-form input,
+
+.team-training-form select,
+
+.team-training-form textarea{
+
+width:100%;
+
+padding:16px;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:14px;
+
+font-size:15px;
+
+outline:none;
+
+}
+
+.team-training-form textarea{
+
+grid-column:
+
+1/-1;
+
+resize:none;
+
+}
+
+.team-training-form textarea:focus,
+
+.team-training-form input:focus,
+
+.team-training-form select:focus{
+
+border-color:#1E3A8A;
+
+}
+
+.team-submit-btn{
+
+grid-column:
+
+1/-1;
+
+height:58px;
+
+border:none;
+
+cursor:pointer;
+
+background:#B91C1C;
+
+color:#fff;
+
+font-size:16px;
+
+font-weight:700;
+
+border-radius:16px;
+
+transition:.25s;
+
+}
+
+.team-submit-btn:hover{
+
+background:#EA3037;
+
+}
+
+@media(max-width:768px){
+
+.team-training-box{
+
+padding:28px;
+
+}
+
+.team-training-form{
+
+grid-template-columns:1fr;
+
+}
+
+.team-modal-head h3{
+
+font-size:28px;
+
+}
+
+}  
     
+/* ==========================================
+AD TRAINING FOR SECURITY TEAMS
+========================================== */
+
+.ad-security-teams-section{
+
+padding:100px 0;
+
+background:#F9FAFB;
+
+}
+
+.ad-security-wrapper{
+
+display:grid;
+
+grid-template-columns:
+
+1.1fr .9fr;
+
+gap:60px;
+
+align-items:center;
+
+padding:60px;
+
+background:#fff;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:34px;
+
+box-shadow:
+
+0 10px 40px
+rgba(0,0,0,.04);
+
+}
+
+.ad-security-label{
+
+display:inline-flex;
+
+padding:
+
+8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:22px;
+
+}
+
+.ad-security-content h2{
+
+font-size:42px;
+
+line-height:1.15;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:24px;
+
+max-width:680px;
+
+}
+
+.ad-security-content p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+margin-bottom:20px;
+
+max-width:720px;
+
+}
+
+.ad-security-points{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.ad-security-item{
+
+display:flex;
+
+gap:14px;
+
+align-items:flex-start;
+
+padding:18px 22px;
+
+background:#fff;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:18px;
+
+transition:.25s;
+
+}
+
+.ad-security-item:hover{
+
+transform:
+
+translateY(-3px);
+
+border-color:#B91C1C;
+
+box-shadow:
+
+0 10px 25px
+rgba(185,28,28,.08);
+
+}
+
+.ad-security-check{
+
+width:32px;
+
+height:32px;
+
+border-radius:50%;
+
+background:#10B981;
+
+flex-shrink:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:14px;
+
+font-weight:700;
+
+color:#fff;
+
+margin-top:2px;
+
+}
+
+.ad-security-item div:last-child{
+
+font-size:16px;
+
+line-height:1.65;
+
+font-weight:600;
+
+color:#111827;
+
+}
+
+/* =====================
+TABLET
+===================== */
+
+@media(max-width:992px){
+
+.ad-security-wrapper{
+
+grid-template-columns:1fr;
+
+padding:40px;
+
+gap:40px;
+
+}
+
+.ad-security-content h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* =====================
+MOBILE
+===================== */
+
+@media(max-width:768px){
+
+.ad-security-teams-section{
+
+padding:70px 0;
+
+}
+
+.ad-security-wrapper{
+
+padding:28px;
+
+border-radius:24px;
+
+}
+
+.ad-security-content h2{
+
+font-size:28px;
+
+}
+
+.ad-security-content p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.ad-security-item{
+
+padding:16px;
+
+}
+
+.ad-security-item div:last-child{
+
+font-size:15px;
+
+}
+
+}   
+/* ==========================================
+TEAM TRAINING OUTCOMES
+========================================== */
+
+.team-outcomes-section{
+
+padding:100px 0;
+
+background:#FFFFFF;
+
+}
+
+.team-outcomes-head{
+
+text-align:center;
+
+max-width:860px;
+
+margin:auto;
+
+margin-bottom:60px;
+
+}
+
+.team-outcomes-label{
+
+display:inline-flex;
+
+padding:
+
+8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:22px;
+
+}
+
+.team-outcomes-head h2{
+
+font-size:42px;
+
+line-height:1.15;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:24px;
+
+}
+
+.team-outcomes-head p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+}
+
+.team-outcomes-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:24px;
+
+}
+
+.team-outcome-card{
+
+padding:32px;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:26px;
+
+background:#FFFFFF;
+
+transition:.25s;
+
+}
+
+.team-outcome-card:hover{
+
+transform:
+
+translateY(-5px);
+
+border-color:#B91C1C;
+
+box-shadow:
+
+0 16px 40px
+rgba(185,28,28,.08);
+
+}
+
+.team-outcome-icon{
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+background:#10B981;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#fff;
+
+font-weight:700;
+
+font-size:16px;
+
+margin-bottom:22px;
+
+}
+
+.team-outcome-card h3{
+
+font-size:22px;
+
+line-height:1.3;
+
+font-weight:700;
+
+color:#111827;
+
+margin-bottom:16px;
+
+}
+
+.team-outcome-card p{
+
+font-size:16px;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+/* =====================
+TABLET
+===================== */
+
+@media(max-width:992px){
+
+.team-outcomes-grid{
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+}
+
+.team-outcomes-head h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* =====================
+MOBILE
+===================== */
+
+@media(max-width:768px){
+
+.team-outcomes-section{
+
+padding:70px 0;
+
+}
+
+.team-outcomes-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.team-outcomes-head{
+
+margin-bottom:40px;
+
+}
+
+.team-outcomes-head h2{
+
+font-size:28px;
+
+}
+
+.team-outcomes-head p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.team-outcome-card{
+
+padding:24px;
+
+}
+
+.team-outcome-card h3{
+
+font-size:20px;
+
+}
+
+.team-outcome-card p{
+
+font-size:15px;
+
+}
+
+}   
+    
+/* ==========================================
+ACTIVE DIRECTORY TEAM LABS
+========================================== */
+
+.ad-lab-teams-section{
+
+padding:100px 0;
+
+background:#F9FAFB;
+
+}
+
+.ad-lab-wrapper{
+
+display:grid;
+
+grid-template-columns:
+
+1.1fr .9fr;
+
+gap:60px;
+
+align-items:center;
+
+padding:60px;
+
+background:#FFFFFF;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:34px;
+
+box-shadow:
+
+0 10px 40px
+rgba(0,0,0,.04);
+
+}
+
+.ad-lab-label{
+
+display:inline-flex;
+
+padding:
+
+8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:22px;
+
+}
+
+.ad-lab-content h2{
+
+font-size:42px;
+
+line-height:1.15;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:24px;
+
+max-width:700px;
+
+}
+
+.ad-lab-content p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+margin-bottom:20px;
+
+max-width:700px;
+
+}
+
+.ad-lab-grid{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.ad-lab-card{
+
+display:flex;
+
+gap:18px;
+
+padding:22px;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:22px;
+
+background:#FFFFFF;
+
+transition:.25s;
+
+}
+
+.ad-lab-card:hover{
+
+transform:
+
+translateY(-4px);
+
+border-color:#B91C1C;
+
+box-shadow:
+
+0 12px 35px
+rgba(185,28,28,.08);
+
+}
+
+.ad-lab-icon{
+
+width:40px;
+
+height:40px;
+
+flex-shrink:0;
+
+border-radius:50%;
+
+background:#10B981;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:15px;
+
+font-weight:700;
+
+color:#FFFFFF;
+
+margin-top:4px;
+
+}
+
+.ad-lab-card h3{
+
+font-size:19px;
+
+font-weight:700;
+
+color:#111827;
+
+margin-bottom:8px;
+
+}
+
+.ad-lab-card p{
+
+font-size:15px;
+
+line-height:1.7;
+
+color:#4B5563;
+
+}
+
+/* ======================
+TABLET
+====================== */
+
+@media(max-width:992px){
+
+.ad-lab-wrapper{
+
+grid-template-columns:1fr;
+
+padding:42px;
+
+gap:42px;
+
+}
+
+.ad-lab-content h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* ======================
+MOBILE
+====================== */
+
+@media(max-width:768px){
+
+.ad-lab-teams-section{
+
+padding:70px 0;
+
+}
+
+.ad-lab-wrapper{
+
+padding:28px;
+
+border-radius:24px;
+
+}
+
+.ad-lab-content h2{
+
+font-size:28px;
+
+}
+
+.ad-lab-content p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.ad-lab-card{
+
+padding:18px;
+
+gap:14px;
+
+}
+
+.ad-lab-card h3{
+
+font-size:17px;
+
+}
+
+.ad-lab-card p{
+
+font-size:14px;
+
+}
+
+.ad-lab-icon{
+
+width:34px;
+
+height:34px;
+
+font-size:13px;
+
+}
+
+}    
+/* ==========================================
+CERTIFICATION PATH
+========================================== */
+
+.cert-learning-path-section{
+
+padding:100px 0;
+
+background:#F9FAFB;
+
+}
+
+.cert-learning-head{
+
+max-width:860px;
+
+margin:auto;
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.cert-learning-label{
+
+display:inline-flex;
+
+padding:
+
+8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:20px;
+
+}
+
+.cert-learning-head h2{
+
+font-size:42px;
+
+line-height:1.15;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:24px;
+
+}
+
+.cert-learning-head p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+margin-bottom:18px;
+
+}
+
+.cert-learning-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:28px;
+
+margin-bottom:50px;
+
+}
+
+.cert-learning-card{
+
+padding:36px;
+
+background:#FFFFFF;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:28px;
+
+transition:.25s;
+
+height:100%;
+
+}
+
+.cert-learning-card:hover{
+
+transform:
+
+translateY(-5px);
+
+border-color:#B91C1C;
+
+box-shadow:
+
+0 14px 35px
+rgba(185,28,28,.08);
+
+}
+
+.cert-card-icon{
+
+width:44px;
+
+height:44px;
+
+border-radius:50%;
+
+background:#10B981;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:16px;
+
+font-weight:700;
+
+color:#FFFFFF;
+
+margin-bottom:24px;
+
+}
+
+.cert-learning-card h3{
+
+font-size:24px;
+
+font-weight:700;
+
+line-height:1.3;
+
+color:#111827;
+
+margin-bottom:16px;
+
+}
+
+.cert-learning-card p{
+
+font-size:16px;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+.cert-learning-cta{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.cert-primary-btn{
+
+padding:
+
+16px 28px;
+
+border-radius:14px;
+
+background:#B91C1C;
+
+color:#FFFFFF;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.cert-primary-btn:hover{
+
+background:#EA3037;
+
+transform:
+
+translateY(-2px);
+
+}
+
+.cert-secondary-btn{
+
+padding:
+
+16px 28px;
+
+border-radius:14px;
+
+border:
+
+1px solid #E5E7EB;
+
+background:#FFFFFF;
+
+color:#111827;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.cert-secondary-btn:hover{
+
+border-color:#B91C1C;
+
+color:#B91C1C;
+
+}
+
+/* ======================
+TABLET
+====================== */
+
+@media(max-width:992px){
+
+.cert-learning-grid{
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+}
+
+.cert-learning-head h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* ======================
+MOBILE
+====================== */
+
+@media(max-width:768px){
+
+.cert-learning-path-section{
+
+padding:70px 0;
+
+}
+
+.cert-learning-grid{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+.cert-learning-head{
+
+margin-bottom:40px;
+
+}
+
+.cert-learning-head h2{
+
+font-size:28px;
+
+}
+
+.cert-learning-head p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.cert-learning-card{
+
+padding:28px;
+
+}
+
+.cert-learning-card h3{
+
+font-size:20px;
+
+}
+
+.cert-learning-card p{
+
+font-size:15px;
+
+}
+
+.cert-learning-cta{
+
+flex-direction:column;
+
+}
+
+.cert-primary-btn,
+
+.cert-secondary-btn{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}    
+    
+/* ==========================================
+ENTERPRISE TEAM TRAINING
+========================================== */
+
+.enterprise-team-training{
+
+padding:100px 0;
+
+background:#F9FAFB;
+
+}
+
+.enterprise-team-wrapper{
+
+display:grid;
+
+grid-template-columns:
+
+1.1fr .9fr;
+
+gap:60px;
+
+align-items:start;
+
+padding:60px;
+
+background:#FFFFFF;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:34px;
+
+box-shadow:
+
+0 12px 40px
+rgba(0,0,0,.04);
+
+}
+
+/* LABEL */
+
+.enterprise-label{
+
+display:inline-flex;
+
+padding:
+
+8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:22px;
+
+}
+
+/* LEFT */
+
+.enterprise-team-left h2{
+
+font-size:42px;
+
+line-height:1.15;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:24px;
+
+max-width:680px;
+
+}
+
+.enterprise-team-left p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+margin-bottom:18px;
+
+max-width:720px;
+
+}
+
+/* RIGHT */
+
+.enterprise-team-right{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+/* FEATURE */
+
+.enterprise-feature{
+
+display:flex;
+
+gap:14px;
+
+align-items:flex-start;
+
+padding:18px 22px;
+
+background:#FFFFFF;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:18px;
+
+transition:.25s;
+
+}
+
+.enterprise-feature:hover{
+
+transform:
+
+translateY(-3px);
+
+border-color:#B91C1C;
+
+box-shadow:
+
+0 12px 25px
+rgba(185,28,28,.08);
+
+}
+
+.enterprise-icon{
+
+width:32px;
+
+height:32px;
+
+border-radius:50%;
+
+background:#10B981;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:14px;
+
+font-weight:700;
+
+color:#FFFFFF;
+
+flex-shrink:0;
+
+margin-top:2px;
+
+}
+
+.enterprise-feature span{
+
+font-size:16px;
+
+line-height:1.65;
+
+font-weight:600;
+
+color:#111827;
+
+}
+
+/* ===========================
+CTA BOX
+=========================== */
+
+.enterprise-cta-box{
+
+margin-top:38px;
+
+padding:30px;
+
+background:
+
+linear-gradient(
+180deg,
+#FFFFFF,
+#F9FAFB
+);
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:26px;
+
+}
+
+.enterprise-cta-box h3{
+
+font-size:24px;
+
+font-weight:800;
+
+line-height:1.3;
+
+color:#111827;
+
+margin-bottom:14px;
+
+}
+
+.enterprise-cta-box p{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:#4B5563;
+
+margin-bottom:24px;
+
+max-width:540px;
+
+}
+
+/* CTA ACTIONS */
+
+.enterprise-cta-actions{
+
+display:flex;
+
+gap:14px;
+
+flex-wrap:wrap;
+
+}
+
+/* PRIMARY */
+
+.enterprise-cta-actions .btn-primary{
+
+height:54px;
+
+padding:
+
+0 24px;
+
+border:none;
+
+border-radius:14px;
+
+background:#B91C1C;
+
+color:#FFFFFF;
+
+font-size:15px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.25s;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.enterprise-cta-actions .btn-primary:hover{
+
+background:#EA3037;
+
+transform:
+
+translateY(-2px);
+
+}
+
+/* SECONDARY */
+
+.enterprise-secondary-btn{
+
+height:54px;
+
+padding:
+
+0 24px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:14px;
+
+background:#FFFFFF;
+
+color:#111827;
+
+font-size:15px;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.enterprise-secondary-btn:hover{
+
+border-color:#B91C1C;
+
+color:#B91C1C;
+
+background:
+
+rgba(185,28,28,.02);
+
+}
+
+/* =====================
+TABLET
+===================== */
+
+@media(max-width:992px){
+
+.enterprise-team-wrapper{
+
+grid-template-columns:1fr;
+
+padding:42px;
+
+gap:42px;
+
+}
+
+.enterprise-team-left h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* =====================
+MOBILE
+===================== */
+
+@media(max-width:768px){
+
+.enterprise-team-training{
+
+padding:70px 0;
+
+}
+
+.enterprise-team-wrapper{
+
+padding:28px;
+
+border-radius:24px;
+
+gap:30px;
+
+}
+
+.enterprise-team-left h2{
+
+font-size:28px;
+
+line-height:1.2;
+
+}
+
+.enterprise-team-left p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.enterprise-feature{
+
+padding:16px;
+
+gap:12px;
+
+}
+
+.enterprise-feature span{
+
+font-size:15px;
+
+}
+
+.enterprise-icon{
+
+width:28px;
+
+height:28px;
+
+font-size:12px;
+
+}
+
+.enterprise-cta-box{
+
+padding:22px;
+
+margin-top:28px;
+
+}
+
+.enterprise-cta-box h3{
+
+font-size:20px;
+
+}
+
+.enterprise-cta-box p{
+
+font-size:15px;
+
+}
+
+.enterprise-cta-actions{
+
+flex-direction:column;
+
+}
+
+.enterprise-cta-actions .btn-primary,
+
+.enterprise-secondary-btn{
+
+width:100%;
+
+}
+
+}   
+    
+/* ==========================================
+PREREQUISITES + SYSTEM REQUIREMENTS
+========================================== */
+
+.grid-2{
+
+display:grid;
+
+grid-template-columns:
+
+1fr 1fr;
+
+gap:42px;
+
+align-items:start;
+
+}
+
+/* CARD */
+
+.grid-2 > div{
+
+padding:42px;
+
+background:#FFFFFF;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:28px;
+
+box-shadow:
+
+0 8px 24px
+rgba(0,0,0,.04);
+
+transition:.25s;
+
+height:100%;
+
+}
+
+.grid-2 > div:hover{
+
+transform:
+
+translateY(-4px);
+
+border-color:#B91C1C;
+
+box-shadow:
+
+0 18px 40px
+rgba(185,28,28,.08);
+
+}
+
+/* MAIN H2 */
+
+.grid-2 h2{
+
+font-size:42px;
+
+line-height:1.15;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:28px;
+
+max-width:520px;
+
+}
+
+/* H3 */
+
+.grid-2 h3{
+
+font-size:24px;
+
+font-weight:700;
+
+line-height:1.3;
+
+color:#111827;
+
+margin-bottom:16px;
+
+}
+
+/* BODY */
+
+.grid-2 p{
+
+font-size:17px;
+
+line-height:1.85;
+
+color:#4B5563;
+
+margin-bottom:28px;
+
+max-width:640px;
+
+}
+
+/* CHECKLIST */
+
+.checklist{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+/* ITEM */
+
+.check{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:14px;
+
+padding:16px 18px;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:16px;
+
+background:#F9FAFB;
+
+font-size:15px;
+
+font-weight:600;
+
+line-height:1.65;
+
+color:#111827;
+
+transition:.2s;
+
+}
+
+.check:hover{
+
+border-color:#B91C1C;
+
+background:
+
+rgba(185,28,28,.02);
+
+}
+
+/* ICON */
+
+.check svg{
+
+width:18px;
+
+height:18px;
+
+flex-shrink:0;
+
+color:#10B981;
+
+margin-top:2px;
+
+stroke-width:2.5;
+
+}
+
+/* LEFT TITLE SPACING */
+
+.grid-2 > div:first-child h3{
+
+margin-top:10px;
+
+}
+
+/* TABLET */
+
+@media(max-width:992px){
+
+.grid-2{
+
+grid-template-columns:1fr;
+
+gap:28px;
+
+}
+
+.grid-2 h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.grid-2{
+
+gap:22px;
+
+}
+
+.grid-2 > div{
+
+padding:26px;
+
+border-radius:22px;
+
+}
+
+.grid-2 h2{
+
+font-size:28px;
+
+margin-bottom:22px;
+
+}
+
+.grid-2 h3{
+
+font-size:20px;
+
+margin-bottom:14px;
+
+}
+
+.grid-2 p{
+
+font-size:15px;
+
+line-height:1.75;
+
+margin-bottom:22px;
+
+}
+
+.check{
+
+padding:14px;
+
+font-size:14px;
+
+gap:12px;
+
+}
+
+.check svg{
+
+width:16px;
+
+height:16px;
+
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+.grid-2 > div{
+
+padding:22px;
+
+}
+
+.grid-2 h2{
+
+font-size:24px;
+
+}
+
+}    
 </style>
 
 </head>
@@ -3967,9 +5985,7 @@ ALTERED SECURITY
 
 </header>
 
-<main>
-
-    <section class="hero">
+<section class="hero">
 
 <div class="container hero-grid">
 
@@ -3981,22 +5997,19 @@ Enterprise Active Directory Training
 
 <h1>
 
-Active Directory Attacks for Red and Blue Teams — Basic Edition
+Active Directory Security Training for Red and Blue Teams
 
 </h1>
 
 <p>
-
-Hands-on Enterprise Active Directory training covering enumeration,
-privilege escalation, Kerberos attacks, trust abuse, persistence,
-monitoring, and Active Directory defense using real enterprise environments and practical attack methodologies.
+Active Directory remains one of the most important security control planes in enterprise environments. This hands-on training helps security teams understand how real AD attack paths are discovered, abused, monitored, and defended in a controlled lab environment.
 
 </p>
 
 <div class="hero-buttons">
 
-<button class="btn btn-primary">
-Register Now
+<button class="btn btn-primary" onclick="openTeamTrainingModal()">
+Request Team Training
 </button>
 
 <button class="btn btn-secondary">
@@ -4090,28 +6103,164 @@ Monitoring
 
 <div class="trust-item">
 <i data-lucide="check-circle"></i>
-Real Enterprise AD Environment
+Realistic Enterprise AD Lab</div>
+
+<div class="trust-item">
+<i data-lucide="check-circle"></i>
+Red + Blue Team Relevance
 </div>
 
 <div class="trust-item">
 <i data-lucide="check-circle"></i>
-Red + Blue Coverage
+Hands-On Attack and Defense Methodology
 </div>
 
 <div class="trust-item">
 <i data-lucide="check-circle"></i>
-Hands-On Attack Methodology
-</div>
-
-<div class="trust-item">
-<i data-lucide="check-circle"></i>
-Real Red Team Tradecraft
+Built From Real Red Team Tradecraft
 </div>
 
 </div>
 
 </section>
+<section class="ad-security-teams-section">
 
+<div class="container">
+
+<div class="ad-security-wrapper">
+
+<div class="ad-security-content">
+
+<span class="ad-security-label">
+
+TEAM-BASED SECURITY UPSKILLING
+</span>
+
+<h2>
+
+Active Directory Training for Security Teams
+
+</h2>
+
+<p>
+
+This training is built for security teams that need practical Active Directory attack-and-defense capability across offensive, defensive, SOC, detection, and infrastructure roles.
+
+Participants learn how identity-based attacks move through enterprise Windows environments, how AD attack paths are discovered and chained, and where defenders can improve monitoring, detection, hardening, and response.
+
+The result is a shared technical baseline: red teams gain repeatable AD attack methodology, while blue teams and SOC teams gain better context for investigation, detection engineering, and defensive validation.
+</p>
+
+<p>
+
+
+</p>
+
+</div>
+
+<div class="ad-security-points">
+
+<div class="ad-security-item">
+
+<div class="ad-security-check">
+
+✓
+
+</div>
+
+<div>
+
+Build a shared understanding of enterprise AD attack paths
+</div>
+
+</div>
+
+<div class="ad-security-item">
+
+<div class="ad-security-check">
+
+✓
+
+</div>
+
+<div>
+
+Practice realistic privilege escalation and trust abuse scenarios
+</div>
+
+</div>
+
+<div class="ad-security-item">
+
+<div class="ad-security-check">
+
+✓
+
+</div>
+
+<div>
+
+Connect offensive techniques to detection and response opportunities
+
+</div>
+
+</div>
+
+<div class="ad-security-item">
+
+<div class="ad-security-check">
+
+✓
+
+</div>
+
+<div>
+
+Improve collaboration across red, blue, SOC, and infrastructure teams
+
+</div>
+
+</div>
+
+<div class="ad-security-item">
+
+<div class="ad-security-check">
+
+✓
+
+</div>
+
+<div>
+
+Train with hands-on labs instead of slide-only instruction
+
+</div>
+
+</div>
+
+<div class="ad-security-item">
+
+<div class="ad-security-check">
+
+✓
+
+</div>
+
+<div>
+
+Support private cohorts, team delivery, and structured learning paths
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 <section class="why-ad">
 
 <div class="container">
@@ -4119,15 +6268,14 @@ Real Red Team Tradecraft
 <div class="section-head">
 
 <h2>
-Why Enterprise Active Directory Security Matters
+Why Enterprise Teams Need Active Directory Security Training
 </h2>
 
 <p>
 
-Active Directory forms the backbone of enterprise identity infrastructure.
-Attackers target AD for privilege escalation, persistence, credential theft,
-trust abuse and domain dominance.
-Understanding offensive and defensive tradecraft is essential for securing enterprise environments. 
+Active Directory is still one of the most important identity systems inside modern organizations. When AD is misconfigured or poorly monitored, attackers can chain together excessive privileges, weak delegation, exposed credentials, Kerberos abuse, and trust relationships to move deeper into the environment.
+
+This training helps teams understand those attack paths in a controlled lab so they can improve assessment methodology, monitoring visibility, hardening priorities, and defensive response.
 </p>
 
 </div>
@@ -4144,13 +6292,14 @@ Understanding offensive and defensive tradecraft is essential for securing enter
 
 <h3>
 
-Enterprise AD Environments
+Enterprise AD Attack Paths
 
 </h3>
 
 <p>
 
-Understand domains, forests, and enterprise attack surfaces.
+Understand how domains, forests, users, groups, sessions, ACLs, and privileges connect to create real attack paths inside Active Directory environments.
+
 
 </p>
 
@@ -4166,13 +6315,16 @@ Understand domains, forests, and enterprise attack surfaces.
 
 <h3>
 
-Kerberos Security
+Kerberos and Delegation Risk
+
+
 
 </h3>
 
 <p>
 
-Learn authentication attacks, tickets, delegation, and defense concepts.
+Learn how Kerberos tickets, delegation settings, service accounts, and authentication flows can create abuse paths and defensive monitoring opportunities.
+
 
 </p>
 
@@ -4188,13 +6340,16 @@ Learn authentication attacks, tickets, delegation, and defense concepts.
 
 <h3>
 
-Trust Relationships
+Trust Relationships and Privilege Exposure
+
+
 
 </h3>
 
 <p>
 
-Identify trust abuse paths and privilege escalation opportunities.
+Identify how domain trusts, forest trusts, excessive privileges, and weak segmentation can expand the impact of an AD compromise.
+
 
 </p>
 
@@ -4210,13 +6365,16 @@ Identify trust abuse paths and privilege escalation opportunities.
 
 <h3>
 
-PowerShell Tradecraft
+PowerShell and Native Tradecraft
+
+
 
 </h3>
 
 <p>
 
-Use native tooling and automation techniques in enterprise environments.
+Understand how built-in Windows capabilities are used during authorized assessments, and how defenders can reason about visibility, controls, and detection.
+
 
 </p>
 
@@ -4234,12 +6392,14 @@ Use native tooling and automation techniques in enterprise environments.
 <div class="section-head">
 
 <h2>
-What You Will Learn
+What Your Team Will Learn
+
 </h2>
 
 <p>
 
-Build practical enterprise Active Directory skills through hands-on attack paths, privilege escalation techniques, Kerberos security, persistence tradecraft, and enterprise defense methodologies.
+Build practical Active Directory attack-and-defense skills through hands-on labs covering enumeration, privilege escalation, Kerberos abuse, trust relationships, persistence, monitoring, and defensive validation.
+
 
 </p>
 
@@ -4257,13 +6417,16 @@ Build practical enterprise Active Directory skills through hands-on attack paths
 
 <h3>
 
-AD Enumeration
+Active Directory Enumeration
+
+
 
 </h3>
 
 <p>
 
-Discover enterprise attack paths, trust relationships, and Active Directory misconfigurations.
+Map users, groups, sessions, ACLs, domains, forests, and trust relationships to understand how AD attack paths are discovered.
+
 
 </p>
 
@@ -4285,7 +6448,8 @@ Privilege Escalation
 
 <p>
 
-Learn delegation abuse, user hunting, and privilege escalation techniques.
+Understand how delegation issues, excessive privileges, misconfigurations, and exposed credentials can lead to domain-level escalation.
+
 
 </p>
 
@@ -4301,13 +6465,15 @@ Learn delegation abuse, user hunting, and privilege escalation techniques.
 
 <h3>
 
-Kerberos Attacks
+Kerberos Abuse and Defense
+
 
 </h3>
 
 <p>
 
-Understand Kerberos abuse, Golden Tickets, Silver Tickets, and authentication attacks.
+Learn how Kerberos ticket abuse, service account exposure, delegation settings, and authentication flows affect both attack paths and detection.
+
 
 </p>
 
@@ -4323,13 +6489,16 @@ Understand Kerberos abuse, Golden Tickets, Silver Tickets, and authentication at
 
 <h3>
 
-Trust Abuse
+Trust Relationship Abuse
+
+
 
 </h3>
 
 <p>
 
-Identify trust mapping, cross-forest trust abuse, and enterprise attack opportunities.
+Analyze domain and forest trusts, cross-forest relationships, and privilege boundaries that can expand AD compromise paths.
+
 
 </p>
 
@@ -4345,13 +6514,16 @@ Identify trust mapping, cross-forest trust abuse, and enterprise attack opportun
 
 <h3>
 
-Persistence
+Persistence and Control Validation
+
+
 
 </h3>
 
 <p>
 
-Learn DCShadow, GPO abuse, ACL abuse, WMI persistence, and long-term access techniques.
+Study persistence concepts such as ACL abuse, GPO abuse, DCShadow, and WMI persistence in an authorized lab with defensive validation context.
+
 
 </p>
 
@@ -4367,13 +6539,15 @@ Learn DCShadow, GPO abuse, ACL abuse, WMI persistence, and long-term access tech
 
 <h3>
 
-Monitoring + Defense
+Monitoring, Detection, and Defense
+
 
 </h3>
 
 <p>
 
-Monitor Active Directory activity, improve defenses, and understand detection methodologies.
+Connect AD attack behavior to monitoring opportunities, detection logic, hardening priorities, and response workflows.
+
 
 </p>
 
@@ -4387,7 +6561,8 @@ Monitor Active Directory activity, improve defenses, and understand detection me
 
 <p>
 
-Built from real-world penetration tests and Red Team engagements focused on attacking and defending enterprise Active Directory environments.
+Built from real-world red team engagements and enterprise security assessments, with offensive techniques taught in the context of authorized testing, monitoring, and defense.
+
 
 </p>
 
@@ -4396,7 +6571,188 @@ Built from real-world penetration tests and Red Team engagements focused on atta
 </div>
 
 </section>
+<section class="team-outcomes-section">
 
+<div class="container">
+
+<div class="team-outcomes-head">
+
+<span class="team-outcomes-label">
+
+TEAM CAPABILITY OUTCOMES
+
+</span>
+
+<h2>
+
+What Your Team Can Do After Training
+
+</h2>
+
+<p>
+After the training, participants should be able to evaluate Active Directory risk from both offensive and defensive perspectives. The focus is on understanding how attack paths are discovered, how techniques are chained, and where teams can improve monitoring, hardening, detection, and response.
+
+This makes the training useful for red teams, blue teams, SOC analysts, detection engineers, and infrastructure security teams that need a shared technical baseline.
+
+
+</p>
+
+</div>
+
+<div class="team-outcomes-grid">
+
+<div class="team-outcome-card">
+
+<div class="team-outcome-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Map AD Attack Paths
+
+
+
+</h3>
+
+<p>
+
+Map users, groups, ACLs, sessions, trusts, and privileges to understand how escalation paths form across Active Directory environments.
+
+
+</p>
+
+</div>
+
+<div class="team-outcome-card">
+
+<div class="team-outcome-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Identify Escalation Risks
+
+
+</h3>
+
+<p>
+
+Recognize common privilege escalation paths caused by delegation issues, excessive permissions, exposed credentials, and AD misconfigurations.
+
+
+</p>
+
+</div>
+
+<div class="team-outcome-card">
+
+<div class="team-outcome-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Understand Kerberos Abuse
+
+
+</h3>
+
+<p>
+
+Explain how Kerberos ticket abuse, service account exposure, delegation settings, and authentication flows affect AD security.
+
+
+</p>
+
+</div>
+
+<div class="team-outcome-card">
+
+<div class="team-outcome-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Analyze Trust and Identity Risk
+
+
+</h3>
+
+<p>
+
+Assess domain trusts, forest relationships, privileged identities, and credential exposure that can increase the impact of compromise.
+
+
+</p>
+
+</div>
+
+<div class="team-outcome-card">
+
+<div class="team-outcome-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Validate Persistence and Hardening Gaps
+
+
+</h3>
+
+<p>
+
+Understand persistence concepts in an authorized lab and connect them to hardening priorities, monitoring coverage, and control validation.
+
+
+</p>
+
+</div>
+
+<div class="team-outcome-card">
+
+<div class="team-outcome-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Improve Detection Visibility
+
+
+</h3>
+
+<p>
+
+Connect AD attack behavior to logs, signals, suspicious privilege use, identity activity, and detection engineering opportunities.
+
+
+</p>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</section>
 <section class="attack-techniques">
 
 <div class="container">
@@ -4405,23 +6761,20 @@ Built from real-world penetration tests and Red Team engagements focused on atta
 
 <h2>
 
-Attack Techniques Covered
+Active Directory Techniques Covered in the Training
 
 </h2>
 
 <p>
-
-Learn enterprise Active Directory attack and defense techniques used across modern Red Team engagements and security assessments.
-
-</p>
-
+Each technique is covered in the context of authorized training, defensive understanding, and enterprise security improvement. The course helps teams understand how AD attack paths are built, how privilege is expanded, and where monitoring or hardening can reduce risk.    
+    </p>
 </div>
 
 <div class="tech-group">
 
 <h3 class="tech-label attack">
 
-Attack Techniques
+Attack Path and Credential Techniques
 
 </h3>
 
@@ -4477,7 +6830,9 @@ Persistence
 
 <h3 class="tech-label privilege">
 
-Privilege + Trust Abuse
+Privilege Escalation and Trust Abuse
+
+
 
 </h3>
 
@@ -4521,8 +6876,7 @@ Credential Replay
 
 <h3 class="tech-label defense">
 
-Defense + Monitoring
-
+Monitoring, Defense, and Validation
 </h3>
 
 <div class="pill-grid">
@@ -4555,7 +6909,8 @@ Azure Integration
 
 <p>
 
-Built around enterprise Active Directory attack paths, privilege escalation workflows, trust abuse techniques, monitoring methodologies, and modern security assessment tradecraft.
+Techniques are taught with context around authorized assessment, defensive visibility, hardening decisions, and enterprise control validation.
+
 
 </p>
 
@@ -4573,14 +6928,17 @@ Built around enterprise Active Directory attack paths, privilege escalation work
 
 <h2>
 
-Enterprise Active Directory Lab Environment
+Hands-On Active Directory Labs for Security Teams
+
+
 
 </h2>
 
 <p>
 
-Practice attack and defense techniques in a realistic enterprise Active Directory environment designed to simulate modern enterprise networks, trust relationships, and attack paths.
+Participants practice in a controlled Active Directory lab designed to simulate realistic Windows identity environments, trust relationships, privilege boundaries, and attack paths.
 
+The lab gives teams a shared environment to work through offensive techniques, defensive visibility, monitoring decisions, and hardening discussions without using a production network.
 </p>
 
 </div>
@@ -4663,7 +7021,7 @@ Map and abuse trust relationships in enterprise environments.
 
 <h3>
 
-Enterprise Attack Paths
+AD Attack Paths
 
 </h3>
 
@@ -4685,13 +7043,15 @@ Identify attack chains and privilege escalation opportunities.
 
 <h3>
 
-PowerShell Tradecraft
+Native Windows Tradecraft
+
 
 </h3>
 
 <p>
 
-Use built-in tools and native techniques during engagements.
+Use PowerShell and built-in Windows capabilities to understand methodology beyond tool dependency.
+
 
 </p>
 
@@ -4713,7 +7073,8 @@ One Month Lab Access
 
 <p>
 
-Continue learning with extended hands-on practice access.
+Continue practicing exercises, reviewing concepts, and reinforcing team learning after the training sessions.
+
 
 </p>
 
@@ -4729,13 +7090,14 @@ Continue learning with extended hands-on practice access.
 
 <h3>
 
-Enterprise Network Architecture
+Guided Lab Exercises
 
 </h3>
 
 <p>
 
-Train inside realistic enterprise Active Directory environments.
+Work through structured scenarios covering enumeration, privilege escalation, Kerberos, trust abuse, monitoring, and defense.
+
 
 </p>
 
@@ -4751,13 +7113,14 @@ Train inside realistic enterprise Active Directory environments.
 
 <h3>
 
-Hands-On Lab Exercises
+Team-Based Practice
 
 </h3>
 
 <p>
 
-Practice techniques through guided and practical exercises.
+Give red, blue, SOC, detection, and infrastructure teams a shared technical environment for discussion and skill development.
+
 
 </p>
 
@@ -4771,7 +7134,7 @@ Practice techniques through guided and practical exercises.
 
 <p>
 
-Designed to simulate enterprise Active Directory environments with realistic trust boundaries, privilege escalation paths, and attack scenarios commonly encountered during Red Team engagements and enterprise security assessments.
+The lab is designed for authorized training and team-based learning, with realistic AD scenarios that connect attack paths to monitoring, detection, hardening, and response.
 
 </p>
 
@@ -4780,6 +7143,8 @@ Designed to simulate enterprise Active Directory environments with realistic tru
 </div>
 
 </section>
+    
+ 
 <section class="training-methodology">
 
 <div class="container">
@@ -4812,13 +7177,16 @@ Learn enterprise Active Directory attack and defense techniques through hands-on
 
 <h3>
 
-Hands-On Labs
+Scenario-Based Learning
+
+
 
 </h3>
 
 <p>
 
-Guided exercises and practical attack scenarios designed around enterprise Active Directory environments.
+Work through structured Active Directory scenarios that connect concepts, lab actions, evidence, and defensive takeaways.
+
 
 </p>
 
@@ -4840,7 +7208,8 @@ Methodology Over Tools
 
 <p>
 
-Focus on enterprise methodology and techniques rather than dependency on tools.
+Focus on repeatable assessment logic and decision-making instead of depending only on specific tools or scripts.
+
 
 </p>
 
@@ -4856,13 +7225,14 @@ Focus on enterprise methodology and techniques rather than dependency on tools.
 
 <h3>
 
-Native Tradecraft
+Native Windows Tradecraft
 
 </h3>
 
 <p>
 
-Use PowerShell and trusted operating system resources without relying entirely on third-party tooling.
+Understand how PowerShell and built-in Windows capabilities are used during authorized assessments and how defenders can reason about visibility.
+
 
 </p>
 
@@ -4878,13 +7248,16 @@ Use PowerShell and trusted operating system resources without relying entirely o
 
 <h3>
 
-Real Enterprise Scenarios
+Realistic Security Scenarios
+
+
 
 </h3>
 
 <p>
 
-Built from real penetration tests and Red Team engagements.
+Practice techniques and defensive concepts based on patterns commonly seen in enterprise AD assessments and red team exercises.
+
 
 </p>
 
@@ -4900,14 +7273,17 @@ Built from real penetration tests and Red Team engagements.
 
 <h3>
 
-Enterprise Attack Progression
+Attack Path Progression
+
+
 
 </h3>
 
 <p>
 
-Progress from initial compromise to advanced privilege escalation and multi-domain attack scenarios.
+Follow how AD attack paths develop from enumeration to privilege escalation, trust abuse, persistence concepts, and defensive validation.
 
+    
 </p>
 
 </article>
@@ -4930,7 +7306,7 @@ Practical Enterprise Methodology
 
 <p>
 
-Develop repeatable attack and defense methodology applicable across enterprise Active Directory environments.
+Build a shared way for red, blue, SOC, detection, and infrastructure teams to reason about Active Directory risk.
 
 </p>
 
@@ -4972,7 +7348,7 @@ Detection visibility concepts
 
 <p>
 
-Designed around practical enterprise security methodology rather than tool dependency, helping practitioners understand enterprise Active Directory attack progression, privilege escalation workflows, trust abuse techniques, and defensive visibility concepts.
+The methodology helps teams connect offensive technique, defensive evidence, and remediation decisions instead of treating AD security as isolated commands or tools.
 
 </p>
 
@@ -4998,8 +7374,9 @@ Course Content
 
 <p>
 
-Master enterprise Active Directory attack and defense techniques through hands-on modules covering enumeration, privilege escalation, Kerberos abuse, persistence, trust attacks, monitoring, and enterprise defense methodologies.
+The training is organized into practical modules that move from Active Directory enumeration and attack path discovery to privilege escalation, Kerberos abuse, trust relationships, persistence concepts, monitoring, and defensive validation.
 
+Each module combines technical concepts with hands-on lab practice so teams can understand both offensive methodology and defensive visibility
 </p>
 
 </div>
@@ -5200,7 +7577,8 @@ data-lucide="plus"
 
 <p>
 
-Built around enterprise Active Directory attack paths, privilege escalation workflows, Kerberos abuse, trust attacks, monitoring methodologies, and real-world Red Team tradecraft.
+Modules are structured to help teams connect AD attack paths, privilege escalation, Kerberos abuse, trust relationships, monitoring visibility, and hardening decisions in a controlled lab environment.
+
 
 </p>
 
@@ -5210,175 +7588,338 @@ Built around enterprise Active Directory attack paths, privilege escalation work
 
 </section>
 
-<section class="learning-outcomes-section alt">
+<section class="cert-learning-path-section">
 
 <div class="container">
 
-<div class="section-head">
+<div class="cert-learning-head">
+
+<span class="cert-learning-label">
+
+CERTIFICATION READINESS
+
+</span>
 
 <h2>
 
-Certification & Learning Outcomes
+Certification Path and Skill Readiness
 
 </h2>
 
 <p>
 
-Build practical enterprise Active Directory attack and defense skills through hands-on labs and real-world methodologies.
+This training builds the practical Active Directory skills teams need before moving into deeper AD security work and certification-based learning paths such as CRTP, where applicable.
+</p>
+
+<p>
+
+Participants practice the core areas expected from serious AD security training: enumeration, privilege escalation, Kerberos abuse, trust relationships, persistence concepts, monitoring, and defensive validation.
 
 </p>
 
 </div>
 
-<div class="grid-3 outcomes-grid">
+<div class="cert-learning-grid">
 
-<article class="card outcome-card">
+<!-- CARD 1 -->
 
-<div class="outcome-icon">
+<div class="cert-learning-card">
 
-<i data-lucide="search"></i>
+<div class="cert-card-icon">
+
+✓
 
 </div>
 
 <h3>
 
-AD Enumeration
+Practical AD Skill Foundation
 
 </h3>
 
 <p>
 
-Enterprise enumeration, attack path discovery, and trust mapping
+Build the hands-on foundation for Active Directory attack-and-defense work, including enumeration, escalation paths, Kerberos concepts, trust relationships, and monitoring.
+
 </p>
 
-</article>
+</div>
 
-<article class="card outcome-card">
+<!-- CARD 2 -->
 
-<div class="outcome-icon">
+<div class="cert-learning-card">
 
-<i data-lucide="trending-up"></i>
+<div class="cert-card-icon">
+
+✓
 
 </div>
 
 <h3>
 
-Privilege Escalation
+Certification-Aligned Practice
 
 </h3>
 
 <p>
 
-User hunting, delegation abuse, and escalation paths
+Use structured lab exercises to reinforce concepts commonly needed for advanced AD security certifications and practical assessment readiness.
 
 </p>
 
-</article>
+</div>
 
-<article class="card outcome-card">
+<!-- CARD 3 -->
 
-<div class="outcome-icon">
+<div class="cert-learning-card">
 
-<i data-lucide="shield"></i>
+<div class="cert-card-icon">
+
+✓
 
 </div>
 
 <h3>
 
-Kerberos Attacks & Defense
+Next-Step Learning Path
 
 </h3>
 
 <p>
 
-Tickets, delegation, and authentication abuse concepts
+Continue into advanced Active Directory, red team, cloud identity, or enterprise adversary simulation training based on your team's role and maturity.
 
 </p>
-
-</article>
-
-<article class="card outcome-card">
-
-<div class="outcome-icon">
-
-<i data-lucide="network"></i>
 
 </div>
 
-<h3>
-
-Trust Abuse
-
-</h3>
-
-<p>
-
-Trust mapping and enterprise attack path discovery
-
-</p>
-
-</article>
-
-<article class="card outcome-card">
-
-<div class="outcome-icon">
-
-<i data-lucide="terminal"></i>
-
 </div>
 
-<h3>
+<div class="cert-learning-cta">
 
-Native AD Tradecraft
+<a
+href="#certification-path"
+class="cert-primary-btn">
 
-</h3>
+Explore Certification Path
 
-<p>
+</a>
 
-Use PowerShell and trusted operating system resources without relying entirely on third-party tooling.
-</p>
+<a
+href="#team-training"
+class="cert-secondary-btn">
 
-</article>
+Request Team Training Plan
 
-<article class="card outcome-card">
-
-<div class="outcome-icon">
-
-<i data-lucide="shield-check"></i>
-
-</div>
-
-<h3>
-
-Operational AD Methodology
-
-</h3>
-
-<p>
-
-Apply practical enterprise attack methodologies from day one after training.
-</p>
-
-</article>
-
-</div>
-
-<div class="learning-proof">
-
-<div class="proof-line"></div>
-
-<p>
-
-Built around enterprise attack paths, trust abuse methodologies, Kerberos operations, PowerShell tradecraft, monitoring visibility, and practical enterprise Active Directory defense concepts.
-
-</p>
+</a>
 
 </div>
 
 </div>
 
 </section>
+<section class="enterprise-team-training">
 
+<div class="container">
+
+<div class="enterprise-team-wrapper">
+
+<div class="enterprise-team-left">
+
+<span class="enterprise-label">
+
+ENTERPRISE TRAINING
+
+</span>
+
+<h2>
+
+Private Active Directory Training for Security Teams
+
+</h2>
+
+<p>
+
+Organizations can use this training to build practical Active Directory attack-and-defense capability across red team, blue team, SOC, detection, and infrastructure security roles.
+
+</p>
+
+<p>
+
+The course can support private cohorts, instructor-led delivery, hands-on lab access, and structured learning programs for teams that need a shared understanding of Active Directory attack paths, monitoring, hardening, and response.
+
+</p>
+
+<p>
+
+Designed for CISOs, security leaders, training managers, and technical team leads building long-term security capability.
+
+</p>
+
+<!-- CTA BLOCK -->
+
+<div class="enterprise-cta-box">
+
+<h3>
+
+Plan Active Directory Training for Your Team
+
+</h3>
+
+<p>
+
+Share your team size, skill level, and training goals so Altered Security can recommend the right delivery format.
+
+</p>
+
+<div class="enterprise-cta-actions">
+
+<button
+class="btn btn-primary"
+onclick="openTeamTrainingModal()">
+
+Request Team Training
+
+</button>
+
+<a
+href="#syllabus"
+
+class="enterprise-secondary-btn">
+
+Download Team Syllabus
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="enterprise-team-right">
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Private training for internal security teams
+
+</span>
+
+</div>
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Hands-on labs for every participant
+
+</span>
+
+</div>
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Instructor-led bootcamp and team delivery options
+
+</span>
+
+</div>
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Practical AD attack-and-defense methodology
+
+</span>
+
+</div>
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Useful for team upskilling and internal capability building
+
+</span>
+
+</div>
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Supports mixed red, blue, SOC, detection, and infrastructure teams
+
+</span>
+
+</div>
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Structured learning path with continued lab practice
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 <section>
 
 <div class="container grid-2">
@@ -5386,9 +7927,11 @@ Built around enterprise attack paths, trust abuse methodologies, Kerberos operat
 <div>
 
 <h2>
-Prerequisites
+Prerequisites and System Requirements
 </h2>
-
+<h3>Recommended Prerequisites</h3>
+<p>Participants should be comfortable with basic security testing concepts and familiar with how Active Directory environments are structured.</p>
+    
 <div class="checklist">
 
 <div class="check">
@@ -5403,24 +7946,30 @@ Basic Active Directory Knowledge
 
 <div class="check">
 <i data-lucide="check"></i>
-Open Mindset
+Familiarity with Windows command-line usage
 </div>
-
+    
+<div class="check">
+<i data-lucide="check"></i>
+Basic understanding of users, groups, domains, and authentication
+</div>
 </div>
 
 </div>
 
 <div>
 
-<h2>
+<h3>
 System Requirements
-</h2>
+</h3>
+<p>Participants need a system that can connect reliably to the lab environment during training.
 
+</p>
 <div class="checklist">
 
 <div class="check">
 <i data-lucide="check"></i>
-4GB RAM
+4GB RAM minimum
 </div>
 
 <div class="check">
@@ -5432,7 +7981,10 @@ VPN Access
 <i data-lucide="check"></i>
 RDP Capability
 </div>
-
+<div class="check">
+<i data-lucide="check"></i>
+Stable internet connection
+</div>
 </div>
 
 </div>
@@ -5448,20 +8000,42 @@ RDP Capability
 
 <h2>
 
-Who Should Attend
+Who Should Attend This Active Directory Security Training
+
+
 
 </h2>
 
 <p>
 
-This Active Directory training is designed for security professionals who want hands-on experience attacking, defending, and securing enterprise Active Directory environments.
+This training is useful for teams that need hands-on experience with how Active Directory environments are attacked, monitored, defended, and hardened.
 
-</p>
+It is especially valuable when offensive, defensive, SOC, detection, and infrastructure teams need a shared understanding of AD attack paths and identity-based risk.</p>
 
 </div>
 
 <div class="grid-4 audience-grid">
+<article class="card audience-card">
 
+<div class="audience-icon">
+
+<i data-lucide="users"></i>
+
+</div>
+
+<h3>
+
+Training Managers and Security Leaders
+
+</h3>
+
+<p>
+
+Practice AD enumeration, privilege escalation, trust abuse, Kerberos abuse, persistence concepts, and adversary emulation in a controlled lab.
+
+</p>
+
+</article>
 <article class="card audience-card">
 
 <div class="audience-icon">
@@ -5500,7 +8074,8 @@ Penetration Testers
 
 <p>
 
-Assessing enterprise Active Directory security and attack paths.
+Improve Active Directory assessment methodology, attack path discovery, escalation reasoning, and reporting quality.
+
 
 </p>
 
@@ -5522,7 +8097,8 @@ Blue Team Defenders
 
 <p>
 
-Improving monitoring, detection, and Active Directory defense capabilities.
+Understand attacker behavior in AD environments and connect it to monitoring, hardening, detection, and response.
+
 
 </p>
 
@@ -5544,7 +8120,8 @@ SOC Analysts
 
 <p>
 
-Understanding attacker techniques and enterprise detection opportunities.
+Learn how identity-based attacks appear in logs, alerts, suspicious authentication activity, and privilege use patterns.
+
 
 </p>
 
@@ -5560,13 +8137,14 @@ Understanding attacker techniques and enterprise detection opportunities.
 
 <h3>
 
-Security Engineers
+Detection Engineers and Threat Hunters
 
 </h3>
 
 <p>
 
-Building stronger enterprise security architecture and defensive controls.
+Use AD attack behavior to improve detection logic, hunting hypotheses, alert context, and investigation workflows.
+
 
 </p>
 
@@ -5588,7 +8166,8 @@ Active Directory Administrators
 
 <p>
 
-Learning how enterprise AD environments are attacked and secured.
+Understand how misconfigurations, delegation issues, excessive privileges, and trust relationships create security risk.
+
 
 </p>
 
@@ -5610,33 +8189,14 @@ Infrastructure Security Teams
 
 <p>
 
-Improving enterprise identity security and privilege management.
+Improve identity security, privilege management, hardening priorities, and coordination with security operations teams.
+
 
 </p>
 
 </article>
 
-<article class="card audience-card">
 
-<div class="audience-icon">
-
-<i data-lucide="shield"></i>
-
-</div>
-
-<h3>
-
-Cybersecurity Professionals
-
-</h3>
-
-<p>
-
-Building practical enterprise Active Directory attack and defense skills.
-
-</p>
-
-</article>
 
 </div>
 
@@ -5661,13 +8221,14 @@ Basic understanding of penetration testing and Active Directory concepts is reco
     <div class="section-head">
 <h2>
 
-What Makes ALTERED SECURITY Training Effective for Real-World Security
-
+Why Security Teams Choose Altered Security Training
 </h2>
 
 <p>
 
-Trusted by security professionals, enterprise teams, and organizations worldwide for hands-on Red Team training, enterprise labs, certifications, and offensive security education.
+Altered Security training is built for practitioners who need hands-on experience with real techniques, realistic lab scenarios, and enterprise attack paths.
+
+The focus is practical skill development, technical depth, and repeatable methodology that teams can apply to authorized assessments, defensive validation, and internal readiness programs.
 </p>
     </div>
 <div class="stats-strip">
@@ -5682,7 +8243,7 @@ Trusted by security professionals, enterprise teams, and organizations worldwide
 
 <p>
 
-red teamers & security professionals trained
+security professionals trained
 
 </p>
 
@@ -5698,7 +8259,7 @@ red teamers & security professionals trained
 
 <p>
 
-countries reached globally
+countries reached
 
 </p>
 
@@ -5737,7 +8298,7 @@ organizations upskilled
 
 <h3>
 
-Learn from Active Red Teamers
+Learn from Red Team Expert
 
 </h3>
 
@@ -5791,13 +8352,14 @@ Practice in enterprise-grade lab environments designed to simulate real infrastr
 
 <h3>
 
-Built Around Real Attack Scenarios
+Built From Real Assessment Patterns
 
 </h3>
 
 <p>
 
-Learn techniques used in real engagements — from initial access to lateral movement and privilege escalation.
+Training scenarios are informed by patterns seen in penetration tests, red team exercises, and enterprise security assessments.
+
 
 </p>
 
@@ -5818,13 +8380,14 @@ Learn techniques used in real engagements — from initial access to lateral mov
 
 <h3>
 
-Trusted by Professionals Worldwide
+Trusted by Global Security Teams
 
 </h3>
 
 <p>
 
-Used by Red Teamers, pentesters, and security engineers across global organizations.
+Used by red teamers, penetration testers, security engineers, and enterprise teams across global organizations.
+
 
 </p>
 
@@ -5853,7 +8416,9 @@ Used by Red Teamers, pentesters, and security engineers across global organizati
 Trusted by Leading Organizations
 
 </h2>
+<p>Security professionals from global organizations have trained with Altered Security across red team, cloud, infrastructure, and Active Directory security programs.
 
+</p>
 </div>
 
 <div class="client-grid">
@@ -5914,7 +8479,7 @@ alt="BMO client logo"
 
 <h2>
 
-What Customers Are Saying
+What Learners Say About the Training
 
 </h2>
 
@@ -5944,7 +8509,7 @@ RandomByte
 
 <span>
 
-Student, Attacking and Defending Azure
+Student, Attacking and Defending Active Directory
 
 </span>
 
@@ -5954,7 +8519,9 @@ Student, Attacking and Defending Azure
 
 </div>
 
-</section>    
+</section> 
+    
+
 <section id="faq" class="faq-section alt">
 
 <div class="container">
@@ -5979,9 +8546,9 @@ Answers to common questions about enterprise Active Directory attack and defense
 
 <button class="faq-btn">
 
-<span>
+    <span>
 
-What is Active Directory training?
+What is Active Directory security training?
 
 </span>
 
@@ -5993,8 +8560,7 @@ What is Active Directory training?
 
 <p>
 
-Active Directory training teaches how enterprise Active Directory environments are attacked, monitored, secured, and defended through hands-on exercises covering enumeration, privilege escalation, Kerberos security, trust abuse, monitoring, and enterprise defense methodologies.
-
+Active Directory security training helps security teams understand how AD environments are assessed, attacked in authorized labs, monitored, defended, and hardened. This course covers enumeration, privilege escalation, Kerberos abuse, trust relationships, persistence concepts, monitoring, and defensive validation.
 </p>
 
 </div>
@@ -6015,99 +8581,14 @@ Is this Active Directory training hands-on?
 
 <p>
 
-Yes. The course includes guided hands-on exercises, enterprise attack scenarios, and practical Active Directory lab environments designed to simulate real enterprise networks.
+Yes. Participants work through guided lab exercises in a realistic Active Directory environment designed around domains, forests, trust relationships, privilege escalation paths, and monitoring scenarios.
+
 
 </p>
 
 </div>
 
-<button class="faq-btn">
 
-<span>
-
-Does this course cover Kerberos attacks?
-
-</span>
-
-<i data-lucide="plus"></i>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-
-Yes. Kerberos concepts include authentication attacks, Golden Ticket, Silver Ticket, delegation abuse, trust abuse techniques, and enterprise attack methodologies.
-
-</p>
-
-</div>
-
-<button class="faq-btn">
-
-<span>
-
-Will I learn privilege escalation techniques?
-
-</span>
-
-<i data-lucide="plus"></i>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-
-Yes. Training covers local privilege escalation, domain privilege escalation, credential operations, delegation abuse, and enterprise escalation workflows.
-
-</p>
-
-</div>
-
-<button class="faq-btn">
-
-<span>
-
-Does the training cover trust abuse?
-
-</span>
-
-<i data-lucide="plus"></i>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-
-Yes. The course includes trust relationship analysis, cross-forest trust abuse, enterprise attack paths, and trust mapping methodologies.
-
-</p>
-
-</div>
-
-<button class="faq-btn">
-
-<span>
-
-Is Azure integration covered?
-
-</span>
-
-<i data-lucide="plus"></i>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-
-Yes. Enterprise identity concepts and Azure integration attack considerations are included as part of modern enterprise environments.
-
-</p>
-
-</div>
 
 <button class="faq-btn">
 
@@ -6125,7 +8606,8 @@ Do attendees get lab access?
 
 <p>
 
-Yes. Attendees receive one month of lab access for continued hands-on learning and practical enterprise Active Directory exercises.
+Yes. Attendees receive one month of lab access for continued hands-on practice after the training sessions.
+
 
 </p>
 
@@ -6157,8 +8639,7 @@ Yes. Red Team professionals, penetration testers, SOC analysts, security enginee
 
 <span>
 
-What prerequisites are required?
-
+Can this Active Directory training be delivered for a team?
 </span>
 
 <i data-lucide="plus"></i>
@@ -6169,19 +8650,16 @@ What prerequisites are required?
 
 <p>
 
-Basic penetration testing understanding and familiarity with Active Directory concepts are recommended before attending.
+Yes. The training can support team-based learning for red teams, blue teams, SOC analysts, detection engineers, infrastructure security teams, and Active Directory administrators.
 
 </p>
 
 </div>
-
 <button class="faq-btn">
 
 <span>
 
-Does this cover Active Directory defense techniques?
-
-</span>
+ Is private Active Directory training available?</span>
 
 <i data-lucide="plus"></i>
 
@@ -6191,18 +8669,18 @@ Does this cover Active Directory defense techniques?
 
 <p>
 
-Yes. Monitoring methodologies, defensive concepts, enterprise controls, visibility improvements, detection understanding, and Active Directory defense techniques are covered.
+Yes. Private training can be used for organizations that want a focused cohort for their internal security team, with shared lab time, common methodology, and team-based learning goals.
+
 
 </p>
 
 </div>
-
 </div>
 
 </div>
 
 </section>
-<section class="learning-journey-section alt">
+<main class="learning-journey-section alt">
 
 <div class="container">
 
@@ -6210,33 +8688,22 @@ Yes. Monitoring methodologies, defensive concepts, enterprise controls, visibili
 
 <h2>
 
-Continue Your Learning Journey
+Related Active Directory and Red Team Training Paths
+
 
 </h2>
 
 <p>
 
-Build enterprise offensive security expertise through hands-on labs, specialized training programs, and advanced Red Team certifications designed for modern enterprise environments.
+Continue building practical security capability with certification paths, advanced Active Directory training, red team labs, and cloud identity security programs that complement this course.
+
 
 </p>
 
 </div>
 
 
-<div class="journey-block">
 
-<h3>
-
-Certification Path
-
-</h3>
-    
-<p class="journey-intro">
-
-Certification That Validates Your Real-world Security Skills
-
-</p>
-    </div>
 <div class="cert-grid">
 
 <article class="card cert-card">
@@ -6261,7 +8728,7 @@ Practice enterprise Active Directory attack and defense techniques in hands-on l
 
 <a href="#">
 
-Explore AD Lab
+Explore CRTP
 
 <i data-lucide="arrow-right"></i>
 
@@ -6280,19 +8747,21 @@ Explore AD Lab
 
 <h4>
 
-CRTE
+Advanced Active Directory Training
+
 
 </h4>
 
 <p>
 
-Train enterprise offensive security methodologies through practical attack scenarios.
+Move into deeper AD tradecraft, advanced attack paths, persistence concepts, monitoring, and defensive validation.
+
 
 </p>
 
 <a href="#">
 
-Explore Red Team Lab
+View Advanced AD Training
 
 <i data-lucide="arrow-right"></i>
 
@@ -6311,19 +8780,22 @@ Explore Red Team Lab
 
 <h4>
 
-CARTP
+CRTE
+
+
 
 </h4>
 
 <p>
 
-Build Azure offensive security capabilities and hybrid identity attack expertise.
+Build enterprise red team methodology through practical attack scenarios and advanced lab-based learning.
+
 
 </p>
 
 <a href="#">
 
-Explore CARTP
+Explore CRTE
 
 <i data-lucide="arrow-right"></i>
 
@@ -6342,64 +8814,16 @@ Explore CARTP
 
 <h4>
 
-CARTE
+Advanced Windows Tradecraft
+
+
 
 </h4>
 
 <p>
 
-Advance enterprise cloud Red Team operations and Azure security tradecraft.
+Develop advanced Windows offensive methodology, evasion concepts, and operator tradecraft for authorized red team work.
 
-</p>
-
-<a href="#">
-
-Explore CARTE
-
-<i data-lucide="arrow-right"></i>
-
-</a>
-
-</article>
-
-</div>
-
-
-
-
-<div class="journey-block">
-
-<h3>
-
-Advanced Training Programs
-
-</h3>
-
-<p class="journey-intro">
-
-Expand your enterprise offensive security capabilities with advanced tradecraft and specialized training paths.
-
-</p>
-
-<div class="grid-3 advanced-grid">
-
-<article class="card advanced-card">
-
-<div class="advanced-icon">
-
-<i data-lucide="shield"></i>
-
-</div>
-
-<h4>
-
-Advanced Active Directory Training
-
-</h4>
-
-<p>
-
-Advance enterprise Active Directory attack methodology and post-exploitation tradecraft.
 
 </p>
 
@@ -6412,44 +8836,11 @@ View Training
 </a>
 
 </article>
+<article class="card cert-card">
 
+<div class="cert-icon">
 
-<article class="card advanced-card">
-
-<div class="advanced-icon">
-
-<i data-lucide="terminal-square"></i>
-
-</div>
-
-<h4>
-
-Advanced Tradecraft
-
-</h4>
-
-<p>
-
-Develop advanced offensive security techniques for enterprise environments.
-
-</p>
-
-<a href="#">
-
-View Training
-
-<i data-lucide="arrow-right"></i>
-
-</a>
-
-</article>
-
-
-<article class="card advanced-card">
-
-<div class="advanced-icon">
-
-<i data-lucide="cloud-cog"></i>
+<i data-lucide="shield-check"></i>
 
 </div>
 
@@ -6457,267 +8848,64 @@ View Training
 
 Azure Security Training
 
+
+
+
+
 </h4>
 
 <p>
 
-Learn cloud attack methodology, identity security, and Azure offensive operations.
+Extend identity security skills into Azure, hybrid identity, cloud attack paths, and defensive cloud security concepts.
+
+
 
 </p>
 
 <a href="#">
 
-View Training
+View Azure Training
 
 <i data-lucide="arrow-right"></i>
 
 </a>
 
 </article>
+    <article class="card cert-card">
 
-</div>
-<div class="journey-block">
-    
-<h3>
+<div class="cert-icon">
 
-Attend Live Bootcamp
-
-</h3>
-
-<p class="journey-intro">
-
-Expand enterprise offensive security expertise through instructor-led bootcamps focused on Active Directory security, Azure offensive operations, enterprise Red Team methodology, infrastructure security, and advanced Windows tradecraft.
-
-</p>
-
-    </div>
-    
-<div class="bootcamp-grid">
-
-<article class="bootcamp-card featured">
-
-<div class="bootcamp-top">
-
-<span class="bootcamp-tag">
-
-Beginner
-
-</span>
+<i data-lucide="shield-check"></i>
 
 </div>
 
-<h3>
+<h4>
 
-Cloud Red Team Tactics for Attacking and Defending Azure
+Team Training Plan
 
-</h3>
+
+
+
+
+</h4>
 
 <p>
 
-Build Azure offensive security capabilities, identity attack methodology, and cloud Red Team tradecraft.
+Plan a structured learning path for red, blue, SOC, detection, and infrastructure teams based on role and maturity.
+
+
 
 </p>
 
 <a href="#">
 
-Explore Bootcamp
+Request Team Plan
 
 <i data-lucide="arrow-right"></i>
 
 </a>
 
 </article>
-
-
-<article class="bootcamp-card featured">
-
-<div class="bootcamp-top">
-
-<span class="bootcamp-tag">
-
-Beginner
-
-</span>
-
-</div>
-
-<h3>
-
-Attacking and Defending Active Directory
-
-</h3>
-
-<p>
-
-Learn enterprise Active Directory attack methodology, trust abuse, privilege escalation, monitoring, and defense concepts.
-
-</p>
-
-<a href="#">
-
-Explore Bootcamp
-
-<i data-lucide="arrow-right"></i>
-
-</a>
-
-</article>
-
-
-<article class="bootcamp-card">
-
-<div class="bootcamp-top">
-
-<span class="bootcamp-tag advanced">
-
-Advanced
-
-</span>
-
-</div>
-
-<h3>
-
-Cloud Red Team Tactics for Attacking and Defending Azure
-
-</h3>
-
-<p>
-
-Advance Azure offensive security methodology and enterprise cloud Red Team operations.
-
-</p>
-
-<a href="#">
-
-Explore Bootcamp
-
-<i data-lucide="arrow-right"></i>
-
-</a>
-
-</article>
-
-
-<article class="bootcamp-card">
-
-<div class="bootcamp-top">
-
-<span class="bootcamp-tag">
-
-Infrastructure
-
-</span>
-
-</div>
-
-<h3>
-
-Hands-On Infrastructure and Network Penetration Testing with NetExec
-
-</h3>
-
-<p>
-
-Practice infrastructure assessment methodology and practical enterprise network penetration testing.
-
-</p>
-
-<a href="#">
-
-Explore Bootcamp
-
-<i data-lucide="arrow-right"></i>
-
-</a>
-
-</article>
-
-
-<article class="bootcamp-card">
-
-<div class="bootcamp-top">
-
-<span class="bootcamp-tag advanced">
-
-Advanced
-
-</span>
-
-</div>
-
-<h3>
-
-Advanced Windows Tradecraft — Evasion Techniques for Red Teams
-
-</h3>
-
-<p>
-
-Develop advanced Windows offensive methodology and Red Team evasion tradecraft.
-
-</p>
-
-<a href="#">
-
-Explore Bootcamp
-
-<i data-lucide="arrow-right"></i>
-
-</a>
-
-</article>
-
-
-<article class="bootcamp-card">
-
-<div class="bootcamp-top">
-
-<span class="bootcamp-tag advanced">
-
-Advanced
-
-</span>
-
-</div>
-
-<h3>
-
-Attacking and Defending Active Directory
-
-</h3>
-
-<p>
-
-Advance enterprise attack methodology, persistence tradecraft, monitoring concepts, and defense visibility.
-
-</p>
-
-<a href="#">
-
-Explore Bootcamp
-
-<i data-lucide="arrow-right"></i>
-
-</a>
-
-</article>
-
-</div>
-    
-
-</div>
-
-<div class="bootcamp-proof">
-
-<div class="proof-line"></div>
-
-<p>
-
-Progress from beginner enterprise attack methodology to advanced offensive security operations through instructor-led enterprise security bootcamps.
-
-</p>
-
 </div>
 
 
@@ -6730,14 +8918,16 @@ Progress from beginner enterprise attack methodology to advanced offensive secur
 <div class="container">
 
 <h2>
-Active Directory Research Blog
+Related Active Directory Security Resources
 </h2>
+<p>Explore related research and guides on Kerberos abuse, trust relationships, PowerShell tradecraft, and Active Directory attack paths.
 
+    </p>
 <div class="grid-3">
 
 <div class="blog">
 
-<span>Research</span>
+<span>Research Guide</span>
 
 <h3>
 Kerberos Enterprise Attack Paths
@@ -6747,7 +8937,7 @@ Kerberos Enterprise Attack Paths
 
 <div class="blog">
 
-<span>Research</span>
+<span>Research Guide</span>
 
 <h3>
 Trust Abuse Deep Dive
@@ -6757,7 +8947,7 @@ Trust Abuse Deep Dive
 
 <div class="blog">
 
-<span>Research</span>
+<span>Technical Guide</span>
 
 <h3>
 PowerShell Tradecraft
@@ -6777,27 +8967,30 @@ PowerShell Tradecraft
 
 <h2>
 
-Ready to Secure Enterprise Active Directory Environments?
+Ready to Train Your Team on Active Directory Security?
 
 </h2>
 
 <p>
 
-Train using real enterprise methodology and practical Active Directory tradecraft.
+Train red teams, blue teams, SOC analysts, detection engineers, and infrastructure security teams through hands-on Active Directory attack-and-defense labs.
+
+
+
 
 </p>
 
 <div class="final-buttons">
 
-<button class="btn btn-primary">
+<button class="btn btn-primary" onclick="openTeamTrainingModal()">
 
-Register Now
+Request Team Training
 
 </button>
 
 <button class="btn btn-secondary">
 
-Download Syllabus
+Download Team Syllabus
 
 </button>
 
@@ -6813,14 +9006,210 @@ Download Syllabus
 
 <div class="sticky-mobile">
 
-<button class="btn btn-primary">
+<button class="btn btn-primary" onclick="openTeamTrainingModal()">
 
-Register Now
+Request Team Training
 
 </button>
 
 </div>
+<!-- ====================================
+TEAM TRAINING LEAD MODAL
+==================================== -->
 
+<div
+class="team-training-modal"
+id="teamTrainingModal">
+
+<div
+class="team-training-box">
+
+<button
+class="team-modal-close"
+onclick="closeTeamTrainingModal()">
+
+✕
+
+</button>
+
+<div
+class="team-modal-head">
+
+<span>
+
+Enterprise Training
+
+</span>
+
+<h3>
+
+Request Team Training
+
+</h3>
+
+<p>
+
+Tell us about your team and training needs.
+
+</p>
+
+</div>
+
+<form
+class="team-training-form"
+onsubmit="submitTeamTraining(event)">
+
+<input
+type="text"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+placeholder="Work Email"
+required>
+
+<input
+type="text"
+placeholder="Company"
+required>
+
+<select required>
+
+<option value="">
+
+Team Size
+
+</option>
+
+<option>
+
+1–10
+
+</option>
+
+<option>
+
+11–25
+
+</option>
+
+<option>
+
+26–50
+
+</option>
+
+<option>
+
+51–100
+
+</option>
+
+<option>
+
+100+
+
+</option>
+
+</select>
+
+<select required>
+
+<option value="">
+
+Training Format
+
+</option>
+
+<option>
+
+Private Team Training
+
+</option>
+
+<option>
+
+Public Training
+
+</option>
+
+<option>
+
+On-Demand Learning
+
+</option>
+
+<option>
+
+Unsure
+
+</option>
+
+</select>
+
+<textarea
+rows="5"
+placeholder="Tell us about your requirements">
+
+</textarea>
+
+<button
+type="submit"
+class="team-submit-btn">
+
+Submit Request
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+<script>
+function openTeamTrainingModal(){
+
+document
+.getElementById(
+"teamTrainingModal"
+)
+.classList.add(
+"active"
+);
+
+document.body.style.overflow=
+"hidden";
+
+}
+
+function closeTeamTrainingModal(){
+
+document
+.getElementById(
+"teamTrainingModal"
+)
+.classList.remove(
+"active"
+);
+
+document.body.style.overflow=
+"";
+
+}
+
+function submitTeamTraining(e){
+
+e.preventDefault();
+
+alert(
+"Request submitted successfully. Our enterprise training team will contact you."
+);
+
+closeTeamTrainingModal();
+
+}    
+</script>
 <script>
 
 lucide.createIcons();
