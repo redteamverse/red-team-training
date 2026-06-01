@@ -269,7 +269,7 @@ TITLE
 
 .blog-category-title{
 
-  font-size:72px;
+  font-size:56px;
 
   line-height:1.02;
 
@@ -292,9 +292,9 @@ DESCRIPTION
 
   color:var(--color-text-body);
 
-  font-size:19px;
+  font-size:18px;
 
-  line-height:1.9;
+  line-height:1.65;
 }
 
 /* =========================================
@@ -545,14 +545,14 @@ RESPONSIVE
 
   .blog-category-title{
 
-    font-size:42px;
+    font-size:38px;
 
     line-height:1.12;
   }
 
   .blog-category-description{
 
-    font-size:16px;
+    font-size:18px;
   }
 
   .sticky-category-scroll{
@@ -1127,9 +1127,9 @@ TITLE
 
 .featured-hero-title{
 
-  font-size:40px;
+  font-size:24px;
 
-  line-height:1.12;
+  line-height:1.2;
 
   letter-spacing:-1px;
 
@@ -1159,7 +1159,7 @@ TEXT
 
   font-size:16px;
 
-  line-height:1.9;
+  line-height:1.65;
 
   margin-bottom:
   var(--space-lg);
@@ -1677,7 +1677,7 @@ RESPONSIVE
 
   .featured-hero-title{
 
-    font-size:30px;
+    font-size:22px;
   }
 
   .secondary-feature-title{
@@ -1758,7 +1758,7 @@ HEADING
 
 .latest-redteam-heading{
 
-  font-size:58px;
+  font-size:32px;
 
   line-height:1.08;
 
@@ -1779,7 +1779,7 @@ DESCRIPTION
 
   font-size:18px;
 
-  line-height:1.9;
+  line-height:1.65;
 }
 
 /* =========================================
@@ -2119,7 +2119,7 @@ RESPONSIVE
 
   .latest-redteam-heading{
 
-    font-size:40px;
+    font-size:32px;
 
     line-height:1.12;
   }
@@ -3005,7 +3005,155 @@ RESPONSIVE
   }
 
 }
-        
+  /* ==========================================
+EXPLORE MORE
+========================================== */
+
+.explore-more-section{
+
+padding:60px 0;
+
+}
+
+.explore-more-box{
+
+padding:32px;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:24px;
+
+background:#F9FAFB;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:30px;
+
+}
+
+.explore-more-content h2{
+
+font-size:32px;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:8px;
+
+}
+
+.explore-more-content p{
+
+font-size:16px;
+
+color:#6B7280;
+
+}
+
+.explore-more-links{
+
+display:flex;
+
+gap:16px;
+
+flex-wrap:wrap;
+
+}
+
+.explore-more-links a{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:
+
+14px 20px;
+
+border-radius:14px;
+
+background:#FFFFFF;
+
+border:
+
+1px solid #E5E7EB;
+
+text-decoration:none;
+
+color:#111827;
+
+font-weight:700;
+
+transition:.25s;
+
+}
+
+.explore-more-links a:hover{
+
+border-color:#B91C1C;
+
+color:#B91C1C;
+
+transform:
+
+translateY(-2px);
+
+}
+
+.explore-more-links svg{
+
+width:18px;
+
+height:18px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.explore-more-box{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+padding:24px;
+
+}
+
+.explore-more-content h2{
+
+font-size:26px;
+
+}
+
+.explore-more-links{
+
+width:100%;
+
+flex-direction:column;
+
+}
+
+.explore-more-links a{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+}      
         </style>    
     </head>
    
@@ -3040,7 +3188,7 @@ BLOG CATEGORY HERO SECTION
       </span>
 
       <span class="breadcrumb-current">
-        Active Directory Attacks
+        Active Directory Security
       </span>
 
     </div>
@@ -3053,16 +3201,14 @@ BLOG CATEGORY HERO SECTION
 
       <!-- TITLE -->
 
-      <h1 class="blog-category-title">
+      <h1 class="blog-category-title"><code>
         Active Directory Security
-      </h1>
+      </code></h1>
 
       <!-- DESCRIPTION -->
 
       <p class="blog-category-description">
-        Advanced offensive security research, Active Directory attack techniques,
-        Azure Red Team operations, cloud security, detection engineering,
-        and enterprise tradecraft.
+        Research, attack paths, defensive guidance, and hands-on tradecraft for securing enterprise Active Directory environments.
       </p>
 
     </div>
@@ -3076,72 +3222,72 @@ STICKY BLOG CATEGORY
 ========================================= -->
 
 <section class="sticky-blog-category">
+  <div class="sticky-category-scroll">
 
-  <div class="container">
+    <!-- ACTIVE -->
 
-    <div class="sticky-category-scroll">
+    <a href="#" class="sticky-category-pill active">
+      Active Directory Security
+    </a>
 
-      <!-- ACTIVE -->
+    <!-- CATEGORY -->
 
-      <a href="#" class="sticky-category-pill active">
-        Active Directory Security
-      </a>
+    <a href="#" class="sticky-category-pill">
+      Azure Red Team
+    </a>
 
-      <!-- CATEGORY -->
+    <!-- CATEGORY -->
 
-      <a href="#" class="sticky-category-pill">
-        Azure Red Team
-      </a>
+    <a href="#" class="sticky-category-pill">
+      Offensive Tradecraft
+    </a>
 
-      <!-- CATEGORY -->
+    <!-- CATEGORY -->
 
-      <a href="#" class="sticky-category-pill">
-        Offensive Tradecraft
-      </a>
+    <a href="#" class="sticky-category-pill">
+      Red Lab
+    </a>
 
-      <!-- CATEGORY -->
+    <!-- CATEGORY -->
 
-      <a href="#" class="sticky-category-pill">
-        Red Lab
-      </a>
+    <a href="#" class="sticky-category-pill">
+      Certifications
+    </a>
 
-      <!-- CATEGORY -->
+    <!-- EXPLORE MORE -->
 
-      <a href="#" class="sticky-category-pill">
-        Certifications
-      </a>
-
-      <!-- EXPLORE MORE -->
-
-  <!-- =========================================
+<!-- =========================================
 EXPLORE MORE
 ========================================= -->
 
 <div class="sticky-category-explore">
 
-  <!-- BUTTON -->
+<!-- BUTTON -->
 
-  <button class="sticky-explore-button">
+<button class="sticky-explore-button">
 
-    Explore More
+  Explore More
 
-    <i data-lucide="chevron-down"></i>
+  <i data-lucide="chevron-down"></i>
 
-  </button>
+</button>
 
-  <!-- DROPDOWN -->
+<!-- DROPDOWN -->
 
-  <div class="sticky-explore-dropdown">
+<div class="sticky-explore-dropdown">
 
-    <a href="#" class="sticky-dropdown-item">
-      Red Team Operation
-    </a>    
-
-  </div>
+  <a href="#" class="sticky-dropdown-item">
+    Red Team Operation
+  </a>    
 
 </div>
 
-    </div>
+</div>
+
+  </div>
+
+  <div class="container">
+
 
   </div>
 
@@ -3188,7 +3334,15 @@ FEATURED CATEGORY BLOG SECTION
         <div class="featured-hero-content">
 
           <!-- TITLE -->
+           <div class="featured-hero-category-wrap">
 
+           
+
+            <div class="featured-hero-category">
+              Active Directory
+            </div>
+
+          </div>
           <h3 class="featured-hero-title">
             Exploiting Misconfigured Active Directory Certificate Services
           </h3>
@@ -3202,15 +3356,7 @@ FEATURED CATEGORY BLOG SECTION
 
           <!-- CATEGORY -->
 
-          <div class="featured-hero-category-wrap">
-
-           
-
-            <div class="featured-hero-category">
-              Active Directory
-            </div>
-
-          </div>
+          
 
           <!-- META -->
 
@@ -3220,7 +3366,7 @@ FEATURED CATEGORY BLOG SECTION
 
               <i data-lucide="calendar-days"></i>
 
-              May 18, 2026
+                May 18, 2026
 
             </div>
 
@@ -3290,7 +3436,15 @@ FEATURED CATEGORY BLOG SECTION
         </div>
 
         <div class="featured-hero-content">
+             <div class="featured-hero-category-wrap">
 
+            <div class="featured-hero-category">
+              Active Directory
+            </div>
+
+            
+
+          </div>
           <h3 class="featured-hero-title">
             Advanced Kerberos Delegation Abuse Techniques in Enterprise Networks
           </h3>
@@ -3300,15 +3454,7 @@ FEATURED CATEGORY BLOG SECTION
             to escalate privileges and move laterally across enterprise domains.
           </p>
 
-          <div class="featured-hero-category-wrap">
-
-            <div class="featured-hero-category">
-              Active Directory
-            </div>
-
-            
-
-          </div>
+        
 
           <div class="featured-hero-meta">
 
@@ -3316,7 +3462,7 @@ FEATURED CATEGORY BLOG SECTION
 
               <i data-lucide="calendar-days"></i>
 
-              April 29, 2026
+             Updated April 29, 2026
 
             </div>
 
@@ -3419,17 +3565,7 @@ LATEST BLOG SECTION
     </div>
 
     <div class="latest-redteam-content">
-
-      <h3 class="latest-redteam-title">
-        Azure Red Team Operations & Enterprise Cloud Attack Paths
-      </h3>
-
-      <p class="latest-redteam-text">
-        Understand how attackers exploit weak IAM permissions and
-        cloud misconfigurations in enterprise Azure environments.
-      </p>
-
-      <div class="latest-redteam-category-wrap">
+        <div class="latest-redteam-category-wrap">
 
         <div class="latest-redteam-category">
           Azure
@@ -3440,6 +3576,16 @@ LATEST BLOG SECTION
         </div>
 
       </div>
+      <h3 class="latest-redteam-title">
+        Azure Red Team Operations & Enterprise Cloud Attack Paths
+      </h3>
+
+      <p class="latest-redteam-text">
+        Understand how attackers exploit weak IAM permissions and
+        cloud misconfigurations in enterprise Azure environments.
+      </p>
+
+      
 
       <div class="latest-redteam-meta">
 
@@ -3511,17 +3657,7 @@ LATEST BLOG SECTION
     </div>
 
     <div class="latest-redteam-content">
-
-      <h3 class="latest-redteam-title">
-        Modern Active Directory Lateral Movement Techniques
-      </h3>
-
-      <p class="latest-redteam-text">
-        Explore advanced techniques attackers use to pivot through
-        enterprise Active Directory environments while avoiding detection.
-      </p>
-
-      <div class="latest-redteam-category-wrap">
+  <div class="latest-redteam-category-wrap">
 
         <div class="latest-redteam-category">
           Lateral Movement
@@ -3532,6 +3668,16 @@ LATEST BLOG SECTION
         </div>
 
       </div>
+      <h3 class="latest-redteam-title">
+        Modern Active Directory Lateral Movement Techniques
+      </h3>
+
+      <p class="latest-redteam-text">
+        Explore advanced techniques attackers use to pivot through
+        enterprise Active Directory environments while avoiding detection.
+      </p>
+
+    
 
       <div class="latest-redteam-meta">
 
@@ -3539,7 +3685,7 @@ LATEST BLOG SECTION
 
           <i data-lucide="calendar-days"></i>
 
-          April 29, 2026
+            April 29, 2026
 
         </div>
 
@@ -3603,17 +3749,7 @@ LATEST BLOG SECTION
     </div>
 
     <div class="latest-redteam-content">
-
-      <h3 class="latest-redteam-title">
-        Building Stealthy Command & Control Infrastructure
-      </h3>
-
-      <p class="latest-redteam-text">
-        Discover OPSEC-focused C2 infrastructure design strategies
-        used during modern adversary simulation engagements.
-      </p>
-
-      <div class="latest-redteam-category-wrap">
+   <div class="latest-redteam-category-wrap">
 
         <div class="latest-redteam-category">
           C2 Framework
@@ -3624,6 +3760,16 @@ LATEST BLOG SECTION
         </div>
 
       </div>
+      <h3 class="latest-redteam-title">
+        Building Stealthy Command & Control Infrastructure
+      </h3>
+
+      <p class="latest-redteam-text">
+        Discover OPSEC-focused C2 infrastructure design strategies
+        used during modern adversary simulation engagements.
+      </p>
+
+   
 
       <div class="latest-redteam-meta">
 
@@ -3631,7 +3777,7 @@ LATEST BLOG SECTION
 
           <i data-lucide="calendar-days"></i>
 
-          February 2, 2026
+            February 2, 2026
 
         </div>
 
@@ -3695,16 +3841,6 @@ LATEST BLOG SECTION
     </div>
 
     <div class="latest-redteam-content">
-
-      <h3 class="latest-redteam-title">
-        Enterprise Kerberos Delegation Abuse Detection Strategies
-      </h3>
-
-      <p class="latest-redteam-text">
-        Build advanced detection logic for enterprise Kerberos abuse
-        and privilege escalation attack techniques.
-      </p>
-
       <div class="latest-redteam-category-wrap">
 
         <div class="latest-redteam-category">
@@ -3716,6 +3852,16 @@ LATEST BLOG SECTION
         </div>
 
       </div>
+      <h3 class="latest-redteam-title">
+        Enterprise Kerberos Delegation Abuse Detection Strategies
+      </h3>
+
+      <p class="latest-redteam-text">
+        Build advanced detection logic for enterprise Kerberos abuse
+        and privilege escalation attack techniques.
+      </p>
+
+
 
       <div class="latest-redteam-meta">
 
@@ -3723,7 +3869,7 @@ LATEST BLOG SECTION
 
           <i data-lucide="calendar-days"></i>
 
-          January 10, 2026
+            January 10, 2026
 
         </div>
 
@@ -3787,16 +3933,6 @@ LATEST BLOG SECTION
     </div>
 
     <div class="latest-redteam-content">
-
-      <h3 class="latest-redteam-title">
-        Enterprise AD CS Exploitation & Certificate Abuse Tradecraft
-      </h3>
-
-      <p class="latest-redteam-text">
-        Learn how attackers abuse enterprise certificate services
-        to achieve persistence and domain compromise.
-      </p>
-
       <div class="latest-redteam-category-wrap">
 
         <div class="latest-redteam-category">
@@ -3808,6 +3944,16 @@ LATEST BLOG SECTION
         </div>
 
       </div>
+      <h3 class="latest-redteam-title">
+        Enterprise AD CS Exploitation & Certificate Abuse Tradecraft
+      </h3>
+
+      <p class="latest-redteam-text">
+        Learn how attackers abuse enterprise certificate services
+        to achieve persistence and domain compromise.
+      </p>
+
+
 
       <div class="latest-redteam-meta">
 
@@ -3815,7 +3961,7 @@ LATEST BLOG SECTION
 
           <i data-lucide="calendar-days"></i>
 
-          December 18, 2025
+            December 18, 2025
 
         </div>
 
@@ -3879,16 +4025,6 @@ LATEST BLOG SECTION
     </div>
 
     <div class="latest-redteam-content">
-
-      <h3 class="latest-redteam-title">
-        Detection Engineering for Modern Adversary Simulation Operations
-      </h3>
-
-      <p class="latest-redteam-text">
-        Understand how blue teams build modern detection pipelines
-        against advanced red team operations.
-      </p>
-
       <div class="latest-redteam-category-wrap">
 
         <div class="latest-redteam-category">
@@ -3900,6 +4036,16 @@ LATEST BLOG SECTION
         </div>
 
       </div>
+      <h3 class="latest-redteam-title">
+        Detection Engineering for Modern Adversary Simulation Operations
+      </h3>
+
+      <p class="latest-redteam-text">
+        Understand how blue teams build modern detection pipelines
+        against advanced red team operations.
+      </p>
+
+
 
       <div class="latest-redteam-meta">
 
@@ -3907,7 +4053,7 @@ LATEST BLOG SECTION
 
           <i data-lucide="calendar-days"></i>
 
-          November 22, 2025
+            November 22, 2025
 
         </div>
 
@@ -3966,17 +4112,7 @@ LATEST BLOG SECTION
     </div>
 
     <div class="latest-redteam-content">
-
-      <h3 class="latest-redteam-title">
-        Detection Engineering for Modern Adversary Simulation Operations
-      </h3>
-
-      <p class="latest-redteam-text">
-        Understand how blue teams build modern detection pipelines
-        against advanced red team operations.
-      </p>
-
-      <div class="latest-redteam-category-wrap">
+   <div class="latest-redteam-category-wrap">
 
         <div class="latest-redteam-category">
           Active Directory
@@ -3987,6 +4123,16 @@ LATEST BLOG SECTION
         </div>
 
       </div>
+      <h3 class="latest-redteam-title">
+        Detection Engineering for Modern Adversary Simulation Operations
+      </h3>
+
+      <p class="latest-redteam-text">
+        Understand how blue teams build modern detection pipelines
+        against advanced red team operations.
+      </p>
+
+   
 
       <div class="latest-redteam-meta">
 
@@ -3994,7 +4140,7 @@ LATEST BLOG SECTION
 
           <i data-lucide="calendar-days"></i>
 
-          November 22, 2025
+            November 22, 2025
 
         </div>
 
@@ -4053,16 +4199,6 @@ LATEST BLOG SECTION
     </div>
 
     <div class="latest-redteam-content">
-
-      <h3 class="latest-redteam-title">
-        Detection Engineering for Modern Adversary Simulation Operations
-      </h3>
-
-      <p class="latest-redteam-text">
-        Understand how blue teams build modern detection pipelines
-        against advanced red team operations.
-      </p>
-
       <div class="latest-redteam-category-wrap">
 
         <div class="latest-redteam-category">
@@ -4074,6 +4210,16 @@ LATEST BLOG SECTION
         </div>
 
       </div>
+      <h3 class="latest-redteam-title">
+        Detection Engineering for Modern Adversary Simulation Operations
+      </h3>
+
+      <p class="latest-redteam-text">
+        Understand how blue teams build modern detection pipelines
+        against advanced red team operations.
+      </p>
+
+
 
       <div class="latest-redteam-meta">
 
@@ -4081,7 +4227,7 @@ LATEST BLOG SECTION
 
           <i data-lucide="calendar-days"></i>
 
-          November 22, 2025
+            November 22, 2025
 
         </div>
 
@@ -4140,16 +4286,6 @@ LATEST BLOG SECTION
     </div>
 
     <div class="latest-redteam-content">
-
-      <h3 class="latest-redteam-title">
-        Detection Engineering for Modern Adversary Simulation Operations
-      </h3>
-
-      <p class="latest-redteam-text">
-        Understand how blue teams build modern detection pipelines
-        against advanced red team operations.
-      </p>
-
       <div class="latest-redteam-category-wrap">
 
         <div class="latest-redteam-category">
@@ -4161,6 +4297,16 @@ LATEST BLOG SECTION
         </div>
 
       </div>
+      <h3 class="latest-redteam-title">
+        Detection Engineering for Modern Adversary Simulation Operations
+      </h3>
+
+      <p class="latest-redteam-text">
+        Understand how blue teams build modern detection pipelines
+        against advanced red team operations.
+      </p>
+
+
 
       <div class="latest-redteam-meta">
 
@@ -4168,7 +4314,7 @@ LATEST BLOG SECTION
 
           <i data-lucide="calendar-days"></i>
 
-          November 22, 2025
+            November 22, 2025
 
         </div>
 
@@ -4261,7 +4407,7 @@ BLOG PAGINATION SECTION
       <!-- PAGE 4 -->
 
       <a href="#" class="blog-pagination-item">
-        4
+      .
       </a>
 
       <!-- PAGE 5 -->
@@ -4339,7 +4485,7 @@ NEWSLETTER + CERTIFICATION CTA SECTION
 
           <button type="submit">
 
-            Subscribe
+           Subscribe to Research Updates
 
             <i data-lucide="arrow-right"></i>
 
@@ -4379,7 +4525,7 @@ NEWSLETTER + CERTIFICATION CTA SECTION
 
         <a href="#" class="certification-compact-button">
 
-          Get Started
+          View Red Team Certifications
 
           <i data-lucide="arrow-up-right"></i>
 
@@ -4397,150 +4543,73 @@ NEWSLETTER + CERTIFICATION CTA SECTION
 3 CTA SECTION
 ========================================= -->
 
-<section class="compact-blog-cta-section">
+<section class="explore-more-section">
 
-  <div class="container">
+<div class="container">
 
-    <!-- =========================================
-    CTA GRID
-    ========================================= -->
+<div class="explore-more-box">
 
-    <div class="compact-blog-cta-grid">
+<div class="explore-more-content">
 
-      <!-- =========================================
-      CTA 1
-      ========================================= -->
+<h2>
 
-      <a href="#" class="compact-blog-cta-card">
+Explore More
 
-        <!-- ICON -->
+</h2>
 
-        <div class="compact-blog-cta-icon">
+<p>
 
-          <i data-lucide="messages-square"></i>
+Continue learning through community resources, free labs, and hands-on training.
 
-        </div>
+</p>
 
-        <!-- CONTENT -->
+</div>
 
-        <div class="compact-blog-cta-content">
+<div class="explore-more-links">
 
-          <span class="compact-blog-cta-label">
-            Community
-          </span>
+<a href="#community">
 
-          <h3 class="compact-blog-cta-title">
-            Join Channel
-          </h3>
+<i data-lucide="messages-square"></i>
 
-          <p class="compact-blog-cta-description">
-            Get the latest offensive security research,
-            attack tradecraft, lab updates, and community discussions.
-          </p>
+<span>
 
-        </div>
+Join Community
 
-        <!-- ARROW -->
+</span>
 
-        <div class="compact-blog-cta-arrow">
+</a>
 
-          <i data-lucide="arrow-up-right"></i>
+<a href="#labs">
 
-        </div>
+<i data-lucide="flask-conical"></i>
 
-      </a>
+<span>
 
-      <!-- =========================================
-      CTA 2
-      ========================================= -->
+Practice Free Labs
 
-      <a href="#" class="compact-blog-cta-card">
+</span>
 
-        <!-- ICON -->
+</a>
 
-        <div class="compact-blog-cta-icon">
+<a href="#training">
 
-          <i data-lucide="flask-conical"></i>
+<i data-lucide="shield-check"></i>
 
-        </div>
+<span>
 
-        <!-- CONTENT -->
+Explore Training
 
-        <div class="compact-blog-cta-content">
+</span>
 
-          <span class="compact-blog-cta-label">
-            Hands-On Labs
-          </span>
+</a>
 
-          <h3 class="compact-blog-cta-title">
-            Access Free Labs
-          </h3>
+</div>
 
-          <p class="compact-blog-cta-description">
-            Practice real-world Active Directory attacks,
-            Azure exploitation, and red team tradecraft.
-          </p>
+</div>
 
-        </div>
+</div>
 
-        <!-- ARROW -->
-
-        <div class="compact-blog-cta-arrow">
-
-          <i data-lucide="arrow-up-right"></i>
-
-        </div>
-
-      </a>
-
-      <!-- =========================================
-      CTA 3
-      ========================================= -->
-
-      <a href="#" class="compact-blog-cta-card">
-
-        <!-- ICON -->
-
-        <div class="compact-blog-cta-icon">
-
-          <i data-lucide="shield-check"></i>
-
-        </div>
-
-        <!-- CONTENT -->
-
-        <div class="compact-blog-cta-content">
-
-          <span class="compact-blog-cta-label">
-            Training
-          </span>
-
-          <h3 class="compact-blog-cta-title">
-            Explore Red Team Training
-          </h3>
-
-          <p class="compact-blog-cta-description">
-            Advance your offensive security skills
-            through practical enterprise-focused certifications.
-          </p>
-
-        </div>
-
-        <!-- ARROW -->
-
-        <div class="compact-blog-cta-arrow">
-
-          <i data-lucide="arrow-up-right"></i>
-
-        </div>
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>        
+</section>    
 <script>
   lucide.createIcons();
 </script>     
