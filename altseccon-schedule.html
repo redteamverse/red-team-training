@@ -22,7 +22,7 @@
 /* ========================= */
 body{
   margin:0;
-  font-family:system-ui;
+  font-family:system-ui; 
   color:var(--text);
 }
 
@@ -181,18 +181,18 @@ h1{
 
 <!-- COURSE -->
 <div class="tabs">
-  <div class="course-tab active" data-course="crtp">CRTP</div>
-  <div class="course-tab" data-course="crte">CRTE</div>
+  <div class="course-tab active" data-course="cairtp">CAIRTP</div>
+  <div class="course-tab" data-course="crte">CRTE®</div>
   <div class="course-tab" data-course="cetp">CETP</div>
-  <div class="course-tab" data-course="cartp">CARTP</div>
-  <div class="course-tab" data-course="carte">CARTE</div>
+  <div class="course-tab" data-course="cartp">CARTP®</div>
+  <div class="course-tab" data-course="carte">CARTE®</div>
 </div>
 
 <!-- DAY -->
 <div class="tabs">
-  <div class="day-tab active" data-day="0">31 Oct • Day 1</div>
-  <div class="day-tab" data-day="1">01 Nov • Day 2</div>
-  <div class="day-tab" data-day="2">02 Nov • Day 3</div>
+  <div class="day-tab active" data-day="0">24 Oct • Day 1</div>
+  <div class="day-tab" data-day="1">25 Oct • Day 2</div>
+  <div class="day-tab" data-day="2">26 Oct • Day 3</div>
 </div>
 
 <div id="timeline"></div>
@@ -202,15 +202,16 @@ h1{
 <!-- CONFERENCE -->
 <div id="conference" style="display:none;">
   <div class="card">
-    <div class="header">3 Nov 2026 • Conference</div>
+    <div class="header">27 Oct 2026 • Conference</div>
 
     <div class="topic-title">Topics Covered</div>
-    <p>Talks, Live Demos, Networking</p>
+    <p>Technical Security Sessions, Practitioner-Led Sessions, Hands-On Workshops, Community Networking</p>
 
     <div class="meta">
-      <div class="meta-item"><i data-lucide="map-pin"></i> Bangalore | Room 450</div>
+      <div class="meta-item"><i data-lucide="map-pin"></i> Hilton EGL Bangalore</div>
       <div class="meta-item"><i data-lucide="clock"></i> 9:00 AM – 5:00 PM</div>
       <div class="meta-item"><i data-lucide="user"></i> Guest Speakers</div>
+      <div class="meta-item"><i data-lucide="tea"></i> ☕ Scheduled breaks: Tea breaks and lunch included</div>
     </div>
   </div>
 </div>
@@ -221,16 +222,16 @@ h1{
 
 /* ========================= COURSE TITLES */
 const courseNames = {
-crtp:"Active Directory Attacks for Red and Blue Teams - Beginner's Edition",
+cairtp:"AI Red Team Tactics for Copilot and Enterprise AI",
 crte:"Active Directory Attacks for Red and Blue Teams - Advanced Edition",
-cetp:"Evasion Techniques for Red Teams",
+cetp:"Advanced Windows Tradecraft - Evasion Techniques for Red Teams",
 cartp:"Cloud Red Team Tactics for Attacking and Defending Azure - Beginner's Edition",
 carte:"Cloud Red Team Tactics for Attacking and Defending Azure - Advanced Edition"
 };
 
 /* ========================= FIXED ROOM PER COURSE */
 const roomMap = {
-crtp:"303",
+cairtp:"303",
 crte:"305",
 cetp:"402",
 cartp:"410",
@@ -239,10 +240,10 @@ carte:"415"
 
 /* ========================= DATA */
 const data = {
-crtp:[
-"Enumeration, Offensive PowerShell and .NET Tradecraft",
-"Lateral Movement, Domain Privilege Escalation and Persistence",
-"Domain Persistence, Dominance & Enterprise Admin Escalation"
+cairtp:[
+"Introduction to AI and AI Red Teaming",
+"Exploring authentication flows and managed identities for Copilot agents",
+"Privilege escalation via unauthorized tool invocation and Model Protocol (MCP) manipulation"
 ],
 crte:[
 "AD Enumeration & Local Privilege Escalation",
@@ -266,7 +267,7 @@ carte:[
 ]
 };
 
-let currentCourse="crtp";
+let currentCourse="cairtp";
 let currentDay=0;
 
 /* ========================= */
@@ -276,7 +277,7 @@ const topic = data[currentCourse][currentDay];
 const courseTitle = courseNames[currentCourse];
 const room = roomMap[currentCourse];
 
-const dates = ["31 Oct 2026","01 Nov 2026","02 Nov 2026"];
+const dates = ["24 Oct 2026","25 Oct 2026","26 Oct 2026"];
 
 document.getElementById("timeline").innerHTML = `
 <div class="timeline">
@@ -296,9 +297,9 @@ ${dates[currentDay]} • Day ${currentDay + 1} Training
 <p>${topic}</p>
 
 <div class="meta">
-  <div class="meta-item"><i data-lucide="map-pin"></i> Bangalore | Room ${room}</div>
+  <div class="meta-item"><i data-lucide="map-pin"></i> Bangalore |</div>
   <div class="meta-item"><i data-lucide="clock"></i> 9:00 AM – 5:00 PM</div>
-  <div class="meta-item"><i data-lucide="user"></i> Rahul Sharma</div>
+  
 </div>
 
 <div class="breaks">
