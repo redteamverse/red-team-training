@@ -110,6 +110,8 @@ padding:90px 0;
 
 }
 
+   
+    
 h1{
 
 font-size:clamp(2.8rem,5vw,4rem);
@@ -152,6 +154,7 @@ font-weight:700;
 p{
 
 color:var(--color-body);
+    
 
 }
 
@@ -920,7 +923,7 @@ gap:36px;
 
 padding-top:90px;
 
-padding-bottom:70px;
+
 
 }
 
@@ -5964,7 +5967,1212 @@ font-size:24px;
 }    
     
     
-  
+/* ==========================================
+TRUSTED BY PROFESSIONALS
+========================================== */
+
+.trusted-section{
+
+padding:20px 0;
+
+background:#FFFFFF;
+
+overflow:hidden;
+
+}
+
+.trusted-head{
+
+text-align:center;
+
+max-width:760px;
+
+margin:auto;
+
+margin-bottom:50px;
+
+}
+
+.trusted-label{
+
+display:inline-flex;
+
+padding:
+
+8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:18px;
+
+}
+
+.trusted-head h2{
+
+font-size:42px;
+
+font-weight:800;
+
+line-height:1.15;
+
+color:#111827;
+
+margin-bottom:18px;
+
+}
+
+.trusted-head p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+/* SLIDER */
+
+.trusted-slider{
+
+position:relative;
+
+overflow:hidden;
+
+mask-image:
+linear-gradient(
+to right,
+transparent,
+black 10%,
+black 90%,
+transparent
+);
+
+-webkit-mask-image:
+linear-gradient(
+to right,
+transparent,
+black 10%,
+black 90%,
+transparent
+);
+
+}
+
+.trusted-track{
+
+display:flex;
+
+align-items:center;
+
+gap:70px;
+
+width:max-content;
+
+animation:
+trustedScroll 30s linear infinite;
+
+}
+
+.trusted-logo{
+
+flex-shrink:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:20px;
+
+opacity:.75;
+
+transition:.25s;
+
+}
+
+.trusted-logo:hover{
+
+opacity:1;
+
+transform:scale(1.05);
+
+}
+
+.trusted-logo img{
+
+height:28px;
+
+width:auto;
+
+object-fit:contain;
+
+filter:
+
+grayscale(100%);
+
+transition:.25s;
+
+}
+
+.trusted-logo:hover img{
+
+filter:none;
+
+}
+
+/* ANIMATION */
+
+@keyframes trustedScroll{
+
+from{
+
+transform:
+translateX(0);
+
+}
+
+to{
+
+transform:
+translateX(-50%);
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.trusted-section{
+
+padding:20px 0;
+
+}
+
+.trusted-head h2{
+
+font-size:28px;
+
+}
+
+.trusted-head p{
+
+font-size:16px;
+
+}
+
+.trusted-track{
+
+gap:40px;
+
+}
+
+.trusted-logo img{
+
+height:20px;
+
+}
+
+}  
+    
+.hero{
+    padding:40px 0;
+}  
+    
+/* ==========================================
+INCLUDED WITH THIS TRAINING
+========================================== */
+
+.training-included-section{
+
+padding:100px 0;
+
+background:#F9FAFB;
+
+}
+
+.training-included-head{
+
+text-align:center;
+
+max-width:760px;
+
+margin:auto;
+
+margin-bottom:50px;
+
+}
+
+.training-included-label{
+
+display:inline-flex;
+
+padding:
+8px 16px;
+
+border-radius:999px;
+
+background:
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:18px;
+
+}
+
+.training-included-head h2{
+
+font-size:42px;
+
+font-weight:800;
+
+line-height:1.15;
+
+color:#111827;
+
+margin-bottom:18px;
+
+}
+
+.training-included-head p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+/* GRID */
+
+.training-benefits-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:22px;
+
+margin-bottom:40px;
+
+}
+
+/* CARD */
+
+.training-benefit-card{
+
+background:#FFFFFF;
+
+border:
+1px solid #E5E7EB;
+
+border-radius:24px;
+
+padding:24px;
+
+transition:.25s;
+
+}
+
+.training-benefit-card:hover{
+
+transform:
+translateY(-5px);
+
+border-color:#B91C1C;
+
+box-shadow:
+0 14px 30px rgba(185,28,28,.08);
+
+}
+
+/* TOP */
+
+.training-benefit-top{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+margin-bottom:20px;
+
+}
+
+.training-benefit-icon{
+
+width:52px;
+
+height:52px;
+
+border-radius:16px;
+
+background:
+rgba(185,28,28,.08);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#B91C1C;
+
+flex-shrink:0;
+
+}
+
+.training-benefit-icon svg{
+
+width:24px;
+
+height:24px;
+
+}
+
+.training-benefit-top h3{
+
+font-size:18px;
+
+font-weight:700;
+
+line-height:1.4;
+
+color:#111827;
+
+}
+
+/* DESCRIPTION */
+
+.training-benefit-point{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:10px;
+
+font-size:15px;
+
+line-height:1.7;
+
+color:#4B5563;
+
+}
+
+.training-benefit-point svg{
+
+width:16px;
+
+height:16px;
+
+color:#10B981;
+
+flex-shrink:0;
+
+margin-top:4px;
+
+}
+
+/* NOTE */
+
+.training-included-note{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+padding:18px 24px;
+
+border-radius:18px;
+
+background:#FFFFFF;
+
+border:
+1px solid #E5E7EB;
+
+max-width:950px;
+
+margin:auto;
+
+text-align:center;
+
+font-size:15px;
+
+line-height:1.7;
+
+color:#6B7280;
+
+}
+
+.training-included-note svg{
+
+width:18px;
+
+height:18px;
+
+color:#1E3A8A;
+
+flex-shrink:0;
+
+}
+
+/* TABLET */
+
+@media(max-width:992px){
+
+.training-benefits-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.training-included-head h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.training-included-section{
+
+padding:70px 0;
+
+}
+
+.training-included-head{
+
+margin-bottom:40px;
+
+}
+
+.training-included-head h2{
+
+font-size:28px;
+
+}
+
+.training-included-head p{
+
+font-size:16px;
+
+}
+
+.training-benefits-grid{
+
+grid-template-columns:1fr;
+
+gap:16px;
+
+}
+
+.training-benefit-card{
+
+padding:20px;
+
+}
+
+.training-benefit-top{
+
+margin-bottom:14px;
+
+}
+
+.training-benefit-icon{
+
+width:46px;
+
+height:46px;
+
+}
+
+.training-benefit-top h3{
+
+font-size:17px;
+
+}
+
+.training-benefit-point{
+
+font-size:14px;
+
+}
+
+.training-included-note{
+
+padding:16px;
+
+flex-direction:column;
+
+font-size:14px;
+
+}
+
+}   
+.wheel-layout{
+
+display:grid;
+
+grid-template-columns:450px 1fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+.training-wheel{
+
+width:420px;
+height:420px;
+
+position:relative;
+
+margin:auto;
+
+}
+
+.wheel-center{
+
+position:absolute;
+
+left:50%;
+top:50%;
+
+transform:translate(-50%,-50%);
+
+width:160px;
+height:160px;
+
+border-radius:50%;
+
+background:#B91C1C;
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+font-weight:800;
+
+z-index:10;
+
+}
+
+.wheel-node{
+
+position:absolute;
+
+width:110px;
+height:110px;
+
+border-radius:50%;
+
+border:2px solid #E5E7EB;
+
+background:#fff;
+
+cursor:pointer;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.wheel-node.active{
+
+border-color:#B91C1C;
+
+box-shadow:0 10px 30px rgba(185,28,28,.15);
+
+}
+
+.wheel-node:nth-child(2){
+top:-10px;
+left:155px;
+}
+
+.wheel-node:nth-child(3){
+top:70px;
+right:-10px;
+}
+
+.wheel-node:nth-child(4){
+bottom:70px;
+right:-10px;
+}
+
+.wheel-node:nth-child(5){
+bottom:-10px;
+left:155px;
+}
+
+.wheel-node:nth-child(6){
+bottom:70px;
+left:-10px;
+}
+
+.wheel-node:nth-child(7){
+top:70px;
+left:-10px;
+}
+
+.wheel-content-panel{
+
+background:#fff;
+
+border:1px solid #E5E7EB;
+
+border-radius:30px;
+
+padding:50px;
+
+min-height:300px;
+
+}
+
+.wheel-content{
+
+display:none;
+
+}
+
+.wheel-content.active{
+
+display:block;
+
+animation:fadeIn .3s ease;
+
+}
+
+.wheel-content h3{
+
+font-size:32px;
+
+margin-bottom:20px;
+
+}
+
+.wheel-content p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+ma    
+
+}
+
+.wheel-mobile{
+
+display:none;
+
+}
+
+@media(max-width:768px){
+
+.wheel-layout{
+
+display:none;
+
+}
+
+.wheel-mobile{
+
+display:block;
+
+}
+
+.wheel-mobile-item{
+
+border:1px solid #E5E7EB;
+
+border-radius:18px;
+
+margin-bottom:12px;
+
+overflow:hidden;
+
+}
+
+.wheel-mobile-item button{
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+background:#fff;
+
+font-weight:700;
+
+display:flex;
+
+gap:12px;
+
+align-items:center;
+
+text-align:left;
+
+cursor:pointer;
+
+}
+
+.wheel-mobile-item button span{
+
+width:34px;
+height:34px;
+
+border-radius:50%;
+
+background:#B91C1C;
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:12px;
+
+}
+
+.wheel-mobile-content{
+
+display:none;
+
+padding:18px;
+
+border-top:1px solid #E5E7EB;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+.wheel-mobile-item.active .wheel-mobile-content{
+
+display:block;
+
+}
+
+}    
+    
+    .wheel-head p{
+        padding-bottom: 40px;
+    }  
+    
+.bootcamp-explorer-section{
+
+padding:100px 0;
+
+background:#F9FAFB;
+
+}
+
+.bootcamp-explorer-head{
+
+max-width:850px;
+
+margin:auto;
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.bootcamp-label{
+
+display:inline-flex;
+
+padding:8px 16px;
+
+border-radius:999px;
+
+background:rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:18px;
+
+}
+
+.bootcamp-explorer-head h2{
+
+font-size:42px;
+
+font-weight:800;
+
+margin-bottom:20px;
+
+}
+
+.bootcamp-explorer-head p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+}
+
+/* LAYOUT */
+
+.bootcamp-layout{
+
+display:grid;
+
+grid-template-columns:340px 1fr;
+
+gap:30px;
+
+margin-bottom:50px;
+
+}
+
+/* MENU */
+
+.bootcamp-menu{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.bootcamp-tab{
+
+padding:24px;
+
+border:1px solid #E5E7EB;
+
+background:#fff;
+
+border-radius:24px;
+
+cursor:pointer;
+
+display:flex;
+
+gap:16px;
+
+text-align:left;
+
+transition:.3s;
+
+}
+
+.bootcamp-tab.active{
+
+border-color:#B91C1C;
+
+box-shadow:0 10px 30px rgba(185,28,28,.08);
+
+}
+
+.bootcamp-number{
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+background:#B91C1C;
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:800;
+
+flex-shrink:0;
+
+}
+
+.bootcamp-tab h3{
+
+font-size:22px;
+
+margin-bottom:6px;
+
+}
+
+.bootcamp-tab p{
+
+font-size:14px;
+
+color:#6B7280;
+
+}
+
+/* PANEL */
+
+.bootcamp-panel{
+
+background:#fff;
+
+border:1px solid #E5E7EB;
+
+border-radius:30px;
+
+padding:40px;
+
+}
+
+.bootcamp-content{
+
+display:none;
+
+}
+
+.bootcamp-content.active{
+
+display:block;
+
+}
+
+.bootcamp-content h3{
+
+font-size:34px;
+
+margin-bottom:18px;
+
+}
+
+.bootcamp-content p{
+
+line-height:1.9;
+
+margin-bottom:24px;
+
+color:#4B5563;
+
+}
+
+.bootcamp-content ul{
+
+margin-bottom:30px;
+
+padding-left:20px;
+
+}
+
+.bootcamp-content li{
+
+margin-bottom:12px;
+
+}
+
+.bootcamp-btn{
+
+display:inline-flex;
+
+padding:14px 24px;
+
+border-radius:14px;
+
+background:#B91C1C;
+
+color:#fff;
+
+font-weight:700;
+
+text-decoration:none;
+
+}
+
+/* TRUST */
+
+.bootcamp-trust{
+
+background:#fff;
+
+padding:40px;
+
+border-radius:30px;
+
+margin-bottom:40px;
+
+border:1px solid #E5E7EB;
+
+}
+
+.bootcamp-trust h3{
+
+font-size:30px;
+
+margin-bottom:24px;
+
+}
+
+.bootcamp-trust-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:16px;
+
+}
+
+.bootcamp-trust-grid div{
+
+padding:16px;
+
+background:#F9FAFB;
+
+border-radius:14px;
+
+}
+
+/* CTA */
+
+.bootcamp-cta{
+
+text-align:center;
+
+padding:50px;
+
+border-radius:30px;
+
+background:linear-gradient(
+135deg,
+#2B2B50,
+#1E3A8A
+);
+
+}
+
+.bootcamp-cta h3{
+
+font-size:34px;
+
+color:#fff;
+
+margin-bottom:16px;
+
+}
+
+.bootcamp-cta p{
+
+max-width:760px;
+
+margin:auto;
+
+color:#CBD5E1;
+
+line-height:1.9;
+
+margin-bottom:26px;
+
+}
+
+.bootcamp-final-btn{
+
+display:inline-flex;
+
+padding:16px 28px;
+
+border-radius:14px;
+
+background:#fff;
+
+color:#111827;
+
+font-weight:800;
+
+text-decoration:none;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.bootcamp-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.bootcamp-trust-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.bootcamp-panel{
+
+padding:24px;
+
+}
+
+.bootcamp-content h3{
+
+font-size:26px;
+
+}
+
+}    
 </style>
 
 </head>
@@ -6132,6 +7340,65 @@ Built From Real Red Team Tradecraft
 </div>
 
 </section>
+<section class="trusted-section">
+
+<div class="container">
+
+<div class="trusted-slider">
+
+<div class="trusted-track">
+
+<!-- SET 1 -->
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_a8f72ea2af084571b3646b13855f3ba0~mv2.png/v1/fill/w_162,h_29,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sony.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_f0d7f2f030b54a7ead4b4ba7ceba80c5~mv2.png/v1/fill/w_111,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ibm.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_d3209451b43a496da4ca26f313bf7bff~mv2.png/v1/fill/w_178,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sis.png">
+</div>
+
+<!-- DUPLICATE FOR INFINITE LOOP -->
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_a8f72ea2af084571b3646b13855f3ba0~mv2.png/v1/fill/w_162,h_29,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sony.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_f0d7f2f030b54a7ead4b4ba7ceba80c5~mv2.png/v1/fill/w_111,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ibm.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_d3209451b43a496da4ca26f313bf7bff~mv2.png/v1/fill/w_178,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sis.png">
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 <section class="ad-security-teams-section">
 
 <div class="container">
@@ -6270,6 +7537,7 @@ Support private cohorts, team delivery, and structured learning paths
 </div>
 
 </section>
+    
 <section class="why-ad">
 
 <div class="container">
@@ -6388,6 +7656,333 @@ Understand how built-in Windows capabilities are used during authorized assessme
 </p>
 
 </article>
+
+</div>
+
+</div>
+
+</section>
+<section class="training-wheel-section">
+
+<div class="container">
+
+<div class="wheel-head">
+
+<span class="wheel-label">
+
+HOW WE BUILD OUR TRAINING
+
+</span>
+
+<h2>
+
+From Research to Enterprise-Ready Training
+
+</h2>
+
+<p>
+
+Every module, lab, and exercise follows a structured development process designed around real-world enterprise security challenges.
+
+</p>
+
+</div>
+
+<!-- DESKTOP -->
+
+<div class="wheel-layout">
+
+<!-- LEFT -->
+
+<div class="training-wheel">
+
+<div class="wheel-center">
+
+<div class="wheel-center">
+
+From Research to Training       
+
+</div>
+
+</div>
+
+<button class="wheel-node active"
+onclick="showWheelContent(1,this)">
+
+<span>01</span>
+
+Research
+
+</button>
+
+<button class="wheel-node"
+onclick="showWheelContent(2,this)">
+
+<span>02</span>
+
+Engagements
+
+</button>
+
+<button class="wheel-node"
+onclick="showWheelContent(3,this)">
+
+<span>03</span>
+
+Labs
+
+</button>
+
+<button class="wheel-node"
+onclick="showWheelContent(4,this)">
+
+<span>04</span>
+
+Validation
+
+</button>
+
+<button class="wheel-node"
+onclick="showWheelContent(5,this)">
+
+<span>05</span>
+
+Updates
+
+</button>
+
+<button class="wheel-node"
+onclick="showWheelContent(6,this)">
+
+<span>06</span>
+
+Feedback
+
+</button>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="wheel-content-panel">
+
+<div class="wheel-content active"
+id="wheel-content-1">
+
+<h3>
+
+Research-Driven Content
+
+</h3>
+
+<p>
+
+Training content is built from ongoing security research, emerging attack techniques, detection bypasses, and enterprise security challenges across Active Directory, Azure, cloud security, and identity platforms.
+
+</p>
+
+</div>
+
+<div class="wheel-content"
+id="wheel-content-2">
+
+<h3>
+
+Built from Enterprise Engagements
+
+</h3>
+
+<p>
+
+Lessons learned from Red Team operations, penetration tests, cloud security assessments, and adversary simulations help shape the techniques and scenarios covered in the training.
+
+</p>
+
+</div>
+
+<div class="wheel-content"
+id="wheel-content-3">
+
+<h3>
+
+Enterprise Lab Design
+
+</h3>
+
+<p>
+
+Labs are built to simulate realistic enterprise environments with modern operating systems, identity platforms, trust relationships, and production-like configurations.
+
+</p>
+
+</div>
+
+<div class="wheel-content"
+id="wheel-content-4">
+
+<h3>
+
+Validated Attack Techniques
+
+</h3>
+
+<p>
+
+Every attack path, privilege escalation technique, detection bypass, and security workflow is tested and validated before becoming part of the course.
+
+</p>
+
+</div>
+
+<div class="wheel-content"
+id="wheel-content-5">
+
+<h3>
+
+Continuously Updated
+
+</h3>
+
+<p>
+
+Training content and labs are regularly updated to reflect changes in enterprise technologies, cloud platforms, operating systems, and attack methodologies.
+
+</p>
+
+</div>
+
+<div class="wheel-content"
+id="wheel-content-6">
+
+<h3>
+
+Refined Through Practitioner Feedback
+
+</h3>
+
+<p>
+
+Feedback from enterprise teams, certification candidates, and security professionals continuously improves the learning experience.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MOBILE ACCORDION -->
+
+<div class="wheel-mobile">
+
+<div class="wheel-mobile-item">
+
+<button onclick="toggleWheelMobile(this)">
+
+<span>01</span>
+
+Research-Driven Content
+
+</button>
+
+<div class="wheel-mobile-content">
+
+Training content is built from ongoing security research, emerging attack techniques, detection bypasses, and enterprise security challenges.
+
+</div>
+
+</div>
+
+<div class="wheel-mobile-item">
+
+<button onclick="toggleWheelMobile(this)">
+
+<span>02</span>
+
+Built from Enterprise Engagements
+
+</button>
+
+<div class="wheel-mobile-content">
+
+Lessons learned from Red Team operations, penetration tests, and adversary simulations shape the training.
+
+</div>
+
+</div>
+
+<div class="wheel-mobile-item">
+
+<button onclick="toggleWheelMobile(this)">
+
+<span>03</span>
+
+Enterprise Lab Design
+
+</button>
+
+<div class="wheel-mobile-content">
+
+Labs simulate realistic enterprise environments with modern identity and security technologies.
+
+</div>
+
+</div>
+
+<div class="wheel-mobile-item">
+
+<button onclick="toggleWheelMobile(this)">
+
+<span>04</span>
+
+Validated Attack Techniques
+
+</button>
+
+<div class="wheel-mobile-content">
+
+Every attack path and workflow is validated before inclusion in training.
+
+</div>
+
+</div>
+
+<div class="wheel-mobile-item">
+
+<button onclick="toggleWheelMobile(this)">
+
+<span>05</span>
+
+Continuously Updated
+
+</button>
+
+<div class="wheel-mobile-content">
+
+Content and labs evolve alongside modern enterprise technologies.
+
+</div>
+
+</div>
+
+<div class="wheel-mobile-item">
+
+<button onclick="toggleWheelMobile(this)">
+
+<span>06</span>
+
+Practitioner Feedback
+
+</button>
+
+<div class="wheel-mobile-content">
+
+Participant feedback helps improve the training experience over time.
+
+</div>
+
+</div>
 
 </div>
 
@@ -7360,6 +8955,323 @@ Detection visibility concepts
 The methodology helps teams connect offensive technique, defensive evidence, and remediation decisions instead of treating AD security as isolated commands or tools.
 
 </p>
+
+</div>
+
+</div>
+
+</section>
+<section class="training-included-section">
+
+<div class="container">
+
+<div class="training-included-head">
+
+<span class="training-included-label">
+
+TRAINING BENEFITS
+
+</span>
+
+<h2>
+
+Included With This Training
+
+</h2>
+
+<p>
+
+Access the resources, labs, and support needed to continue learning beyond the classroom and build practical Active Directory security skills.
+
+</p>
+
+</div>
+
+<div class="training-benefits-grid">
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="book-open"></i>
+
+</div>
+
+<h3>
+
+Course Material
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Structured training content for guided learning.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="server"></i>
+
+</div>
+
+<h3>
+
+Lab Access
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Practice techniques in a dedicated AD lab environment.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="play-circle"></i>
+
+</div>
+
+<h3>
+
+Recorded Sessions
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Review lessons and demonstrations after training.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="file-text"></i>
+
+</div>
+
+<h3>
+
+Lab Manual
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Step-by-step guides for exercises and lab tasks.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="target"></i>
+
+</div>
+
+<h3>
+
+Learning Objectives
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Clear outcomes to measure skill progression.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="users"></i>
+
+</div>
+
+<h3>
+
+Community Access
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Engage with security professionals and peers.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="award"></i>
+
+</div>
+
+<h3>
+
+Certification Track
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Prepare for structured certification-based learning paths.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="refresh-cw"></i>
+
+</div>
+
+<h3>
+
+Future Updates
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Stay aligned with evolving training content and updates.
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="training-included-note">
+
+<i data-lucide="info"></i>
+
+<span>
+
+Availability may vary based on the selected training format (Live Training, Bootcamp, On-Demand, or Certification Bundle).
+
+</span>
 
 </div>
 
@@ -8689,6 +10601,272 @@ Yes. Private training can be used for organizations that want a focused cohort f
 </div>
 
 </section>
+<section class="final">
+
+<div class="container">
+
+<h2>
+
+Ready to Train Your Team on Active Directory Security?
+
+</h2>
+
+<p>
+
+Train red teams, blue teams, SOC analysts, detection engineers, and infrastructure security teams through hands-on Active Directory attack-and-defense labs.
+
+
+
+
+</p>
+
+<div class="final-buttons">
+
+<button class="btn btn-primary" onclick="openTeamTrainingModal()">
+
+Request Team Training
+
+</button>
+
+<button class="btn btn-secondary">
+
+Download Team Syllabus
+
+</button>
+
+</div>
+
+</div>
+
+</section>    
+<section class="bootcamp-explorer-section">
+
+<div class="container">
+
+<div class="bootcamp-explorer-head">
+
+<span class="bootcamp-label">
+
+START WITH A BOOTCAMP
+
+</span>
+
+<h2>
+
+Not Ready for a Full Training Yet?
+
+</h2>
+
+<p>
+
+Want to experience our training methodology, enterprise labs, and instructor-led learning before committing security team training program?
+
+</p>
+
+<p>
+
+Our hands-on bootcamps provide an opportunity to explore how we teach real-world attack techniques, design enterprise lab environments, and structure practical security training.
+
+</p>
+
+</div>
+
+<div class="bootcamp-layout">
+
+<!-- LEFT MENU -->
+
+<div class="bootcamp-menu">
+
+<button
+class="bootcamp-tab active"
+onclick="showBootcamp('crtp',this)">
+
+<span class="bootcamp-number">
+
+01
+
+</span>
+
+<div>
+
+<h3>CRTP Bootcamp</h3>
+
+<p>
+
+Active Directory Foundations
+
+</p>
+
+</div>
+
+</button>
+
+<button
+class="bootcamp-tab"
+onclick="showBootcamp('crte',this)">
+
+<span class="bootcamp-number">
+
+02
+
+</span>
+
+<div>
+
+<h3>CRTE Bootcamp</h3>
+
+<p>
+
+Enterprise Red Team Operations
+
+</p>
+
+</div>
+
+</button>
+
+</div>
+
+<!-- RIGHT PANEL -->
+
+<div class="bootcamp-panel">
+
+<div
+id="bootcamp-crtp"
+class="bootcamp-content active">
+
+<h3>
+
+Learn Active Directory Attacks and Tradecraft
+
+</h3>
+
+<p>
+
+Explore Active Directory enumeration, privilege escalation, Kerberos attacks, trust abuse, and enterprise attack paths through guided instructor-led sessions and hands-on labs.
+
+</p>
+
+<ul>
+
+<li>Active Directory Enumeration</li>
+
+<li>Kerberos Attack Techniques</li>
+
+<li>Privilege Escalation Paths</li>
+
+<li>Trust Abuse Scenarios</li>
+
+<li>Hands-On Enterprise Labs</li>
+
+</ul>
+
+<a href="#crtp" class="bootcamp-btn">
+
+View CRTP Bootcamp
+
+</a>
+
+</div>
+
+<div
+id="bootcamp-crte"
+class="bootcamp-content">
+
+<h3>
+
+Advance Your Enterprise Red Team Skills
+
+</h3>
+
+<p>
+
+Learn advanced Active Directory attacks, OPSEC-focused tradecraft, detection evasion, cross-forest attacks, and modern enterprise attack techniques used in Red Team engagements.
+
+</p>
+
+<ul>
+
+<li>OPSEC Focused Tradecraft</li>
+
+<li>Detection Evasion</li>
+
+<li>Cross-Forest Attacks</li>
+
+<li>Advanced Persistence</li>
+
+<li>Enterprise Red Team Techniques</li>
+
+</ul>
+
+<a href="#crte" class="bootcamp-btn">
+
+View CRTE Bootcamp
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TRUST -->
+
+<div class="bootcamp-trust">
+
+<h3>
+
+Why Start with a Bootcamp?
+
+</h3>
+
+<div class="bootcamp-trust-grid">
+
+<div>✓ Experience our training methodology</div>
+
+<div>✓ Explore enterprise-grade lab environments</div>
+
+<div>✓ Learn directly from course authors and researchers</div>
+
+<div>✓ Understand the depth of our certification programs</div>
+
+<div>✓ Evaluate course quality before pursuing advanced training</div>
+
+<div>✓ Gain practical experience through guided exercises and labs</div>
+
+</div>
+
+</div>
+
+<!-- CTA -->
+
+<div class="bootcamp-cta">
+
+<h3>
+
+Experience the Altered Security Learning Approach
+
+</h3>
+
+<p>
+
+See how our training combines research, enterprise security experience, hands-on labs, and real-world attack scenarios before committing to a full training track.
+
+</p>
+
+<a href="#bootcamps"
+class="bootcamp-final-btn">
+
+Explore All Bootcamps
+
+</a>
+
+</div>
+
+</div>
+
+</section>    
 <main class="learning-journey-section alt">
 
 <div class="container">
@@ -8744,7 +10922,38 @@ Explore CRTP
 </a>
 
 </article>
+<article class="card cert-card">
 
+<div class="cert-icon">
+
+<i data-lucide="cloud"></i>
+
+</div>
+
+<h4>
+
+CRTE
+
+
+
+</h4>
+
+<p>
+
+Build enterprise red team methodology through practical attack scenarios and advanced lab-based learning.
+
+
+</p>
+
+<a href="#">
+
+Explore CRTE
+
+<i data-lucide="arrow-right"></i>
+
+</a>
+
+</article>
 
 <article class="card cert-card">
 
@@ -8779,38 +10988,7 @@ View Advanced AD Training
 </article>
 
 
-<article class="card cert-card">
 
-<div class="cert-icon">
-
-<i data-lucide="cloud"></i>
-
-</div>
-
-<h4>
-
-CRTE
-
-
-
-</h4>
-
-<p>
-
-Build enterprise red team methodology through practical attack scenarios and advanced lab-based learning.
-
-
-</p>
-
-<a href="#">
-
-Explore CRTE
-
-<i data-lucide="arrow-right"></i>
-
-</a>
-
-</article>
 
 
 <article class="card cert-card">
@@ -8845,41 +11023,7 @@ View Training
 </a>
 
 </article>
-<article class="card cert-card">
 
-<div class="cert-icon">
-
-<i data-lucide="shield-check"></i>
-
-</div>
-
-<h4>
-
-Azure Security Training
-
-
-
-
-
-</h4>
-
-<p>
-
-Extend identity security skills into Azure, hybrid identity, cloud attack paths, and defensive cloud security concepts.
-
-
-
-</p>
-
-<a href="#">
-
-View Azure Training
-
-<i data-lucide="arrow-right"></i>
-
-</a>
-
-</article>
  
 </div>
 
@@ -8936,44 +11080,7 @@ PowerShell Tradecraft
 
 </section>
 
-<section class="final">
 
-<div class="container">
-
-<h2>
-
-Ready to Train Your Team on Active Directory Security?
-
-</h2>
-
-<p>
-
-Train red teams, blue teams, SOC analysts, detection engineers, and infrastructure security teams through hands-on Active Directory attack-and-defense labs.
-
-
-
-
-</p>
-
-<div class="final-buttons">
-
-<button class="btn btn-primary" onclick="openTeamTrainingModal()">
-
-Request Team Training
-
-</button>
-
-<button class="btn btn-secondary">
-
-Download Team Syllabus
-
-</button>
-
-</div>
-
-</div>
-
-</section>
 
 </main>
 
@@ -9252,6 +11359,114 @@ answer.classList.toggle("active")
 
 })    
 </script>
+<script>
 
+const trustedTrack =
+document.querySelector(
+".trusted-track"
+);
+
+trustedTrack.addEventListener(
+"mouseenter",
+()=>{
+trustedTrack.style.animationPlayState =
+"paused";
+}
+);
+
+trustedTrack.addEventListener(
+"mouseleave",
+()=>{
+trustedTrack.style.animationPlayState =
+"running";
+}
+);
+
+</script>
+<script>
+function showWheelContent(id,button){
+
+document
+.querySelectorAll('.wheel-content')
+.forEach(el=>el.classList.remove('active'));
+
+document
+.querySelectorAll('.wheel-node')
+.forEach(el=>el.classList.remove('active'));
+
+document
+.getElementById(
+'wheel-content-'+id
+)
+.classList.add('active');
+
+button.classList.add('active');
+
+}
+
+function toggleWheelMobile(button){
+
+const item =
+button.parentElement;
+
+document
+.querySelectorAll(
+'.wheel-mobile-item'
+)
+.forEach(el=>{
+
+if(el !== item){
+
+el.classList.remove(
+'active'
+);
+
+}
+
+});
+
+item.classList.toggle(
+'active'
+);
+
+}
+    </script>    
+<script>
+    function showBootcamp(id,button){
+
+document
+.querySelectorAll('.bootcamp-content')
+.forEach(content=>{
+
+content.classList.remove(
+'active'
+);
+
+});
+
+document
+.querySelectorAll('.bootcamp-tab')
+.forEach(tab=>{
+
+tab.classList.remove(
+'active'
+);
+
+});
+
+document
+.getElementById(
+'bootcamp-'+id
+)
+.classList.add(
+'active'
+);
+
+button.classList.add(
+'active'
+);
+
+}
+    </script>    
 </body>
 </html>
