@@ -1692,9 +1692,9 @@ button{
     .hero-content h1,
     .hero-content h2 {
 
-        font-size: 32px;
+        font-size: 24px;
 
-        line-height: 1.15;
+        line-height: 1.02;
 
         margin-bottom: 18px;
 
@@ -1732,7 +1732,7 @@ button{
 
         padding: 0 22px;
 
-        font-size: 14px;
+        font-size: 12px;
 
     }
 
@@ -1746,6 +1746,12 @@ button{
 
 
 }
+    @media (max-width: 768px){
+    .m-hide{
+        display: none;
+    }   
+    }
+    
     </style>    
 </head>
 <body>
@@ -2344,7 +2350,7 @@ button{
                     </h1>
 
 
-                    <p class="hero-description">
+                    <p class="hero-description m-hide">
 
                         Learn offensive security through industry-leading Red Team labs,
                         enterprise attack simulations, and hands-on training focused on
@@ -2480,7 +2486,7 @@ button{
                     </h2>
 
 
-                    <p class="hero-description">
+                    <p class="hero-description m-hide">
 
 
                         Attend technical security sessions,
@@ -2607,7 +2613,7 @@ button{
                     </h2>
 
 
-                    <p class="hero-description">
+                    <p class="hero-description m-hide">
 
 
                         Join instructor-led bootcamps covering Active Directory,
