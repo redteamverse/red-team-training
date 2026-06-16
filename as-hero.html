@@ -1811,7 +1811,75 @@ button{
         order: 3;
     }
 
+/* Mega menu section title */
 
+.mega-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: .14em;
+
+    text-transform: uppercase;
+
+    color: #475569;
+
+}
+
+
+/* SVG icon */
+
+.mega-icon {
+
+    width: 16px;
+
+    height: 16px;
+
+    color: #2563eb;
+
+    flex-shrink: 0;
+
+}
+    
+.nav-arrow {
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    transition: transform .25s ease;
+}
+
+.nav-item:hover .nav-arrow {
+    transform: rotate(180deg);
+}   
+    
+.hero-image picture,
+.hero-image img {
+
+    width: 100%;
+    display: block;
+
+}
+
+.hero-image img {
+
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 24px;
+
+}    
     </style>    
 </head>
 <body>
@@ -1888,7 +1956,9 @@ button{
 
                             Red Team Labs
 
-                            <span class="nav-arrow">⌃</span>
+                             <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
 
                         </a>
 
@@ -1896,7 +1966,28 @@ button{
 
                             <div class="mega-column">
 
-                                <h4>Red Team Labs</h4>
+<h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <path d="M10 2v7l-5 8a3 3 0 0 0 2.6 5h8.8a3 3 0 0 0 2.6-5l-5-8V2"></path>
+
+        <path d="M8.5 13h7"></path>
+
+        <path d="M9.5 17h5"></path>
+
+    </svg>
+
+    RED TEAM LABS
+
+</h4>
 
                                <a href="#">Active Directory Lab</a>
                                <a href="#">Window Red Team Lab</a>
@@ -1923,7 +2014,9 @@ button{
 
                             Certifications
 
-                            <span class="nav-arrow">⌃</span>
+                            <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
 
                         </a>
 
@@ -1931,7 +2024,26 @@ button{
 
                             <div class="mega-column">
 
-                                <h4>Red Team Certifications</h4>
+                               <h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <path d="M12 3L5 6v5c0 5 3.5 9 7 10 3.5-1 7-5 7-10V6L12 3z"></path>
+
+        <path d="M9 12l2 2 4-4"></path>
+
+    </svg>
+
+    RED TEAM CERTIFICATIONS
+
+</h4>
 
                                 <a href="#">CRTP</a>
                                 <a href="#">CRTE</a>
@@ -1955,7 +2067,9 @@ button{
 
                             Bootcamps
 
-                            <span class="nav-arrow">⌃</span>
+                            <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
 
                         </a>
 
@@ -1963,7 +2077,33 @@ button{
 
                             <div class="mega-column">
 
-                                <h4>Red Team Bootcamps</h4>
+                          
+
+   <h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+
+        <path d="M8 3v4"></path>
+
+        <path d="M16 3v4"></path>
+
+        <path d="M3 10h18"></path>
+
+    </svg>
+
+    RED TEAM BOOTCAMPS
+
+</h4>
+
 
                                 <a href="#">Active Directory Bootcamp</a>
                                 <a href="#">Advance Active Directory Bootcamp</a>                               
@@ -1995,7 +2135,26 @@ button{
 
                             <div class="mega-column">
 
-                                <h4>Red Team Training</h4>
+                                <h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <path d="M2 8l10-5 10 5-10 5-10-5z"></path>
+
+        <path d="M6 10v5c0 2 3 4 6 4s6-2 6-4v-5"></path>
+
+    </svg>
+
+    RED TEAM TRAINING
+
+</h4>
                              
                                 <a href="#">Active Directory Training</a>
                                 <a href="#">Advance Active Directory Training</a>   
@@ -2019,7 +2178,9 @@ button{
 
         Resources
 
-        <span class="nav-arrow">⌃</span>
+        <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
 
     </a>
 
@@ -2029,9 +2190,30 @@ button{
 
         <div class="mega-column">
 
-            <h4>
-                Resources
-            </h4>
+        <h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <circle cx="11" cy="11" r="6"></circle>
+
+        <line x1="20" y1="20" x2="16.65" y2="16.65"></line>
+
+        <line x1="11" y1="8" x2="11" y2="14"></line>
+
+        <line x1="8" y1="11" x2="14" y2="11"></line>
+
+    </svg>
+
+    RESOURCES
+
+</h4>
 
             <a href="#">
                 Blog
@@ -2064,9 +2246,30 @@ button{
 
         <div class="mega-column">
 
-            <h4>
-                Events
-            </h4>
+           <h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <rect x="9" y="2" width="6" height="11" rx="3"></rect>
+
+        <path d="M5 10a7 7 0 0 0 14 0"></path>
+
+        <path d="M12 17v4"></path>
+
+        <path d="M8 21h8"></path>
+
+    </svg>
+
+    EVENTS
+
+</h4>
 
             <a href="#">
                 AltSecCON
@@ -2099,7 +2302,9 @@ button{
 
                             Company
 
-                            <span class="nav-arrow">⌃</span>
+                            <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
 
                         </a>
 
@@ -2107,7 +2312,32 @@ button{
 
                             <div class="mega-column">
 
-                                <h4>Company</h4>
+                                <h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <path d="M3 21h18"></path>
+
+        <path d="M5 21V7l7-4 7 4v14"></path>
+
+        <path d="M9 10h1"></path>
+        <path d="M9 14h1"></path>
+
+        <path d="M14 10h1"></path>
+        <path d="M14 14h1"></path>
+
+    </svg>
+
+    COMPANY
+
+</h4>
 
                                 <a href="#">About Us</a>                             
                                 <a href="#">Testimonials</a>
@@ -2201,7 +2431,9 @@ button{
 
             Red Team Labs
 
-            <span>⌃</span>
+            <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
 
         </button>
 
@@ -2226,7 +2458,9 @@ button{
 
        Certifications
 
-            <span>⌃</span>
+           <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
 
         </button>
 
@@ -2251,7 +2485,9 @@ button{
 
            Bootcamps
 
-            <span>⌃</span>
+            <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
 
         </button>
 
@@ -2276,7 +2512,9 @@ button{
 
             Training
 
-            <span>⌃</span>
+           <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
 
         </button>
 
@@ -2306,7 +2544,9 @@ button{
 
         Resources
 
-        <span>⌃</span>
+        <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
 
     </button>
 
@@ -2347,7 +2587,9 @@ button{
 
             Company
 
-            <span>⌃</span>
+            <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
 
         </button>
 
@@ -2505,14 +2747,22 @@ button{
 
                 <div class="hero-image">
 
+    <picture>
 
-                    <img 
-                        src="https://redteamverse.github.io/red-team-training/images/as_dashboard_3.png"
-                        alt="Red Team cyber range with Active Directory and Azure attack simulations"
-                        loading="eager">
+        <!-- Mobile Image -->
+        <source 
+            media="(max-width: 768px)"
+            srcset="https://redteamverse.github.io/red-team-training/images/mob-1.png">
 
+        <!-- Desktop Image -->
+        <img 
+            src="https://redteamverse.github.io/red-team-training/images/as_dashboard_3.png"
+            alt="Red Team cyber range with Active Directory and Azure attack simulations"
+            loading="eager">
 
-                </div>
+    </picture>
+
+</div>
 
 
             </article>
