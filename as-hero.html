@@ -1,0 +1,3442 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altered Security Header</title>
+<style>
+  
+  /* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    color:#111827;
+    background:#ffffff;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+button{
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+/* ==========================
+   VARIABLES
+========================== */
+
+:root{
+
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+
+    --text:#111827;
+    --muted:#64748b;
+
+    --border:#e5e7eb;
+
+    --white:#ffffff;
+
+    --radius:18px;
+
+    --shadow:
+    0 20px 60px rgba(0,0,0,.08);
+
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+    width:min(1280px, calc(100% - 40px));
+    margin:auto;
+}
+
+/* ==========================
+   ANNOUNCEMENT BAR
+========================== */
+
+.announcement-bar{
+
+    background:#07122d;
+    color:#fff;
+
+    min-height:44px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    padding:0 50px;
+}
+
+.announcement-slider{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.offer-nav{
+
+    color:#fff;
+    background:none;
+    border:none;
+    width:20px;
+
+    font-size:16px;
+    cursor:pointer;
+
+    opacity:.8;
+}
+
+.offer-nav:hover{
+    opacity:1;
+}
+
+#offerText{
+
+    font-size:14px;
+    font-weight:500;
+
+    white-space:nowrap;
+}
+
+.announcement-close{
+
+    position:absolute;
+    right:16px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#fff;
+    background:none;
+    border:none;
+
+    cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .announcement-bar{
+
+        padding:10px 40px 10px 12px;
+
+        font-size:12px;
+
+        line-height:1.4;
+    }
+
+    .announcement-content{
+
+        gap:8px;
+    }
+}  
+/* ==========================
+   HEADER
+========================== */
+
+.site-header{
+
+    position:sticky;
+    top:0;
+
+    background:#fff;
+
+    border-bottom:1px solid var(--border);
+
+    z-index:9999;
+}
+
+.header-inner{
+
+    height:82px;
+
+    display:grid;
+
+    grid-template-columns:
+    auto 1fr auto;
+
+    align-items:center;
+
+    gap:40px;
+}
+
+/* ==========================
+   LOGO
+========================== */
+
+.site-logo{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    flex-shrink:0;
+}
+
+.site-logo img{
+    width:48px;
+    height:auto;
+}
+
+.site-logo span{
+
+    font-size:18px;
+    font-weight:700;
+    color:var(--text);
+}
+
+/* ==========================
+   DESKTOP NAVIGATION
+========================== */
+
+.desktop-nav{
+    justify-self:center;
+}
+
+.nav-list{
+
+    display:flex;
+    align-items:center;
+
+    gap:20px;
+
+    list-style:none;
+}
+
+.nav-item{
+    position:relative;
+}
+
+.nav-item > a{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    font-size:15px;
+    font-weight:600;
+
+    color:var(--text);
+
+    height:82px;
+}
+
+.nav-item > a:hover{
+    color:var(--primary);
+}
+
+/* ==========================
+   ARROW
+========================== */
+
+.nav-arrow{
+
+        font-size: 16px;
+    margin-left: 6px;
+    opacity: .65;
+
+    transition:.3s ease;
+}
+
+.nav-item:hover .nav-arrow{
+
+    transform:rotate(180deg);
+     color: #2563eb;
+}
+
+/* ==========================
+   CTA
+========================== */
+
+.header-btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 22px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-radius:12px;
+
+    font-size:14px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.header-btn:hover{
+    background:var(--primary-dark);
+}
+
+/* ==========================
+   MEGA MENU
+========================== */
+
+.mega-menu{
+
+    position:absolute;
+
+    top:100%;
+    left:50%;
+    margin-top: 4px;
+    transform:
+    translateX(-50%)
+    translateY(20px);
+
+    width:900px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:30px;
+
+      box-shadow:
+    0 20px 45px rgba(2,6,23,.12);
+
+    display:grid;
+
+    gap:30px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s ease;
+}
+
+
+
+/* Small Menus */
+
+.nav-item .mega-menu{
+
+    width:320px;
+
+    grid-template-columns:1fr;
+}
+
+/* Hover */
+
+.nav-item:hover .mega-menu{
+
+    opacity:1;
+    visibility:visible;
+
+    transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+/* ==========================
+   MEGA COLUMN
+========================== */
+
+.mega-column h4{
+
+    font-size:13px;
+
+    color:var(--muted);
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    margin-bottom:16px;
+}
+
+.mega-column a {
+
+    display: flex;
+
+    align-items: center;
+
+     padding: 10px 14px;
+    border-radius: 10px;
+
+    margin-bottom: 8px;
+
+    border: 1px solid transparent;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    color: #0f172a;
+
+    font-weight: 500;
+
+    transition: all .25s ease;
+}
+
+.mega-training{
+
+    display:grid;
+    width: 420px;
+    grid-template-columns:
+    minmax(260px,1fr)
+    minmax(260px,1fr)
+    minmax(260px,1fr);
+
+    gap:40px;
+}
+    
+
+.mega-column a:hover {
+
+    background: #f1f5f9;
+
+    border-color: #cbd5e1;
+
+    color: #2563eb;
+
+    transform: translateX(4px);
+}
+
+
+
+/* ==========================
+   FEATURE CARD
+========================== */
+
+.mega-feature{
+
+    background:#f8fafc;
+
+    padding:24px;
+
+    border-radius:16px;
+}
+
+.mega-feature h3{
+
+    font-size:18px;
+
+    margin-bottom:10px;
+}
+
+.mega-feature p{
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+    margin-bottom:18px;
+}
+
+.feature-btn{
+
+    display:inline-flex;
+
+    padding:12px 16px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-radius:10px;
+
+    font-size:14px;
+    font-weight:600;
+}
+
+/* ==========================
+   MOBILE BUTTON
+========================== */
+
+.mobile-menu-btn{
+    display:none;
+}
+
+.mobile-actions{
+    display:none;
+}
+
+/* ==========================
+   MOBILE DRAWER
+========================== */
+
+.mobile-nav{
+
+    position:fixed;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    max-width:380px;
+
+    height:100vh;
+
+    background:#fff;
+
+    z-index:99999;
+
+    transition:.35s ease;
+}
+
+.mobile-nav.active{
+    left:0;
+}
+
+.mobile-nav-header{
+
+    height:80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+
+    padding:0 24px;
+
+    border-bottom:1px solid var(--border);
+}
+
+.mobile-close{
+
+    font-size:28px;
+}
+
+.mobile-nav-body{
+
+    padding:20px;
+}
+
+
+
+.mobile-cta{
+
+    margin-top:20px;
+
+    justify-content:center !important;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-radius:12px;
+
+    border:none !important;
+}
+
+.mobile-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:99998;
+}
+
+.mobile-overlay.active{
+
+    opacity:1;
+    visibility:visible;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width:1100px){
+
+    .desktop-nav,
+    .header-actions{
+
+        display:none;
+    }
+
+    .mobile-menu-btn{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:5px;
+    }
+
+    .mobile-menu-btn span{
+
+        width:22px;
+        height:2px;
+
+        background:#111827;
+    }
+
+    .mobile-actions{
+
+        display:flex;
+        align-items:center;
+        gap:12px;
+    }
+
+    .mobile-cart{
+
+        font-size:20px;
+        line-height:1;
+    }
+
+    .header-inner{
+
+        grid-template-columns:
+        40px 1fr 40px;
+    }
+
+    .site-logo{
+
+        justify-self:center;
+    }
+
+   
+}
+@media (max-width:1100px){
+
+    .site-logo{
+
+        display:flex;
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:2px;
+    }
+
+    .site-logo img{
+
+        width:36px;
+    }
+
+    .logo-name{
+
+        display:block;
+
+       font-size:10px;
+    font-weight:500;
+    letter-spacing:.02em;
+
+        color:#111827;
+
+        line-height:1;
+    }
+
+}
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:768px){
+
+    .container{
+
+        width:calc(100% - 32px);
+    }
+
+    .header-inner{
+
+        height:78px;
+    }
+
+    .site-logo img{
+
+        width:42px;
+    }
+    
+    
+}
+    
+/* ==========================
+   MOBILE ACCORDION MENU
+========================== */
+
+.mobile-nav-item {
+    border-bottom: none;
+    margin-bottom: 8px;
+}
+
+.mobile-submenu-toggle {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 16px 18px;
+
+    margin-bottom: 8px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #111827;
+
+    transition: all .25s ease;
+
+}
+
+
+.mobile-submenu-toggle:hover {
+
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+
+}
+
+.mobile-submenu-toggle span{
+
+    transition:.3s ease;
+
+    font-size:14px;
+}
+
+.mobile-submenu-toggle.active span{
+
+    transform:rotate(180deg);
+}
+
+.mobile-submenu{
+
+    display:none;
+
+    padding:0 0 12px 18px;
+}
+
+.mobile-submenu.active{
+
+    display:block;
+}
+
+/* ==========================
+   MOBILE SUBMENU CARD LINKS
+========================== */
+
+.mobile-submenu a {
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 12px 16px;
+
+    margin-bottom: 8px;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    border: 1px solid transparent;
+
+    color: #0f172a;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: all .25s ease;
+
+}
+
+
+/* Hover & Active */
+
+.mobile-submenu a:hover {
+
+    background: #f1f5f9;
+
+    border-color: #cbd5e1;
+
+    color: #2563eb;
+
+    transform: translateX(4px);
+
+}
+
+/* ==========================
+   MOBILE SINGLE LINK ITEM
+========================== */
+
+.mobile-link {
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    padding: 16px 18px;
+
+    margin-bottom: 8px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #111827;
+
+    transition: all .25s ease;
+
+}
+
+
+/* Hover Effect */
+
+.mobile-link:hover {
+
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+
+    color: #2563eb;
+
+    transform: translateX(4px);
+
+}   
+/* CTA */
+
+.mobile-cta{
+
+    display:flex !important;
+
+    justify-content:center !important;
+    align-items:center;
+
+    margin-top:24px;
+
+    padding:14px 20px;
+
+    background:#2563eb;
+
+    color:#fff !important;
+
+    border-radius:12px;
+
+    font-weight:700;
+}    
+    
+.mobile-nav-header{
+
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 20px;
+
+    border-bottom:1px solid #e5e7eb;
+}
+
+.mobile-drawer-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.mobile-drawer-logo img{
+
+    width:36px;
+    height:auto;
+}
+
+.mobile-drawer-logo span{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#111827;
+}
+
+.mobile-close{
+
+    font-size:28px;
+
+    color:#111827;
+}    
+   
+.mega-pill-link{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+    text-align: center;
+
+    margin-top:20px;
+
+    padding:20px 20px;
+
+    border:1px solid #dbeafe;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    border-radius:999px;  
+
+    transition:.3s;
+      height: 42px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.mega-pill-link:hover{
+
+    background:#2563eb;
+
+    color:#fff;
+}    
+    
+/* ==========================
+   DESKTOP CART
+========================== */
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+
+/* Cart */
+
+.header-cart{
+
+    position:relative;
+
+    width:44px;
+
+    height:44px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    font-size:22px;
+
+    color:#0f172a;
+
+    transition:all .25s ease;
+}
+
+
+.header-cart:hover{
+
+    background:#f1f5f9;
+
+    border-color:#cbd5e1;
+
+    transform:translateY(-2px);
+}
+
+
+/* Cart notification */
+
+.cart-count{
+
+    position:absolute;
+
+    top:-5px;
+
+    right:-5px;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}    
+    
+.mobile-cart {
+
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+
+.cart-count {
+
+    position: absolute;
+
+    top: -6px;
+    right: -6px;
+
+    width: 18px;
+    height: 18px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+    
+@media (max-width:1100px) {
+    .header-cart {
+        display: none;
+    }
+}    
+    
+@media (max-width:1100px) {
+
+    .desktop-nav,
+    .header-actions {
+        display: none !important;
+    }
+
+    .mobile-actions {
+        display: flex !important;
+        align-items: center;
+    }
+
+}    
+    
+.mobile-submenu-title {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #64748b;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+
+    margin: 16px 0 10px;
+
+    padding-left: 4px;
+
+}    
+    
+.mega-resources {
+
+    width: 600px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 40px;
+
+}    
+    
+/* ========================================
+   ALTERED SECURITY HERO SECTION
+======================================== */
+
+.hero-section {
+
+    background: #ffffff;
+
+    padding: 40px 0 70px;
+
+    overflow: hidden;
+
+}
+
+
+/* ========================================
+   HERO SLIDER WRAPPER
+======================================== */
+
+.hero-slider {
+
+    position: relative;
+
+    min-height: 700px;
+
+}
+
+
+/* ========================================
+   SINGLE SLIDE
+======================================== */
+
+.hero-slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: grid;
+
+    grid-template-columns: 46% 54%;
+
+    align-items: center;
+
+    gap: 60px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateX(30px);
+
+    transition:
+        opacity .45s ease,
+        transform .45s ease;
+
+}
+
+
+.hero-slide.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateX(0);
+    position: relative;
+
+    display: flex;
+
+    animation: heroFade .5s ease;
+
+}
+
+@keyframes heroFade {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+/* ========================================
+   LEFT CONTENT
+======================================== */
+
+.hero-content {
+
+    max-width: 560px;
+
+}
+
+
+.hero-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: .15em;
+
+    text-transform: uppercase;
+
+}
+
+
+.hero-content h1,
+.hero-content h2 {
+
+    color: #0f172a;
+
+    font-size: 54px;
+
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    margin-bottom: 24px;
+
+    letter-spacing: -.03em;
+
+}
+
+
+.hero-description {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #475569;
+
+    margin-bottom: 36px;
+
+}
+
+
+/* ========================================
+   CTA BUTTONS
+======================================== */
+
+
+.hero-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    margin-bottom: 45px;
+
+}
+
+
+.hero-btn-primary,
+.hero-btn-secondary {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 54px;
+
+    padding: 0 28px;
+
+    border-radius: 14px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition: .3s ease;
+
+}
+
+
+/* Primary */
+
+.hero-btn-primary {
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+}
+
+
+.hero-btn-primary:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Secondary */
+
+.hero-btn-secondary {
+
+    background: #ffffff;
+
+    border: 1px solid #dbe2ea;
+
+    color: #111827;
+
+}
+
+
+.hero-btn-secondary:hover {
+
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+
+}
+
+
+/* ========================================
+   HERO NAVIGATION
+======================================== */
+
+
+
+/* Arrows */
+
+.hero-arrows {
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+
+.hero-prev,
+.hero-next {
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    border: 1px solid #dbe2ea;
+
+    color: #0f172a;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+
+}
+
+
+.hero-prev:hover,
+.hero-next:hover {
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    border-color: #2563eb;
+
+}
+
+
+/* ========================================
+   RIGHT IMAGE
+======================================== */
+
+
+.hero-image {
+
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.hero-image img {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 24px;
+
+}
+
+
+/* ========================================
+   LARGE TABLETS
+======================================== */
+
+@media (max-width: 1200px) {
+
+
+    .hero-content h1,
+    .hero-content h2 {
+
+        font-size: 46px;
+
+    }
+
+
+    .hero-slide {
+
+        gap: 40px;
+
+    }
+
+
+}
+
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 992px) {
+
+
+    .hero-slider {
+
+        min-height: 620px;
+
+    }
+
+
+    .hero-content h1,
+    .hero-content h2 {
+
+        font-size: 38px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 16px;
+
+    }
+
+}
+
+
+
+
+.hero-navigation {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+}
+
+
+/* Dots */
+
+.hero-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+
+.hero-indicator {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+
+.hero-indicator.active {
+    background: #2563eb;
+    transform: scale(1.3);
+}
+
+
+/* Arrows */
+
+.hero-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+
+.hero-prev,
+.hero-next {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #dbe2ea;
+    color: #0f172a;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+
+.hero-prev:hover,
+.hero-next:hover {
+    background: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+}
+    
+    
+@media (max-width: 768px) {
+
+
+    .hero-section {
+
+        padding: 20px 0 50px;
+
+    }
+
+
+    /* Only active slide takes space */
+
+    .hero-slider {
+
+        min-height: auto;
+
+        position: relative;
+
+    }
+
+.hero-slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translateX(20px);
+
+    transition:
+        opacity .45s ease,
+        transform .45s ease;
+
+}
+
+
+.hero-slide.active {
+
+    position: relative;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateX(0);
+
+}
+
+    /* Image comes first */
+
+    .hero-image {
+
+        order: -1;
+
+        width: 100%;
+
+    }
+
+
+    .hero-image img {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: auto;
+
+        border-radius: 18px;
+
+    }
+
+
+    /* Content */
+
+    .hero-content {
+
+        max-width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .hero-eyebrow {
+
+        font-size: 12px;
+
+        letter-spacing: .12em;
+
+    }
+
+
+    .hero-content h1,
+    .hero-content h2 {
+
+        font-size: 24px;
+
+        line-height: 1.02;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    /* CTA Buttons */
+
+    .hero-buttons {
+
+        justify-content: center;
+
+        margin-bottom: 26px;
+
+        gap: 12px;
+
+    }
+
+
+    .hero-btn-primary,
+    .hero-btn-secondary {
+
+        min-height: 50px;
+
+        padding: 0 22px;
+
+        font-size: 12px;
+
+    }
+
+
+
+    .hero-arrows {
+
+        margin-top: 4px;
+
+    }
+
+
+}
+    @media (max-width: 768px){
+    .m-hide{
+        display: none;
+    }   
+    }
+    
+    
+
+
+    .hero-navigation {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 18px;
+
+        margin-top: 25px;
+
+    }
+
+
+    .hero-indicators {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        margin: 0;
+
+        order: 2;
+
+    }
+
+ .hero-prev,
+    .hero-next{
+
+        width:38px;
+        height:38px;
+        font-size:16px;
+
+    }
+    .hero-arrows {
+
+        display: contents;
+    }
+
+
+    .hero-prev {
+
+        order: 1;
+    }
+
+
+    .hero-next {
+
+        order: 3;
+    }
+
+/* Mega menu section title */
+
+.mega-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: .14em;
+
+    text-transform: uppercase;
+
+    color: #475569;
+
+}
+
+
+/* SVG icon */
+
+.mega-icon {
+
+    width: 16px;
+
+    height: 16px;
+
+    color: #2563eb;
+
+    flex-shrink: 0;
+
+}
+    
+.nav-arrow {
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    transition: transform .25s ease;
+}
+
+.nav-item:hover .nav-arrow {
+    transform: rotate(180deg);
+}   
+    
+.hero-image picture,
+.hero-image img {
+
+    width: 100%;
+    display: block;
+
+}
+
+.hero-image img {
+
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 24px;
+
+}    
+    </style>    
+</head>
+<body>
+<!-- TOP BAR -->
+<!-- Announcement Bar -->
+<div class="announcement-bar" id="announcementBar">
+
+    <div class="announcement-slider">
+
+        <button class="offer-nav prev-offer" id="prevOffer">
+             ‹
+        </button>
+
+        <span id="offerText">
+            🏆 Earn Industry Recognized Certifications
+        </span>
+
+        <button class="offer-nav next-offer" id="nextOffer">
+             ›
+        </button>
+
+    </div>
+
+    <button class="announcement-close" id="announcementClose">
+        ✕
+    </button>
+
+</div>
+<header class="site-header">
+
+    <div class="container">
+
+        <div class="header-inner">
+
+            <!-- Mobile Menu Button -->
+
+            <button class="mobile-menu-btn" aria-label="Open Menu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+            <!-- Logo -->
+
+            <a href="/" class="site-logo">
+
+    <img
+        src="https://static.wixstatic.com/media/52db83_dd3dab7bcbdf45609df5faa9c62d9a54~mv2.png/v1/fill/w_48,h_34,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/AS2.png"
+        alt="Altered Security">
+
+    <div class="logo-text">
+
+        <span class="logo-name">
+            Altered Security
+        </span>
+
+    </div>
+
+</a>
+
+            <!-- Desktop Navigation -->
+
+            <nav class="desktop-nav">
+
+                <ul class="nav-list">
+
+                    <!-- Labs -->
+
+                    <li class="nav-item has-mega">
+
+                        <a href="#">
+
+                            Red Team Labs
+
+                             <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
+
+                        </a>
+
+                        <div class="mega-menu">
+
+                            <div class="mega-column">
+
+<h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <path d="M10 2v7l-5 8a3 3 0 0 0 2.6 5h8.8a3 3 0 0 0 2.6-5l-5-8V2"></path>
+
+        <path d="M8.5 13h7"></path>
+
+        <path d="M9.5 17h5"></path>
+
+    </svg>
+
+    RED TEAM LABS
+
+</h4>
+
+                               <a href="#">Active Directory Lab</a>
+                               <a href="#">Window Red Team Lab</a>
+                               <a href="#">Evasion Lab</a>
+                               <a href="#">Azure Red Team Lab</a>                            
+                                <a href="#" class="mega-pill-link">
+                                    Explore All Labs →
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                    <!-- Training -->
+
+                 
+
+                    <!-- Certifications -->
+
+                    <li class="nav-item has-mega">
+
+                        <a href="#">
+
+                            Certifications
+
+                            <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
+
+                        </a>
+
+                        <div class="mega-menu">
+
+                            <div class="mega-column">
+
+                               <h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <path d="M12 3L5 6v5c0 5 3.5 9 7 10 3.5-1 7-5 7-10V6L12 3z"></path>
+
+        <path d="M9 12l2 2 4-4"></path>
+
+    </svg>
+
+    RED TEAM CERTIFICATIONS
+
+</h4>
+
+                                <a href="#">CRTP</a>
+                                <a href="#">CRTE</a>
+                                <a href="#">CETP</a>
+                                <a href="#">CARTP</a>                                
+                                <a href="#" class="mega-pill-link">
+                                    Explore All Certifications →
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </li>
+                    
+                    
+                    <!-- Bootcamps -->
+
+                    <li class="nav-item has-mega">
+
+                        <a href="#">
+
+                            Bootcamps
+
+                            <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
+
+                        </a>
+
+                        <div class="mega-menu">
+
+                            <div class="mega-column">
+
+                          
+
+   <h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+
+        <path d="M8 3v4"></path>
+
+        <path d="M16 3v4"></path>
+
+        <path d="M3 10h18"></path>
+
+    </svg>
+
+    RED TEAM BOOTCAMPS
+
+</h4>
+
+
+                                <a href="#">Active Directory Bootcamp</a>
+                                <a href="#">Advance Active Directory Bootcamp</a>                               
+                                <a href="#">Penetration Testing Bootcamp</a>
+                                <a href="#">Azure Red Team Bootcamp</a>                            
+                                 <a href="#" class="mega-pill-link">
+                                    Explore All Bootcamps →
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </li>
+                    
+                    
+                       <!-- Training -->
+
+                    <li class="nav-item has-mega">
+
+                        <a href="#">
+
+                            Training
+
+                            <span class="nav-arrow">⌃</span>
+
+                        </a>
+
+                        <div class="mega-menu">
+
+                            <div class="mega-column">
+
+                                <h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <path d="M2 8l10-5 10 5-10 5-10-5z"></path>
+
+        <path d="M6 10v5c0 2 3 4 6 4s6-2 6-4v-5"></path>
+
+    </svg>
+
+    RED TEAM TRAINING
+
+</h4>
+                             
+                                <a href="#">Active Directory Training</a>
+                                <a href="#">Advance Active Directory Training</a>   
+                                 <a href="#">Advanced Windows Tradecraft</a>  
+                                <a href="#">Azure Security Training</a>
+                                <a href="#" class="mega-pill-link">
+                                    Explore All Training →
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+
+                    <!-- Resources -->
+
+                   <li class="nav-item has-mega">
+
+    <a href="#">
+
+        Resources
+
+        <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
+
+    </a>
+
+    <div class="mega-menu mega-resources">
+
+        <!-- Resources Column -->
+
+        <div class="mega-column">
+
+        <h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <circle cx="11" cy="11" r="6"></circle>
+
+        <line x1="20" y1="20" x2="16.65" y2="16.65"></line>
+
+        <line x1="11" y1="8" x2="11" y2="14"></line>
+
+        <line x1="8" y1="11" x2="14" y2="11"></line>
+
+    </svg>
+
+    RESOURCES
+
+</h4>
+
+            <a href="#">
+                Blog
+            </a>
+
+            <a href="#">
+                Research
+            </a>
+
+            <a href="#">
+                Case Studies
+            </a>
+
+            <a href="#">
+                Videos
+            </a>
+
+            <a href="#">
+                Free Labs
+            </a>
+
+            <a href="#">
+                FAQ
+            </a>
+
+        </div>
+
+
+        <!-- Events Column -->
+
+        <div class="mega-column">
+
+           <h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <rect x="9" y="2" width="6" height="11" rx="3"></rect>
+
+        <path d="M5 10a7 7 0 0 0 14 0"></path>
+
+        <path d="M12 17v4"></path>
+
+        <path d="M8 21h8"></path>
+
+    </svg>
+
+    EVENTS
+
+</h4>
+
+            <a href="#">
+                AltSecCON
+            </a>
+
+            <a href="#">
+                Upcoming Events
+            </a>
+
+            <a href="#">
+                Workshops
+            </a>
+
+            <a href="#">
+                Webinars
+            </a>
+
+        </div>
+
+
+    </div>
+
+</li>
+
+                    <!-- Company -->
+
+                    <li class="nav-item has-mega">
+
+                        <a href="#">
+
+                            Company
+
+                            <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
+
+                        </a>
+
+                        <div class="mega-menu">
+
+                            <div class="mega-column">
+
+                                <h4 class="mega-title">
+
+    <svg class="mega-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <path d="M3 21h18"></path>
+
+        <path d="M5 21V7l7-4 7 4v14"></path>
+
+        <path d="M9 10h1"></path>
+        <path d="M9 14h1"></path>
+
+        <path d="M14 10h1"></path>
+        <path d="M14 14h1"></path>
+
+    </svg>
+
+    COMPANY
+
+</h4>
+
+                                <a href="#">About Us</a>                             
+                                <a href="#">Testimonials</a>
+                                <a href="#">News</a>
+                                <a href="#">Careers</a>
+                                  <a href="#">Contact</a>
+
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                 
+                </ul>
+
+            </nav>
+
+            <!-- Desktop CTA -->
+
+            <div class="header-actions">
+
+    <a href="#" class="header-cart" aria-label="Shopping Cart">
+
+        🛒
+
+        <span class="cart-count">
+            2
+        </span>
+
+    </a>
+
+    <a href="#" class="header-btn">
+        Get Certified
+    </a>
+
+</div>
+
+            <!-- Mobile Cart -->
+<div class="mobile-actions">
+
+    <button class="mobile-cart" aria-label="Cart">
+
+        🛒
+
+        <span class="cart-count">
+            2
+        </span>
+
+    </button>
+
+</div>
+
+        </div>
+
+    </div>
+
+</header>
+<!-- MOBILE DRAWER -->
+<aside class="mobile-nav">
+
+        <div class="mobile-nav-header">
+
+    <a href="/" class="mobile-drawer-logo">
+
+        <img
+            src="https://static.wixstatic.com/media/52db83_dd3dab7bcbdf45609df5faa9c62d9a54~mv2.png/v1/fill/w_48,h_34,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/AS2.png"
+            alt="Altered Security">
+
+        <span>
+            Altered Security
+        </span>
+
+    </a>
+
+    <button class="mobile-close">
+
+        ✕
+
+    </button>
+
+</div>
+
+    <div class="mobile-nav-body">
+
+    <!-- Labs -->
+
+    <div class="mobile-nav-item">
+
+        <button class="mobile-submenu-toggle">
+
+            Red Team Labs
+
+            <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
+
+        </button>
+
+        <div class="mobile-submenu">
+
+            <a href="#">Active Directory Lab</a>
+            <a href="#">Advanced Red Team Lab</a>
+            <a href="#">Evasion Lab</a>
+            <a href="#">Azure Lab</a>      
+            
+            <a href="#" class="mega-pill-link">
+                                    Explore All Labs →
+                                </a>
+        </div>
+
+    </div>
+ <!-- Certifications -->
+
+    <div class="mobile-nav-item">
+
+        <button class="mobile-submenu-toggle">
+
+       Certifications
+
+           <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
+
+        </button>
+
+        <div class="mobile-submenu">
+
+            <a href="#">CRTP</a>
+            <a href="#">CRTE</a>
+            <a href="#">CETP</a>
+            <a href="#">CARTP</a>
+            <a href="#" class="mega-pill-link">
+                                    Explore All Certifications →
+                                </a>
+
+        </div>
+
+    </div>
+        
+     <!-- Bootcamps -->
+    <div class="mobile-nav-item">
+
+        <button class="mobile-submenu-toggle">
+
+           Bootcamps
+
+            <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
+
+        </button>
+
+        <div class="mobile-submenu">
+
+                 <a href="#">Active Directory Bootcamp</a>             
+                <a href="#">Advanced Windows Tradecraft Bootcamp</a>
+                <a href="#">Penetration Testing Bootcamp</a>
+                <a href="#">Azure Red Team Bootcamp</a>    
+                <a href="#" class="mega-pill-link">
+                Explore All Bootcamps →
+                </a>
+
+        </div>
+
+    </div>        
+    <!-- Training -->
+
+    <div class="mobile-nav-item">
+
+        <button class="mobile-submenu-toggle">
+
+            Training
+
+           <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
+
+        </button>
+
+        <div class="mobile-submenu">
+           
+            <a href="#">Active Directory Training</a>
+            <a href="#">Advance Active Directory Training</a>
+            <a href="#">Advanced Windows Tradecraft</a>   
+             <a href="#">Azure Security Training</a>  
+            <a href="#" class="mega-pill-link">
+                                    Explore All Training →
+                                </a>
+        </div>
+        
+
+    </div>      
+   
+
+
+    <!-- Resources -->
+
+    <!-- Resources -->
+
+<div class="mobile-nav-item">
+
+    <button class="mobile-submenu-toggle">
+
+        Resources
+
+        <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
+
+    </button>
+
+    <div class="mobile-submenu">
+
+        <!-- Learning Resources -->
+        <div class="mobile-submenu-title">
+            Resources
+        </div>
+
+        <a href="#">Blog</a>
+        <a href="#">Research</a>
+        <a href="#">Case Studies</a>
+        <a href="#">Videos</a>
+        <a href="#">Free Labs</a>
+        <a href="#">FAQ</a>
+
+
+        <!-- Events -->
+        <div class="mobile-submenu-title">
+            Events
+        </div>
+
+        <a href="#">AltSecCON</a>
+        <a href="#">Upcoming Events</a>
+        <a href="#">Workshops</a>
+        <a href="#">Webinars</a>
+
+    </div>
+
+</div>
+
+    <!-- Company -->
+
+    <div class="mobile-nav-item">
+
+        <button class="mobile-submenu-toggle">
+
+            Company
+
+            <svg class="nav-arrow" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+    </svg>
+
+        </button>
+
+        <div class="mobile-submenu">
+
+            <a href="#">About Us</a>    
+            <a href="#">Event</a> 
+            <a href="#">Testimonials</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+        </div>
+
+    </div>
+
+    <a href="#" class="mobile-cta">
+
+        Get Certified
+
+    </a>
+
+</div>
+
+</aside>
+<div class="mobile-overlay"></div>
+ <!-- =========================================
+     ALTERED SECURITY HERO SECTION
+========================================== -->
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="hero-slider">
+
+
+            <!-- ==================================================
+                 SLIDE 1 - RED TEAM PLATFORM (DEFAULT)
+            =================================================== -->
+
+            <article class="hero-slide active">
+
+
+                <!-- LEFT CONTENT -->
+
+                <div class="hero-content">
+
+
+                    <p class="hero-eyebrow m-hide">
+
+                        GLOBAL RED TEAM TRAINING PLATFORM
+
+                    </p>
+
+
+                    <h1>
+
+                        Red Team Training, InfoSec Education
+                        Platform & Cyber Ranges
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        We are pioneers and global leaders in Red Team labs platform and cyber ranges focusing on Red Teaming, Enterprise Security, Active Directory and Azure!
+
+                    </p>
+
+
+                    <!-- CTA BUTTONS -->
+
+                    <div class="hero-buttons">
+
+
+                        <a href="#" class="hero-btn-primary">
+
+                          Get Certifications
+
+                        </a>
+
+
+                        <a href="#" class="hero-btn-secondary">
+
+                            Explore Labs
+
+                        </a>
+
+
+                    </div>
+
+
+                    <!-- HERO SLIDE NAVIGATION -->
+
+
+                    <div class="hero-navigation">
+
+
+                        <!-- Slide Titles -->
+
+                        <div class="hero-indicators">
+
+
+                           <button class="hero-indicator active" data-slide="0"></button>
+                            <button class="hero-indicator"
+                                    data-slide="1">                        
+
+                               
+                            </button>
+
+
+                            <button class="hero-indicator"
+                                    data-slide="2">                     
+
+                                
+
+                            </button>
+
+
+                        </div>
+
+
+                        <!-- Arrows -->
+
+
+                        <div class="hero-arrows">
+
+
+                            <button class="hero-prev"
+                                    aria-label="Previous slide">
+
+                                ←
+
+                            </button>
+
+
+                            <button class="hero-next"
+                                    aria-label="Next slide">
+
+                                →
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- RIGHT VISUAL -->
+
+
+                <div class="hero-image">
+
+    <picture>
+
+        <!-- Mobile Image -->
+        <source 
+            media="(max-width: 768px)"
+            srcset="https://redteamverse.github.io/red-team-training/images/mob-1.png">
+
+        <!-- Desktop Image -->
+        <img 
+            src="https://redteamverse.github.io/red-team-training/images/as_dashboard_3.png"
+            alt="Red Team cyber range with Active Directory and Azure attack simulations"
+            loading="eager">
+
+    </picture>
+
+</div>
+
+
+            </article>
+
+
+            <!-- ==================================================
+                 SLIDE 2 - ALTSECCON
+            =================================================== -->
+
+
+            <article class="hero-slide">
+
+
+                <div class="hero-content">
+
+
+                    <p class="hero-eyebrow m-hide">
+
+                        GLOBAL OFFENSIVE SECURITY CONFERENCE
+
+                    </p>
+
+
+                    <h2>
+
+                        Join AltSecCON – Learn From Leading
+                        Red Team Experts
+
+                    </h2>
+
+
+                    <p class="hero-description">
+
+
+                        We are pioneers and global leaders in Red Team labs platform and cyber ranges focusing on Red Teaming, Enterprise Security, Active Directory and Azure!
+
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+
+                        <a href="#"
+                           class="hero-btn-primary">
+
+                            Join AltSecCON
+
+                        </a>
+
+
+                        <a href="#"
+                           class="hero-btn-secondary">
+
+                            View Conference
+
+                        </a>
+
+
+                    </div>
+
+
+                    <!-- Same Navigation -->
+
+
+                    <div class="hero-navigation">
+
+
+                        <div class="hero-indicators">
+
+
+                            <button class="hero-indicator"
+                                    data-slide="0">
+                            </button>
+
+
+                            <button class="hero-indicator active"
+                                    data-slide="1">                              
+
+                            </button>
+
+
+                            <button class="hero-indicator"
+                                    data-slide="2">
+
+
+                            </button>
+
+
+                        </div>
+
+
+                        <div class="hero-arrows">
+
+
+                            <button class="hero-prev">
+                                ←
+                            </button>
+
+
+                            <button class="hero-next">
+                                →
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="hero-image">
+
+
+                    <img 
+                        src="https://redteamverse.github.io/red-team-training/images/as_dashboard_3.png"
+                        alt="AltSecCON conference speakers and cybersecurity community"
+                        loading="lazy">
+
+
+                </div>
+
+
+            </article>
+
+
+            <!-- ==================================================
+                 SLIDE 3 - BOOTCAMPS
+            =================================================== -->
+
+
+            <article class="hero-slide">
+
+
+                <div class="hero-content">
+
+
+                    <p class="hero-eyebrow m-hide">
+
+                        LIVE BOOTCAMPS & EXCLUSIVE OFFERS
+
+                    </p>
+
+
+                    <h2>
+
+                        Accelerate Your Red Team Journey
+                        With Hands-On Bootcamps
+
+                    </h2>
+
+
+                    <p class="hero-description">
+
+
+                        We are pioneers and global leaders in Red Team labs platform and cyber ranges focusing on Red Teaming, Enterprise Security, Active Directory and Azure!
+
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+
+                        <a href="#"
+                           class="hero-btn-primary">
+
+                            View Bootcamps
+
+                        </a>
+
+
+                        <a href="#"
+                           class="hero-btn-secondary">
+
+                            Explore Trainings
+
+                        </a>
+
+
+                    </div>
+
+
+                    <div class="hero-navigation">
+
+
+                        <div class="hero-indicators">
+
+
+                            <button class="hero-indicator"
+                                    data-slide="0">
+
+                          
+
+                            </button>
+
+
+                            <button class="hero-indicator"
+                                    data-slide="1">
+
+
+                            </button>
+
+
+                            <button class="hero-indicator active"
+                                    data-slide="2">
+
+                      
+
+                            </button>
+
+
+                        </div>
+
+
+                        <div class="hero-arrows">
+
+
+                            <button class="hero-prev">
+                                ←
+                            </button>
+
+
+                            <button class="hero-next">
+                                →
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="hero-image">
+
+
+                    <img 
+                        src="https://redteamverse.github.io/red-team-training/images/as_dashboard_3.png"
+                        alt="Cybersecurity bootcamp, training labs and certification journey"
+                        loading="lazy">
+
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+</section>   
+    
+    
+    
+    
+
+<script>
+/* =========================================
+   ALTERED SECURITY HERO SLIDER
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =========================
+       SELECT ELEMENTS
+    ========================== */
+
+    const slides = document.querySelectorAll(".hero-slide");
+
+    const indicators = document.querySelectorAll(".hero-indicator");
+
+    const prevButtons = document.querySelectorAll(".hero-prev");
+
+    const nextButtons = document.querySelectorAll(".hero-next");
+
+
+    /* Exit if hero does not exist */
+
+    if (!slides.length) return;
+
+
+    let currentSlide = 0;
+
+
+    /* =========================
+       SHOW SELECTED SLIDE
+    ========================== */
+
+    function showSlide(index) {
+
+
+        /* Loop slides */
+
+        if (index < 0) {
+
+            index = slides.length - 1;
+
+        }
+
+
+        if (index >= slides.length) {
+
+            index = 0;
+
+        }
+
+
+        /* Remove active states */
+
+        slides.forEach(slide => {
+
+            slide.classList.remove("active");
+
+        });
+
+
+        indicators.forEach(item => {
+
+            item.classList.remove("active");
+
+            item.setAttribute("aria-selected", "false");
+
+        });
+
+
+        /* Add active states */
+
+        slides[index].classList.add("active");
+
+
+        indicators.forEach(item => {
+
+            if (
+                Number(item.dataset.slide) === index
+            ) {
+
+                item.classList.add("active");
+
+                item.setAttribute(
+                    "aria-selected",
+                    "true"
+                );
+
+            }
+
+        });
+
+
+        /* Update current position */
+
+        currentSlide = index;
+
+    }
+
+
+    /* =========================
+       NEXT SLIDE
+    ========================== */
+
+    function nextSlide() {
+
+        showSlide(currentSlide + 1);
+
+    }
+
+
+    /* =========================
+       PREVIOUS SLIDE
+    ========================== */
+
+    function previousSlide() {
+
+        showSlide(currentSlide - 1);
+
+    }
+
+
+    /* =========================
+       CLICK EVENTS
+    ========================== */
+
+
+    /* Indicators */
+
+    indicators.forEach(item => {
+
+        item.addEventListener("click", () => {
+
+            const slideNumber = Number(item.dataset.slide);
+
+            showSlide(slideNumber);
+
+        });
+
+    });
+
+
+    /* Previous buttons */
+
+    prevButtons.forEach(button => {
+
+        button.addEventListener("click", previousSlide);
+
+    });
+
+
+    /* Next buttons */
+
+    nextButtons.forEach(button => {
+
+        button.addEventListener("click", nextSlide);
+
+    });
+
+
+    /* =========================
+       KEYBOARD SUPPORT
+    ========================== */
+
+    document.addEventListener("keydown", (event) => {
+
+
+        if (event.key === "ArrowLeft") {
+
+            previousSlide();
+
+        }
+
+
+        if (event.key === "ArrowRight") {
+
+            nextSlide();
+
+        }
+
+    });
+
+
+    /* =========================
+       ACCESSIBILITY
+    ========================== */
+
+    indicators.forEach((item, index) => {
+
+        item.setAttribute(
+            "aria-label",
+            `Go to slide ${index + 1}`
+        );
+
+        item.setAttribute(
+            "role",
+            "tab"
+        );
+
+    });
+
+
+    /* Ensure first slide is correct */
+
+    showSlide(0);
+
+});
+/* ==========================================
+   ALTERED SECURITY NAVIGATION
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const body = document.body;
+
+    const menuBtn = document.querySelector(".mobile-menu-btn");
+    const mobileNav = document.querySelector(".mobile-nav");
+    const mobileClose = document.querySelector(".mobile-close");
+    const mobileOverlay = document.querySelector(".mobile-overlay");
+    const header = document.querySelector(".site-header");
+
+    /* ==========================
+       OPEN MOBILE MENU
+    ========================== */
+
+    function openMenu() {
+
+        mobileNav.classList.add("active");
+
+        mobileOverlay.classList.add("active");
+
+        body.style.overflow = "hidden";
+    }
+
+    /* ==========================
+       CLOSE MOBILE MENU
+    ========================== */
+
+    function closeMenu() {
+
+        mobileNav.classList.remove("active");
+
+        mobileOverlay.classList.remove("active");
+
+        body.style.overflow = "";
+    }
+
+    /* ==========================
+       CLICK EVENTS
+    ========================== */
+
+    if (menuBtn) {
+
+        menuBtn.addEventListener("click", openMenu);
+
+    }
+
+    if (mobileClose) {
+
+        mobileClose.addEventListener("click", closeMenu);
+
+    }
+
+    if (mobileOverlay) {
+
+        mobileOverlay.addEventListener("click", closeMenu);
+
+    }
+
+    /* ==========================
+       ESC KEY CLOSE
+    ========================== */
+
+    document.addEventListener("keydown", function (e) {
+
+        if (e.key === "Escape") {
+
+            closeMenu();
+
+        }
+
+    });
+
+    /* ==========================
+       STICKY HEADER EFFECT
+    ========================== */
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 30) {
+
+            header.style.boxShadow =
+                "0 10px 40px rgba(0,0,0,.08)";
+
+        } else {
+
+            header.style.boxShadow = "none";
+
+        }
+
+    });
+
+});
+/* Announcement Close */
+
+const announcementClose =
+document.getElementById("announcementClose");
+
+const announcementBar =
+document.getElementById("announcementBar");
+
+if (announcementClose) {
+
+    announcementClose.addEventListener("click", () => {
+
+        announcementBar.style.display = "none";
+
+    });
+
+}
+    
+document.addEventListener("DOMContentLoaded", () => {
+
+    const offers = [
+        "🏆 Earn Industry Recognized Certifications",
+        "🚀 AltSecCON Registration Now Open",
+        "🔥 Red Team Bootcamp Starts Soon",
+        "☁️ Azure Security Training Enrollment Open",
+        "🎓 Save 20% on CRTP + CRTE Bundle"
+    ];
+
+    let current = 0;
+
+    const offerText = document.querySelector("#offerText");
+
+    const prevBtn = document.querySelector(".prev-offer");
+
+    const nextBtn = document.querySelector(".next-offer");
+
+    const closeBtn = document.querySelector(".announcement-close");
+
+    const bar = document.querySelector(".announcement-bar");
+
+    function updateOffer() {
+
+        offerText.textContent = offers[current];
+
+    }
+
+    nextBtn.addEventListener("click", () => {
+
+        current++;
+
+        if(current >= offers.length){
+            current = 0;
+        }
+
+        updateOffer();
+
+    });
+
+    prevBtn.addEventListener("click", () => {
+
+        current--;
+
+        if(current < 0){
+            current = offers.length - 1;
+        }
+
+        updateOffer();
+
+    });
+
+    closeBtn.addEventListener("click", () => {
+
+        bar.style.display = "none";
+
+    });
+
+    setInterval(() => {
+
+        current++;
+
+        if(current >= offers.length){
+            current = 0;
+        }
+
+        updateOffer();
+
+    }, 5000);
+const submenuButtons =
+document.querySelectorAll(".mobile-submenu-toggle");
+
+submenuButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const submenu =
+        button.nextElementSibling;
+
+        button.classList.toggle("active");
+
+        submenu.classList.toggle("active");
+
+    });
+
+});
+});
+</script>
+
+</body>
+</html>
