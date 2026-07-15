@@ -6449,8 +6449,647 @@ button{
 
     }
 
-}    
+} 
     
+/* ==========================================
+   LEARNING JOURNEY SECTION
+========================================== */
+
+.learning-journey{
+
+    padding:120px 0;
+
+    background:#FFFFFF;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.journey-header{
+
+    text-align:center;
+
+    max-width:900px;
+
+    margin:0 auto 70px;
+
+}
+
+.journey-eyebrow{
+
+    display:inline-block;
+
+    margin-bottom:16px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    color:#526B94;
+
+}
+
+.journey-header h2{
+
+    font-size:56px;
+
+    line-height:1.1;
+
+    color:#0F172A;
+
+    margin-bottom:20px;
+
+}
+
+.journey-header p{
+
+    max-width:760px;
+
+    margin:0 auto;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#64748B;
+
+}
+
+/* ==========================================
+   LEARNING PATH GRID
+========================================== */
+
+.learning-path-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:32px;
+
+    margin-bottom:80px;
+
+}
+
+/* ==========================================
+   PATH CARD
+========================================== */
+
+.path-card{
+
+    padding:40px;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:28px;
+
+    background:#FFFFFF;
+
+    transition:.35s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.path-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#B91C1C;
+
+    box-shadow:
+    0 24px 60px rgba(15,23,42,.08);
+
+}
+
+.path-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:#B91C1C;
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.35s ease;
+
+}
+
+.path-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.path-icon{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:20px;
+
+    background:#FEF2F2;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:24px;
+
+}
+
+.path-icon svg{
+
+    width:32px;
+
+    height:32px;
+
+    color:#B91C1C;
+
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.path-card h3{
+
+    font-size:30px;
+
+    line-height:1.2;
+
+    color:#0F172A;
+
+    margin-bottom:14px;
+
+}
+
+.path-card p{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#64748B;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================================
+   CERTIFICATION FLOW
+========================================== */
+
+.path-flow{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:30px;
+
+}
+
+.path-flow span{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    border:1px solid #E5E7EB;
+
+    background:#F8FAFC;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#0F172A;
+
+}
+
+.path-flow svg{
+
+    width:18px;
+
+    height:18px;
+
+    color:#B91C1C;
+
+}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.path-card a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    text-decoration:none;
+
+    color:#1E3A8A;
+
+    font-weight:700;
+
+    transition:.25s ease;
+
+}
+
+.path-card a:hover{
+
+    color:#B91C1C;
+
+}
+
+/* ==========================================
+   LEARN → PRACTICE → VALIDATE
+========================================== */
+
+.journey-flow{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+    padding:60px;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:28px;
+
+    background:#F8FAFC;
+
+}
+
+.journey-step{
+
+    text-align:center;
+
+    max-width:220px;
+
+}
+
+.journey-step svg{
+
+    width:34px;
+
+    height:34px;
+
+    color:#526B94;
+
+    margin-bottom:18px;
+
+}
+
+.journey-step.active svg{
+
+    color:#B91C1C;
+
+}
+
+.journey-step h4{
+
+    font-size:24px;
+
+    color:#0F172A;
+
+    margin-bottom:10px;
+
+}
+
+.journey-step p{
+
+    color:#64748B;
+
+    margin:0;
+
+}
+
+.journey-arrow{
+
+    font-size:32px;
+
+    color:#B91C1C;
+
+    font-weight:700;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .learning-path-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .journey-flow{
+
+        flex-direction:column;
+
+        gap:30px;
+
+    }
+
+    .journey-arrow{
+
+        transform:rotate(90deg);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .learning-journey{
+
+        padding:80px 0;
+
+    }
+
+    .journey-header h2{
+
+        font-size:38px;
+
+    }
+
+    .path-card{
+
+        padding:30px;
+
+    }
+
+    .path-card h3{
+
+        font-size:26px;
+
+    }
+
+    .journey-flow{
+
+        padding:40px 24px;
+
+    }
+
+}    
+/* ==========================================
+   LEARNING PATH → LABS BRIDGE
+========================================== */
+
+.path-labs-bridge{
+
+    margin-top:80px;
+
+    padding:60px;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:32px;
+
+    background:#F8FAFC;
+
+}
+
+.bridge-header{
+
+    text-align:center;
+
+    max-width:850px;
+
+    margin:0 auto 50px;
+
+}
+
+.bridge-eyebrow{
+
+    display:inline-block;
+
+    margin-bottom:14px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    color:#526B94;
+
+}
+
+.bridge-header h3{
+
+    font-size:42px;
+
+    line-height:1.2;
+
+    color:#0F172A;
+
+    margin-bottom:18px;
+
+}
+
+.bridge-header p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#64748B;
+
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.bridge-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:24px;
+
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.bridge-card{
+
+    background:#FFFFFF;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:24px;
+
+    padding:32px;
+
+    text-align:center;
+
+}
+
+.bridge-card.featured{
+
+    border-color:#B91C1C;
+
+    background:#FFF8F8;
+
+}
+
+.bridge-icon{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:20px;
+
+    background:#FEF2F2;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 20px;
+
+}
+
+.bridge-icon svg{
+
+    width:32px;
+
+    height:32px;
+
+    color:#B91C1C;
+
+}
+
+.bridge-card h4{
+
+    font-size:28px;
+
+    color:#0F172A;
+
+    margin-bottom:12px;
+
+}
+
+.bridge-card p{
+
+    color:#64748B;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+   FOOTER STRIP
+========================================== */
+
+.bridge-footer{
+
+    margin-top:40px;
+
+    padding-top:32px;
+
+    border-top:1px solid #E5E7EB;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    text-align:center;
+
+}
+
+.bridge-footer strong{
+
+    color:#0F172A;
+
+}
+
+.bridge-footer span{
+
+    color:#B91C1C;
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+    .path-labs-bridge{
+
+        padding:36px 24px;
+
+    }
+
+    .bridge-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .bridge-header h3{
+
+        font-size:32px;
+
+    }
+
+}
     </style>    
 </head>
 <body>
@@ -8337,6 +8976,291 @@ Attacking & Defending Azure - Advanced
     </div>
 
 </section>   
+<section class="learning-journey">
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <div class="journey-header">
+
+            <span class="journey-eyebrow">
+
+                THE ALTERED SECURITY ECOSYSTEM
+
+            </span>
+
+            <h2>
+
+                Choose Your Learning Path
+
+            </h2>
+
+            <p>
+
+                Whether you're focused on Active Directory,
+                Azure or advanced Red Team operations,
+                Altered Security provides structured learning
+                journeys backed by hands-on labs and
+                certifications.
+
+            </p>
+
+        </div>
+
+        <!-- LEARNING PATHS -->
+
+        <div class="learning-path-grid">
+
+            <!-- ONPREM -->
+
+            <article class="path-card">
+
+                <div class="path-icon">
+
+                    <i data-lucide="server"></i>
+
+                </div>
+
+                <h3>
+
+                    On-Premises Red Teaming
+
+                </h3>
+
+                <p>
+
+                    Active Directory, Windows and Enterprise
+                    Tradecraft focused learning journey.
+
+                </p>
+
+                <div class="path-flow">
+
+                    <span>ACPT</span>
+
+                    <i data-lucide="arrow-right"></i>
+
+                    <span>CRTP</span>
+
+                    <i data-lucide="arrow-right"></i>
+
+                    <span>CRTE</span>
+
+                    <i data-lucide="arrow-right"></i>
+
+                    <span>CETP</span>
+ <i data-lucide="arrow-right"></i>
+
+                    <span>CRTM</span>
+                </div>
+
+                <a href="#">
+
+                    View Learning Path →
+
+                </a>
+
+            </article>
+
+            <!-- AZURE -->
+
+            <article class="path-card">
+
+                <div class="path-icon">
+
+                    <i data-lucide="cloud"></i>
+
+                </div>
+
+                <h3>
+
+                    Azure Red Teaming
+
+                </h3>
+
+                <p>
+
+                    Cloud identity attacks, Azure privilege
+                    escalation and advanced cloud tradecraft.
+
+                </p>
+
+                <div class="path-flow">
+
+                    <span>CARTP</span>
+
+                    <i data-lucide="arrow-right"></i>
+
+                    <span>CARTE</span>
+
+                   
+
+                </div>
+
+                <a href="#">
+
+                    View Learning Path →
+
+                </a>
+
+            </article>
+
+        </div>
+
+        <!-- ECOSYSTEM FLOW -->
+
+       <!-- =========================================
+     EVERY PATH INCLUDES HANDS-ON PRACTICE
+========================================= -->
+
+<div class="path-labs-bridge">
+
+    <div class="bridge-header">
+
+        <span class="bridge-eyebrow">
+
+            PRACTICAL LEARNING APPROACH
+
+        </span>
+
+        <h3>
+
+            Every Learning Path Includes Hands-On Practice
+
+        </h3>
+
+        <p>
+
+            Certifications are not built around theory alone.
+            Every learning path includes access to purpose-built
+            cyber ranges, guided exercises and practical attack
+            scenarios designed to develop real-world offensive
+            security skills.
+
+        </p>
+
+    </div>
+
+    <div class="bridge-grid">
+
+        <!-- LEARN -->
+
+        <div class="bridge-card">
+
+            <div class="bridge-icon">
+
+                <i data-lucide="graduation-cap"></i>
+
+            </div>
+
+            <h4>
+
+                Learn
+
+            </h4>
+
+            <p>
+
+                Training programs, bootcamps and structured
+                course content.
+
+            </p>
+
+        </div>
+
+        <!-- PRACTICE -->
+
+        <div class="bridge-card featured">
+
+            <div class="bridge-icon">
+
+                <i data-lucide="flask-conical"></i>
+
+            </div>
+
+            <h4>
+
+                Practice
+
+            </h4>
+
+            <p>
+
+                Enterprise cyber ranges, attack simulations
+                and hands-on labs.
+
+            </p>
+
+        </div>
+
+        <!-- VALIDATE -->
+
+        <div class="bridge-card">
+
+            <div class="bridge-icon">
+
+                <i data-lucide="shield-check"></i>
+
+            </div>
+
+            <h4>
+
+                Validate
+
+            </h4>
+
+            <p>
+
+                Demonstrate skills through practical
+                certification assessments.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="bridge-footer">
+
+        <strong>
+
+            500+ Challenges
+
+        </strong>
+
+        <span>•</span>
+
+        <strong>
+
+            1000+ Flags
+
+        </strong>
+
+        <span>•</span>
+
+        <strong>
+
+            24/7 Lab Access
+
+        </strong>
+
+        <span>•</span>
+
+        <strong>
+
+            Real-World Attack Paths
+
+        </strong>
+
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+    
 <section class="labs-platform">
 <!-- =========================================
      CYBER RANGE STATS
@@ -8405,182 +9329,9 @@ Attacking & Defending Azure - Advanced
             </div>
 
         </div>
-<div class="labs-stats">
-
-    <div class="labs-stat">
-
-        <span class="labs-number counter"
-              data-target="500">
-
-            500+
-
-        </span>
-
-        <span class="labs-label">
-
-            Challenges
-
-        </span>
-
-    </div>
-
-    <div class="labs-stat">
-
-        <span class="labs-number counter"
-              data-target="1000">
-
-            1000+
-
-        </span>
-
-        <span class="labs-label">
-
-            Flags
-
-        </span>
-
-    </div>
-
-    <div class="labs-stat">
-
-        <span class="labs-number">
-
-            24/7
-
-        </span>
-
-        <span class="labs-label">
-
-            Lab Access
-
-        </span>
-
-    </div>
-
-    <div class="labs-stat">
-
-        <span class="labs-number">
-
-            Real-World
-
-        </span>
-
-        <span class="labs-label">
-
-            Attack Paths
-
-        </span>
-
-    </div>
-
-</div>    
+ 
         
-    <div class="learning-journey">
-
-    <div class="journey-header">
-
-        <span class="journey-eyebrow">
-
-            THE ALTERED SECURITY ECOSYSTEM
-
-        </span>
-
-        <h3>
-
-            A Structured Path To Red Teaming
-
-        </h3>
-
-        <p>
-
-            Every certification and bootcamp follows the same
-            proven model: learn, practice and validate.
-
-        </p>
-
-    </div>
-
-    <div class="journey-flow">
-
-        <div class="journey-step">
-
-            <div class="journey-icon">
-
-                <i data-lucide="graduation-cap"></i>
-
-            </div>
-
-            <h4>
-
-                Learn
-
-            </h4>
-
-            <p>
-
-                Training & Bootcamps
-
-            </p>
-
-        </div>
-
-        <div class="journey-arrow">
-
-            →
-        </div>
-
-        <div class="journey-step active">
-
-            <div class="journey-icon">
-
-                <i data-lucide="flask-conical"></i>
-
-            </div>
-
-            <h4>
-
-                Practice
-
-            </h4>
-
-            <p>
-
-                Cyber Ranges & Labs
-
-            </p>
-
-        </div>
-
-        <div class="journey-arrow">
-
-            →
-        </div>
-
-        <div class="journey-step">
-
-            <div class="journey-icon">
-
-                <i data-lucide="shield-check"></i>
-
-            </div>
-
-            <h4>
-
-                Validate
-
-            </h4>
-
-            <p>
-
-                Industry Certifications
-
-            </p>
-
-        </div>
-
-    </div>
-
-</div>    
+     
     
     
     <!-- =========================================
@@ -8819,7 +9570,75 @@ Attacking & Defending Azure - Advanced
 
 </div>
     
-    
+    <div class="labs-stats">
+
+    <div class="labs-stat">
+
+        <span class="labs-number counter"
+              data-target="500">
+
+            500+
+
+        </span>
+
+        <span class="labs-label">
+
+            Challenges
+
+        </span>
+
+    </div>
+
+    <div class="labs-stat">
+
+        <span class="labs-number counter"
+              data-target="1000">
+
+            1000+
+
+        </span>
+
+        <span class="labs-label">
+
+            Flags
+
+        </span>
+
+    </div>
+
+    <div class="labs-stat">
+
+        <span class="labs-number">
+
+            24/7
+
+        </span>
+
+        <span class="labs-label">
+
+            Lab Access
+
+        </span>
+
+    </div>
+
+    <div class="labs-stat">
+
+        <span class="labs-number">
+
+            Real-World
+
+        </span>
+
+        <span class="labs-label">
+
+            Attack Paths
+
+        </span>
+
+    </div>
+
+</div>   
     <!-- =========================================
      PRACTICAL LEARNING
 ========================================= -->
