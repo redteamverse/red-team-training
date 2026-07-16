@@ -2139,7 +2139,7 @@ button{
 
     position: relative;
 
-    padding: 110px 0;
+    padding-top: 120px;
 
     background: #ffffff;
 
@@ -3387,7 +3387,7 @@ button{
 
 .learning-journey{
 
-    margin-top:100px;
+    
     margin-bottom:100px;
 
 }
@@ -7281,56 +7281,17 @@ button{
     font-weight:700;
 
 }
-    
-@media (max-width:768px){
-
-    .cert-journey{
-
-        padding:28px;
-
-    }
-
-    .cert-journey-header h3{
-
-        font-size:28px;
-
-    }
-
-    .journey-path{
-
-        flex-direction:column;
-
-        gap:20px;
-
-    }
-
-    .journey-arrow{
-
-        transform:rotate(90deg);
-
-    }
-
-}    
-    
-.foundation-layout{
-
+    .foundation-layout{
     display:grid;
-
     grid-template-columns:500px 1fr;
-
     gap:40px;
-
-    align-items:stretch;
-
 }
 
 .foundation-card{
-
     height:100%;
-
 }
-
-.foundation-journey{
+.foundation-journey,
+.mobile-journey-card{
 
     border:1px solid var(--border);
 
@@ -7340,26 +7301,251 @@ button{
 
     background:#FAFBFC;
 
+}
+
+.mobile-cert-journey{
+    display:none;
+}
+
+/* Tablet + Mobile */
+
+@media (max-width:1024px){
+
+    .foundation-layout{
+        display:block;
+    }
+
+    .foundation-journey{
+        display:none;
+    }
+
+    .mobile-cert-journey{
+        display:block;
+        margin-top:80px;
+    }
+
+}
+
+/* Mobile Journey Layout */
+
+@media (max-width:768px){
+
+    .mobile-cert-journey .cert-journey{
+        padding:28px;
+    }
+
+    .mobile-cert-journey .cert-journey-header h3{
+        font-size:28px;
+    }
+
+    .mobile-cert-journey .journey-path{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .mobile-cert-journey .journey-arrow{
+        transform:rotate(90deg);
+    }
+
+} 
+  /* ==========================================
+   FLOATING SECTION NAV
+========================================== */
+
+.floating-nav{
+
+    position:fixed;
+
+    left:32px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:72px;
+
+    background:#2B2B50;
+
+    border-radius:36px;
+
+    padding:12px;
+
     display:flex;
 
     flex-direction:column;
 
-    justify-content:center;
+    gap:10px;
+
+    z-index:9999;
+
+    overflow:hidden;
+
+    transition:width .35s cubic-bezier(.22,.61,.36,1);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.18);
 
 }
-    
-@media (max-width:1024px){
 
-    .foundation-layout{
+/* Expanded State */
 
-        grid-template-columns:1fr;
+.floating-nav.expanded{
+
+    width:240px;
+
+}
+
+/* ==========================================
+   NAV ITEM
+========================================== */
+
+.nav-item{
+
+    height:56px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:0 18px;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    transition:.25s ease;
+
+    white-space:nowrap;
+
+}
+
+.nav-item:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/* Active Section */
+
+.nav-item.active{
+
+    background:#B91C1C;
+
+    color:#fff;
+
+}
+
+/* Icons */
+
+.nav-item i{
+
+    width:22px;
+
+    height:22px;
+
+    min-width:22px;
+
+    stroke-width:2;
+
+}
+
+/* Hidden Labels */
+
+.nav-item span{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateX(10px);
+
+    transition:.3s ease;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+/* Show Labels When Expanded */
+
+.floating-nav.expanded .nav-item span{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+
+}
+
+/* ==========================================
+   SCROLL INDICATOR LINE
+========================================== */
+
+.floating-nav::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:36px;
+
+    top:30px;
+
+    bottom:30px;
+
+    width:2px;
+
+    background:rgba(255,255,255,.12);
+
+    z-index:0;
+
+}
+
+.nav-item{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:992px){
+
+    .floating-nav{
+
+        display:none;
 
     }
+
+}  
+    
+.nav-item svg{
+
+    width:22px;
+
+    height:22px;
+
+    stroke:#fff;
+
+    stroke-width:2;
+
+    flex-shrink:0;
 
 }    
     </style>    
 </head>
 <body>
+
 <!-- TOP BAR -->
 <!-- Announcement Bar -->
 <div class="announcement-bar" id="announcementBar">
@@ -8568,7 +8754,7 @@ button{
      CERTIFICATION PATHWAY
 ========================================= -->
 
-<section class="cert-pathway">
+<section class="cert-pathway" id="certifications">
 
     <div class="container">
 
@@ -9704,13 +9890,135 @@ src="https://static.wixstatic.com/media/470c31_4dd9ba5cdcf84d6bb7820a7159559d4a~
 
         </div>
     </div>
+<div class="mobile-cert-journey">
+   <div class="mobile-journey-card">
 
+        <div class="cert-journey-header">
+
+            <span class="journey-eyebrow">
+
+                CERTIFICATION PROGRESSION
+
+            </span>
+
+            <h3>
+
+                Where Does ACPT Lead?
+
+            </h3>
+
+            <p>
+
+                Start with infrastructure and network penetration testing,
+                then specialize in Active Directory, Azure, enterprise
+                certificate services and advanced Red Team operations.
+
+            </p>
+
+        </div>
+
+        <div class="journey-path">
+
+            <div class="journey-stage">
+
+                <span class="journey-level">
+
+                    Elementary
+
+                </span>
+
+                <div class="journey-items">
+
+                    <span>ACPT</span>
+
+                </div>
+
+            </div>
+
+            <div class="journey-arrow">
+
+                →
+
+            </div>
+
+            <div class="journey-stage">
+
+                <span class="journey-level">
+
+                    Beginner
+
+                </span>
+
+                <div class="journey-items">
+
+                    <span>CRTP</span>
+
+                    <span>CARTP</span>
+
+                    <span>CESP</span>
+
+                </div>
+
+            </div>
+
+            <div class="journey-arrow">
+
+                →
+
+            </div>
+
+            <div class="journey-stage">
+
+                <span class="journey-level">
+
+                    Intermediate
+
+                </span>
+
+                <div class="journey-items">
+
+                    <span>CRTE</span>
+
+                    <span>CETP</span>
+
+                </div>
+
+            </div>
+
+            <div class="journey-arrow">
+
+                →
+
+            </div>
+
+            <div class="journey-stage">
+
+                <span class="journey-level">
+
+                    Advanced
+
+                </span>
+
+                <div class="journey-items">
+
+                    <span>CARTE</span>
+
+                    <span>CRTM</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>
 </div>
     
 </div>
 
 </section>   
-<section class="learning-journey">
+<section class="learning-journey" id="learning-path">
 
     <div class="container">
 
@@ -9995,7 +10303,7 @@ src="https://static.wixstatic.com/media/470c31_4dd9ba5cdcf84d6bb7820a7159559d4a~
 
 </section>
     
-<section class="labs-platform">
+<section class="labs-platform" id="redteam-labs">
 <!-- =========================================
      CYBER RANGE STATS
 ========================================= -->
@@ -10500,7 +10808,7 @@ src="https://static.wixstatic.com/media/470c31_4dd9ba5cdcf84d6bb7820a7159559d4a~
      BOOTCAMPS SECTION
 ========================================= -->
 
-<section class="bootcamps-section">
+<section class="bootcamps-section" id="bootcamps">
 
     <div class="container">
 
@@ -11036,7 +11344,7 @@ Take your Azure Red Team skills to the next level. Get trained in Azure pentesti
 
 </section>
     
-<section class="enterprise-training">
+<section class="enterprise-training" id="training">
 
     <div class="container">
 
@@ -11546,7 +11854,54 @@ Take your Azure Red Team skills to the next level. Get trained in Azure pentesti
     </div>
 
 </section> 
-    
+<nav class="floating-nav" id="floatingNav">
+
+    <a href="#certifications"
+       class="nav-item active">
+
+        <i data-lucide="award"></i>
+
+        <span>Certification</span>
+
+    </a>
+
+    <a href="#learning-path"
+       class="nav-item">
+
+        <i data-lucide="route"></i>
+
+        <span>Learning Path</span>
+
+    </a>
+
+    <a href="#redteam-labs"
+       class="nav-item">
+
+        <i data-lucide="flask-conical"></i>
+
+        <span>Red Team Labs</span>
+
+    </a>
+
+    <a href="#bootcamps"
+       class="nav-item">
+
+        <i data-lucide="graduation-cap"></i>
+
+        <span>Bootcamps</span>
+
+    </a>
+
+    <a href="#training"
+       class="nav-item">
+
+        <i data-lucide="building-2"></i>
+
+        <span>Training</span>
+
+    </a>
+
+</nav>  
 <script>
 /* =========================================
    ALTERED SECURITY HERO SLIDER
@@ -12254,15 +12609,129 @@ labObserver.observe(counter);
 });
     </script>    
     
-<script src="https://unpkg.com/lucide@latest"></script>
-    
     <script>
+
+/* ==========================
+   LUCIDE ICONS
+========================== */
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    lucide.createIcons();
+    if (typeof lucide !== "undefined") {
+
+        lucide.createIcons();
+
+    }
 
 });
+
+
+/* ==========================
+   FLOATING NAV
+========================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const floatingNav = document.getElementById("floatingNav");
+
+    if (!floatingNav) return;
+
+    /* Hover Expand */
+
+    floatingNav.addEventListener("mouseenter", () => {
+
+        floatingNav.classList.add("expanded");
+
+    });
+
+    /* Hover Collapse */
+
+    floatingNav.addEventListener("mouseleave", () => {
+
+        if (!floatingNav.classList.contains("pinned")) {
+
+            floatingNav.classList.remove("expanded");
+
+        }
+
+    });
+
+    /* Click To Pin */
+
+    floatingNav.addEventListener("click", (e) => {
+
+        if (e.target.closest(".nav-item")) {
+
+            floatingNav.classList.toggle("pinned");
+
+            floatingNav.classList.add("expanded");
+
+        }
+
+    });
+
+});
+
+
+/* ==========================
+   ACTIVE SECTION HIGHLIGHT
+========================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const sections =
+    document.querySelectorAll("section[id]");
+
+    const navLinks =
+    document.querySelectorAll(".nav-item");
+
+    if (!sections.length || !navLinks.length) return;
+
+    window.addEventListener("scroll", () => {
+
+        let current = "";
+
+        sections.forEach(section => {
+
+            const sectionTop =
+            section.offsetTop - 200;
+
+            const sectionHeight =
+            section.offsetHeight;
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY <
+                sectionTop + sectionHeight
+            ) {
+
+                current =
+                section.getAttribute("id");
+
+            }
+
+        });
+
+        navLinks.forEach(link => {
+
+            link.classList.remove("active");
+
+            if (
+                link.getAttribute("href")
+                === `#${current}`
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    });
+
+});
+
 </script>
-    
+<script src="https://unpkg.com/lucide@latest"></script>
 </body>
 </html>
