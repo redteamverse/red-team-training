@@ -7090,6 +7090,273 @@ button{
     }
 
 }
+    
+.cert-grid-single{
+
+    display:flex;
+
+    justify-content:flex-start;
+
+    align-items:stretch;
+
+}
+
+.cert-grid-single .cert-card{
+
+    max-width:420px;
+
+    width:100%;
+
+}  
+    .cert-group{
+    margin-bottom:80px;
+}
+
+.cert-group-label,
+.cert-group-title{
+    margin-bottom:36px;
+}
+    
+.cert-group-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:10px 18px;
+
+   margin-bottom:20px;
+
+    border-radius:999px;
+
+    background:#FEF2F2;
+
+    color:#B91C1C;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+    
+
+}    
+    
+.cert-journey{
+
+    margin-top:60px;
+
+    padding:48px;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:24px;
+
+    background:#FAFBFC;
+
+}
+
+.cert-journey-header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.journey-eyebrow{
+
+    display:inline-block;
+
+    margin-bottom:12px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.12em;
+
+    color:#64748B;
+
+}
+
+.cert-journey-header h3{
+
+    font-size:38px;
+
+    margin-bottom:16px;
+
+    color:#0F172A;
+
+}
+
+.cert-journey-header p{
+
+    max-width:800px;
+
+    margin:0 auto;
+
+    color:#64748B;
+
+    line-height:1.7;
+
+}
+
+.journey-path{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:28px;
+
+    flex-wrap:wrap;
+
+}
+
+.journey-stage{
+
+    text-align:center;
+
+}
+
+.journey-level{
+
+    display:block;
+
+    margin-bottom:16px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.12em;
+
+    color:#64748B;
+
+}
+
+.journey-items{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.journey-items span{
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    border:1px solid #E5E7EB;
+
+    background:#FFF;
+
+    font-weight:700;
+
+    color:#0F172A;
+
+}
+
+.journey-arrow{
+
+    font-size:28px;
+
+    color:#B91C1C;
+
+    font-weight:700;
+
+}
+    
+@media (max-width:768px){
+
+    .cert-journey{
+
+        padding:28px;
+
+    }
+
+    .cert-journey-header h3{
+
+        font-size:28px;
+
+    }
+
+    .journey-path{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .journey-arrow{
+
+        transform:rotate(90deg);
+
+    }
+
+}    
+    
+.foundation-layout{
+
+    display:grid;
+
+    grid-template-columns:500px 1fr;
+
+    gap:40px;
+
+    align-items:stretch;
+
+}
+
+.foundation-card{
+
+    height:100%;
+
+}
+
+.foundation-journey{
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:40px;
+
+    background:#FAFBFC;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+    
+@media (max-width:1024px){
+
+    .foundation-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+}    
     </style>    
 </head>
 <body>
@@ -8334,87 +8601,62 @@ button{
         <!-- =========================
              LEVEL TABS
         ========================== -->
+<div class="cert-tabs">
 
-        <div class="cert-tabs">
+    <button class="cert-tab active" data-level="all">
+       
+        All Certifications
+    </button>
 
-            <button class="cert-tab active" data-level="elementary">
+    <button class="cert-tab" data-level="elementary">
+     
+        Elementary
+    </button>
 
-                <span>01</span>
-                Elementary
+    <button class="cert-tab" data-level="beginner">
+    
+        Beginner
+    </button>
 
-            </button>
+    <button class="cert-tab" data-level="intermediate">
+    
+        Intermediate
+    </button>
 
-            <button class="cert-tab" data-level="beginner">
+    <button class="cert-tab" data-level="advanced">
+       
+        Advanced
+    </button>
 
-                <span>02</span>
-                Beginner
+</div>
 
-            </button>
+<div class="cert-content">
 
-            <button class="cert-tab" data-level="intermediate">
+    <!-- ALL -->
 
-                <span>03</span>
-                Intermediate
+    <div class="cert-panel active" id="all">
 
-            </button>
+        <div class="cert-group">
 
-            <button class="cert-tab" data-level="advanced">
-
-                <span>04</span>
-                Advanced
-
-            </button>
-
-        </div>
-
-        <!-- =========================
-             CONTENT AREA
-        ========================== -->
-
-        <div class="cert-content">
-
-            <!-- =================================
-                 ELEMENTARY
-            ================================== -->
-
-            <div class="cert-panel active" id="elementary">
-
-                <div class="cert-panel-header">
-
-                    <h3>Elementary Certifications</h3>
-
-                    <p>
-
-                        Build foundational offensive security skills through
-                        practical assessments and hands-on environments.
-
-                    </p>
-
-                </div>
-
-                <div class="cert-grid">
-
-                   <article class="cert-card">
-
-    <!-- Top -->
+            <div class="cert-group-label">
+    Elementary Certification
+</div>
+<div class="foundation-layout">
+             <div class="foundation-card">
+                <!-- ACPT CARD -->
+                <article class="cert-card">
 
     <div class="cert-card-top">
 
         <div class="cert-badge">
-
             ACPT®
-
         </div>
 
         <span class="cert-level">
-
             Elementary
-
         </span>
 
     </div>
-
-    <!-- Title -->
 
     <h4 class="cert-title">
 
@@ -8422,18 +8664,14 @@ button{
 
     </h4>
 
-    <!-- Image -->
-
     <div class="cert-image">
 
         <img
             src="https://static.wixstatic.com/media/16cdd7_f92a0feaeb2c4aadb4bcb1270ed98804~mv2.jpeg/v1/crop/x_0,y_150,w_11243,h_7110/fill/w_900,h_569,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ACPT_lab-01-New_Updated%20final%202_jpg.jpeg"
-            alt="ACPT Infrastructure & Network Penetration Testing Lab"
+            alt="ACPT Infrastructure & Network Penetration Testing"
             loading="lazy">
 
     </div>
-
-    <!-- Skills -->
 
     <ul class="cert-skills">
 
@@ -8445,12 +8683,9 @@ button{
 
     </ul>
 
-    <!-- Footer -->
-
     <div class="cert-footer">
 
-        <a href="#"
-           class="cert-link">
+        <a href="#" class="cert-link">
 
             View Certification
             <span>→</span>
@@ -8460,520 +8695,1019 @@ button{
     </div>
 
 </article>
+            </div>
+
+        
+        <!-- LEARNING JOURNEY -->
+
+     <div class="foundation-journey">
+
+        <div class="cert-journey-header">
+
+            <span class="journey-eyebrow">
+
+                CERTIFICATION PROGRESSION
+
+            </span>
+
+            <h3>
+
+                Where Does ACPT Lead?
+
+            </h3>
+
+            <p>
+
+                Start with infrastructure and network penetration testing,
+                then specialize in Active Directory, Azure, enterprise
+                certificate services and advanced Red Team operations.
+
+            </p>
+
+        </div>
+
+        <div class="journey-path">
+
+            <div class="journey-stage">
+
+                <span class="journey-level">
+
+                    Elementary
+
+                </span>
+
+                <div class="journey-items">
+
+                    <span>ACPT</span>
 
                 </div>
 
             </div>
 
-            <!-- =================================
-                 BEGINNER
-            ================================== -->
+            <div class="journey-arrow">
 
-            <div class="cert-panel" id="beginner">
+                →
 
-                <div class="cert-panel-header">
+            </div>
 
-                    <h3>Beginner Certifications</h3>
+            <div class="journey-stage">
 
-                    <p>
+                <span class="journey-level">
 
-                        Develop specialized Red Team skills across Active
-                        Directory, Azure and enterprise PKI environments.
+                    Beginner
 
-                    </p>
+                </span>
+
+                <div class="journey-items">
+
+                    <span>CRTP</span>
+
+                    <span>CARTP</span>
+
+                    <span>CESP</span>
 
                 </div>
 
-                <div class="cert-grid">
+            </div>
 
-                    <!-- CRTP -->
+            <div class="journey-arrow">
 
-                    <article class="cert-card">
+                →
 
-                        <div class="cert-card-top">
+            </div>
 
-                            <div class="cert-badge">
+            <div class="journey-stage">
 
-                                CRTP®
+                <span class="journey-level">
 
-                            </div>
+                    Intermediate
 
-                            <span class="cert-level">
+                </span>
 
-                                Beginner
+                <div class="journey-items">
 
-                            </span>
+                    <span>CRTE</span>
 
-                        </div>
+                    <span>CETP</span>
 
-                        <h4>
+                </div>
 
-                            
-Attacking & Defending Active Directory Lab
+            </div>
 
-                        </h4>
+            <div class="journey-arrow">
 
-                        <ul>
+                →
 
-                            <li>Active Directory</li>
-                            <li>Kerberos Attacks</li>
-                            <li>Privilege Escalation</li>
+            </div>
 
-                        </ul>
+            <div class="journey-stage">
 
-                        <a href="#">
+                <span class="journey-level">
 
-                            View Certification →
+                    Advanced
 
-                        </a>
+                </span>
 
-                    </article>
+                <div class="journey-items">
 
-                    <!-- CARTP -->
+                    <span>CARTE</span>
 
-                    <article class="cert-card">
+                    <span>CRTM</span>
 
-                        <div class="cert-card-top">
+                </div>
 
-                            <div class="cert-badge">
+            </div>
 
-                                CARTP®
+        </div>
 
-                            </div>
+    </div>
+        
+        
+        </div>
+        </div>    
 
-                            <span class="cert-level">
+        <div class="cert-group">
 
-                                Beginner
+            <div class="cert-group-label">
+    Beginner Certifications
+            </div>
 
-                            </span>
+            <div class="cert-grid">
+                <!-- CRTP -->
+                <article class="cert-card">
 
-                        </div>
+    <div class="cert-card-top">
 
-                        <h4>
+        <div class="cert-badge">
+            CRTP®
+        </div>
 
-Cloud Red Team Tactics for
+        <span class="cert-level">
+            Beginner
+        </span>
+
+    </div>
+
+    <h4 class="cert-title">
+
+        Attacking & Defending Active Directory Lab
+
+    </h4>
+
+    <div class="cert-image">
+
+        <img
+src="https://static.wixstatic.com/media/470c31_33920ce03254499483e54c9df75654ce~mv2.png/v1/fill/w_900,h_290,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/activedirectorylab.png"            alt="CRTP Active Directory Lab"
+            loading="lazy">
+
+    </div>
+
+    <ul class="cert-skills">
+
+        <li>Kerberos Attacks</li>
+
+        <li>Privilege Escalation</li>
+
+        <li>Active Directory Tradecraft</li>
+
+    </ul>
+
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>
+                <!-- CARTP -->
+                <article class="cert-card">
+
+    <div class="cert-card-top">
+
+        <div class="cert-badge">
+            CARTP®
+        </div>
+
+        <span class="cert-level">
+            Beginner
+        </span>
+
+    </div>
+
+    <h4 class="cert-title">
+
+        Cloud Red Team Tactics for
 Attacking & Defending
-Azure - Beginner's
-                        </h4>
+Azure
 
-                        <ul>
+    </h4>
 
-                            <li>Azure Identity</li>
-                            <li>Cloud Enumeration</li>
-                            <li>Azure Attack Paths</li>
+    <div class="cert-image">
 
-                        </ul>
+        <img
+src="https://static.wixstatic.com/media/470c31_0ed0224cb8774681bedb645c3b92571d~mv2.png/v1/fill/w_837,h_547,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/5232.png"            alt="CARTP Azure Red Team Lab"
+            loading="lazy">
 
-                        <a href="#">
+    </div>
 
-                            View Certification →
+    <ul class="cert-skills">
 
-                        </a>
+        <li>Azure Identity Attacks</li>
 
-                    </article>
+        <li>Cloud Enumeration</li>
 
-                    <!-- CESP -->
+        <li>Azure Privilege Escalation</li>
 
-                    <article class="cert-card">
+    </ul>
 
-                        <div class="cert-card-top">
+    <div class="cert-footer">
 
-                            <div class="cert-badge">
+        <a href="#" class="cert-link">
 
-                                CESP-ADCS®
+            View Certification
+            <span>→</span>
 
-                            </div>
+        </a>
 
-                            <span class="cert-level">
+    </div>
 
-                                Beginner
+</article>
+                <!-- CESP -->
+            <article class="cert-card">
 
-                            </span>
+    <div class="cert-card-top">
 
-                        </div>
+        <div class="cert-badge">
+            CESP-ADCS®
+        </div>
 
-                        <h4>
+        <span class="cert-level">
+            Beginner
+        </span>
 
-                            AD CS Attacks for Red and Blue Teams
+    </div>
 
-                        </h4>
+    <h4 class="cert-title">
 
-                        <ul>
+        AD CS Attacks for Red and Blue Teams
 
-                            <li>PKI Security</li>
-                            <li>Certificate Attacks</li>
-                            <li>ADCS Abuse</li>
+    </h4>
 
-                        </ul>
+    <div class="cert-image">
 
-                        <a href="#">
+        <img
+src="https://static.wixstatic.com/media/470c31_66883abc267947c68a8fa4621788a087~mv2.png/v1/crop/x_0,y_245,w_13932,h_6673/fill/w_910,h_436,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/ADCS-Diagram-transperent-BG-min.png"            alt="CESP ADCS Lab"
+            loading="lazy">
 
-                            View Certification →
+    </div>
 
-                        </a>
+    <ul class="cert-skills">
 
-                    </article>
+        <li>ADCS Abuse</li>
 
-                </div>
+        <li>PKI Security</li>
 
+        <li>Certificate Attacks</li>
+
+    </ul>
+
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>    
             </div>
 
-            <!-- =================================
-                 INTERMEDIATE
-            ================================== -->
+        </div>
 
-            <div class="cert-panel" id="intermediate">
+        <div class="cert-group">
 
-                <div class="cert-panel-header">
+            
+             <div class="cert-group-label">
+    Intermediate Certifications
+            </div>
 
-                    <h3>Intermediate Certifications</h3>
+            <div class="cert-grid">
+                <!-- CRTE -->
+            <article class="cert-card">
 
-                    <p>
+    <div class="cert-card-top">
 
-                        Advance your enterprise offensive security capabilities
-                        with deeper attack methodologies.
+        <div class="cert-badge">
+            CRTE®
+        </div>
 
-                    </p>
+        <span class="cert-level">
+            Intermediate
+        </span>
 
-                </div>
+    </div>
 
-                <div class="cert-grid">
+    <h4 class="cert-title">
 
-                    <article class="cert-card">
-
-                        <div class="cert-card-top">
-
-                            <div class="cert-badge">
-
-                                CRTE®
-
-                            </div>
-
-                            <span class="cert-level">
-
-                                Intermediate
-
-                            </span>
-
-                        </div>
-
-                        <h4>
-
-                            Advanced Red
+        Advanced Red
 Team Lab
 
-                        </h4>
+    </h4>
 
-                        <ul>
+    <div class="cert-image">
 
-                            <li>Advanced AD Attacks</li>
-                            <li>Persistence</li>
-                            <li>Enterprise Tradecraft</li>
-
-                        </ul>
-
-                        <a href="#">
-
-                            View Certification →
-
-                        </a>
-
-                    </article>
-                    <article class="cert-card">
-                   <div class="cert-card-top">
-                        <div class="cert-badge">
-
-                            CETP®
-                          
-    </div> <span class="cert-level">
-
-                                Intermediate
-
-                            </span>
-                        </div>
-
-                        <h4>
-
-Advanced Windows Tradecraft - Evasion Techniques for Red Teams
-
-                        </h4>
-
-                        <ul>
-
-                            <li>Windows Tradecraft</li>
-                            <li>Evasion</li>
-                            <li>Operational Security</li>
-
-                        </ul>
-
-                        <a href="#">
-
-                            View Certification →
-
-                        </a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-            <!-- =================================
-                 ADVANCED
-            ================================== -->
-
-            <div class="cert-panel" id="advanced">
-
-                <div class="cert-panel-header">
-
-                    <h3>Advanced Certifications</h3>
-
-                    <p>
-
-                        Master advanced offensive operations, cloud tradecraft
-                        and enterprise Red Team engagements.
-
-                    </p>
-
-                </div>
-
-                <div class="cert-grid">
-
-                    
-
-                    <article class="cert-card">
-
-                        <div class="cert-badge">
-
-                            CARTE®
-
-                        </div>
-
-                        <h4>
-
-                            
-Cloud Red Team Tactics for
-Attacking & Defending Azure - Advanced 
-
-                        </h4>
-
-                        <ul>
-
-                            <li>Advanced Azure Attacks</li>
-                            <li>Hybrid Environments</li>
-                            <li>Cloud Persistence</li>
-
-                        </ul>
-
-                        <a href="#">
-
-                            View Certification →
-
-                        </a>
-
-                    </article>
-
-                    <article class="cert-card">
-
-                        <div class="cert-badge">
-
-                            CRTM®
-
-                        </div>
-
-                        <h4>
-
-                            The Global Central Bank
-
-                        </h4>
-
-                        <ul>
-
-                            <li>Advanced Operations</li>
-                            <li>Enterprise Red Teaming</li>
-                            <li>Mission-Level Tradecraft</li>
-
-                        </ul>
-
-                        <a href="#">
-
-                            View Certification →
-
-                        </a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- =========================
-             CERTIFICATION ROADMAP
-        ========================== -->
-
-       <div class="cert-roadmap">
-
-    <div class="roadmap-title">
-
-        Red Teaming Learning Journey
+        <img
+src="https://static.wixstatic.com/media/16cdd7_b14fa808ae6d47eba3912d36c833cbee~mv2.png/v1/crop/x_0,y_221,w_11700,h_9222/fill/w_900,h_709,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/redteamlab%20diagram.png"            alt="CRTE Lab"
+            loading="lazy">
 
     </div>
 
-    <div class="roadmap-levels">
+    <ul class="cert-skills">
 
-        <div class="roadmap-step">
+        <li>Advanced AD Attacks</li>
 
-            <span class="roadmap-level">
-                Elementary
-            </span>
+        <li>Persistence Techniques</li>
 
-            <div class="roadmap-cert">
+        <li>Enterprise Tradecraft</li>
 
-                ACPT
+    </ul>
 
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>    
+                <!-- CETP -->
+            <article class="cert-card">
+
+    <div class="cert-card-top">
+
+        <div class="cert-badge">
+            CETP®
+        </div>
+
+        <span class="cert-level">
+            Intermediate
+        </span>
+
+    </div>
+
+    <h4 class="cert-title">
+
+        Advanced Windows Tradecraft - Evasion Techniques for Red Teams
+
+
+    </h4>
+
+    <div class="cert-image">
+
+        <img
+src="https://static.wixstatic.com/media/16cdd7_5c622f3dd00a478a9e1381c67663acc1~mv2.jpg/v1/fill/w_917,h_384,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Evasion%20Lab_01.jpg"            alt="CETP Lab"
+            loading="lazy">
+
+    </div>
+
+    <ul class="cert-skills">
+
+        <li>Windows Tradecraft</li>
+
+        <li>Defense Evasion</li>
+
+        <li>Operational Security</li>
+
+    </ul>
+
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>    
             </div>
 
         </div>
 
-        <div class="roadmap-arrow">
-            →
-        </div>
+        <div class="cert-group">
 
-        <div class="roadmap-step">
-
-            <span class="roadmap-level">
-                Beginner
-            </span>
-
-            <div class="roadmap-cert-group">
-
-                <div class="roadmap-cert">CRTP</div>
-
-                <div class="roadmap-cert">CARTP</div>
-
-                <div class="roadmap-cert">CESP</div>
-
+           
+              <div class="cert-group-label">
+           Advanced Certifications
             </div>
 
+            <div class="cert-grid">
+                <!-- CARTE -->
+            <article class="cert-card">
+
+    <div class="cert-card-top">
+
+        <div class="cert-badge">
+            CARTE®
         </div>
 
-        <div class="roadmap-arrow">
-            →
+        <span class="cert-level">
+            Advanced
+        </span>
+
+    </div>
+
+    <h4 class="cert-title">
+
+        Cloud Red Team Tactics for
+Attacking & Defending Azure
+
+    </h4>
+
+    <div class="cert-image">
+
+        <img
+src="https://static.wixstatic.com/media/628794_e7c3d5c0bf514cda9d3c7776d7193b96~mv2.png/v1/crop/x_64,y_0,w_1721,h_1024/fill/w_900,h_536,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/LabDiagram_edited.png"            alt="CARTE Lab"
+            loading="lazy">
+
+    </div>
+
+    <ul class="cert-skills">
+
+        <li>Advanced Azure Attacks</li>
+
+        <li>Hybrid Environments</li>
+
+        <li>Cloud Persistence</li>
+
+    </ul>
+
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>    
+                <!-- CRTM -->
+            <article class="cert-card">
+
+    <div class="cert-card-top">
+
+        <div class="cert-badge">
+            CRTM®
         </div>
 
-        <div class="roadmap-step">
+        <span class="cert-level">
+            Advanced
+        </span>
 
-            <span class="roadmap-level">
-                Intermediate
-            </span>
+    </div>
 
-            <div class="roadmap-cert-group">
+    <h4 class="cert-title">
 
-                
+        The Global Central Bank
 
-                <div class="roadmap-cert">CRTE</div>
+    </h4>
 
-                <div class="roadmap-cert">CETP</div>
+    <div class="cert-image">
 
-            </div>
+        <img
+src="https://static.wixstatic.com/media/470c31_4dd9ba5cdcf84d6bb7820a7159559d4a~mv2.png/v1/crop/x_0,y_51,w_2436,h_1894/fill/w_907,h_706,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/gcb.png"            alt="CRTM Lab"
+            loading="lazy">
 
-        </div>
+    </div>
 
-        <div class="roadmap-arrow">
-            →
-        </div>
+    <ul class="cert-skills">
 
-        <div class="roadmap-step">
+        <li>Advanced Operations</li>
 
-            <span class="roadmap-level">
-                Advanced
-            </span>
+        <li>Enterprise Red Teaming</li>
 
-            <div class="roadmap-cert-group">
+        <li>Mission-Level Tradecraft</li>
 
-                
+    </ul>
 
-                <div class="roadmap-cert">CARTE</div>
+    <div class="cert-footer">
 
-                <div class="roadmap-cert">CRTM</div>
+        <a href="#" class="cert-link">
 
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>    
             </div>
 
         </div>
 
     </div>
 
-</div>  
-         <div class="trust-header-cert">
+    <!-- Elementary -->
 
-            <span class="trust-eyebrow">
+    <div class="cert-panel" id="elementary">
+        <!-- Existing Elementary Panel -->
+         <div class="cert-group">
 
-                TRAIN WITH PROFESSIONALS FROM LEADING ORGANIZATIONS
+            <h3 class="cert-group-title">
+               
+            </h3>
 
-            </span>
+            <div class="cert-grid">
+                <!-- ACPT CARD -->
+                <article class="cert-card">
+
+    <div class="cert-card-top">
+
+        <div class="cert-badge">
+            ACPT®
+        </div>
+
+        <span class="cert-level">
+            Elementary
+        </span>
+
+    </div>
+
+    <h4 class="cert-title">
+
+        Infrastructure & Network Penetration Testing
+
+    </h4>
+
+    <div class="cert-image">
+
+        <img
+            src="https://static.wixstatic.com/media/16cdd7_f92a0feaeb2c4aadb4bcb1270ed98804~mv2.jpeg/v1/crop/x_0,y_150,w_11243,h_7110/fill/w_900,h_569,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ACPT_lab-01-New_Updated%20final%202_jpg.jpeg"
+            alt="ACPT Infrastructure & Network Penetration Testing"
+            loading="lazy">
+
+    </div>
+
+    <ul class="cert-skills">
+
+        <li>External Pentesting</li>
+
+        <li>Internal Assessments</li>
+
+        <li>Infrastructure Security</li>
+
+    </ul>
+
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>
+            </div>
 
         </div>
-       <div class="trust-stats">
+    </div>
 
-            <div class="trust-stat">
+    <!-- Beginner -->
 
-                <h3 class="counter" data-target="50000">50,000+</h3>
+    <div class="cert-panel" id="beginner">
+        <!-- Existing Beginner Panel -->
+        <div class="cert-group">
 
-                <p>Professionals Trained</p>
+            <h3 class="cert-group-title">
+               
+            </h3>
 
-            </div>
+            <div class="cert-grid">
+                <!-- CRTP -->
+                <article class="cert-card">
 
-            <div class="trust-stat">
+    <div class="cert-card-top">
 
-                <h3 class="counter" data-target="130">130+</h3>
+        <div class="cert-badge">
+            CRTP®
+        </div>
 
-                <p>Countries Reached</p>
+        <span class="cert-level">
+            Beginner
+        </span>
 
-            </div>
+    </div>
 
-            <div class="trust-stat">
+    <h4 class="cert-title">
 
-                <h3 class="counter" data-target="600">600+</h3>
+        Attacking and Defending Active Directory
 
-                <p>Organizations Served</p>
+    </h4>
 
-            </div>
+    <div class="cert-image">
 
-            <div class="trust-stat">
+        <img
+            src="https://static.wixstatic.com/media/470c31_1207916d21b14a428a92b4ff90a74f8a~mv2.png/v1/crop/x_23,y_0,w_1942,h_1081/fill/w_576,h_310,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/CRTP%20active%20directory%20attacks-02.png"
+            alt="CRTP Active Directory Lab"
+            loading="lazy">
 
-                <h3 class="counter" data-target="5000">5,000+</h3>
+    </div>
 
-                <p>Attacks Practiced Daily</p>
+    <ul class="cert-skills">
 
+        <li>Kerberos Attacks</li>
+
+        <li>Privilege Escalation</li>
+
+        <li>Active Directory Tradecraft</li>
+
+    </ul>
+
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>
+                <!-- CARTP -->
+                <article class="cert-card">
+
+    <div class="cert-card-top">
+
+        <div class="cert-badge">
+            CARTP®
+        </div>
+
+        <span class="cert-level">
+            Beginner
+        </span>
+
+    </div>
+
+    <h4 class="cert-title">
+
+        Azure Red Team Professional
+
+    </h4>
+
+    <div class="cert-image">
+
+        <img
+            src="https://static.wixstatic.com/media/470c31_c03d5a63cde444b18d44bdb541748fa9~mv2.png/v1/fill/w_569,h_310,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/CARTP%20AZURE%20AD%20ATTACKS-02.png"
+            alt="CARTP Azure Red Team Lab"
+            loading="lazy">
+
+    </div>
+
+    <ul class="cert-skills">
+
+        <li>Azure Identity Attacks</li>
+
+        <li>Cloud Enumeration</li>
+
+        <li>Azure Privilege Escalation</li>
+
+    </ul>
+
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>
+                <!-- CESP -->
+            <article class="cert-card">
+
+    <div class="cert-card-top">
+
+        <div class="cert-badge">
+            CESP-ADCS®
+        </div>
+
+        <span class="cert-level">
+            Beginner
+        </span>
+
+    </div>
+
+    <h4 class="cert-title">
+
+        Enterprise Certificate Services Security
+
+    </h4>
+
+    <div class="cert-image">
+
+        <img
+            src="https://static.wixstatic.com/media/16cdd7_1d7ccff0ca7647f882def3e6d2268619~mv2.png/v1/fill/w_213,h_203,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ACPT_lab-01-New_Updated%20final%202%20%20png.png"
+            alt="CESP ADCS Lab"
+            loading="lazy">
+
+    </div>
+
+    <ul class="cert-skills">
+
+        <li>ADCS Abuse</li>
+
+        <li>PKI Security</li>
+
+        <li>Certificate Attacks</li>
+
+    </ul>
+
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>    
             </div>
 
         </div>
-        <!-- =========================
-             STATS BAR
-        ========================== -->
+    </div>
 
-    
+    <!-- Intermediate -->
 
-        <!-- =========================
-             CTA AREA
-        ========================== -->
+    <div class="cert-panel" id="intermediate">
+        <!-- Existing Intermediate Panel -->
+        <div class="cert-group">
 
-        <div class="cert-bottom-cta">
+            <h3 class="cert-group-title">
+            
+            </h3>
 
-    <a href="#" class="cert-main-cta">
+            <div class="cert-grid">
+                <!-- CRTE -->
+            <article class="cert-card">
 
-        Explore All Certifications →
+    <div class="cert-card-top">
 
-    </a>
+        <div class="cert-badge">
+            CRTE®
+        </div>
+
+        <span class="cert-level">
+            Intermediate
+        </span>
+
+    </div>
+
+    <h4 class="cert-title">
+
+        Advanced Red Team Lab
+
+    </h4>
+
+    <div class="cert-image">
+
+        <img
+            src="https://static.wixstatic.com/media/470c31_1207916d21b14a428a92b4ff90a74f8a~mv2.png/v1/crop/x_23,y_0,w_1942,h_1081/fill/w_576,h_310,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/CRTP%20active%20directory%20attacks-02.png"
+            alt="CRTE Lab"
+            loading="lazy">
+
+    </div>
+
+    <ul class="cert-skills">
+
+        <li>Advanced AD Attacks</li>
+
+        <li>Persistence Techniques</li>
+
+        <li>Enterprise Tradecraft</li>
+
+    </ul>
+
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>    
+                <!-- CETP -->
+            <article class="cert-card">
+
+    <div class="cert-card-top">
+
+        <div class="cert-badge">
+            CETP®
+        </div>
+
+        <span class="cert-level">
+            Intermediate
+        </span>
+
+    </div>
+
+    <h4 class="cert-title">
+
+        Advanced Windows Tradecraft
+
+    </h4>
+
+    <div class="cert-image">
+
+        <img
+            src="https://static.wixstatic.com/media/98ad8e_81fec46cf0d2498bb860aeabc27e397e~mv2.png/v1/crop/x_96,y_0,w_4527,h_2657/fill/w_586,h_334,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/evasion%20course%20tile_-01.png"
+            alt="CETP Lab"
+            loading="lazy">
+
+    </div>
+
+    <ul class="cert-skills">
+
+        <li>Windows Tradecraft</li>
+
+        <li>Defense Evasion</li>
+
+        <li>Operational Security</li>
+
+    </ul>
+
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>    
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Advanced -->
+
+    <div class="cert-panel" id="advanced">
+        <!-- Existing Advanced Panel -->
+        <div class="cert-group">
+
+            <h3 class="cert-group-title">
+               
+            </h3>
+
+            <div class="cert-grid">
+                <!-- CARTE -->
+            <article class="cert-card">
+
+    <div class="cert-card-top">
+
+        <div class="cert-badge">
+            CARTE®
+        </div>
+
+        <span class="cert-level">
+            Advanced
+        </span>
+
+    </div>
+
+    <h4 class="cert-title">
+
+        Azure Red Team Expert
+
+    </h4>
+
+    <div class="cert-image">
+
+        <img
+            src="https://static.wixstatic.com/media/628794_0836557da1044632b5ea9eea3e469295~mv2.png/v1/fill/w_569,h_310,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/CARTE%20Steps.png"
+            alt="CARTE Lab"
+            loading="lazy">
+
+    </div>
+
+    <ul class="cert-skills">
+
+        <li>Advanced Azure Attacks</li>
+
+        <li>Hybrid Environments</li>
+
+        <li>Cloud Persistence</li>
+
+    </ul>
+
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>    
+                <!-- CRTM -->
+            <article class="cert-card">
+
+    <div class="cert-card-top">
+
+        <div class="cert-badge">
+            CRTM®
+        </div>
+
+        <span class="cert-level">
+            Advanced
+        </span>
+
+    </div>
+
+    <h4 class="cert-title">
+
+        Certified Red Team Master
+
+    </h4>
+
+    <div class="cert-image">
+
+        <img
+            src="https://static.wixstatic.com/media/628794_0836557da1044632b5ea9eea3e469295~mv2.png/v1/fill/w_569,h_310,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/CARTE%20Steps.png"
+            alt="CRTM Lab"
+            loading="lazy">
+
+    </div>
+
+    <ul class="cert-skills">
+
+        <li>Advanced Operations</li>
+
+        <li>Enterprise Red Teaming</li>
+
+        <li>Mission-Level Tradecraft</li>
+
+    </ul>
+
+    <div class="cert-footer">
+
+        <a href="#" class="cert-link">
+
+            View Certification
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</article>    
+            </div>
+
+        </div>
+    </div>
 
 </div>
-
     
-    
-    
-    </div>
+</div>
 
 </section>   
 <section class="learning-journey">
