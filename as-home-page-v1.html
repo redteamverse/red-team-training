@@ -428,8 +428,22 @@ button{
     transform: translateX(4px);
 }
 
+.floating-nav:not(.expanded) .nav-item{
 
+    width:40px;
+    height:40px;
 
+    margin:0 auto;
+
+    justify-content:center;
+}
+.floating-nav.expanded .nav-item{
+
+    justify-content:flex-start;
+
+}
+    
+    
 /* ==========================
    FEATURE CARD
 ========================== */
@@ -2427,6 +2441,8 @@ button{
     transition:.35s ease;
 
 }
+    
+    
 
 .cert-card:hover{
 
@@ -4234,22 +4250,34 @@ button{
 
 .visual-step{
 
-    background:#fff;
+    display:flex;
 
-    border:1px solid #E5E7EB;
+    align-items:center;
 
-    border-radius:16px;
+    justify-content:center;
 
-    padding:18px;
+    gap:4px;
 
-    font-size:20px;
+    font-size:18px;
 
-    font-weight:700;
-
-    color:#0f172a;
+    font-weight:500;
 
 }
 
+    
+ .visual-step svg{
+
+    width:20px;
+
+    height:20px;
+
+    stroke:#2563EB; /* Blue */
+
+    stroke-width:2;
+
+    flex-shrink:0;
+
+}   
 .visual-arrow{
 
     margin:14px 0;
@@ -7281,12 +7309,39 @@ button{
     font-weight:700;
 
 }
-    .foundation-layout{
-    display:grid;
-    grid-template-columns:500px 1fr;
-    gap:40px;
-}
 
+.foundation-layout{
+
+    display:grid;
+
+    grid-template-columns:540px 1fr;
+
+    gap:40px;
+
+    align-items:start;
+     position:relative;
+
+}    
+    
+.foundation-layout::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:60px;
+
+    height:2px;
+
+    background:#E5E7EB;
+
+    transform:translate(-50%,-50%);
+}    
+    
 .foundation-card{
     height:100%;
 }
@@ -7348,172 +7403,9 @@ button{
     }
 
 } 
-  /* ==========================================
-   FLOATING SECTION NAV
-========================================== */
 
-.floating-nav{
 
-    position:fixed;
 
-    left:32px;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    width:72px;
-
-    background:#2B2B50;
-
-    border-radius:36px;
-
-    padding:12px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
-
-    z-index:9999;
-
-    overflow:hidden;
-
-    transition:width .35s cubic-bezier(.22,.61,.36,1);
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.18);
-
-}
-
-/* Expanded State */
-
-.floating-nav.expanded{
-
-    width:240px;
-
-}
-
-/* ==========================================
-   NAV ITEM
-========================================== */
-
-.nav-item{
-
-    height:56px;
-
-    border-radius:18px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:16px;
-
-    padding:0 18px;
-
-    color:#ffffff;
-
-    text-decoration:none;
-
-    transition:.25s ease;
-
-    white-space:nowrap;
-
-}
-
-.nav-item:hover{
-
-    background:rgba(255,255,255,.08);
-
-}
-
-/* Active Section */
-
-.nav-item.active{
-
-    background:#B91C1C;
-
-    color:#fff;
-
-}
-
-/* Icons */
-
-.nav-item i{
-
-    width:22px;
-
-    height:22px;
-
-    min-width:22px;
-
-    stroke-width:2;
-
-}
-
-/* Hidden Labels */
-
-.nav-item span{
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:translateX(10px);
-
-    transition:.3s ease;
-
-    font-size:15px;
-
-    font-weight:600;
-
-}
-
-/* Show Labels When Expanded */
-
-.floating-nav.expanded .nav-item span{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateX(0);
-
-}
-
-/* ==========================================
-   SCROLL INDICATOR LINE
-========================================== */
-
-.floating-nav::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:36px;
-
-    top:30px;
-
-    bottom:30px;
-
-    width:2px;
-
-    background:rgba(255,255,255,.12);
-
-    z-index:0;
-
-}
-
-.nav-item{
-
-    position:relative;
-
-    z-index:1;
-
-}
 
 /* ==========================================
    MOBILE
@@ -7529,18 +7421,447 @@ button{
 
 }  
     
-.nav-item svg{
 
-    width:22px;
+/* =====================================
+   FLOATING NAV
+===================================== */
 
-    height:22px;
+.floating-nav{
 
-    stroke:#fff;
+    position:fixed;
 
-    stroke-width:2;
+    left:24px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:56px;
+
+    padding:14px 8px;
+
+    background:#2B2B50;
+
+    border-radius:28px;
+
+    z-index:9999;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    transition:all .3s ease;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.15);
+
+}
+
+/* EXPANDED */
+
+.floating-nav.expanded{
+
+    width:240px;
+
+    border-radius:32px;
+
+}
+
+/* =====================================
+   CONNECTOR LINE
+===================================== */
+
+.floating-nav::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:56px;
+
+    bottom:56px;
+
+    width:2px;
+
+    transform:translateX(-50%);
+
+    background:rgba(255,255,255,.12);
+
+    pointer-events:none;
+
+}
+
+/* Hide line when expanded */
+
+.floating-nav.expanded::before{
+
+    display:none;
+
+}
+
+/* =====================================
+   NAV ITEM
+===================================== */
+
+.floating-nav-item{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:40px;
+
+    height:40px;
+
+    margin:0 auto;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    position:relative;
+
+    transition:.25s ease;
 
     flex-shrink:0;
 
+}
+
+/* Icon */
+
+.floating-nav-item i{
+
+    width:18px;
+
+    height:18px;
+
+    flex-shrink:0;
+
+}
+
+/* =====================================
+   ACTIVE
+===================================== */
+
+.floating-nav-item.active{
+
+    background:#C1121F;
+
+}
+
+/* =====================================
+   LABELS
+===================================== */
+
+.floating-nav-item span{
+
+    width:0;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transform:translateX(8px);
+
+    transition:.25s ease;
+
+}
+
+/* =====================================
+   EXPANDED MODE
+===================================== */
+
+.floating-nav.expanded .floating-nav-item{
+
+    width:100%;
+
+    height:48px;
+
+    justify-content:flex-start;
+
+    padding:0 16px;
+
+    gap:14px;
+
+}
+
+.floating-nav.expanded .floating-nav-item span{
+
+    width:auto;
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:none;
+
+}
+
+/* Active item expanded */
+
+.floating-nav.expanded .floating-nav-item.active{
+
+    background:#C1121F;
+
+    border-radius:14px;
+
+}
+
+/* Hover */
+
+.floating-nav.expanded .floating-nav-item:hover:not(.active){
+
+    background:rgba(255,255,255,.06);
+
+}
+.cert-preview{
+
+    border:1px solid var(--border);
+
+    border-radius:28px;
+
+    padding:28px;
+
+    background:#FAFBFC;
+
+}
+    
+    .cert-preview-image{
+
+    margin-bottom:28px;
+
+}
+.cert-preview-image img{
+
+    max-width:420px;
+
+    margin:auto;
+
+    display:block;
+
+    border-radius:16px;
+
+}
+    
+    .cert-preview-content h3{
+
+    font-size:42px;
+
+    line-height:1.1;
+
+    margin:0 0 16px;
+
+}
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width:992px){
+
+    .floating-nav{
+
+        display:none;
+
+    }
+
+}  
+    
+
+.cert-preview-image img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+}
+
+.preview-eyebrow{
+
+    display:inline-block;
+
+    margin-bottom:12px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    color:#64748B;
+
+}
+
+.cert-preview-content h3{
+
+    margin:0 0 16px;
+
+    font-size:40px;
+
+    line-height:1.1;
+
+    color:#0F172A;
+
+}
+
+.cert-preview-content p{
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#64748B;
+
+}
+
+.preview-points{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0 0 28px;
+
+}
+
+.preview-points li{
+
+    position:relative;
+
+    padding-left:24px;
+
+    margin-bottom:14px;
+
+    color:#0F172A;
+
+    font-weight:500;
+
+}
+
+.preview-points li::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:10px;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#B91C1C;
+
+}
+
+.preview-link{
+
+    color:#1E40AF;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+}
+
+@media(max-width:992px){
+
+    .cert-preview{
+
+        grid-template-columns:1fr;
+
+        padding:32px;
+
+    }
+
+    .cert-preview-content h3{
+
+        font-size:32px;
+
+    }
+
+}    
+    
+.cert-highlights{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:20px 0;
+
+}
+
+.cert-highlights span{
+
+    padding:8px 14px;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}  
+.cert-earned{
+
+    margin-bottom:18px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:#B91C1C;
+
+}    
+    
+.cert-footer{
+
+    margin-top:auto;
+
+    padding-top:24px;
+
+    border-top:1px solid #E5E7EB;
+
+}    
+    
+.text-red{
+    color:#B91C1C;
 }    
     </style>    
 </head>
@@ -8309,8 +8630,8 @@ button{
 
                     <h1>
 
-                        Red Team Training, InfoSec Education
-                        Platform & Cyber Ranges
+                        <span class="text-red">Red Team Training </span> , InfoSec Education
+                        Platform, & Cyber Ranges
 
                     </h1>
 
@@ -8415,11 +8736,11 @@ button{
         <!-- Mobile Image -->
         <source 
             media="(max-width: 768px)"
-            srcset="https://redteamverse.github.io/red-team-training/images/mob-1.png">
+            srcset="https://static.wixstatic.com/media/16cdd7_11f90b67a5be4d708058b926b09b4add~mv2.png/v1/fill/w_783,h_436,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/hackersummer%202026%20%20page%20banner.pngg">
 
         <!-- Desktop Image -->
         <img 
-            src="https://redteamverse.github.io/red-team-training/images/as_dashboard_3.png"
+            src="https://static.wixstatic.com/media/16cdd7_11f90b67a5be4d708058b926b09b4add~mv2.png/v1/fill/w_783,h_436,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/hackersummer%202026%20%20page%20banner.png"
             alt="Red Team cyber range with Active Directory and Azure attack simulations"
             loading="eager">
 
@@ -8772,7 +9093,7 @@ button{
 
             <h2>
 
-               Choose Your Red Team Certification Path
+                Choose Your <span class="text-red">Red Team Certification</span> Path
 
             </h2>
 
@@ -8835,7 +9156,7 @@ button{
     <div class="cert-card-top">
 
         <div class="cert-badge">
-            ACPT®
+            ACPT
         </div>
 
         <span class="cert-level">
@@ -8871,145 +9192,76 @@ button{
 
     <div class="cert-footer">
 
-        <a href="#" class="cert-link">
+    <div class="cert-earned">
 
-            View Certification
-            <span>→</span>
+        Earn The ACPT Certification
+
+    </div>
+
+    <a href="#" class="cert-link">
+
+        View Certification
+        <span>→</span>
+
+    </a>
+
+</div>
+</article>
+            </div>
+ <div class="cert-preview">
+
+    <div class="cert-preview-image">
+
+        <img
+            src="https://static.wixstatic.com/media/16cdd7_d81a4c128cc94c7b92d86d8533c5f079~mv2.jpg/v1/fill/w_590,h_455,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/ACPT-Certificate-For%20WEB_01.jpg"
+            alt="ACPT Certification">
+
+    </div>
+
+    <div class="cert-preview-content">
+
+        <span class="preview-eyebrow">
+
+           WHAT YOU EARN
+
+        </span>
+
+        <h3>
+
+          Earn Industry Recognized Certification
+
+        </h3>
+
+       <div class="cert-highlights">
+
+    <span>Hands-On Exam</span>
+
+    <span>Industry Recognized</span>
+
+    <span>Digital Credential</span>
+
+</div>
+
+       
+
+        <a href="#"
+           class="preview-link">
+
+            View Certification Details →
 
         </a>
 
     </div>
 
-</article>
-            </div>
-
+</div>
         
         <!-- LEARNING JOURNEY -->
 
-     <div class="foundation-journey">
-
-        <div class="cert-journey-header">
-
-            <span class="journey-eyebrow">
-
-                CERTIFICATION PROGRESSION
-
-            </span>
-
-            <h3>
-
-                Where Does ACPT Lead?
-
-            </h3>
-
-            <p>
-
-                Start with infrastructure and network penetration testing,
-                then specialize in Active Directory, Azure, enterprise
-                certificate services and advanced Red Team operations.
-
-            </p>
-
-        </div>
-
-        <div class="journey-path">
-
-            <div class="journey-stage">
-
-                <span class="journey-level">
-
-                    Elementary
-
-                </span>
-
-                <div class="journey-items">
-
-                    <span>ACPT</span>
-
-                </div>
-
-            </div>
-
-            <div class="journey-arrow">
-
-                →
-
-            </div>
-
-            <div class="journey-stage">
-
-                <span class="journey-level">
-
-                    Beginner
-
-                </span>
-
-                <div class="journey-items">
-
-                    <span>CRTP</span>
-
-                    <span>CARTP</span>
-
-                    <span>CESP</span>
-
-                </div>
-
-            </div>
-
-            <div class="journey-arrow">
-
-                →
-
-            </div>
-
-            <div class="journey-stage">
-
-                <span class="journey-level">
-
-                    Intermediate
-
-                </span>
-
-                <div class="journey-items">
-
-                    <span>CRTE</span>
-
-                    <span>CETP</span>
-
-                </div>
-
-            </div>
-
-            <div class="journey-arrow">
-
-                →
-
-            </div>
-
-            <div class="journey-stage">
-
-                <span class="journey-level">
-
-                    Advanced
-
-                </span>
-
-                <div class="journey-items">
-
-                    <span>CARTE</span>
-
-                    <span>CRTM</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+    
         
         
         </div>
+            
         </div>    
 
         <div class="cert-group">
@@ -9059,7 +9311,9 @@ src="https://static.wixstatic.com/media/470c31_33920ce03254499483e54c9df75654ce~
     </ul>
 
     <div class="cert-footer">
-
+     <div class="cert-earned">
+    Earn The CRTP® Certification
+</div>
         <a href="#" class="cert-link">
 
             View Certification
@@ -9112,7 +9366,9 @@ src="https://static.wixstatic.com/media/470c31_0ed0224cb8774681bedb645c3b92571d~
     </ul>
 
     <div class="cert-footer">
-
+     <div class="cert-earned">
+    Earn The CARTP® Certification
+</div>
         <a href="#" class="cert-link">
 
             View Certification
@@ -9129,7 +9385,7 @@ src="https://static.wixstatic.com/media/470c31_0ed0224cb8774681bedb645c3b92571d~
     <div class="cert-card-top">
 
         <div class="cert-badge">
-            CESP-ADCS®
+            CESP-ADCS
         </div>
 
         <span class="cert-level">
@@ -9163,9 +9419,11 @@ src="https://static.wixstatic.com/media/470c31_66883abc267947c68a8fa4621788a087~
     </ul>
 
     <div class="cert-footer">
-
+<div class="cert-earned">
+    Earn The CESP-ADCS Certification
+</div>
         <a href="#" class="cert-link">
-
+  
             View Certification
             <span>→</span>
 
@@ -9227,7 +9485,9 @@ src="https://static.wixstatic.com/media/16cdd7_b14fa808ae6d47eba3912d36c833cbee~
     </ul>
 
     <div class="cert-footer">
-
+<div class="cert-earned">
+    Earn The CRTE® Certification
+</div>
         <a href="#" class="cert-link">
 
             View Certification
@@ -9244,7 +9504,7 @@ src="https://static.wixstatic.com/media/16cdd7_b14fa808ae6d47eba3912d36c833cbee~
     <div class="cert-card-top">
 
         <div class="cert-badge">
-            CETP®
+            CETP
         </div>
 
         <span class="cert-level">
@@ -9279,7 +9539,9 @@ src="https://static.wixstatic.com/media/16cdd7_5c622f3dd00a478a9e1381c67663acc1~
     </ul>
 
     <div class="cert-footer">
-
+<div class="cert-earned">
+    Earn The CETP Certification
+</div>
         <a href="#" class="cert-link">
 
             View Certification
@@ -9343,7 +9605,9 @@ src="https://static.wixstatic.com/media/628794_e7c3d5c0bf514cda9d3c7776d7193b96~
     </ul>
 
     <div class="cert-footer">
-
+<div class="cert-earned">
+    Earn The CARTE® Certification
+</div>
         <a href="#" class="cert-link">
 
             View Certification
@@ -9360,7 +9624,7 @@ src="https://static.wixstatic.com/media/628794_e7c3d5c0bf514cda9d3c7776d7193b96~
     <div class="cert-card-top">
 
         <div class="cert-badge">
-            CRTM®
+            CRTM
         </div>
 
         <span class="cert-level">
@@ -9394,7 +9658,9 @@ src="https://static.wixstatic.com/media/470c31_4dd9ba5cdcf84d6bb7820a7159559d4a~
     </ul>
 
     <div class="cert-footer">
-
+<div class="cert-earned">
+    Earn The CRTM Certification
+</div>
         <a href="#" class="cert-link">
 
             View Certification
@@ -10034,7 +10300,7 @@ src="https://static.wixstatic.com/media/470c31_4dd9ba5cdcf84d6bb7820a7159559d4a~
 
             <h2>
 
-                Choose Your Learning Path
+                Choose Your <span class="text-red">Red Team Learning</span>  Path
 
             </h2>
 
@@ -10325,7 +10591,7 @@ src="https://static.wixstatic.com/media/470c31_4dd9ba5cdcf84d6bb7820a7159559d4a~
 
                 <h2>
 
-                    Red Team Labs Environments
+                    <span class="text-red">Red Team Labs</span> Environments
 
                 </h2>
 
@@ -10764,7 +11030,7 @@ src="https://static.wixstatic.com/media/470c31_4dd9ba5cdcf84d6bb7820a7159559d4a~
             <div class="visual-box">
 
                 <div class="visual-step">
-
+<i data-lucide="compass"></i>
                     Start Your Journey
 
                 </div>
@@ -10776,7 +11042,7 @@ src="https://static.wixstatic.com/media/470c31_4dd9ba5cdcf84d6bb7820a7159559d4a~
                 </div>
 
                 <div class="visual-step">
-
+<i data-lucide="shield-plus"></i>
                     Upgrade Skills
 
                 </div>
@@ -10788,7 +11054,7 @@ src="https://static.wixstatic.com/media/470c31_4dd9ba5cdcf84d6bb7820a7159559d4a~
                 </div>
 
                 <div class="visual-step">
-
+<i data-lucide="award"></i>
                     Get Certified
 
                 </div>
@@ -10826,7 +11092,7 @@ src="https://static.wixstatic.com/media/470c31_4dd9ba5cdcf84d6bb7820a7159559d4a~
 
             <h2>
 
-                Join Upcoming Red Team Bootcamps
+                Join Upcoming <span class="text-red">Red Team Bootcamps</span>
 
             </h2>
 
@@ -11305,6 +11571,7 @@ Take your Azure Red Team skills to the next level. Get trained in Azure pentesti
             </article>        
 
         </div>
+        
 
         <!-- =========================
              BENEFITS BLOCK
@@ -11362,7 +11629,7 @@ Take your Azure Red Team skills to the next level. Get trained in Azure pentesti
 
                 <h2>
 
-                    Bring Altered Security Training To Your Team
+                    Bring <span class="text-red">Altered Security Training</span> To Your Team
 
                 </h2>
 
@@ -11854,54 +12121,49 @@ Take your Azure Red Team skills to the next level. Get trained in Azure pentesti
     </div>
 
 </section> 
-<nav class="floating-nav" id="floatingNav">
+    <nav class="floating-nav" id="floatingNav">
 
     <a href="#certifications"
-       class="nav-item active">
+       class="floating-nav-item active">
 
         <i data-lucide="award"></i>
-
         <span>Certification</span>
 
     </a>
 
     <a href="#learning-path"
-       class="nav-item">
+       class="floating-nav-item">
 
         <i data-lucide="route"></i>
-
         <span>Learning Path</span>
 
     </a>
 
     <a href="#redteam-labs"
-       class="nav-item">
+       class="floating-nav-item">
 
         <i data-lucide="flask-conical"></i>
-
         <span>Red Team Labs</span>
 
     </a>
 
     <a href="#bootcamps"
-       class="nav-item">
+       class="floating-nav-item">
 
         <i data-lucide="graduation-cap"></i>
-
         <span>Bootcamps</span>
 
     </a>
 
     <a href="#training"
-       class="nav-item">
+       class="floating-nav-item">
 
         <i data-lucide="building-2"></i>
-
         <span>Training</span>
 
     </a>
 
-</nav>  
+</nav>
 <script>
 /* =========================================
    ALTERED SECURITY HERO SLIDER
@@ -12609,10 +12871,12 @@ labObserver.observe(counter);
 });
     </script>    
     
-    <script>
+   
+    
+<script>
 
 /* ==========================
-   LUCIDE ICONS
+   INIT LUCIDE
 ========================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12632,9 +12896,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const floatingNav = document.getElementById("floatingNav");
+    const floatingNav =
+    document.getElementById("floatingNav");
 
     if (!floatingNav) return;
+
+    let pinned = false;
 
     /* Hover Expand */
 
@@ -12648,7 +12915,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     floatingNav.addEventListener("mouseleave", () => {
 
-        if (!floatingNav.classList.contains("pinned")) {
+        if (!pinned) {
 
             floatingNav.classList.remove("expanded");
 
@@ -12656,13 +12923,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    /* Click To Pin */
+    /* Double Click = Pin */
 
-    floatingNav.addEventListener("click", (e) => {
+    floatingNav.addEventListener("dblclick", () => {
 
-        if (e.target.closest(".nav-item")) {
+        pinned = !pinned;
 
-            floatingNav.classList.toggle("pinned");
+        floatingNav.classList.toggle("pinned");
+
+        if (pinned) {
 
             floatingNav.classList.add("expanded");
 
@@ -12679,17 +12948,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const sections =
-    document.querySelectorAll("section[id]");
+    const sections = document.querySelectorAll("section[id]");
 
     const navLinks =
-    document.querySelectorAll(".nav-item");
+    document.querySelectorAll(".floating-nav-item");
 
-    if (!sections.length || !navLinks.length) return;
+    if (!sections.length) return;
 
-    window.addEventListener("scroll", () => {
+    function activateCurrentSection() {
 
-        let current = "";
+        let currentSection = "";
 
         sections.forEach(section => {
 
@@ -12705,7 +12973,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 sectionTop + sectionHeight
             ) {
 
-                current =
+                currentSection =
                 section.getAttribute("id");
 
             }
@@ -12717,8 +12985,8 @@ document.addEventListener("DOMContentLoaded", () => {
             link.classList.remove("active");
 
             if (
-                link.getAttribute("href")
-                === `#${current}`
+                link.getAttribute("href") ===
+                "#" + currentSection
             ) {
 
                 link.classList.add("active");
@@ -12727,11 +12995,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+    }
+
+    activateCurrentSection();
+
+    window.addEventListener(
+        "scroll",
+        activateCurrentSection
+    );
+
+});
+
+
+/* ==========================
+   SMOOTH SCROLL
+========================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const links =
+    document.querySelectorAll(".floating-nav-item");
+
+    links.forEach(link => {
+
+        link.addEventListener("click", e => {
+
+            const targetId =
+            link.getAttribute("href");
+
+            if (!targetId.startsWith("#")) return;
+
+            const target =
+            document.querySelector(targetId);
+
+            if (!target) return;
+
+            e.preventDefault();
+
+            window.scrollTo({
+
+                top:
+                target.offsetTop - 100,
+
+                behavior:"smooth"
+
+            });
+
+        });
+
     });
 
 });
 
-</script>
+</script>    
 <script src="https://unpkg.com/lucide@latest"></script>
 </body>
 </html>
