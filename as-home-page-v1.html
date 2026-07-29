@@ -8270,6 +8270,288 @@ color:var(--text-muted);
     max-width:95%;
 
 }    
+    
+/* ==========================
+   Purchase Panel
+========================== */
+
+.cert-purchase{
+
+    margin:22px 0;
+
+    padding:20px;
+
+    background:var(--surface-soft);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+/* Price */
+
+.cert-price-row{
+
+    margin-bottom:20px;
+
+}
+
+.price-label{
+
+    display:block;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    color:var(--text-muted);
+
+    margin-bottom:6px;
+
+}
+
+.price-value{
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:var(--primary);
+
+    line-height:1;
+
+}
+
+/* Options */
+
+.purchase-options{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+
+}
+
+.purchase-field{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.purchase-field label{
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+.purchase-field select{
+
+    height:44px;
+
+    padding:0 14px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    font-size:15px;
+
+}
+
+/* Quantity */
+
+.qty-selector{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    height:44px;
+
+}
+
+.qty-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    background:transparent;
+
+    color:var(--text);
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.qty-btn:hover{
+
+    background:var(--surface-hover);
+
+}
+
+.qty-selector input{
+
+    width:50px;
+
+    border:none;
+
+    background:none;
+
+    text-align:center;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .purchase-options{
+
+        grid-template-columns:1fr;
+
+    }
+
+}    
+    
+    .purchase-includes{
+
+    margin-top:18px;
+
+}
+
+.includes-toggle{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    border:none;
+
+    background:none;
+
+    padding:0;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:var(--text-muted);
+
+    cursor:pointer;
+
+}
+
+.includes-toggle svg{
+
+    width:16px;
+
+    height:16px;
+
+    color:var(--secondary);
+
+}
+
+.includes-content{
+
+    display:none;
+
+    margin-top:12px;
+
+    padding:14px 16px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+}
+
+.includes-content.open{
+
+    display:block;
+
+}
+
+.includes-content ul{
+
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+
+}
+
+.includes-content li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:10px;
+
+}
+
+.includes-content li:last-child{
+
+    margin-bottom:0;
+
+}
+
+.includes-content li::before{
+
+    content:"✓";
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
     </style>    
 </head>
 <body>
@@ -9614,7 +9896,110 @@ color:var(--text-muted);
     Earn The ACPT Certification
 
 </div>
+<!-- Purchase Panel -->
 
+<div class="cert-purchase">
+
+    <div class="cert-price-row">
+
+        <div class="price-info">
+
+            <span class="price-label">
+
+                Price
+
+            </span>
+
+            <div class="price-value">
+
+                $249
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="purchase-options">
+
+        <!-- Duration -->
+
+        <div class="purchase-field">
+
+            <label for="acpt-duration">
+
+                Duration
+
+            </label>
+
+            <select id="acpt-duration">
+
+                <option value="249">30 Days</option>
+
+                <option value="379">60 Days</option>
+
+                <option value="499">90 Days</option>
+
+            </select>
+
+        </div>
+
+        <!-- Quantity -->
+
+        <div class="purchase-field">
+
+            <label>
+
+                Quantity
+
+            </label>
+
+            <div class="qty-selector">
+
+                <button type="button" class="qty-btn minus">−</button>
+
+                <input type="text" value="1" readonly>
+
+                <button type="button" class="qty-btn plus">+</button>
+
+            </div>
+
+        </div>
+<div class="purchase-includes">
+
+    <button type="button"
+            class="includes-toggle"
+            aria-expanded="false">
+
+        <i data-lucide="info"></i>
+
+        Purchase Includes
+
+    </button>
+
+    <div class="includes-content">
+
+        <ul>
+
+            <li>                <span id="labDuration">
+
+                    30 Days
+
+                </span>
+Lab Access</li>
+
+            <li>Complete Course Material</li>
+
+            <li>One Certification Exam Attempt</li>
+
+        </ul>
+
+    </div>
+
+</div>
+    </div>
+
+</div>
 <div class="cert-footer">
 
     <div class="cert-footer-actions">
@@ -13555,6 +13940,54 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 </script>    
+<script>
+    const duration = document.getElementById("acpt-duration");
+const price = document.querySelector(".price-value");
+
+duration.addEventListener("change", function(){
+
+    price.textContent = "$" + this.value;
+
+});
+
+const qtyInput = document.querySelector(".qty-selector input");
+
+document.querySelector(".plus").onclick = () => {
+
+    if(+qtyInput.value < 9){
+
+        qtyInput.value++;
+
+    }
+
+};
+
+document.querySelector(".minus").onclick = () => {
+
+    if(+qtyInput.value > 1){
+
+        qtyInput.value--;
+
+    }
+
+};
+    </script>    
+<script>const includesBtn = document.querySelector(".includes-toggle");
+const includesContent = document.querySelector(".includes-content");
+
+includesBtn.addEventListener("click", () => {
+
+    includesContent.classList.toggle("open");
+
+    includesBtn.setAttribute(
+        "aria-expanded",
+        includesContent.classList.contains("open")
+    );
+
+});
+    
+    
+    </script>    
 <script src="https://unpkg.com/lucide@latest"></script>
 </body>
 </html>
