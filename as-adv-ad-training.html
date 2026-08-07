@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:Inter,sans-serif;
+
+background:var(--color-bg);
+
+color:var(--color-text-main);
+
+line-height:1.7;
+
+overflow-x:hidden;
+
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+    
+    
+.aadt-hero{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:100px 0;
+
+  background:
+  linear-gradient(
+    135deg,
+    #F8FAFC 0%,
+    #FFFFFF 45%,
+    #EEF2FF 100%
+  );
+
+}
+
+button{
+
+font-family:inherit;
+cursor:pointer;
+border:none;
+
+}
+
+.container{
+
+max-width:var(--container);
+
+margin:auto;
+
+padding-inline:24px;
+
+}
+
+section{
+
+padding:90px 0;
+
+}
+
+   
+    
+h1{
+
+font-size:clamp(2.8rem,5vw,4rem);
+
+line-height:1.05;
+
+font-weight:800;
+
+letter-spacing:-2px;
+
+}
+
+h2{
+font-size:42px;
+line-height:1.15;
+font-weight:800;
+margin-bottom:24px;
+}
+    
+@media(max-width:768px){
+
+    h2 {    
+    font-size:28px;
+line-height:1.15;
+font-weight:800;
+margin-bottom:24px;
+
+  
+        }
+    }    
+
+h3{
+
+font-size:1.25rem;
+
+font-weight:700;
+
+}
+
+p{
+
+color:var(--color-body);
+    
+
+}
+
+/* BACKGROUND GLOW */
+
+.aadt-hero::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:700px;
+  height:700px;
+
+  top:-250px;
+  right:-250px;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(30,58,138,.08),
+    transparent 70%
+  );
+
+}
+
+.aadt-hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:500px;
+  height:500px;
+
+  left:-200px;
+  bottom:-200px;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(185,28,28,.05),
+    transparent 70%
+  );
+
+}
+
+/* CONTAINER */
+
+.container{
+
+  max-width:1380px;
+
+  margin:auto;
+
+  padding:0 32px;
+
+}
+
+/* GRID */
+
+.aadt-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  minmax(580px,1.15fr)
+  minmax(520px,.85fr);
+
+  gap:50px;
+
+  align-items:center;
+
+}
+
+/* ==========================================
+LEFT CONTENT
+========================================== */
+
+.aadt-content{
+
+  max-width:760px;
+
+}
+
+/* EYEBROW */
+
+.aadt-eyebrow{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:12px 18px;
+
+  border-radius:999px;
+
+  background:
+  rgba(185,28,28,.08);
+
+  border:
+  1px solid rgba(185,28,28,.08);
+
+  color:#B91C1C;
+
+  font-size:12px;
+
+  font-weight:800;
+
+  letter-spacing:.08em;
+
+  margin-bottom:26px;
+
+}
+
+.aadt-eyebrow svg{
+
+  width:16px;
+  height:16px;
+
+}
+
+/* HEADING */
+.aadt-content h1{
+
+  font-family:'Inter',sans-serif;
+
+  font-size:72px;
+
+  line-height:1;
+
+  letter-spacing:-0.04em;
+
+  font-weight:900;
+
+  color:#111827;
+
+  margin-bottom:24px;
+
+  max-width:720px;
+
+}
+
+/* DESCRIPTION */
+
+.aadt-content p{
+
+  font-size:19px;
+
+  line-height:1.9;
+
+  color:#4B5563;
+
+  margin-bottom:36px;
+
+  max-width:660px;
+
+}
+
+/* ==========================================
+BUTTONS
+========================================== */
+
+.aadt-actions{
+
+  display:flex;
+
+  gap:16px;
+
+  margin-bottom:36px;
+
+}
+
+.btn-primary{
+
+  height:58px;
+
+  padding:0 30px;
+
+  border-radius:16px;
+
+  background:#B91C1C;
+
+  color:#FFFFFF;
+
+  text-decoration:none;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-weight:700;
+
+  transition:.25s;
+
+}
+
+.btn-primary:hover{
+
+  background:#EA3037;
+
+  transform:translateY(-2px);
+
+}
+
+.btn-secondary{
+
+  height:58px;
+
+  padding:0 30px;
+
+  border-radius:16px;
+
+  border:1px solid #E5E7EB;
+
+  background:#FFFFFF;
+
+  color:#111827;
+
+  text-decoration:none;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-weight:700;
+
+  transition:.25s;
+
+}
+
+.btn-secondary:hover{
+
+  background:#F9FAFB;
+
+}
+
+/* ==========================================
+TRUST BADGES
+========================================== */
+
+.aadt-features{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:12px;
+
+  max-width:760px;
+
+}
+
+.aadt-features div{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:12px 18px;
+
+  background:#FFFFFF;
+
+  border:1px solid #E5E7EB;
+
+  border-radius:999px;
+
+  font-size:14px;
+
+  font-weight:600;
+
+  color:#374151;
+
+  white-space:nowrap;
+
+  transition:.25s;
+
+}
+
+.aadt-features div:hover{
+
+  border-color:#1E3A8A;
+
+  transform:translateY(-2px);
+
+}
+
+.aadt-features svg{
+
+  width:18px;
+
+  height:18px;
+
+  color:#B91C1C;
+
+}
+
+/* ==========================================
+RIGHT VISUAL
+========================================== */
+
+.aadt-visual{
+
+  display:flex;
+
+  justify-content:center;
+
+}
+
+.aadt-card{
+
+  width:100%;
+
+  background:#FFFFFF;
+
+  border:1px solid #E5E7EB;
+
+  border-radius:28px;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 25px 70px rgba(0,0,0,.08);
+
+    transform:scale(1.12);
+
+  transform-origin:center;
+
+}
+
+/* TOP BAR */
+
+.aadt-card-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:18px 22px;
+
+  border-bottom:1px solid #E5E7EB;
+
+  background:#F9FAFB;
+
+}
+
+.aadt-card-top h3{
+
+  margin:0;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  color:#111827;
+
+}
+
+.aadt-card-top span{
+
+  color:#1E3A8A;
+
+  font-size:14px;
+
+  font-weight:700;
+
+}
+
+/* IMAGE */
+
+.aadt-card img{
+
+  width:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+}
+
+/* STATS */
+
+.aadt-stats{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  padding:26px;
+
+  background:#F8FAFC;
+
+}
+
+.aadt-stats div{
+
+  text-align:center;
+
+}
+
+.aadt-stats strong{
+
+  display:block;
+
+  font-size:28px;
+
+  line-height:1;
+
+  font-weight:600;
+
+  color:#111827;
+
+  margin-bottom:8px;
+
+}
+
+.aadt-stats span{
+
+  font-size:14px;
+
+  font-weight:400;
+
+  color:#6B7280;
+
+}
+/* ==========================================
+TABLET
+========================================== */
+
+@media(max-width:1100px){
+
+  .aadt-grid{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+
+  }
+
+  .aadt-content{
+
+    max-width:none;
+
+    text-align:center;
+
+  }
+
+ .aadt-content h1{
+
+    font-size:42px;
+
+    line-height:1.05;
+
+  }
+
+  .aadt-content p{
+
+    margin:auto auto 34px;
+
+  }
+
+  .aadt-actions{
+
+    justify-content:center;
+
+  }
+
+  .aadt-features{
+
+    justify-content:center;
+
+    margin:auto;
+
+  }
+
+  .aadt-card{
+
+transform:scale(1.12);
+
+  transform-origin:center;
+
+    max-width:850px;
+
+    margin:auto;
+
+  }
+
+}
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+
+
+  .aadt-hero{
+
+    padding:80px 0 60px;
+
+  }
+
+  .container{
+
+    padding:0 20px;
+
+  }
+
+  .aadt-content h1{
+
+    font-size:40px;
+
+    line-height:1.08;
+
+  }
+
+  .aadt-content p{
+
+    font-size:16px;
+
+    line-height:1.8;
+
+  }
+
+  .aadt-actions{
+
+    flex-direction:column;
+
+  }
+
+  .btn-primary,
+  .btn-secondary{
+
+    width:100%;
+
+  }
+
+  .aadt-features{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:10px;
+
+  }
+
+  .aadt-features div{
+
+    justify-content:flex-start;
+
+    white-space:normal;
+
+  }
+
+  .aadt-card-top{
+
+    padding:16px;
+
+  }
+
+  .aadt-stats{
+
+    padding:18px;
+
+  }
+
+  .aadt-stats strong{
+
+    font-size:24px;
+
+  }
+    
+
+    
+    
+}
+        
+.aadt-credibility{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:5px;
+
+  margin-bottom:32px;
+
+  color:#374151;
+
+  font-size:15px;
+
+  font-weight:600;
+
+}
+
+.aadt-credibility svg{
+
+  width:18px;
+
+  height:18px;
+
+  color:#1E3A8A;
+
+}        
+</style>    
+    </head>
+    <body>
+<!-- ==========================================
+ADVANCED ACTIVE DIRECTORY HERO
+========================================== -->
+
+<section class="aadt-hero">
+
+<div class="container">
+
+<div class="aadt-grid">
+
+<!-- LEFT -->
+
+<div class="aadt-content">
+
+<div class="aadt-eyebrow">
+
+<i data-lucide="shield-check"></i>
+
+<span>
+ADVANCED ACTIVE DIRECTORY SECURITY TRAINING
+</span>
+
+</div>
+
+<h1>
+
+Advanced Active Directory
+Training
+
+</h1>
+
+<p>
+
+Master advanced Active Directory attack and defense techniques used in complex enterprise environments. Learn trust abuse, Kerberos attacks, privilege escalation, cross-forest operations, persistence, and defense validation through hands-on labs built from real-world security assessments and Red Team engagements.
+</p>
+
+<div class="aadt-actions">
+
+<a href="#curriculum"
+class="btn-primary">
+
+View Course Content
+
+</a>
+
+<a href="#syllabus"
+class="btn-secondary">
+
+Download Syllabus
+
+</a>
+
+</div>
+<div class="aadt-credibility">
+
+  <i data-lucide="badge-check"></i>
+
+  <span>
+Designed from real-world enterprise security assessments
+  </span>
+
+</div>
+<div class="aadt-features">
+
+<div>
+<i data-lucide="network"></i>
+<span>Multi-Forest Labs</span>
+</div>
+
+<div>
+<i data-lucide="git-branch-plus"></i>
+<span>Cross-Forest Trust Abuse</span>
+</div>
+
+<div>
+<i data-lucide="key-round"></i>
+<span>Advanced Kerberos Attacks</span>
+</div>
+
+<div>
+<i data-lucide="shield"></i>
+<span>Attack & Defense Coverage</span>
+</div>
+
+<div>
+<i data-lucide="fingerprint"></i>
+<span>Enterprise Identity Security</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="aadt-visual">
+
+<div class="aadt-card">
+
+<div class="aadt-card-top">
+
+<h3>
+
+Advanced AD Lab Environment
+
+</h3>
+
+<span>
+
+● Live Lab
+
+</span>
+
+</div>
+
+<img
+src="https://static.wixstatic.com/media/16cdd7_b14fa808ae6d47eba3912d36c833cbee~mv2.png/v1/crop/x_0,y_221,w_11700,h_9222/fill/w_900,h_709,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/redteamlab%20diagram.png"
+alt="Advanced AD Lab">
+
+<div class="aadt-stats">
+
+<div>
+
+<strong>3+</strong>
+
+<span>Forests</span>
+
+</div>
+
+<div>
+
+<strong>12+</strong>
+
+<span>Domains</span>
+
+</div>
+
+<div>
+
+<strong>18+</strong>
+
+<span>Trusts</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  ()=>{
+
+    lucide.createIcons();
+
+  }
+);
+
+</script>
+<script src="https://unpkg.com/lucide@latest"></script>    
+    
+    </body>
+</html>
