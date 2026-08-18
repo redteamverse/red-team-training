@@ -340,13 +340,18 @@
                 
                 <!-- Animated Badge (Layout Fixed: Added h-8 to prevent jump) -->
                 <!-- Alignment adjusted: center on mobile, left on desktop -->
-                <div class="inline-flex md:justify-start items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-gray-600 mb-6 animate-fade-in-up h-8">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                    </span>
-                    <span id="typing-text" class="text-sm font-medium tracking-wide">BRU CON / DEF CON / Black Hat Speaker</span>
-                </div>
+             <div class="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full bg-slate-900/80 dark:bg-gray-900/80 border border-gray-700/80 backdrop-blur-md mb-6 shadow-sm h-8">
+    <!-- Pulsing Red Live Indicator Dot -->
+    <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+    </span>
+    
+    <!-- Speaker Credentials Text -->
+    <span id="typing-text" class="text-xs md:text-sm font-semibold tracking-wide text-gray-200 uppercase">
+        Black Hat / DEF CON / BruCON Speaker
+    </span>
+</div>
 
                 <!-- Heading -->
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -358,23 +363,34 @@
 
                 <!-- Rating / Social Proof (Updated with Avatars) -->
                 <!-- Alignment adjusted: center on mobile, left on desktop -->
-                <div class="flex flex-col items-center md:items-start justify-center gap-2 mb-8">
-                    <div class="flex items-center gap-4 bg-secondary/30 px-6 py-2 rounded-full border border-gray-700 backdrop-blur-sm">
-                        <!-- Rating Star -->                       
-                        <div class="h-6 w-px bg-gray-500 mx-2"></div>
-                        <!-- Avatar Group -->
-                        <div class="flex -space-x-3">
-                            <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/64/100/100" alt="Student">
-                            <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/65/100/100" alt="Student">
-                            <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/91/100/100" alt="Student">
-                            <img class="w-8 h-8 rounded-full border-2 border-hero-bg" src="https://picsum.photos/id/177/100/100" alt="Student">
-                        </div>
-                    </div>
-                    
-                    <div class="text-gray-300 text-sm mt-2">
-                        Trusted by <span class="text-white font-bold">50K+</span> students from <span class="text-white font-bold">130+</span> countries
-                    </div>
-                </div>
+                <div class="flex flex-col items-center md:items-start justify-center gap-3 mb-8">
+    <div class="inline-flex items-center gap-3 bg-slate-900/60 dark:bg-gray-900/60 px-4 py-2 rounded-full border border-gray-700/80 backdrop-blur-md shadow-lg">
+        <!-- Gold Accent Star Icon -->
+        <div class="flex items-center">
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+        </div>
+
+        <div class="h-4 w-px bg-gray-700"></div>
+
+        <!-- Student Avatar Stack -->
+        <div class="flex -space-x-2.5 overflow-hidden">
+            <img class="inline-block w-7 h-7 rounded-full ring-2 ring-gray-900 object-cover" src="https://picsum.photos/id/64/100/100" alt="Student profile">
+            <img class="inline-block w-7 h-7 rounded-full ring-2 ring-gray-900 object-cover" src="https://picsum.photos/id/65/100/100" alt="Student profile">
+            <img class="inline-block w-7 h-7 rounded-full ring-2 ring-gray-900 object-cover" src="https://picsum.photos/id/91/100/100" alt="Student profile">
+            <img class="inline-block w-7 h-7 rounded-full ring-2 ring-gray-900 object-cover" src="https://picsum.photos/id/177/100/100" alt="Student profile">
+        </div>
+    </div>
+
+    <!-- Student Reach Proof Text -->
+    <p class="text-gray-300 text-sm flex items-center gap-1.5 font-medium">
+        <span>Trusted by</span>
+        <span class="text-white font-bold underline decoration-red-500/80 decoration-2 underline-offset-2">50K+ professionals</span>
+        <span>across</span>
+        <span class="text-white font-bold">130+ countries</span>
+    </p>
+</div>
 
                 <!-- Subheading -->
                 <p class="max-w-3xl mx-auto md:mx-0 text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
