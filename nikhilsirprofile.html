@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Nikhil Mittal | Founder & Security Pioneer</title>
+    <meta name="description" content="Nikhil Mittal is a Cybersecurity Founder, Security Pioneer, and global speaker at DEF CON and Black Hat, specializing in threat architecture and offensive security.">
+    <meta name="keywords" content="Nikhil Mittal, Security Pioneer, DEF CON Speaker, Black Hat, Offensive Security, Strategic Leadership, Threat Architecture">
+    <meta name="author" content="Nikhil Mittal">
+    
+    <!-- Open Graph/Social Meta Tags -->
+    <meta property="og:title" content="Nikhil Mittal - Founder & Security Pioneer">
+    <meta property="og:description" content="Global speaker, security innovator, and strategic advisor on complex threat architecture.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.example.com">
+    <meta property="og:image" content="https://picsum.photos/id/1/1200/630">
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        // Brand Action Colors
+                        'color-primary': '#B91C1C',        // Deep Crimson
+                        'color-primary-light': '#EA3037',  // Bright Candy Red
+                        'color-secondary': '#2B2B50',      // Midnight Navy
+                        'color-secondary-light': '#1E3A8A',// Royal Blue
+                        
+                        // Hero Background Specific
+                        'hero-bg': '#2B2B50',
+                        
+                        // Neutrals & Surface Colors
+                        neutral: {
+                            white: '#FFFFFF',
+                            offWhite: '#F9FAFB',           // Ghost White
+                            border: '#E5E7EB',             // Platinum
+                            paragraph: '#4B5563',          // Supportive Body Color
+                            muted: '#6B7280',              // Slate Gray
+                            heading: '#111827'             // Ink Black
+                        },
+                        
+                        // Functional Status Colors
+                        accent: {
+                            success: '#10B981',            // Emerald Green
+                            warning: '#F59E0B',            // Amber Yellow
+                            error: '#EF4444'               // Coral Red
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #111827;
+        }
+
+        /* Dark Mode Overrides */
+        .dark body {
+            background-color: #111827;
+            color: #F9FAFB;
+        }
+        .dark .bg-white { background-color: #1F2937; }
+        .dark .bg-neutral-offWhite { background-color: #111827; }
+        .dark .text-neutral-heading { color: #FFFFFF; }
+        .dark .text-neutral-paragraph { color: #D1D5DB; }
+        .dark .border-neutral-border { border-color: #374151; }
+
+        /* Smooth Scroll Padding for Sticky Elements */
+        html {
+            scroll-padding-top: 90px;
+        }
+    </style>
+</head>
+<body class="antialiased transition-colors duration-300">
+
+    <!-- 1) Hero Section -->
+  <section id="hero" class="relative bg-gradient-to-b from-[#2d2d48] via-[#1a1b2e] to-[#050814] text-white pt-20 pb-28 lg:pt-28 lg:pb-36 overflow-hidden">
+    
+    <!-- Smooth Transition Glow at the Bottom Border -->
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#050814] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-24">
+            
+        <!-- === COLUMN 1: Hero Text & Features === -->
+        <div class="order-1 text-center md:text-left mb-10 md:mb-0">
+            
+            <!-- Typewriter Badge Indicator -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full bg-slate-900/80 border border-slate-700/80 backdrop-blur-md mb-6 shadow-sm h-8">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                </span>
+                <span id="typing-text" class="text-xs md:text-sm font-semibold tracking-wide text-gray-200 uppercase overflow-hidden whitespace-nowrap border-r-2 border-red-500 animate-typewriter">
+                    Speaker @ DEF CON &amp; Black Hat
+                </span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-3 leading-tight text-white">
+                Nikhil Mittal
+            </h1>
+
+            <!-- Short Bio Description -->
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-6 font-normal max-w-xl mx-auto md:mx-0">
+Founder of Altered Security, international events speaker, Offensive security researcher, specializing in Active Directory, Azure security, and enterprise red team attacks and defenses techniques.            </p>
+
+            <!-- 2x2 Feature Grid -->
+            <div class="grid sm:grid-cols-2 gap-4 my-6">
+                
+                <!-- Item 1: Global Trainer & Speaker -->
+                <div class="group relative p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-red-500/40 shadow-xl backdrop-blur-xl transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 flex-shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="mic" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-left">
+                            <h4 class="text-base font-semibold text-white tracking-normal leading-snug mb-1.5">
+                                Global Trainer &amp; Speaker
+                            </h4>
+                            <p class="text-xs text-slate-300 leading-relaxed font-normal">
+                                Keynote presenter and trainer at DEF CON, Black Hat, and BruCON.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: 15+ Years in Red Teaming -->
+                <div class="group relative p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-red-500/40 shadow-xl backdrop-blur-xl transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 flex-shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="code-2" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-left">
+                            <h4 class="text-base font-semibold text-white tracking-normal leading-snug mb-1.5">
+                                15+ Years in Red Teaming
+                            </h4>
+                            <p class="text-xs text-slate-300 leading-relaxed font-normal">
+                                Pioneering novel attack vectors, stealth detection bypasses, and post-exploitation strategies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Enterprise Security Leadership -->
+                <div class="group relative p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-red-500/40 shadow-xl backdrop-blur-xl transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 flex-shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="shield-check" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-left">
+                            <h4 class="text-base font-semibold text-white tracking-normal leading-snug mb-1.5">
+                                Enterprise Security Leadership
+                            </h4>
+                            <p class="text-xs text-slate-300 leading-relaxed font-normal">
+                                Led specialized red team bootcamps for Fortune 500 enterprises globally.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Industry Certification Architect -->
+                <div class="group relative p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-red-500/40 shadow-xl backdrop-blur-xl transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 flex-shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="crosshair" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-left">
+                            <h4 class="text-base font-semibold text-white tracking-normal leading-snug mb-1.5">
+                                Industry Certification Architect
+                            </h4>
+                            <p class="text-xs text-slate-300 leading-relaxed font-normal">
+                                Creator of industry-recognized Red Team certifications including CRTP, CRTE, CETP, and CARTP, CARTP.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Global Impact Banner -->
+            <div class="group relative p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-red-500/40 shadow-xl backdrop-blur-xl transition-all duration-300 mb-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 flex-shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex-1 min-w-0 text-left">
+                        <h4 class="text-base font-semibold text-white tracking-normal leading-snug mb-1.5">
+                            Global Impact
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed font-normal">
+                            Trained 15,000+ security professionals across 130+ countries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 pt-2">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-extrabold text-sm tracking-wide shadow-lg shadow-red-500/20 hover:shadow-red-500/35 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95">
+                    <span>About Nikhil Mittal</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#expertise" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-white/10 hover:border-white/20 text-white font-bold text-sm tracking-wide shadow-md backdrop-blur-md transition-all duration-300 flex items-center justify-center gap-2 active:scale-95">
+                    <span>Explore Research &amp; Talks</span>
+                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- === COLUMN 2: Image Showcase Card === -->
+        <div class="order-2 flex justify-center p-4 sm:p-0">
+    <div class="group relative w-full max-w-sm lg:max-w-md mx-auto mb-6 sm:mb-0">
+        
+        <!-- Ambient Backdrop Glow -->
+        <div class="absolute -inset-1 bg-gradient-to-r from-red-600/30 to-rose-600/30 rounded-[32px] blur-xl opacity-70 group-hover:opacity-100 transition duration-500"></div>
+
+        <!-- Main Portrait Wrapper -->
+        <div class="relative rounded-3xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-2xl h-[420px] sm:h-[460px]">
+            <img 
+                src="https://static.wixstatic.com/media/470c31_f5cd02f8e548433c84b440f39bdabf9c~mv2.png/v1/fill/w_600,h_800,al_c,q_85,enc_avif,quality_auto/BruCON-2022-66.png" 
+                alt="Nikhil Mittal" 
+                class="w-full h-full object-cover object-[center_35%] filter brightness-[0.98] contrast-[1.02] group-hover:scale-105 transition-transform duration-500 ease-out"
+                onerror="this.onerror=null; this.src='https://placehold.co/400x500/111827/F9FAFB?text=N.Mittal+Photo';"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+        </div>
+
+        <!-- Overlay Card Bottom Container -->
+        <div class="relative -mt-20 mx-4 z-20 p-4 rounded-2xl bg-slate-950/90 border border-white/10 shadow-2xl backdrop-blur-xl">
+            <!-- Header Row with Name & High-Contrast Social Buttons -->
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <h3 class="text-base font-black text-white tracking-wide">Nikhil Mittal</h3>
+                </div>
+
+                <!-- High Visibility Brand Buttons -->
+                <div class="flex items-center gap-2">
+                    <!-- LinkedIn Link -->
+                    <a 
+                        href="https://www.linkedin.com/in/mittalnikhil/" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        aria-label="LinkedIn Profile"
+                        class="p-2 rounded-xl bg-[#0A66C2] text-white hover:bg-[#084e96] hover:scale-105 shadow-lg shadow-[#0A66C2]/30 transition-all duration-200 flex items-center justify-center"
+                    >
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-1.29 1.02-2.31 2.31-2.31 1.28 0 2.22 1.02 2.22 2.31v4.93h2.81M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                    </a>
+
+                    <!-- X (Twitter) Link -->
+                    <a 
+                        href="https://x.com/nikhil_mitt" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        aria-label="X Profile"
+                        class="p-2 rounded-xl bg-slate-800 border border-slate-700 text-white hover:bg-slate-700 hover:border-slate-500 hover:scale-105 shadow-lg shadow-black/40 transition-all duration-200 flex items-center justify-center"
+                    >
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex flex-col gap-2">
+                <!-- Line 1: Founder -->
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 font-mono text-xs sm:text-sm shadow-xl">
+                    <span class="text-emerald-400 font-black text-base">&gt;</span>
+                    <span class="font-bold tracking-wide">
+                        <strong class="text-white font-extrabold">Founder</strong> @ AlteredSecurity
+                    </span>
+                </div>
+
+                <!-- Line 2: Speaker -->
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 font-mono text-xs sm:text-sm shadow-xl">
+                    <span class="text-emerald-400 font-black text-base">&gt;</span>
+                    <span class="font-bold tracking-wide">
+                        <strong class="text-red-400 font-extrabold">Speaker</strong> @ DEFCON, BlackHat, BruCON
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</section>
+
+<!-- JS for Typewriter Animation -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const text = "Speaker @ DEF CON, Black Hat, BruCON";
+        const target = document.getElementById("typewriter-text");
+        let index = 0;
+        let isDeleting = false;
+
+        function type() {
+            if (!isDeleting && index <= text.length) {
+                target.textContent = text.substring(0, index);
+                index++;
+                setTimeout(type, 80); // Typing speed
+            } else if (isDeleting && index >= 0) {
+                target.textContent = text.substring(0, index);
+                index--;
+                setTimeout(type, 40); // Deleting speed
+            } else {
+                isDeleting = !isDeleting;
+                setTimeout(type, isDeleting ? 2000 : 500); // Pause at full text or empty text
+            }
+        }
+        type();
+    });
+</script>
+    
+<section id="profile" class="py-20 lg:py-28 bg-slate-950 text-white border-t border-slate-800/80 relative overflow-hidden">
+    
+    <!-- Ambient Backdrop Glows -->
+    <div class="absolute top-1/4 -left-20 w-80 h-80 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="mb-12 md:mb-16">
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-red-400 bg-red-500/10 px-3.5 py-1.5 rounded-full border border-red-500/20 inline-block mb-3">
+                About Nikhil Mittal
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                Red Teamer, Infosec Researcher &amp; Founder
+            </h2>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            
+            <!-- Left Column: Profile Image & Bottom Stat Badge -->
+            <div class="lg:col-span-4 flex flex-col gap-5">
+                
+                <!-- Portrait Image Frame -->
+                <div class="relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl group">
+                    <div class="aspect-square w-full overflow-hidden">
+                        <img 
+                            src="https://static.wixstatic.com/media/470c31_0c17992cf5eb4764b8569116cb0ddf51~mv2.png/v1/crop/x_280,y_0,w_720,h_720/fill/w_290,h_290,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/f76371956d6eef8136c5edb66695e178.png" 
+                            alt="Nikhil Mittal Speaking" 
+                            class="w-full h-full object-cover object-center filter brightness-95 group-hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                </div>
+
+                <!-- Floating Stat Badge -->
+                <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800/80 shadow-xl backdrop-blur-md flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 flex-shrink-0">
+                        <i data-lucide="award" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black text-white block leading-none mb-1">15,000+</span>
+                        <span class="text-xs text-slate-400 font-medium">Global Professionals Trained</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Highlights Grid -->
+            <div class="lg:col-span-8">
+                <div class="grid sm:grid-cols-2 gap-5">
+                    
+                    <!-- Highlight 1: Founder -->
+                    <div class="sm:col-span-2 group p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-red-500/40 transition-all duration-300 flex items-start gap-4 shadow-md hover:shadow-red-500/5">
+                        <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="building-2" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2 leading-snug">
+                                Founder @ Altered Security
+                            </h3>
+                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                                Founder of Altered Security and a Red Team expert with over 15 years of experience specializing in Active Directory, Azure, Offensive PowerShell, and enterprise Red Teaming.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Highlight 2: 15+ Years -->
+                    <div class="group p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-white mb-1.5">
+                                15+ Years in Red Teaming
+                            </h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Assessing high-security enterprise environments using novel attack vectors and custom post-exploitation techniques.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Highlight 3: Core Specialization -->
+                    <div class="group p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="cpu" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-white mb-1.5">
+                                Core Specialization
+                            </h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Deep expertise in <strong class="text-white font-medium">Azure &amp; Active Directory security</strong>, bypass strategies, and evasion research.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Highlight 4: Open-Source Author -->
+                    <div class="group p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="terminal" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-white mb-1.5">
+                                Open-Source Tool Author
+                            </h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Creator of <strong class="text-white font-medium">Nishang</strong>, <strong class="text-white font-medium">Kautilya</strong>, and specialized Active Directory deception frameworks.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Highlight 5: Educator -->
+                    <div class="group p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-white mb-1.5">
+                                Global Security Educator
+                            </h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Trained over 15,000+ security professionals through private enterprise programs and top-tier security events.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Highlight 6: Featured Speaker -->
+                    <div class="sm:col-span-2 group p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="presentation" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-white mb-1.5">
+                                Featured Industry Speaker
+                            </h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Keynote speaker and trainer at premier international conferences including <strong class="text-white font-medium">DEF CON, Black Hat, and BruCON</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Required JS Initialization -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    });
+</script>
+
+    <!-- 2) Sticky Navigation Bar (Placed After Hero) -->
+    
+<!-- 2) About Nikhil Mittal Section -->
+
+<!-- Interactive Stats Counter Section -->
+<section id="stats" class="py-16 bg-slate-900 text-white border-y border-slate-800 relative overflow-hidden">
+    
+    <!-- Ambient Accent Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px] bg-red-600/10 blur-3xl pointer-events-none rounded-full"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- 4-Column High-Impact Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center divide-y lg:divide-y-0 lg:divide-x divide-slate-800/80">
+            
+            <!-- Stat 1: Years -->
+            <div class="pt-6 lg:pt-0 flex flex-col items-center">
+                <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-mono mb-2 flex items-center justify-center">
+                    <span class="js-counter" data-target="15">15</span>
+                    <span class="text-red-500 font-extrabold">+</span>
+                </div>
+                <p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-400">
+                    Years in Red Teaming
+                </p>
+            </div>
+
+            <!-- Stat 2: Professionals Trained -->
+            <div class="pt-6 lg:pt-0 flex flex-col items-center">
+                <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-mono mb-2 flex items-center justify-center">
+                    <span class="js-counter" data-target="15000">15,000</span>
+                    <span class="text-red-500 font-extrabold">+</span>
+                </div>
+                <p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-400">
+                    Professionals Trained
+                </p>
+            </div>
+
+            <!-- Stat 3: Countries Reached -->
+            <div class="pt-6 lg:pt-0 flex flex-col items-center">
+                <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-mono mb-2 flex items-center justify-center">
+                    <span class="js-counter" data-target="130">130</span>
+                    <span class="text-red-500 font-extrabold">+</span>
+                </div>
+                <p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-400">
+                    Countries Reached
+                </p>
+            </div>
+
+            <!-- Stat 4: Speaking Engagements -->
+            <div class="pt-6 lg:pt-0 flex flex-col items-center">
+                <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-mono mb-2 flex items-center justify-center">
+                    <span class="js-counter" data-target="30">30</span>
+                    <span class="text-red-500 font-extrabold">+</span>
+                </div>
+                <p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-400">
+                    Global Speaking Engagements
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Optimized Intersection Observer & Counter Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const counters = document.querySelectorAll('.js-counter');
+        const duration = 1200; // 1.2s rapid counter for clean, non-distracting feel
+
+        const animateCounter = (counter) => {
+            const target = parseInt(counter.getAttribute('data-target'), 10);
+            const startTime = performance.now();
+
+            const update = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Ease-out quad calculation for smooth ending deceleration
+                const easeOut = 1 - (1 - progress) * (1 - progress);
+                const currentVal = Math.floor(easeOut * target);
+
+                counter.textContent = currentVal.toLocaleString();
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    counter.textContent = target.toLocaleString();
+                }
+            };
+
+            requestAnimationFrame(update);
+        };
+
+        // Scroll trigger using IntersectionObserver
+        const observerOptions = {
+            root: null,
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver((entries, observerInstance) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    animateCounter(counter);
+                    observerInstance.unobserve(counter); // Trigger once only
+                }
+            });
+        }, observerOptions);
+
+        counters.forEach(counter => observer.observe(counter));
+    });
+</script>
+<!-- 4) Keynotes & Speaking Engagements Section -->
+<section id="keynotes" class="py-20 lg:py-28 bg-slate-50 text-slate-900 border-t border-slate-200 relative overflow-hidden">
+    
+    <!-- Ambient Light Backdrop Subtle Glows -->
+    <div class="absolute top-1/3 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-10 w-80 h-80 bg-slate-300/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="mb-12 md:mb-16">
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-red-600 bg-red-100/80 px-3.5 py-1.5 rounded-full border border-red-200 inline-block mb-3">
+                Keynotes &amp; Speaking Engagements
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                Featured Conference Talks &amp; Presentations
+            </h2>
+        </div>
+
+        <!-- Highlights Grid (3 Columns) -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            
+            <!-- Highlight 1: Global Security Forums -->
+            <div class="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-red-500/40 transition-all duration-300 shadow-sm hover:shadow-md">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 mb-4">
+                    <i data-lucide="globe" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2 leading-snug">
+                    Global Security Conferences
+                </h3>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    Presented breakthrough offensive security research at top-tier international events like <strong class="text-slate-900 font-semibold">BruCON, RSA, x33fcon</strong>, and <strong class="text-slate-900 font-semibold">DeepSec</strong>.
+                </p>
+            </div>
+
+            <!-- Highlight 2: Specialized Research -->
+            <div class="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-red-500/40 transition-all duration-300 shadow-sm hover:shadow-md">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 mb-4">
+                    <i data-lucide="binary" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2 leading-snug">
+                    Specialized Research
+                </h3>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    Focused on Active Directory trust exploitation, PowerShell purple teaming, client-side attacks, and physical HID vectors.
+                </p>
+            </div>
+
+            <!-- Highlight 3: Open Knowledge -->
+            <div class="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-red-500/40 transition-all duration-300 shadow-sm hover:shadow-md">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 mb-4">
+                    <i data-lucide="book-open-check" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2 leading-snug">
+                    Open Knowledge
+                </h3>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    Slide decks and offensive security research materials provided openly for the cybersecurity community.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Selected Talks Table Section -->
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+            
+            <div class="p-6 sm:p-8 border-b border-slate-200 flex items-center justify-between flex-wrap gap-4 bg-slate-50/50">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">Selected Talks</h3>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Keynote archives and presentation materials</p>
+                </div>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700">
+                    <i data-lucide="presentation" class="w-3.5 h-3.5 text-red-600"></i> Archive Selected
+                </div>
+            </div>
+
+            <!-- Responsive Table Wrapper -->
+            <div class="overflow-x-auto">
+                <table class="w-full min-w-[600px] text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-100/70 text-slate-600 text-xs uppercase tracking-wider font-bold border-b border-slate-200">
+                            <th scope="col" class="py-4 px-6">Event</th>
+                            <th scope="col" class="py-4 px-6">Year</th>
+                            <th scope="col" class="py-4 px-6">Presentation Title</th>
+                            <th scope="col" class="py-4 px-6 text-right">Media</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        
+                        <!-- Row 1: BruCON -->
+                        <tr class="hover:bg-slate-50 transition-colors group">
+                            <td class="py-4 px-6 font-bold text-slate-900 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-red-600 inline-block"></span>
+                                BruCON
+                            </td>
+                            <td class="py-4 px-6 text-slate-500 font-medium font-mono text-xs">2018</td>
+                            <td class="py-4 px-6 text-slate-700 font-semibold group-hover:text-slate-900 transition-colors">
+                                Forging Trusts for Deception in Active Directory
+                            </td>
+                            <td class="py-4 px-6 text-right">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-red-50 border border-red-200 text-red-600 hover:bg-red-600 hover:text-white transition-all duration-200 text-xs font-bold active:scale-95 shadow-sm">
+                                    <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Slide Deck
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Row 2: x33fcon -->
+                        <tr class="hover:bg-slate-50 transition-colors group">
+                            <td class="py-4 px-6 font-bold text-slate-900 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-red-600 inline-block"></span>
+                                x33fcon
+                            </td>
+                            <td class="py-4 px-6 text-slate-500 font-medium font-mono text-xs">2017</td>
+                            <td class="py-4 px-6 text-slate-700 font-semibold group-hover:text-slate-900 transition-colors">
+                                PowerShell for Practical Purple Teaming
+                            </td>
+                            <td class="py-4 px-6 text-right">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-red-50 border border-red-200 text-red-600 hover:bg-red-600 hover:text-white transition-all duration-200 text-xs font-bold active:scale-95 shadow-sm">
+                                    <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Slide Deck
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Row 3: DeepSec -->
+                        <tr class="hover:bg-slate-50 transition-colors group">
+                            <td class="py-4 px-6 font-bold text-slate-900 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-red-600 inline-block"></span>
+                                DeepSec
+                            </td>
+                            <td class="py-4 px-6 text-slate-500 font-medium font-mono text-xs">2014</td>
+                            <td class="py-4 px-6 text-slate-700 font-semibold group-hover:text-slate-900 transition-colors">
+                                Lethal Client Side Attacks using PowerShell
+                            </td>
+                            <td class="py-4 px-6 text-right">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-red-50 border border-red-200 text-red-600 hover:bg-red-600 hover:text-white transition-all duration-200 text-xs font-bold active:scale-95 shadow-sm">
+                                    <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Slide Deck
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Row 4: RSA China -->
+                        <tr class="hover:bg-slate-50 transition-colors group">
+                            <td class="py-4 px-6 font-bold text-slate-900 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-red-600 inline-block"></span>
+                                RSA China
+                            </td>
+                            <td class="py-4 px-6 text-slate-500 font-medium font-mono text-xs">2012</td>
+                            <td class="py-4 px-6 text-slate-700 font-semibold group-hover:text-slate-900 transition-colors">
+                                Hacking the Future with USB HID
+                            </td>
+                            <td class="py-4 px-6 text-right">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-red-50 border border-red-200 text-red-600 hover:bg-red-600 hover:text-white transition-all duration-200 text-xs font-bold active:scale-95 shadow-sm">
+                                    <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Slide Deck
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- 3) Enterprise & Training Impact Section -->
+<section id="enterprise-impact" class="py-20 lg:py-28 bg-slate-50 text-slate-900 border-t border-slate-200 relative overflow-hidden">
+    
+    <!-- Ambient Light Backdrop Subtle Glows -->
+    <div class="absolute top-1/4 left-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-0 w-96 h-96 bg-slate-300/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="mb-12 md:mb-16">
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-red-600 bg-red-100/80 px-3.5 py-1.5 rounded-full border border-red-200 inline-block mb-3">
+                Enterprise &amp; Training Impact
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                Empowering the Next Generation of Cyber Defenders
+            </h2>
+        </div>
+
+        <!-- Featured Impact Stat Banner -->
+        <div class="relative p-8 sm:p-10 rounded-3xl bg-slate-900 text-white shadow-xl overflow-hidden border border-slate-800 mb-12">
+            <!-- Subtle Watermark Icon -->
+            <div class="absolute -right-8 top-1/2 -translate-y-1/2 opacity-5 text-white pointer-events-none hidden sm:block">
+                <i data-lucide="shield-check" class="w-96 h-96"></i>
+            </div>
+            
+            <div class="relative z-10 grid md:grid-cols-12 gap-6 items-center">
+                <div class="md:col-span-8">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-red-400 bg-red-500/10 px-3 py-1 rounded-full border border-red-500/20 inline-block mb-3">
+                        Global Reach
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl font-black text-white mb-2 leading-snug">
+                        Trusted by Fortune 500 &amp; Government Security Teams
+                    </h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                        Delivering practical, offensive-driven defensive training designed to withstand real-world enterprise adversary tactics.
+                    </p>
+                </div>
+                <div class="md:col-span-4 flex flex-col items-start md:items-end justify-center border-t md:border-t-0 md:border-l border-slate-800 pt-6 md:pt-0 md:pl-8">
+                    <span class="text-4xl sm:text-5xl font-black text-red-500 tracking-tight font-mono">15+ Years</span>
+                    <span class="text-xs sm:text-sm text-slate-400 font-semibold uppercase tracking-wider mt-1">Red Teaming Leadership</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Highlights Grid (2x2) -->
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+            
+            <!-- Highlight 1: 15,000+ Trained -->
+            <div class="group p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 hover:border-red-500/40 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 mb-6">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug">
+                        15,000+ Security Professionals Trained
+                    </h3>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Upskilled enterprise red teams, penetration testers, and security experts across <strong class="text-slate-900 font-semibold">Fortune 500 companies</strong> and government agencies globally.
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-red-600">
+                    <i data-lucide="building" class="w-4 h-4"></i> Enterprise-Grade Workforce Development
+                </div>
+            </div>
+
+            <!-- Highlight 2: Hands-on Attack Labs -->
+            <div class="group p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 hover:border-red-500/40 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 mb-6">
+                        <i data-lucide="terminal" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug">
+                        Hands-on Attack Labs
+                    </h3>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Created real-world, enterprise-grade lab environments simulating complex <strong class="text-slate-900 font-semibold">Active Directory and Azure infrastructure</strong> attack scenarios.
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-red-600">
+                    <i data-lucide="server" class="w-4 h-4"></i> Live Range &amp; Simulation Environments
+                </div>
+            </div>
+
+            <!-- Highlight 3: Industry-Standard Certifications -->
+            <div class="group p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 hover:border-red-500/40 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 mb-6">
+                        <i data-lucide="award" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug">
+                        Industry-Standard Certifications
+                    </h3>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Developed highly respected, practical certifications under <strong class="text-slate-900 font-semibold">Altered Security</strong> focused on offense-driven defense.
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-red-600">
+                    <i data-lucide="shield-alert" class="w-4 h-4"></i> Practical Offense-Driven Defense
+                </div>
+            </div>
+
+            <!-- Highlight 4: Corporate Training Programs -->
+            <div class="group p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 hover:border-red-500/40 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 mb-6">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug">
+                        Corporate Training Programs
+                    </h3>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Delivered specialized private training sessions for offensive and defensive security teams globally across multiple industry sectors.
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-red-600">
+                    <i data-lucide="globe-2" class="w-4 h-4"></i> Tailored Private Enterprise Delivery
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Altered Security Certifications Badge Row -->
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 flex-shrink-0">
+                    <i data-lucide="badge-check" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900">Altered Security Ecosystem</h4>
+                    <p class="text-xs text-slate-500">Industry-recognized hands-on security certifications</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-xs font-mono font-bold text-slate-800 hover:bg-slate-200/70 transition-colors">
+                    CRTP
+                </span>
+                <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-xs font-mono font-bold text-slate-800 hover:bg-slate-200/70 transition-colors">
+                    CRTE
+                </span>
+                <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-xs font-mono font-bold text-slate-800 hover:bg-slate-200/70 transition-colors">
+                    CARTP
+                </span>
+                <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-xs font-mono font-bold text-slate-800 hover:bg-slate-200/70 transition-colors">
+                    CRTM
+                </span>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Required JS Initialization -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    });
+</script>        
+    <!-- 5) Testimonials & Student Feedback Section -->
+<section id="testimonials" class="py-20 lg:py-28 bg-slate-50 text-slate-900 border-t border-slate-200 relative overflow-hidden">
+    
+    <!-- Ambient Light Background Glows -->
+    <div class="absolute top-1/3 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-10 w-96 h-96 bg-slate-300/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="mb-12 md:mb-16">
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-red-600 bg-red-100/80 px-3.5 py-1.5 rounded-full border border-red-200 inline-block mb-3">
+                Testimonials &amp; Student Feedback
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                Trusted by Security Professionals Worldwide
+            </h2>
+        </div>
+
+        <!-- Key Metrics Highlights Row (3 Columns with Consistent Icon Hover) -->
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+            
+            <!-- Highlight 1: Black Hat & Global Conferences -->
+            <div class="group p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white flex-shrink-0 transition-colors duration-300">
+                    <i data-lucide="star" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">
+                        Black Hat &amp; Global Conferences
+                    </h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Rated consistently high by security professionals attending elite conference trainings.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Highlight 2: Global Student Reach -->
+            <div class="group p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white flex-shrink-0 transition-colors duration-300">
+                    <i data-lucide="globe" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">
+                        Global Student Reach
+                    </h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Trusted by enterprise security teams and independent learners around the world.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Highlight 3: Practical & Actionable -->
+            <div class="group p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white flex-shrink-0 transition-colors duration-300">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">
+                        Practical &amp; Actionable
+                    </h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Highly valued for teaching practical attack techniques in Active Directory and Azure environments.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Testimonials Cards Grid (3 Columns) -->
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <!-- Testimonial 1: Black Hat Training -->
+            <div class="relative p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-red-500/30 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="px-3 py-1 rounded-full bg-red-50 text-red-600 text-xs font-mono font-bold border border-red-100">
+                            Black Hat Training
+                        </span>
+                        <div class="flex items-center gap-1 text-amber-400">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                    </div>
+
+                    <blockquote class="text-slate-700 text-sm sm:text-base leading-relaxed italic mb-8">
+                        "One of the most practical and well-structured trainings I've attended at Black Hat. The hands-on labs simulated real enterprise environments perfectly, making complex attack vectors easy to grasp and apply immediately."
+                    </blockquote>
+                </div>
+
+                <div class="pt-5 border-t border-slate-100 flex items-center justify-between">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900">Black Hat Conference Attendee</h4>
+                        <p class="text-xs text-slate-500 font-medium">Elite Conference Training</p>
+                    </div>
+                    <i data-lucide="quote" class="w-6 h-6 text-red-200 group-hover:text-red-500 transition-colors"></i>
+                </div>
+            </div>
+
+            <!-- Testimonial 2: Course & Certification -->
+            <div class="relative p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-red-500/30 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="px-3 py-1 rounded-full bg-red-50 text-red-600 text-xs font-mono font-bold border border-red-100">
+                            Course &amp; Certification
+                        </span>
+                        <div class="flex items-center gap-1 text-amber-400">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                    </div>
+
+                    <blockquote class="text-slate-700 text-sm sm:text-base leading-relaxed italic mb-8">
+                        "Overall, I found the course to be very comprehensive and satisfying. Although I had some knowledge of Microsoft Azure, the course surprised me with several new insights. The content covers a lot of commonly used Azure services and how they can be exploited."
+                    </blockquote>
+                </div>
+
+                <div class="pt-5 border-t border-slate-100 flex items-center justify-between">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900">CARTP Candidate</h4>
+                        <p class="text-xs text-slate-500 font-medium">Self-Paced Certification Student</p>
+                    </div>
+                    <i data-lucide="quote" class="w-6 h-6 text-red-200 group-hover:text-red-500 transition-colors"></i>
+                </div>
+            </div>
+
+            <!-- Testimonial 3: Bootcamp Feedback -->
+            <div class="relative p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-red-500/30 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="px-3 py-1 rounded-full bg-red-50 text-red-600 text-xs font-mono font-bold border border-red-100">
+                            Bootcamp Feedback
+                        </span>
+                        <div class="flex items-center gap-1 text-amber-400">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                    </div>
+
+                    <blockquote class="text-slate-700 text-sm sm:text-base leading-relaxed italic mb-8">
+                        "The bootcamp is led by experienced instructors who have real-world experience in dealing with cyber threats. The instructors provide hands-on training and practical examples to analyze and practice threats in a multi-forest Active Directory environment."
+                    </blockquote>
+                </div>
+
+                <div class="pt-5 border-t border-slate-100 flex items-center justify-between">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900">Enterprise Security Attendee</h4>
+                        <p class="text-xs text-slate-500 font-medium">Enterprise AD &amp; Cloud Bootcamps</p>
+                    </div>
+                    <i data-lucide="quote" class="w-6 h-6 text-red-200 group-hover:text-red-500 transition-colors"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- Combined Connect, Social & Newsletter Section -->
+    
+<section id="blog" class="py-20 lg:py-28 bg-white text-slate-900 border-t border-slate-200 relative overflow-hidden">
+    
+    <!-- Ambient Light Background Glows -->
+    <div class="absolute top-1/4 left-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-0 w-96 h-96 bg-slate-200/50 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
+            <div>
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-red-600 bg-red-100/80 px-3.5 py-1.5 rounded-full border border-red-200 inline-block mb-3">
+                    Blog &amp; Technical Articles
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                    Offensive Security Research
+                </h2>
+            </div>
+           
+        </div>
+
+        <!-- Highlights Row (3 Columns with Consistent Icon Hover) -->
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+            
+            <!-- Highlight 1: Deep AD Research -->
+            <div class="group p-6 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white flex-shrink-0 transition-colors duration-300">
+                    <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">
+                        Active Directory Security
+                    </h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        In-depth technical breakdowns of Kerberos exploitation, trust attacks, and privilege escalation vectors.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Highlight 2: Azure & Cloud Attack Techniques -->
+            <div class="group p-6 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white flex-shrink-0 transition-colors duration-300">
+                    <i data-lucide="cloud" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">
+                        Cloud &amp; Azure Security
+                    </h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Research covering Entra ID (Azure AD), cloud lateral movement, Managed Identities, and tenant persistence.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Highlight 3: Open-Source Tooling -->
+            <div class="group p-6 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white flex-shrink-0 transition-colors duration-300">
+                    <i data-lucide="terminal" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">
+                        Tooling &amp; PowerShell
+                    </h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Offensive script development, evasion tactics, and releases for tools like Nishang and KrbRelayUp.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Featured Articles Grid (3 Cards) -->
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <!-- Article Card 1 -->
+            <article class="group bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-red-500/40 transition-all duration-300 flex flex-col justify-between">
+                <div class="p-8">
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-full bg-red-100/80 text-red-600 text-xs font-mono font-bold border border-red-200">
+                            Active Directory
+                        </span>
+                        <span class="text-xs font-mono font-semibold text-slate-500">
+                            Technical Writeup
+                        </span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-red-600 transition-colors leading-snug mb-3">
+                        Abusing Kerberos Unconstrained &amp; Constrained Delegation Across Trusts
+                    </h3>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        A detailed breakdown of abusing Delegation configurations in multi-domain AD forests to achieve enterprise-wide Administrative privileges.
+                    </p>
+                </div>
+
+                <div class="px-8 py-5 bg-white border-t border-slate-200/80 flex items-center justify-between">
+                    <span class="text-xs font-semibold text-slate-500">Altered Security</span>
+                    <a href="https://www.alteredsecurity.com/blogs" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-red-600 group-hover:underline inline-flex items-center gap-1">
+                        Read Article 
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article Card 2 -->
+            <article class="group bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-red-500/40 transition-all duration-300 flex flex-col justify-between">
+                <div class="p-8">
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-full bg-red-100/80 text-red-600 text-xs font-mono font-bold border border-red-200">
+                            Azure &amp; Entra ID
+                        </span>
+                        <span class="text-xs font-mono font-semibold text-slate-500">
+                            Cloud Exploitation
+                        </span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-red-600 transition-colors leading-snug mb-3">
+                        Lateral Movement in Azure Infrastructure via Managed Identities
+                    </h3>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Exploring how misconfigured Managed Identity assignments in Azure Automation and VM Scale Sets allow internal pivoting to Global Admin rights.
+                    </p>
+                </div>
+
+                <div class="px-8 py-5 bg-white border-t border-slate-200/80 flex items-center justify-between">
+                    <span class="text-xs font-semibold text-slate-500">Altered Security</span>
+                    <a href="https://www.alteredsecurity.com/blogs" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-red-600 group-hover:underline inline-flex items-center gap-1">
+                        Read Article 
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article Card 3 -->
+            <article class="group bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-red-500/40 transition-all duration-300 flex flex-col justify-between">
+                <div class="p-8">
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-full bg-red-100/80 text-red-600 text-xs font-mono font-bold border border-red-200">
+                            PowerShell &amp; Tooling
+                        </span>
+                        <span class="text-xs font-mono font-semibold text-slate-500">
+                            Offensive Tooling
+                        </span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-red-600 transition-colors leading-snug mb-3">
+                        Modern Evasion Techniques Using PowerShell in Locked-Down Environs
+                    </h3>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Strategies for executing post-exploitation tasks in environments with strict Constrained Language Mode (CLM) and AMSI controls active.
+                    </p>
+                </div>
+
+                <div class="px-8 py-5 bg-white border-t border-slate-200/80 flex items-center justify-between">
+                    <span class="text-xs font-semibold text-slate-500">Altered Security</span>
+                    <a href="https://www.alteredsecurity.com/blogs" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-red-600 group-hover:underline inline-flex items-center gap-1">
+                        Read Article 
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>    
+<section id="connect" class="py-20 lg:py-28 bg-slate-50 text-slate-900 border-t border-slate-200 relative overflow-hidden">
+    
+    <!-- Ambient Light Background Glows -->
+    <div class="absolute top-1/4 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 left-0 w-96 h-96 bg-slate-300/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="mb-12 md:mb-16">
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-red-600 bg-red-100/80 px-3.5 py-1.5 rounded-full border border-red-200 inline-block mb-3">
+                Connect &amp; Social Profiles
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                Follow &amp; Engage
+            </h2>
+        </div>
+
+        <!-- Highlights Row (3 Columns with Consistent Icon Hover) -->
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+            
+            <!-- Highlight 1: Direct Network -->
+            <div class="group p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white flex-shrink-0 transition-colors duration-300">
+                    <i data-lucide="network" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">
+                        Direct Network
+                    </h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Connect directly for real-time security discussions, conference updates, and research drops.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Highlight 2: Open Source Code -->
+            <div class="group p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white flex-shrink-0 transition-colors duration-300">
+                    <i data-lucide="code-2" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">
+                        Open Source Code
+                    </h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Access open-source offensive tools, scripts, and attack research repositories.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Highlight 3: Industry Insights -->
+            <div class="group p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-red-500/40 transition-all duration-300 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white flex-shrink-0 transition-colors duration-300">
+                    <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">
+                        Industry Insights
+                    </h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Follow long-form thoughts on offensive security, Active Directory, and Azure infrastructure.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Official Social Links Cards Grid (3 Columns) -->
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-8 mb-20">
+            
+            <!-- LinkedIn Card -->
+            <a href="https://www.linkedin.com/in/mittalnikhil/" target="_blank" rel="noopener noreferrer" class="group p-8 rounded-3xl bg-white border border-slate-200 hover:border-[#0A66C2] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-[#0A66C2]/10 text-[#0A66C2] flex items-center justify-center group-hover:bg-[#0A66C2] group-hover:text-white transition-colors duration-300">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-1.29 1.02-2.31 2.31-2.31 1.28 0 2.22 1.02 2.22 2.31v4.93h2.81M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500 group-hover:text-[#0A66C2] transition-colors flex items-center gap-1">
+                            Connect 
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900 mb-1">LinkedIn</h3>
+                    <p class="text-xs font-mono font-bold text-red-600 mb-4">/in/mittalnikhil</p>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Professional updates, corporate training announcements, &amp; long-form thoughts.
+                    </p>
+                </div>
+                
+                <div class="mt-8 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-500 group-hover:text-[#0A66C2] transition-colors">
+                    Official Professional Profile
+                </div>
+            </a>
+
+            <!-- Twitter / X Card -->
+            <a href="https://x.com/nikhil_mitt" target="_blank" rel="noopener noreferrer" class="group p-8 rounded-3xl bg-white border border-slate-200 hover:border-slate-900 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-900 flex items-center justify-center group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500 group-hover:text-slate-900 transition-colors flex items-center gap-1">
+                            Follow 
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900 mb-1">Twitter / X</h3>
+                    <p class="text-xs font-mono font-bold text-red-600 mb-4">@nikhil_mitt</p>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Real-time security research, conference updates, &amp; infosec insights.
+                    </p>
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-500 group-hover:text-slate-900 transition-colors">
+                    Real-time Research Feed
+                </div>
+            </a>
+
+            <!-- GitHub Card -->
+            <a href="https://github.com/samratashok" target="_blank" rel="noopener noreferrer" class="group p-8 rounded-3xl bg-white border border-slate-200 hover:border-slate-900 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-900 flex items-center justify-center group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="github" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500 group-hover:text-slate-900 transition-colors flex items-center gap-1">
+                            Explore 
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900 mb-1">GitHub</h3>
+                    <p class="text-xs font-mono font-bold text-red-600 mb-4">@samratashok</p>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Open-source attack tools, Nishang PowerShell scripts, &amp; security frameworks.
+                    </p>
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-500 group-hover:text-slate-900 transition-colors">
+                    Open Source Repositories
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Subscription Form Card Banner -->
+        <div class="relative p-8 sm:p-12 rounded-3xl bg-slate-900 text-white shadow-2xl border border-slate-800 overflow-hidden max-w-4xl mx-auto">
+            
+            <!-- Background Decorative Glow -->
+            <div class="absolute -top-24 -right-24 w-72 h-72 bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 text-center max-w-2xl mx-auto">
+                <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 mx-auto mb-4">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </div>
+                
+                <h3 class="text-2xl sm:text-3xl font-black text-white mb-3">
+                    Subscribe for Thought Leadership &amp; Insights
+                </h3>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+                    Get insights on enterprise security, cloud exploitation, and red team methodologies delivered directly to your inbox. No spam.
+                </p>
+
+                <!-- Form -->
+                <form id="subscribe-form" class="flex flex-col sm:flex-row items-center gap-3">
+                    <div class="relative w-full">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                            <i data-lucide="at-sign" class="w-5 h-5"></i>
+                        </div>
+                        <input 
+                            type="email" 
+                            id="subscribe-email" 
+                            placeholder="Enter your email address" 
+                            required
+                            class="w-full pl-11 pr-4 py-3.5 bg-slate-800/80 border border-slate-700 rounded-xl text-white placeholder-slate-400 text-sm focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/30 transition-all"
+                        >
+                    </div>
+                    
+                    <button 
+                        type="submit" 
+                        class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm tracking-wide transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap shadow-lg shadow-red-600/25 cursor-pointer"
+                    >
+                        <span>Subscribe</span>
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </form>
+
+                <!-- Form Response Message -->
+                <p id="subscribe-message" class="mt-4 text-xs font-semibold hidden"></p>
+            </div>
+        </div>
+
+    </div>
+</section><!-- Required JS Initialization & Handlers -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        const subscribeForm = document.getElementById('subscribe-form');
+        const subscribeEmail = document.getElementById('subscribe-email');
+        const subscribeMessage = document.getElementById('subscribe-message');
+
+        if (subscribeForm) {
+            subscribeForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = subscribeEmail.value.trim();
+
+                if (email) {
+                    // Feedback UI Response
+                    subscribeMessage.textContent = "Thank you for subscribing! Check your inbox soon.";
+                    subscribeMessage.className = "mt-4 text-xs font-semibold text-emerald-400 block";
+                    subscribeEmail.value = '';
+
+                    setTimeout(() => {
+                        subscribeMessage.className = "mt-4 text-xs font-semibold hidden";
+                    }, 5000);
+                }
+            });
+        }
+    });
+</script>
+<!-- Required JS Initialization & Handlers -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        const subscribeForm = document.getElementById('subscribe-form');
+        const subscribeEmail = document.getElementById('subscribe-email');
+        const subscribeMessage = document.getElementById('subscribe-message');
+
+        if (subscribeForm) {
+            subscribeForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = subscribeEmail.value.trim();
+
+                if (email) {
+                    // Feedback UI Response
+                    subscribeMessage.textContent = "Thank you for subscribing! Check your inbox soon.";
+                    subscribeMessage.className = "mt-4 text-xs font-semibold text-emerald-400 block";
+                    subscribeEmail.value = '';
+
+                    setTimeout(() => {
+                        subscribeMessage.className = "mt-4 text-xs font-semibold hidden";
+                    }, 5000);
+                }
+            });
+        }
+    });
+</script>
+
+<!-- Required JS Initialization -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    });
+</script>
+<!-- Required JS Initialization -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    });
+</script>    
+
+<!-- Required JS Initialization -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    });
+</script>    
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render Lucide Icons
+            lucide.createIcons();
+
+            // Dark Mode Toggle Logic
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const lightIcon = document.getElementById('theme-toggle-light-icon');
+            const darkIcon = document.getElementById('theme-toggle-dark-icon');
+            const html = document.documentElement;
+
+            themeToggleBtn?.addEventListener('click', function() {
+                lightIcon?.classList.toggle('hidden');
+                darkIcon?.classList.toggle('hidden');
+                html.classList.toggle('dark');
+            });
+
+            // Dynamic Badge Typing Effect
+            const textElement = document.getElementById('typing-text');
+            if (textElement) {
+                const phrases = ["DEF CON Speaker", "Black Hat Speaker", "Security Pioneer", "Global Keynote Speaker"];
+                let phraseIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+
+                function type() {
+                    const currentPhrase = phrases[phraseIndex];
+                    if (isDeleting) {
+                        textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                        charIndex--;
+                    } else {
+                        textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                        charIndex++;
+                    }
+
+                    if (!isDeleting && charIndex === currentPhrase.length) {
+                        isDeleting = true;
+                        setTimeout(type, 2000);
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        setTimeout(type, 500);
+                    } else {
+                        setTimeout(type, isDeleting ? 50 : 100);
+                    }
+                }
+                type();
+            }
+
+            // Scroll Progress Indicator
+            const progressBar = document.createElement("div");
+            progressBar.style.position = "fixed";
+            progressBar.style.top = "0";
+            progressBar.style.left = "0";
+            progressBar.style.height = "3px";
+            progressBar.style.background = "#EA3037";
+            progressBar.style.zIndex = "100";
+            document.body.appendChild(progressBar);
+
+            window.addEventListener("scroll", () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = (scrollTop / docHeight) * 100;
+                progressBar.style.width = progress + "%";
+            });
+        });
+    </script>
+</body>
+</html>
