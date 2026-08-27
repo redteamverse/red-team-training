@@ -52,490 +52,436 @@
   
 
   <!-- Hero Section -->
- <section class="relative bg-slate-50 text-slate-900 py-20 lg:py-28 overflow-hidden border-b border-slate-200">
+ <section class="relative bg-[#030712] text-slate-100 py-20 lg:py-28 overflow-hidden border-b border-slate-800/80">
 
-  <!-- Subtle Background Elements -->
-  <div class="absolute -top-32 -right-32 w-[500px] h-[500px]
-              bg-red-500/5 rounded-full blur-3xl pointer-events-none">
-  </div>
+  <!-- Matrix Digital Rain Canvas Background -->
+  <canvas id="hero-matrix-canvas" class="absolute inset-0 w-full h-full opacity-20 pointer-events-none"></canvas>
 
-  <div class="absolute bottom-0 -left-32 w-[400px] h-[400px]
-              bg-slate-300/30 rounded-full blur-3xl pointer-events-none">
-  </div>
-
+  <!-- Cyber Glow Accents -->
+  <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 -left-32 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
-
 
     <!-- ===================================================== -->
     <!-- HERO GRID -->
     <!-- ===================================================== -->
-
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-
 
       <!-- =================================================== -->
       <!-- LEFT CONTENT -->
       <!-- =================================================== -->
-
       <div class="lg:col-span-7">
 
         <!-- Eyebrow -->
-        
-<div class="inline-flex items-center gap-2
-            px-3 py-1.5
-            bg-slate-50
-            border border-slate-200
-            rounded-full
-            mb-5">
-
-  <span class="text-slate-400 font-mono text-xs font-bold">
-    &gt;
-  </span>
-
-  <span class="text-xs font-bold uppercase
-               tracking-widest text-slate-600">
-     CORPORATE SECURITY TRAINING
-  </span>
-
-</div>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-900/80 border border-slate-700/80 rounded-full mb-5 shadow-inner">
+          <span class="text-red-500 font-mono text-xs font-bold">&gt;</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-slate-300">
+            CORPORATE SECURITY TRAINING
+          </span>
+        </div>
 
         <!-- Headline -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl
-                   font-bold tracking-tight
-                   text-slate-900
-                   leading-[1.08]
-                   max-w-3xl">
-
-          Train Your Team to   <span class="text-red-600">
-          Think Like an Attacker
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.08] max-w-3xl">
+          Train Your Team to 
+          <span class="text-red-500">
+            Think Like an Attacker
           </span>
-
         </h1>
 
-
         <!-- Subtext -->
-        <p class="mt-6 text-lg sm:text-xl
-                  text-slate-600
-                  leading-relaxed
-                  max-w-2xl">
-
+        <p class="mt-6 text-lg sm:text-xl text-slate-400 leading-relaxed max-w-2xl">
           Upskill your security team with practical, hands-on training built around real-world attack techniques, evolving threats, and modern enterprise environments.
-
         </p>
-
 
         <!-- ================================================= -->
         <!-- FEATURE LIST -->
         <!-- ================================================= -->
-
         <div class="mt-9 grid sm:grid-cols-2 gap-x-8 gap-y-5 max-w-2xl">
-
 
           <!-- Feature 1 -->
           <div class="flex items-center gap-3">
-
-            <div class="w-9 h-9 rounded-lg
-                        bg-red-50
-                        border border-red-100
-                        flex items-center justify-center
-                        shrink-0">
-
-              <i data-lucide="check-circle"
-                 class="w-5 h-5 text-red-600">
-              </i>
-
+            <div class="w-9 h-9 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center shrink-0">
+              <i data-lucide="check-circle" class="w-5 h-5 text-red-500"></i>
             </div>
-
-            <span class="text-sm sm:text-base
-                         font-medium text-slate-700">
-
+            <span class="text-sm sm:text-base font-medium text-slate-300">
               Practical, Hands-On Learning
-
             </span>
-
           </div>
-
 
           <!-- Feature 2 -->
           <div class="flex items-center gap-3">
-
-            <div class="w-9 h-9 rounded-lg
-                        bg-slate-100
-                        border border-slate-200
-                        flex items-center justify-center
-                        shrink-0">
-
-              <i data-lucide="shield"
-                 class="w-5 h-5 text-slate-700">
-              </i>
-
+            <div class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
+              <i data-lucide="shield" class="w-5 h-5 text-red-400"></i>
             </div>
-
-            <span class="text-sm sm:text-base
-                         font-medium text-slate-700">
-
+            <span class="text-sm sm:text-base font-medium text-slate-300">
               Real-World Attack Scenarios
-
             </span>
-
           </div>
-
 
           <!-- Feature 3 -->
           <div class="flex items-center gap-3">
-
-            <div class="w-9 h-9 rounded-lg
-                        bg-slate-100
-                        border border-slate-200
-                        flex items-center justify-center
-                        shrink-0">
-
-              <i data-lucide="activity"
-                 class="w-5 h-5 text-slate-700">
-              </i>
-
+            <div class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
+              <i data-lucide="activity" class="w-5 h-5 text-red-400"></i>
             </div>
-
-            <span class="text-sm sm:text-base
-                         font-medium text-slate-700">
-
-              Evolving Threats & Techniques
-
+            <span class="text-sm sm:text-base font-medium text-slate-300">
+              Evolving Threats &amp; Techniques
             </span>
-
           </div>
-
 
           <!-- Feature 4 -->
           <div class="flex items-center gap-3">
-
-            <div class="w-9 h-9 rounded-lg
-                        bg-slate-100
-                        border border-slate-200
-                        flex items-center justify-center
-                        shrink-0">
-
-              <i data-lucide="cloud"
-                 class="w-5 h-5 text-slate-700">
-              </i>
-
+            <div class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
+              <i data-lucide="cloud" class="w-5 h-5 text-red-400"></i>
             </div>
-
-            <span class="text-sm sm:text-base
-                         font-medium text-slate-700">
-
-              AD, Azure & AI Security
-
+            <span class="text-sm sm:text-base font-medium text-slate-300">
+              AD, Azure &amp; AI Security
             </span>
-
           </div>
-
 
         </div>
 
-
         <!-- CTA -->
-
         <div class="mt-10">
-
-          <button
-            class="group inline-flex items-center justify-center gap-2
-                   bg-red-600
-                   text-white
-                   px-7 py-3.5
-                   rounded-xl
-                   font-semibold
-                   shadow-lg shadow-red-600/20
-                   hover:bg-red-500
-                   hover:shadow-red-600/30
-                   transition-all duration-200">
-
-            Request a Demo
-
-            <i data-lucide="arrow-right"
-               class="w-4 h-4
-                      transition-transform duration-200
-                      group-hover:translate-x-1">
-            </i>
-
+          <button onclick="openDemoModal()" class="group inline-flex items-center justify-center gap-2 bg-red-600 text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg shadow-red-600/25 hover:bg-red-500 hover:shadow-red-600/40 transition-all duration-200">
+            <span>Request a Demo</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"></i>
           </button>
-
         </div>
 
       </div>
-
-
 
       <!-- =================================================== -->
       <!-- RIGHT: FORM -->
       <!-- =================================================== -->
-
       <div class="lg:col-span-5">
-
         <div class="relative">
 
           <!-- Top Accent -->
-          <div class="absolute -top-1 left-8 right-8
-                      h-1
-                      bg-gradient-to-r
-                      from-red-600
-                      via-red-500
-                      to-transparent
-                      rounded-full">
-          </div>
+          <div class="absolute -top-1 left-8 right-8 h-1 bg-gradient-to-r from-red-600 via-red-500 to-transparent rounded-full z-10"></div>
 
-
-          <div class="bg-white
-                      rounded-2xl
-                      border border-slate-200
-                      shadow-xl shadow-slate-900/5
-                      p-7 sm:p-8">
-
+          <div class="bg-slate-900/80 backdrop-blur-md rounded-2xl border border-slate-800 shadow-2xl p-7 sm:p-8">
 
             <!-- Form Header -->
-
             <div class="mb-7">
-
               <div class="flex items-center gap-3 mb-4">
-
-                <div class="w-10 h-10 rounded-xl
-                            bg-red-50
-                            border border-red-100
-                            flex items-center justify-center">
-
-                  <i data-lucide="message-square"
-                     class="w-5 h-5 text-red-600">
-                  </i>
-
+                <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                  <i data-lucide="message-square" class="w-5 h-5 text-red-500"></i>
                 </div>
-
-                <span class="text-xs font-bold uppercase
-                             tracking-widest text-slate-500">
-
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-400">
                   Talk to an Expert
-
                 </span>
-
               </div>
 
-
-              <h2 class="text-2xl sm:text-3xl
-                         font-bold
-                         text-slate-900
-                         tracking-tight">
-
+              <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                 Discuss Your Team Training Needs
-
               </h2>
 
-              <p class="mt-3 text-sm
-                        text-slate-500
-                        leading-relaxed">
-
+              <p class="mt-3 text-sm text-slate-400 leading-relaxed">
                 Tell us about your team and training requirements. We will help you find the right path.
-
               </p>
-
             </div>
-
-
 
             <!-- ================================================= -->
             <!-- FORM -->
             <!-- ================================================= -->
-
             <form class="space-y-5">
-
 
               <!-- Name -->
               <div>
-
-                <label
-                  for="name"
-                  class="block text-sm font-medium text-slate-700 mb-1.5">
-
+                <label for="name" class="block text-sm font-medium text-slate-300 mb-1.5">
                   Full Name
-
                 </label>
-
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Your name"
-                  class="block w-full
-                         rounded-lg
-                         border border-slate-200
-                         bg-slate-50
-                         px-4 py-3
-                         text-sm text-slate-900
-                         placeholder:text-slate-400
-                         focus:outline-none
-                         focus:bg-white
-                         focus:border-red-500
-                         focus:ring-2
-                         focus:ring-red-500/10
-                         transition-all"
-                />
-
+                <input type="text" id="name" name="name" placeholder="Your name" class="block w-full rounded-lg border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:bg-slate-950 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all" />
               </div>
-
 
               <!-- Email -->
               <div>
-
-                <label
-                  for="email"
-                  class="block text-sm font-medium text-slate-700 mb-1.5">
-
+                <label for="email" class="block text-sm font-medium text-slate-300 mb-1.5">
                   Work Email
-
                 </label>
-
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="you@company.com"
-                  class="block w-full
-                         rounded-lg
-                         border border-slate-200
-                         bg-slate-50
-                         px-4 py-3
-                         text-sm text-slate-900
-                         placeholder:text-slate-400
-                         focus:outline-none
-                         focus:bg-white
-                         focus:border-red-500
-                         focus:ring-2
-                         focus:ring-red-500/10
-                         transition-all"
-                />
-
+                <input type="email" id="email" name="email" placeholder="you@company.com" class="block w-full rounded-lg border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:bg-slate-950 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all" />
               </div>
-
 
               <!-- Company -->
               <div>
-
-                <label
-                  for="company"
-                  class="block text-sm font-medium text-slate-700 mb-1.5">
-
+                <label for="company" class="block text-sm font-medium text-slate-300 mb-1.5">
                   Company
-
                 </label>
-
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  placeholder="Company name"
-                  class="block w-full
-                         rounded-lg
-                         border border-slate-200
-                         bg-slate-50
-                         px-4 py-3
-                         text-sm text-slate-900
-                         placeholder:text-slate-400
-                         focus:outline-none
-                         focus:bg-white
-                         focus:border-red-500
-                         focus:ring-2
-                         focus:ring-red-500/10
-                         transition-all"
-                />
-
+                <input type="text" id="company" name="company" placeholder="Company name" class="block w-full rounded-lg border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:bg-slate-950 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all" />
               </div>
 
-
               <!-- Submit -->
-
-              <button
-                type="submit"
-                class="group w-full
-                       inline-flex items-center justify-center gap-2
-                       bg-red-600
-                       text-white
-                       px-6 py-3.5
-                       rounded-lg
-                       font-semibold
-                       hover:bg-red-500
-                       shadow-md shadow-red-600/15
-                       transition-all duration-200">
-
-                Talk to an Expert
-
-                <i data-lucide="arrow-right"
-                   class="w-4 h-4
-                          transition-transform
-                          group-hover:translate-x-1">
-                </i>
-
+              <button type="submit" class="group w-full inline-flex items-center justify-center gap-2 bg-red-600 text-white px-6 py-3.5 rounded-lg font-semibold hover:bg-red-500 shadow-lg shadow-red-600/25 transition-all duration-200">
+                <span>Talk to an Expert</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
               </button>
 
-
             </form>
-
-
 
             <!-- ================================================= -->
             <!-- TRUST POINTS -->
             <!-- ================================================= -->
-
-            <div class="mt-6 pt-5
-                        border-t border-slate-100
-                        flex flex-col sm:flex-row
-                        gap-3 sm:gap-5
-                        text-xs text-slate-500">
-
-
+            <div class="mt-6 pt-5 border-t border-slate-800/80 flex flex-col sm:flex-row gap-3 sm:gap-5 text-xs text-slate-400">
               <p class="flex items-center gap-2">
-
-                <i data-lucide="lock"
-                   class="w-4 h-4 text-red-500 shrink-0">
-                </i>
-
+                <i data-lucide="lock" class="w-4 h-4 text-red-500 shrink-0"></i>
                 Enterprise-Grade Data Privacy
-
               </p>
-
-
               <p class="flex items-center gap-2">
-
-                <i data-lucide="user-check"
-                   class="w-4 h-4 text-red-500 shrink-0">
-                </i>
-
+                <i data-lucide="user-check" class="w-4 h-4 text-red-500 shrink-0"></i>
                 Dedicated Expert Support
-
               </p>
-
-
             </div>
 
-
           </div>
-
         </div>
-
       </div>
 
     </div>
-
   </div>
-
 </section>
 
+<!-- Matrix Rain Canvas Animation Script -->
+<script>
+  (function initHeroMatrix() {
+    const canvas = document.getElementById('hero-matrix-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let width, height, columns, drops;
+    const characters = '0123456789ABCDEF01';
+    const fontSize = 14;
+
+    function resize() {
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+      columns = Math.floor(width / fontSize);
+      drops = Array(columns).fill(1);
+    }
+
+    function draw() {
+      ctx.fillStyle = 'rgba(3, 7, 18, 0.08)';
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = '#ef4444';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    setInterval(draw, 40);
+  })();
+</script>
 
 
+<!-- JavaScript Observer -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const targetSection = document.getElementById("enterprise");
+    const stickyCta = document.getElementById("fixed-demo-cta");
+
+    if (targetSection && stickyCta) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Reveals CTA when #enterprise section comes into view
+              stickyCta.classList.remove("translate-y-24", "opacity-0", "pointer-events-none");
+              stickyCta.classList.add("translate-y-0", "opacity-100", "pointer-events-auto");
+            } else {
+              // Hides CTA when scrolling past or above #enterprise section
+              stickyCta.classList.add("translate-y-24", "opacity-0", "pointer-events-none");
+              stickyCta.classList.remove("translate-y-0", "opacity-100", "pointer-events-auto");
+            }
+          });
+        },
+        { threshold: 0.1 } // Triggers as soon as 10% of #enterprise is visible
+      );
+
+      observer.observe(targetSection);
+    }
+  });
+</script>
+<!-- Add onclick="openDemoModal()" to ANY button you want to trigger the modal -->
+
+<!-- 1. MODAL FORM HTML -->
+<div id="demo-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+  <!-- Backdrop -->
+  <div id="modal-backdrop" onclick="closeDemoModal()" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity duration-300 opacity-0"></div>
+
+  <!-- Modal Content Box -->
+  <div 
+    id="modal-content" 
+    class="relative w-full max-w-lg bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 transform transition-all duration-300 opacity-0 scale-95 z-10 text-white"
+  >
+    <!-- Close Button -->
+    <button 
+      type="button" 
+      onclick="closeDemoModal()"
+      class="absolute top-5 right-5 text-slate-400 hover:text-white transition-colors p-1"
+      aria-label="Close modal"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Header Section -->
+    <div class="space-y-2 mb-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full">
+        <span class="text-xs font-mono font-bold text-red-400 uppercase tracking-wider">Talk to an Expert</span>
+      </div>
+      <h3 class="text-2xl font-bold text-white tracking-tight">Discuss Your Team Training Needs</h3>
+      <p class="text-sm text-slate-400">
+        Tell us about your team and training requirements. We will help you find the right path.
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form class="space-y-4" onsubmit="event.preventDefault();">
+      <!-- Full Name -->
+      <div>
+        <label for="full-name" class="block text-xs font-medium text-slate-300 mb-1.5">Full Name</label>
+        <input 
+          type="text" 
+          id="full-name" 
+          name="full-name" 
+          required 
+          placeholder="Jane Doe"
+          class="w-full px-4 py-2.5 bg-slate-800/80 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
+        />
+      </div>
+
+      <!-- Work Email -->
+      <div>
+        <label for="work-email" class="block text-xs font-medium text-slate-300 mb-1.5">Work Email</label>
+        <input 
+          type="email" 
+          id="work-email" 
+          name="work-email" 
+          required 
+          placeholder="jane@company.com"
+          class="w-full px-4 py-2.5 bg-slate-800/80 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
+        />
+      </div>
+
+      <!-- Company -->
+      <div>
+        <label for="company" class="block text-xs font-medium text-slate-300 mb-1.5">Company</label>
+        <input 
+          type="text" 
+          id="company" 
+          name="company" 
+          required 
+          placeholder="Acme Corp"
+          class="w-full px-4 py-2.5 bg-slate-800/80 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <button 
+        type="submit" 
+        class="w-full mt-2 py-3 px-6 bg-red-600 hover:bg-red-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-red-600/30 transition-all duration-200 active:scale-[0.99] flex items-center justify-center gap-2"
+      >
+        <span>Talk to an Expert</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </button>
+    </form>
+
+    <!-- Footer Trust Badges -->
+    <div class="mt-6 pt-5 border-t border-slate-800 grid grid-cols-2 gap-4 text-center">
+      <div class="flex items-center justify-center gap-1.5 text-xs text-slate-400">
+        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+        </svg>
+        <span>Enterprise-Grade Data Privacy</span>
+      </div>
+
+      <div class="flex items-center justify-center gap-1.5 text-xs text-slate-400">
+        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        </svg>
+        <span>Dedicated Expert Support</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. JAVASCRIPT FUNCTIONS -->
+<script>
+  function openDemoModal() {
+    const modal = document.getElementById("demo-modal");
+    const backdrop = document.getElementById("modal-backdrop");
+    const content = document.getElementById("modal-content");
+
+    modal.classList.remove("hidden");
+    setTimeout(() => {
+      backdrop.classList.remove("opacity-0");
+      content.classList.remove("opacity-0", "scale-95");
+      content.classList.add("opacity-100", "scale-100");
+    }, 10);
+    document.body.style.overflow = "hidden"; // Stop background scroll
+  }
+
+  function closeDemoModal() {
+    const modal = document.getElementById("demo-modal");
+    const backdrop = document.getElementById("modal-backdrop");
+    const content = document.getElementById("modal-content");
+
+    backdrop.classList.add("opacity-0");
+    content.classList.remove("opacity-100", "scale-100");
+    content.classList.add("opacity-0", "scale-95");
+    setTimeout(() => {
+      modal.classList.add("hidden");
+      document.body.style.overflow = ""; // Restore scroll
+    }, 300);
+  }
+
+  // Close when pressing the ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeDemoModal();
+  });
+</script>
+<!-- Standalone Fixed Floating CTA Widget -->
+<div 
+  id="fixed-demo-cta" 
+  class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 ease-in-out"
+>
+  <div class="bg-gradient-to-br from-[#0f172a] via-[#172554] to-[#0b1220] backdrop-blur-md border border-slate-700/80 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-4">
+    <div class="hidden sm:block">
+      <p class="text-xs font-semibold text-slate-300">Ready to see more?</p>
+      <p class="text-xs text-slate-400">Get a guided walk-through</p>
+    </div>
+    
+    <a 
+      href="#request-demo" 
+      class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-red-600/30 transition-all duration-200 active:scale-95 whitespace-nowrap "
+   onclick="openDemoModal()" >
+      <span>Request a Demo</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+      </svg>
+    </a>
+  </div>
+</div>
 
 
 
 <!-- Logo Bar Section -->
 <!-- Logo Bar Section -->
-<section class="relative bg-white py-16 lg:py-20 border-y border-slate-200 overflow-hidden">
+<section class="relative bg-white py-16 lg:py-20 border-y border-slate-200 overflow-hidden" id="enterprise">
 
   <!-- Subtle Background Detail -->
   <div class="absolute -top-32 right-0 w-[500px] h-[300px]
@@ -1894,7 +1840,7 @@
 
   <span class="text-xs font-bold uppercase
                tracking-widest text-slate-600">
-    Training Areas
+    Enterprise Labs
   </span>
 
 </div>
