@@ -69,7 +69,7 @@
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
       <!-- =================================================== -->
-      <!-- LEFT CONTENT -->
+      <!-- LEFT CONTENT (UNTOUCHED) -->
       <!-- =================================================== -->
       <div class="lg:col-span-7">
 
@@ -152,88 +152,96 @@
       </div>
 
       <!-- =================================================== -->
-      <!-- RIGHT: FORM -->
+      <!-- RIGHT: FORM (MODIFIED WITH BACKLIGHT GLOW) -->
       <!-- =================================================== -->
       <div class="lg:col-span-5">
         <div class="relative">
 
-          <!-- Top Accent -->
-          <div class="absolute -top-1 left-8 right-8 h-1 bg-gradient-to-r from-red-600 via-red-500 to-transparent rounded-full z-10"></div>
+          <!-- Atmospheric Ambient Backlight Glow -->
+          <div class="absolute -inset-2 bg-gradient-to-br from-red-600/25 via-red-900/15 to-cyan-500/20 rounded-3xl blur-2xl opacity-80 pointer-events-none"></div>
 
-          <div class="bg-slate-900/80 backdrop-blur-md rounded-2xl border border-slate-800 shadow-2xl p-7 sm:p-8">
+          <!-- Subtle Border Frame Wrap -->
+          <div class="relative rounded-2xl p-[1px] bg-gradient-to-b from-red-500/30 via-slate-700/40 to-transparent">
 
-            <!-- Form Header -->
-            <div class="mb-7">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
-                  <i data-lucide="message-square" class="w-5 h-5 text-red-500"></i>
+            <div class="bg-slate-900/90 backdrop-blur-xl rounded-2xl border border-slate-800/80 shadow-2xl p-7 sm:p-8">
+
+              <!-- Top Accent -->
+              <div class="absolute -top-1 left-8 right-8 h-1 bg-gradient-to-r from-red-600 via-red-500 to-transparent rounded-full z-10"></div>
+
+              <!-- Form Header -->
+              <div class="mb-7">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                    <i data-lucide="message-square" class="w-5 h-5 text-red-500"></i>
+                  </div>
+                  <span class="text-xs font-bold uppercase tracking-widest text-slate-400">
+                    Talk to an Expert
+                  </span>
                 </div>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-400">
-                  Talk to an Expert
-                </span>
+
+                <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                  Discuss Your Team Training Needs
+                </h2>
+
+                <p class="mt-3 text-sm text-slate-400 leading-relaxed">
+                  Tell us about your team and training requirements. We will help you find the right path.
+                </p>
               </div>
 
-              <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                Discuss Your Team Training Needs
-              </h2>
+              <!-- ================================================= -->
+              <!-- FORM -->
+              <!-- ================================================= -->
+              <form class="space-y-5">
 
-              <p class="mt-3 text-sm text-slate-400 leading-relaxed">
-                Tell us about your team and training requirements. We will help you find the right path.
-              </p>
+                <!-- Name -->
+                <div>
+                  <label for="name" class="block text-sm font-medium text-slate-300 mb-1.5">
+                    Full Name
+                  </label>
+                  <input type="text" id="name" name="name" placeholder="Your name" class="block w-full rounded-lg border border-slate-700/70 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:bg-slate-950 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all" />
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <label for="email" class="block text-sm font-medium text-slate-300 mb-1.5">
+                    Work Email
+                  </label>
+                  <input type="email" id="email" name="email" placeholder="you@company.com" class="block w-full rounded-lg border border-slate-700/70 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:bg-slate-950 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all" />
+                </div>
+
+                <!-- Company -->
+                <div>
+                  <label for="company" class="block text-sm font-medium text-slate-300 mb-1.5">
+                    Company
+                  </label>
+                  <input type="text" id="company" name="company" placeholder="Company name" class="block w-full rounded-lg border border-slate-700/70 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:bg-slate-950 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all" />
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="group w-full inline-flex items-center justify-center gap-2 bg-red-600 text-white px-6 py-3.5 rounded-lg font-semibold hover:bg-red-500 shadow-lg shadow-red-600/25 transition-all duration-200">
+                  <span>Talk to an Expert</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                </button>
+
+              </form>
+
+              <!-- ================================================= -->
+              <!-- TRUST POINTS -->
+              <!-- ================================================= -->
+              <div class="mt-6 pt-5 border-t border-slate-800/80 flex flex-col sm:flex-row gap-3 sm:gap-5 text-xs text-slate-400">
+                <p class="flex items-center gap-2">
+                  <i data-lucide="lock" class="w-4 h-4 text-red-500 shrink-0"></i>
+                  Enterprise-Grade Data Privacy
+                </p>
+                <p class="flex items-center gap-2">
+                  <i data-lucide="user-check" class="w-4 h-4 text-red-500 shrink-0"></i>
+                  Dedicated Expert Support
+                </p>
+              </div>
+
             </div>
-
-            <!-- ================================================= -->
-            <!-- FORM -->
-            <!-- ================================================= -->
-            <form class="space-y-5">
-
-              <!-- Name -->
-              <div>
-                <label for="name" class="block text-sm font-medium text-slate-300 mb-1.5">
-                  Full Name
-                </label>
-                <input type="text" id="name" name="name" placeholder="Your name" class="block w-full rounded-lg border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:bg-slate-950 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all" />
-              </div>
-
-              <!-- Email -->
-              <div>
-                <label for="email" class="block text-sm font-medium text-slate-300 mb-1.5">
-                  Work Email
-                </label>
-                <input type="email" id="email" name="email" placeholder="you@company.com" class="block w-full rounded-lg border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:bg-slate-950 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all" />
-              </div>
-
-              <!-- Company -->
-              <div>
-                <label for="company" class="block text-sm font-medium text-slate-300 mb-1.5">
-                  Company
-                </label>
-                <input type="text" id="company" name="company" placeholder="Company name" class="block w-full rounded-lg border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:bg-slate-950 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all" />
-              </div>
-
-              <!-- Submit -->
-              <button type="submit" class="group w-full inline-flex items-center justify-center gap-2 bg-red-600 text-white px-6 py-3.5 rounded-lg font-semibold hover:bg-red-500 shadow-lg shadow-red-600/25 transition-all duration-200">
-                <span>Talk to an Expert</span>
-                <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-              </button>
-
-            </form>
-
-            <!-- ================================================= -->
-            <!-- TRUST POINTS -->
-            <!-- ================================================= -->
-            <div class="mt-6 pt-5 border-t border-slate-800/80 flex flex-col sm:flex-row gap-3 sm:gap-5 text-xs text-slate-400">
-              <p class="flex items-center gap-2">
-                <i data-lucide="lock" class="w-4 h-4 text-red-500 shrink-0"></i>
-                Enterprise-Grade Data Privacy
-              </p>
-              <p class="flex items-center gap-2">
-                <i data-lucide="user-check" class="w-4 h-4 text-red-500 shrink-0"></i>
-                Dedicated Expert Support
-              </p>
-            </div>
-
           </div>
+
         </div>
       </div>
 
