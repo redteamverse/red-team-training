@@ -38,77 +38,9 @@
     content="website"
   />
 
-<style>
-  @keyframes logo-scroll {
-    from {
-      transform: translateX(0);
-    }
 
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  .trust-logo-track {
-    display: flex;
-    width: max-content;
-    animation: logo-scroll 25s linear infinite;
-    will-change: transform;
-  }
-
-  .trust-logo-track:hover {
-    animation-play-state: paused;
-  }
-
-  /*
-   * Reduced-motion users receive a static,
-   * responsive logo grid instead of animation.
-   */
-  @media (prefers-reduced-motion: reduce) {
-    .trust-logo-track {
-      width: 100%;
-      animation: none;
-      transform: none;
-    }
-
-    .trust-logo-primary {
-      width: 100%;
-      flex-wrap: wrap;
-      justify-content: center;
-      row-gap: 1.75rem;
-    }
-
-    .trust-logo-duplicate {
-      display: none;
-    }
-
-    .trust-logo-fade {
-      display: none;
-    }
-  }
-</style>
   <!-- Logo Slider -->
-  <style>
-    @keyframes logo-scroll {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    .animate-logo-scroll {
-      animation: logo-scroll 25s linear infinite;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .animate-logo-scroll {
-        animation: none;
-      }
-    }
-  </style>
+  
 <style>
  @media (max-width: 639px) {
   #hero-matrix-canvas {
@@ -195,7 +127,7 @@
   .trust-logo-track {
     display: flex;
     width: max-content;
-    animation: trust-logo-scroll 28s linear infinite;
+    animation: trust-logo-scroll 30s linear infinite;
     will-change: transform;
   }
 
@@ -203,8 +135,7 @@
     animation-play-state: paused;
   }
 
-  .trust-logo-primary,
-  .trust-logo-duplicate {
+  .trust-logo-set {
     flex-shrink: 0;
   }
 
@@ -213,40 +144,7 @@
       animation: none;
     }
   }
-</style>  
-<style>
-  @keyframes trust-logo-scroll {
-    from {
-      transform: translateX(0);
-    }
-
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  .trust-logo-track {
-    display: flex;
-    width: max-content;
-    animation: trust-logo-scroll 28s linear infinite;
-    will-change: transform;
-  }
-
-  .trust-logo-track:hover {
-    animation-play-state: paused;
-  }
-
-  .trust-logo-primary,
-  .trust-logo-duplicate {
-    flex-shrink: 0;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .trust-logo-track {
-      animation: none;
-    }
-  }
-</style>  
+</style>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -802,23 +700,36 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
 
 
 
+
+
+
+
 <section
   id="enterprise-trust"
   class="relative overflow-hidden border-y border-slate-200 bg-white py-14 sm:py-16 lg:py-20"
   aria-labelledby="enterprise-trust-heading"
 >
-  <!-- Background Accent -->
+  <!-- Background Accents -->
   <div
-    class="pointer-events-none absolute -top-32 right-0 h-[300px] w-[500px] rounded-full bg-red-500/[0.04] blur-3xl"
+    class="pointer-events-none absolute -right-32 -top-32 h-[400px] w-[500px] rounded-full bg-red-500/[0.04] blur-3xl"
     aria-hidden="true"
   ></div>
 
-  <div class="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+  <div
+    class="pointer-events-none absolute -bottom-40 -left-32 h-[350px] w-[400px] rounded-full bg-blue-500/[0.03] blur-3xl"
+    aria-hidden="true"
+  ></div>
 
-    <!-- Section Header -->
-    <div class="mb-9 grid items-end gap-6 lg:mb-10 lg:grid-cols-12 lg:gap-12">
+  <div class="relative mx-auto max-w-[1400px] px-5 sm:px-6 lg:px-10">
 
-      <div class="lg:col-span-7">
+    <!-- ================================================= -->
+    <!-- HEADER AND CREDIBILITY POINTS -->
+    <!-- ================================================= -->
+
+    <div class="mb-10 grid items-center gap-9 lg:grid-cols-12 lg:gap-14">
+
+      <!-- Header Content -->
+      <div class="lg:col-span-5">
 
         <!-- Eyebrow -->
         <div class="mb-4 inline-flex items-center gap-2">
@@ -835,153 +746,164 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
         <!-- Heading -->
         <h2
           id="enterprise-trust-heading"
-          class="text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.7rem]"
+          class="max-w-xl text-3xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.7rem]"
         >
           Trusted by Security Teams Worldwide
         </h2>
 
-      </div>
-
-      <!-- Supporting Copy -->
-      <div class="lg:col-span-5">
-        <p class="text-base leading-relaxed text-slate-600 sm:text-lg lg:border-l lg:border-slate-200 lg:pl-7">
+        <!-- Supporting Copy -->
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
           Security professionals from Fortune 500 companies, global
           enterprises, and government organizations train with Altered
           Security.
         </p>
+
+      </div>
+
+      <!-- Credibility Points -->
+      <div
+        class="grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2 lg:col-span-7"
+        aria-label="Reasons security professionals choose Altered Security"
+      >
+
+        <!-- Point 1 -->
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50">
+            <img
+              src="https://static.wixstatic.com/media/52db83_44e40d662ced4b89abd32b31bb33043b~mv2.png/v1/fill/w_72,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/rating%20(3).png"
+              alt=""
+              width="72"
+              height="72"
+              loading="lazy"
+              decoding="async"
+              class="h-8 w-8 object-contain"
+              aria-hidden="true"
+            />
+          </div>
+
+          <p class="text-sm font-semibold leading-snug text-slate-800 sm:text-base">
+            Expert Instructors and Course Authors
+          </p>
+        </div>
+
+        <!-- Point 2 -->
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50">
+            <img
+              src="https://static.wixstatic.com/media/52db83_6ee32e2db2c94458bc9c8fc7c5a871da~mv2.png/v1/fill/w_72,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/shield.png"
+              alt=""
+              width="72"
+              height="72"
+              loading="lazy"
+              decoding="async"
+              class="h-8 w-8 object-contain"
+              aria-hidden="true"
+            />
+          </div>
+
+          <p class="text-sm font-semibold leading-snug text-slate-800 sm:text-base">
+            Pioneers of Enterprise Labs
+          </p>
+        </div>
+
+        <!-- Point 3 -->
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50">
+            <img
+              src="https://static.wixstatic.com/media/52db83_24047402e3f84761bfd4a08bcacde8f9~mv2.png/v1/fill/w_72,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/best-practice.png"
+              alt=""
+              width="72"
+              height="72"
+              loading="lazy"
+              decoding="async"
+              class="h-8 w-8 object-contain"
+              aria-hidden="true"
+            />
+          </div>
+
+          <p class="text-sm font-semibold leading-snug text-slate-800 sm:text-base">
+            Recommended by Security Professionals
+          </p>
+        </div>
+
+        <!-- Point 4 -->
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50">
+            <img
+              src="https://static.wixstatic.com/media/52db83_960089479c604eb0a5f5b73e85d964df~mv2.png/v1/fill/w_72,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/target.png"
+              alt=""
+              width="72"
+              height="72"
+              loading="lazy"
+              decoding="async"
+              class="h-8 w-8 object-contain"
+              aria-hidden="true"
+            />
+          </div>
+
+          <p class="text-sm font-semibold leading-snug text-slate-800 sm:text-base">
+            Focused on Enterprise Security
+          </p>
+        </div>
+
       </div>
 
     </div>
 
-    <!-- Credibility Highlights -->
-    <div
-      class="mb-6 grid grid-cols-2 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 lg:grid-cols-4"
-      aria-label="Reasons security professionals choose Altered Security"
-    >
+    <!-- ================================================= -->
+    <!-- FULL-WIDTH PROOF PANEL -->
+    <!-- ================================================= -->
 
-      <!-- Highlight 1 -->
-      <div class="flex items-center gap-3 border-b border-r border-slate-200 p-4 sm:p-5 lg:border-b-0">
-        <img
-          src="https://static.wixstatic.com/media/52db83_44e40d662ced4b89abd32b31bb33043b~mv2.png/v1/fill/w_72,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/rating%20(3).png"
-          alt=""
-          width="72"
-          height="72"
-          loading="lazy"
-          decoding="async"
-          class="h-9 w-9 shrink-0 object-contain sm:h-10 sm:w-10"
-          aria-hidden="true"
-        />
-
-        <p class="text-xs font-semibold leading-snug text-slate-800 sm:text-sm">
-          Expert Instructors and Course Authors
-        </p>
-      </div>
-
-      <!-- Highlight 2 -->
-      <div class="flex items-center gap-3 border-b border-slate-200 p-4 sm:p-5 lg:border-b-0 lg:border-r">
-        <img
-          src="https://static.wixstatic.com/media/52db83_6ee32e2db2c94458bc9c8fc7c5a871da~mv2.png/v1/fill/w_72,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/shield.png"
-          alt=""
-          width="72"
-          height="72"
-          loading="lazy"
-          decoding="async"
-          class="h-9 w-9 shrink-0 object-contain sm:h-10 sm:w-10"
-          aria-hidden="true"
-        />
-
-        <p class="text-xs font-semibold leading-snug text-slate-800 sm:text-sm">
-          Pioneers of Enterprise Labs
-        </p>
-      </div>
-
-      <!-- Highlight 3 -->
-      <div class="flex items-center gap-3 border-r border-slate-200 p-4 sm:p-5">
-        <img
-          src="https://static.wixstatic.com/media/52db83_24047402e3f84761bfd4a08bcacde8f9~mv2.png/v1/fill/w_72,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/best-practice.png"
-          alt=""
-          width="72"
-          height="72"
-          loading="lazy"
-          decoding="async"
-          class="h-9 w-9 shrink-0 object-contain sm:h-10 sm:w-10"
-          aria-hidden="true"
-        />
-
-        <p class="text-xs font-semibold leading-snug text-slate-800 sm:text-sm">
-          Recommended by Security Professionals
-        </p>
-      </div>
-
-      <!-- Highlight 4 -->
-      <div class="flex items-center gap-3 p-4 sm:p-5">
-        <img
-          src="https://static.wixstatic.com/media/52db83_960089479c604eb0a5f5b73e85d964df~mv2.png/v1/fill/w_72,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/target.png"
-          alt=""
-          width="72"
-          height="72"
-          loading="lazy"
-          decoding="async"
-          class="h-9 w-9 shrink-0 object-contain sm:h-10 sm:w-10"
-          aria-hidden="true"
-        />
-
-        <p class="text-xs font-semibold leading-snug text-slate-800 sm:text-sm">
-          Focused on Enterprise Security
-        </p>
-      </div>
-
-    </div>
-
-    <!-- Trust Panel -->
     <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
 
-      <!-- Panel Header -->
-      <div class="flex items-center justify-between gap-4 border-b border-slate-200 px-5 py-4 sm:px-8">
-
-        <div class="flex items-center gap-2">
-          <span class="h-1.5 w-1.5 rounded-full bg-red-500"></span>
-          <span class="h-1.5 w-1.5 rounded-full bg-red-500/40"></span>
-          <span class="h-1.5 w-1.5 rounded-full bg-red-500/20"></span>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <span class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 sm:text-[11px]">
-            Organizations Represented
-          </span>
-
-          <i
-            data-lucide="building-2"
-            class="h-4 w-4 text-red-500"
-            aria-hidden="true"
-          ></i>
-        </div>
-
-      </div>
-
-      <!-- Logo Slider -->
+      <!-- Decorative Top Accent -->
       <div
-        class="relative overflow-hidden bg-white py-9 sm:py-11"
+        class="absolute left-10 right-10 top-0 z-20 h-px bg-gradient-to-r from-transparent via-red-500/70 to-transparent"
+        aria-hidden="true"
+      ></div>
+
+      
+
+      <!-- ================================================= -->
+      <!-- LOGO SLIDER -->
+      <!-- ================================================= -->
+
+      <div
+        class="relative min-h-[150px] overflow-hidden bg-white py-12 sm:py-14"
         aria-label="Organizations represented by Altered Security learners"
       >
-        <!-- Fades -->
+        <!-- Left Fade -->
         <div
-          class="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white via-white/90 to-transparent sm:w-32"
+          class="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white via-white/95 to-transparent sm:w-28"
           aria-hidden="true"
         ></div>
 
+        <!-- Right Fade -->
         <div
-          class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white via-white/90 to-transparent sm:w-32"
+          class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white via-white/95 to-transparent sm:w-28"
           aria-hidden="true"
         ></div>
 
         <div class="trust-logo-track">
 
           <!-- Primary Logo Set -->
-          <div class="trust-logo-primary flex items-center gap-14 px-8 sm:gap-24 sm:px-12">
+          <div class="trust-logo-set flex items-center gap-16 px-10 sm:gap-24 sm:px-16 lg:gap-28">
+
+            <!-- NASA -->
+            <div class="flex h-12 min-w-[100px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
+              <img
+                src="https://static.wixstatic.com/media/470c31_251090d1925f4a54a790c7b49e889e35~mv2.png/v1/crop/x_80,y_10,w_159,h_141/fill/w_96,h_85,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nasa.png"
+                alt="NASA"
+                width="96"
+                height="85"
+                loading="lazy"
+                decoding="async"
+                class="h-10 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
+              />
+            </div>
 
             <!-- IBM -->
-            <div class="flex h-12 min-w-[100px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
+            <div class="flex h-12 min-w-[110px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
               <img
                 src="https://static.wixstatic.com/media/470c31_f0d7f2f030b54a7ead4b4ba7ceba80c5~mv2.png/v1/fill/w_111,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ibm.png"
                 alt="IBM"
@@ -989,12 +911,12 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
                 height="44"
                 loading="lazy"
                 decoding="async"
-                class="h-7 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0 sm:h-8"
+                class="h-8 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
               />
             </div>
 
             <!-- Deloitte -->
-            <div class="flex h-12 min-w-[120px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
+            <div class="flex h-12 min-w-[145px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
               <img
                 src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png"
                 alt="Deloitte"
@@ -1002,12 +924,12 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
                 height="50"
                 loading="lazy"
                 decoding="async"
-                class="h-7 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0 sm:h-8"
+                class="h-8 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
               />
             </div>
 
             <!-- Sony -->
-            <div class="flex h-12 min-w-[100px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
+            <div class="flex h-12 min-w-[130px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
               <img
                 src="https://static.wixstatic.com/media/470c31_a8f72ea2af084571b3646b13855f3ba0~mv2.png/v1/fill/w_162,h_29,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sony.png"
                 alt="Sony"
@@ -1015,20 +937,20 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
                 height="29"
                 loading="lazy"
                 decoding="async"
-                class="h-5 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0 sm:h-6"
+                class="h-6 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
               />
             </div>
 
-            <!-- Offensive Security -->
-            <div class="flex h-12 min-w-[120px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
+            <!-- Secret Intelligence Service -->
+            <div class="flex h-12 min-w-[165px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
               <img
                 src="https://static.wixstatic.com/media/470c31_d3209451b43a496da4ca26f313bf7bff~mv2.png/v1/fill/w_178,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sis.png"
-                alt="Offensive Security"
+                alt="Secret Intelligence Service"
                 width="178"
                 height="50"
                 loading="lazy"
                 decoding="async"
-                class="h-8 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0 sm:h-9"
+                class="h-9 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
               />
             </div>
 
@@ -1041,20 +963,7 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
                 height="100"
                 loading="lazy"
                 decoding="async"
-                class="h-9 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0 sm:h-10"
-              />
-            </div>
-
-            <!-- NASA -->
-            <div class="flex h-12 min-w-[100px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
-              <img
-                src="https://static.wixstatic.com/media/470c31_251090d1925f4a54a790c7b49e889e35~mv2.png/v1/crop/x_80,y_10,w_159,h_141/fill/w_96,h_85,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nasa.png"
-                alt="NASA"
-                width="96"
-                height="85"
-                loading="lazy"
-                decoding="async"
-                class="h-9 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0 sm:h-10"
+                class="h-10 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
               />
             </div>
 
@@ -1062,46 +971,56 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
 
           <!-- Duplicate Logo Set -->
           <div
-            class="trust-logo-duplicate flex items-center gap-14 px-8 sm:gap-24 sm:px-12"
+            class="trust-logo-set flex items-center gap-16 px-10 sm:gap-24 sm:px-16 lg:gap-28"
             aria-hidden="true"
           >
             <div class="flex h-12 min-w-[100px] items-center justify-center opacity-55">
+              <img
+                src="https://static.wixstatic.com/media/470c31_251090d1925f4a54a790c7b49e889e35~mv2.png/v1/crop/x_80,y_10,w_159,h_141/fill/w_96,h_85,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nasa.png"
+                alt=""
+                width="96"
+                height="85"
+                class="h-10 w-auto object-contain grayscale"
+              />
+            </div>
+
+            <div class="flex h-12 min-w-[110px] items-center justify-center opacity-55">
               <img
                 src="https://static.wixstatic.com/media/470c31_f0d7f2f030b54a7ead4b4ba7ceba80c5~mv2.png/v1/fill/w_111,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ibm.png"
                 alt=""
                 width="111"
                 height="44"
-                class="h-7 w-auto object-contain grayscale sm:h-8"
+                class="h-8 w-auto object-contain grayscale"
               />
             </div>
 
-            <div class="flex h-12 min-w-[120px] items-center justify-center opacity-55">
+            <div class="flex h-12 min-w-[145px] items-center justify-center opacity-55">
               <img
                 src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png"
                 alt=""
                 width="189"
                 height="50"
-                class="h-7 w-auto object-contain grayscale sm:h-8"
+                class="h-8 w-auto object-contain grayscale"
               />
             </div>
 
-            <div class="flex h-12 min-w-[100px] items-center justify-center opacity-55">
+            <div class="flex h-12 min-w-[130px] items-center justify-center opacity-55">
               <img
                 src="https://static.wixstatic.com/media/470c31_a8f72ea2af084571b3646b13855f3ba0~mv2.png/v1/fill/w_162,h_29,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sony.png"
                 alt=""
                 width="162"
                 height="29"
-                class="h-5 w-auto object-contain grayscale sm:h-6"
+                class="h-6 w-auto object-contain grayscale"
               />
             </div>
 
-            <div class="flex h-12 min-w-[120px] items-center justify-center opacity-55">
+            <div class="flex h-12 min-w-[165px] items-center justify-center opacity-55">
               <img
                 src="https://static.wixstatic.com/media/470c31_d3209451b43a496da4ca26f313bf7bff~mv2.png/v1/fill/w_178,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sis.png"
                 alt=""
                 width="178"
                 height="50"
-                class="h-8 w-auto object-contain grayscale sm:h-9"
+                class="h-9 w-auto object-contain grayscale"
               />
             </div>
 
@@ -1111,38 +1030,27 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
                 alt=""
                 width="143"
                 height="100"
-                class="h-9 w-auto object-contain grayscale sm:h-10"
+                class="h-10 w-auto object-contain grayscale"
               />
             </div>
-
-            <div class="flex h-12 min-w-[100px] items-center justify-center opacity-55">
-              <img
-                src="https://static.wixstatic.com/media/470c31_251090d1925f4a54a790c7b49e889e35~mv2.png/v1/crop/x_80,y_10,w_159,h_141/fill/w_96,h_85,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nasa.png"
-                alt=""
-                width="96"
-                height="85"
-                class="h-9 w-auto object-contain grayscale sm:h-10"
-              />
-            </div>
-
           </div>
+
         </div>
       </div>
 
-      <!-- Statistics -->
+      <!-- ================================================= -->
+      <!-- STATISTICS -->
+      <!-- ================================================= -->
+
       <div
-        class="grid grid-cols-1 bg-slate-50 sm:grid-cols-2 lg:grid-cols-4"
+        class="grid grid-cols-1 border-t border-slate-200 bg-slate-50 sm:grid-cols-2 lg:grid-cols-4"
         aria-label="Altered Security training statistics"
       >
 
         <!-- Statistic 1 -->
-        <div class="group flex min-w-0 items-center gap-4 border-b border-slate-200 px-5 py-5 sm:border-r sm:px-6 sm:py-6 lg:border-b-0">
+        <div class="group flex min-w-0 items-center gap-4 border-b border-slate-200 px-5 py-5 sm:border-r sm:px-6 lg:border-b-0">
           <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-red-600 transition-colors duration-300 group-hover:border-red-200 group-hover:bg-red-50">
-            <i
-              data-lucide="users"
-              class="h-5 w-5"
-              aria-hidden="true"
-            ></i>
+            <i data-lucide="users" class="h-5 w-5" aria-hidden="true"></i>
           </div>
 
           <div class="min-w-0">
@@ -1157,13 +1065,9 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
         </div>
 
         <!-- Statistic 2 -->
-        <div class="group flex min-w-0 items-center gap-4 border-b border-slate-200 px-5 py-5 sm:px-6 sm:py-6 lg:border-b-0 lg:border-r">
+        <div class="group flex min-w-0 items-center gap-4 border-b border-slate-200 px-5 py-5 sm:px-6 lg:border-b-0 lg:border-r">
           <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-red-600 transition-colors duration-300 group-hover:border-red-200 group-hover:bg-red-50">
-            <i
-              data-lucide="globe-2"
-              class="h-5 w-5"
-              aria-hidden="true"
-            ></i>
+            <i data-lucide="globe-2" class="h-5 w-5" aria-hidden="true"></i>
           </div>
 
           <div class="min-w-0">
@@ -1178,13 +1082,9 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
         </div>
 
         <!-- Statistic 3 -->
-        <div class="group flex min-w-0 items-center gap-4 border-b border-slate-200 px-5 py-5 sm:border-b-0 sm:border-r sm:px-6 sm:py-6">
+        <div class="group flex min-w-0 items-center gap-4 border-b border-slate-200 px-5 py-5 sm:border-b-0 sm:border-r sm:px-6">
           <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-red-600 transition-colors duration-300 group-hover:border-red-200 group-hover:bg-red-50">
-            <i
-              data-lucide="building-2"
-              class="h-5 w-5"
-              aria-hidden="true"
-            ></i>
+            <i data-lucide="building-2" class="h-5 w-5" aria-hidden="true"></i>
           </div>
 
           <div class="min-w-0">
@@ -1199,13 +1099,9 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
         </div>
 
         <!-- Statistic 4 -->
-        <div class="group flex min-w-0 items-center gap-4 px-5 py-5 sm:px-6 sm:py-6">
+        <div class="group flex min-w-0 items-center gap-4 px-5 py-5 sm:px-6">
           <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-red-600 transition-colors duration-300 group-hover:border-red-200 group-hover:bg-red-50">
-            <i
-              data-lucide="crosshair"
-              class="h-5 w-5"
-              aria-hidden="true"
-            ></i>
+            <i data-lucide="crosshair" class="h-5 w-5" aria-hidden="true"></i>
           </div>
 
           <div class="min-w-0">
@@ -1222,6 +1118,7 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
       </div>
 
     </div>
+
   </div>
 </section>
   
@@ -2018,74 +1915,7 @@ Our hands-on programs are led by security experts who have spoken and delivered 
     </ol>
 
     <!-- Supporting Highlights -->
-    <div
-      class="mt-6 border-t border-blue-200/10 pt-5"
-      aria-label="Supporting corporate training features"
-    >
-      <div class="grid grid-cols-2 gap-x-4 gap-y-3 sm:gap-x-6 lg:grid-cols-4">
 
-        <!-- Highlight 1 -->
-        <div class="flex items-center gap-2">
-          <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-blue-400/10 bg-blue-400/10">
-            <i
-              data-lucide="shield"
-              class="h-3.5 w-3.5 text-blue-300"
-              aria-hidden="true"
-            ></i>
-          </div>
-
-          <span class="text-xs font-medium leading-tight text-slate-300 sm:text-sm">
-            Attack and Defense Training
-          </span>
-        </div>
-
-        <!-- Highlight 2 -->
-        <div class="flex items-center gap-2">
-          <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-blue-400/10 bg-blue-400/10">
-            <i
-              data-lucide="clipboard-check"
-              class="h-3.5 w-3.5 text-blue-300"
-              aria-hidden="true"
-            ></i>
-          </div>
-
-          <span class="text-xs font-medium leading-tight text-slate-300 sm:text-sm">
-            Practical Skill Validation
-          </span>
-        </div>
-
-        <!-- Highlight 3 -->
-        <div class="flex items-center gap-2">
-          <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-blue-400/10 bg-blue-400/10">
-            <i
-              data-lucide="chart-no-axes-combined"
-              class="h-3.5 w-3.5 text-blue-300"
-              aria-hidden="true"
-            ></i>
-          </div>
-
-          <span class="text-xs font-medium leading-tight text-slate-300 sm:text-sm">
-            Team Progress Visibility
-          </span>
-        </div>
-
-        <!-- Highlight 4 -->
-        <div class="flex items-center gap-2">
-          <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-red-400/10 bg-red-400/10">
-            <i
-              data-lucide="headphones"
-              class="h-3.5 w-3.5 text-red-300"
-              aria-hidden="true"
-            ></i>
-          </div>
-
-          <span class="text-xs font-medium leading-tight text-slate-300 sm:text-sm">
-            Dedicated Training Support
-          </span>
-        </div>
-
-      </div>
-    </div>
 
   </div>
 </section>
