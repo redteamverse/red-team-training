@@ -158,6 +158,18 @@
     color: #ffffff;
   }
 </style>  
+<style>
+  .platform-preview-tab[aria-selected="true"] {
+    background: #b91c1c;
+    border-color: #b91c1c;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(185, 28, 28, 0.18);
+  }
+
+  .platform-preview-tab[aria-selected="true"] svg {
+    color: #ffffff;
+  }
+</style>  
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -1213,19 +1225,49 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
         <!-- Image Frame -->
       <!-- Active Directory Image Frame -->
 <!-- Active Directory Image -->
+<!-- Active Directory Lab Preview -->
 <div
-  class="relative aspect-[16/10] overflow-hidden border-b border-slate-200 bg-slate-100 p-2 sm:p-3"
+  class="border-b border-slate-200 bg-slate-100 p-3 sm:p-4"
 >
   <div
-    class="flex h-full w-full items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+    class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
   >
-    <img
-      src="https://static.wixstatic.com/media/16cdd7_77cacc7e5f514c1da1d4e453252882bf~mv2.avif/v1/fill/w_900,h_709,al_c,q_85,enc_avif,quality_auto/Red%20Team%20Lab.avif"
-      alt="Active Directory enterprise lab topology with multiple domains, forests, servers, and student machines"
-      class="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
-      loading="lazy"
-      decoding="async"
-    />
+    <!-- Preview Header -->
+    <div
+      class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
+    >
+      <div class="flex items-center gap-2">
+        <i
+          data-lucide="network"
+          class="h-3.5 w-3.5 text-red-600"
+          aria-hidden="true"
+        ></i>
+
+        <span
+          class="text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
+        >
+          Enterprise Lab Environment
+        </span>
+      </div>
+
+      <span
+        class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+        aria-hidden="true"
+      ></span>
+    </div>
+
+    <!-- Image Canvas -->
+    <div
+      class="flex aspect-[16/9] items-center justify-center overflow-hidden bg-white p-2"
+    >
+      <img
+        src="https://static.wixstatic.com/media/16cdd7_77cacc7e5f514c1da1d4e453252882bf~mv2.avif/v1/fill/w_900,h_709,al_c,q_85,enc_avif,quality_auto/Red%20Team%20Lab.avif"
+        alt="Active Directory enterprise lab topology"
+        class="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
   </div>
 </div>
 
@@ -1234,15 +1276,7 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
 
           <!-- Course Header -->
           <div class="flex items-start gap-3.5">
-            <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600"
-            >
-              <i
-                data-lucide="network"
-                class="h-[18px] w-[18px]"
-                aria-hidden="true"
-              ></i>
-            </div>
+            
 
             <div class="min-w-0 pt-0.5">
               <h3
@@ -1411,19 +1445,49 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
       >
         <!-- Image Frame -->
        <!-- Windows Security Image -->
+<!-- Windows Lab Preview -->
 <div
-  class="relative aspect-[16/10] overflow-hidden border-b border-slate-200 bg-slate-100 p-2 sm:p-3"
+  class="border-b border-slate-200 bg-slate-100 p-3 sm:p-4"
 >
   <div
-    class="flex h-full w-full items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+    class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
   >
-    <img
-      src="https://static.wixstatic.com/media/16cdd7_46f391f893884b3287ee7071420474a8~mv2.avif/v1/fill/w_917,h_384,al_c,q_80,enc_avif,quality_auto/Evasion%20Lab.avif"
-      alt="Advanced Windows evasion lab topology showing targets, monitoring, and defensive controls"
-      class="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
-      loading="lazy"
-      decoding="async"
-    />
+    <!-- Preview Header -->
+    <div
+      class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
+    >
+      <div class="flex items-center gap-2">
+        <i
+          data-lucide="monitor-cog"
+          class="h-3.5 w-3.5 text-red-600"
+          aria-hidden="true"
+        ></i>
+
+        <span
+          class="text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
+        >
+          Enterprise Lab Environment
+        </span>
+      </div>
+
+      <span
+        class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+        aria-hidden="true"
+      ></span>
+    </div>
+
+    <!-- Image Canvas -->
+    <div
+      class="flex aspect-[16/9] items-center justify-center overflow-hidden bg-white p-2"
+    >
+      <img
+        src="https://static.wixstatic.com/media/16cdd7_46f391f893884b3287ee7071420474a8~mv2.avif/v1/fill/w_917,h_384,al_c,q_80,enc_avif,quality_auto/Evasion%20Lab.avif"
+        alt="Advanced Windows evasion lab topology"
+        class="h-full w-full object-contain object-center mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.015]"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
   </div>
 </div>
 
@@ -1432,15 +1496,7 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
 
           <!-- Course Header -->
           <div class="flex items-start gap-3.5">
-            <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600"
-            >
-              <i
-                data-lucide="monitor-cog"
-                class="h-[18px] w-[18px]"
-                aria-hidden="true"
-              ></i>
-            </div>
+            
 
             <div class="min-w-0 pt-0.5">
               <h3
@@ -1609,36 +1665,57 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
       >
         <!-- Image Frame -->
         <!-- Azure Security Image -->
+<!-- Azure Lab Preview -->
 <div
-  class="relative aspect-[16/10] overflow-hidden border-b border-slate-200 bg-slate-100 p-2 sm:p-3"
+  class="border-b border-slate-200 bg-slate-100 p-3 sm:p-4"
 >
   <div
-    class="flex h-full w-full items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+    class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
   >
-    <img
-      src="https://static.wixstatic.com/media/16cdd7_890796befcef4bd9bf05d485767809a1~mv2.avif/v1/fill/w_900,h_536,al_c,q_85,enc_avif,quality_auto/CARTE%20Lab.avif"
-      alt="Azure enterprise lab topology showing identities, cloud resources, applications, and hybrid infrastructure"
-      class="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
-      loading="lazy"
-      decoding="async"
-    />
+    <!-- Preview Header -->
+    <div
+      class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
+    >
+      <div class="flex items-center gap-2">
+        <i
+          data-lucide="cloud"
+          class="h-3.5 w-3.5 text-red-600"
+          aria-hidden="true"
+        ></i>
+
+        <span
+          class="text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
+        >
+          Enterprise Lab Environment
+        </span>
+      </div>
+
+      <span
+        class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+        aria-hidden="true"
+      ></span>
+    </div>
+
+    <!-- Image Canvas -->
+    <div
+      class="flex aspect-[16/9] items-center justify-center overflow-hidden bg-white p-2"
+    >
+      <img
+        src="https://static.wixstatic.com/media/16cdd7_890796befcef4bd9bf05d485767809a1~mv2.avif/v1/fill/w_900,h_536,al_c,q_85,enc_avif,quality_auto/CARTE%20Lab.avif"
+        alt="Azure enterprise lab topology"
+        class="h-full w-full object-contain object-center mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.015]"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
   </div>
 </div>
-
         <!-- Card Content -->
         <div class="flex flex-1 flex-col p-6 sm:p-7">
 
           <!-- Course Header -->
           <div class="flex items-start gap-3.5">
-            <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600"
-            >
-              <i
-                data-lucide="cloud"
-                class="h-[18px] w-[18px]"
-                aria-hidden="true"
-              ></i>
-            </div>
+            
 
             <div class="min-w-0 pt-0.5">
               <h3
@@ -1807,19 +1884,49 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
       >
         <!-- Image Frame -->
         <!-- Enterprise AI Image -->
+<!-- Enterprise AI Lab Preview -->
 <div
-  class="relative aspect-[16/10] overflow-hidden border-b border-slate-200 bg-slate-100 p-2 sm:p-3"
+  class="border-b border-slate-200 bg-slate-100 p-3 sm:p-4"
 >
   <div
-    class="flex h-full w-full items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+    class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
   >
-    <img
-      src="https://static.wixstatic.com/media/16cdd7_1f39e5206479421d82a8123705bec90e~mv2.avif/v1/fill/w_586,h_334,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/CAIRTP-Bootcamp.avif"
-      alt="Enterprise AI ecosystem showing Microsoft agents, services, connectors, and AI applications"
-      class="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
-      loading="lazy"
-      decoding="async"
-    />
+    <!-- Preview Header -->
+    <div
+      class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
+    >
+      <div class="flex items-center gap-2">
+        <i
+          data-lucide="bot"
+          class="h-3.5 w-3.5 text-red-600"
+          aria-hidden="true"
+        ></i>
+
+        <span
+          class="text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
+        >
+          Enterprise Lab Environment
+        </span>
+      </div>
+
+      <span
+        class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+        aria-hidden="true"
+      ></span>
+    </div>
+
+    <!-- Image Canvas -->
+    <div
+      class="flex aspect-[16/9] items-center justify-center overflow-hidden bg-white p-2"
+    >
+      <img
+        src="https://static.wixstatic.com/media/16cdd7_1f39e5206479421d82a8123705bec90e~mv2.avif/v1/fill/w_586,h_334,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/CAIRTP-Bootcamp.avif"
+        alt="Enterprise AI ecosystem and lab environment"
+        class="h-full w-full rounded-lg object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
   </div>
 </div>
 
@@ -1828,15 +1935,7 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
 
           <!-- Course Header -->
           <div class="flex items-start gap-3.5">
-            <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600"
-            >
-              <i
-                data-lucide="bot"
-                class="h-[18px] w-[18px]"
-                aria-hidden="true"
-              ></i>
-            </div>
+            
 
             <div class="min-w-0 pt-0.5">
               <h3
@@ -2562,6 +2661,16 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
 
 
 
+<!-- ======================================================= -->
+<!-- PLATFORM TAB STYLING -->
+<!-- ======================================================= -->
+
+
+
+<!-- ======================================================= -->
+<!-- TRAINING PLATFORM -->
+<!-- ======================================================= -->
+
 <section
   id="enterprise-platform"
   class="relative overflow-hidden border-b border-slate-200 bg-slate-50 py-16 lg:py-20"
@@ -2617,185 +2726,251 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
 
       <!-- Supporting Copy -->
       <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
-        Give team members access to hands-on labs and learning paths while
-        managing users, licences, progress, and reporting through the platform.
+        Give team members access to hands-on labs and structured learning paths
+        while managing access, seats, progress, exams, and reporting through
+        the platform.
       </p>
     </div>
 
     <!-- ===================================================== -->
-    <!-- HANDS-ON LEARNING PLATFORM -->
+    <!-- SINGLE PLATFORM PANEL -->
     <!-- ===================================================== -->
 
     <article
-      class="relative mb-6 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm lg:mb-8"
-      aria-labelledby="enterprise-labs-heading"
+      class="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm"
+      aria-labelledby="platform-capabilities-heading"
     >
-      <!-- Background Accent -->
+      <!-- Decorative Accent -->
       <div
         class="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-red-50 opacity-70 blur-3xl"
         aria-hidden="true"
       ></div>
 
-      <!-- Intro -->
-      <div
-        class="relative grid gap-7 border-b border-slate-200 p-6 sm:p-8 lg:grid-cols-12 lg:items-center lg:gap-10 lg:p-10"
-      >
-        <!-- Intro Copy -->
-        <div class="lg:col-span-5">
+      <!-- =================================================== -->
+      <!-- SIX PLATFORM CAPABILITIES -->
+      <!-- =================================================== -->
 
-          <!-- Label -->
-          <div class="mb-5 flex items-center gap-3">
-            <div
-              class="flex h-11 w-11 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-600"
-            >
-              <i
-                data-lucide="flask-conical"
-                class="h-5 w-5"
-                aria-hidden="true"
-              ></i>
+      <div class="relative border-b border-slate-200 p-6 sm:p-8 lg:p-10">
+
+        <!-- Capability Header -->
+        <div
+          class="mb-7 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between"
+        >
+          <div class="max-w-2xl">
+            <div class="mb-3 flex items-center gap-3">
+              <div
+                class="flex h-10 w-10 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-600"
+              >
+                <i
+                  data-lucide="layout-dashboard"
+                  class="h-5 w-5"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <span
+                class="text-[11px] font-bold uppercase tracking-widest text-red-600"
+              >
+                Platform Capabilities
+              </span>
             </div>
 
-            <span
-              class="text-xs font-bold uppercase tracking-widest text-red-600"
+            <h3
+              id="platform-capabilities-heading"
+              class="text-2xl font-bold leading-tight tracking-tight text-slate-900 sm:text-3xl"
             >
-              Hands-On Learning
-            </span>
+              Support Learning and Manage Team Progress
+            </h3>
           </div>
 
-          <!-- Heading -->
-          <h3
-            id="enterprise-labs-heading"
-            class="text-2xl font-bold leading-tight tracking-tight text-slate-900 sm:text-3xl"
-          >
-            Learn Through Practice and Structured Learning Paths
-          </h3>
-
-          <!-- Description -->
           <p
-            class="mt-4 max-w-lg text-sm leading-relaxed text-slate-600 sm:text-base"
+            class="max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base"
           >
-            Team members access labs, challenges, and structured learning paths
-            through the Red Team Labs platform. They can practise techniques,
-            track completed activities, and continue developing their skills.
+            Team members get the tools they need to practise and progress,
+            while security leaders maintain visibility across the training
+            program.
           </p>
-
-          <!-- Platform Points -->
-          <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-            <div class="flex items-center gap-2.5 text-sm text-slate-700">
-              <i
-                data-lucide="check-circle-2"
-                class="h-4 w-4 shrink-0 text-red-600"
-                aria-hidden="true"
-              ></i>
-              <span>Hands-on labs and challenges</span>
-            </div>
-
-            <div class="flex items-center gap-2.5 text-sm text-slate-700">
-              <i
-                data-lucide="check-circle-2"
-                class="h-4 w-4 shrink-0 text-red-600"
-                aria-hidden="true"
-              ></i>
-              <span>Structured learning paths</span>
-            </div>
-
-            <div class="flex items-center gap-2.5 text-sm text-slate-700">
-              <i
-                data-lucide="check-circle-2"
-                class="h-4 w-4 shrink-0 text-red-600"
-                aria-hidden="true"
-              ></i>
-              <span>Lab history and completion status</span>
-            </div>
-
-            <div class="flex items-center gap-2.5 text-sm text-slate-700">
-              <i
-                data-lucide="check-circle-2"
-                class="h-4 w-4 shrink-0 text-red-600"
-                aria-hidden="true"
-              ></i>
-              <span>Skill-level and category filters</span>
-            </div>
-          </div>
         </div>
 
-        <!-- Platform Overview -->
-        <div
-          class="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5 lg:col-span-7"
-        >
-          <div class="grid gap-3 sm:grid-cols-3">
-            <div class="rounded-xl border border-slate-200 bg-white p-4">
+        <!-- Capability Grid -->
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+          <!-- Capability 1 -->
+          <div
+            class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-red-200 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex items-start gap-3.5">
               <div
-                class="flex h-8 w-8 items-center justify-center rounded-lg bg-red-50 text-red-600"
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white"
               >
                 <i
                   data-lucide="flask-conical"
-                  class="h-4 w-4"
+                  class="h-[18px] w-[18px]"
                   aria-hidden="true"
                 ></i>
               </div>
 
-              <p class="mt-3 text-sm font-bold text-slate-900">
-                Lab Challenges
-              </p>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">
+                  Lab Challenges
+                </h4>
 
-              <p class="mt-1 text-xs leading-relaxed text-slate-500">
-                Practise techniques through individual labs.
-              </p>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  Practise techniques through focused, hands-on lab exercises.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <div class="rounded-xl border border-slate-200 bg-white p-4">
+          <!-- Capability 2 -->
+          <div
+            class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-red-200 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex items-start gap-3.5">
               <div
-                class="flex h-8 w-8 items-center justify-center rounded-lg bg-red-50 text-red-600"
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white"
               >
                 <i
                   data-lucide="route"
-                  class="h-4 w-4"
+                  class="h-[18px] w-[18px]"
                   aria-hidden="true"
                 ></i>
               </div>
 
-              <p class="mt-3 text-sm font-bold text-slate-900">
-                Learning Paths
-              </p>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">
+                  Learning Paths
+                </h4>
 
-              <p class="mt-1 text-xs leading-relaxed text-slate-500">
-                Follow structured paths across related skills.
-              </p>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  Follow structured paths that bring related labs and skills
+                  together.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <div class="rounded-xl border border-slate-200 bg-white p-4">
+          <!-- Capability 3 -->
+          <div
+            class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-red-200 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex items-start gap-3.5">
               <div
-                class="flex h-8 w-8 items-center justify-center rounded-lg bg-red-50 text-red-600"
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white"
               >
                 <i
                   data-lucide="chart-no-axes-combined"
-                  class="h-4 w-4"
+                  class="h-[18px] w-[18px]"
                   aria-hidden="true"
                 ></i>
               </div>
 
-              <p class="mt-3 text-sm font-bold text-slate-900">
-                Progress Tracking
-              </p>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">
+                  Progress Tracking
+                </h4>
 
-              <p class="mt-1 text-xs leading-relaxed text-slate-500">
-                Review played labs and completion progress.
-              </p>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  Review played labs, completed activities, and learning-path
+                  progress.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capability 4 -->
+          <div
+            class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-red-200 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex items-start gap-3.5">
+              <div
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white"
+              >
+                <i
+                  data-lucide="user-plus"
+                  class="h-[18px] w-[18px]"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">
+                  Team Onboarding
+                </h4>
+
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  Add team members and assign the training access they need.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capability 5 -->
+          <div
+            class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-red-200 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex items-start gap-3.5">
+              <div
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white"
+              >
+                <i
+                  data-lucide="refresh-cw"
+                  class="h-[18px] w-[18px]"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">
+                  Seat Management
+                </h4>
+
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  Assign or transfer seats as your team and requirements change.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capability 6 -->
+          <div
+            class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-red-200 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex items-start gap-3.5">
+              <div
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white"
+              >
+                <i
+                  data-lucide="file-chart-column"
+                  class="h-[18px] w-[18px]"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">
+                  Exams and Reports
+                </h4>
+
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  Review exam activity and export progress information for
+                  reporting.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- =================================================== -->
-      <!-- INTERACTIVE PLATFORM SCREENSHOTS -->
+      <!-- INTERACTIVE PLATFORM PREVIEW -->
       <!-- =================================================== -->
 
       <div class="relative p-5 sm:p-7 lg:p-10">
 
-        <!-- Screenshot Section Header -->
+        <!-- Preview Header and Tabs -->
         <div
-          class="mb-5 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between"
+          class="mb-5 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between"
         >
           <div>
             <p
@@ -2826,6 +3001,7 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
             role="tablist"
             aria-label="Red Team Labs platform previews"
           >
+            <!-- Dashboard Tab -->
             <button
               type="button"
               class="platform-preview-tab inline-flex shrink-0 items-center gap-2 rounded-lg border border-red-600 bg-red-600 px-3.5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-red-600/20 transition-all"
@@ -2844,6 +3020,7 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
               Dashboard
             </button>
 
+            <!-- Lab Library Tab -->
             <button
               type="button"
               class="platform-preview-tab inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-slate-600 transition-all hover:border-red-200 hover:text-red-600"
@@ -2862,6 +3039,7 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
               Lab Library
             </button>
 
+            <!-- Learning Paths Tab -->
             <button
               type="button"
               class="platform-preview-tab inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-slate-600 transition-all hover:border-red-200 hover:text-red-600"
@@ -2886,7 +3064,7 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
         <div
           class="overflow-hidden rounded-2xl border border-slate-300 bg-[#17191d] shadow-[0_20px_55px_rgba(15,23,42,0.16)]"
         >
-          <!-- Simple Application Bar -->
+          <!-- Application Header -->
           <div
             class="flex items-center justify-between gap-4 border-b border-white/10 bg-[#111318] px-4 py-3 sm:px-5"
           >
@@ -2915,15 +3093,11 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
                 class="h-1.5 w-1.5 rounded-full bg-emerald-400"
                 aria-hidden="true"
               ></span>
-              Platform Preview
+              Learner Platform
             </span>
           </div>
 
-          <!--
-            The screenshot files include browser tabs and the Windows taskbar.
-            This wrapper crops those areas so the platform interface remains
-            the visual focus.
-          -->
+          <!-- Screenshot -->
           <div
             id="platform-preview-panel"
             class="relative aspect-[2/1] overflow-hidden bg-[#1a1c20]"
@@ -2941,309 +3115,111 @@ Build practical skills in Active Directory, Azure, Windows, and AI security thro
           </div>
         </div>
 
-        <!-- Screenshot Note -->
+        <!-- Authenticity Note -->
         <p
           class="mt-3 flex items-center gap-2 text-xs leading-relaxed text-slate-500"
         >
           <i
-            data-lucide="info"
+            data-lucide="dot"
             class="h-3.5 w-3.5 shrink-0 text-red-500"
             aria-hidden="true"
           ></i>
-          Actual Red Labs platform interface.
+        <i
+            data-lucide="dot"
+            class="h-3.5 w-3.5 shrink-0 text-red-500"
+            aria-hidden="true"
+          ></i> <i
+            data-lucide="dot"
+            class="h-3.5 w-3.5 shrink-0 text-red-500"
+            aria-hidden="true"
+          ></i>
         </p>
-      </div>
-
-      <!-- =================================================== -->
-      <!-- PLATFORM FEATURES -->
-      <!-- =================================================== -->
-
-      <div class="border-t border-slate-200 bg-slate-50/70 p-5 sm:p-7 lg:p-10">
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-
-          <!-- Feature 1 -->
-          <div class="rounded-xl border border-slate-200 bg-white p-5">
-            <div
-              class="flex h-9 w-9 items-center justify-center rounded-lg bg-red-50 text-red-600"
-            >
-              <i
-                data-lucide="building-2"
-                class="h-[18px] w-[18px]"
-                aria-hidden="true"
-              ></i>
-            </div>
-
-            <h4 class="mt-4 text-sm font-bold text-slate-900">
-              Realistic Lab Environments
-            </h4>
-
-            <p class="mt-2 text-xs leading-relaxed text-slate-600">
-              Practise in environments designed around enterprise systems,
-              identities, applications, and configurations.
-            </p>
-          </div>
-
-          <!-- Feature 2 -->
-          <div class="rounded-xl border border-slate-200 bg-white p-5">
-            <div
-              class="flex h-9 w-9 items-center justify-center rounded-lg bg-red-50 text-red-600"
-            >
-              <i
-                data-lucide="route"
-                class="h-[18px] w-[18px]"
-                aria-hidden="true"
-              ></i>
-            </div>
-
-            <h4 class="mt-4 text-sm font-bold text-slate-900">
-              Complete Attack Scenarios
-            </h4>
-
-            <p class="mt-2 text-xs leading-relaxed text-slate-600">
-              Work through attack paths covering discovery, access, privilege
-              escalation, movement, and persistence.
-            </p>
-          </div>
-
-          <!-- Feature 3 -->
-          <div class="rounded-xl border border-slate-200 bg-white p-5">
-            <div
-              class="flex h-9 w-9 items-center justify-center rounded-lg bg-red-50 text-red-600"
-            >
-              <i
-                data-lucide="shield-check"
-                class="h-[18px] w-[18px]"
-                aria-hidden="true"
-              ></i>
-            </div>
-
-            <h4 class="mt-4 text-sm font-bold text-slate-900">
-              Attack and Defense Coverage
-            </h4>
-
-            <p class="mt-2 text-xs leading-relaxed text-slate-600">
-              Understand attack techniques alongside detection, monitoring,
-              mitigation, and defensive approaches.
-            </p>
-          </div>
-
-          <!-- Feature 4 -->
-          <div class="rounded-xl border border-slate-200 bg-white p-5">
-            <div
-              class="flex h-9 w-9 items-center justify-center rounded-lg bg-red-50 text-red-600"
-            >
-              <i
-                data-lucide="server-cog"
-                class="h-[18px] w-[18px]"
-                aria-hidden="true"
-              ></i>
-            </div>
-
-            <h4 class="mt-4 text-sm font-bold text-slate-900">
-              Flexible Lab Access
-            </h4>
-
-            <p class="mt-2 text-xs leading-relaxed text-slate-600">
-              Access cloud-based labs through a browser or VPN with the
-              required training environment configured.
-            </p>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- ===================================================== -->
-    <!-- TEAM MANAGEMENT -->
-    <!-- ===================================================== -->
-
-    <article
-      class="relative overflow-hidden rounded-3xl border border-slate-800 bg-[#0b0f17] text-white shadow-xl"
-      aria-labelledby="team-management-heading"
-    >
-      <!-- Background Grid -->
-      <div
-        class="pointer-events-none absolute inset-0 opacity-[0.035]"
-        style="
-          background-image:
-            linear-gradient(#ffffff 1px, transparent 1px),
-            linear-gradient(90deg, #ffffff 1px, transparent 1px);
-          background-size: 32px 32px;
-        "
-        aria-hidden="true"
-      ></div>
-
-      <!-- Background Glow -->
-      <div
-        class="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-red-600/10 blur-3xl"
-        aria-hidden="true"
-      ></div>
-
-      <div
-        class="relative grid gap-8 p-6 sm:p-8 lg:grid-cols-12 lg:items-center lg:gap-10 lg:p-10"
-      >
-        <!-- Team Management Intro -->
-        <div class="lg:col-span-5">
-          <div class="mb-5 flex items-center gap-3">
-            <div
-              class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-red-500"
-            >
-              <i
-                data-lucide="users-cog"
-                class="h-5 w-5"
-                aria-hidden="true"
-              ></i>
-            </div>
-
-            <span
-              class="text-xs font-bold uppercase tracking-widest text-red-500"
-            >
-              Team Management
-            </span>
-          </div>
-
-          <h3
-            id="team-management-heading"
-            class="text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl"
-          >
-            Manage Training Across Your Security Team
-          </h3>
-
-          <p
-            class="mt-4 max-w-lg text-sm leading-relaxed text-slate-400 sm:text-base"
-          >
-            Manage learner access,progress, exam
-            activity, and team reporting through the corporate training
-            platform.
-          </p>
-
-          <!-- Management Summary -->
-          <div
-            class="mt-7 rounded-2xl border border-white/10 bg-white/[0.035] p-5"
-          >
-            <div class="flex items-start gap-3">
-              <i
-                data-lucide="shield-check"
-                class="mt-0.5 h-5 w-5 shrink-0 text-red-500"
-                aria-hidden="true"
-              ></i>
-
-              <div>
-                <p class="text-sm font-semibold text-white">
-                  Visibility Across the Training Program
-                </p>
-
-                <p class="mt-1.5 text-xs leading-relaxed text-slate-400">
-                  Keep learner access and training activity organised as your
-                  team and training requirements change.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Management Features -->
-        <div class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
-
-          <!-- Feature 1 -->
-          <div
-            class="group rounded-2xl border border-white/10 bg-white/[0.025] p-5 transition-all duration-300 hover:border-red-500/30 hover:bg-white/[0.05]"
-          >
-            <div
-              class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-red-500 transition-all duration-300 group-hover:border-red-500 group-hover:bg-red-500 group-hover:text-white"
-            >
-              <i
-                data-lucide="user-plus"
-                class="h-5 w-5"
-                aria-hidden="true"
-              ></i>
-            </div>
-
-            <h4 class="mt-4 font-bold text-white">
-              Team Onboarding and Access
-            </h4>
-
-            <p class="mt-2 text-sm leading-relaxed text-slate-400">
-              Add team members, provision seats, and assign the appropriate
-              training access.
-            </p>
-          </div>
-
-          <!-- Feature 2 -->
-          <div
-            class="group rounded-2xl border border-white/10 bg-white/[0.025] p-5 transition-all duration-300 hover:border-red-500/30 hover:bg-white/[0.05]"
-          >
-            <div
-              class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-red-500 transition-all duration-300 group-hover:border-red-500 group-hover:bg-red-500 group-hover:text-white"
-            >
-              <i
-                data-lucide="refresh-cw"
-                class="h-5 w-5"
-                aria-hidden="true"
-              ></i>
-            </div>
-
-            <h4 class="mt-4 font-bold text-white">
-              Seat Assignment and Transfer
-            </h4>
-
-            <p class="mt-2 text-sm leading-relaxed text-slate-400">
-              Assign or transfer Seat as team members and training
-              requirements change.
-            </p>
-          </div>
-
-          <!-- Feature 3 -->
-          <div
-            class="group rounded-2xl border border-white/10 bg-white/[0.025] p-5 transition-all duration-300 hover:border-red-500/30 hover:bg-white/[0.05]"
-          >
-            <div
-              class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-red-500 transition-all duration-300 group-hover:border-red-500 group-hover:bg-red-500 group-hover:text-white"
-            >
-              <i
-                data-lucide="chart-no-axes-combined"
-                class="h-5 w-5"
-                aria-hidden="true"
-              ></i>
-            </div>
-
-            <h4 class="mt-4 font-bold text-white">
-              Progress and Exam Visibility
-            </h4>
-
-            <p class="mt-2 text-sm leading-relaxed text-slate-400">
-              Review learner progress, training completion, exam status, and
-              certification activity.
-            </p>
-          </div>
-
-          <!-- Feature 4 -->
-          <div
-            class="group rounded-2xl border border-white/10 bg-white/[0.025] p-5 transition-all duration-300 hover:border-red-500/30 hover:bg-white/[0.05]"
-          >
-            <div
-              class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-red-500 transition-all duration-300 group-hover:border-red-500 group-hover:bg-red-500 group-hover:text-white"
-            >
-              <i
-                data-lucide="file-down"
-                class="h-5 w-5"
-                aria-hidden="true"
-              ></i>
-            </div>
-
-            <h4 class="mt-4 font-bold text-white">
-              Exportable Team Reports
-            </h4>
-
-            <p class="mt-2 text-sm leading-relaxed text-slate-400">
-              Export performance information for training reviews,
-              development planning, and internal reporting.
-            </p>
-          </div>
-        </div>
       </div>
     </article>
   </div>
 </section>
+
+<!-- ======================================================= -->
+<!-- PLATFORM SCREENSHOT SWITCHER -->
+<!-- Place before the closing body tag -->
+<!-- ======================================================= -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const previewTabs = document.querySelectorAll(".platform-preview-tab");
+    const previewImage = document.getElementById("platform-preview-image");
+    const previewTitle = document.getElementById("platform-preview-title");
+    const previewDescription = document.getElementById(
+      "platform-preview-description"
+    );
+
+    if (
+      !previewTabs.length ||
+      !previewImage ||
+      !previewTitle ||
+      !previewDescription
+    ) {
+      return;
+    }
+
+    previewTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        const newSource = tab.dataset.src;
+        const newAlt = tab.dataset.alt || "";
+        const newTitle = tab.dataset.title || "";
+        const newDescription = tab.dataset.description || "";
+
+        if (!newSource) {
+          return;
+        }
+
+        previewImage.classList.add("opacity-0");
+
+        window.setTimeout(function () {
+          previewImage.src = newSource;
+          previewImage.alt = newAlt;
+          previewTitle.textContent = newTitle;
+          previewDescription.textContent = newDescription;
+          previewImage.classList.remove("opacity-0");
+        }, 150);
+
+        previewTabs.forEach(function (item) {
+          item.setAttribute("aria-selected", "false");
+
+          item.classList.remove(
+            "border-red-600",
+            "bg-red-600",
+            "text-white",
+            "shadow-lg",
+            "shadow-red-600/20"
+          );
+
+          item.classList.add(
+            "border-slate-200",
+            "bg-white",
+            "text-slate-600"
+          );
+        });
+
+        tab.setAttribute("aria-selected", "true");
+
+        tab.classList.remove(
+          "border-slate-200",
+          "bg-white",
+          "text-slate-600"
+        );
+
+        tab.classList.add(
+          "border-red-600",
+          "bg-red-600",
+          "text-white",
+          "shadow-lg",
+          "shadow-red-600/20"
+        );
+      });
+    });
+  });
+</script>
 
 <!-- ======================================================= -->
 <!-- PLATFORM SCREENSHOT SWITCHER -->
@@ -4183,7 +4159,7 @@ Team members validate their skills through hands-on exercises, challenges, asses
           <div class="border-t border-slate-100 px-5 py-4 sm:px-6">
             <p class="text-sm leading-relaxed text-slate-600 sm:text-base">
               Yes. Security leaders can manage learner access, monitor
-              progress, review exam activity, and manage licenses through the
+              progress, review exam activity, and transfer seat through the
               team platform.
             </p>
           </div>
