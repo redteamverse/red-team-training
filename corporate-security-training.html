@@ -352,7 +352,7 @@
               aria-hidden="true"
             ></i>
 
-            <span>Download Training Overview</span>
+            <span>Enterprise Security Training Guide</span>
           </button>
         </div>
 
@@ -433,9 +433,7 @@
               <!-- Replace YOUR_FORM_ENDPOINT with your live form endpoint. -->
               <form
                 id="corporate-training-form"
-                action="YOUR_FORM_ENDPOINT"
-                method="POST"
-                class="space-y-4"
+                               class="space-y-4"
               >
                 <!-- Request Context -->
                 <input
@@ -696,7 +694,10 @@
 <!-- ========================================================= -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("corporate-training-form");
+    const form = document.getElementById(
+      "corporate-training-form"
+    );
+
     const formCard = document.getElementById(
       "corporate-training-form-card"
     );
@@ -739,28 +740,49 @@
 
     const nameField = document.getElementById("name");
 
+    /*
+     * Complete public PDF path.
+     */
     const pdfUrl =
-      "https://redteamverse.github.io/red-team-training/images/AS%20presentation%20updated%20pdf%20final%201_compressed%20%281%29.pdf";
+      "https://redteamverse.github.io/red-team-training/images/AS%20presentation%20updated%20pdf%20final%201_compressed%20%282%29.pdf";
 
+    /*
+     * Cleaner filename shown after download.
+     */
     const pdfFilename =
-      "Altered-Security-Corporate-Training-Overview.pdf";
+      "Altered-Security-Enterprise-Training-Guide.pdf";
 
+    /*
+     * Stop if the required page elements are unavailable.
+     */
     if (
       !form ||
       !formCard ||
       !enquiryButton ||
-      !overviewButton
+      !overviewButton ||
+      !requestTypeInput ||
+      !formEyebrow ||
+      !formHeading ||
+      !formDescription ||
+      !submitButton ||
+      !submitText ||
+      !message
     ) {
+      console.error(
+        "One or more corporate training form elements could not be found."
+      );
+
       return;
     }
 
     /*
-     * Update the form for a normal corporate enquiry.
+     * Switch the form to normal corporate enquiry mode.
      */
     function setEnquiryMode() {
       requestTypeInput.value = "training-enquiry";
 
-      formEyebrow.textContent = "Corporate Training Enquiry";
+      formEyebrow.textContent =
+        "Corporate Training Enquiry";
 
       formHeading.textContent =
         "Discuss Your Team’s Training Needs";
@@ -768,32 +790,36 @@
       formDescription.textContent =
         "Share your team size and training interests. We’ll help you choose the right training option.";
 
-      submitText.textContent = "Discuss Your Training Needs";
+      submitText.textContent =
+        "Discuss Your Training Needs";
 
       clearFormMessage();
     }
 
     /*
-     * Update the form for a training-overview request.
+     * Switch the form to training-overview download mode.
      */
     function setDownloadMode() {
-      requestTypeInput.value = "training-overview-download";
+  requestTypeInput.value =
+    "enterprise-security-training-guide-download";
 
-      formEyebrow.textContent = "Training Overview";
+  formEyebrow.textContent =
+    "Enterprise Security Training Guide";
 
-      formHeading.textContent =
-        "Access the Corporate Training Overview";
+  formHeading.textContent =
+    "Access the Enterprise Security Training Guide";
 
-      formDescription.textContent =
-        "Share a few details about your team to download the complete training overview.";
+  formDescription.textContent =
+    "Share a few details to explore our enterprise training programs, hands-on labs, certifications, and platform capabilities.";
 
-      submitText.textContent = "Submit and Download";
+  submitText.textContent =
+    "Submit and Download";
 
-      clearFormMessage();
-    }
+  clearFormMessage();
+}
 
     /*
-     * Scroll to the form and focus the first field.
+     * Scroll smoothly to the form.
      */
     function showForm() {
       formCard.scrollIntoView({
@@ -802,18 +828,19 @@
       });
 
       window.setTimeout(function () {
-        nameField.focus({
-          preventScroll: true
-        });
+        if (nameField) {
+          nameField.focus({
+            preventScroll: true
+          });
+        }
       }, 650);
     }
 
     /*
-     * Remove any previous success or error message.
+     * Clear the current form message.
      */
     function clearFormMessage() {
       message.textContent = "";
-
       message.classList.add("hidden");
 
       message.classList.remove(
@@ -827,7 +854,7 @@
     }
 
     /*
-     * Display a form status message.
+     * Display a success or error message.
      */
     function showFormMessage(type, text) {
       clearFormMessage();
@@ -851,13 +878,15 @@
     }
 
     /*
-     * Download the PDF after successful lead submission.
+     * Fetch the PDF and force a browser download.
      */
     async function downloadTrainingOverview() {
       const response = await fetch(pdfUrl);
 
       if (!response.ok) {
-        throw new Error("The training overview could not be downloaded.");
+        throw new Error(
+          "The training overview file could not be found."
+        );
       }
 
       const pdfBlob = await response.blob();
@@ -874,11 +903,11 @@
 
       window.setTimeout(function () {
         URL.revokeObjectURL(objectUrl);
-      }, 1000);
+      }, 1500);
     }
 
     /*
-     * Main enquiry CTA.
+     * Open normal enquiry form.
      */
     enquiryButton.addEventListener("click", function () {
       setEnquiryMode();
@@ -886,7 +915,7 @@
     });
 
     /*
-     * Training-overview CTA.
+     * Open gated download form.
      */
     overviewButton.addEventListener("click", function () {
       setDownloadMode();
@@ -894,96 +923,80 @@
     });
 
     /*
-     * Submit the form.
+     * Handle form submission.
      */
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
 
+      /*
+       * Check all required inputs and selections.
+       */
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
 
-      const endpoint = form.getAttribute("action");
       const isDownloadRequest =
         requestTypeInput.value ===
-        "training-overview-download";
+        "enterprise-security-training-guide-download";
 
       /*
-       * Prevent fake success if the endpoint has not been configured.
+       * The normal enquiry still requires a real form endpoint.
        */
-      if (
-        !endpoint ||
-        endpoint === "YOUR_FORM_ENDPOINT"
-      ) {
+      if (!isDownloadRequest) {
         showFormMessage(
           "error",
-          "The form submission endpoint has not been configured."
+          "Online enquiry submission is being configured. Please use the training overview option for now."
         );
 
         return;
       }
 
       submitButton.disabled = true;
-
-      submitText.textContent = isDownloadRequest
-        ? "Preparing Your Download..."
-        : "Sending Your Request...";
+      submitText.textContent =
+        "Preparing Your Download...";
 
       clearFormMessage();
 
       try {
-        const response = await fetch(endpoint, {
-          method: "POST",
-          body: new FormData(form),
-          headers: {
-            Accept: "application/json"
-          }
-        });
+        await downloadTrainingOverview();
 
-        if (!response.ok) {
-          throw new Error("The form could not be submitted.");
-        }
+        showFormMessage(
+          "success",
+            "Thank you. Your Enterprise Security Training Guide has started downloading."
 
-        if (isDownloadRequest) {
-          await downloadTrainingOverview();
+        );
 
-          showFormMessage(
-            "success",
-            "Thank you. Your training overview has started downloading."
-          );
-        } else {
-          showFormMessage(
-            "success",
-            "Thank you. Our team will contact you about your training requirements."
-          );
-        }
-
+        /*
+         * Clear visible fields after download.
+         */
         form.reset();
 
         /*
-         * Restore the standard enquiry mode after a successful request.
+         * Keep the form in download mode.
          */
-        requestTypeInput.value = "training-enquiry";
-        submitText.textContent = "Discuss Your Training Needs";
+        requestTypeInput.value =
+          "enterprise-security-training-guide-download";
+
+        submitText.textContent =
+          "Submit and Download";
       } catch (error) {
+        console.error(error);
+
         showFormMessage(
           "error",
-          "We could not process your request. Please check your details and try again."
+          "The training overview could not be downloaded. Please try again."
         );
 
-        submitText.textContent = isDownloadRequest
-          ? "Submit and Download"
-          : "Discuss Your Training Needs";
-
-        console.error(error);
+        submitText.textContent =
+          "Submit and Download";
       } finally {
         submitButton.disabled = false;
       }
     });
 
     /*
-     * Render Lucide icons after the section is loaded.
+     * Render Lucide icons.
      */
     if (window.lucide) {
       window.lucide.createIcons();
