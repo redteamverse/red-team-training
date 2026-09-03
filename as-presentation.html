@@ -1,0 +1,3114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Altered Security Investor Deck</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#ffffff;
+color:#111827;
+}
+
+
+/* COVER SLIDE */
+
+.cover-slide{
+
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:linear-gradient(135deg,#ffffff,#f3f4f6);
+
+padding:40px;
+}
+
+
+.cover-container{
+
+max-width:900px;
+text-align:center;
+
+}
+
+
+.cover-logo{
+width:200px;
+margin-bottom:40px;
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+
+
+/* TITLE */
+
+.cover-title{
+
+font-size:64px;
+font-weight:700;
+letter-spacing:-1px;
+margin-bottom:16px;
+color:#111827;
+
+}
+
+
+/* TAGLINE */
+
+.cover-tagline{
+
+font-size:22px;
+color:#374151;
+margin-bottom:40px;
+
+}
+
+
+/* META */
+
+.cover-meta{
+
+font-size:16px;
+color:#6b7280;
+letter-spacing:2px;
+text-transform:uppercase;
+
+}
+
+
+.cover-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+
+/* Feature Card */
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #f3f3f3;
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Icon */
+.feature i {
+  color: #ff3b3b;
+  width: 20px;
+  height: 20px;
+}
+
+/* 👇 MAGIC: Last item spans full width */
+.feature:last-child {
+  grid-column: span 2;
+  justify-content: center;
+  text-align: center;
+}    
+    
+
+.feature{
+
+display:flex;
+align-items:center;
+gap:12px;
+
+padding:14px 18px;
+
+background:#ffffff;
+border:1px solid #e5e7eb;
+border-radius:8px;
+
+font-size:16px;
+font-weight:500;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.04);
+
+transition:all .25s ease;
+
+}
+
+.feature:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.feature svg{
+width:22px;
+height:22px;
+color:#ef4444;
+flex-shrink:0;
+}
+/* MISSION SECTION */
+
+.mission-slide{
+
+min-height:100vh;
+padding:100px 40px;
+
+background:#f9fafb;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+
+
+.mission-container{
+
+max-width:1200px;
+
+}
+
+
+.section-title{
+
+font-size:44px;
+margin-bottom:60px;
+text-align:center;
+color:#111827;
+
+}
+
+
+/* mission vision */
+
+.mission-vision{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+margin-bottom:70px;
+
+}
+
+
+.mv-card{
+
+background:white;
+padding:40px;
+border-radius:12px;
+
+border:1px solid #e5e7eb;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+
+}
+
+
+.mv-card h3{
+
+font-size:24px;
+margin-bottom:16px;
+color:#1d4ed8;
+
+}
+
+
+.mv-card p{
+
+color:#374151;
+line-height:1.6;
+
+}
+
+
+
+/* core values */
+
+.values-title{
+
+text-align:center;
+font-size:32px;
+margin-bottom:40px;
+color:#111827;
+
+}
+
+
+.values-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+
+.value-card{
+
+background:white;
+border:1px solid #e5e7eb;
+padding:30px;
+border-radius:10px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+
+transition:all .25s ease;
+
+}
+
+
+.value-card:hover{
+
+transform:translateY(-6px);
+border-color:#ef4444;
+
+}
+
+
+.value-card h4{
+
+font-size:20px;
+margin-bottom:10px;
+color:#ef4444;
+
+}
+
+
+.value-card p{
+
+font-size:15px;
+color:#4b5563;
+line-height:1.6;
+
+}
+
+
+/* responsive */
+
+@media(max-width:900px){
+
+.mission-vision{
+grid-template-columns:1fr;
+}
+
+.values-grid{
+grid-template-columns:1fr;
+}
+
+.cover-title{
+font-size:42px;
+}
+
+}
+/* PRODUCTS SLIDE */
+
+.products-slide{
+
+padding:100px 40px;
+background:#ffffff;
+
+}
+
+.products-container{
+
+max-width:1200px;
+margin:auto;
+
+}
+
+.products-intro{
+
+max-width:900px;
+margin:0 auto 60px auto;
+text-align:center;
+color:#4b5563;
+line-height:1.7;
+
+}
+
+.product-category{
+
+font-size:28px;
+margin:50px 0 30px 0;
+color:#1f2937;
+
+}
+
+.products-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+
+}
+
+.product-card{
+
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:25px;
+text-align:center;
+
+transition:all .25s ease;
+
+}
+
+.product-card:hover{
+
+transform:translateY(-6px);
+box-shadow:0 15px 30px rgba(0,0,0,0.08);
+
+}
+
+.product-card img{
+
+height:90px;
+margin-bottom:15px;
+
+}
+
+.product-card h4{
+
+font-size:18px;
+margin-bottom:6px;
+color:#ef4444;
+
+}
+
+.product-card p{
+
+font-size:14px;
+color:#6b7280;
+
+}
+/* SERVICES SECTION */
+
+.services-slide{
+
+padding:100px 40px;
+background:#f9fafb;
+
+}
+
+.services-container{
+
+max-width:1200px;
+margin:auto;
+
+}
+
+.services-intro{
+
+text-align:center;
+max-width:850px;
+margin:0 auto 60px auto;
+color:#4b5563;
+line-height:1.7;
+
+}
+
+
+/* SERVICE CARDS */
+
+.services-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-bottom:80px;
+
+}
+
+.service-card{
+
+background:white;
+border:1px solid #e5e7eb;
+border-radius:12px;
+padding:35px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+
+transition:all .25s ease;
+
+}
+
+.service-card:hover{
+
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+
+}
+
+.service-card h3{
+
+font-size:22px;
+margin-bottom:15px;
+color:#ef4444;
+
+}
+
+.service-desc{
+
+margin-bottom:15px;
+color:#374151;
+
+}
+
+.service-card ul{
+
+padding-left:18px;
+
+}
+
+.service-card li{
+
+margin-bottom:8px;
+color:#6b7280;
+
+}
+
+
+/* CONFERENCE SECTION */
+
+.conference-title{
+
+text-align:center;
+font-size:26px;
+margin-bottom:30px;
+color:#111827;
+
+}
+
+.conference-logos{
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:60px;
+flex-wrap:wrap;
+
+margin-bottom:15px;
+
+}
+
+.conference-logos img{
+
+height:50px;
+opacity:0.85;
+transition:all .25s ease;
+
+}
+
+.conference-logos img:hover{
+
+opacity:1;
+transform:scale(1.05);
+
+}
+
+.conference-note{
+
+text-align:center;
+font-size:14px;
+color:#6b7280;
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.services-grid{
+
+grid-template-columns:1fr;
+
+}
+
+} 
+/* TEAM SECTION */
+
+.team-slide{
+
+padding:100px 40px;
+background:#ffffff;
+
+}
+
+.team-container{
+
+max-width:1200px;
+margin:auto;
+
+}
+
+
+/* GRID */
+
+.team-grid{
+
+display:grid;
+grid-template-columns:350px 1fr;
+gap:60px;
+align-items:center;
+margin-bottom:70px;
+
+}
+
+
+/* FOUNDER */
+
+.founder{
+
+text-align:center;
+
+}
+
+.founder-img{
+
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:50%;
+margin-bottom:20px;
+
+box-shadow:0 15px 30px rgba(0,0,0,0.15);
+
+}
+
+.founder h3{
+
+font-size:24px;
+margin-bottom:5px;
+
+}
+
+.founder-role{
+
+color:#ef4444;
+font-weight:600;
+
+}
+
+
+/* DETAILS */
+
+.founder-desc{
+
+color:#374151;
+margin-bottom:25px;
+line-height:1.7;
+
+}
+
+.team-stat h3{
+
+font-size:28px;
+color:#1f2937;
+margin-bottom:10px;
+
+}
+
+.team-stat p{
+
+color:#4b5563;
+margin-bottom:20px;
+
+}
+
+
+/* FUNCTIONS */
+
+.team-functions{
+
+padding-left:18px;
+
+}
+
+.team-functions li{
+
+margin-bottom:10px;
+color:#6b7280;
+
+}
+
+
+/* COMMUNITY */
+
+.community-title{
+
+text-align:center;
+font-size:26px;
+margin-bottom:30px;
+margin-top: 20px; 
+
+}
+
+.community-grid{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+
+}
+
+.community-card{
+
+background:#f9fafb;
+border:1px solid #e5e7eb;
+padding:25px;
+border-radius:10px;
+text-align:center;
+font-weight:600;
+
+transition:.25s;
+
+}
+
+.community-card:hover{
+
+transform:translateY(-5px);
+border-color:#ef4444;
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.team-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.community-grid{
+grid-template-columns:1fr 1fr;
+}
+
+} 
+/* STATS SECTION */
+
+.stats-slide{
+
+padding:100px 40px;
+background:#f9fafb;
+
+}
+
+.stats-container{
+
+max-width:1200px;
+margin:auto;
+
+}
+
+
+/* TITLE */
+
+.stats-main-title{
+
+font-size:46px;
+font-weight:700;
+text-align:center;
+margin-bottom:10px;
+color:#111827;
+
+}
+
+.stats-subtitle{
+
+font-size:22px;
+text-align:center;
+color:#ef4444;
+margin-bottom:20px;
+font-weight:600;
+
+}
+
+.stats-intro{
+
+text-align:center;
+max-width:850px;
+margin:0 auto 60px auto;
+color:#4b5563;
+line-height:1.7;
+
+}
+
+
+/* GRID */
+
+.stats-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+
+/* CARD */
+
+.stat-card{
+
+background:white;
+border:1px solid #e5e7eb;
+border-radius:12px;
+
+padding:35px;
+text-align:center;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+
+transition:all .25s ease;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+
+}
+
+
+/* NUMBER */
+
+.stat-card h3{
+
+font-size:48px;
+color:#ef4444;
+margin-bottom:8px;
+font-weight:700;
+
+}
+
+
+/* DESCRIPTION */
+
+.stat-card p{
+
+font-size:15px;
+color:#374151;
+font-weight:500;
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+ 
+.mv-card h3,
+.value-card h4{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+}
+
+.mv-card svg,
+.value-card svg{
+
+width:20px;
+height:20px;
+color:#ef4444;
+
+}  
+/* LABS SECTION */
+
+.labs-slide{
+
+padding:100px 40px;
+background:#ffffff;
+
+}
+
+.labs-container{
+
+max-width:1200px;
+margin:auto;
+text-align:center;
+
+}
+
+.labs-intro{
+
+max-width:850px;
+margin:20px auto 60px auto;
+color:#4b5563;
+line-height:1.7;
+
+}
+
+
+/* GRID */
+
+.labs-grid{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-bottom:50px;
+
+}
+
+
+/* CARD */
+
+.lab-card{
+
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:10px;
+
+padding:30px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+
+transition:.25s;
+
+}
+
+.lab-card:hover{
+
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(0,0,0,0.07);
+
+}
+
+.lab-card svg{
+
+width:28px;
+height:28px;
+color:#ef4444;
+
+}
+
+.lab-card h4{
+
+font-size:16px;
+color:#1f2937;
+
+}
+
+
+/* DESCRIPTION */
+
+.labs-desc{
+
+max-width:900px;
+margin:auto;
+color:#374151;
+line-height:1.7;
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.labs-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+} 
+/* ABOUT SECTION */
+
+.about-slide{
+padding:100px 40px;
+background:#ffffff;
+}
+
+.about-container{
+max-width:1200px;
+margin:auto;
+}
+
+
+/* GRID */
+
+.about-grid{
+display:grid;
+grid-template-columns:1.3fr 1fr;
+gap:60px;
+margin-top:40px;
+margin-bottom:60px;
+}
+
+
+/* TEXT */
+
+.about-text p{
+margin-bottom:18px;
+color:#374151;
+line-height:1.7;
+}
+
+.about-points{
+margin-top:20px;
+list-style:none;
+padding:0;
+}
+
+.about-points li{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:12px;
+color:#374151;
+}
+
+.about-points svg{
+width:20px;
+height:20px;
+color:#ef4444;
+}
+
+
+/* STATS */
+
+.about-stats{
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.about-stat{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:25px;
+text-align:center;
+}
+
+.about-stat svg{
+width:28px;
+height:28px;
+color:#ef4444;
+margin-bottom:10px;
+}
+
+.about-stat h3{
+font-size:36px;
+color:#111827;
+margin-bottom:5px;
+}
+
+.about-stat p{
+font-size:14px;
+color:#6b7280;
+}
+
+
+/* LEADERSHIP */
+
+.about-leadership{
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.lead-title{
+font-size:24px;
+margin-bottom:20px;
+}
+
+.about-leadership p{
+color:#374151;
+line-height:1.7;
+margin-bottom:15px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+} 
+ 
+/* TESTIMONIAL SECTION */
+
+.testimonial-slide{
+padding:100px 40px;
+background:#f9fafb;
+}
+
+.testimonial-container{
+max-width:1200px;
+margin:auto;
+text-align:center;
+}
+
+.testimonial-subtitle{
+color:#6b7280;
+margin-bottom:60px;
+font-size:18px;
+}
+
+
+/* GRID */
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-bottom:60px;
+}
+
+
+/* CARD */
+
+.testimonial-card{
+
+background:white;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:30px;
+
+text-align:left;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+
+transition:.25s;
+
+}
+
+.testimonial-card:hover{
+
+transform:translateY(-5px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+
+}
+
+.testimonial-card svg{
+width:22px;
+height:22px;
+color:#ef4444;
+margin-bottom:12px;
+}
+
+.testimonial-card p{
+font-size:15px;
+line-height:1.7;
+color:#374151;
+margin-bottom:18px;
+}
+
+.testimonial-card h4{
+font-size:16px;
+margin-bottom:3px;
+}
+
+.testimonial-card span{
+font-size:13px;
+color:#6b7280;
+}
+
+
+/* FOOTER */
+
+.testimonial-footer{
+text-align:center;
+}
+
+.review-platforms{
+margin-top:15px;
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.review-platforms span{
+display:flex;
+align-items:center;
+gap:6px;
+color:#374151;
+font-size:14px;
+}
+
+.review-platforms svg{
+width:18px;
+height:18px;
+color:#ef4444;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.testimonial-grid{
+grid-template-columns:1fr;
+}
+
+} 
+
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.unique-grid{
+grid-template-columns:1fr;
+}
+
+}
+/* PLATFORM SECTION */
+
+.platform-slide{
+padding:100px 40px;
+background:#f9fafb;
+}
+
+.platform-container{
+max-width:1200px;
+margin:auto;
+text-align:center;
+}
+
+.platform-intro{
+max-width:850px;
+margin:20px auto 60px auto;
+color:#4b5563;
+line-height:1.7;
+}
+
+.platform-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+margin-bottom:60px;
+}
+
+.platform-card{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:30px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:10px;
+
+transition:.25s;
+}
+
+.platform-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.platform-card svg{
+width:30px;
+height:30px;
+color:#ef4444;
+}
+
+.platform-card h4{
+font-size:16px;
+color:#111827;
+}
+
+.platform-desc{
+max-width:900px;
+margin:auto;
+color:#374151;
+line-height:1.7;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.platform-grid{
+grid-template-columns:1fr 1fr;
+}
+
+} 
+/* FUTURE OF SECURITY */
+
+.future-slide{
+padding:100px 40px;
+background:#ffffff;
+}
+
+.future-container{
+max-width:1100px;
+margin:auto;
+text-align:center;
+}
+
+.future-intro{
+max-width:850px;
+margin:20px auto 60px auto;
+color:#4b5563;
+line-height:1.7;
+}
+
+
+/* BIG STATS */
+
+.future-stats{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+margin-bottom:60px;
+}
+
+.future-stat{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:12px;
+padding:40px;
+}
+
+.future-stat h3{
+font-size:64px;
+color:#ef4444;
+margin-bottom:10px;
+}
+
+.future-stat p{
+font-size:16px;
+color:#374151;
+}
+
+
+/* FOCUS SECTION */
+
+.future-subtitle{
+font-size:22px;
+margin-bottom:25px;
+}
+
+.future-focus{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+margin-bottom:50px;
+}
+
+.focus-item{
+display:flex;
+align-items:center;
+gap:8px;
+color:#374151;
+font-size:16px;
+}
+
+.focus-item svg{
+width:20px;
+height:20px;
+color:#ef4444;
+}
+
+
+/* OPPORTUNITY */
+
+.future-opportunity{
+max-width:850px;
+margin:auto;
+background:#f9fafb;
+padding:30px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+}
+
+.future-opportunity h4{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.future-opportunity p{
+color:#374151;
+line-height:1.7;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.future-stats{
+grid-template-columns:1fr;
+}
+
+} 
+/* MARKET LEADERSHIP */
+
+.lead-slide{
+padding:100px 40px;
+background:#f9fafb;
+}
+
+.lead-container{
+max-width:1200px;
+margin:auto;
+text-align:center;
+}
+
+.lead-intro{
+max-width:850px;
+margin:20px auto 60px auto;
+color:#4b5563;
+line-height:1.7;
+}
+
+
+/* GRID */
+
+.lead-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-bottom:70px;
+}
+
+
+/* CARD */
+
+.lead-card{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:30px;
+text-align:left;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+
+transition:.25s;
+}
+
+.lead-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.lead-card svg{
+width:26px;
+height:26px;
+color:#ef4444;
+margin-bottom:10px;
+}
+
+.lead-card h4{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.lead-card p{
+font-size:14px;
+color:#4b5563;
+line-height:1.6;
+}
+
+
+/* VISION */
+
+.lead-vision{
+margin-top:40px;
+}
+
+.vision-text{
+font-size:34px;
+font-weight:700;
+color:#111827;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.lead-grid{
+grid-template-columns:1fr;
+}
+
+.vision-text{
+font-size:26px;
+}
+
+} 
+.journey-slide{
+padding:100px 40px;
+background:#f9fafb;
+}
+
+.journey-container{
+max-width:1200px;
+margin:auto;
+text-align:center;
+}
+
+.journey-subtitle{
+margin-bottom:60px;
+color:#6b7280;
+font-size:18px;
+}
+
+.journey-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.journey-card{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:30px;
+text-align:left;
+transition:.25s;
+}
+
+.journey-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.journey-card svg{
+width:28px;
+height:28px;
+color:#ef4444;
+margin-bottom:10px;
+}
+
+.journey-card h3{
+font-size:28px;
+color:#111827;
+margin-bottom:5px;
+}
+
+.journey-card h4{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.journey-card p{
+font-size:14px;
+color:#4b5563;
+line-height:1.6;
+}
+
+.highlight{
+border:2px solid #ef4444;
+background:#fff5f5;
+}
+
+@media(max-width:900px){
+
+.journey-grid{
+grid-template-columns:1fr;
+}
+
+}
+/* TRAINERS SECTION */
+
+/* TRAINERS SECTION */
+
+/* TRAINERS SECTION */
+
+.trainers-title{
+text-align:center;
+font-size:28px;
+margin:70px 0 40px 0;
+font-weight:600;
+}
+
+.trainers-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+max-width:1000px;
+margin:auto;
+}
+
+
+/* CARD */
+
+.trainer-card{
+background:#ffffff;
+border:1px solid #e5e7eb;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 6px 16px rgba(0,0,0,0.05);
+transition:all .25s ease;
+}
+
+.trainer-card:hover{
+transform:translateY(-5px);
+box-shadow:0 16px 32px rgba(0,0,0,0.08);
+}
+
+
+/* IMAGE FIX */
+
+.trainer-img{
+width:100%;
+height:200px;              /* smaller height */
+object-fit:contain;        /* prevents face cropping */
+background:#f3f4f6;        /* background for portrait images */
+padding:10px;
+}
+
+
+/* CONTENT */
+
+.trainer-content{
+padding:20px;
+}
+
+.trainer-content h4{
+font-size:17px;
+margin-bottom:10px;
+color:#111827;
+}
+
+.trainer-content p{
+font-size:14px;
+line-height:1.6;
+color:#4b5563;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.trainers-grid{
+grid-template-columns:1fr;
+}
+
+.trainer-img{
+height:180px;
+}
+
+}
+ 
+.problem-slide{
+padding:100px 40px;
+background:#f9fafb;
+}
+
+.problem-container{
+max-width:1100px;
+margin:auto;
+text-align:center;
+}
+
+.problem-intro{
+max-width:850px;
+margin:20px auto 60px auto;
+color:#4b5563;
+line-height:1.7;
+}
+
+
+/* GRID */
+
+.problem-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+margin-bottom:60px;
+}
+
+
+/* CARD */
+
+.problem-card{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:30px;
+text-align:left;
+transition:.25s;
+}
+
+.problem-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.problem-card svg{
+width:26px;
+height:26px;
+color:#ef4444;
+margin-bottom:10px;
+}
+
+.problem-card h4{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.problem-card p{
+font-size:14px;
+color:#4b5563;
+line-height:1.6;
+}
+
+
+/* IMPACT */
+
+.problem-impact{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:30px;
+max-width:800px;
+margin:auto;
+text-align:left;
+}
+
+.problem-impact h3{
+margin-bottom:15px;
+}
+
+.problem-impact ul{
+padding-left:18px;
+}
+
+.problem-impact li{
+margin-bottom:8px;
+color:#374151;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.problem-grid{
+grid-template-columns:1fr;
+}
+
+} 
+.solution-slide{
+padding:100px 40px;
+background:#ffffff;
+}
+
+.solution-container{
+max-width:1100px;
+margin:auto;
+text-align:center;
+}
+
+.solution-intro{
+max-width:800px;
+margin:20px auto 60px auto;
+color:#4b5563;
+line-height:1.7;
+}
+
+
+/* GRID */
+
+.solution-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+
+/* CARD */
+
+.solution-card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:35px;
+text-align:center;
+transition:.25s;
+}
+
+.solution-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+
+/* ICON */
+
+.solution-icon{
+width:60px;
+height:60px;
+border-radius:50%;
+background:#fff0f0;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto 15px auto;
+}
+
+.solution-icon svg{
+width:28px;
+height:28px;
+color:#ef4444;
+}
+
+
+/* TEXT */
+
+.solution-card h4{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.solution-card p{
+font-size:14px;
+color:#4b5563;
+line-height:1.6;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.solution-grid{
+grid-template-columns:1fr;
+}
+
+}
+/* SECTION */
+.testimonial-section {
+  background: #f5f5f5;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+/* TITLE */
+.section-title {
+  font-size: 42px;
+  font-weight: 600;
+  color: #111;
+}
+
+.testimonial-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+/* GRID */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.testimonial-img-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+}
+
+/* IMAGE */
+.testimonial-img-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* HOVER EFFECT */
+.testimonial-img-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* FOOTER */
+.testimonial-footer {
+  margin-top: 40px;
+  font-size: 15px;
+  color: #777;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+} 
+.contact-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  text-align: center;
+}
+
+/* HEADER */
+.contact-header h2 {
+  font-size: 40px;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 40px;
+}
+
+/* CARD */
+.contact-card {
+  max-width: 500px;
+  margin: auto;
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.contact-card h3 {
+  font-size: 22px;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.contact-sub {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+/* ITEMS */
+.contact-item {
+  margin-bottom: 25px;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.contact-item a {
+  font-size: 16px;
+  color: #ef4444;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* SOCIAL */
+.contact-social {
+  margin-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #1e3a8a;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #1e3a8a;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .contact-header h2 {
+    font-size: 30px;
+  }
+}  
+</style>
+
+</head>
+
+<body>
+
+
+<!-- COVER SLIDE -->
+
+<section class="cover-slide">
+
+<div class="cover-container">
+ 
+<img src="images/Logo.png" class="cover-logo">
+
+<h1 class="cover-title">
+Altered Security
+</h1>
+
+
+<div class="cover-features">
+
+<div class="feature">
+<i data-lucide="award"></i>
+<span>Red Team Certifications</span>
+</div>
+
+<div class="feature">
+<i data-lucide="graduation-cap"></i>
+<span>Red Team Trainings</span>
+</div>
+
+<div class="feature">
+<i data-lucide="server"></i>
+<span>Enterprise Security Labs</span>
+</div>
+
+<div class="feature">
+<i data-lucide="shield"></i>
+<span>InfoSec Education Platform</span>
+</div>
+
+<div class="feature">
+<i data-lucide="globe"></i>
+<span>Cyber Ranges</span>
+</div>
+    
+<div class="feature">
+<i data-lucide="flask-conical"></i>
+<span>Free Red Team Labs</span>
+</div>
+<div class="feature">
+  <i data-lucide="building-2"></i>
+  <span>AltSecCON Training & Conference</span>
+</div>
+    
+</div>
+    </div>
+</section>
+<section class="about-slide">
+
+<div class="about-container">
+
+<h2 class="section-title">About Altered Security</h2>
+
+<div class="about-grid">
+
+<!-- LEFT SIDE CONTENT -->
+
+<div class="about-text">
+
+<p>
+Altered Security is an <strong>EdTech company</strong> focused on hands-on learning
+through its red team training platform and cyber ranges, with offices in
+<strong>India and Singapore</strong>.
+</p>
+
+<p>
+We specialize in <strong>Red Team Training, InfoSec Education Platforms, and
+Cyber Ranges</strong>, and pioneered affordable red team labs used by
+professionals worldwide.
+</p>
+
+<ul class="about-points">
+
+<li>
+<i data-lucide="award"></i>
+Industry-recognized hands-on certifications
+</li>
+
+<li>
+<i data-lucide="shield"></i>
+Enterprise-focused Active Directory and Azure security labs
+</li>
+
+<li>
+<i data-lucide="users"></i>
+Trusted by professionals and organizations globally
+</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- RIGHT SIDE STATS -->
+
+<div class="about-stats">
+
+<div class="about-stat">
+<i data-lucide="users"></i>
+<h3>50,000+</h3>
+<p>Security Professionals Trained</p>
+</div>
+
+<div class="about-stat">
+<i data-lucide="globe"></i>
+<h3>130+</h3>
+<p>Countries Reached</p>
+</div>
+
+<div class="about-stat">
+<i data-lucide="graduation-cap"></i>
+<h3>Global</h3>
+<p>In-Person & Online Training</p>
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- LEADERSHIP SECTION -->
+
+<div class="about-leadership">
+
+<h3 class="lead-title">Leadership & Community Contributions</h3>
+
+<p>
+Led by <strong>Nikhil Mittal</strong>, a globally recognized expert in Red Teaming,
+Active Directory Security, Azure Security, and PowerShell. Our team includes
+experienced red teamers, penetration testers, bug bounty hunters, and developers.
+</p>
+
+<p>
+Team members actively contribute to the security community by releasing
+open-source security tools, speaking at global conferences, and discovering
+vulnerabilities in widely used applications, including talks at
+<strong>Black Hat USA, DEF CON, BruCON</strong>, and more.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section class="stats-slide">
+
+<div class="stats-container">
+
+<h2 class="stats-main-title">Altered Security Stats</h2>
+
+<h3 class="stats-subtitle">Impact & Reach</h3>
+
+<p class="stats-intro">
+Altered Security has built a strong global presence through enterprise red team
+training programs, hands-on labs, and professional certifications.
+</p>
+
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<h3>7</h3>
+<p>Enterprise Training Offerings</p>
+</div>
+
+<div class="stat-card">
+<h3>20+</h3>
+<p>Hands-on Enterprise Labs</p>
+</div>
+
+<div class="stat-card">
+<h3>50,000+</h3>
+<p>Professionals Trained</p>
+</div>
+
+<div class="stat-card">
+<h3>10,000+</h3>
+<p>Certifications Issued</p>
+</div>
+
+<div class="stat-card">
+<h3>12,000+</h3>
+<p>Free Labs Platform Users</p>
+</div>
+
+<div class="stat-card">
+<h3>100+</h3>
+<p>Enterprise Clients</p>
+</div>
+
+</div>
+
+</div>
+
+</section>    
+<section class="mission-slide">
+
+<div class="mission-container">
+
+<h2 class="section-title">Mission, Vision & Core Values</h2>
+
+
+<div class="mission-vision">
+
+<div class="mv-card">
+
+<h3>
+<i data-lucide="target"></i>
+Our Mission
+</h3>
+
+<p>
+Altered Security's mission is to enable individuals and organizations to master 
+Red Team, Cloud Security and Information Security skills through hands-on, 
+innovative, and affordable education that delivers practical value.
+</p>
+
+</div>
+
+
+<div class="mv-card">
+
+<h3>
+<i data-lucide="eye"></i>
+Our Vision
+</h3>
+
+<p>
+To build a global community of skilled professionals with demonstrable 
+expertise to address the latest challenges in the Information Security industry.
+</p>
+
+</div>
+
+</div>
+
+
+<h3 class="values-title">Core Values</h3>
+
+
+<div class="values-grid">
+
+
+<div class="value-card">
+
+<h4>
+<i data-lucide="wallet"></i>
+Affordability
+</h4>
+
+<p>
+World-class training balancing cost and quality, enabling participation
+from professionals across the globe.
+</p>
+
+</div>
+
+
+<div class="value-card">
+
+<h4>
+<i data-lucide="badge-check"></i>
+Quality
+</h4>
+
+<p>
+We maintain the highest standards across our platform to ensure
+exceptional learning experiences.
+</p>
+
+</div>
+
+
+<div class="value-card">
+
+<h4>
+<i data-lucide="lightbulb"></i>
+Innovation
+</h4>
+
+<p>
+Pioneering Red Team labs and offensive security education
+with continuous innovation.
+</p>
+
+</div>
+
+
+<div class="value-card">
+
+<h4>
+<i data-lucide="users"></i>
+Empathy
+</h4>
+
+<p>
+We support our students and community with understanding,
+respect and human-first interactions.
+</p>
+
+</div>
+
+
+<div class="value-card">
+
+<h4>
+<i data-lucide="heart-handshake"></i>
+Giving Back
+</h4>
+
+<p>
+We actively promote and sponsor cybersecurity
+community events worldwide.
+</p>
+
+</div>
+
+
+<div class="value-card">
+
+<h4>
+<i data-lucide="headset"></i>
+Outstanding Support
+</h4>
+
+<p>
+Dedicated human support ensuring professionals receive
+guidance at every stage of learning.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section> 
+
+<section class="journey-slide">
+
+<div class="journey-container">
+
+<h2 class="section-title">Altered Security Journey</h2>
+
+<p class="journey-subtitle">
+Building the Global Enterprise Red Team Training Platform
+</p>
+
+<div class="journey-grid">
+
+<div class="journey-card highlight">
+<i data-lucide="flag"></i>
+<h3>2018</h3>
+<h4>Foundation</h4>
+<p>
+Altered Security founded with a mission to deliver hands-on enterprise
+red team training and cyber ranges.
+</p>
+</div>
+
+<div class="journey-card">
+<i data-lucide="award"></i>
+<h3>2019</h3>
+<h4>First Certifications</h4>
+<p>
+Launch of Active Directory red team training programs and certifications.
+</p>
+</div>
+
+<div class="journey-card">
+<i data-lucide="globe"></i>
+<h3>2020</h3>
+<h4>Global Online Training</h4>
+<p>
+Expansion into global virtual training programs and enterprise labs.
+</p>
+</div>
+
+<div class="journey-card highlight">
+<i data-lucide="cloud"></i>
+<h3>2021</h3>
+<h4>Azure Red Team Programs</h4>
+<p>
+Introduction of Azure-focused red team training and certifications.
+</p>
+</div>
+
+<div class="journey-card">
+<i data-lucide="users"></i>
+<h3>2022</h3>
+<h4>Global Community Growth</h4>
+<p>
+Training delivered to tens of thousands of professionals across 100+ countries.
+</p>
+</div>
+
+<div class="journey-card">
+<i data-lucide="presentation"></i>
+<h3>2023</h3>
+<h4>Conference Presence</h4>
+<p>
+Training delivered at globally recognized security conferences such as Black Hat, DEF CON, BruCON, and more.
+</p>
+</div>
+
+<div class="journey-card">
+<i data-lucide="server"></i>
+<h3>2024</h3>
+<h4>Lab Platform Expansion</h4>
+<p>
+Expansion of enterprise cyber ranges, hands-on labs,
+and certification ecosystem.
+</p>
+</div>
+
+<div class="journey-card">
+<i data-lucide="building-2"></i>
+<h3>2025</h3>
+<h4>AltSecCON Training and Conference</h4>
+<p>
+Industry-leading classes and certifications on Red Teaming delivered in Bengaluru
+
+</p>
+</div>
+
+<div class="journey-card highlight">
+<i data-lucide="trophy"></i>
+<h3>2026</h3>
+<h4>Market Leadership</h4>
+<p>
+Scaling to become the global standard for enterprise
+red team training and certifications.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="future-slide">
+
+<div class="future-container">
+
+<h2 class="section-title">Future of Enterprise Security</h2>
+
+<p class="future-intro">
+Enterprise infrastructure worldwide is heavily dependent on Active Directory and Azure,
+making them the primary focus for modern red team operations and enterprise security strategies.
+</p>
+
+
+<!-- BIG MARKET STATS -->
+
+<div class="future-stats">
+
+<div class="future-stat">
+<h3>90%+</h3>
+<p>Organizations using Active Directory</p>
+</div>
+
+<div class="future-stat">
+<h3>95%</h3>
+<p>Fortune 500 companies using Azure</p>
+</div>
+
+</div>
+
+
+<!-- SECURITY SHIFT -->
+
+<h3 class="future-subtitle">Security Focus is Shifting</h3>
+
+<div class="future-focus">
+
+<div class="focus-item">
+<i data-lucide="shield"></i>
+<span>Active Directory Attack Surface</span>
+</div>
+
+<div class="focus-item">
+<i data-lucide="cloud"></i>
+<span>Azure Identity & Cloud Security</span>
+</div>
+
+<div class="focus-item">
+<i data-lucide="layers"></i>
+<span>Hybrid Enterprise Environments</span>
+</div>
+
+</div>
+
+
+<!-- OPPORTUNITY -->
+
+<div class="future-opportunity">
+
+<h4>Opportunity</h4>
+
+<p>
+A scalable enterprise security education platform focused on red teaming and
+penetration testing of Active Directory and Azure has the opportunity to define
+and lead this category globally, with limited specialized competition today.
+</p>
+
+</div>
+
+</div>
+
+</section>      
+<section class="problem-slide">
+
+<div class="problem-container">
+
+<h2 class="section-title">The Enterprise Security Problem</h2>
+
+<p class="problem-intro">
+Modern enterprise environments rely heavily on Active Directory and Azure, making them
+prime targets for attackers. However, there is a significant gap between theoretical
+security knowledge and practical red team skills required to secure these environments.
+</p>
+
+
+<div class="problem-grid">
+
+<div class="problem-card">
+<i data-lucide="book-open"></i>
+<h4>Limited Hands-On Training</h4>
+<p>Most security education focuses on theory rather than real enterprise attack scenarios.</p>
+</div>
+
+<div class="problem-card">
+<i data-lucide="network"></i>
+<h4>Complex Enterprise Environments</h4>
+<p>Active Directory and Azure infrastructures are large, interconnected and difficult to test securely.</p>
+</div>
+
+<div class="problem-card">
+<i data-lucide="users"></i>
+<h4>Shortage of Skilled Professionals</h4>
+<p>Organizations struggle to find professionals with practical enterprise red team experience.</p>
+</div>
+
+<div class="problem-card">
+<i data-lucide="server"></i>
+<h4>Lack of Realistic Practice Labs</h4>
+<p>Few platforms provide enterprise-scale environments simulating real attack paths.</p>
+</div>
+
+</div>
+
+
+<div class="problem-impact">
+
+<h3>Impact</h3>
+
+<ul>
+<li>Organizations remain vulnerable to identity-based attacks</li>
+<li>Security teams lack practical red team capabilities</li>
+<li>Training programs fail to replicate real enterprise environments</li>
+</ul>
+
+</div>
+
+</div>
+
+</section> 
+
+ 
+<section class="solution-slide">
+
+<div class="solution-container">
+
+<h2 class="section-title">Our Solution</h2>
+
+<p class="solution-intro">
+Altered Security bridges the gap between theoretical security knowledge and
+practical red team capabilities through hands-on enterprise labs,
+industry certifications, and global training programs.
+</p>
+
+<div class="solution-grid">
+
+<div class="solution-card">
+<div class="solution-icon">
+<i data-lucide="server"></i>
+</div>
+<h4>Enterprise Red Team Labs</h4>
+<p>
+Hands-on cyber ranges simulating real Active Directory and Azure enterprise environments.
+</p>
+</div>
+
+
+<div class="solution-card">
+<div class="solution-icon">
+<i data-lucide="award"></i>
+</div>
+<h4>Industry Certifications</h4>
+<p>
+Practical certifications validating real-world red team and enterprise attack skills.
+</p>
+</div>
+
+
+<div class="solution-card">
+<div class="solution-icon">
+<i data-lucide="graduation-cap"></i>
+</div>
+<h4>Global Training Programs</h4>
+<p>
+Instructor-led, virtual, and on-demand programs delivered to professionals worldwide.
+</p>
+</div>
+
+
+<div class="solution-card">
+<div class="solution-icon">
+<i data-lucide="shield"></i>
+</div>
+<h4>Enterprise Security Focus</h4>
+<p>
+Specialized focus on Active Directory and Azure enterprise security environments.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="platform-slide">
+
+<div class="platform-container">
+
+<h2 class="section-title">Our Platform Advantages</h2>
+
+<p class="platform-intro">
+Altered Security provides a hands-on red team learning platform designed to simulate
+real enterprise environments through practical labs, flexible access, and
+industry-recognized certifications.
+</p>
+
+<div class="platform-grid">
+
+<div class="platform-card">
+<i data-lucide="trending-up"></i>
+<h4>Scalable</h4>
+</div>
+
+<div class="platform-card">
+<i data-lucide="dollar-sign"></i>
+<h4>Cost Effective</h4>
+</div>
+
+<div class="platform-card">
+<i data-lucide="shield-check"></i>
+<h4>Stable Infrastructure</h4>
+</div>
+
+<div class="platform-card">
+<i data-lucide="server"></i>
+<h4>Enterprise Security Focus</h4>
+</div>
+
+<div class="platform-card">
+<i data-lucide="smile"></i>
+<h4>Great User Experience</h4>
+</div>
+
+<div class="platform-card">
+<i data-lucide="repeat"></i>
+<h4>Reusable Labs</h4>
+</div>
+
+<div class="platform-card">
+<i data-lucide="badge-check"></i>
+<h4>Properly Licensed</h4>
+</div>
+
+<div class="platform-card">
+<i data-lucide="globe"></i>
+<h4>Access Anywhere</h4>
+</div>
+
+</div>
+
+<p class="platform-desc">
+The labs enable enterprises to understand, execute, and detect modern cyber threats in a
+safe and controlled enterprise lab environment. They eliminate the time and cost required
+to set up and maintain complex Active Directory and Azure security labs.
+</p>
+
+</div>
+
+</section>
+<section class="products-slide">
+
+<div class="products-container">
+
+<h2 class="section-title">Red Team Lab & Certifications</h2>
+
+<p class="products-intro">
+Altered Security provides hands-on red teaming certifications designed to validate practical
+skills in attacking and assessing modern enterprise environments. The programs focus on
+Active Directory, Azure environments, enterprise attack paths, and real adversary simulation
+techniques used by professional red teams.
+</p>
+
+
+<!-- ON PREM -->
+
+<h3 class="product-category">On-Prem AD Red Teaming</h3>
+
+<div class="products-grid">
+
+<div class="product-card">
+<img src="https://static.wixstatic.com/media/470c31_f89db457309f4d3caa31f94458441a8f~mv2.png/v1/fill/w_240,h_240,al_c,q_85/redteamprofessional.png">
+<h4>CRTP®</h4>
+<p>Certified Red Team Professional</p>
+</div>
+
+
+<div class="product-card">
+<img src="https://static.wixstatic.com/media/470c31_458a8519fd2347179ff0e7e608934771~mv2.png/v1/fill/w_240,h_240,al_c,q_85/adcs-badge-3-1.png">
+<h4>CESP-ADCS</h4>
+<p>Certified Enterprise Security Professional</p>
+</div>
+
+
+<div class="product-card">
+<img src="https://static.wixstatic.com/media/470c31_7ac13e0fb6034710be19736cd9dd476b~mv2.jpg/v1/fill/w_227,h_240,al_c,q_80/CRTE.jpg">
+<h4>CRTE®</h4>
+<p>Certified Red Team Expert</p>
+</div>
+
+
+<div class="product-card">
+<img src="https://static.wixstatic.com/media/98ad8e_1968bb0c2f18408c892875c693e9990c~mv2.png/v1/fill/w_159,h_183,al_c,q_85/BADGE%20FINAL-.png">
+<h4>CETP</h4>
+<p>Certified Evasion Techniques Professional</p>
+</div>
+
+
+<div class="product-card">
+<img src="https://static.wixstatic.com/media/470c31_ba28f3e73da843c2b0664dd02b61f9b9~mv2.png/v1/fill/w_262,h_262,al_c,q_85/crtm.png">
+<h4>CRTM®</h4>
+<p>Certified Red Team Master</p>
+</div>
+
+</div>
+
+
+
+<!-- AZURE -->
+
+<h3 class="product-category">Azure Enterprise Red Teaming</h3>
+
+<div class="products-grid">
+
+<div class="product-card">
+<img src="https://static.wixstatic.com/media/98ad8e_570457bb69a74296a4c990e4830050ef~mv2.png/v1/fill/w_169,h_196,al_c,q_85/CARTP_shield.png">
+<h4>CARTP®</h4>
+<p>
+Certified by Altered Security Red Team Professional for Azure</p>
+</div>
+
+
+<div class="product-card">
+<img src="https://static.wixstatic.com/media/98ad8e_3bf98f1f4385419e84337bfb67ed79ec~mv2.png/v1/fill/w_165,h_195,al_c,q_85/CARTE_Shield.png">
+<h4>CARTE®</h4>
+<p>Certified by Altered Security Red Team Expert for Azure</p>
+</div>
+
+</div>
+
+</div>
+
+</section> 
+
+
+<section class="team-slide">
+
+<div class="team-container">
+
+<h2 class="section-title">About the Team</h2>
+
+<div class="team-grid">
+
+
+<!-- FOUNDER -->
+
+<div class="founder">
+
+<img src="https://redteamverse.github.io/red-team-training/images/Nikhil%20Mittal.webp" class="founder-img">
+
+<h3>Nikhil Mittal</h3>
+
+<p class="founder-role">Founder, Altered Security</p>
+
+</div>
+
+
+<!-- TEAM DETAILS -->
+
+<div class="team-details">
+
+<p class="founder-desc">
+Founder of Altered Security and a globally recognized red team trainer and researcher,
+known for delivering training at leading security conferences and developing advanced
+red team methodologies.
+</p>
+
+<div class="team-stat">
+
+<h3>30+ Security Professionals</h3>
+
+<p>
+The Altered Security team includes experts across multiple functions including research,
+training, lab development, and global training operations.
+</p>
+
+</div>
+
+
+<ul class="team-functions">
+
+<li>Research & Development – Developing new red team techniques and tools</li>
+
+<li>Training & Research – Designing and delivering hands-on training programs</li>
+
+<li>Lab Support – Maintaining enterprise-scale training lab environments</li>
+
+<li>Operations & HR – Managing global training operations and community engagement</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- TRAINERS & RESEARCHERS -->
+
+<h3 class="trainers-title">Our Trainers & Researchers</h3>
+
+<div class="trainers-grid">
+
+<div class="trainer-card">
+<img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9696.jpg" class="trainer-img">
+
+<div class="trainer-content">
+<h4>Manthan Chhabra</h4>
+<p>
+Manthan is a security researcher at Altered Security with a strong passion for enterprise security, red teaming and Active Directory security. He specializes in testing enterprise security defences with a deep understanding of offensive strategies, including EDR evasion and Active Directory attacks. He continuously researches emerging threats, attack techniques, and mitigation strategies to stay ahead of evolving adversaries.
+</p>
+</div>
+</div>
+
+
+<div class="trainer-card">
+<img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9653.webp" class="trainer-img">
+
+<div class="trainer-content">
+<h4>Hitesh Duseja</h4>
+<p>
+Hitesh Duseja is a Security Researcher at Altered Security with a strong passion for Enterprise Cloud Security, and Red Teaming. He has an overall 7.5+ years of hand-on experience in the Information Security Domain and has been present on both the sides of the security boundary. He continuously researches attack vectors in Azure with a focus on Entra ID, Hybrid Identity and Intune to simulate threat actors and come up with implementable detective and preventive mitigations to help secure enterprise environments.
+</p>
+</div>
+</div>
+
+
+<div class="trainer-card">
+<img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9659%20(1).webp" class="trainer-img">
+
+<div class="trainer-content">
+<h4>Amit Panghal</h4>
+<p>
+Amit Panghal is a Security Researcher at Altered Security specializing in Windows Internals, Evasion, and Active Directory. He is interested in the Windows Kernel and Debugging as well as mitigations in modern Windows systems such as HVCI, PatchGuard, and other Hypervisor-enforced protections. In addition to researching modern threats and TTPs, he lays emphasis on OPSEC.
+</p>
+</div>
+</div>
+
+
+<div class="trainer-card">
+<img src="https://redteamverse.github.io/red-team-training/images/AltSecCON-9759.jpg" class="trainer-img">
+
+<div class="trainer-content">
+<h4>Vishal Raj</h4>
+<p>
+Vishal Raj is a security researcher at Altered Security specializing in cloud security, red teaming, and network security. With a strong focus on identifying and exploiting misconfiguration in modern cloud environments, Vishal is passionate about enhancing enterprise security by simulating real-world attack scenarios and providing actionable defense strategies. Vishal extensively conducts research on Microsoft Entra ID, contributing to the understanding of identity and access management vulnerabilities in cloud environments.
+
+In addition to his technical expertise, Vishal actively contributes to the cybersecurity community by writing insightful blogs on a variety of security topics. His writings aim to bridge the gap between theoretical concepts and practical application, empowering others in the field.
+</p>
+</div>
+</div>
+
+
+<div class="trainer-card">
+<img src="https://static.wixstatic.com/media/98ad8e_3c46b78bba07480c87cbb9c0b53e463b~mv2.jpeg/v1/crop/x_72,y_0,w_1003,h_1280/fill/w_290,h_379,al_c,q_80/Keanu%20Nys%20profile.jpeg" class="trainer-img">
+
+<div class="trainer-content">
+<h4>Keanu Nys</h4>
+<p>
+Keanu is an information security researcher from Belgium with several years of hands-on experience performing penetration tests and red team assessments for organizations, and currently leads an offensive security team. While he has a passion for all offensive cybersecurity topics, he mostly specializes in Active Directory, Azure AD and Social Engineering.
+
+He has presented at security conferences such as BruCon, and is the author of the Microsoft 365 and Entra attacking toolkit GraphSpy.
+</p>
+</div>
+</div>
+
+</div>
+
+<!-- COMMUNITY CONTRIBUTIONS -->
+
+<h3 class="community-title">Community & Research Contributions</h3>
+
+<div class="community-grid">
+
+<div class="community-card">Open Source Tools</div>
+
+<div class="community-card">Security Research</div>
+
+<div class="community-card">Conference Talks</div>
+
+<div class="community-card">Bug Discovery</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="lead-slide">
+
+<div class="lead-container">
+
+<h2 class="section-title">Meeting the Demand for Advanced Red Teaming Skills</h2>
+
+<p class="lead-intro">
+Altered Security is uniquely positioned to become the global leader in enterprise
+red team training and certifications.
+</p>
+
+
+<div class="lead-grid">
+
+<div class="lead-card">
+<i data-lucide="shield"></i>
+<h4>Specialized Focus</h4>
+<p>
+Dedicated focus on Active Directory and Azure red teaming,
+the two most critical enterprise security platforms.
+</p>
+</div>
+
+
+<div class="lead-card">
+<i data-lucide="bar-chart"></i>
+<h4>Proven Impact</h4>
+<p>
+50,000+ professionals trained, 10,000+ certifications issued,
+and 100+ Enterprise Clients
+</p>
+</div>
+
+
+<div class="lead-card">
+<i data-lucide="server"></i>
+<h4>Hands-On Learning Platform</h4>
+<p>
+Enterprise-grade red team labs and cyber ranges that simulate
+real attack scenarios.
+</p>
+</div>
+
+
+<div class="lead-card">
+<i data-lucide="globe"></i>
+<h4>Global Recognition</h4>
+<p>
+Training delivered at leading global security conferences, including Black Hat, DEF CON, BruCON, and others.
+</p>
+</div>
+
+
+<div class="lead-card">
+<i data-lucide="users"></i>
+<h4>Strong Community & Research</h4>
+<p>
+Open-source tools, security research, and conference talks
+by experienced red team practitioners.
+</p>
+</div>
+
+</div>
+
+
+<div class="lead-vision">
+
+<p class="vision-text">
+“The Global Standard for Enterprise Red Team Training.”
+</p>
+
+</div>
+
+</div>
+
+</section> 
+<section class="testimonial-section">
+
+  <div class="testimonial-container">
+
+    <h2 class="section-title">Social Buzz</h2>
+    <p class="testimonial-subtitle">What Our Students Say</p>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t1.png" />
+      </div>
+
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t2.png" />
+      </div>
+
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t3.png" />
+      </div>
+
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t4.png" />
+      </div>
+
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t5.png" />
+      </div>
+
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t6.png" />
+      </div>
+
+      <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t7.png" />
+      </div>
+        
+        <div class="testimonial-img-card">
+        <img src="https://redteamverse.github.io/red-team-training/images/t8.png" />
+       </div>
+            
+    </div>
+
+  
+
+  </div>
+
+</section>    
+<section class="contact-section">
+
+  <div class="container">
+
+    <!-- THANK YOU -->
+    <div class="contact-header">
+      <h2>Thank You</h2>
+      <p>We appreciate your time. Let’s connect and build something secure together.</p>
+    </div>
+
+    <!-- CONTACT CARD -->
+    <div class="contact-card">
+
+      <h3>Contact Us</h3>
+      <p class="contact-sub">
+        Want to get in touch? We'd love to hear from you.
+      </p>
+
+      <!-- EMAIL -->
+      <div class="contact-item">
+        <span class="label">Our Email</span>
+        <a href="mailto:contact@alteredsecurity.com">
+          contact@alteredsecurity.com
+        </a>
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="contact-social">
+
+        <span class="label">Follow Us</span>
+
+        <div class="social-icons">
+          <a href="https://twitter.com/AlteredSecurity" target="_blank">
+            <i data-lucide="twitter"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/company/alteredsecurity/" target="_blank">
+            <i data-lucide="linkedin"></i>
+          </a>
+          
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>  
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+lucide.createIcons();
+</script>
+</body>
+</html>

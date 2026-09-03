@@ -1,0 +1,4607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    Corporate Red Team Training for Security Teams | Altered Security
+  </title>
+
+  <meta
+    name="description"
+    content="Build practical security capabilities through corporate Red Team training in Active Directory, Azure, Windows, and AI security. Explore hands-on enterprise labs, team management, and tailored training programs."
+  />
+
+  <meta
+    name="robots"
+    content="index, follow"
+  />
+
+  <!-- Open Graph -->
+  <meta
+    property="og:title"
+    content="Corporate Red Team Training for Security Teams | Altered Security"
+  />
+
+  <meta
+    property="og:description"
+    content="Develop practical attack and defense capabilities through hands-on corporate training, realistic enterprise labs, and centralized team progress tracking."
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+
+  <!-- Logo Slider -->
+  
+<style>
+ @media (max-width: 639px) {
+  #hero-matrix-canvas {
+    opacity: 0.12;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hero-matrix-canvas {
+    opacity: 0.08;
+  }
+}
+</style>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary: "#B91C1C",
+              "primary-light": "#EA3037",
+              secondary: "#2B2B50",
+              "secondary-light": "#1E3A8A",
+              "text-main": "#111827",
+              "text-body": "#4B5563",
+              "text-muted": "#6B7280",
+              "bg-light": "#F9FAFB",
+              bg: "#FFFFFF",
+              border: "#E5E7EB",
+              success: "#10B981",
+              warning: "#F59E0B",
+              error: "#EF4444"
+            }
+          }
+        }
+      }
+    };
+  </script>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  #corporate-training-form {
+    scroll-margin-top: 2rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  #corporate-training-form {
+    scroll-margin-top: 2rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>  
+  
+<style>
+  @keyframes trust-logo-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .trust-logo-track {
+    display: flex;
+    width: max-content;
+    animation: trust-logo-scroll 30s linear infinite;
+    will-change: transform;
+  }
+
+  .trust-logo-track:hover {
+    animation-play-state: paused;
+  }
+
+  .trust-logo-set {
+    flex-shrink: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .trust-logo-track {
+      animation: none;
+    }
+  }
+</style>
+<!-- Screenshot tab styling -->
+<style>
+  .platform-preview-tab[aria-selected="true"] {
+    background: #b91c1c;
+    border-color: #b91c1c;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(185, 28, 28, 0.18);
+  }
+
+  .platform-preview-tab[aria-selected="true"] svg {
+    color: #ffffff;
+  }
+</style>  
+<style>
+  .platform-preview-tab[aria-selected="true"] {
+    background: #b91c1c;
+    border-color: #b91c1c;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(185, 28, 28, 0.18);
+  }
+
+  .platform-preview-tab[aria-selected="true"] svg {
+    color: #ffffff;
+  }
+</style>  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-brand-bg text-brand-text-body font-sans">
+
+  <!-- Navbar -->
+  
+<!-- ========================================================= -->
+<!-- CORPORATE TRAINING HERO                                    -->
+<!-- ========================================================= -->
+<section
+  class="relative overflow-hidden border-b border-slate-800/80 bg-[#030712] py-16 text-slate-100 sm:py-20 lg:py-24"
+  aria-labelledby="corporate-training-heading"
+>
+  <!-- Matrix Background -->
+  <canvas
+    id="hero-matrix-canvas"
+    class="pointer-events-none absolute inset-0 h-full w-full opacity-20"
+    aria-hidden="true"
+  ></canvas>
+
+  <!-- Readability Overlay -->
+  <div
+    class="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#030712]/60 via-[#030712]/40 to-[#030712]/25"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Background Accents -->
+  <div
+    class="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-red-600/10 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute bottom-0 -left-32 h-[400px] w-[400px] rounded-full bg-cyan-500/[0.07] blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+    <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
+
+      <!-- =================================================== -->
+      <!-- LEFT: HERO CONTENT                                  -->
+      <!-- =================================================== -->
+      <div class="lg:col-span-7">
+
+        <!-- Eyebrow -->
+        <div
+          class="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/80 px-3 py-1.5 shadow-inner"
+        >
+          <span class="font-mono text-xs font-bold text-red-500">
+            &gt;
+          </span>
+
+          <span class="text-xs font-bold uppercase tracking-widest text-slate-300">
+            Corporate Red Team Training
+          </span>
+        </div>
+
+        <!-- Heading -->
+        <h1
+          id="corporate-training-heading"
+          class="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl"
+        >
+          Prepare Your Security Team for
+          <span class="text-red-500">
+            Real-World Threats
+          </span>
+        </h1>
+
+        <!-- Description -->
+        <p
+          class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-400 sm:text-xl"
+        >
+          Equip your team with hands-on skills in Active Directory, Azure,
+          Windows, and AI security. Team members practise attack and defence
+          techniques in enterprise-grade labs, while security leaders manage
+          access and monitor progress through the Red Team Labs platform.
+        </p>
+
+        <!-- Features -->
+        <div
+          class="mt-8 grid max-w-2xl gap-x-8 gap-y-4 sm:grid-cols-2"
+          aria-label="Corporate training benefits"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-500/20 bg-red-500/10"
+            >
+              <i
+                data-lucide="monitor-check"
+                class="h-5 w-5 text-red-500"
+                aria-hidden="true"
+              ></i>
+            </div>
+
+            <span class="text-sm font-medium text-slate-300 sm:text-base">
+              Hands-On Enterprise Training
+            </span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-700 bg-slate-800"
+            >
+              <i
+                data-lucide="shield-check"
+                class="h-5 w-5 text-red-400"
+                aria-hidden="true"
+              ></i>
+            </div>
+
+            <span class="text-sm font-medium text-slate-300 sm:text-base">
+              Attack and Defence Scenarios
+            </span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-700 bg-slate-800"
+            >
+              <i
+                data-lucide="network"
+                class="h-5 w-5 text-red-400"
+                aria-hidden="true"
+              ></i>
+            </div>
+
+            <span class="text-sm font-medium text-slate-300 sm:text-base">
+              AD, Azure, Windows and AI
+            </span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-700 bg-slate-800"
+            >
+              <i
+                data-lucide="chart-no-axes-combined"
+                class="h-5 w-5 text-red-400"
+                aria-hidden="true"
+              ></i>
+            </div>
+
+            <span class="text-sm font-medium text-slate-300 sm:text-base">
+              Centralized Progress Tracking
+            </span>
+          </div>
+        </div>
+
+        <!-- Hero Actions -->
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+
+          <!-- Main Enquiry CTA -->
+          <button
+            type="button"
+            id="hero-enquiry-button"
+            class="group inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-red-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition-all duration-200 hover:bg-red-500 hover:shadow-red-600/40 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-slate-950 sm:w-auto"
+          >
+            <span>Discuss Your Training Needs</span>
+
+            <i
+              data-lucide="arrow-right"
+              class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+              aria-hidden="true"
+            ></i>
+          </button>
+
+          <!-- Gated Download CTA -->
+          <button
+            type="button"
+            id="training-overview-button"
+            class="group inline-flex w-full items-center justify-center gap-2.5 rounded-xl border border-slate-700 bg-slate-900/60 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-red-500/60 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-slate-950 sm:w-auto"
+            aria-label="Request and download the corporate training overview"
+          >
+            <i
+              data-lucide="file-down"
+              class="h-4 w-4 shrink-0 text-red-400"
+              aria-hidden="true"
+            ></i>
+
+            <span>Enterprise Security Training Guide</span>
+          </button>
+        </div>
+
+        <!-- Supporting Note -->
+        <p class="mt-4 text-sm text-slate-500">
+          Flexible training options for teams and organizations of all sizes.
+        </p>
+      </div>
+
+      <!-- =================================================== -->
+      <!-- RIGHT: FORM                                         -->
+      <!-- =================================================== -->
+      <div class="lg:col-span-5">
+
+        <div class="relative">
+
+          <!-- Form Glow -->
+          <div
+            class="pointer-events-none absolute -inset-2 rounded-3xl bg-gradient-to-br from-red-600/25 via-red-900/15 to-cyan-500/20 opacity-80 blur-2xl"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Gradient Border -->
+          <div
+            class="relative rounded-2xl bg-gradient-to-b from-red-500/30 via-slate-700/40 to-transparent p-px"
+          >
+            <!-- Form Card -->
+            <div
+              id="corporate-training-form-card"
+              class="relative scroll-mt-6 rounded-2xl border border-slate-800/80 bg-slate-900/95 p-6 shadow-2xl backdrop-blur-xl sm:p-7"
+            >
+              <!-- Top Accent -->
+              <div
+                class="absolute -top-1 left-8 right-8 h-1 rounded-full bg-gradient-to-r from-red-600 via-red-500 to-transparent"
+                aria-hidden="true"
+              ></div>
+
+              <!-- Form Header -->
+              <div class="mb-5">
+
+                <div class="mb-4 flex items-center gap-3">
+                  <div
+                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-500/20 bg-red-500/10"
+                  >
+                    <i
+                      id="corporate-form-header-icon"
+                      data-lucide="messages-square"
+                      class="h-5 w-5 text-red-500"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+
+                  <span
+                    id="corporate-form-eyebrow"
+                    class="text-xs font-bold uppercase tracking-widest text-slate-400"
+                  >
+                    Corporate Training Enquiry
+                  </span>
+                </div>
+
+                <h2
+                  id="corporate-form-heading"
+                  class="text-2xl font-bold tracking-tight text-white sm:text-3xl"
+                >
+                  Discuss Your Team’s Training Needs
+                </h2>
+
+                <p
+                  id="corporate-form-description"
+                  class="mt-3 text-sm leading-relaxed text-slate-400"
+                >
+                  Share your team size and training interests. We’ll help you
+                  choose the right training option.
+                </p>
+              </div>
+
+              <!-- Form -->
+              <!-- Replace YOUR_FORM_ENDPOINT with your live form endpoint. -->
+              <form
+                id="corporate-training-form"
+                               class="space-y-4"
+              >
+                <!-- Request Context -->
+                <input
+                  type="hidden"
+                  id="form-request-type"
+                  name="request_type"
+                  value="training-enquiry"
+                />
+
+                <!-- Optional page attribution -->
+                <input
+                  type="hidden"
+                  name="source_page"
+                  value="corporate-training"
+                />
+
+                <!-- Honeypot -->
+                <div
+                  class="absolute -left-[9999px] top-auto h-px w-px overflow-hidden"
+                  aria-hidden="true"
+                >
+                  <label for="website">
+                    Leave this field empty
+                  </label>
+
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                </div>
+
+                <!-- Name and Email -->
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label
+                      for="name"
+                      class="mb-1.5 block text-sm font-medium text-slate-300"
+                    >
+                      Full Name
+                      <span class="text-red-400" aria-hidden="true">*</span>
+                    </label>
+
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Your name"
+                      autocomplete="name"
+                      required
+                      class="block w-full rounded-lg border border-slate-700/70 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition-all focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="email"
+                      class="mb-1.5 block text-sm font-medium text-slate-300"
+                    >
+                      Work Email
+                      <span class="text-red-400" aria-hidden="true">*</span>
+                    </label>
+
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="you@company.com"
+                      autocomplete="email"
+                      required
+                      class="block w-full rounded-lg border border-slate-700/70 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition-all focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20"
+                    />
+                  </div>
+                </div>
+
+                <!-- Company and Team Size -->
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label
+                      for="company"
+                      class="mb-1.5 block text-sm font-medium text-slate-300"
+                    >
+                      Company
+                      <span class="text-red-400" aria-hidden="true">*</span>
+                    </label>
+
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      placeholder="Company name"
+                      autocomplete="organization"
+                      required
+                      class="block w-full rounded-lg border border-slate-700/70 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition-all focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="team-size"
+                      class="mb-1.5 block text-sm font-medium text-slate-300"
+                    >
+                      Team Size
+                      <span class="text-red-400" aria-hidden="true">*</span>
+                    </label>
+
+                    <select
+                      id="team-size"
+                      name="team_size"
+                      required
+                      class="block w-full rounded-lg border border-slate-700/70 bg-slate-950/80 px-4 py-3 text-sm text-white transition-all focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20"
+                    >
+                      <option value="" selected disabled>
+                        Select
+                      </option>
+
+                      <option value="1-5">1–5</option>
+                      <option value="6-15">6–15</option>
+                      <option value="16-50">16–50</option>
+                      <option value="51-100">51–100</option>
+                      <option value="101+">101+</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Training Interest -->
+                <div>
+                  <label
+                    for="training-interest"
+                    class="mb-1.5 block text-sm font-medium text-slate-300"
+                  >
+                    Training Interest
+                    <span class="text-red-400" aria-hidden="true">*</span>
+                  </label>
+
+                  <select
+                    id="training-interest"
+                    name="training_interest"
+                    required
+                    class="block w-full rounded-lg border border-slate-700/70 bg-slate-950/80 px-4 py-3 text-sm text-white transition-all focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20"
+                  >
+                    <option value="" selected disabled>
+                      Select a training area
+                    </option>
+
+                    <option value="Active Directory Security">
+                      Active Directory Security
+                    </option>
+
+                    <option value="Azure Security">
+                      Azure Security
+                    </option>
+
+                    <option value="Advanced Windows Tradecraft">
+                      Advanced Windows Tradecraft
+                    </option>
+
+                    <option value="Enterprise AI Red Teaming">
+                      Enterprise AI Red Teaming
+                    </option>
+
+                    <option value="Multiple Training Areas">
+                      Multiple Training Areas
+                    </option>
+
+                    <option value="Tailored Corporate Training">
+                      Tailored Corporate Training
+                    </option>
+                  </select>
+                </div>
+
+                <!-- Consent -->
+                <label class="flex cursor-pointer items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="contact-consent"
+                    name="contact_consent"
+                    value="yes"
+                    required
+                    class="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-600 bg-slate-950 text-red-600 focus:ring-2 focus:ring-red-500/30 focus:ring-offset-0"
+                  />
+
+                  <span class="text-xs leading-relaxed text-slate-400">
+                    I agree to be contacted about corporate training and accept
+                    the
+                    <a
+                      href="/privacy-policy"
+                      class="text-slate-300 underline decoration-slate-600 underline-offset-2 hover:text-white"
+                    >
+                      privacy policy
+                    </a>.
+                  </span>
+                </label>
+
+                <!-- Submit -->
+                <button
+                  type="submit"
+                  id="corporate-form-submit"
+                  class="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-red-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-red-600/25 transition-all duration-200 hover:bg-red-500 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  <span id="corporate-form-submit-text">
+                    Discuss Your Training Needs
+                  </span>
+
+                  <i
+                    id="corporate-form-submit-icon"
+                    data-lucide="arrow-right"
+                    class="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+
+                <!-- Form Status -->
+                <p
+                  id="corporate-form-message"
+                  class="hidden rounded-lg border px-4 py-3 text-sm leading-relaxed"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+              </form>
+
+              <!-- Trust Points -->
+              <div
+                class="mt-5 grid gap-3 border-t border-slate-800/80 pt-5 text-xs text-slate-400 sm:grid-cols-2"
+              >
+                <p class="flex items-center gap-2">
+                  <i
+                    data-lucide="sliders-horizontal"
+                    class="h-4 w-4 shrink-0 text-red-500"
+                    aria-hidden="true"
+                  ></i>
+
+                  Tailored Training Recommendation
+                </p>
+
+                <p class="flex items-center gap-2">
+                  <i
+                    data-lucide="headphones"
+                    class="h-4 w-4 shrink-0 text-red-500"
+                    aria-hidden="true"
+                  ></i>
+
+                  Dedicated Training Support
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- GATED DOWNLOAD AND FORM SCRIPT                             -->
+<!-- ========================================================= -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById(
+      "corporate-training-form"
+    );
+
+    const formCard = document.getElementById(
+      "corporate-training-form-card"
+    );
+
+    const enquiryButton = document.getElementById(
+      "hero-enquiry-button"
+    );
+
+    const overviewButton = document.getElementById(
+      "training-overview-button"
+    );
+
+    const requestTypeInput = document.getElementById(
+      "form-request-type"
+    );
+
+    const formEyebrow = document.getElementById(
+      "corporate-form-eyebrow"
+    );
+
+    const formHeading = document.getElementById(
+      "corporate-form-heading"
+    );
+
+    const formDescription = document.getElementById(
+      "corporate-form-description"
+    );
+
+    const submitButton = document.getElementById(
+      "corporate-form-submit"
+    );
+
+    const submitText = document.getElementById(
+      "corporate-form-submit-text"
+    );
+
+    const message = document.getElementById(
+      "corporate-form-message"
+    );
+
+    const nameField = document.getElementById("name");
+
+    /*
+     * Complete public PDF path.
+     */
+    const pdfUrl =
+      "https://redteamverse.github.io/red-team-training/images/AS%20presentation%20updated%20pdf%20final%201_compressed%20%282%29.pdf";
+
+    /*
+     * Cleaner filename shown after download.
+     */
+    const pdfFilename =
+      "Altered-Security-Enterprise-Training-Guide.pdf";
+
+    /*
+     * Stop if the required page elements are unavailable.
+     */
+    if (
+      !form ||
+      !formCard ||
+      !enquiryButton ||
+      !overviewButton ||
+      !requestTypeInput ||
+      !formEyebrow ||
+      !formHeading ||
+      !formDescription ||
+      !submitButton ||
+      !submitText ||
+      !message
+    ) {
+      console.error(
+        "One or more corporate training form elements could not be found."
+      );
+
+      return;
+    }
+
+    /*
+     * Switch the form to normal corporate enquiry mode.
+     */
+    function setEnquiryMode() {
+      requestTypeInput.value = "training-enquiry";
+
+      formEyebrow.textContent =
+        "Corporate Training Enquiry";
+
+      formHeading.textContent =
+        "Discuss Your Team’s Training Needs";
+
+      formDescription.textContent =
+        "Share your team size and training interests. We’ll help you choose the right training option.";
+
+      submitText.textContent =
+        "Discuss Your Training Needs";
+
+      clearFormMessage();
+    }
+
+    /*
+     * Switch the form to training-overview download mode.
+     */
+    function setDownloadMode() {
+  requestTypeInput.value =
+    "enterprise-security-training-guide-download";
+
+  formEyebrow.textContent =
+    "Enterprise Security Training Guide";
+
+  formHeading.textContent =
+    "Access the Enterprise Security Training Guide";
+
+  formDescription.textContent =
+    "Share a few details to explore our enterprise training programs, hands-on labs, certifications, and platform capabilities.";
+
+  submitText.textContent =
+    "Submit and Download";
+
+  clearFormMessage();
+}
+
+    /*
+     * Scroll smoothly to the form.
+     */
+    function showForm() {
+      formCard.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      window.setTimeout(function () {
+        if (nameField) {
+          nameField.focus({
+            preventScroll: true
+          });
+        }
+      }, 650);
+    }
+
+    /*
+     * Clear the current form message.
+     */
+    function clearFormMessage() {
+      message.textContent = "";
+      message.classList.add("hidden");
+
+      message.classList.remove(
+        "border-green-500/20",
+        "bg-green-500/10",
+        "text-green-300",
+        "border-red-500/20",
+        "bg-red-500/10",
+        "text-red-300"
+      );
+    }
+
+    /*
+     * Display a success or error message.
+     */
+    function showFormMessage(type, text) {
+      clearFormMessage();
+
+      message.textContent = text;
+      message.classList.remove("hidden");
+
+      if (type === "success") {
+        message.classList.add(
+          "border-green-500/20",
+          "bg-green-500/10",
+          "text-green-300"
+        );
+      } else {
+        message.classList.add(
+          "border-red-500/20",
+          "bg-red-500/10",
+          "text-red-300"
+        );
+      }
+    }
+
+    /*
+     * Fetch the PDF and force a browser download.
+     */
+    async function downloadTrainingOverview() {
+      const response = await fetch(pdfUrl);
+
+      if (!response.ok) {
+        throw new Error(
+          "The training overview file could not be found."
+        );
+      }
+
+      const pdfBlob = await response.blob();
+      const objectUrl = URL.createObjectURL(pdfBlob);
+      const downloadLink = document.createElement("a");
+
+      downloadLink.href = objectUrl;
+      downloadLink.download = pdfFilename;
+      downloadLink.style.display = "none";
+
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      downloadLink.remove();
+
+      window.setTimeout(function () {
+        URL.revokeObjectURL(objectUrl);
+      }, 1500);
+    }
+
+    /*
+     * Open normal enquiry form.
+     */
+    enquiryButton.addEventListener("click", function () {
+      setEnquiryMode();
+      showForm();
+    });
+
+    /*
+     * Open gated download form.
+     */
+    overviewButton.addEventListener("click", function () {
+      setDownloadMode();
+      showForm();
+    });
+
+    /*
+     * Handle form submission.
+     */
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      /*
+       * Check all required inputs and selections.
+       */
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const isDownloadRequest =
+        requestTypeInput.value ===
+        "enterprise-security-training-guide-download";
+
+      /*
+       * The normal enquiry still requires a real form endpoint.
+       */
+      if (!isDownloadRequest) {
+        showFormMessage(
+          "error",
+          "Online enquiry submission is being configured. Please use the training overview option for now."
+        );
+
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitText.textContent =
+        "Preparing Your Download...";
+
+      clearFormMessage();
+
+      try {
+        await downloadTrainingOverview();
+
+        showFormMessage(
+          "success",
+            "Thank you. Your Enterprise Security Training Guide has started downloading."
+
+        );
+
+        /*
+         * Clear visible fields after download.
+         */
+        form.reset();
+
+        /*
+         * Keep the form in download mode.
+         */
+        requestTypeInput.value =
+          "enterprise-security-training-guide-download";
+
+        submitText.textContent =
+          "Submit and Download";
+      } catch (error) {
+        console.error(error);
+
+        showFormMessage(
+          "error",
+          "The training overview could not be downloaded. Please try again."
+        );
+
+        submitText.textContent =
+          "Submit and Download";
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+
+    /*
+     * Render Lucide icons.
+     */
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  });
+</script>
+
+<!-- Matrix Rain Canvas Animation Script -->
+<script>
+  (function initHeroMatrix() {
+    const canvas = document.getElementById('hero-matrix-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let width, height, columns, drops;
+    const characters = '0123456789ABCDEF01';
+    const fontSize = 14;
+
+    function resize() {
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+      columns = Math.floor(width / fontSize);
+      drops = Array(columns).fill(1);
+    }
+
+    function draw() {
+      ctx.fillStyle = 'rgba(3, 7, 18, 0.08)';
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = '#ef4444';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    setInterval(draw, 40);
+  })();
+</script>
+
+
+
+
+
+
+
+
+<!-- ========================================================= -->
+<!-- SECTION 2: TRUST AND CREDIBILITY -->
+<!-- ========================================================= -->
+
+
+
+
+
+
+
+
+<section
+  id="enterprise-trust"
+  class="relative overflow-hidden border-y border-slate-200 bg-white py-14 sm:py-16 lg:py-20"
+  aria-labelledby="enterprise-trust-heading"
+>
+  <!-- Background Accents -->
+  <div
+    class="pointer-events-none absolute -right-32 -top-32 h-[400px] w-[500px] rounded-full bg-red-500/[0.04] blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute -bottom-40 -left-32 h-[350px] w-[400px] rounded-full bg-blue-500/[0.03] blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative mx-auto max-w-[1400px] px-5 sm:px-6 lg:px-10">
+
+    <!-- ================================================= -->
+    <!-- HEADER AND CREDIBILITY POINTS -->
+    <!-- ================================================= -->
+
+    <div class="mb-10 grid items-center gap-9 lg:grid-cols-12 lg:gap-14">
+
+      <!-- Header Content -->
+      <div class="lg:col-span-5">
+
+        <!-- Eyebrow -->
+        <div class="mb-4 inline-flex items-center gap-2">
+          <span
+            class="h-px w-6 bg-red-500"
+            aria-hidden="true"
+          ></span>
+
+          <span class="text-[11px] font-bold uppercase tracking-widest text-red-600">
+            Global Enterprise Trust
+          </span>
+        </div>
+
+        <!-- Heading -->
+        <h2
+          id="enterprise-trust-heading"
+          class="max-w-xl text-3xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.7rem]"
+        >
+          Trusted by Security Teams Worldwide
+        </h2>
+
+        <!-- Supporting Copy -->
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+          Security professionals from Fortune 500 companies, global
+          enterprises, and government organizations train with Altered
+          Security.
+        </p>
+
+      </div>
+
+      <!-- Credibility Points -->
+      <div
+        class="grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2 lg:col-span-7"
+        aria-label="Reasons security professionals choose Altered Security"
+      >
+
+        <!-- Point 1 -->
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50">
+            <img
+              src="https://static.wixstatic.com/media/52db83_44e40d662ced4b89abd32b31bb33043b~mv2.png/v1/fill/w_72,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/rating%20(3).png"
+              alt=""
+              width="72"
+              height="72"
+              loading="lazy"
+              decoding="async"
+              class="h-8 w-8 object-contain"
+              aria-hidden="true"
+            />
+          </div>
+
+          <p class="text-sm font-semibold leading-snug text-slate-800 sm:text-base">
+            Expert Instructors and Course Authors
+          </p>
+        </div>
+
+        <!-- Point 2 -->
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50">
+            <img
+              src="https://static.wixstatic.com/media/52db83_6ee32e2db2c94458bc9c8fc7c5a871da~mv2.png/v1/fill/w_72,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/shield.png"
+              alt=""
+              width="72"
+              height="72"
+              loading="lazy"
+              decoding="async"
+              class="h-8 w-8 object-contain"
+              aria-hidden="true"
+            />
+          </div>
+
+          <p class="text-sm font-semibold leading-snug text-slate-800 sm:text-base">
+            Pioneers of Enterprise Labs
+          </p>
+        </div>
+
+        <!-- Point 3 -->
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50">
+            <img
+              src="https://static.wixstatic.com/media/52db83_24047402e3f84761bfd4a08bcacde8f9~mv2.png/v1/fill/w_72,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/best-practice.png"
+              alt=""
+              width="72"
+              height="72"
+              loading="lazy"
+              decoding="async"
+              class="h-8 w-8 object-contain"
+              aria-hidden="true"
+            />
+          </div>
+
+          <p class="text-sm font-semibold leading-snug text-slate-800 sm:text-base">
+            Recommended by Security Professionals
+          </p>
+        </div>
+
+        <!-- Point 4 -->
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50">
+            <img
+              src="https://static.wixstatic.com/media/52db83_960089479c604eb0a5f5b73e85d964df~mv2.png/v1/fill/w_72,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/target.png"
+              alt=""
+              width="72"
+              height="72"
+              loading="lazy"
+              decoding="async"
+              class="h-8 w-8 object-contain"
+              aria-hidden="true"
+            />
+          </div>
+
+          <p class="text-sm font-semibold leading-snug text-slate-800 sm:text-base">
+            Focused on Enterprise Security
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================================================= -->
+    <!-- FULL-WIDTH PROOF PANEL -->
+    <!-- ================================================= -->
+
+    <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
+
+      <!-- Decorative Top Accent -->
+      <div
+        class="absolute left-10 right-10 top-0 z-20 h-px bg-gradient-to-r from-transparent via-red-500/70 to-transparent"
+        aria-hidden="true"
+      ></div>
+
+      
+
+      <!-- ================================================= -->
+      <!-- LOGO SLIDER -->
+      <!-- ================================================= -->
+
+      <div
+        class="relative min-h-[150px] overflow-hidden bg-white py-12 sm:py-14"
+        aria-label="Organizations represented by Altered Security learners"
+      >
+        <!-- Left Fade -->
+        <div
+          class="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white via-white/95 to-transparent sm:w-28"
+          aria-hidden="true"
+        ></div>
+
+        <!-- Right Fade -->
+        <div
+          class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white via-white/95 to-transparent sm:w-28"
+          aria-hidden="true"
+        ></div>
+
+        <div class="trust-logo-track">
+
+          <!-- Primary Logo Set -->
+          <div class="trust-logo-set flex items-center gap-16 px-10 sm:gap-24 sm:px-16 lg:gap-28">
+
+            <!-- NASA -->
+            <div class="flex h-12 min-w-[100px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
+              <img
+                src="https://static.wixstatic.com/media/470c31_251090d1925f4a54a790c7b49e889e35~mv2.png/v1/crop/x_80,y_10,w_159,h_141/fill/w_96,h_85,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nasa.png"
+                alt="NASA"
+                width="96"
+                height="85"
+                loading="lazy"
+                decoding="async"
+                class="h-10 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
+              />
+            </div>
+
+            <!-- IBM -->
+            <div class="flex h-12 min-w-[110px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
+              <img
+                src="https://static.wixstatic.com/media/470c31_f0d7f2f030b54a7ead4b4ba7ceba80c5~mv2.png/v1/fill/w_111,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ibm.png"
+                alt="IBM"
+                width="111"
+                height="44"
+                loading="lazy"
+                decoding="async"
+                class="h-8 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
+              />
+            </div>
+
+            <!-- Deloitte -->
+            <div class="flex h-12 min-w-[145px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
+              <img
+                src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png"
+                alt="Deloitte"
+                width="189"
+                height="50"
+                loading="lazy"
+                decoding="async"
+                class="h-8 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
+              />
+            </div>
+
+            <!-- Sony -->
+            <div class="flex h-12 min-w-[130px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
+              <img
+                src="https://static.wixstatic.com/media/470c31_a8f72ea2af084571b3646b13855f3ba0~mv2.png/v1/fill/w_162,h_29,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sony.png"
+                alt="Sony"
+                width="162"
+                height="29"
+                loading="lazy"
+                decoding="async"
+                class="h-6 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
+              />
+            </div>
+
+            <!-- Secret Intelligence Service -->
+            <div class="flex h-12 min-w-[165px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
+              <img
+                src="https://static.wixstatic.com/media/470c31_d3209451b43a496da4ca26f313bf7bff~mv2.png/v1/fill/w_178,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sis.png"
+                alt="Secret Intelligence Service"
+                width="178"
+                height="50"
+                loading="lazy"
+                decoding="async"
+                class="h-9 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
+              />
+            </div>
+
+            <!-- Salesforce -->
+            <div class="flex h-12 min-w-[120px] items-center justify-center opacity-55 transition-opacity duration-300 hover:opacity-100">
+              <img
+                src="https://static.wixstatic.com/media/470c31_e2068ebd6e8249a99b272dd05b31d58f~mv2.png/v1/fill/w_143,h_100,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/salesforce.png"
+                alt="Salesforce"
+                width="143"
+                height="100"
+                loading="lazy"
+                decoding="async"
+                class="h-10 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
+              />
+            </div>
+
+          </div>
+
+          <!-- Duplicate Logo Set -->
+          <div
+            class="trust-logo-set flex items-center gap-16 px-10 sm:gap-24 sm:px-16 lg:gap-28"
+            aria-hidden="true"
+          >
+            <div class="flex h-12 min-w-[100px] items-center justify-center opacity-55">
+              <img
+                src="https://static.wixstatic.com/media/470c31_251090d1925f4a54a790c7b49e889e35~mv2.png/v1/crop/x_80,y_10,w_159,h_141/fill/w_96,h_85,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nasa.png"
+                alt=""
+                width="96"
+                height="85"
+                class="h-10 w-auto object-contain grayscale"
+              />
+            </div>
+
+            <div class="flex h-12 min-w-[110px] items-center justify-center opacity-55">
+              <img
+                src="https://static.wixstatic.com/media/470c31_f0d7f2f030b54a7ead4b4ba7ceba80c5~mv2.png/v1/fill/w_111,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ibm.png"
+                alt=""
+                width="111"
+                height="44"
+                class="h-8 w-auto object-contain grayscale"
+              />
+            </div>
+
+            <div class="flex h-12 min-w-[145px] items-center justify-center opacity-55">
+              <img
+                src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png"
+                alt=""
+                width="189"
+                height="50"
+                class="h-8 w-auto object-contain grayscale"
+              />
+            </div>
+
+            <div class="flex h-12 min-w-[130px] items-center justify-center opacity-55">
+              <img
+                src="https://static.wixstatic.com/media/470c31_a8f72ea2af084571b3646b13855f3ba0~mv2.png/v1/fill/w_162,h_29,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sony.png"
+                alt=""
+                width="162"
+                height="29"
+                class="h-6 w-auto object-contain grayscale"
+              />
+            </div>
+
+            <div class="flex h-12 min-w-[165px] items-center justify-center opacity-55">
+              <img
+                src="https://static.wixstatic.com/media/470c31_d3209451b43a496da4ca26f313bf7bff~mv2.png/v1/fill/w_178,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sis.png"
+                alt=""
+                width="178"
+                height="50"
+                class="h-9 w-auto object-contain grayscale"
+              />
+            </div>
+
+            <div class="flex h-12 min-w-[120px] items-center justify-center opacity-55">
+              <img
+                src="https://static.wixstatic.com/media/470c31_e2068ebd6e8249a99b272dd05b31d58f~mv2.png/v1/fill/w_143,h_100,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/salesforce.png"
+                alt=""
+                width="143"
+                height="100"
+                class="h-10 w-auto object-contain grayscale"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================================================= -->
+      <!-- STATISTICS -->
+      <!-- ================================================= -->
+
+      <div
+        class="grid grid-cols-1 border-t border-slate-200 bg-slate-50 sm:grid-cols-2 lg:grid-cols-4"
+        aria-label="Altered Security training statistics"
+      >
+
+        <!-- Statistic 1 -->
+        <div class="group flex min-w-0 items-center gap-4 border-b border-slate-200 px-5 py-5 sm:border-r sm:px-6 lg:border-b-0">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-red-600 transition-colors duration-300 group-hover:border-red-200 group-hover:bg-red-50">
+            <i data-lucide="users" class="h-5 w-5" aria-hidden="true"></i>
+          </div>
+
+          <div class="min-w-0">
+            <p class="text-2xl font-bold leading-none tracking-tight text-slate-900 sm:text-3xl">
+              50,000+
+            </p>
+
+            <p class="mt-1.5 text-xs font-medium leading-snug text-slate-500 sm:text-sm">
+              Security Professionals Trained
+            </p>
+          </div>
+        </div>
+
+        <!-- Statistic 2 -->
+        <div class="group flex min-w-0 items-center gap-4 border-b border-slate-200 px-5 py-5 sm:px-6 lg:border-b-0 lg:border-r">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-red-600 transition-colors duration-300 group-hover:border-red-200 group-hover:bg-red-50">
+            <i data-lucide="globe-2" class="h-5 w-5" aria-hidden="true"></i>
+          </div>
+
+          <div class="min-w-0">
+            <p class="text-2xl font-bold leading-none tracking-tight text-slate-900 sm:text-3xl">
+              130+
+            </p>
+
+            <p class="mt-1.5 text-xs font-medium leading-snug text-slate-500 sm:text-sm">
+              Countries Reached
+            </p>
+          </div>
+        </div>
+
+        <!-- Statistic 3 -->
+        <div class="group flex min-w-0 items-center gap-4 border-b border-slate-200 px-5 py-5 sm:border-b-0 sm:border-r sm:px-6">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-red-600 transition-colors duration-300 group-hover:border-red-200 group-hover:bg-red-50">
+            <i data-lucide="building-2" class="h-5 w-5" aria-hidden="true"></i>
+          </div>
+
+          <div class="min-w-0">
+            <p class="text-2xl font-bold leading-none tracking-tight text-slate-900 sm:text-3xl">
+              600+
+            </p>
+
+            <p class="mt-1.5 text-xs font-medium leading-snug text-slate-500 sm:text-sm">
+              Organizations Served
+            </p>
+          </div>
+        </div>
+
+        <!-- Statistic 4 -->
+        <div class="group flex min-w-0 items-center gap-4 px-5 py-5 sm:px-6">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-red-600 transition-colors duration-300 group-hover:border-red-200 group-hover:bg-red-50">
+            <i data-lucide="crosshair" class="h-5 w-5" aria-hidden="true"></i>
+          </div>
+
+          <div class="min-w-0">
+            <p class="text-2xl font-bold leading-none tracking-tight text-slate-900 sm:text-3xl">
+              5,000+
+            </p>
+
+            <p class="mt-1.5 text-xs font-medium leading-snug text-slate-500 sm:text-sm">
+              Attacks Practised Daily
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  
+  
+<!-- ========================================================= -->
+<!-- SECTION 3: CORPORATE TRAINING AREAS -->
+<!-- ========================================================= -->
+
+<section
+  id="training-areas"
+  class="relative overflow-hidden border-b border-slate-200 bg-slate-50 py-16 lg:py-20"
+  aria-labelledby="training-areas-heading"
+>
+  <!-- Background Accents -->
+  <div
+    class="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-red-500/[0.04] blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute -bottom-40 -left-40 h-[450px] w-[450px] rounded-full bg-slate-200/60 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+    <!-- ===================================================== -->
+    <!-- SECTION HEADER                                        -->
+    <!-- ===================================================== -->
+    <div
+      class="mb-10 flex flex-col gap-5 lg:mb-12 lg:flex-row lg:items-end lg:justify-between"
+    >
+      <div class="max-w-3xl">
+
+        <div class="mb-3 inline-flex items-center gap-2">
+          <span
+            class="h-px w-6 bg-red-500"
+            aria-hidden="true"
+          ></span>
+
+          <span
+            class="text-[11px] font-bold uppercase tracking-widest text-red-600"
+          >
+            Training Areas
+          </span>
+        </div>
+
+        <h2
+          id="training-areas-heading"
+          class="text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl"
+        >
+          Hands-On Training for
+          <span class="text-red-600">Security Teams</span>
+        </h2>
+      </div>
+
+      <div class="max-w-xl">
+        <p class="text-base leading-relaxed text-slate-600 sm:text-lg">
+          Choose training across Active Directory, Windows, Azure, and
+          enterprise AI security. Each program combines technical concepts,
+          demonstrations, exercises, and hands-on labs.
+        </p>
+      </div>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- COURSE GRID                                           -->
+    <!-- ===================================================== -->
+    <div class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
+
+      <!-- =================================================== -->
+      <!-- ACTIVE DIRECTORY                                    -->
+      <!-- =================================================== -->
+      <article
+        class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.09)]"
+      >
+        <!-- Course Introduction -->
+        <div class="p-6 pb-5 sm:p-7 sm:pb-6 lg:min-h-[220px]">
+
+          <div class="flex items-start gap-3.5">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-600"
+            >
+              <i
+                data-lucide="network"
+                class="h-5 w-5"
+                aria-hidden="true"
+              ></i>
+            </div>
+
+            <div class="min-w-0 pt-0.5">
+              <h3
+                class="text-[22px] font-bold leading-[1.2] tracking-tight text-slate-900 sm:text-2xl"
+              >
+                Active Directory Security
+              </h3>
+
+              <p
+                class="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-red-600"
+              >
+                Beginner and Advanced Training
+              </p>
+            </div>
+          </div>
+
+          <p class="mt-5 text-[15px] leading-6 text-slate-600">
+            Choose beginner or advanced Active Directory training based on your
+            team’s current skills and requirements. Training covers attacks and
+            defences across domains, forests, trusts, privileges, Kerberos,
+            persistence, and monitoring.
+          </p>
+        </div>
+
+        <!-- Lab Preview -->
+        <div class="border-y border-slate-200 bg-slate-100 p-3 sm:p-4">
+          <div
+            class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
+          >
+            <div
+              class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
+            >
+              <div class="flex min-w-0 items-center gap-2">
+                <i
+                  data-lucide="monitor-dot"
+                  class="h-3.5 w-3.5 shrink-0 text-red-600"
+                  aria-hidden="true"
+                ></i>
+
+                <span
+                  class="truncate text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
+                >
+                 Live Lab Environment
+                </span>
+              </div>
+
+              <div
+                class="flex shrink-0 items-center gap-1.5 text-[10px] font-medium text-emerald-700"
+                aria-label="Lab preview available"
+              >
+                <span
+                  class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                  aria-hidden="true"
+                ></span>
+
+               
+              </div>
+            </div>
+
+            <div
+              class="flex aspect-[16/8] items-center justify-center overflow-hidden bg-white p-2 sm:p-3"
+            >
+              <img
+                src="https://static.wixstatic.com/media/16cdd7_77cacc7e5f514c1da1d4e453252882bf~mv2.avif/v1/fill/w_900,h_709,al_c,q_85,enc_avif,quality_auto/Red%20Team%20Lab.avif"
+                alt="Active Directory enterprise lab topology"
+                class="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Details -->
+        <div class="flex flex-1 flex-col p-6 pt-5 sm:p-7 sm:pt-6">
+
+          <!-- Coverage -->
+          <div
+            class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 sm:p-5"
+          >
+            <div class="flex items-center gap-2">
+              <i
+                data-lucide="book-open-check"
+                class="h-4 w-4 shrink-0 text-red-600"
+                aria-hidden="true"
+              ></i>
+
+              <p
+                class="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-600"
+              >
+                Course Coverage
+              </p>
+            </div>
+
+            <ul
+              class="mt-4 grid gap-x-5 gap-y-3 sm:grid-cols-2"
+              aria-label="Active Directory course coverage"
+            >
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Domain enumeration</span>
+              </li>
+
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Trust and privileges mapping</span>
+              </li>
+
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Domain privilege escalation</span>
+              </li>
+
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Monitoring and defences</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Techniques -->
+          <div class="mt-5 border-t border-slate-100 pt-5">
+            <div class="mb-3 flex items-center gap-2">
+              <i
+                data-lucide="terminal"
+                class="h-3.5 w-3.5 text-slate-400"
+                aria-hidden="true"
+              ></i>
+
+              <p
+                class="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400"
+              >
+                Techniques
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+              <span class="course-technique">AD Enumeration</span>
+              <span class="course-technique">Kerberos Attacks</span>
+              <span class="course-technique">Cross-Forest Trust Abuse</span>
+              <span class="course-technique">Credential Replay</span>
+              <span class="course-technique">Delegation Issues</span>
+              <span class="course-technique">Persistence</span>
+            </div>
+          </div>
+
+          <!-- Action -->
+          <div class="mt-auto pt-5">
+            <div class="border-t border-slate-100 pt-4">
+              <a
+                href="#corporate-training-form-card"
+                data-training="Active Directory Security"
+                class="course-enquiry-link group/link inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:ring-offset-2"
+                aria-label="Request details about Active Directory Security training"
+              >
+                <span>Request Training Details</span>
+
+                <i
+                  data-lucide="arrow-down-right"
+                  class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:translate-y-0.5"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- =================================================== -->
+      <!-- WINDOWS SECURITY                                    -->
+      <!-- =================================================== -->
+      <article
+        class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.09)]"
+      >
+        <!-- Course Introduction -->
+        <div class="p-6 pb-5 sm:p-7 sm:pb-6 lg:min-h-[220px]">
+
+          <div class="flex items-start gap-3.5">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-600"
+            >
+              <i
+                data-lucide="monitor-cog"
+                class="h-5 w-5"
+                aria-hidden="true"
+              ></i>
+            </div>
+
+            <div class="min-w-0 pt-0.5">
+              <h3
+                class="text-[22px] font-bold leading-[1.2] tracking-tight text-slate-900 sm:text-2xl"
+              >
+                Advanced Windows Tradecraft
+              </h3>
+
+              <p
+                class="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-red-600"
+              >
+                Advanced Training
+              </p>
+            </div>
+          </div>
+
+          <p class="mt-5 text-[15px] leading-6 text-slate-600">
+            Develop advanced tradecraft for red teaming Windows environments
+            using trusted operating-system resources and supported languages.
+            Training covers multiple phases of a red team operation in an
+            updated lab with countermeasures enabled.
+          </p>
+        </div>
+
+        <!-- Lab Preview -->
+        <div class="border-y border-slate-200 bg-slate-100 p-3 sm:p-4">
+          <div
+            class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
+          >
+            <div
+              class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
+            >
+              <div class="flex min-w-0 items-center gap-2">
+                <i
+                  data-lucide="monitor-dot"
+                  class="h-3.5 w-3.5 shrink-0 text-red-600"
+                  aria-hidden="true"
+                ></i>
+
+                <span
+                  class="truncate text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
+                >
+                   Live Lab Environment
+                </span>
+              </div>
+
+              <div
+                class="flex shrink-0 items-center gap-1.5 text-[10px] font-medium text-emerald-700"
+                aria-label="Lab preview available"
+              >
+                <span
+                  class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                  aria-hidden="true"
+                ></span>
+
+           
+              </div>
+            </div>
+
+            <div
+              class="flex aspect-[16/8] items-center justify-center overflow-hidden bg-white p-2 sm:p-3"
+            >
+              <img
+                src="https://static.wixstatic.com/media/16cdd7_46f391f893884b3287ee7071420474a8~mv2.avif/v1/fill/w_917,h_384,al_c,q_80,enc_avif,quality_auto/Evasion%20Lab.avif"
+                alt="Advanced Windows tradecraft lab topology"
+                class="h-full w-full object-contain object-center mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.015]"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Details -->
+        <div class="flex flex-1 flex-col p-6 pt-5 sm:p-7 sm:pt-6">
+
+          <div
+            class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 sm:p-5"
+          >
+            <div class="flex items-center gap-2">
+              <i
+                data-lucide="book-open-check"
+                class="h-4 w-4 shrink-0 text-red-600"
+                aria-hidden="true"
+              ></i>
+
+              <p
+                class="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-600"
+              >
+                Course Coverage
+              </p>
+            </div>
+
+            <ul
+              class="mt-4 grid gap-x-5 gap-y-3 sm:grid-cols-2"
+              aria-label="Advanced Windows course coverage"
+            >
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Initial foothold and enumeration</span>
+              </li>
+
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Privilege escalation and persistence</span>
+              </li>
+
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Advanced lateral movement</span>
+              </li>
+
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Defences and detection</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-5 border-t border-slate-100 pt-5">
+            <div class="mb-3 flex items-center gap-2">
+              <i data-lucide="terminal" class="h-3.5 w-3.5 text-slate-400" aria-hidden="true"></i>
+
+              <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                Techniques
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+              <span class="course-technique">Offensive PowerShell</span>
+              <span class="course-technique">Offensive C#</span>
+              <span class="course-technique">JScript/VBScript</span>
+              <span class="course-technique">COM Hijacking</span>
+              <span class="course-technique">Application Whitelisting Bypass</span>
+              <span class="course-technique">Advanced Logging Evasion</span>
+            </div>
+          </div>
+
+          <div class="mt-auto pt-5">
+            <div class="border-t border-slate-100 pt-4">
+              <a
+                href="#corporate-training-form-card"
+                data-training="Advanced Windows Tradecraft"
+                class="course-enquiry-link group/link inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:ring-offset-2"
+                aria-label="Request details about Advanced Windows Tradecraft training"
+              >
+                <span>Request Training Details</span>
+                <i data-lucide="arrow-down-right" class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:translate-y-0.5" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- =================================================== -->
+      <!-- AZURE SECURITY                                      -->
+      <!-- =================================================== -->
+      <article
+        class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.09)]"
+      >
+        <!-- Course Introduction -->
+        <div class="p-6 pb-5 sm:p-7 sm:pb-6 lg:min-h-[220px]">
+
+          <div class="flex items-start gap-3.5">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-600"
+            >
+              <i
+                data-lucide="cloud"
+                class="h-5 w-5"
+                aria-hidden="true"
+              ></i>
+            </div>
+
+            <div class="min-w-0 pt-0.5">
+              <h3
+                class="text-[22px] font-bold leading-[1.2] tracking-tight text-slate-900 sm:text-2xl"
+              >
+                Azure Security
+              </h3>
+
+              <p
+                class="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-red-600"
+              >
+                Beginner and Advanced Training
+              </p>
+            </div>
+          </div>
+
+          <p class="mt-5 text-[15px] leading-6 text-slate-600">
+            Choose beginner or advanced Azure security training based on your
+            team’s current skills and requirements. Training covers attacks
+            against identities, applications, services, and hybrid
+            environments, along with detection, monitoring, and auditing.
+          </p>
+        </div>
+
+        <!-- Lab Preview -->
+        <div class="border-y border-slate-200 bg-slate-100 p-3 sm:p-4">
+          <div
+            class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
+          >
+            <div
+              class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
+            >
+              <div class="flex min-w-0 items-center gap-2">
+                <i
+                  data-lucide="monitor-dot"
+                  class="h-3.5 w-3.5 shrink-0 text-red-600"
+                  aria-hidden="true"
+                ></i>
+
+                <span
+                  class="truncate text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
+                >
+                   Live Lab Environment
+                </span>
+              </div>
+
+              <div
+                class="flex shrink-0 items-center gap-1.5 text-[10px] font-medium text-emerald-700"
+                aria-label="Lab preview available"
+              >
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
+               
+              </div>
+            </div>
+
+            <div
+              class="flex aspect-[16/8] items-center justify-center overflow-hidden bg-white p-2 sm:p-3"
+            >
+              <img
+                src="https://static.wixstatic.com/media/16cdd7_890796befcef4bd9bf05d485767809a1~mv2.avif/v1/fill/w_900,h_536,al_c,q_85,enc_avif,quality_auto/CARTE%20Lab.avif"
+                alt="Azure enterprise lab topology"
+                class="h-full w-full object-contain object-center mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.015]"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Details -->
+        <div class="flex flex-1 flex-col p-6 pt-5 sm:p-7 sm:pt-6">
+
+          <div class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 sm:p-5">
+            <div class="flex items-center gap-2">
+              <i data-lucide="book-open-check" class="h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+
+              <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-600">
+                Course Coverage
+              </p>
+            </div>
+
+            <ul
+              class="mt-4 grid gap-x-5 gap-y-3 sm:grid-cols-2"
+              aria-label="Azure course coverage"
+            >
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Discovery and reconnaissance</span>
+              </li>
+
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Enumeration and initial access</span>
+              </li>
+
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Privilege escalation and persistence</span>
+              </li>
+
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Defences, monitoring, and auditing</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-5 border-t border-slate-100 pt-5">
+            <div class="mb-3 flex items-center gap-2">
+              <i data-lucide="terminal" class="h-3.5 w-3.5 text-slate-400" aria-hidden="true"></i>
+
+              <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                Techniques
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+              <span class="course-technique">Consent Grant Attacks</span>
+              <span class="course-technique">RBAC Roles</span>
+              <span class="course-technique">Pass-the-PRT</span>
+              <span class="course-technique">Pass-the-Certificate</span>
+              <span class="course-technique">Cross-Tenant Movement</span>
+              <span class="course-technique">Cloud-to-On-Prem</span>
+            </div>
+          </div>
+
+          <div class="mt-auto pt-5">
+            <div class="border-t border-slate-100 pt-4">
+              <a
+                href="#corporate-training-form-card"
+                data-training="Azure Security"
+                class="course-enquiry-link group/link inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:ring-offset-2"
+                aria-label="Request details about Azure Security training"
+              >
+                <span>Request Training Details</span>
+                <i data-lucide="arrow-down-right" class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:translate-y-0.5" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- =================================================== -->
+      <!-- ENTERPRISE AI                                       -->
+      <!-- =================================================== -->
+      <article
+        class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.09)]"
+      >
+        <!-- Course Introduction -->
+        <div class="p-6 pb-5 sm:p-7 sm:pb-6 lg:min-h-[220px]">
+
+          <div class="flex items-start gap-3.5">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-600"
+            >
+              <i
+                data-lucide="bot"
+                class="h-5 w-5"
+                aria-hidden="true"
+              ></i>
+            </div>
+
+            <div class="min-w-0 pt-0.5">
+              <h3
+                class="text-[22px] font-bold leading-[1.2] tracking-tight text-slate-900 sm:text-2xl"
+              >
+                Enterprise AI Red Teaming
+              </h3>
+
+              <p
+                class="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-red-600"
+              >
+                Enterprise AI Security Training
+              </p>
+            </div>
+          </div>
+
+          <p class="mt-5 text-[15px] leading-6 text-slate-600">
+            Understand and test security risks across enterprise AI systems,
+            including Copilot, agents, connectors, and connected data sources.
+            Training covers practical attack scenarios alongside relevant
+            security controls and defensive approaches.
+          </p>
+        </div>
+
+        <!-- Lab Preview -->
+        <div class="border-y border-slate-200 bg-slate-100 p-3 sm:p-4">
+          <div
+            class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
+          >
+            <div
+              class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
+            >
+              <div class="flex min-w-0 items-center gap-2">
+                <i
+                  data-lucide="monitor-dot"
+                  class="h-3.5 w-3.5 shrink-0 text-red-600"
+                  aria-hidden="true"
+                ></i>
+
+                <span
+                  class="truncate text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
+                >
+                 Live Lab Environment
+                </span>
+              </div>
+
+              <div
+                class="flex shrink-0 items-center gap-1.5 text-[10px] font-medium text-emerald-700"
+                aria-label="Lab preview available"
+              >
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
+               
+              </div>
+            </div>
+
+            <div
+              class="flex aspect-[16/8] items-center justify-center overflow-hidden bg-slate-950 p-2 sm:p-3"
+            >
+              <img
+                src="https://static.wixstatic.com/media/16cdd7_1f39e5206479421d82a8123705bec90e~mv2.avif/v1/fill/w_586,h_334,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/CAIRTP-Bootcamp.avif"
+                alt="Enterprise AI lab environment"
+                class="h-full w-full rounded-md object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Details -->
+        <div class="flex flex-1 flex-col p-6 pt-5 sm:p-7 sm:pt-6">
+
+          <div class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 sm:p-5">
+            <div class="flex items-center gap-2">
+              <i data-lucide="book-open-check" class="h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+
+              <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-600">
+                Course Coverage
+              </p>
+            </div>
+
+            <ul
+              class="mt-4 grid gap-x-5 gap-y-3 sm:grid-cols-2"
+              aria-label="Enterprise AI course coverage"
+            >
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Copilot agent reconnaissance</span>
+              </li>
+
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Initial access through agent abuse</span>
+              </li>
+
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Data exfiltration and persistence</span>
+              </li>
+
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>AI guardrails and defensive hardening</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-5 border-t border-slate-100 pt-5">
+            <div class="mb-3 flex items-center gap-2">
+              <i data-lucide="terminal" class="h-3.5 w-3.5 text-slate-400" aria-hidden="true"></i>
+
+              <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                Techniques
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+              <span class="course-technique">Prompt Injection</span>
+              <span class="course-technique">Jailbreaking</span>
+              <span class="course-technique">RAG Poisoning</span>
+              <span class="course-technique">Connector Attacks</span>
+              <span class="course-technique">MCP Manipulation</span>
+              <span class="course-technique">Multi-Agent Exploitation</span>
+            </div>
+          </div>
+
+          <div class="mt-auto pt-5">
+            <div class="border-t border-slate-100 pt-4">
+              <a
+                href="#corporate-training-form-card"
+                data-training="Enterprise AI Red Teaming"
+                class="course-enquiry-link group/link inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:ring-offset-2"
+                aria-label="Request details about Enterprise AI Red Teaming"
+              >
+                <span>Request Training Details</span>
+                <i data-lucide="arrow-down-right" class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:translate-y-0.5" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- EXPERT-LED TRAINING                                   -->
+    <!-- ===================================================== -->
+    <div
+      class="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+    >
+      <div class="grid sm:grid-cols-[190px_1fr] lg:grid-cols-[230px_1fr]">
+
+        <div
+          class="relative min-h-[170px] overflow-hidden bg-slate-100 sm:min-h-full"
+        >
+          <img
+            src="https://static.wixstatic.com/media/16cdd7_b7a9683368d740068824f2b7161f5627~mv2.avif/v1/fill/w_631,h_347,al_c,q_80,enc_avif,quality_auto/teaching.avif"
+            alt="Altered Security instructor delivering hands-on training"
+            class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 hover:scale-[1.03]"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="flex items-center px-5 py-6 sm:px-7 lg:px-8">
+          <div>
+            <div class="mb-2.5 flex items-center gap-2">
+              <span class="h-px w-5 bg-red-500" aria-hidden="true"></span>
+
+              <span
+                class="text-[10px] font-bold uppercase tracking-[0.15em] text-red-600"
+              >
+                Expert-Led Training
+              </span>
+            </div>
+
+            <p class="max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-[15px] sm:leading-6">
+              Our hands-on programs are led by security experts who have spoken
+              and delivered training at
+              <span class="font-semibold text-slate-900">DEF CON</span>,
+              <span class="font-semibold text-slate-900">Black Hat</span>,
+              <span class="font-semibold text-slate-900">BruCON</span>, and
+              other leading security conferences.
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="training-format">
+                <i data-lucide="building-2" class="h-3.5 w-3.5 text-red-600" aria-hidden="true"></i>
+                On-Site Training
+              </span>
+
+              <span class="training-format">
+                <i data-lucide="monitor" class="h-3.5 w-3.5 text-red-600" aria-hidden="true"></i>
+                Virtual Delivery
+              </span>
+
+              <span class="training-format">
+                <i data-lucide="users" class="h-3.5 w-3.5 text-red-600" aria-hidden="true"></i>
+                Private Team Cohorts
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- CUSTOM TRAINING CTA                                   -->
+    <!-- ===================================================== -->
+    <div
+      class="relative mt-5 overflow-hidden rounded-2xl border border-slate-700/80 bg-gradient-to-br from-[#0f172a] via-[#172554] to-[#0b1220] shadow-xl"
+    >
+      <div
+        class="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-red-600/20 blur-3xl"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="relative grid items-center gap-6 p-6 sm:p-8 lg:grid-cols-12 lg:gap-8 lg:p-9"
+      >
+        <div class="hidden lg:col-span-1 lg:flex">
+          <div
+            class="flex h-14 w-14 items-center justify-center rounded-2xl border border-red-500/20 bg-red-500/10 text-red-400"
+          >
+            <i data-lucide="sliders-horizontal" class="h-6 w-6" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div
+            class="mb-3 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-red-400"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-red-500" aria-hidden="true"></span>
+            Custom Corporate Training
+          </div>
+
+          <h3 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+            Need Training Tailored to Your Team?
+          </h3>
+
+          <p class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
+            Choose an established training path or create a tailored program
+            based on your team’s roles, skill levels, and security priorities.
+          </p>
+        </div>
+
+        <div class="lg:col-span-4 lg:flex lg:justify-end">
+          <a
+            href="#corporate-training-form-card"
+            class="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-red-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition-all duration-200 hover:bg-red-500 hover:shadow-red-600/40 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-slate-900 sm:w-auto"
+          >
+            <span>Discuss Your Training Needs</span>
+
+            <i
+              data-lucide="arrow-right"
+              class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+              aria-hidden="true"
+            ></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Shared styles for repeated card elements -->
+<style>
+  .course-technique {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    background: #ffffff;
+    padding: 0.375rem 0.625rem;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+  }
+
+  .training-format {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    background: #f8fafc;
+    padding: 0.375rem 0.625rem;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+  }
+</style>
+
+<!-- Select the requested course in the hero form -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const enquiryLinks = document.querySelectorAll(
+      ".course-enquiry-link[data-training]"
+    );
+
+    const trainingSelect = document.getElementById(
+      "training-interest"
+    );
+
+    const requestType = document.getElementById(
+      "form-request-type"
+    );
+
+    const formCard = document.getElementById(
+      "corporate-training-form-card"
+    );
+
+    enquiryLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const selectedTraining =
+          link.getAttribute("data-training");
+
+        if (trainingSelect && selectedTraining) {
+          trainingSelect.value = selectedTraining;
+          trainingSelect.dispatchEvent(
+            new Event("change", { bubbles: true })
+          );
+        }
+
+        if (requestType) {
+          requestType.value = "training-enquiry";
+        }
+
+        if (formCard) {
+          formCard.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }
+      });
+    });
+
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  });
+</script>
+<!-- ======================================================= -->
+<!-- COURSE ENQUIRY FORM SELECTION -->
+<!-- Place before the closing body tag -->
+<!-- ======================================================= -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const courseLinks = document.querySelectorAll(".course-enquiry-link");
+
+    courseLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        const selectedTraining = link.dataset.training;
+        const trainingSelect = document.getElementById("training-interest");
+
+        if (!trainingSelect || !selectedTraining) {
+          return;
+        }
+
+        let matchingOption = null;
+
+        Array.from(trainingSelect.options).forEach(function (option) {
+          const optionValue = option.value.trim().toLowerCase();
+          const optionText = option.textContent.trim().toLowerCase();
+          const requestedValue = selectedTraining.trim().toLowerCase();
+
+          if (
+            optionValue === requestedValue ||
+            optionText === requestedValue
+          ) {
+            matchingOption = option;
+          }
+        });
+
+        if (matchingOption) {
+          trainingSelect.value = matchingOption.value;
+
+          trainingSelect.dispatchEvent(
+            new Event("change", {
+              bubbles: true
+            })
+          );
+        }
+      });
+    });
+  });
+</script>
+<!-- ========================================================= -->
+<!-- SECTION 4: CAPABILITY DEVELOPMENT PROCESS -->
+<!-- ========================================================= -->
+
+<!-- ========================================================= -->
+<!-- COMPACT CAPABILITY DEVELOPMENT SECTION -->
+<!-- ========================================================= -->
+<!-- ======================================================= -->
+<!-- GLOBAL CYBERSECURITY INSIGHT -->
+<!-- ======================================================= -->
+
+<!-- ======================================================= -->
+<!-- GLOBAL CYBERSECURITY INSIGHT -->
+<!-- ======================================================= -->
+
+<aside
+  class="relative overflow-hidden border-y border-slate-200 bg-gradient-to-r from-white via-red-50/40 to-slate-50 py-8 sm:py-10"
+  aria-labelledby="global-security-insight-heading"
+>
+  <!-- Background Accent -->
+  <div
+    class="pointer-events-none absolute -right-20 -top-28 h-72 w-72 rounded-full bg-red-500/[0.07] blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+    <div class="grid items-center gap-7 lg:grid-cols-12 lg:gap-10">
+
+      <!-- Insight Content -->
+      <div class="lg:col-span-6">
+
+        <!-- Eyebrow -->
+        <div class="mb-3 inline-flex items-center gap-2">
+          <span
+            class="h-px w-6 bg-red-500"
+            aria-hidden="true"
+          ></span>
+
+          <span class="text-xs font-bold uppercase tracking-widest text-red-600">
+            Global Security Insight
+          </span>
+        </div>
+
+        <!-- Heading -->
+        <h2
+          id="global-security-insight-heading"
+          class="max-w-xl text-2xl font-bold leading-tight tracking-tight text-slate-900 sm:text-3xl"
+        >
+          Security Skills Gaps Have a Real Business Cost
+        </h2>
+
+        <!-- Description -->
+        <p class="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
+          Global research shows that gaps in security skills and training
+          remain closely linked to costly security incidents.
+        </p>
+
+        <!-- Research Label -->
+        <div class="mt-4 inline-flex items-center gap-2 text-xs text-slate-500">
+          <i
+            data-lucide="globe-2"
+            class="h-4 w-4 text-red-500"
+            aria-hidden="true"
+          ></i>
+
+          <span>2025 Global Cybersecurity Skills Research</span>
+        </div>
+
+      </div>
+
+      <!-- Statistics -->
+      <div class="grid gap-3 sm:grid-cols-2 lg:col-span-6">
+
+        <!-- Statistic 1 -->
+        <div class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-red-200 bg-red-50 text-red-600">
+            <i
+              data-lucide="shield-alert"
+              class="h-5 w-5"
+              aria-hidden="true"
+            ></i>
+          </div>
+
+          <div>
+            <p class="text-3xl font-bold leading-none tracking-tight text-slate-900">
+              54%
+            </p>
+
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              identified a lack of IT security skills and training as a
+              leading cause of breaches.
+            </p>
+          </div>
+        </div>
+
+        <!-- Statistic 2 -->
+        <div class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-red-200 bg-red-50 text-red-600">
+            <i
+              data-lucide="circle-dollar-sign"
+              class="h-5 w-5"
+              aria-hidden="true"
+            ></i>
+          </div>
+
+          <div>
+            <p class="text-3xl font-bold leading-none tracking-tight text-slate-900">
+              52%
+            </p>
+
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              reported that cyber incidents cost their organizations more
+              than $1 million.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</aside>
+
+
+<!-- ======================================================= -->
+<!-- TRAINING APPROACH -->
+<!-- ======================================================= -->
+
+<section
+  id="capability-development"
+  class="relative overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#172554] to-[#0b1220] py-10 text-white sm:py-12 lg:py-14"
+  aria-labelledby="capability-development-heading"
+>
+  <!-- Background Accents -->
+  <div
+    class="pointer-events-none absolute -right-32 -top-32 h-[400px] w-[400px] rounded-full bg-blue-500/10 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute -bottom-40 -left-28 h-[350px] w-[400px] rounded-full bg-red-500/[0.07] blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute left-1/2 top-1/2 h-[220px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/5 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+    <!-- ===================================================== -->
+    <!-- SECTION HEADER -->
+    <!-- ===================================================== -->
+
+    <div class="mx-auto mb-8 max-w-3xl text-center lg:mb-9">
+
+      <!-- Eyebrow -->
+      <div class="mb-3 inline-flex items-center gap-3">
+        <span
+          class="h-px w-5 bg-blue-400/70"
+          aria-hidden="true"
+        ></span>
+
+        <span
+          class="text-[10px] font-bold uppercase tracking-widest text-blue-300 sm:text-[11px]"
+        >
+          Training Approach
+        </span>
+
+        <span
+          class="h-px w-5 bg-blue-400/70"
+          aria-hidden="true"
+        ></span>
+      </div>
+
+      <!-- Heading -->
+      <h2
+        id="capability-development-heading"
+        class="text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl"
+      >
+        A Clear Path to
+        <span class="text-blue-300">Team Readiness</span>
+      </h2>
+
+      <!-- Supporting Copy -->
+      <p
+        class="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base"
+      >
+        Move from technical learning to hands-on practice, skill validation,
+        and stronger readiness across the security team.
+      </p>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- CONNECTED TRAINING STAGES -->
+    <!-- ===================================================== -->
+
+    <ol
+      class="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-8"
+      aria-label="Corporate training development process"
+    >
+
+      <!-- =================================================== -->
+      <!-- STEP 1: LEARN -->
+      <!-- =================================================== -->
+
+      <li
+        class="group relative z-10 rounded-xl border border-blue-400/20 bg-gradient-to-br from-blue-500/10 to-white/[0.035] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400/50 hover:from-blue-500/15"
+      >
+        <!-- Top Accent -->
+        <div
+          class="absolute left-4 right-4 top-0 h-px bg-gradient-to-r from-transparent via-blue-400/70 to-transparent"
+          aria-hidden="true"
+        ></div>
+
+        <div class="mb-3 flex items-center justify-between">
+          <div
+            class="flex h-8 w-8 items-center justify-center rounded-lg border border-blue-400/20 bg-blue-400/10 transition-colors duration-300 group-hover:bg-blue-400/20"
+          >
+            <i
+              data-lucide="book-open"
+              class="h-4 w-4 text-blue-300"
+              aria-hidden="true"
+            ></i>
+          </div>
+
+          <span
+            class="font-mono text-[10px] font-bold text-blue-300"
+            aria-hidden="true"
+          >
+            01
+          </span>
+        </div>
+
+        <h3 class="text-base font-bold text-white">
+          Learn
+        </h3>
+
+        <p class="mt-1.5 text-[13px] leading-relaxed text-slate-300 sm:text-sm">
+         Understand the techniques, methods, and offensive and defensive approaches used across enterprise environments.
+        </p>
+
+        <!-- Mobile Connector -->
+        <span
+          class="absolute -bottom-7 left-1/2 flex h-6 w-6 -translate-x-1/2 items-center justify-center rounded-full border border-blue-400/30 bg-[#172554] text-blue-300 sm:hidden"
+          aria-hidden="true"
+        >
+          <i
+            data-lucide="arrow-down"
+            class="h-3.5 w-3.5"
+          ></i>
+        </span>
+
+        <!-- Desktop Connector -->
+        <span
+          class="absolute -right-7 top-1/2 hidden h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full border border-blue-400/30 bg-[#172554] text-blue-300 shadow-lg lg:flex"
+          aria-hidden="true"
+        >
+          <i
+            data-lucide="arrow-right"
+            class="h-3.5 w-3.5"
+          ></i>
+        </span>
+      </li>
+
+      <!-- =================================================== -->
+      <!-- STEP 2: PRACTICE -->
+      <!-- =================================================== -->
+
+      <li
+        class="group relative z-10 rounded-xl border border-blue-400/20 bg-gradient-to-br from-blue-500/10 to-white/[0.035] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400/50 hover:from-blue-500/15"
+      >
+        <!-- Top Accent -->
+        <div
+          class="absolute left-4 right-4 top-0 h-px bg-gradient-to-r from-transparent via-blue-400/70 to-transparent"
+          aria-hidden="true"
+        ></div>
+
+        <div class="mb-3 flex items-center justify-between">
+          <div
+            class="flex h-8 w-8 items-center justify-center rounded-lg border border-blue-400/20 bg-blue-400/10 transition-colors duration-300 group-hover:bg-blue-400/20"
+          >
+            <i
+              data-lucide="flask-conical"
+              class="h-4 w-4 text-blue-300"
+              aria-hidden="true"
+            ></i>
+          </div>
+
+          <span
+            class="font-mono text-[10px] font-bold text-blue-300"
+            aria-hidden="true"
+          >
+            02
+          </span>
+        </div>
+
+        <h3 class="text-base font-bold text-white">
+          Practice
+        </h3>
+
+        <p class="mt-1.5 text-[13px] leading-relaxed text-slate-300 sm:text-sm">
+          Apply what you learn through hands-on labs and realistic attack
+          scenarios.
+        </p>
+
+        <!-- Mobile Connector -->
+        <span
+          class="absolute -bottom-7 left-1/2 flex h-6 w-6 -translate-x-1/2 items-center justify-center rounded-full border border-blue-400/30 bg-[#172554] text-blue-300 sm:hidden"
+          aria-hidden="true"
+        >
+          <i
+            data-lucide="arrow-down"
+            class="h-3.5 w-3.5"
+          ></i>
+        </span>
+
+        <!-- Desktop Connector -->
+        <span
+          class="absolute -right-7 top-1/2 hidden h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full border border-blue-400/30 bg-[#172554] text-blue-300 shadow-lg lg:flex"
+          aria-hidden="true"
+        >
+          <i
+            data-lucide="arrow-right"
+            class="h-3.5 w-3.5"
+          ></i>
+        </span>
+      </li>
+
+      <!-- =================================================== -->
+      <!-- STEP 3: VALIDATE -->
+      <!-- =================================================== -->
+
+      <li
+        class="group relative z-10 rounded-xl border border-blue-400/20 bg-gradient-to-br from-blue-500/10 to-white/[0.035] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400/50 hover:from-blue-500/15"
+      >
+        <!-- Top Accent -->
+        <div
+          class="absolute left-4 right-4 top-0 h-px bg-gradient-to-r from-transparent via-blue-400/70 to-transparent"
+          aria-hidden="true"
+        ></div>
+
+        <div class="mb-3 flex items-center justify-between">
+          <div
+            class="flex h-8 w-8 items-center justify-center rounded-lg border border-blue-400/20 bg-blue-400/10 transition-colors duration-300 group-hover:bg-blue-400/20"
+          >
+            <i
+              data-lucide="badge-check"
+              class="h-4 w-4 text-blue-300"
+              aria-hidden="true"
+            ></i>
+          </div>
+
+          <span
+            class="font-mono text-[10px] font-bold text-blue-300"
+            aria-hidden="true"
+          >
+            03
+          </span>
+        </div>
+
+        <h3 class="text-base font-bold text-white">
+          Validate
+        </h3>
+
+        <p class="mt-1.5 text-[13px] leading-relaxed text-slate-300 sm:text-sm">
+          Test individual skills through practical challenges, assessments,
+          and certification exams.
+        </p>
+
+        <!-- Mobile Connector -->
+        <span
+          class="absolute -bottom-7 left-1/2 flex h-6 w-6 -translate-x-1/2 items-center justify-center rounded-full border border-blue-400/30 bg-[#172554] text-blue-300 sm:hidden"
+          aria-hidden="true"
+        >
+          <i
+            data-lucide="arrow-down"
+            class="h-3.5 w-3.5"
+          ></i>
+        </span>
+
+        <!-- Desktop Connector -->
+        <span
+          class="absolute -right-7 top-1/2 hidden h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full border border-blue-400/30 bg-[#172554] text-blue-300 shadow-lg lg:flex"
+          aria-hidden="true"
+        >
+          <i
+            data-lucide="arrow-right"
+            class="h-3.5 w-3.5"
+          ></i>
+        </span>
+      </li>
+
+      <!-- =================================================== -->
+      <!-- STEP 4: TEAM READINESS -->
+      <!-- =================================================== -->
+
+      <li
+        class="group relative z-10 rounded-xl border border-red-400/25 bg-gradient-to-br from-red-500/10 to-white/[0.035] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-red-400/50 hover:from-red-500/15"
+      >
+        <!-- Top Accent -->
+        <div
+          class="absolute left-4 right-4 top-0 h-px bg-gradient-to-r from-transparent via-red-400/70 to-transparent"
+          aria-hidden="true"
+        ></div>
+
+        <div class="mb-3 flex items-center justify-between">
+          <div
+            class="flex h-8 w-8 items-center justify-center rounded-lg border border-red-400/20 bg-red-400/10 transition-colors duration-300 group-hover:bg-red-400/20"
+          >
+            <i
+              data-lucide="shield-check"
+              class="h-4 w-4 text-red-300"
+              aria-hidden="true"
+            ></i>
+          </div>
+
+          <span
+            class="font-mono text-[10px] font-bold text-red-300"
+            aria-hidden="true"
+          >
+            04
+          </span>
+        </div>
+
+        <h3 class="text-base font-bold text-white">
+          Build Team Readiness
+        </h3>
+
+        <p class="mt-1.5 text-[13px] leading-relaxed text-slate-300 sm:text-sm">
+          Review assessment results, track team progress, and prepare your security team for real-world challenges.
+        </p>
+      </li>
+    </ol>
+  </div>
+</section>
+<!-- ========================================================= -->
+<!-- SECTION 5: ENTERPRISE LABS AND TEAM MANAGEMENT -->
+<!-- ========================================================= -->
+
+
+
+<!-- ======================================================= -->
+<!-- PLATFORM TAB STYLING -->
+<!-- ======================================================= -->
+
+
+
+<!-- ======================================================= -->
+<!-- TRAINING PLATFORM -->
+<!-- ======================================================= -->
+
+<section
+  id="enterprise-platform"
+  class="relative overflow-hidden border-b border-slate-200 bg-slate-50 py-16 lg:py-20"
+  aria-labelledby="enterprise-platform-heading"
+>
+  <!-- Background Accents -->
+  <div
+    class="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-red-500/[0.035] blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute -bottom-40 -left-40 h-[450px] w-[450px] rounded-full bg-blue-100/40 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+    <!-- ===================================================== -->
+    <!-- SECTION HEADER -->
+    <!-- ===================================================== -->
+
+    <div class="mx-auto mb-10 max-w-3xl text-center lg:mb-12">
+
+      <!-- Eyebrow -->
+      <div class="mb-3 inline-flex items-center gap-3">
+        <span
+          class="h-px w-5 bg-red-500"
+          aria-hidden="true"
+        ></span>
+
+        <span
+          class="text-[11px] font-bold uppercase tracking-widest text-red-600"
+        >
+          Training Platform
+        </span>
+
+        <span
+          class="h-px w-5 bg-red-500"
+          aria-hidden="true"
+        ></span>
+      </div>
+
+      <!-- Heading -->
+      <h2
+        id="enterprise-platform-heading"
+        class="text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl"
+      >
+        Team
+        <span class="text-red-600">Learning and Management</span>
+        Platform
+      </h2>
+
+      <!-- Supporting Copy -->
+      <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+        Give team members access to hands-on labs and structured learning paths
+        while managing access, seats, progress, exams, and reporting through
+        the platform.
+      </p>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- SINGLE PLATFORM PANEL -->
+    <!-- ===================================================== -->
+
+    <article
+      class="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm"
+      aria-labelledby="platform-capabilities-heading"
+    >
+      <!-- Decorative Accent -->
+      <div
+        class="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-red-50 opacity-70 blur-3xl"
+        aria-hidden="true"
+      ></div>
+
+      <!-- =================================================== -->
+      <!-- SIX PLATFORM CAPABILITIES -->
+      <!-- =================================================== -->
+
+      <div class="relative border-b border-slate-200 p-6 sm:p-8 lg:p-10">
+
+        <!-- Capability Header -->
+        <div
+          class="mb-7 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between"
+        >
+          <div class="max-w-2xl">
+            <div class="mb-3 flex items-center gap-3">
+              <div
+                class="flex h-10 w-10 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-600"
+              >
+                <i
+                  data-lucide="layout-dashboard"
+                  class="h-5 w-5"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <span
+                class="text-[11px] font-bold uppercase tracking-widest text-red-600"
+              >
+                Platform Capabilities
+              </span>
+            </div>
+
+            <h3
+              id="platform-capabilities-heading"
+              class="text-2xl font-bold leading-tight tracking-tight text-slate-900 sm:text-3xl"
+            >
+             Training Access, Support, and Progress
+            </h3>
+          </div>
+
+          <p
+            class="max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base"
+          >
+            Team members train in live enterprise lab environments with hands-on exercises and supporting resources, while security leaders monitor progress across the training program.
+          </p>
+        </div>
+
+        <!-- Capability Grid -->
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+          <!-- Capability 1 -->
+          <div
+            class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-red-200 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex items-start gap-3.5">
+              <div
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white"
+              >
+                <i
+                  data-lucide="flask-conical"
+                  class="h-[18px] w-[18px]"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">
+                  Lab Challenges
+                </h4>
+
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  Practise techniques through focused, hands-on lab exercises.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capability 2 -->
+          <div
+            class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-red-200 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex items-start gap-3.5">
+              <div
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white"
+              >
+                <i
+                  data-lucide="route"
+                  class="h-[18px] w-[18px]"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">
+                  Learning Paths
+                </h4>
+
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  Follow structured paths that bring related labs and skills
+                  together.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capability 3 -->
+          <div
+            class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-red-200 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex items-start gap-3.5">
+              <div
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white"
+              >
+                <i
+                  data-lucide="chart-no-axes-combined"
+                  class="h-[18px] w-[18px]"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">
+                  Progress Tracking
+                </h4>
+
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  Review played labs, completed activities, and learning-path
+                  progress.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capability 4 -->
+          <div
+            class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-red-200 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex items-start gap-3.5">
+              <div
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white"
+              >
+                <i
+                  data-lucide="user-plus"
+                  class="h-[18px] w-[18px]"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">
+                  Team Onboarding
+                </h4>
+
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  Add team members and assign the training access they need.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capability 5 -->
+          <div
+            class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-red-200 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex items-start gap-3.5">
+              <div
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white"
+              >
+                <i
+                  data-lucide="refresh-cw"
+                  class="h-[18px] w-[18px]"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">
+                  Seat Management
+                </h4>
+
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  Assign or transfer seats as your team and requirements change.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capability 6 -->
+          <div
+            class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-red-200 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex items-start gap-3.5">
+              <div
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white"
+              >
+                <i
+                  data-lucide="file-chart-column"
+                  class="h-[18px] w-[18px]"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">
+                  Exams and Reports
+                </h4>
+
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  Review exam activity and export progress information for
+                  reporting.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =================================================== -->
+      <!-- INTERACTIVE PLATFORM PREVIEW -->
+      <!-- =================================================== -->
+
+      <div class="relative p-5 sm:p-7 lg:p-10">
+
+        <!-- Preview Header and Tabs -->
+        <div
+          class="mb-5 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between"
+        >
+          <div>
+            <p
+              class="text-[10px] font-bold uppercase tracking-[0.15em] text-red-600"
+            >
+              Platform Preview
+            </p>
+
+            <h4
+              id="platform-preview-title"
+              class="mt-1.5 text-xl font-bold tracking-tight text-slate-900 sm:text-2xl"
+            >
+              Red Labs Dashboard
+            </h4>
+
+            <p
+              id="platform-preview-description"
+              class="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600"
+            >
+              Access available labs, challenge categories, platform activity,
+              and learning resources from the learner dashboard.
+            </p>
+          </div>
+
+          <!-- Preview Tabs -->
+          <div
+            class="flex max-w-full gap-2 overflow-x-auto pb-1"
+            role="tablist"
+            aria-label="Red Team Labs platform previews"
+          >
+            <!-- Dashboard Tab -->
+            <button
+              type="button"
+              class="platform-preview-tab inline-flex shrink-0 items-center gap-2 rounded-lg border border-red-600 bg-red-600 px-3.5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-red-600/20 transition-all"
+              role="tab"
+              aria-selected="true"
+              data-src="https://redteamverse.github.io/red-team-training/images/rp-2.png"
+              data-alt="Red Team Labs learner dashboard showing available labs and platform activity"
+              data-title="Red Team Labs Dashboard"
+              data-description="Access available labs, challenge categories, platform activity, and learning resources from the learner dashboard."
+            >
+              <i
+                data-lucide="layout-dashboard"
+                class="h-4 w-4"
+                aria-hidden="true"
+              ></i>
+              Dashboard
+            </button>
+
+            <!-- Lab Library Tab -->
+            <button
+              type="button"
+              class="platform-preview-tab inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-slate-600 transition-all hover:border-red-200 hover:text-red-600"
+              role="tab"
+              aria-selected="false"
+              data-src="https://redteamverse.github.io/red-team-training/images/rp-3.png"
+              data-alt="Red Team Labs library showing labs filtered by category, status, and skill level"
+              data-title="Searchable Lab Library"
+              data-description="Browse labs by category, completion history, verification status, and skill level to find the right activity."
+            >
+              <i
+                data-lucide="library"
+                class="h-4 w-4"
+                aria-hidden="true"
+              ></i>
+              Lab Library
+            </button>
+
+            <!-- Learning Paths Tab -->
+            <button
+              type="button"
+              class="platform-preview-tab inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-slate-600 transition-all hover:border-red-200 hover:text-red-600"
+              role="tab"
+              aria-selected="false"
+              data-src="https://redteamverse.github.io/red-team-training/images/rp-1.png"
+              data-alt="Red Team Labs learning path completion page showing progress, labs, and points"
+              data-title="Learning Path Progress"
+              data-description="Follow structured learning paths and review completion progress, included labs, and points earned."
+            >
+              <i
+                data-lucide="route"
+                class="h-4 w-4"
+                aria-hidden="true"
+              ></i>
+              Learning Paths
+            </button>
+          </div>
+        </div>
+
+        <!-- Screenshot Frame -->
+        <div
+          class="overflow-hidden rounded-2xl border border-slate-300 bg-[#17191d] shadow-[0_20px_55px_rgba(15,23,42,0.16)]"
+        >
+          <!-- Application Header -->
+          <div
+            class="flex items-center justify-between gap-4 border-b border-white/10 bg-[#111318] px-4 py-3 sm:px-5"
+          >
+            <div class="flex items-center gap-2.5">
+              <div
+                class="flex h-7 w-7 items-center justify-center rounded-md bg-red-600 text-white"
+              >
+                <i
+                  data-lucide="monitor"
+                  class="h-3.5 w-3.5"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <span
+                class="text-[11px] font-semibold uppercase tracking-wider text-slate-300"
+              >
+                Red Labs Platform
+              </span>
+            </div>
+
+            <span
+              class="hidden items-center gap-1.5 text-[10px] font-medium text-slate-500 sm:inline-flex"
+            >
+              <span
+                class="h-1.5 w-1.5 rounded-full bg-emerald-400"
+                aria-hidden="true"
+              ></span>
+              Learner Platform
+            </span>
+          </div>
+
+          <!-- Screenshot -->
+          <div
+            id="platform-preview-panel"
+            class="relative aspect-[2/1] overflow-hidden bg-[#1a1c20]"
+            role="tabpanel"
+            aria-live="polite"
+          >
+            <img
+              id="platform-preview-image"
+              src="https://redteamverse.github.io/red-team-training/images/rp-2.png"
+              alt="Red Team Labs learner dashboard showing available labs and platform activity"
+              class="absolute left-0 top-[-8.2%] h-auto w-full transition-opacity duration-200"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <!-- Authenticity Note -->
+      <!-- Platform Capability Markers -->
+<div
+  class="mt-4 flex items-center justify-center gap-3"
+  aria-label="Labs, learning paths, and progress tracking"
+>
+  <!-- Left Line -->
+  <span
+    class="h-px w-8 bg-slate-200 sm:w-12"
+    aria-hidden="true"
+  ></span>
+
+  <!-- Labs -->
+  <span
+    class="flex h-7 w-7 items-center justify-center rounded-full border border-red-100 bg-red-50 text-red-600"
+    title="Hands-on labs"
+  >
+    <i
+      data-lucide="flask-conical"
+      class="h-3.5 w-3.5"
+      aria-hidden="true"
+    ></i>
+  </span>
+
+  <!-- Learning Paths -->
+  <span
+    class="flex h-7 w-7 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500"
+    title="Learning paths"
+  >
+    <i
+      data-lucide="route"
+      class="h-3.5 w-3.5"
+      aria-hidden="true"
+    ></i>
+  </span>
+
+  <!-- Progress -->
+  <span
+    class="flex h-7 w-7 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500"
+    title="Progress tracking"
+  >
+    <i
+      data-lucide="chart-no-axes-combined"
+      class="h-3.5 w-3.5"
+      aria-hidden="true"
+    ></i>
+  </span>
+
+  <!-- Right Line -->
+  <span
+    class="h-px w-8 bg-slate-200 sm:w-12"
+    aria-hidden="true"
+  ></span>
+</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- PLATFORM SCREENSHOT SWITCHER -->
+<!-- Place before the closing body tag -->
+<!-- ======================================================= -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const previewTabs = document.querySelectorAll(".platform-preview-tab");
+    const previewImage = document.getElementById("platform-preview-image");
+    const previewTitle = document.getElementById("platform-preview-title");
+    const previewDescription = document.getElementById(
+      "platform-preview-description"
+    );
+
+    if (
+      !previewTabs.length ||
+      !previewImage ||
+      !previewTitle ||
+      !previewDescription
+    ) {
+      return;
+    }
+
+    previewTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        const newSource = tab.dataset.src;
+        const newAlt = tab.dataset.alt || "";
+        const newTitle = tab.dataset.title || "";
+        const newDescription = tab.dataset.description || "";
+
+        if (!newSource) {
+          return;
+        }
+
+        previewImage.classList.add("opacity-0");
+
+        window.setTimeout(function () {
+          previewImage.src = newSource;
+          previewImage.alt = newAlt;
+          previewTitle.textContent = newTitle;
+          previewDescription.textContent = newDescription;
+          previewImage.classList.remove("opacity-0");
+        }, 150);
+
+        previewTabs.forEach(function (item) {
+          item.setAttribute("aria-selected", "false");
+
+          item.classList.remove(
+            "border-red-600",
+            "bg-red-600",
+            "text-white",
+            "shadow-lg",
+            "shadow-red-600/20"
+          );
+
+          item.classList.add(
+            "border-slate-200",
+            "bg-white",
+            "text-slate-600"
+          );
+        });
+
+        tab.setAttribute("aria-selected", "true");
+
+        tab.classList.remove(
+          "border-slate-200",
+          "bg-white",
+          "text-slate-600"
+        );
+
+        tab.classList.add(
+          "border-red-600",
+          "bg-red-600",
+          "text-white",
+          "shadow-lg",
+          "shadow-red-600/20"
+        );
+      });
+    });
+  });
+</script>
+
+<!-- ======================================================= -->
+<!-- PLATFORM SCREENSHOT SWITCHER -->
+<!-- Place before the closing body tag -->
+<!-- ======================================================= -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const previewTabs = document.querySelectorAll(".platform-preview-tab");
+    const previewImage = document.getElementById("platform-preview-image");
+    const previewTitle = document.getElementById("platform-preview-title");
+    const previewDescription = document.getElementById(
+      "platform-preview-description"
+    );
+
+    if (
+      !previewTabs.length ||
+      !previewImage ||
+      !previewTitle ||
+      !previewDescription
+    ) {
+      return;
+    }
+
+    previewTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        const newSource = tab.dataset.src;
+        const newAlt = tab.dataset.alt;
+        const newTitle = tab.dataset.title;
+        const newDescription = tab.dataset.description;
+
+        if (!newSource) {
+          return;
+        }
+
+        previewImage.classList.add("opacity-0");
+
+        window.setTimeout(function () {
+          previewImage.src = newSource;
+          previewImage.alt = newAlt || "";
+          previewTitle.textContent = newTitle || "";
+          previewDescription.textContent = newDescription || "";
+          previewImage.classList.remove("opacity-0");
+        }, 150);
+
+        previewTabs.forEach(function (item) {
+          item.setAttribute("aria-selected", "false");
+
+          item.classList.remove(
+            "border-red-600",
+            "bg-red-600",
+            "text-white",
+            "shadow-lg",
+            "shadow-red-600/20"
+          );
+
+          item.classList.add(
+            "border-slate-200",
+            "bg-white",
+            "text-slate-600"
+          );
+        });
+
+        tab.setAttribute("aria-selected", "true");
+
+        tab.classList.remove(
+          "border-slate-200",
+          "bg-white",
+          "text-slate-600"
+        );
+
+        tab.classList.add(
+          "border-red-600",
+          "bg-red-600",
+          "text-white",
+          "shadow-lg",
+          "shadow-red-600/20"
+        );
+      });
+    });
+  });
+</script>
+
+<!-- ========================================================= -->
+<!-- SECTION 6: FLEXIBLE TRAINING AND SUPPORT -->
+<!-- ========================================================= -->
+
+<!-- ========================================================= -->
+<!-- SECTION 6: FLEXIBLE TRAINING AND SUPPORT -->
+<!-- COMPACT BALANCED LAYOUT -->
+<!-- ========================================================= -->
+
+<!-- ========================================================= -->
+<!-- SECTION 6: FLEXIBLE TRAINING AND OUTCOMES -->
+<!-- EQUAL-WIDTH BALANCED VERSION -->
+<!-- ========================================================= -->
+<!-- ======================================================= -->
+<!-- SECURITY PROFESSIONAL TESTIMONIALS -->
+<!-- ======================================================= -->
+
+<section
+  id="training-testimonials"
+  class="relative overflow-hidden border-y border-slate-200 bg-white py-14 sm:py-16 lg:py-20"
+  aria-labelledby="training-testimonials-heading"
+>
+  <!-- Background Accents -->
+  <div
+    class="pointer-events-none absolute -right-32 -top-32 h-[380px] w-[380px] rounded-full bg-red-500/[0.05] blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute -bottom-32 -left-32 h-[320px] w-[320px] rounded-full bg-blue-500/[0.04] blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="mx-auto mb-9 max-w-3xl text-center sm:mb-11">
+
+      <!-- Eyebrow -->
+     <div class="mb-4 inline-flex items-center gap-3">
+  <span class="h-px w-5 bg-red-500" aria-hidden="true"></span>
+
+  <span class="text-[11px] font-bold uppercase tracking-widest text-red-600">
+    Learner Experiences
+  </span>
+
+  <span class="h-px w-5 bg-red-500" aria-hidden="true"></span>
+</div>
+
+      <!-- Heading -->
+      <h2
+        id="training-testimonials-heading"
+        class="text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl"
+      >
+        What Security Professionals Say
+      </h2>
+
+      <!-- Description -->
+      <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
+        Hear from security professionals who have completed Altered Security
+        training, labs, and certification exams.
+      </p>
+
+    </div>
+
+    <!-- Testimonial Cards -->
+    <div class="grid gap-5 md:grid-cols-3">
+
+      <!-- Testimonial 1 -->
+      <article class="group relative flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-lg hover:shadow-slate-200/60 sm:p-6">
+
+        <!-- Quote Icon -->
+        <div class="mb-5 flex items-center justify-between">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-red-200 bg-red-50 text-red-600">
+            <i
+              data-lucide="quote"
+              class="h-5 w-5"
+              aria-hidden="true"
+            ></i>
+          </div>
+
+          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            Lab Experience
+          </span>
+        </div>
+
+        <!-- Quote -->
+        <blockquote class="flex-1">
+          <p class="text-base leading-relaxed text-slate-700">
+            “The live lab environment offers a unique opportunity to apply the
+            learned skills in a realistic setting.”
+          </p>
+        </blockquote>
+
+        <!-- Author -->
+        <footer class="mt-6 border-t border-slate-200 pt-5">
+          <div class="flex items-center gap-3">
+
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
+              RV
+            </div>
+
+            <div>
+              <p class="text-sm font-bold text-slate-900">
+                Rick Verdoes
+              </p>
+
+              <p class="mt-0.5 text-xs text-slate-500">
+                Security Professional · CARTP
+              </p>
+            </div>
+
+          </div>
+        </footer>
+
+      </article>
+
+      <!-- Testimonial 2 -->
+      <article class="group relative flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-lg hover:shadow-slate-200/60 sm:p-6">
+
+        <!-- Quote Icon -->
+        <div class="mb-5 flex items-center justify-between">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-red-200 bg-red-50 text-red-600">
+            <i
+              data-lucide="quote"
+              class="h-5 w-5"
+              aria-hidden="true"
+            ></i>
+          </div>
+
+          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            Real-World Practice
+          </span>
+        </div>
+
+        <!-- Quote -->
+        <blockquote class="flex-1">
+          <p class="text-base leading-relaxed text-slate-700">
+            “The course contents, labs, and exam labs are based on real-world
+            environments, not just CTF-type machines.”
+          </p>
+        </blockquote>
+
+        <!-- Author -->
+        <footer class="mt-6 border-t border-slate-200 pt-5">
+          <div class="flex items-center gap-3">
+
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
+              ZM
+            </div>
+
+            <div>
+              <p class="text-sm font-bold text-slate-900">
+                Zeeshan Mustafa
+              </p>
+
+              <p class="mt-0.5 text-xs text-slate-500">
+                Security Professional · CRTP
+              </p>
+            </div>
+
+          </div>
+        </footer>
+
+      </article>
+
+      <!-- Testimonial 3 -->
+      <article class="group relative flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-lg hover:shadow-slate-200/60 sm:p-6">
+
+        <!-- Quote Icon -->
+        <div class="mb-5 flex items-center justify-between">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-red-200 bg-red-50 text-red-600">
+            <i
+              data-lucide="quote"
+              class="h-5 w-5"
+              aria-hidden="true"
+            ></i>
+          </div>
+
+          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            Hands-On Training
+          </span>
+        </div>
+
+        <!-- Quote -->
+        <blockquote class="flex-1">
+          <p class="text-base leading-relaxed text-slate-700">
+            “The theoretical explanations are backed up with hands-on
+            demonstrations that show how the attacks are executed.”
+          </p>
+        </blockquote>
+
+        <!-- Author -->
+        <footer class="mt-6 border-t border-slate-200 pt-5">
+          <div class="flex items-center gap-3">
+
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
+              LL
+            </div>
+
+            <div>
+              <p class="text-sm font-bold text-slate-900">
+                LoQ Linoge
+              </p>
+
+              <p class="mt-0.5 text-xs text-slate-500">
+                Security Professional · CARTP
+              </p>
+            </div>
+
+          </div>
+        </footer>
+
+      </article>
+
+    </div>
+
+    <!-- Internal Link -->
+    <div class="mt-8 text-center">
+      <a
+        href="https://www.alteredsecurity.com/testimonials"
+        class="group inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-700"
+      >
+        <span>Read More Learner Experiences</span>
+
+        <i
+          data-lucide="arrow-right"
+          class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+          aria-hidden="true"
+        ></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+<section
+  id="corporate-training-approach"
+  class="relative bg-slate-100 py-12 sm:py-14 lg:py-16 border-b border-slate-200 overflow-hidden"
+  aria-labelledby="corporate-training-approach-heading"
+>
+  <!-- Background Accents -->
+  <div
+    class="absolute -top-40 -right-40 w-[500px] h-[500px] bg-red-100/50 rounded-full blur-3xl pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="absolute -bottom-40 -left-40 w-[450px] h-[450px] bg-blue-100/50 rounded-full blur-3xl pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <!-- ===================================================== -->
+    <!-- SECTION HEADER -->
+    <!-- ===================================================== -->
+
+    <div class="max-w-3xl mx-auto text-center mb-8 lg:mb-10">
+
+      <!-- Eyebrow -->
+     <div class="mb-4 inline-flex items-center gap-3">
+  <span class="h-px w-5 bg-red-500" aria-hidden="true"></span>
+
+  <span class="text-[11px] font-bold uppercase tracking-widest text-red-600">
+     Flexible Corporate Training
+  </span>
+
+  <span class="h-px w-5 bg-red-500" aria-hidden="true"></span>
+</div>
+
+      <!-- Heading -->
+      <h2
+        id="corporate-training-approach-heading"
+        class="mt-4 text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight leading-tight"
+      >
+       Choose the Right Path for
+        <span class="text-red-600">
+           Your Security Team
+        </span>
+      </h2>
+
+      <!-- Description -->
+      <p
+        class="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto"
+      >
+        Choose a structured training path or create a tailored program based on your team’s current skills, technologies, and security priorities. 
+      </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- EQUAL-WIDTH TRAINING AND OUTCOMES PANEL -->
+    <!-- ===================================================== -->
+
+    <div
+      class="grid lg:grid-cols-2 items-stretch overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+    >
+
+      <!-- =================================================== -->
+      <!-- LEFT: FLEXIBLE TRAINING -->
+      <!-- =================================================== -->
+
+      <div
+        class="relative bg-gradient-to-br from-[#0f172a] via-[#172554] to-[#0b1220] text-white p-6 sm:p-8"
+      >
+        <!-- Background Glow -->
+        <div
+          class="absolute -top-24 -right-24 w-64 h-64 bg-red-600/20 rounded-full blur-3xl pointer-events-none"
+          aria-hidden="true"
+        ></div>
+
+        <div class="relative h-full flex flex-col">
+
+          <!-- Column Header -->
+          <div class="flex items-center gap-3">
+
+            <div
+              class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0"
+            >
+              <i
+                data-lucide="sliders-horizontal"
+                class="w-5 h-5"
+                aria-hidden="true"
+              ></i>
+            </div>
+
+            <div>
+              <p
+                class="text-[10px] font-bold uppercase tracking-widest text-red-400"
+              >
+                Flexible by Design
+              </p>
+
+              <h3 class="mt-1 text-xl font-bold text-white leading-tight">
+                Training That Fits Your Security Team
+              </h3>
+            </div>
+
+          </div>
+
+          <!-- Description -->
+          
+
+          <!-- Training Options -->
+          <ul
+            class="mt-6 grid sm:grid-cols-2 gap-3"
+            aria-label="Flexible corporate training options"
+          >
+
+            <!-- Flexible Delivery -->
+            <li
+              class="min-h-[68px] flex items-center gap-3 rounded-xl bg-white/[0.045] border border-white/10 px-4 py-3.5"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0"
+              >
+                <i
+                  data-lucide="calendar-range"
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-semibold text-white">
+                  Flexible Delivery
+                </h4>
+
+                <p class="mt-0.5 text-[11px] text-slate-400">
+                  Choose self-paced or instructor-led training options.
+                </p>
+              </div>
+            </li>
+
+
+            <!-- Private Cohorts -->
+            <li
+              class="min-h-[68px] flex items-center gap-3 rounded-xl bg-white/[0.045] border border-white/10 px-4 py-3.5"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0"
+              >
+                <i
+                  data-lucide="users-round"
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-semibold text-white">
+                  Private Cohorts
+                </h4>
+
+                <p class="mt-0.5 text-[11px] text-slate-400">
+                 Train your internal security team in a private cohort.
+                </p>
+              </div>
+            </li>
+
+
+            <!-- Role-Aligned Paths -->
+            <li
+              class="min-h-[68px] flex items-center gap-3 rounded-xl bg-white/[0.045] border border-white/10 px-4 py-3.5"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0"
+              >
+                <i
+                  data-lucide="route"
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-semibold text-white">
+                  Role-Aligned Paths
+                </h4>
+
+                <p class="mt-0.5 text-[11px] text-slate-400">
+                  Match training to team roles and skill levels.
+                </p>
+              </div>
+            </li>
+
+
+            <!-- Dedicated Support -->
+            <li
+              class="min-h-[68px] flex items-center gap-3 rounded-xl bg-white/[0.045] border border-white/10 px-4 py-3.5"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0"
+              >
+                <i
+                  data-lucide="headphones"
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-semibold text-white">
+                  Dedicated Support
+                </h4>
+
+                <p class="mt-0.5 text-[11px] text-slate-400">
+                  Get help with onboarding, access, and administration.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- =================================================== -->
+      <!-- RIGHT: TRAINING OUTCOMES -->
+      <!-- =================================================== -->
+
+      <div
+        class="bg-white p-6 sm:p-8 border-t lg:border-t-0 lg:border-l border-slate-200"
+      >
+        <div class="h-full flex flex-col">
+
+          <!-- Column Header -->
+          <div class="flex items-center gap-3">
+
+            <div
+              class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 text-red-600 flex items-center justify-center shrink-0"
+            >
+              <i
+                data-lucide="chart-no-axes-combined"
+                class="w-5 h-5"
+                aria-hidden="true"
+              ></i>
+            </div>
+
+            <div>
+              <p
+                class="text-[10px] font-bold uppercase tracking-widest text-red-600"
+              >
+                Training Outcomes
+              </p>
+
+              <h3
+                class="mt-1 text-xl font-bold text-slate-900 leading-tight"
+              >
+                Turn Individual Progress into Team Readiness
+              </h3>
+            </div>
+
+          </div>
+
+          <!-- Description -->
+          
+          <!-- Outcome List -->
+          <ul
+            class="mt-6 grid sm:grid-cols-2 gap-3"
+            aria-label="Corporate training outcomes"
+          >
+
+            <!-- Practical Capability -->
+            <li
+              class="min-h-[68px] flex items-center gap-3 rounded-xl bg-slate-50 border border-slate-200 px-4 py-3.5"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-red-50 border border-red-100 text-red-600 flex items-center justify-center shrink-0"
+              >
+                <i
+                  data-lucide="zap"
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-semibold text-slate-900">
+                  Skills for Real Security Challenges
+                </h4>
+
+                <p class="mt-0.5 text-[11px] text-slate-500">
+                 Apply learned techniques across realistic attack and defense scenarios.
+                </p>
+              </div>
+            </li>
+
+
+            <!-- Validated Skills -->
+            <li
+              class="min-h-[68px] flex items-center gap-3 rounded-xl bg-slate-50 border border-slate-200 px-4 py-3.5"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-red-50 border border-red-100 text-red-600 flex items-center justify-center shrink-0"
+              >
+                <i
+                  data-lucide="badge-check"
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-semibold text-slate-900">
+                  Validated Skills
+                </h4>
+
+                <p class="mt-0.5 text-[11px] text-slate-500">
+                 Validate individual skills through assessments and certification exams.
+                </p>
+              </div>
+            </li>
+
+
+            <!-- Attack-Path Insight -->
+            <li
+              class="min-h-[68px] flex items-center gap-3 rounded-xl bg-slate-50 border border-slate-200 px-4 py-3.5"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-red-50 border border-red-100 text-red-600 flex items-center justify-center shrink-0"
+              >
+                <i
+                  data-lucide="route"
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-semibold text-slate-900">
+                 Better Attack-Path Understanding
+                </h4>
+
+                <p class="mt-0.5 text-[11px] text-slate-500">
+                 Understand how attacks develop across connected enterprise systems.
+                </p>
+              </div>
+            </li>
+
+
+            <!-- Scalable Readiness -->
+            <li
+              class="min-h-[68px] flex items-center gap-3 rounded-xl bg-slate-50 border border-slate-200 px-4 py-3.5"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-red-50 border border-red-100 text-red-600 flex items-center justify-center shrink-0"
+              >
+                <i
+                  data-lucide="users-round"
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-semibold text-slate-900">
+                  Team-Wide Readiness
+                </h4>
+
+                <p class="mt-0.5 text-[11px] text-slate-500">
+                  Strengthen security skills across individual learners and wider teams.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- SINGLE FINAL CTA -->
+    <!-- ===================================================== -->
+
+    
+  </div>
+</section>
+  
+<section
+  id="corporate-training-faq"
+  class="relative overflow-hidden border-t border-slate-200 bg-slate-50 py-14 sm:py-16 lg:py-20"
+  aria-labelledby="corporate-faq-heading"
+>
+  <!-- Background Accent -->
+  <div
+    class="pointer-events-none absolute -right-32 -top-32 h-[380px] w-[380px] rounded-full bg-red-500/[0.05] blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
+
+      <!-- Section Introduction -->
+      <div class="lg:col-span-4">
+        <div class="lg:sticky lg:top-24">
+
+          <!-- Eyebrow -->
+          <div class="mb-3 inline-flex items-center gap-2">
+          <span
+            class="h-px w-6 bg-red-500"
+            aria-hidden="true"
+          ></span>
+
+          <span class="text-xs font-bold uppercase tracking-widest text-red-600">
+            Corporate Training FAQ
+          </span>
+        </div>
+
+          <!-- Heading -->
+          <h2
+            id="corporate-faq-heading"
+            class="text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl"
+          >
+            Questions About Training Your Security Team
+          </h2>
+
+          <!-- Subtext -->
+          <p class="mt-4 max-w-lg text-base leading-relaxed text-slate-600">
+            Find answers about training topics, delivery options, team access,
+            labs, and certifications.
+          </p>
+
+          <!-- Supporting Note -->
+          <div class="mt-7 flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4">
+            <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-red-600">
+              <i
+                data-lucide="message-circle"
+                class="h-4 w-4"
+                aria-hidden="true"
+              ></i>
+            </div>
+
+            <p class="text-sm leading-relaxed text-slate-600">
+              Have another question? Share it with our team through the
+              corporate training form.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FAQ Accordions -->
+      <div class="space-y-3 lg:col-span-8">
+
+        <!-- FAQ 1 -->
+        <details
+          class="group overflow-hidden rounded-xl border border-slate-200 bg-white transition-colors open:border-red-200"
+          open
+        >
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6 [&::-webkit-details-marker]:hidden">
+            <span class="font-semibold text-slate-900">
+              What topics does the corporate training cover?
+            </span>
+
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-slate-500 transition-colors group-open:bg-red-50 group-open:text-red-600">
+              <i
+                data-lucide="chevron-down"
+                class="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                aria-hidden="true"
+              ></i>
+            </span>
+          </summary>
+
+          <div class="border-t border-slate-100 px-5 py-4 sm:px-6">
+            <p class="text-sm leading-relaxed text-slate-600 sm:text-base">
+              Training covers Active Directory, Windows, Azure, and enterprise
+              AI security. The topics included will depend on the course or
+              training program you choose.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details
+          class="group overflow-hidden rounded-xl border border-slate-200 bg-white transition-colors open:border-red-200"
+        >
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6 [&::-webkit-details-marker]:hidden">
+            <span class="font-semibold text-slate-900">
+              Can the training be adapted for our team?
+            </span>
+
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-slate-500 transition-colors group-open:bg-red-50 group-open:text-red-600">
+              <i
+                data-lucide="chevron-down"
+                class="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                aria-hidden="true"
+              ></i>
+            </span>
+          </summary>
+
+          <div class="border-t border-slate-100 px-5 py-4 sm:px-6">
+            <p class="text-sm leading-relaxed text-slate-600 sm:text-base">
+              Yes. The program can be planned around your team’s roles, skill
+              levels, security priorities, schedule, and preferred training
+              format.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details
+          class="group overflow-hidden rounded-xl border border-slate-200 bg-white transition-colors open:border-red-200"
+        >
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6 [&::-webkit-details-marker]:hidden">
+            <span class="font-semibold text-slate-900">
+              What training formats are available?
+            </span>
+
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-slate-500 transition-colors group-open:bg-red-50 group-open:text-red-600">
+              <i
+                data-lucide="chevron-down"
+                class="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                aria-hidden="true"
+              ></i>
+            </span>
+          </summary>
+
+          <div class="border-t border-slate-100 px-5 py-4 sm:px-6">
+            <p class="text-sm leading-relaxed text-slate-600 sm:text-base">
+              Options may include self-paced training, instructor-led sessions,
+              private team cohorts, onsite training, and virtual training.
+              Available formats vary by program.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details
+          class="group overflow-hidden rounded-xl border border-slate-200 bg-white transition-colors open:border-red-200"
+        >
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6 [&::-webkit-details-marker]:hidden">
+            <span class="font-semibold text-slate-900">
+              Is the training suitable for different skill levels?
+            </span>
+
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-slate-500 transition-colors group-open:bg-red-50 group-open:text-red-600">
+              <i
+                data-lucide="chevron-down"
+                class="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                aria-hidden="true"
+              ></i>
+            </span>
+          </summary>
+
+          <div class="border-t border-slate-100 px-5 py-4 sm:px-6">
+            <p class="text-sm leading-relaxed text-slate-600 sm:text-base">
+              Yes. Training is available for foundational and advanced skill
+              levels. We can help you select a suitable path based on your
+              team’s current experience.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details
+          class="group overflow-hidden rounded-xl border border-slate-200 bg-white transition-colors open:border-red-200"
+        >
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6 [&::-webkit-details-marker]:hidden">
+            <span class="font-semibold text-slate-900">
+              Does the training include hands-on labs?
+            </span>
+
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-slate-500 transition-colors group-open:bg-red-50 group-open:text-red-600">
+              <i
+                data-lucide="chevron-down"
+                class="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                aria-hidden="true"
+              ></i>
+            </span>
+          </summary>
+
+          <div class="border-t border-slate-100 px-5 py-4 sm:px-6">
+            <p class="text-sm leading-relaxed text-slate-600 sm:text-base">
+              Yes. Team members practice techniques in enterprise lab
+              environments. Lab access and infrastructure depend on the
+              selected course.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 6 -->
+        <details
+          class="group overflow-hidden rounded-xl border border-slate-200 bg-white transition-colors open:border-red-200"
+        >
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6 [&::-webkit-details-marker]:hidden">
+            <span class="font-semibold text-slate-900">
+              Can we monitor our team’s progress?
+            </span>
+
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-slate-500 transition-colors group-open:bg-red-50 group-open:text-red-600">
+              <i
+                data-lucide="chevron-down"
+                class="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                aria-hidden="true"
+              ></i>
+            </span>
+          </summary>
+
+          <div class="border-t border-slate-100 px-5 py-4 sm:px-6">
+            <p class="text-sm leading-relaxed text-slate-600 sm:text-base">
+              Yes. Security leaders can manage learner access, monitor
+              progress, review exam activity, and transfer seat through the
+              team platform.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 7 -->
+        <details
+          class="group overflow-hidden rounded-xl border border-slate-200 bg-white transition-colors open:border-red-200"
+        >
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6 [&::-webkit-details-marker]:hidden">
+            <span class="font-semibold text-slate-900">
+              Are certification exams included?
+            </span>
+
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-slate-500 transition-colors group-open:bg-red-50 group-open:text-red-600">
+              <i
+                data-lucide="chevron-down"
+                class="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                aria-hidden="true"
+              ></i>
+            </span>
+          </summary>
+
+          <div class="border-t border-slate-100 px-5 py-4 sm:px-6">
+            <p class="text-sm leading-relaxed text-slate-600 sm:text-base">
+              Selected courses include a practical certification exam attempt.
+              Certification options depend on the training program you choose.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 8 -->
+        <details
+          class="group overflow-hidden rounded-xl border border-slate-200 bg-white transition-colors open:border-red-200"
+        >
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6 [&::-webkit-details-marker]:hidden">
+            <span class="font-semibold text-slate-900">
+              How do we choose the right program?
+            </span>
+
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-slate-500 transition-colors group-open:bg-red-50 group-open:text-red-600">
+              <i
+                data-lucide="chevron-down"
+                class="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                aria-hidden="true"
+              ></i>
+            </span>
+          </summary>
+
+          <div class="border-t border-slate-100 px-5 py-4 sm:px-6">
+            <p class="text-sm leading-relaxed text-slate-600 sm:text-base">
+              Tell us about your team size, experience, security priorities,
+              and preferred format. We will recommend an existing training path
+              or discuss a tailored program.
+            </p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- ======================================================= -->
+<!-- FINAL CORPORATE TRAINING CTA -->
+<!-- ======================================================= -->
+
+<!-- ======================================================= -->
+<!-- FINAL CORPORATE TRAINING CTA SECTION -->
+<!-- ======================================================= -->
+
+<section
+  id="corporate-training-cta"
+  class="border-t border-slate-200 bg-slate-50 py-10 sm:py-12 lg:py-14"
+  aria-labelledby="corporate-training-cta-heading"
+>
+  <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+    <div class="relative overflow-hidden rounded-2xl border border-slate-700 bg-gradient-to-r from-[#0f172a] via-[#172554] to-[#1f1725] px-6 py-7 shadow-xl sm:px-8 sm:py-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
+
+      <!-- Background Accents -->
+      <div
+        class="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-red-500/15 blur-3xl"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="pointer-events-none absolute -bottom-28 left-1/3 h-52 w-52 rounded-full bg-blue-500/10 blur-3xl"
+        aria-hidden="true"
+      ></div>
+
+      <!-- CTA Content -->
+      <div class="relative max-w-3xl">
+
+        <!-- Eyebrow -->
+        <div class="mb-3 inline-flex items-center gap-2">
+          <span
+            class="h-px w-5 bg-red-400"
+            aria-hidden="true"
+          ></span>
+
+          <span class="text-[11px] font-bold uppercase tracking-widest text-red-400">
+            Corporate Training
+          </span>
+        </div>
+
+        <!-- Heading -->
+        <h2
+          id="corporate-training-cta-heading"
+          class="text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl"
+        >
+          Find the Right Training for Your Security Team
+        </h2>
+
+        <!-- Description -->
+        <p class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
+          Tell us about your team, current skills, and security priorities.
+          We’ll recommend a suitable training path or discuss a tailored
+          program.
+        </p>
+
+      </div>
+
+      <!-- CTA Action -->
+      <div class="relative mt-6 shrink-0 lg:mt-0">
+        <a
+          href="#corporate-training-form"
+          class="group inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-red-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition-all duration-200 hover:bg-red-500 hover:shadow-red-600/40 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-[#0f172a] active:scale-[0.98] sm:w-auto"
+        >
+          <span>Discuss Your Training Needs</span>
+
+          <i
+            data-lucide="arrow-up-right"
+            class="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            aria-hidden="true"
+          ></i>
+        </a>
+
+        <p class="mt-2.5 text-center text-xs text-slate-400">
+          Receive a recommendation for your team.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  
+  <!-- Footer -->
+  <footer class="bg-brand-secondary text-white text-center py-6">
+    <p class="text-brand-text-muted">© 2026 All rights reserved.</p>
+  </footer>
+<!-- CTA -->
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
