@@ -1493,13 +1493,13 @@
   <div class="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
     <!-- ===================================================== -->
-    <!-- SECTION HEADER -->
+    <!-- SECTION HEADER                                        -->
     <!-- ===================================================== -->
-
     <div
-      class="mb-10 flex flex-col gap-6 lg:mb-12 lg:flex-row lg:items-end lg:justify-between"
+      class="mb-10 flex flex-col gap-5 lg:mb-12 lg:flex-row lg:items-end lg:justify-between"
     >
       <div class="max-w-3xl">
+
         <div class="mb-3 inline-flex items-center gap-2">
           <span
             class="h-px w-6 bg-red-500"
@@ -1532,73 +1532,29 @@
     </div>
 
     <!-- ===================================================== -->
-    <!-- COURSE GRID -->
+    <!-- COURSE GRID                                           -->
     <!-- ===================================================== -->
-
     <div class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
 
       <!-- =================================================== -->
-      <!-- COURSE 1: ACTIVE DIRECTORY -->
+      <!-- ACTIVE DIRECTORY                                    -->
       <!-- =================================================== -->
-
       <article
         class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.09)]"
       >
-        <!-- Image Frame -->
-      <!-- Active Directory Image Frame -->
-<!-- Active Directory Image -->
-<!-- Active Directory Lab Preview -->
-<div
-  class="border-b border-slate-200 bg-slate-100 p-3 sm:p-4"
->
-  <div
-    class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
-  >
-    <!-- Preview Header -->
-    <div
-      class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
-    >
-      <div class="flex items-center gap-2">
-        <i
-          data-lucide="network"
-          class="h-3.5 w-3.5 text-red-600"
-          aria-hidden="true"
-        ></i>
+        <!-- Course Introduction -->
+        <div class="p-6 pb-5 sm:p-7 sm:pb-6 lg:min-h-[220px]">
 
-        <span
-          class="text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
-        >
-          Enterprise Lab Environment
-        </span>
-      </div>
-
-      <span
-        class="h-1.5 w-1.5 rounded-full bg-emerald-500"
-        aria-hidden="true"
-      ></span>
-    </div>
-
-    <!-- Image Canvas -->
-    <div
-      class="flex aspect-[16/9] items-center justify-center overflow-hidden bg-white p-2"
-    >
-      <img
-        src="https://static.wixstatic.com/media/16cdd7_77cacc7e5f514c1da1d4e453252882bf~mv2.avif/v1/fill/w_900,h_709,al_c,q_85,enc_avif,quality_auto/Red%20Team%20Lab.avif"
-        alt="Active Directory enterprise lab topology"
-        class="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
-  </div>
-</div>
-
-        <!-- Card Content -->
-        <div class="flex flex-1 flex-col p-6 sm:p-7">
-
-          <!-- Course Header -->
           <div class="flex items-start gap-3.5">
-            
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-600"
+            >
+              <i
+                data-lucide="network"
+                class="h-5 w-5"
+                aria-hidden="true"
+              ></i>
+            </div>
 
             <div class="min-w-0 pt-0.5">
               <h3
@@ -1610,23 +1566,79 @@
               <p
                 class="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-red-600"
               >
-                Basic and Advanced Training
+                Beginner and Advanced Training
               </p>
             </div>
           </div>
 
-          <!-- Description -->
           <p class="mt-5 text-[15px] leading-6 text-slate-600">
-Choose beginner or advanced Active Directory training based on your team’s current skills and requirements. Training covers attacks and defenses across domains, forests, trusts, privileges, Kerberos, persistence, and monitoring.          </p>
+            Choose beginner or advanced Active Directory training based on your
+            team’s current skills and requirements. Training covers attacks and
+            defences across domains, forests, trusts, privileges, Kerberos,
+            persistence, and monitoring.
+          </p>
+        </div>
 
-          <!-- Course Coverage -->
+        <!-- Lab Preview -->
+        <div class="border-y border-slate-200 bg-slate-100 p-3 sm:p-4">
           <div
-            class="mt-6 rounded-xl border border-slate-200 bg-slate-50/80 p-4 sm:p-5"
+            class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
+          >
+            <div
+              class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
+            >
+              <div class="flex min-w-0 items-center gap-2">
+                <i
+                  data-lucide="monitor-dot"
+                  class="h-3.5 w-3.5 shrink-0 text-red-600"
+                  aria-hidden="true"
+                ></i>
+
+                <span
+                  class="truncate text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
+                >
+                 Live Lab Environment
+                </span>
+              </div>
+
+              <div
+                class="flex shrink-0 items-center gap-1.5 text-[10px] font-medium text-emerald-700"
+                aria-label="Lab preview available"
+              >
+                <span
+                  class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                  aria-hidden="true"
+                ></span>
+
+               
+              </div>
+            </div>
+
+            <div
+              class="flex aspect-[16/8] items-center justify-center overflow-hidden bg-white p-2 sm:p-3"
+            >
+              <img
+                src="https://static.wixstatic.com/media/16cdd7_77cacc7e5f514c1da1d4e453252882bf~mv2.avif/v1/fill/w_900,h_709,al_c,q_85,enc_avif,quality_auto/Red%20Team%20Lab.avif"
+                alt="Active Directory enterprise lab topology"
+                class="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Details -->
+        <div class="flex flex-1 flex-col p-6 pt-5 sm:p-7 sm:pt-6">
+
+          <!-- Coverage -->
+          <div
+            class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 sm:p-5"
           >
             <div class="flex items-center gap-2">
               <i
                 data-lucide="book-open-check"
-                class="h-4 w-4 text-red-600"
+                class="h-4 w-4 shrink-0 text-red-600"
                 aria-hidden="true"
               ></i>
 
@@ -1641,104 +1653,61 @@ Choose beginner or advanced Active Directory training based on your team’s cur
               class="mt-4 grid gap-x-5 gap-y-3 sm:grid-cols-2"
               aria-label="Active Directory course coverage"
             >
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>Domain enumeration</span>
               </li>
 
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>Trust and privileges mapping</span>
               </li>
 
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>Domain privilege escalation</span>
               </li>
 
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
-                <span>Monitoring and defenses</span>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Monitoring and defences</span>
               </li>
             </ul>
           </div>
 
-          <!-- Bottom Content -->
-          <div class="mt-auto pt-6">
+          <!-- Techniques -->
+          <div class="mt-5 border-t border-slate-100 pt-5">
+            <div class="mb-3 flex items-center gap-2">
+              <i
+                data-lucide="terminal"
+                class="h-3.5 w-3.5 text-slate-400"
+                aria-hidden="true"
+              ></i>
 
-            <!-- Techniques -->
-            <div class="border-t border-slate-100 pt-5">
-              <div class="mb-3 flex items-center gap-2">
-                <i
-                  data-lucide="terminal"
-                  class="h-3.5 w-3.5 text-slate-400"
-                  aria-hidden="true"
-                ></i>
-
-                <p
-                  class="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400"
-                >
-                  Techniques
-                </p>
-              </div>
-
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  AD Enumeration
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Kerberos Attacks
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Cross-Forest Trust Abuse
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Credential Replay
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Delegation Issues
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Persistence
-                </span>
-              </div>
+              <p
+                class="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400"
+              >
+                Techniques
+              </p>
             </div>
 
-            <!-- Card Action -->
-            <div class="mt-5 border-t border-slate-100 pt-4">
+            <div class="flex flex-wrap gap-2">
+              <span class="course-technique">AD Enumeration</span>
+              <span class="course-technique">Kerberos Attacks</span>
+              <span class="course-technique">Cross-Forest Trust Abuse</span>
+              <span class="course-technique">Credential Replay</span>
+              <span class="course-technique">Delegation Issues</span>
+              <span class="course-technique">Persistence</span>
+            </div>
+          </div>
+
+          <!-- Action -->
+          <div class="mt-auto pt-5">
+            <div class="border-t border-slate-100 pt-4">
               <a
-                href="#corporate-training-form"
+                href="#corporate-training-form-card"
                 data-training="Active Directory Security"
-                class="course-enquiry-link group/link inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-500"
+                class="course-enquiry-link group/link inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:ring-offset-2"
                 aria-label="Request details about Active Directory Security training"
               >
                 <span>Request Training Details</span>
@@ -1755,66 +1724,24 @@ Choose beginner or advanced Active Directory training based on your team’s cur
       </article>
 
       <!-- =================================================== -->
-      <!-- COURSE 2: WINDOWS SECURITY -->
+      <!-- WINDOWS SECURITY                                    -->
       <!-- =================================================== -->
-
       <article
         class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.09)]"
       >
-        <!-- Image Frame -->
-       <!-- Windows Security Image -->
-<!-- Windows Lab Preview -->
-<div
-  class="border-b border-slate-200 bg-slate-100 p-3 sm:p-4"
->
-  <div
-    class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
-  >
-    <!-- Preview Header -->
-    <div
-      class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
-    >
-      <div class="flex items-center gap-2">
-        <i
-          data-lucide="monitor-cog"
-          class="h-3.5 w-3.5 text-red-600"
-          aria-hidden="true"
-        ></i>
+        <!-- Course Introduction -->
+        <div class="p-6 pb-5 sm:p-7 sm:pb-6 lg:min-h-[220px]">
 
-        <span
-          class="text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
-        >
-          Enterprise Lab Environment
-        </span>
-      </div>
-
-      <span
-        class="h-1.5 w-1.5 rounded-full bg-emerald-500"
-        aria-hidden="true"
-      ></span>
-    </div>
-
-    <!-- Image Canvas -->
-    <div
-      class="flex aspect-[16/9] items-center justify-center overflow-hidden bg-white p-2"
-    >
-      <img
-        src="https://static.wixstatic.com/media/16cdd7_46f391f893884b3287ee7071420474a8~mv2.avif/v1/fill/w_917,h_384,al_c,q_80,enc_avif,quality_auto/Evasion%20Lab.avif"
-        alt="Advanced Windows evasion lab topology"
-        class="h-full w-full object-contain object-center mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.015]"
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
-  </div>
-</div>
-
-        <!-- Card Content -->
-        <div class="flex flex-1 flex-col p-6 sm:p-7">
-
-          <!-- Course Header -->
           <div class="flex items-start gap-3.5">
-            
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-600"
+            >
+              <i
+                data-lucide="monitor-cog"
+                class="h-5 w-5"
+                aria-hidden="true"
+              ></i>
+            </div>
 
             <div class="min-w-0 pt-0.5">
               <h3
@@ -1831,22 +1758,73 @@ Choose beginner or advanced Active Directory training based on your team’s cur
             </div>
           </div>
 
-          <!-- Description -->
           <p class="mt-5 text-[15px] leading-6 text-slate-600">
             Develop advanced tradecraft for red teaming Windows environments
             using trusted operating-system resources and supported languages.
-            The training covers multiple phases of a red team operation in an
+            Training covers multiple phases of a red team operation in an
             updated lab with countermeasures enabled.
           </p>
+        </div>
 
-          <!-- Course Coverage -->
+        <!-- Lab Preview -->
+        <div class="border-y border-slate-200 bg-slate-100 p-3 sm:p-4">
           <div
-            class="mt-6 rounded-xl border border-slate-200 bg-slate-50/80 p-4 sm:p-5"
+            class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
+          >
+            <div
+              class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
+            >
+              <div class="flex min-w-0 items-center gap-2">
+                <i
+                  data-lucide="monitor-dot"
+                  class="h-3.5 w-3.5 shrink-0 text-red-600"
+                  aria-hidden="true"
+                ></i>
+
+                <span
+                  class="truncate text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
+                >
+                   Live Lab Environment
+                </span>
+              </div>
+
+              <div
+                class="flex shrink-0 items-center gap-1.5 text-[10px] font-medium text-emerald-700"
+                aria-label="Lab preview available"
+              >
+                <span
+                  class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                  aria-hidden="true"
+                ></span>
+
+           
+              </div>
+            </div>
+
+            <div
+              class="flex aspect-[16/8] items-center justify-center overflow-hidden bg-white p-2 sm:p-3"
+            >
+              <img
+                src="https://static.wixstatic.com/media/16cdd7_46f391f893884b3287ee7071420474a8~mv2.avif/v1/fill/w_917,h_384,al_c,q_80,enc_avif,quality_auto/Evasion%20Lab.avif"
+                alt="Advanced Windows tradecraft lab topology"
+                class="h-full w-full object-contain object-center mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.015]"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Details -->
+        <div class="flex flex-1 flex-col p-6 pt-5 sm:p-7 sm:pt-6">
+
+          <div
+            class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 sm:p-5"
           >
             <div class="flex items-center gap-2">
               <i
                 data-lucide="book-open-check"
-                class="h-4 w-4 text-red-600"
+                class="h-4 w-4 shrink-0 text-red-600"
                 aria-hidden="true"
               ></i>
 
@@ -1861,113 +1839,57 @@ Choose beginner or advanced Active Directory training based on your team’s cur
               class="mt-4 grid gap-x-5 gap-y-3 sm:grid-cols-2"
               aria-label="Advanced Windows course coverage"
             >
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>Initial foothold and enumeration</span>
               </li>
 
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>Privilege escalation and persistence</span>
               </li>
 
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>Advanced lateral movement</span>
               </li>
 
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
-                <span>Defenses and detection</span>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Defences and detection</span>
               </li>
             </ul>
           </div>
 
-          <!-- Bottom Content -->
-          <div class="mt-auto pt-6">
+          <div class="mt-5 border-t border-slate-100 pt-5">
+            <div class="mb-3 flex items-center gap-2">
+              <i data-lucide="terminal" class="h-3.5 w-3.5 text-slate-400" aria-hidden="true"></i>
 
-            <!-- Techniques -->
-            <div class="border-t border-slate-100 pt-5">
-              <div class="mb-3 flex items-center gap-2">
-                <i
-                  data-lucide="terminal"
-                  class="h-3.5 w-3.5 text-slate-400"
-                  aria-hidden="true"
-                ></i>
-
-                <p
-                  class="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400"
-                >
-                  Techniques
-                </p>
-              </div>
-
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Offensive PowerShell
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Offensive C#
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  JScript/VBScript
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  COM Hijacking
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Application Whitelisting Bypass
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Advanced Logging Evasion
-                </span>
-              </div>
+              <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                Techniques
+              </p>
             </div>
 
-            <!-- Card Action -->
-            <div class="mt-5 border-t border-slate-100 pt-4">
+            <div class="flex flex-wrap gap-2">
+              <span class="course-technique">Offensive PowerShell</span>
+              <span class="course-technique">Offensive C#</span>
+              <span class="course-technique">JScript/VBScript</span>
+              <span class="course-technique">COM Hijacking</span>
+              <span class="course-technique">Application Whitelisting Bypass</span>
+              <span class="course-technique">Advanced Logging Evasion</span>
+            </div>
+          </div>
+
+          <div class="mt-auto pt-5">
+            <div class="border-t border-slate-100 pt-4">
               <a
-                href="#corporate-training-form"
+                href="#corporate-training-form-card"
                 data-training="Advanced Windows Tradecraft"
-                class="course-enquiry-link group/link inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-500"
+                class="course-enquiry-link group/link inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:ring-offset-2"
                 aria-label="Request details about Advanced Windows Tradecraft training"
               >
                 <span>Request Training Details</span>
-
-                <i
-                  data-lucide="arrow-down-right"
-                  class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:translate-y-0.5"
-                  aria-hidden="true"
-                ></i>
+                <i data-lucide="arrow-down-right" class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:translate-y-0.5" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -1975,65 +1897,24 @@ Choose beginner or advanced Active Directory training based on your team’s cur
       </article>
 
       <!-- =================================================== -->
-      <!-- COURSE 3: AZURE SECURITY -->
+      <!-- AZURE SECURITY                                      -->
       <!-- =================================================== -->
-
       <article
         class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.09)]"
       >
-        <!-- Image Frame -->
-        <!-- Azure Security Image -->
-<!-- Azure Lab Preview -->
-<div
-  class="border-b border-slate-200 bg-slate-100 p-3 sm:p-4"
->
-  <div
-    class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
-  >
-    <!-- Preview Header -->
-    <div
-      class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
-    >
-      <div class="flex items-center gap-2">
-        <i
-          data-lucide="cloud"
-          class="h-3.5 w-3.5 text-red-600"
-          aria-hidden="true"
-        ></i>
+        <!-- Course Introduction -->
+        <div class="p-6 pb-5 sm:p-7 sm:pb-6 lg:min-h-[220px]">
 
-        <span
-          class="text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
-        >
-          Enterprise Lab Environment
-        </span>
-      </div>
-
-      <span
-        class="h-1.5 w-1.5 rounded-full bg-emerald-500"
-        aria-hidden="true"
-      ></span>
-    </div>
-
-    <!-- Image Canvas -->
-    <div
-      class="flex aspect-[16/9] items-center justify-center overflow-hidden bg-white p-2"
-    >
-      <img
-        src="https://static.wixstatic.com/media/16cdd7_890796befcef4bd9bf05d485767809a1~mv2.avif/v1/fill/w_900,h_536,al_c,q_85,enc_avif,quality_auto/CARTE%20Lab.avif"
-        alt="Azure enterprise lab topology"
-        class="h-full w-full object-contain object-center mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.015]"
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
-  </div>
-</div>
-        <!-- Card Content -->
-        <div class="flex flex-1 flex-col p-6 sm:p-7">
-
-          <!-- Course Header -->
           <div class="flex items-start gap-3.5">
-            
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-600"
+            >
+              <i
+                data-lucide="cloud"
+                class="h-5 w-5"
+                aria-hidden="true"
+              ></i>
+            </div>
 
             <div class="min-w-0 pt-0.5">
               <h3
@@ -2045,30 +1926,72 @@ Choose beginner or advanced Active Directory training based on your team’s cur
               <p
                 class="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-red-600"
               >
-                Basic and Advanced Training
+                Beginner and Advanced Training
               </p>
             </div>
           </div>
 
-          <!-- Description -->
           <p class="mt-5 text-[15px] leading-6 text-slate-600">
-            Choose beginner or advanced Azure security training based on your team’s current skills and requirements. Training covers attacks against identities, applications, services, and hybrid environments, along with detection, monitoring, and auditing.
+            Choose beginner or advanced Azure security training based on your
+            team’s current skills and requirements. Training covers attacks
+            against identities, applications, services, and hybrid
+            environments, along with detection, monitoring, and auditing.
           </p>
+        </div>
 
-          <!-- Course Coverage -->
+        <!-- Lab Preview -->
+        <div class="border-y border-slate-200 bg-slate-100 p-3 sm:p-4">
           <div
-            class="mt-6 rounded-xl border border-slate-200 bg-slate-50/80 p-4 sm:p-5"
+            class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
           >
-            <div class="flex items-center gap-2">
-              <i
-                data-lucide="book-open-check"
-                class="h-4 w-4 text-red-600"
-                aria-hidden="true"
-              ></i>
+            <div
+              class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
+            >
+              <div class="flex min-w-0 items-center gap-2">
+                <i
+                  data-lucide="monitor-dot"
+                  class="h-3.5 w-3.5 shrink-0 text-red-600"
+                  aria-hidden="true"
+                ></i>
 
-              <p
-                class="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-600"
+                <span
+                  class="truncate text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
+                >
+                   Live Lab Environment
+                </span>
+              </div>
+
+              <div
+                class="flex shrink-0 items-center gap-1.5 text-[10px] font-medium text-emerald-700"
+                aria-label="Lab preview available"
               >
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
+               
+              </div>
+            </div>
+
+            <div
+              class="flex aspect-[16/8] items-center justify-center overflow-hidden bg-white p-2 sm:p-3"
+            >
+              <img
+                src="https://static.wixstatic.com/media/16cdd7_890796befcef4bd9bf05d485767809a1~mv2.avif/v1/fill/w_900,h_536,al_c,q_85,enc_avif,quality_auto/CARTE%20Lab.avif"
+                alt="Azure enterprise lab topology"
+                class="h-full w-full object-contain object-center mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.015]"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Details -->
+        <div class="flex flex-1 flex-col p-6 pt-5 sm:p-7 sm:pt-6">
+
+          <div class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 sm:p-5">
+            <div class="flex items-center gap-2">
+              <i data-lucide="book-open-check" class="h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+
+              <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-600">
                 Course Coverage
               </p>
             </div>
@@ -2077,113 +2000,57 @@ Choose beginner or advanced Active Directory training based on your team’s cur
               class="mt-4 grid gap-x-5 gap-y-3 sm:grid-cols-2"
               aria-label="Azure course coverage"
             >
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>Discovery and reconnaissance</span>
               </li>
 
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>Enumeration and initial access</span>
               </li>
 
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>Privilege escalation and persistence</span>
               </li>
 
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
-                <span>Defenses, monitoring, and auditing</span>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+                <span>Defences, monitoring, and auditing</span>
               </li>
             </ul>
           </div>
 
-          <!-- Bottom Content -->
-          <div class="mt-auto pt-6">
+          <div class="mt-5 border-t border-slate-100 pt-5">
+            <div class="mb-3 flex items-center gap-2">
+              <i data-lucide="terminal" class="h-3.5 w-3.5 text-slate-400" aria-hidden="true"></i>
 
-            <!-- Techniques -->
-            <div class="border-t border-slate-100 pt-5">
-              <div class="mb-3 flex items-center gap-2">
-                <i
-                  data-lucide="terminal"
-                  class="h-3.5 w-3.5 text-slate-400"
-                  aria-hidden="true"
-                ></i>
-
-                <p
-                  class="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400"
-                >
-                  Techniques
-                </p>
-              </div>
-
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Consent Grant Attacks
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  RBAC Roles
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Pass-the-PRT
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Pass-the-Certificate
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Cross-Tenant Movement
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Cloud-to-On-Prem
-                </span>
-              </div>
+              <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                Techniques
+              </p>
             </div>
 
-            <!-- Card Action -->
-            <div class="mt-5 border-t border-slate-100 pt-4">
+            <div class="flex flex-wrap gap-2">
+              <span class="course-technique">Consent Grant Attacks</span>
+              <span class="course-technique">RBAC Roles</span>
+              <span class="course-technique">Pass-the-PRT</span>
+              <span class="course-technique">Pass-the-Certificate</span>
+              <span class="course-technique">Cross-Tenant Movement</span>
+              <span class="course-technique">Cloud-to-On-Prem</span>
+            </div>
+          </div>
+
+          <div class="mt-auto pt-5">
+            <div class="border-t border-slate-100 pt-4">
               <a
-                href="#corporate-training-form"
+                href="#corporate-training-form-card"
                 data-training="Azure Security"
-                class="course-enquiry-link group/link inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-500"
+                class="course-enquiry-link group/link inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:ring-offset-2"
                 aria-label="Request details about Azure Security training"
               >
                 <span>Request Training Details</span>
-
-                <i
-                  data-lucide="arrow-down-right"
-                  class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:translate-y-0.5"
-                  aria-hidden="true"
-                ></i>
+                <i data-lucide="arrow-down-right" class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:translate-y-0.5" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -2191,66 +2058,24 @@ Choose beginner or advanced Active Directory training based on your team’s cur
       </article>
 
       <!-- =================================================== -->
-      <!-- COURSE 4: AI SECURITY -->
+      <!-- ENTERPRISE AI                                       -->
       <!-- =================================================== -->
-
       <article
         class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.09)]"
       >
-        <!-- Image Frame -->
-        <!-- Enterprise AI Image -->
-<!-- Enterprise AI Lab Preview -->
-<div
-  class="border-b border-slate-200 bg-slate-100 p-3 sm:p-4"
->
-  <div
-    class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
-  >
-    <!-- Preview Header -->
-    <div
-      class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
-    >
-      <div class="flex items-center gap-2">
-        <i
-          data-lucide="bot"
-          class="h-3.5 w-3.5 text-red-600"
-          aria-hidden="true"
-        ></i>
+        <!-- Course Introduction -->
+        <div class="p-6 pb-5 sm:p-7 sm:pb-6 lg:min-h-[220px]">
 
-        <span
-          class="text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
-        >
-          Enterprise Lab Environment
-        </span>
-      </div>
-
-      <span
-        class="h-1.5 w-1.5 rounded-full bg-emerald-500"
-        aria-hidden="true"
-      ></span>
-    </div>
-
-    <!-- Image Canvas -->
-    <div
-      class="flex aspect-[16/9] items-center justify-center overflow-hidden bg-white p-2"
-    >
-      <img
-        src="https://static.wixstatic.com/media/16cdd7_1f39e5206479421d82a8123705bec90e~mv2.avif/v1/fill/w_586,h_334,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/CAIRTP-Bootcamp.avif"
-        alt="Enterprise AI ecosystem and lab environment"
-        class="h-full w-full rounded-lg object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
-  </div>
-</div>
-
-        <!-- Card Content -->
-        <div class="flex flex-1 flex-col p-6 sm:p-7">
-
-          <!-- Course Header -->
           <div class="flex items-start gap-3.5">
-            
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-600"
+            >
+              <i
+                data-lucide="bot"
+                class="h-5 w-5"
+                aria-hidden="true"
+              ></i>
+            </div>
 
             <div class="min-w-0 pt-0.5">
               <h3
@@ -2262,32 +2087,72 @@ Choose beginner or advanced Active Directory training based on your team’s cur
               <p
                 class="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-red-600"
               >
-                Copilot and Enterprise AI
+                Enterprise AI Security Training
               </p>
             </div>
           </div>
 
-          <!-- Description -->
           <p class="mt-5 text-[15px] leading-6 text-slate-600">
-            Learn to attack and defend Copilot, Copilot Studio, Microsoft
-            Foundry, agents, connectors, and identity boundaries through
-            hands-on enterprise AI attack scenarios.
+            Understand and test security risks across enterprise AI systems,
+            including Copilot, agents, connectors, and connected data sources.
+            Training covers practical attack scenarios alongside relevant
+            security controls and defensive approaches.
           </p>
+        </div>
 
-          <!-- Course Coverage -->
+        <!-- Lab Preview -->
+        <div class="border-y border-slate-200 bg-slate-100 p-3 sm:p-4">
           <div
-            class="mt-6 rounded-xl border border-slate-200 bg-slate-50/80 p-4 sm:p-5"
+            class="overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm"
           >
-            <div class="flex items-center gap-2">
-              <i
-                data-lucide="book-open-check"
-                class="h-4 w-4 text-red-600"
-                aria-hidden="true"
-              ></i>
+            <div
+              class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-2.5"
+            >
+              <div class="flex min-w-0 items-center gap-2">
+                <i
+                  data-lucide="monitor-dot"
+                  class="h-3.5 w-3.5 shrink-0 text-red-600"
+                  aria-hidden="true"
+                ></i>
 
-              <p
-                class="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-600"
+                <span
+                  class="truncate text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500"
+                >
+                 Live Lab Environment
+                </span>
+              </div>
+
+              <div
+                class="flex shrink-0 items-center gap-1.5 text-[10px] font-medium text-emerald-700"
+                aria-label="Lab preview available"
               >
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
+               
+              </div>
+            </div>
+
+            <div
+              class="flex aspect-[16/8] items-center justify-center overflow-hidden bg-slate-950 p-2 sm:p-3"
+            >
+              <img
+                src="https://static.wixstatic.com/media/16cdd7_1f39e5206479421d82a8123705bec90e~mv2.avif/v1/fill/w_586,h_334,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/CAIRTP-Bootcamp.avif"
+                alt="Enterprise AI lab environment"
+                class="h-full w-full rounded-md object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Details -->
+        <div class="flex flex-1 flex-col p-6 pt-5 sm:p-7 sm:pt-6">
+
+          <div class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 sm:p-5">
+            <div class="flex items-center gap-2">
+              <i data-lucide="book-open-check" class="h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
+
+              <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-600">
                 Course Coverage
               </p>
             </div>
@@ -2296,113 +2161,57 @@ Choose beginner or advanced Active Directory training based on your team’s cur
               class="mt-4 grid gap-x-5 gap-y-3 sm:grid-cols-2"
               aria-label="Enterprise AI course coverage"
             >
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>Copilot agent reconnaissance</span>
               </li>
 
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>Initial access through agent abuse</span>
               </li>
 
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>Data exfiltration and persistence</span>
               </li>
 
-              <li
-                class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700"
-              >
-                <i
-                  data-lucide="check"
-                  class="mt-0.5 h-4 w-4 shrink-0 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <li class="flex items-start gap-2.5 text-[13px] font-medium leading-5 text-slate-700">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden="true"></i>
                 <span>AI guardrails and defensive hardening</span>
               </li>
             </ul>
           </div>
 
-          <!-- Bottom Content -->
-          <div class="mt-auto pt-6">
+          <div class="mt-5 border-t border-slate-100 pt-5">
+            <div class="mb-3 flex items-center gap-2">
+              <i data-lucide="terminal" class="h-3.5 w-3.5 text-slate-400" aria-hidden="true"></i>
 
-            <!-- Techniques -->
-            <div class="border-t border-slate-100 pt-5">
-              <div class="mb-3 flex items-center gap-2">
-                <i
-                  data-lucide="terminal"
-                  class="h-3.5 w-3.5 text-slate-400"
-                  aria-hidden="true"
-                ></i>
-
-                <p
-                  class="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400"
-                >
-                  Techniques
-                </p>
-              </div>
-
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Prompt Injection
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Jailbreaking
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  RAG Poisoning
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Connector Attacks
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  MCP Manipulation
-                </span>
-
-                <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-medium leading-none text-slate-600 shadow-sm">
-                  Multi-Agent Exploitation
-                </span>
-              </div>
+              <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                Techniques
+              </p>
             </div>
 
-            <!-- Card Action -->
-            <div class="mt-5 border-t border-slate-100 pt-4">
+            <div class="flex flex-wrap gap-2">
+              <span class="course-technique">Prompt Injection</span>
+              <span class="course-technique">Jailbreaking</span>
+              <span class="course-technique">RAG Poisoning</span>
+              <span class="course-technique">Connector Attacks</span>
+              <span class="course-technique">MCP Manipulation</span>
+              <span class="course-technique">Multi-Agent Exploitation</span>
+            </div>
+          </div>
+
+          <div class="mt-auto pt-5">
+            <div class="border-t border-slate-100 pt-4">
               <a
-                href="#corporate-training-form"
+                href="#corporate-training-form-card"
                 data-training="Enterprise AI Red Teaming"
-                class="course-enquiry-link group/link inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-500"
-                aria-label="Request details about Enterprise AI Red Teaming training"
+                class="course-enquiry-link group/link inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:ring-offset-2"
+                aria-label="Request details about Enterprise AI Red Teaming"
               >
                 <span>Request Training Details</span>
-
-                <i
-                  data-lucide="arrow-down-right"
-                  class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:translate-y-0.5"
-                  aria-hidden="true"
-                ></i>
+                <i data-lucide="arrow-down-right" class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:translate-y-0.5" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -2411,40 +2220,29 @@ Choose beginner or advanced Active Directory training based on your team’s cur
     </div>
 
     <!-- ===================================================== -->
-    <!-- TRAINING AUTHORITY -->
+    <!-- EXPERT-LED TRAINING                                   -->
     <!-- ===================================================== -->
-
     <div
       class="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
     >
       <div class="grid sm:grid-cols-[190px_1fr] lg:grid-cols-[230px_1fr]">
 
-        <!-- Real Training Image -->
         <div
           class="relative min-h-[170px] overflow-hidden bg-slate-100 sm:min-h-full"
         >
           <img
             src="https://static.wixstatic.com/media/16cdd7_b7a9683368d740068824f2b7161f5627~mv2.avif/v1/fill/w_631,h_347,al_c,q_80,enc_avif,quality_auto/teaching.avif"
-            alt="Altered Security instructor delivering hands-on security training"
+            alt="Altered Security instructor delivering hands-on training"
             class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 hover:scale-[1.03]"
             loading="lazy"
             decoding="async"
           />
-
-          <div
-            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent sm:hidden"
-            aria-hidden="true"
-          ></div>
         </div>
 
-        <!-- Authority Content -->
         <div class="flex items-center px-5 py-6 sm:px-7 lg:px-8">
           <div>
             <div class="mb-2.5 flex items-center gap-2">
-              <span
-                class="h-px w-5 bg-red-500"
-                aria-hidden="true"
-              ></span>
+              <span class="h-px w-5 bg-red-500" aria-hidden="true"></span>
 
               <span
                 class="text-[10px] font-bold uppercase tracking-[0.15em] text-red-600"
@@ -2453,9 +2251,7 @@ Choose beginner or advanced Active Directory training based on your team’s cur
               </span>
             </div>
 
-            <p
-              class="max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-[15px] sm:leading-6"
-            >
+            <p class="max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-[15px] sm:leading-6">
               Our hands-on programs are led by security experts who have spoken
               and delivered training at
               <span class="font-semibold text-slate-900">DEF CON</span>,
@@ -2464,41 +2260,19 @@ Choose beginner or advanced Active Directory training based on your team’s cur
               other leading security conferences.
             </p>
 
-            <!-- Training Formats -->
-            <div
-              class="mt-4 flex flex-wrap gap-2"
-              aria-label="Available training formats"
-            >
-              <span
-                class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[11px] font-semibold text-slate-600"
-              >
-                <i
-                  data-lucide="building-2"
-                  class="h-3.5 w-3.5 text-red-600"
-                  aria-hidden="true"
-                ></i>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="training-format">
+                <i data-lucide="building-2" class="h-3.5 w-3.5 text-red-600" aria-hidden="true"></i>
                 On-Site Training
               </span>
 
-              <span
-                class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[11px] font-semibold text-slate-600"
-              >
-                <i
-                  data-lucide="monitor"
-                  class="h-3.5 w-3.5 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <span class="training-format">
+                <i data-lucide="monitor" class="h-3.5 w-3.5 text-red-600" aria-hidden="true"></i>
                 Virtual Delivery
               </span>
 
-              <span
-                class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[11px] font-semibold text-slate-600"
-              >
-                <i
-                  data-lucide="users"
-                  class="h-3.5 w-3.5 text-red-600"
-                  aria-hidden="true"
-                ></i>
+              <span class="training-format">
+                <i data-lucide="users" class="h-3.5 w-3.5 text-red-600" aria-hidden="true"></i>
                 Private Team Cohorts
               </span>
             </div>
@@ -2508,9 +2282,8 @@ Choose beginner or advanced Active Directory training based on your team’s cur
     </div>
 
     <!-- ===================================================== -->
-    <!-- CUSTOM CORPORATE TRAINING CTA -->
+    <!-- CUSTOM TRAINING CTA                                   -->
     <!-- ===================================================== -->
-
     <div
       class="relative mt-5 overflow-hidden rounded-2xl border border-slate-700/80 bg-gradient-to-br from-[#0f172a] via-[#172554] to-[#0b1220] shadow-xl"
     >
@@ -2520,35 +2293,21 @@ Choose beginner or advanced Active Directory training based on your team’s cur
       ></div>
 
       <div
-        class="pointer-events-none absolute -bottom-24 left-1/3 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl"
-        aria-hidden="true"
-      ></div>
-
-      <div
         class="relative grid items-center gap-6 p-6 sm:p-8 lg:grid-cols-12 lg:gap-8 lg:p-9"
       >
-        <!-- CTA Icon -->
         <div class="hidden lg:col-span-1 lg:flex">
           <div
             class="flex h-14 w-14 items-center justify-center rounded-2xl border border-red-500/20 bg-red-500/10 text-red-400"
           >
-            <i
-              data-lucide="sliders-horizontal"
-              class="h-6 w-6"
-              aria-hidden="true"
-            ></i>
+            <i data-lucide="sliders-horizontal" class="h-6 w-6" aria-hidden="true"></i>
           </div>
         </div>
 
-        <!-- CTA Copy -->
         <div class="lg:col-span-7">
           <div
             class="mb-3 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-red-400"
           >
-            <span
-              class="h-1.5 w-1.5 rounded-full bg-red-500"
-              aria-hidden="true"
-            ></span>
+            <span class="h-1.5 w-1.5 rounded-full bg-red-500" aria-hidden="true"></span>
             Custom Corporate Training
           </div>
 
@@ -2556,25 +2315,22 @@ Choose beginner or advanced Active Directory training based on your team’s cur
             Need Training Tailored to Your Team?
           </h3>
 
-          <p
-            class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base"
-          >
-            Choose a structured training path or create a tailored program
+          <p class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
+            Choose an established training path or create a tailored program
             based on your team’s roles, skill levels, and security priorities.
           </p>
         </div>
 
-        <!-- CTA Button -->
         <div class="lg:col-span-4 lg:flex lg:justify-end">
           <a
-            href="#corporate-training-form"
+            href="#corporate-training-form-card"
             class="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-red-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition-all duration-200 hover:bg-red-500 hover:shadow-red-600/40 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-slate-900 sm:w-auto"
           >
             <span>Discuss Your Training Needs</span>
 
             <i
               data-lucide="arrow-right"
-              class="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1"
+              class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
               aria-hidden="true"
             ></i>
           </a>
@@ -2584,6 +2340,87 @@ Choose beginner or advanced Active Directory training based on your team’s cur
   </div>
 </section>
 
+<!-- Shared styles for repeated card elements -->
+<style>
+  .course-technique {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    background: #ffffff;
+    padding: 0.375rem 0.625rem;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+  }
+
+  .training-format {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    background: #f8fafc;
+    padding: 0.375rem 0.625rem;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+  }
+</style>
+
+<!-- Select the requested course in the hero form -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const enquiryLinks = document.querySelectorAll(
+      ".course-enquiry-link[data-training]"
+    );
+
+    const trainingSelect = document.getElementById(
+      "training-interest"
+    );
+
+    const requestType = document.getElementById(
+      "form-request-type"
+    );
+
+    const formCard = document.getElementById(
+      "corporate-training-form-card"
+    );
+
+    enquiryLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const selectedTraining =
+          link.getAttribute("data-training");
+
+        if (trainingSelect && selectedTraining) {
+          trainingSelect.value = selectedTraining;
+          trainingSelect.dispatchEvent(
+            new Event("change", { bubbles: true })
+          );
+        }
+
+        if (requestType) {
+          requestType.value = "training-enquiry";
+        }
+
+        if (formCard) {
+          formCard.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }
+      });
+    });
+
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  });
+</script>
 <!-- ======================================================= -->
 <!-- COURSE ENQUIRY FORM SELECTION -->
 <!-- Place before the closing body tag -->
