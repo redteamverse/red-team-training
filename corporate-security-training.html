@@ -2238,65 +2238,161 @@
 
     <!-- ===================================================== -->
     <!-- EXPERT-LED TRAINING                                   -->
-    <!-- ===================================================== -->
-    <div
-      class="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
-    >
-      <div class="grid sm:grid-cols-[190px_1fr] lg:grid-cols-[230px_1fr]">
+  <!-- ===================================================== -->
+<!-- EXPERT-LED TRAINING                                   -->
+<!-- ===================================================== -->
+<div
+  class="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+>
+  <div
+    class="grid items-stretch lg:grid-cols-[minmax(420px,0.95fr)_1.3fr]"
+  >
 
+    <!-- ================================================= -->
+    <!-- AUTHENTIC TRAINING IMAGES                         -->
+    <!-- ================================================= -->
+    <div
+      class="grid grid-cols-2 gap-2 border-b border-slate-200 bg-slate-100 p-2 lg:border-b-0 lg:border-r"
+      aria-label="Altered Security training sessions"
+    >
+
+      <!-- Image 1 -->
+      <figure
+        class="group/image relative min-h-[175px] overflow-hidden rounded-xl bg-slate-900 sm:min-h-[220px] lg:min-h-[250px]"
+      >
+        <img
+          src="https://static.wixstatic.com/media/16cdd7_b7a9683368d740068824f2b7161f5627~mv2.avif/v1/fill/w_631,h_347,al_c,q_80,enc_avif,quality_auto/teaching.avif"
+          alt="Altered Security instructor delivering hands-on security training"
+          class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover/image:scale-[1.03]"
+          loading="lazy"
+          decoding="async"
+        />
+
+        <!-- Image Overlay -->
         <div
-          class="relative min-h-[170px] overflow-hidden bg-slate-100 sm:min-h-full"
+          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent"
+          aria-hidden="true"
+        ></div>
+
+        <!-- Image Label -->
+        <figcaption
+          class="absolute bottom-3 left-3 right-3 text-[10px] font-semibold uppercase tracking-wider text-white/90"
         >
-          <img
-            src="https://static.wixstatic.com/media/16cdd7_b7a9683368d740068824f2b7161f5627~mv2.avif/v1/fill/w_631,h_347,al_c,q_80,enc_avif,quality_auto/teaching.avif"
-            alt="Altered Security instructor delivering hands-on training"
-            class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 hover:scale-[1.03]"
-            loading="lazy"
-            decoding="async"
-          />
+          Instructor-Led Training
+        </figcaption>
+      </figure>
+
+      <!-- Image 2 -->
+      <figure
+        class="group/image relative min-h-[175px] overflow-hidden rounded-xl bg-slate-900 sm:min-h-[220px] lg:min-h-[250px]"
+      >
+        <img
+          src="https://static.wixstatic.com/media/16cdd7_718ce3961e0f40dc901a01f98c290216~mv2.jpg"
+          alt="Security professionals participating in an Altered Security hands-on training session"
+          class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover/image:scale-[1.03]"
+          loading="lazy"
+          decoding="async"
+        />
+
+        <!-- Image Overlay -->
+        <div
+          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent"
+          aria-hidden="true"
+        ></div>
+
+        <!-- Image Label -->
+        <figcaption
+          class="absolute bottom-3 left-3 right-3 text-[10px] font-semibold uppercase tracking-wider text-white/90"
+        >
+          Hands-On Team Session
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- AUTHORITY CONTENT                                 -->
+    <!-- ================================================= -->
+    <div class="flex items-center px-5 py-7 sm:px-7 lg:px-9 lg:py-8">
+      <div class="max-w-3xl">
+
+        <!-- Eyebrow -->
+        <div class="mb-3 flex items-center gap-2">
+          <span
+            class="h-px w-5 bg-red-500"
+            aria-hidden="true"
+          ></span>
+
+          <span
+            class="text-[10px] font-bold uppercase tracking-[0.15em] text-red-600"
+          >
+            Expert-Led Training
+          </span>
         </div>
 
-        <div class="flex items-center px-5 py-6 sm:px-7 lg:px-8">
-          <div>
-            <div class="mb-2.5 flex items-center gap-2">
-              <span class="h-px w-5 bg-red-500" aria-hidden="true"></span>
+        <!-- Heading -->
+        <h3
+          class="text-xl font-bold leading-tight tracking-tight text-slate-900 sm:text-2xl"
+        >
+          Training Led by Experienced Red Team Experts
+        </h3>
 
-              <span
-                class="text-[10px] font-bold uppercase tracking-[0.15em] text-red-600"
-              >
-                Expert-Led Training
-              </span>
-            </div>
+        <!-- Description -->
+        <p
+          class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-[15px] sm:leading-6"
+        >
+          Our hands-on programs are led by security experts who have spoken
+          and delivered training at
+          <span class="font-semibold text-slate-900">DEF CON</span>,
+          <span class="font-semibold text-slate-900">Black Hat</span>,
+          <span class="font-semibold text-slate-900">BruCON</span>, and
+          other leading security conferences.
+        </p>
 
-            <p class="max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-[15px] sm:leading-6">
-              Our hands-on programs are led by security experts who have spoken
-              and delivered training at
-              <span class="font-semibold text-slate-900">DEF CON</span>,
-              <span class="font-semibold text-slate-900">Black Hat</span>,
-              <span class="font-semibold text-slate-900">BruCON</span>, and
-              other leading security conferences.
-            </p>
+        <!-- Training Formats -->
+        <div
+          class="mt-5 flex flex-wrap gap-2"
+          aria-label="Available corporate training formats"
+        >
+          <span
+            class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[11px] font-semibold text-slate-600"
+          >
+            <i
+              data-lucide="building-2"
+              class="h-3.5 w-3.5 shrink-0 text-red-600"
+              aria-hidden="true"
+            ></i>
 
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="training-format">
-                <i data-lucide="building-2" class="h-3.5 w-3.5 text-red-600" aria-hidden="true"></i>
-                On-Site Training
-              </span>
+            On-Site Training
+          </span>
 
-              <span class="training-format">
-                <i data-lucide="monitor" class="h-3.5 w-3.5 text-red-600" aria-hidden="true"></i>
-                Virtual Delivery
-              </span>
+          <span
+            class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[11px] font-semibold text-slate-600"
+          >
+            <i
+              data-lucide="monitor"
+              class="h-3.5 w-3.5 shrink-0 text-red-600"
+              aria-hidden="true"
+            ></i>
 
-              <span class="training-format">
-                <i data-lucide="users" class="h-3.5 w-3.5 text-red-600" aria-hidden="true"></i>
-                Private Team Cohorts
-              </span>
-            </div>
-          </div>
+            Virtual Delivery
+          </span>
+
+          <span
+            class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[11px] font-semibold text-slate-600"
+          >
+            <i
+              data-lucide="users"
+              class="h-3.5 w-3.5 shrink-0 text-red-600"
+              aria-hidden="true"
+            ></i>
+
+            Private Team Cohorts
+          </span>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
     <!-- ===================================================== -->
     <!-- CUSTOM TRAINING CTA                                   -->
