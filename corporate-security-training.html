@@ -3187,181 +3187,279 @@ Get in-person support during the training</p>
       <!-- INTERACTIVE PLATFORM PREVIEW -->
       <!-- =================================================== -->
 
-      <div class="relative p-5 sm:p-7 lg:p-10">
+    <div class="relative p-5 sm:p-7 lg:p-10">
 
-        <!-- Preview Header and Tabs -->
+  <!-- Preview Header and Tabs -->
+  <div
+    class="mb-5 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between"
+  >
+    <div>
+      <p
+        class="text-[10px] font-bold uppercase tracking-[0.15em] text-red-600"
+      >
+        Platform Preview
+      </p>
+
+      <h4
+        id="platform-preview-title"
+        class="mt-1.5 text-xl font-bold tracking-tight text-slate-900 sm:text-2xl"
+      >
+        Red Team Labs Dashboard
+      </h4>
+    </div>
+
+    <!-- Preview Tabs -->
+    <div
+      class="grid w-full grid-cols-1 gap-2 sm:grid-cols-3 lg:w-auto"
+      role="tablist"
+      aria-label="Red Team Labs platform previews"
+    >
+      <!-- Dashboard Tab -->
+      <button
+        type="button"
+        id="platform-dashboard-tab"
+        class="platform-preview-tab inline-flex items-center justify-center gap-2 rounded-lg border border-red-600 bg-red-600 px-3.5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-red-600/20 transition-all"
+        role="tab"
+        aria-selected="true"
+        aria-controls="platform-preview-panel"
+        tabindex="0"
+        data-src="https://redteamverse.github.io/red-team-training/images/red-team-portal-4.png"
+        data-alt="Red Team Labs learner dashboard showing available labs and platform activity"
+        data-title="Red Team Labs Dashboard"
+      >
+        <i
+          data-lucide="layout-dashboard"
+          class="h-4 w-4"
+          aria-hidden="true"
+        ></i>
+
+        Dashboard
+      </button>
+
+      <!-- Lab Details Tab -->
+      <button
+        type="button"
+        id="platform-labs-tab"
+        class="platform-preview-tab inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-slate-600 transition-all hover:border-red-200 hover:text-red-600"
+        role="tab"
+        aria-selected="false"
+        aria-controls="platform-preview-panel"
+        tabindex="-1"
+        data-src="https://redteamverse.github.io/red-team-training/images/red-team-portal-3.png"
+        data-alt="Red Team Labs library showing labs filtered by category, status, and skill level"
+        data-title="Red Team Labs Dashboard"
+      >
+        <i
+          data-lucide="library"
+          class="h-4 w-4"
+          aria-hidden="true"
+        ></i>
+
+        Lab Details
+      </button>
+
+      <!-- Certification Exam Tab -->
+      <button
+        type="button"
+        id="platform-certification-tab"
+        class="platform-preview-tab inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-slate-600 transition-all hover:border-red-200 hover:text-red-600"
+        role="tab"
+        aria-selected="false"
+        aria-controls="platform-preview-panel"
+        tabindex="-1"
+        data-src="https://redteamverse.github.io/red-team-training/images/red-team-portal.png"
+        data-alt="Red Team Labs certification exam page showing progress, labs, and points"
+        data-title="Red Team Labs Dashboard"
+      >
+        <i
+          data-lucide="award"
+          class="h-4 w-4"
+          aria-hidden="true"
+        ></i>
+
+        Certification Exam
+      </button>
+    </div>
+  </div>
+
+  <!-- Screenshot Frame -->
+  <div
+    class="overflow-hidden rounded-2xl border border-slate-300 bg-[#17191d] shadow-[0_20px_55px_rgba(15,23,42,0.16)]"
+  >
+    <!-- Application Header -->
+    <div
+      class="flex items-center justify-between gap-4 border-b border-white/10 bg-[#111318] px-4 py-3 sm:px-5"
+    >
+      <div class="flex min-w-0 items-center gap-2.5">
         <div
-          class="mb-5 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between"
+          class="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-red-600 text-white"
         >
-          <div>
-            <p
-              class="text-[10px] font-bold uppercase tracking-[0.15em] text-red-600"
-            >
-              Platform Preview
-            </p>
-
-            <h4
-              id="platform-preview-title"
-              class="mt-1.5 text-xl font-bold tracking-tight text-slate-900 sm:text-2xl"
-            >
-              Red Team Labs Dashboard
-            </h4>
-
-            <p
-              id="platform-preview-description"
-              class="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600"
-            >          
-            </p>
-          </div>
-
-          <!-- Preview Tabs -->
-          <div
-            class="flex max-w-full gap-2 overflow-x-auto pb-1"
-            role="tablist"
-            aria-label="Red Team Labs platform previews"
-          >
-            <!-- Dashboard Tab -->
-            <button
-              type="button"
-              class="platform-preview-tab inline-flex shrink-0 items-center gap-2 rounded-lg border border-red-600 bg-red-600 px-3.5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-red-600/20 transition-all"
-              role="tab"
-              aria-selected="true"
-              data-src="https://redteamverse.github.io/red-team-training/images/red-team-portal-4.png"
-              data-alt="Red Team Labs learner dashboard showing available labs and platform activity"
-              data-title="Red Team Labs Dashboard"
-              data-description=""
-            >
-              <i
-                data-lucide="layout-dashboard"
-                class="h-4 w-4"
-                aria-hidden="true"
-              ></i>
-              Dashboard
-            </button>
-
-            <!-- Lab Library Tab -->
-            <button
-              type="button"
-              class="platform-preview-tab inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-slate-600 transition-all hover:border-red-200 hover:text-red-600"
-              role="tab"
-              aria-selected="false"
-              data-src="https://redteamverse.github.io/red-team-training/images/red-team-portal-3.png"
-              data-alt="Red Team Labs library showing labs filtered by category, status, and skill level"
-              data-title="Red Team Labs Dashboard"
-              data-description=""
-            >
-              <i
-                data-lucide="library"
-                class="h-4 w-4"
-                aria-hidden="true"
-              ></i>
-              Lab Details
-            </button>
-
-            <!-- Learning Paths Tab -->
-            <button
-              type="button"
-              class="platform-preview-tab inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-slate-600 transition-all hover:border-red-200 hover:text-red-600"
-              role="tab"
-              aria-selected="false"
-              data-src="https://redteamverse.github.io/red-team-training/images/red-team-portal-1.png"
-              data-alt="Red Team Labs learning path completion page showing progress, labs, and points"
-              data-title="Red Team Labs Dashboard"
-              data-description=""
-            >
-              <i
-                data-lucide="route"
-                class="h-4 w-4"
-                aria-hidden="true"
-              ></i>
-              Certification Exam
-            </button>
-          </div>
+          <i
+            data-lucide="monitor"
+            class="h-3.5 w-3.5"
+            aria-hidden="true"
+          ></i>
         </div>
 
-        <!-- Screenshot Frame -->
-        <div
-          class="overflow-hidden rounded-2xl border border-slate-300 bg-[#17191d] shadow-[0_20px_55px_rgba(15,23,42,0.16)]"
+        <span
+          class="truncate text-[11px] font-semibold uppercase tracking-wider text-slate-300"
         >
-          <!-- Application Header -->
-          <div
-            class="flex items-center justify-between gap-4 border-b border-white/10 bg-[#111318] px-4 py-3 sm:px-5"
-          >
-            <div class="flex items-center gap-2.5">
-              <div
-                class="flex h-7 w-7 items-center justify-center rounded-md bg-red-600 text-white"
-              >
-                <i
-                  data-lucide="monitor"
-                  class="h-3.5 w-3.5"
-                  aria-hidden="true"
-                ></i>
-              </div>
-
-              <span
-                class="text-[11px] font-semibold uppercase tracking-wider text-slate-300"
-              >
-                Red Labs Platform
-              </span>
-            </div>
-
-            <span
-              class="hidden items-center gap-1.5 text-[10px] font-medium text-slate-500 sm:inline-flex"
-            >
-              <span
-                class="h-1.5 w-1.5 rounded-full bg-emerald-400"
-                aria-hidden="true"
-              ></span>
-            
-            </span>
-          </div>
-
-          <!-- Screenshot -->
-          <div
-            id="platform-preview-panel"
-            class="relative aspect-[2/1] overflow-hidden bg-[#1a1c20]"
-            role="tabpanel"
-            aria-live="polite"
-          >
-            <img
-              id="platform-preview-image"
-              src="https://redteamverse.github.io/red-team-training/images/red-team-portal-4.png"
-              alt="Red Team Labs learner dashboard showing available labs and platform activity"
-              class="absolute left-0 top-[-8.2%] h-auto w-full transition-opacity duration-200"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </div>
-
-        <!-- Authenticity Note -->
-      <!-- Platform Capability Markers -->
-<div
-  class="mt-4 flex items-center justify-center gap-3"
-  aria-label="Labs, learning paths, and progress tracking"
->
-  <!-- Left Line -->
-  <span
-    class="h-px w-8 bg-slate-200 sm:w-12"
-    aria-hidden="true"
-  ></span>
-
-  <!-- Labs -->
-
-
-  <!-- Learning Paths -->
- 
-
-  <!-- Progress -->
- 
-
-  <!-- Right Line -->
-  <span
-    class="h-px w-8 bg-slate-200 sm:w-12"
-    aria-hidden="true"
-  ></span>
-</div>
+          Red Labs Platform
+        </span>
       </div>
+
+      <span
+        class="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400"
+        aria-hidden="true"
+      ></span>
+    </div>
+
+    <!-- Screenshot Area -->
+    <div
+      id="platform-preview-panel"
+      class="relative overflow-hidden bg-[#1a1c20] p-1.5 sm:p-2.5 lg:p-3"
+      role="tabpanel"
+      aria-labelledby="platform-dashboard-tab"
+      aria-live="polite"
+      aria-busy="false"
+    >
+      <div
+        class="flex min-h-[190px] items-center justify-center overflow-hidden rounded-lg bg-[#202329] sm:min-h-[300px] lg:min-h-[420px]"
+      >
+        <img
+          id="platform-preview-image"
+          src="https://redteamverse.github.io/red-team-training/images/red-team-portal-4.png"
+          alt="Red Team Labs learner dashboard showing available labs and platform activity"
+          class="block h-auto max-h-[720px] w-full object-contain object-center opacity-100 transition-opacity duration-200"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Platform Capability Markers -->
+ 
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabs = Array.from(
+      document.querySelectorAll(".platform-preview-tab")
+    );
+
+    const previewPanel = document.getElementById(
+      "platform-preview-panel"
+    );
+
+    const previewImage = document.getElementById(
+      "platform-preview-image"
+    );
+
+    const previewTitle = document.getElementById(
+      "platform-preview-title"
+    );
+
+    if (
+      !tabs.length ||
+      !previewPanel ||
+      !previewImage ||
+      !previewTitle
+    ) {
+      return;
+    }
+
+    function setActiveTab(selectedTab, moveFocus) {
+      const newSource = selectedTab.dataset.src;
+      const newAlt = selectedTab.dataset.alt;
+      const newTitle = selectedTab.dataset.title;
+
+      tabs.forEach(function (tab) {
+        const isActive = tab === selectedTab;
+
+        tab.setAttribute("aria-selected", String(isActive));
+        tab.setAttribute("tabindex", isActive ? "0" : "-1");
+
+        tab.classList.toggle("border-red-600", isActive);
+        tab.classList.toggle("bg-red-600", isActive);
+        tab.classList.toggle("text-white", isActive);
+        tab.classList.toggle("shadow-lg", isActive);
+        tab.classList.toggle("shadow-red-600/20", isActive);
+
+        tab.classList.toggle("border-slate-200", !isActive);
+        tab.classList.toggle("bg-white", !isActive);
+        tab.classList.toggle("text-slate-600", !isActive);
+        tab.classList.toggle("hover:border-red-200", !isActive);
+        tab.classList.toggle("hover:text-red-600", !isActive);
+      });
+
+      previewPanel.setAttribute(
+        "aria-labelledby",
+        selectedTab.id
+      );
+
+      previewPanel.setAttribute("aria-busy", "true");
+      previewImage.classList.remove("opacity-100");
+      previewImage.classList.add("opacity-0");
+
+      const nextImage = new Image();
+
+      nextImage.onload = function () {
+        previewImage.src = newSource;
+        previewImage.alt = newAlt;
+        previewTitle.textContent = newTitle;
+
+        window.requestAnimationFrame(function () {
+          previewImage.classList.remove("opacity-0");
+          previewImage.classList.add("opacity-100");
+          previewPanel.setAttribute("aria-busy", "false");
+        });
+      };
+
+      nextImage.onerror = function () {
+        previewImage.classList.remove("opacity-0");
+        previewImage.classList.add("opacity-100");
+        previewPanel.setAttribute("aria-busy", "false");
+      };
+
+      nextImage.src = newSource;
+
+      if (moveFocus) {
+        selectedTab.focus();
+      }
+    }
+
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener("click", function () {
+        setActiveTab(tab, false);
+      });
+
+      tab.addEventListener("keydown", function (event) {
+        let nextIndex = index;
+
+        if (event.key === "ArrowRight") {
+          nextIndex = (index + 1) % tabs.length;
+        } else if (event.key === "ArrowLeft") {
+          nextIndex =
+            (index - 1 + tabs.length) % tabs.length;
+        } else if (event.key === "Home") {
+          nextIndex = 0;
+        } else if (event.key === "End") {
+          nextIndex = tabs.length - 1;
+        } else {
+          return;
+        }
+
+        event.preventDefault();
+        setActiveTab(tabs[nextIndex], true);
+      });
+    });
+
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  });
+</script>
     </article>
   </div>
 </section>
