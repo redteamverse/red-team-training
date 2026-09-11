@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+AltSecCON FAQs | Training & Conference Questions
+</title>
+
+
+<!-- Google Font -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link 
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* =============================
+RESET
+============================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+
+body{
+
+  font-family:'Inter',sans-serif;
+
+  background:#F9FAFB;
+
+  color:#111827;
+
+}
+
+
+/* =============================
+CONTAINER
+============================= */
+
+.container{
+
+  max-width:900px;
+
+  margin:auto;
+
+  padding:0 20px;
+
+}
+
+
+/* =============================
+FAQ SECTION
+============================= */
+
+
+.faq-section{
+
+  padding:90px 0;
+
+}
+
+
+/* HEADER */
+
+.faq-header{
+
+  text-align:center;
+
+  margin-bottom:50px;
+
+}
+
+
+.faq-label{
+
+  display:inline-block;
+
+  color:#B91C1C;
+
+  font-size:13px;
+
+  font-weight:800;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+
+  margin-bottom:14px;
+
+}
+
+
+.faq-header h1{
+
+  font-size:52px;
+
+  line-height:1.1;
+
+  margin-bottom:18px;
+
+}
+
+
+.faq-header p{
+
+  color:#6B7280;
+
+  font-size:18px;
+
+  line-height:1.8;
+
+  max-width:650px;
+
+  margin:auto;
+
+}
+
+
+/* FAQ CARD */
+
+
+.faq-item{
+
+  background:#fff;
+
+  border:1px solid #E5E7EB;
+
+  border-radius:18px;
+
+  margin-bottom:16px;
+
+  overflow:hidden;
+
+  transition:.3s;
+
+}
+
+
+.faq-item.active{
+
+  border-color:#B91C1C;
+
+  box-shadow:
+  0 12px 30px rgba(185,28,28,.08);
+
+}
+
+
+.faq-question{
+
+  width:100%;
+
+  background:none;
+
+  border:none;
+
+  cursor:pointer;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:24px 26px;
+
+  text-align:left;
+
+  font-size:18px;
+
+  font-weight:700;
+
+  color:#111827;
+
+}
+
+
+.faq-icon{
+
+  font-size:28px;
+
+  color:#B91C1C;
+
+  flex-shrink:0;
+
+  transition:.3s;
+
+}
+
+
+.faq-item.active .faq-icon{
+
+  transform:rotate(45deg);
+
+}
+
+
+.faq-answer{
+
+  max-height:0;
+
+  overflow:hidden;
+
+  transition:max-height .4s ease;
+
+}
+
+
+.faq-item.active .faq-answer{
+
+  max-height:220px;
+
+}
+
+
+.faq-answer p{
+
+  padding:0 26px 24px;
+
+  color:#4B5563;
+
+  line-height:1.8;
+
+  font-size:16px;
+
+}
+
+
+/* Explore button */
+
+
+.faq-more{
+
+  text-align:center;
+
+  margin:35px 0 45px;
+
+}
+
+
+#showMore{
+
+  background:#2B2B50;
+
+  color:#fff;
+
+  border:none;
+
+  padding:16px 32px;
+
+  border-radius:14px;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+}
+
+
+#showMore:hover{
+
+  background:#B91C1C;
+
+}
+
+
+.hidden-faqs{
+
+  display:none;
+
+}
+
+
+/* MOBILE */
+
+
+@media(max-width:768px){
+
+
+.faq-section{
+
+  padding:70px 0;
+
+}
+
+
+.faq-header h1{
+
+  font-size:34px;
+
+}
+
+
+.faq-header p{
+
+  font-size:16px;
+
+}
+
+
+.faq-question{
+
+  padding:20px;
+
+  font-size:16px;
+
+  gap:15px;
+
+}
+
+
+.faq-answer p{
+
+  padding:0 20px 20px;
+
+}
+
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<section class="faq-section">
+
+
+<div class="container">
+
+
+<!-- Header -->
+
+
+<div class="faq-header">
+
+
+<span class="faq-label">
+FAQs
+</span>
+
+
+<h1>
+Frequently Asked Questions
+</h1>
+
+
+<p>
+Find answers to common questions about AltSecCON training,
+conference, and participation.
+</p>
+
+
+</div>
+
+
+
+<!-- Top FAQs -->
+
+
+<div class="faq-item active">
+
+<button class="faq-question">
+
+<span>
+Is lab access included after the training?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+
+<div class="faq-answer">
+
+<p>
+Yes — all training programs include 60 days of lab access.
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+Is food included?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+
+<div class="faq-answer">
+
+<p>
+Yes! The package includes two tea/coffee breaks and lunch.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+How can I cancel my training subscription?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+
+<div class="faq-answer">
+
+<p>
+All purchases are non-refundable. If you are unable to attend, you can transfer your ticket to a friend or colleague by emailing contact@alteredsecurity.com with your details.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+Will both training and conference be held at the same location?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+
+<div class="faq-answer">
+
+<p>
+Yes — both the instructor-led training and conference will be conducted at Hilton EGL, Bangalore.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+Is transportation or accommodation included?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+
+<div class="faq-answer">
+
+<p>
+No, participants are responsible for arranging their own travel and accommodation.
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- Explore button -->
+
+
+<div class="faq-more">
+
+
+<button id="showMore">
+
+Read All FAQs
+
+</button>
+
+
+</div>
+
+
+
+<!-- Hidden FAQs -->
+
+
+<div class="hidden-faqs" id="moreFaqs">
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+<span>How do I request an invoice?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Please email contact@alteredsecurity.com to request an invoice.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+<span>
+Will I receive a certificate for participating in training?
+</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Yes, all participants receive a certificate of completion from Altered Security.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+<span>
+Are seats limited for training?
+</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Yes — training batches have limited seats to ensure personalized guidance and hands-on learning.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+<span>
+Can I attend only the conference without training?
+</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Yes — you can choose the Conference Only option.
+</p>
+</div>
+
+</div>
+<div class="faq-item">
+
+<button class="faq-question">
+<span>
+What is the maximum number of participants for the courses?
+</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Each training course has a different maximum number of participants, determined by the course capacity and trainer’s requirements.
+</p>
+</div>
+
+</div>
+<div class="faq-item">
+
+<button class="faq-question">
+<span>
+How can I register or get more details?
+</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+You can secure your seat directly through the booking options on this page. If you’re unsure which option is right for you, you can also submit your details and our team will help you choose the best fit.</p>
+</div>
+
+</div>
+  
+<div class="faq-item">
+
+<button class="faq-question">
+<span>
+How do I confirm if my registration was successful?
+</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+You will receive a confirmation email at your registered email address once the payment is completed.
+
+</div>
+
+</div>  
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<script>
+
+
+/* Accordion */
+
+document.addEventListener("click",function(e){
+
+
+const button =
+e.target.closest(".faq-question");
+
+
+if(!button) return;
+
+
+const item =
+button.parentElement;
+
+
+document
+.querySelectorAll(".faq-item")
+.forEach(faq=>{
+
+
+if(faq!==item){
+
+faq.classList.remove("active");
+
+}
+
+});
+
+
+item.classList.toggle("active");
+
+
+});
+
+
+/* Show all FAQs */
+
+
+document
+.getElementById("showMore")
+.addEventListener("click",function(){
+
+
+document
+.getElementById("moreFaqs")
+.style.display="block";
+
+
+this.style.display="none";
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>

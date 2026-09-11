@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs | AltSecCON</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================
+BASE
+===================== */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #F9FAFB;
+  color: #111827;
+}
+
+/* =====================
+SECTION
+===================== */
+.faq-section {
+  padding: 96px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.faq-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.faq-intro {
+  color: #6B7280;
+  margin-bottom: 40px;
+}
+
+/* =====================
+TABS
+===================== */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.tab {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #E5E7EB;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.tab.active {
+  background: #B91C1C;
+  color: #fff;
+  border-color: #B91C1C;
+}
+
+/* =====================
+FAQ LIST
+===================== */
+.faq-list {
+  text-align: left;
+}
+
+/* ITEM */
+.faq-item {
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/* QUESTION */
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 18px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* ICON */
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-size: 1.2rem;
+}
+
+.faq-item.active .faq-question::after {
+  content: "−";
+}
+
+/* ANSWER */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+  padding-bottom: 16px;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+}
+
+/* =====================
+CTA
+===================== */
+.faq-cta {
+  margin-top: 60px;
+}
+
+.faq-cta a {
+  background: #B91C1C;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="faq-section">
+
+<h1>Frequently Asked Questions</h1>
+<p class="faq-intro">Everything you need to know before attending AltSecCON.</p>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" data-tab="event">Event</div>
+  <div class="tab" data-tab="venue">Venue</div>
+  <div class="tab" data-tab="training">Training</div>
+  <div class="tab" data-tab="conference">Conference</div>
+  <div class="tab" data-tab="tickets">Tickets</div>
+  <div class="tab" data-tab="included">What’s Included</div>
+</div>
+
+<!-- FAQ CONTENT -->
+<div class="faq-list" id="faqContent"></div>
+
+<!-- CTA -->
+<div class="faq-cta">
+  <a href="https://redteamverse.github.io/red-team-training/altseccon-book-tickets.html">
+    Book Your Seat
+  </a>
+</div>
+
+</section>
+
+<script>
+
+const faqData = {
+
+event: [
+  {q:"What is AltSecCON and how is it different from other security events?", a:"AltSecCON is a hands-on cybersecurity experience combining practical training with real-world conference sessions focused on offensive security."},
+  {q:"Who should attend AltSecCON?", a:"Security professionals, red teamers, SOC analysts, students, and cybersecurity enthusiasts."},
+  {q:"Is AltSecCON suitable for beginners?", a:"Yes. We offer beginner to advanced level sessions and structured training paths."},
+  {q:"What makes AltSecCON unique?", a:"Focus on real-world attack techniques, hands-on labs, and practitioner-led sessions."},
+  {q:"Will there be networking opportunities?", a:"Yes, you can connect with industry professionals, instructors, and peers."},
+  {q:"Are the sessions practical or theoretical?", a:"Most sessions are hands-on and based on real-world attack scenarios."},
+  {q:"Can I attend both training and conference?", a:"Yes, combo tickets allow access to both."},
+  {q:"Is this event recognized in the cybersecurity community?", a:"Yes, it is organized by Altered Security, known globally for red team training."}
+],
+
+venue: [
+  {q:"Where is the event located?", a:"The event will take place in Bengaluru."},
+  {q:"Is accommodation included?", a:"No, but many hotels are available nearby."}
+],
+
+training: [
+  {q:"What courses are included?", a:"CRTP, CRTE, CETP and more."},
+  {q:"Will I get certification?", a:"Yes, certification is included."}
+],
+
+conference: [
+  {q:"What topics will be covered?", a:"Red teaming, cloud security, AI abuse, and more."},
+  {q:"Will recordings be available?", a:"No, sessions are exclusive."}
+],
+
+tickets: [
+  {q:"What ticket types are available?", a:"Training, Conference, and Combo passes."},
+  {q:"Is there a refund policy?", a:"Tickets are non-refundable."}
+],
+
+included: [
+  {q:"What does the ticket include?", a:"Sessions, networking, and materials."},
+  {q:"Is food included?", a:"Yes, refreshments and lunch are included."}
+]
+
+};
+
+const tabs = document.querySelectorAll(".tab");
+const content = document.getElementById("faqContent");
+
+function renderFAQ(tab) {
+  content.innerHTML = faqData[tab].map(item => `
+    <div class="faq-item">
+      <button class="faq-question">${item.q}</button>
+      <div class="faq-answer"><p>${item.a}</p></div>
+    </div>
+  `).join("");
+
+  document.querySelectorAll(".faq-question").forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.parentElement.classList.toggle("active");
+    });
+  });
+}
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelector(".tab.active").classList.remove("active");
+    tab.classList.add("active");
+    renderFAQ(tab.dataset.tab);
+  });
+});
+
+renderFAQ("event");
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,11475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>
+Active Directory Attacks for Red and Blue Teams - Basic Edition
+</title>
+
+<meta
+name="description"
+content="Enterprise Active Directory training covering enumeration, privilege escalation, Kerberos attacks, trust abuse, persistence, monitoring and Active Directory defense."
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+
+:root{
+
+--color-primary:#B91C1C;
+--color-primary-light:#EA3037;
+
+--color-secondary:#2B2B50;
+--color-secondary-light:#1E3A8A;
+
+--color-text-main:#111827;
+--color-body:#4B5563;
+--color-muted:#6B7280;
+
+--color-bg:#FFFFFF;
+--color-bg-light:#F9FAFB;
+
+--color-border:#E5E7EB;
+
+--success:#10B981;
+
+--shadow-sm:0 2px 6px rgba(0,0,0,.05);
+--shadow-md:0 10px 30px rgba(17,24,39,.08);
+--shadow-lg:0 20px 50px rgba(17,24,39,.12);
+
+--radius:18px;
+
+--container:1280px;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:Inter,sans-serif;
+
+background:var(--color-bg);
+
+color:var(--color-text-main);
+
+line-height:1.7;
+
+overflow-x:hidden;
+
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+button{
+
+font-family:inherit;
+cursor:pointer;
+border:none;
+
+}
+
+.container{
+
+max-width:var(--container);
+
+margin:auto;
+
+padding-inline:24px;
+
+}
+
+section{
+
+padding:90px 0;
+
+}
+
+   
+    
+h1{
+
+font-size:clamp(2.8rem,5vw,4rem);
+
+line-height:1.05;
+
+font-weight:800;
+
+letter-spacing:-2px;
+
+}
+
+h2{
+font-size:42px;
+line-height:1.15;
+font-weight:800;
+margin-bottom:24px;
+}
+    
+@media(max-width:768px){
+
+    h2 {    
+    font-size:28px;
+line-height:1.15;
+font-weight:800;
+margin-bottom:24px;
+
+  
+        }
+    }    
+
+h3{
+
+font-size:1.25rem;
+
+font-weight:700;
+
+}
+
+p{
+
+color:var(--color-body);
+    
+
+}
+
+.site-header{
+
+position:sticky;
+
+top:0;
+
+background:rgba(255,255,255,.95);
+
+backdrop-filter:blur(12px);
+
+z-index:100;
+
+border-bottom:1px solid var(--color-border);
+
+}
+
+.nav{
+
+height:80px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+.logo{
+
+font-size:1.2rem;
+
+font-weight:800;   
+margin: 0 auto;
+color:var(--color-primary);
+
+}
+
+.nav-links{
+
+display:flex;
+
+gap:30px;
+
+}
+
+.btn{
+
+padding:14px 24px;
+
+border-radius:12px;
+
+font-weight:700;
+
+transition:.25s;
+
+display:inline-flex;
+
+gap:10px;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.btn-primary{
+
+background:var(--color-primary);
+
+color:white;
+
+}
+
+.btn-primary:hover{
+
+background:var(--color-primary-light);
+
+transform:translateY(-2px);
+
+}
+
+.btn-secondary{
+
+background:var(--color-secondary-light);
+
+color:white;
+
+}
+
+.btn-secondary:hover{
+
+opacity:.9;
+
+}
+
+.hero{
+
+background:
+
+linear-gradient(
+135deg,
+#2B2B50,
+#111827
+);
+
+color:white;
+
+padding-top:120px;
+
+}
+
+.hero-grid{
+
+display:grid;
+
+grid-template-columns:1.3fr .8fr;
+
+gap:50px;
+
+align-items:center;
+
+}
+
+.eyebrow{
+
+display:inline-block;
+
+background:rgba(255,255,255,.12);
+
+padding:8px 14px;
+
+border-radius:999px;
+
+font-size:.85rem;
+
+margin-bottom:22px;
+
+}
+
+.hero p{
+
+color:#D1D5DB;
+
+margin:26px 0;
+
+font-size:1.1rem;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:16px;
+
+flex-wrap:wrap;
+
+margin-top:30px;
+
+}
+
+.info-row{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:16px;
+
+margin-top:40px;
+
+}
+
+.info-box{
+
+background:rgba(255,255,255,.08);
+
+padding:18px;
+
+border-radius:16px;
+
+display:flex;
+
+gap:12px;
+
+align-items:center;
+
+}
+
+.info-box svg{
+
+color:#EA3037;
+
+}
+
+.hero-card{
+
+background:white;
+
+padding:35px;
+
+border-radius:24px;
+
+color:black;
+
+box-shadow:var(--shadow-lg);
+
+}
+
+.hero-card ul{
+
+margin-top:18px;
+
+padding-left:20px;
+
+color:var(--color-body);
+
+}
+
+.hero-card li{
+
+margin-bottom:10px;
+
+}
+
+.trust{
+
+background:#111827;
+
+color:white;
+
+padding:28px 0;
+
+}
+
+.trust-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+.trust-item{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-weight:600;
+
+}
+
+.trust-item svg{
+
+color:#10B981;
+
+}
+
+.section-head{
+
+text-align:center;
+
+max-width:760px;
+
+margin:auto auto 60px;
+
+}
+
+.grid-4{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:24px;
+
+}
+
+.grid-3{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:24px;
+
+}
+
+.grid-2{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:24px;
+
+}
+
+.card{
+
+background:white;
+
+padding:28px;
+
+border:1px solid var(--color-border);
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow-sm);
+
+transition:.25s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:var(--shadow-md);
+
+}
+
+.card svg{
+
+width:32px;
+
+height:32px;
+
+margin-bottom:18px;
+
+color:var(--color-primary);
+
+}
+
+.alt{
+
+background:var(--color-bg-light);
+
+}
+
+.pills{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+}
+
+.pill{
+
+background:#FEE2E2;
+
+padding:12px 18px;
+
+border-radius:999px;
+
+font-weight:600;
+
+font-size:.92rem;
+
+color:var(--color-primary);
+
+}
+
+.accordion{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.acc-btn{
+
+width:100%;
+
+background:white;
+
+padding:24px;
+
+font-size:1rem;
+
+font-weight:700;
+
+border-radius:16px;
+
+border:1px solid var(--color-border);
+
+display:flex;
+
+justify-content:space-between;
+
+}
+
+.acc-panel{
+
+display:none;
+
+padding:20px;
+
+border:1px solid var(--color-border);
+
+border-radius:0 0 16px 16px;
+
+background:white;
+
+}
+
+.acc-panel.active{
+
+display:block;
+
+}
+
+.checklist{
+
+display:grid;
+
+gap:18px;
+
+}
+
+.check{
+
+display:flex;
+
+gap:12px;
+
+align-items:center;
+
+}
+
+.check svg{
+
+color:#10B981;
+
+}
+
+.blog{
+
+padding:28px;
+
+background:white;
+
+border:1px solid var(--color-border);
+
+border-radius:20px;
+
+}
+
+.blog span{
+
+font-size:.85rem;
+
+color:var(--color-muted);
+
+}
+
+.final{
+
+background:#111827;
+
+color:white;
+
+text-align:center;
+
+margin: 0 auto;
+}
+
+.final p{
+
+color:#D1D5DB;
+
+max-width:650px;
+
+margin:auto;
+
+}
+
+   
+    
+    
+footer{
+
+background:#2B2B50;
+
+padding:40px;
+
+color:white;
+
+text-align:center;
+
+}
+
+@media(min-width:768px) {
+.sticky-mobile{
+
+position: fixed;
+    top: 90%;
+    right: 50px;
+
+}
+    
+.logo{
+
+font-size:1.2rem;
+
+font-weight:800;  
+color:var(--color-primary);
+    margin: 0px;
+
+}    
+    }
+    
+    
+    
+@media(max-width:1000px){
+
+.hero-grid,
+.grid-4,
+.grid-3,
+.grid-2,
+.trust-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.nav-links{
+
+display:none;
+
+}
+
+.hero{
+
+text-align:center;
+
+}
+
+.info-row{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+}
+
+@media(max-width:768px){
+
+section{
+
+padding:64px 0;
+
+}
+
+.sticky-mobile{
+
+display:flex;
+
+position:fixed;
+
+bottom:0;
+
+left:0;
+
+right:0;
+
+background:white;
+
+padding:14px;
+
+border-top:1px solid var(--color-border);
+
+z-index:99;
+
+box-shadow:0 -8px 30px rgba(0,0,0,.08);
+
+}
+
+.sticky-mobile .btn{
+
+width:100%;
+
+}
+
+body{
+
+padding-bottom:90px;
+
+}
+
+}
+
+button:focus,
+a:focus{
+
+outline:3px solid #EA3037;
+
+outline-offset:3px;
+
+}
+.delivery-signal{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin-top:22px;
+
+font-size:.72rem;
+
+font-weight:600;
+
+color:#D1D5DB;
+
+align-items:center;
+
+}
+
+
+
+@media(max-width:768px){
+
+.delivery-signal{
+
+justify-content:center;
+
+font-size:.605rem;
+
+gap:8px;
+
+}
+
+}
+    
+.lab-depth{
+
+margin-top:28px;
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+align-items:center;
+
+font-size:.9rem;
+
+font-weight:600;
+
+color:#CBD5E1;
+
+opacity:.92;
+
+}
+
+.lab-depth span:nth-child(even){
+
+opacity:.45;
+
+}
+
+@media(max-width:768px){
+
+.lab-depth{
+
+justify-content:center;
+
+font-size:.82rem;
+
+line-height:1.6;
+
+}
+
+}    
+
+
+.hero-card h3{
+
+text-align:center;
+
+margin-bottom:26px;
+
+}
+
+.coverage-grid{
+
+display:grid;
+
+gap:14px;
+
+}
+
+.coverage-grid div{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:12px 14px;
+
+border-radius:14px;
+
+background:#F9FAFB;
+
+font-weight:600;
+
+color:#374151;
+
+transition:.2s;
+
+}
+
+.coverage-grid div:hover{
+
+background:#FEE2E2;
+
+transform:translateX(4px);
+
+}
+
+.coverage-grid svg{
+
+width:18px;
+
+height:18px;
+
+color:#B91C1C;
+
+flex-shrink:0;
+
+}    
+    
+@media(max-width:1000px){
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+gap:36px;
+
+}
+
+.hero{
+
+padding-top:90px;
+
+
+
+}
+
+.hero-content{
+
+text-align:center;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.info-row{
+
+grid-template-columns:1fr;
+
+gap:14px;
+
+}
+
+
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+padding-top:70px;
+
+}
+
+h1{
+
+font-size:2.55rem;
+
+line-height:1.08;
+
+letter-spacing:-1.5px;
+
+}
+
+.hero p{
+
+font-size:1rem;
+
+line-height:1.8;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+width:100%;
+
+}
+
+.hero-buttons .btn{
+
+width:100%;
+
+}
+
+.info-box{
+
+padding:16px;
+
+font-size:.95rem;
+
+}
+
+
+
+}  
+    
+.hero-card{
+
+background:white;
+
+padding:28px;
+
+border-radius:24px;
+
+box-shadow:var(--shadow-lg);
+
+max-width:100%;
+
+}
+
+.hero-card h3{
+
+text-align:center;
+
+margin-bottom:22px;
+
+font-size:1.35rem;
+
+}
+
+.coverage-grid{
+
+display:grid;
+
+grid-template-columns:1fr;
+
+gap:10px;
+
+}
+
+.coverage-grid div{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:14px 16px;
+
+background:#F9FAFB;
+
+border:1px solid #F3F4F6;
+
+border-radius:14px;
+
+font-weight:600;
+
+font-size:.95rem;
+
+color:#374151;
+
+transition:.25s;
+
+min-height:54px;
+
+}
+
+.coverage-grid div:hover{
+
+background:#FEE2E2;
+
+border-color:#FECACA;
+
+}
+
+.coverage-grid svg{
+
+width:18px;
+
+height:18px;
+
+color:#B91C1C;
+
+flex-shrink:0;
+
+}
+
+@media(max-width:768px){
+
+.hero-card{
+
+padding:22px;
+
+border-radius:22px;
+
+}
+
+.hero-card h3{
+
+font-size:1.2rem;
+
+margin-bottom:18px;
+
+}
+
+.coverage-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
+
+}
+
+.coverage-grid div{
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:14px 10px;
+
+min-height:90px;
+
+font-size:.82rem;
+
+gap:8px;
+
+font-weight:700;
+
+line-height:1.3;
+
+}
+
+.coverage-grid svg{
+
+width:20px;
+
+height:20px;
+
+}
+
+}
+
+@media(max-width:420px){
+
+.coverage-grid div{
+
+font-size:.78rem;
+
+padding:12px 8px;
+
+min-height:82px;
+
+}
+
+}    
+    
+.why-ad{
+
+background:#fff;
+
+}
+
+.why-card{
+
+padding:32px;
+
+height:100%;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+transition:.25s;
+
+}
+
+.why-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:var(--shadow-md);
+
+border-color:#FECACA;
+
+}
+
+.why-icon{
+
+width:58px;
+
+height:58px;
+
+border-radius:16px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#FEF2F2;
+
+margin-bottom:20px;
+
+}
+
+.why-icon svg{
+
+width:26px;
+
+height:26px;
+
+color:var(--color-primary);
+
+}
+
+.why-card h3{
+
+margin-bottom:12px;
+
+font-size:1.15rem;
+
+line-height:1.4;
+
+}
+
+.why-card p{
+
+font-size:.95rem;
+
+color:var(--color-body);
+
+line-height:1.7;
+
+}
+
+@media(max-width:768px){
+
+.why-card{
+
+padding:24px;
+
+}
+
+.why-icon{
+
+width:50px;
+
+height:50px;
+
+}
+
+.why-icon svg{
+
+width:22px;
+
+height:22px;
+
+}
+
+}    
+.learn-grid{
+
+margin-top:60px;
+
+}
+
+.learn-card{
+
+padding:34px;
+
+height:100%;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+transition:.25s;
+
+border:1px solid var(--color-border);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.learn-card:hover{
+
+transform:translateY(-6px);
+
+border-color:#FECACA;
+
+box-shadow:var(--shadow-md);
+
+}
+
+.learn-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:4px;
+
+background:
+
+linear-gradient(
+90deg,
+#B91C1C,
+#EA3037
+);
+
+transform:scaleX(0);
+
+transition:.25s;
+
+}
+
+.learn-card:hover::before{
+
+transform:scaleX(1);
+
+}
+
+.learn-icon{
+
+width:58px;
+
+height:58px;
+
+border-radius:16px;
+
+background:#FEF2F2;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin-bottom:22px;
+
+}
+
+.learn-icon svg{
+
+width:24px;
+
+height:24px;
+
+color:#B91C1C;
+
+}
+
+.learn-card h3{
+
+margin-bottom:14px;
+
+font-size:1.2rem;
+
+line-height:1.4;
+
+}
+
+.learn-card p{
+
+font-size:.95rem;
+
+line-height:1.75;
+
+color:var(--color-body);
+
+}
+
+.eeat-signal{
+
+max-width:920px;
+
+margin:56px auto 0;
+
+text-align:center;
+
+}
+
+.eeat-line{
+
+width:90px;
+
+height:4px;
+
+background:
+
+linear-gradient(
+90deg,
+#B91C1C,
+#EA3037
+);
+
+margin:0 auto 24px;
+
+border-radius:999px;
+
+}
+
+.eeat-signal p{
+
+font-size:1rem;
+
+font-weight:500;
+
+color:#4B5563;
+
+line-height:1.8;
+
+}
+
+@media(max-width:768px){
+
+.learn-card{
+
+padding:26px;
+
+}
+
+.learn-icon{
+
+width:52px;
+
+height:52px;
+
+}
+
+.learn-card p{
+
+font-size:.92rem;
+
+line-height:1.7;
+
+}
+
+.eeat-signal{
+
+margin-top:42px;
+
+}
+
+}    
+.attack-techniques{
+
+background:#fff;
+
+}
+
+.tech-group{
+
+margin-top:42px;
+
+}
+
+.tech-group:first-of-type{
+
+margin-top:56px;
+
+}
+
+.tech-label{
+
+font-size:1rem;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+.attack{
+
+color:#B91C1C;
+
+}
+
+.privilege{
+
+color:#2B2B50l
+
+}
+
+.defense{
+
+color:#0F766E;
+
+}
+
+.pill-grid{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:14px;
+
+}
+
+.pill{
+
+padding:14px 18px;
+
+border-radius:999px;
+
+font-weight:600;
+
+font-size:.92rem;
+
+transition:.25s;
+
+cursor:default;
+
+border:1px solid transparent;
+
+}
+
+.attack-pill{
+
+background:#FEF2F2;
+
+color:#B91C1C;
+
+}
+
+.attack-pill:hover{
+
+background:#FEE2E2;
+
+transform:translateY(-2px);
+
+}
+
+.privilege-pill{
+
+background:#F5F3FF;
+
+color:#2B2B50;
+
+}
+
+.privilege-pill:hover{
+
+background:#EDE9FE;
+
+transform:translateY(-2px);
+
+}
+
+.defense-pill{
+
+background:#ECFDF5;
+
+color:#047857;
+
+}
+
+.defense-pill:hover{
+
+background:#D1FAE5;
+
+transform:translateY(-2px);
+
+}
+
+.attack-proof{
+
+max-width:900px;
+
+margin:56px auto 0;
+
+text-align:center;
+
+}
+
+.attack-line{
+
+width:90px;
+
+height:4px;
+
+background:
+
+linear-gradient(
+90deg,
+#B91C1C,
+#EA3037
+);
+
+margin:0 auto 22px;
+
+border-radius:999px;
+
+}
+
+.attack-proof p{
+
+font-size:1rem;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+@media(max-width:768px){
+
+.tech-group{
+
+margin-top:34px;
+
+}
+
+.pill-grid{
+
+gap:10px;
+
+}
+
+.pill{
+
+padding:12px 15px;
+
+font-size:.84rem;
+
+}
+
+.attack-proof{
+
+margin-top:42px;
+
+}
+
+}  
+    
+.lab-environment{
+
+background:#F9FAFB;
+
+}
+
+.lab-grid{
+
+margin-top:60px;
+
+}
+
+.lab-card{
+
+padding:34px;
+
+display:flex;
+
+flex-direction:column;
+
+height:100%;
+
+position:relative;
+
+overflow:hidden;
+
+transition:.25s;
+
+}
+
+.lab-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:var(--shadow-md);
+
+border-color:#FECACA;
+
+}
+
+.lab-card::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+height:4px;
+
+width:100%;
+
+background:
+
+linear-gradient(
+90deg,
+#B91C1C,
+#EA3037
+);
+
+transform:scaleX(0);
+
+transition:.25s;
+
+}
+
+.lab-card:hover::before{
+
+transform:scaleX(1);
+
+}
+
+.lab-icon{
+
+width:58px;
+
+height:58px;
+
+background:#FEF2F2;
+
+border-radius:16px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+.lab-icon svg{
+
+width:24px;
+
+height:24px;
+
+color:#B91C1C;
+
+}
+
+.lab-card h3{
+
+margin-bottom:12px;
+
+font-size:1.15rem;
+
+line-height:1.4;
+
+}
+
+.lab-card p{
+
+font-size:.95rem;
+
+line-height:1.75;
+
+color:var(--color-body);
+
+}
+
+.lab-proof{
+
+margin-top:60px;
+
+text-align:center;
+
+max-width:900px;
+
+margin-inline:auto;
+
+}
+
+.proof-line{
+
+width:90px;
+
+height:4px;
+
+background:
+
+linear-gradient(
+90deg,
+#B91C1C,
+#EA3037
+);
+
+margin:0 auto 24px;
+
+border-radius:999px;
+
+}
+
+.lab-proof p{
+
+font-size:1rem;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+@media(max-width:768px){
+
+.lab-card{
+
+padding:26px;
+
+}
+
+.lab-icon{
+
+width:50px;
+
+height:50px;
+
+}
+
+.lab-icon svg{
+
+width:22px;
+
+height:22px;
+
+}
+
+.lab-grid{
+
+margin-top:42px;
+
+}
+
+.lab-proof{
+
+margin-top:42px;
+
+}
+
+}    
+.course-content-section{
+
+background:#fff;
+
+}
+
+.curriculum{
+
+margin-top:60px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.curriculum .acc-btn{
+
+width:100%;
+
+background:#fff;
+
+padding:26px 30px;
+
+border:1px solid var(--color-border);
+
+border-radius:18px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+font-size:1rem;
+
+font-weight:700;
+
+transition:.25s;
+
+box-shadow:var(--shadow-sm);
+
+text-align:left;
+
+}
+
+.curriculum .acc-btn:hover{
+
+border-color:#FECACA;
+
+box-shadow:var(--shadow-md);
+
+}
+
+.curriculum .acc-btn svg{
+
+width:20px;
+
+height:20px;
+
+color:#B91C1C;
+
+transition:.25s;
+
+}
+
+.curriculum .acc-btn.active svg{
+
+transform:rotate(45deg);
+
+}
+
+.curriculum .acc-panel{
+
+display:none;
+
+padding:28px;
+
+border:1px solid var(--color-border);
+
+border-top:none;
+
+border-radius:0 0 18px 18px;
+
+background:#fff;
+
+}
+
+.curriculum .acc-panel.active{
+
+display:block;
+
+}
+
+.topic-grid{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+}
+
+.topic-grid span{
+
+padding:12px 16px;
+
+background:#F9FAFB;
+
+border:1px solid #E5E7EB;
+
+border-radius:999px;
+
+font-size:.9rem;
+
+font-weight:600;
+
+color:#374151;
+
+transition:.2s;
+
+}
+
+.topic-grid span:hover{
+
+background:#FEF2F2;
+
+border-color:#FCA5A5;
+
+color:#B91C1C;
+
+}
+
+.curriculum-proof{
+
+margin-top:60px;
+
+text-align:center;
+
+max-width:900px;
+
+margin-inline:auto;
+
+}
+
+.curriculum-proof p{
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+@media(max-width:768px){
+
+.curriculum{
+
+margin-top:42px;
+
+}
+
+.curriculum .acc-btn{
+
+padding:22px;
+
+font-size:.95rem;
+
+}
+
+.curriculum .acc-panel{
+
+padding:22px;
+
+}
+
+.topic-grid{
+
+gap:10px;
+
+}
+
+.topic-grid span{
+
+font-size:.82rem;
+
+padding:10px 14px;
+
+}
+
+}    
+
+.learning-proof{
+
+margin-top:60px;
+
+text-align:center;
+
+max-width:900px;
+
+margin-inline:auto;
+
+}
+
+.proof-line{
+
+width:90px;
+
+height:4px;
+
+margin:auto;
+
+margin-bottom:24px;
+
+border-radius:999px;
+
+background:
+
+linear-gradient(
+90deg,
+#B91C1C,
+#EA3037
+);
+
+}
+
+.learning-proof p{
+
+line-height:1.8;
+
+color:#4B5563;
+
+font-size:1rem;
+
+}
+
+@media(max-width:768px){
+
+.outcome-card{
+
+padding:26px;
+
+}
+
+.outcomes-grid{
+
+margin-top:42px;
+
+}
+
+.learning-proof{
+
+margin-top:42px;
+
+}
+
+}  
+    
+.training-methodology{
+
+background:#fff;
+
+}
+
+.methodology-grid{
+
+margin-top:56px;
+
+}
+
+.methodology-card{
+
+padding:34px;
+
+display:flex;
+
+flex-direction:column;
+
+height:100%;
+
+transition:.25s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.methodology-card:hover{
+
+transform:translateY(-6px);
+
+border-color:#FECACA;
+
+box-shadow:var(--shadow-md);
+
+}
+
+.methodology-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:4px;
+
+background:
+
+linear-gradient(
+90deg,
+#B91C1C,
+#EA3037
+);
+
+transform:scaleX(0);
+
+transition:.25s;
+
+}
+
+.methodology-card:hover::before{
+
+transform:scaleX(1);
+
+}
+
+.method-icon{
+
+width:58px;
+
+height:58px;
+
+border-radius:16px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#FEF2F2;
+
+margin-bottom:20px;
+
+}
+
+.method-icon svg{
+
+width:24px;
+
+height:24px;
+
+color:#B91C1C;
+
+}
+
+.methodology-card h3{
+
+margin-bottom:12px;
+
+font-size:1.15rem;
+
+}
+
+.methodology-card p{
+
+line-height:1.75;
+
+color:var(--color-body);
+
+}
+
+.methodology-highlight{
+
+background:
+
+linear-gradient(
+135deg,
+#2B2B50,
+#111827
+);
+
+color:white;
+
+padding:34px;
+
+border:none;
+
+}
+
+.methodology-highlight p{
+
+color:#D1D5DB;
+
+}
+
+.highlight-top{
+
+display:flex;
+
+gap:10px;
+
+align-items:center;
+
+margin-bottom:20px;
+
+font-weight:700;
+
+color:#EA3037;
+
+}
+
+.methodology-highlight ul{
+
+margin-top:22px;
+
+padding-left:18px;
+
+}
+
+.methodology-highlight li{
+
+margin-bottom:10px;
+
+color:#E5E7EB;
+
+}
+
+.method-proof{
+
+margin-top:60px;
+
+text-align:center;
+
+max-width:920px;
+
+margin-inline:auto;
+
+}
+
+.method-proof p{
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+@media(max-width:768px){
+
+.methodology-card{
+
+padding:26px;
+
+}
+
+.methodology-highlight{
+
+padding:28px;
+
+}
+
+}    
+    
+.who-attend-section{
+
+background:#F9FAFB;
+
+}
+
+.audience-grid{
+
+margin-top:56px;
+
+}
+
+.audience-card{
+
+padding:32px;
+
+display:flex;
+
+flex-direction:column;
+
+height:100%;
+
+position:relative;
+
+overflow:hidden;
+
+transition:.25s;
+
+}
+
+.audience-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:var(--shadow-md);
+
+border-color:#FECACA;
+
+}
+
+.audience-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+height:4px;
+
+width:100%;
+
+background:
+
+linear-gradient(
+90deg,
+#B91C1C,
+#EA3037
+);
+
+transform:scaleX(0);
+
+transition:.25s;
+
+}
+
+.audience-card:hover::before{
+
+transform:scaleX(1);
+
+}
+
+.audience-icon{
+
+width:58px;
+
+height:58px;
+
+background:#FEF2F2;
+
+border-radius:16px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+.audience-icon svg{
+
+width:24px;
+
+height:24px;
+
+color:#B91C1C;
+
+}
+
+.audience-card h3{
+
+font-size:1.12rem;
+
+margin-bottom:12px;
+
+line-height:1.4;
+
+}
+
+.audience-card p{
+
+font-size:.95rem;
+
+line-height:1.7;
+
+color:var(--color-body);
+
+}
+
+.audience-note{
+
+margin-top:60px;
+
+text-align:center;
+
+max-width:850px;
+
+margin-inline:auto;
+
+}
+
+.audience-note p{
+
+font-size:1rem;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+@media(max-width:768px){
+
+.audience-grid{
+
+margin-top:42px;
+
+}
+
+.audience-card{
+
+padding:26px;
+
+}
+
+.audience-icon{
+
+width:50px;
+
+height:50px;
+
+}
+
+.audience-icon svg{
+
+width:22px;
+
+height:22px;
+
+}
+
+.audience-note{
+
+margin-top:42px;
+
+}
+
+}    
+.faq-section{
+
+background:#F9FAFB;
+
+}
+
+.faq-container{
+
+max-width:900px;
+
+margin:56px auto 0;
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.faq-btn{
+
+width:100%;
+
+padding:24px 28px;
+
+background:#fff;
+
+border:1px solid var(--color-border);
+
+border-radius:18px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+font-size:1rem;
+
+font-weight:700;
+
+text-align:left;
+
+transition:.25s;
+
+cursor:pointer;
+
+}
+
+.faq-btn:hover{
+
+border-color:#FECACA;
+
+box-shadow:var(--shadow-md);
+
+}
+
+.faq-btn svg{
+
+width:20px;
+
+height:20px;
+
+color:#B91C1C;
+
+transition:.25s;
+
+flex-shrink:0;
+
+}
+
+.faq-btn.active svg{
+
+transform:rotate(45deg);
+
+}
+
+.faq-answer{
+
+display:none;
+
+padding:0 28px 24px;
+
+background:white;
+
+border:1px solid var(--color-border);
+
+border-top:none;
+
+border-radius:0 0 18px 18px;
+
+}
+
+.faq-answer.active{
+
+display:block;
+
+}
+
+.faq-answer p{
+
+line-height:1.8;
+
+color:var(--color-body);
+
+}
+
+@media(max-width:768px){
+
+.faq-container{
+
+margin-top:42px;
+
+}
+
+.faq-btn{
+
+padding:20px;
+
+font-size:.95rem;
+
+}
+
+.faq-answer{
+
+padding:0 20px 20px;
+
+}
+
+}    
+.why-grid{
+
+margin-top:56px;
+
+}
+
+.why-alt-card{
+
+padding:34px;
+
+transition:.25s;
+
+}
+
+.why-alt-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:var(--shadow-md);
+
+}
+
+.why-alt-icon{
+
+width:60px;
+
+height:60px;
+
+border-radius:16px;
+
+background:#FEF2F2;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+.why-alt-icon svg{
+
+width:26px;
+
+height:26px;
+
+color:#B91C1C;
+
+}
+
+
+.metrics-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:24px;
+
+
+}
+
+.metric-card{
+
+background:white;
+
+padding:38px;
+
+text-align:center;
+
+border-radius:20px;
+
+border:1px solid var(--color-border);
+
+}
+
+.metric-card h3{
+
+font-size:2rem;
+
+color:#B91C1C;
+}
+
+.metric-card p{
+
+font-weight:600;
+
+}
+
+
+.testimonial-card{
+
+max-width:860px;
+
+margin:auto;
+
+background:white;
+
+padding:50px;
+
+border-radius:24px;
+
+box-shadow:var(--shadow-md);
+
+text-align:center;
+
+border:1px solid var(--color-border);
+
+}
+
+.quote-mark{
+
+font-size:5rem;
+
+color:#B91C1C;
+
+line-height:1;
+
+margin-bottom:10px;
+
+}
+
+.testimonial-card p{
+
+font-size:1.15rem;
+
+line-height:1.9;
+
+margin-bottom:28px;
+
+}
+
+.testimonial-author{
+
+display:flex;
+
+flex-direction:column;
+
+gap:4px;
+
+}
+
+.testimonial-author span{
+
+color:var(--color-muted);
+
+}
+
+
+.client-grid{
+
+margin-top:56px;
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(150px,1fr)
+);
+
+gap:40px;
+
+align-items:center;
+
+}
+
+.client-grid img{
+
+max-width:150px;
+
+width:100%;
+
+margin:auto;
+
+opacity:.8;
+
+filter:grayscale(100%);
+
+transition:.25s;
+
+}
+
+.client-grid img:hover{
+
+opacity:1;
+
+filter:none;
+
+}
+
+
+@media(max-width:768px){
+
+.metrics-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.testimonial-card{
+
+padding:32px;
+
+}
+
+.client-grid{
+
+gap:28px;
+
+}
+
+}  
+    
+.learning-journey-section{
+
+background:#F9FAFB;
+
+}
+
+.journey-block{
+
+margin-top:70px;
+
+}
+
+.journey-block h3{
+
+font-size:2rem;
+
+margin-bottom:28px;
+
+font-weight:800;
+
+color:#111827;
+
+}
+
+.cert-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:24px;
+
+}
+
+.cert-card,
+.advanced-card{
+
+padding:34px;
+
+height:100%;
+
+display:flex;
+
+flex-direction:column;
+
+transition:.25s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.cert-card:hover,
+.advanced-card:hover{
+
+transform:translateY(-6px);
+
+border-color:#FECACA;
+
+box-shadow:var(--shadow-md);
+
+}
+
+.cert-card::before,
+.advanced-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:4px;
+
+background:
+
+linear-gradient(
+90deg,
+#B91C1C,
+#EA3037
+);
+
+transform:scaleX(0);
+
+transition:.25s;
+
+}
+
+.cert-card:hover::before,
+.advanced-card:hover::before{
+
+transform:scaleX(1);
+
+}
+
+.cert-icon,
+.advanced-icon{
+
+width:58px;
+
+height:58px;
+
+background:#FEF2F2;
+
+border-radius:16px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+.cert-icon svg,
+.advanced-icon svg{
+
+width:24px;
+
+height:24px;
+
+color:#B91C1C;
+
+}
+
+.cert-card h4,
+.advanced-card h4{
+
+font-size:1.15rem;
+
+margin-bottom:12px;
+
+line-height:1.4;
+
+}
+
+.cert-card p,
+.advanced-card p{
+
+color:#4B5563;
+
+line-height:1.8;
+
+margin-bottom:24px;
+
+}
+
+.cert-card a,
+.advanced-card a{
+
+display:flex;
+
+gap:8px;
+
+align-items:center;
+
+font-weight:700;
+
+color:#B91C1C;
+
+margin-top:auto;
+
+}
+
+.cert-card a svg,
+.advanced-card a svg{
+
+width:18px;
+
+height:18px;
+
+}
+
+.journey-intro{
+
+margin-bottom:40px;
+
+max-width:700px;
+
+}
+
+.journey-proof{
+
+margin-top:70px;
+
+text-align:center;
+
+max-width:850px;
+
+margin-inline:auto;
+
+}
+
+.journey-proof p{
+
+font-weight:600;
+
+font-size:1rem;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+@media(max-width:1000px){
+
+.cert-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.cert-grid,
+.advanced-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.journey-block{
+
+margin-top:50px;
+
+}
+
+.journey-block h3{
+
+font-size:1.7rem;
+
+}
+
+.cert-card,
+.advanced-card{
+
+padding:26px;
+
+}
+
+}  
+.live-bootcamp-section{
+
+background:#fff;
+
+}
+
+.section-pill{
+
+display:inline-flex;
+
+padding:8px 14px;
+
+background:#FEF2F2;
+
+border-radius:999px;
+
+color:#B91C1C;
+
+font-weight:700;
+
+font-size:.85rem;
+
+margin-bottom:18px;
+
+}
+
+.bootcamp-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:24px;
+
+margin-top:60px;
+
+}
+
+.bootcamp-card{
+
+padding:34px;
+
+background:white;
+
+border:1px solid var(--color-border);
+
+border-radius:22px;
+
+display:flex;
+
+flex-direction:column;
+
+transition:.25s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.bootcamp-card:hover{
+
+transform:translateY(-6px);
+
+border-color:#FECACA;
+
+box-shadow:var(--shadow-md);
+
+}
+
+.bootcamp-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:4px;
+
+background:
+
+linear-gradient(
+90deg,
+#B91C1C,
+#EA3037
+);
+
+transform:scaleX(0);
+
+transition:.25s;
+
+}
+
+.bootcamp-card:hover::before{
+
+transform:scaleX(1);
+
+}
+
+.bootcamp-top{
+
+margin-bottom:18px;
+
+}
+
+.bootcamp-tag{
+
+display:inline-flex;
+
+padding:6px 12px;
+
+background:#EEF2FF;
+
+color:#1E3A8A;
+
+border-radius:999px;
+
+font-size:.8rem;
+
+font-weight:700;
+
+}
+
+.bootcamp-tag.advanced{
+
+background:#FEF2F2;
+
+color:#B91C1C;
+
+}
+
+.featured{
+
+background:
+
+linear-gradient(
+180deg,
+#FFF,
+#FCFCFD
+);
+
+}
+
+.bootcamp-card h3{
+
+font-size:1.25rem;
+
+line-height:1.5;
+
+margin-bottom:14px;
+
+}
+
+.bootcamp-card p{
+
+color:#4B5563;
+
+line-height:1.8;
+
+margin-bottom:26px;
+
+}
+
+.bootcamp-card a{
+
+margin-top:auto;
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+font-weight:700;
+
+color:#B91C1C;
+
+}
+
+.bootcamp-card a svg{
+
+width:18px;
+
+height:18px;
+
+}
+
+.bootcamp-proof{
+
+margin-top:70px;
+
+text-align:center;
+
+max-width:850px;
+
+margin-inline:auto;
+
+}
+
+.bootcamp-proof p{
+
+line-height:1.8;
+
+font-weight:500;
+
+color:#4B5563;
+
+}
+
+@media(max-width:1000px){
+
+.bootcamp-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.bootcamp-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.bootcamp-card{
+
+padding:26px;
+
+}
+
+}    
+    
+    .final-buttons{
+        
+display:inline-flex;
+gap:16px;
+margin-top:30px;     
+    
+    }    
+    
+  
+  .why-altered-combined{
+
+background:
+
+linear-gradient(
+180deg,
+#fff,
+#F9FAFB
+);
+
+padding:100px 0;
+
+overflow:hidden;
+
+}
+
+.why-train-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:24px;
+
+margin-top:56px;
+
+}
+
+.why-card{
+
+padding:34px;
+
+border:1px solid var(--color-border);
+
+border-radius:22px;
+
+background:white;
+
+transition:.3s;
+
+position:relative;
+
+overflow:hidden;
+
+height:100%;
+
+}
+
+.why-card:hover{
+
+transform:translateY(-6px);
+
+border-color:#FECACA;
+
+box-shadow:var(--shadow-md);
+
+}
+
+.why-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:4px;
+
+background:
+
+linear-gradient(
+90deg,
+#B91C1C,
+#EA3037
+);
+
+transform:scaleX(0);
+
+transition:.3s;
+
+}
+
+.why-card:hover::before{
+
+transform:scaleX(1);
+
+}
+
+.why-icon{
+
+width:62px;
+
+height:62px;
+
+border-radius:18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#FEF2F2;
+
+margin-bottom:22px;
+
+}
+
+.why-icon svg{
+
+width:28px;
+
+height:28px;
+
+color:#B91C1C;
+
+}
+
+.why-card h3{
+
+font-size:1.15rem;
+
+line-height:1.45;
+
+margin-bottom:12px;
+
+}
+
+.why-card p{
+
+color:var(--color-body);
+
+line-height:1.75;
+
+font-size:.95rem;
+
+}
+
+.metrics-wrapper{
+
+margin-top:80px;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:24px;
+
+}
+
+.metric-card{
+
+background:white;
+
+padding:42px 28px;
+
+border-radius:22px;
+
+text-align:center;
+
+border:1px solid var(--color-border);
+
+transition:.25s;
+
+}
+
+.metric-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:var(--shadow-md);
+
+}
+
+.metric-card h3{
+
+font-size:3rem;
+
+font-weight:800;
+
+line-height:1;
+
+margin-bottom:14px;
+
+color:#B91C1C;
+
+}
+
+.metric-card p{
+
+font-weight:600;
+
+color:#4B5563;
+
+}
+
+@media(max-width:1024px){
+
+.why-train-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.metrics-wrapper{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.why-altered-combined{
+
+padding:70px 0;
+
+}
+
+.why-train-grid{
+
+grid-template-columns:1fr;
+
+gap:18px;
+
+margin-top:42px;
+
+}
+
+.metrics-wrapper{
+
+margin-top:50px;
+
+grid-template-columns:1fr 1fr;
+
+gap:16px;
+
+}
+
+.metric-card{
+
+padding:28px 18px;
+
+}
+
+.metric-card h3{
+
+font-size:2rem;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.metrics-wrapper{
+
+grid-template-columns:1fr;
+
+}
+
+} 
+    
+.why-altered-v2{
+
+padding:100px 0;
+
+background:#fff;
+
+}
+
+.stats-strip{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:22px;
+
+margin-bottom:70px;
+
+}
+
+.stat-box{
+
+background:white;
+
+border:1px solid #E5E7EB;
+
+border-radius:18px;
+
+padding:28px;
+
+text-align:center;
+
+transition:.25s;
+
+}
+
+.stat-box:hover{
+
+transform:translateY(-4px);
+
+box-shadow:var(--shadow-md);
+
+}
+
+.stat-box h3{
+
+font-size:3rem;
+
+font-weight:800;
+
+color:#B91C1C;
+
+line-height:1;
+
+margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+font-size:.95rem;
+
+color:#4B5563;
+
+line-height:1.5;
+
+}
+
+.why-layout{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:42px 80px;
+
+}
+
+.why-item{
+
+display:flex;
+
+gap:18px;
+
+align-items:flex-start;
+
+}
+
+.why-mini-icon{
+
+width:42px;
+
+height:42px;
+
+flex-shrink:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.why-mini-icon svg{
+
+width:22px;
+
+height:22px;
+
+color:#1E3A8A;
+
+stroke-width:2;
+
+}
+
+.why-item h3{
+
+font-size:1.7rem;
+
+font-weight:700;
+
+line-height:1.3;
+
+margin-bottom:8px;
+
+color:#111827;
+
+}
+
+.why-item p{
+
+color:#4B5563;
+
+line-height:1.75;
+
+font-size:1rem;
+
+max-width:480px;
+
+}
+
+@media(max-width:992px){
+
+.stats-strip{
+
+grid-template-columns:1fr;
+
+}
+
+.why-layout{
+
+grid-template-columns:1fr;
+
+gap:34px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.why-altered-v2{
+
+padding:70px 0;
+
+}
+
+.stat-box h3{
+
+font-size:2.2rem;
+
+}
+
+.why-item h3{
+
+font-size:1.25rem;
+
+}
+
+.why-item{
+
+gap:14px;
+
+}
+
+}    
+/* ==========================================
+ENTERPRISE TEAM TRAINING
+========================================== */
+
+/* ==========================
+TEAM TRAINING MODAL
+========================== */
+
+.team-training-modal{
+
+position:fixed;
+
+inset:0;
+
+background:
+rgba(0,0,0,.7);
+
+backdrop-filter:
+blur(8px);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:20px;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+z-index:99999;
+
+}
+
+.team-training-modal.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.team-training-box{
+
+width:100%;
+
+max-width:680px;
+
+background:#fff;
+
+border-radius:28px;
+
+padding:42px;
+
+position:relative;
+
+box-shadow:
+
+0 30px 90px
+rgba(0,0,0,.25);
+
+animation:
+modalUp .35s ease;
+
+}
+
+@keyframes modalUp{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+}
+
+.team-modal-close{
+
+position:absolute;
+
+top:18px;
+
+right:18px;
+
+width:42px;
+
+height:42px;
+
+border:none;
+
+cursor:pointer;
+
+border-radius:50%;
+
+background:#F3F4F6;
+
+font-size:18px;
+
+}
+
+.team-modal-head span{
+
+font-size:12px;
+
+font-weight:800;
+
+color:#B91C1C;
+
+text-transform:uppercase;
+
+letter-spacing:.08em;
+
+}
+
+.team-modal-head h3{
+
+font-size:36px;
+
+margin:12px 0;
+
+color:#111827;
+
+}
+
+.team-modal-head p{
+
+color:#6B7280;
+
+margin-bottom:28px;
+
+}
+
+.team-training-form{
+
+display:grid;
+
+grid-template-columns:
+
+1fr 1fr;
+
+gap:16px;
+
+}
+
+.team-training-form input,
+
+.team-training-form select,
+
+.team-training-form textarea{
+
+width:100%;
+
+padding:16px;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:14px;
+
+font-size:15px;
+
+outline:none;
+
+}
+
+.team-training-form textarea{
+
+grid-column:
+
+1/-1;
+
+resize:none;
+
+}
+
+.team-training-form textarea:focus,
+
+.team-training-form input:focus,
+
+.team-training-form select:focus{
+
+border-color:#1E3A8A;
+
+}
+
+.team-submit-btn{
+
+grid-column:
+
+1/-1;
+
+height:58px;
+
+border:none;
+
+cursor:pointer;
+
+background:#B91C1C;
+
+color:#fff;
+
+font-size:16px;
+
+font-weight:700;
+
+border-radius:16px;
+
+transition:.25s;
+
+}
+
+.team-submit-btn:hover{
+
+background:#EA3037;
+
+}
+
+@media(max-width:768px){
+
+.team-training-box{
+
+padding:28px;
+
+}
+
+.team-training-form{
+
+grid-template-columns:1fr;
+
+}
+
+.team-modal-head h3{
+
+font-size:28px;
+
+}
+
+}  
+    
+/* ==========================================
+AD TRAINING FOR SECURITY TEAMS
+========================================== */
+
+.ad-security-teams-section{
+
+padding:100px 0;
+
+background:#F9FAFB;
+
+}
+
+.ad-security-wrapper{
+
+display:grid;
+
+grid-template-columns:
+
+1.1fr .9fr;
+
+gap:60px;
+
+align-items:center;
+
+padding:60px;
+
+background:#fff;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:34px;
+
+box-shadow:
+
+0 10px 40px
+rgba(0,0,0,.04);
+
+}
+
+.ad-security-label{
+
+display:inline-flex;
+
+padding:
+
+8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:22px;
+
+}
+
+.ad-security-content h2{
+
+font-size:42px;
+
+line-height:1.15;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:24px;
+
+max-width:680px;
+
+}
+
+.ad-security-content p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+margin-bottom:20px;
+
+max-width:720px;
+
+}
+
+
+.ad-security-points{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.ad-security-item{
+
+display:flex;
+
+gap:14px;
+
+align-items:flex-start;
+
+padding:18px 22px;
+
+background:#fff;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:18px;
+
+transition:.25s;
+
+}
+
+.ad-security-item:hover{
+
+transform:
+
+translateY(-3px);
+
+border-color:#B91C1C;
+
+box-shadow:
+
+0 10px 25px
+rgba(185,28,28,.08);
+
+}
+
+.ad-security-check{
+
+width:32px;
+
+height:32px;
+
+border-radius:50%;
+
+background:#10B981;
+
+flex-shrink:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:14px;
+
+font-weight:700;
+
+color:#fff;
+
+margin-top:2px;
+
+}
+
+.ad-security-item div:last-child{
+
+font-size:16px;
+
+line-height:1.65;
+
+font-weight:600;
+
+color:#111827;
+
+}
+
+/* =====================
+TABLET
+===================== */
+
+@media(max-width:992px){
+
+.ad-security-wrapper{
+
+grid-template-columns:1fr;
+
+padding:40px;
+
+gap:40px;
+
+}
+
+.ad-security-content h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* =====================
+MOBILE
+===================== */
+
+@media(max-width:768px){
+
+.ad-security-teams-section{
+
+padding:70px 0;
+
+}
+
+.ad-security-wrapper{
+
+padding:28px;
+
+border-radius:24px;
+
+}
+
+.ad-security-content h2{
+
+font-size:28px;
+
+}
+
+.ad-security-content p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.ad-security-item{
+
+padding:16px;
+
+}
+
+.ad-security-item div:last-child{
+
+font-size:15px;
+
+}
+
+}   
+/* ==========================================
+TEAM TRAINING OUTCOMES
+========================================== */
+
+.team-outcomes-section{
+
+padding:100px 0;
+
+background:#FFFFFF;
+
+}
+
+.team-outcomes-head{
+
+text-align:center;
+
+max-width:860px;
+
+margin:auto;
+
+margin-bottom:60px;
+
+}
+
+.team-outcomes-label{
+
+display:inline-flex;
+
+padding:
+
+8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:22px;
+
+}
+
+.team-outcomes-head h2{
+
+font-size:42px;
+
+line-height:1.15;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:24px;
+
+}
+
+.team-outcomes-head p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+}
+
+.team-outcomes-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:24px;
+
+}
+
+.team-outcome-card{
+
+padding:32px;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:26px;
+
+background:#FFFFFF;
+
+transition:.25s;
+
+}
+
+.team-outcome-card:hover{
+
+transform:
+
+translateY(-5px);
+
+border-color:#B91C1C;
+
+box-shadow:
+
+0 16px 40px
+rgba(185,28,28,.08);
+
+}
+
+.team-outcome-icon{
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+background:#10B981;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#fff;
+
+font-weight:700;
+
+font-size:16px;
+
+margin-bottom:22px;
+
+}
+
+.team-outcome-card h3{
+
+font-size:22px;
+
+line-height:1.3;
+
+font-weight:700;
+
+color:#111827;
+
+margin-bottom:16px;
+
+}
+
+.team-outcome-card p{
+
+font-size:16px;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+/* =====================
+TABLET
+===================== */
+
+@media(max-width:992px){
+
+.team-outcomes-grid{
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+}
+
+.team-outcomes-head h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* =====================
+MOBILE
+===================== */
+
+@media(max-width:768px){
+
+.team-outcomes-section{
+
+padding:70px 0;
+
+}
+
+.team-outcomes-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.team-outcomes-head{
+
+margin-bottom:40px;
+
+}
+
+.team-outcomes-head h2{
+
+font-size:28px;
+
+}
+
+.team-outcomes-head p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.team-outcome-card{
+
+padding:24px;
+
+}
+
+.team-outcome-card h3{
+
+font-size:20px;
+
+}
+
+.team-outcome-card p{
+
+font-size:15px;
+
+}
+
+}   
+    
+/* ==========================================
+ACTIVE DIRECTORY TEAM LABS
+========================================== */
+
+.ad-lab-teams-section{
+
+padding:100px 0;
+
+background:#F9FAFB;
+
+}
+
+.ad-lab-wrapper{
+
+display:grid;
+
+grid-template-columns:
+
+1.1fr .9fr;
+
+gap:60px;
+
+align-items:center;
+
+padding:60px;
+
+background:#FFFFFF;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:34px;
+
+box-shadow:
+
+0 10px 40px
+rgba(0,0,0,.04);
+
+}
+
+.ad-lab-label{
+
+display:inline-flex;
+
+padding:
+
+8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:22px;
+
+}
+
+.ad-lab-content h2{
+
+font-size:42px;
+
+line-height:1.15;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:24px;
+
+max-width:700px;
+
+}
+
+.ad-lab-content p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+margin-bottom:20px;
+
+max-width:700px;
+
+}
+
+.ad-lab-grid{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.ad-lab-card{
+
+display:flex;
+
+gap:18px;
+
+padding:22px;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:22px;
+
+background:#FFFFFF;
+
+transition:.25s;
+
+}
+
+.ad-lab-card:hover{
+
+transform:
+
+translateY(-4px);
+
+border-color:#B91C1C;
+
+box-shadow:
+
+0 12px 35px
+rgba(185,28,28,.08);
+
+}
+
+.ad-lab-icon{
+
+width:40px;
+
+height:40px;
+
+flex-shrink:0;
+
+border-radius:50%;
+
+background:#10B981;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:15px;
+
+font-weight:700;
+
+color:#FFFFFF;
+
+margin-top:4px;
+
+}
+
+.ad-lab-card h3{
+
+font-size:19px;
+
+font-weight:700;
+
+color:#111827;
+
+margin-bottom:8px;
+
+}
+
+.ad-lab-card p{
+
+font-size:15px;
+
+line-height:1.7;
+
+color:#4B5563;
+
+}
+
+/* ======================
+TABLET
+====================== */
+
+@media(max-width:992px){
+
+.ad-lab-wrapper{
+
+grid-template-columns:1fr;
+
+padding:42px;
+
+gap:42px;
+
+}
+
+.ad-lab-content h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* ======================
+MOBILE
+====================== */
+
+@media(max-width:768px){
+
+.ad-lab-teams-section{
+
+padding:70px 0;
+
+}
+
+.ad-lab-wrapper{
+
+padding:28px;
+
+border-radius:24px;
+
+}
+
+.ad-lab-content h2{
+
+font-size:28px;
+
+}
+
+.ad-lab-content p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.ad-lab-card{
+
+padding:18px;
+
+gap:14px;
+
+}
+
+.ad-lab-card h3{
+
+font-size:17px;
+
+}
+
+.ad-lab-card p{
+
+font-size:14px;
+
+}
+
+.ad-lab-icon{
+
+width:34px;
+
+height:34px;
+
+font-size:13px;
+
+}
+
+}    
+/* ==========================================
+CERTIFICATION PATH
+========================================== */
+
+.cert-learning-path-section{
+
+padding:100px 0;
+
+background:#F9FAFB;
+
+}
+
+.cert-learning-head{
+
+max-width:860px;
+
+margin:auto;
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.cert-learning-label{
+
+display:inline-flex;
+
+padding:
+
+8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:20px;
+
+}
+
+.cert-learning-head h2{
+
+font-size:42px;
+
+line-height:1.15;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:24px;
+
+}
+
+.cert-learning-head p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+margin-bottom:18px;
+
+}
+
+.cert-learning-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:28px;
+
+margin-bottom:50px;
+
+}
+
+.cert-learning-card{
+
+padding:36px;
+
+background:#FFFFFF;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:28px;
+
+transition:.25s;
+
+height:100%;
+
+}
+
+.cert-learning-card:hover{
+
+transform:
+
+translateY(-5px);
+
+border-color:#B91C1C;
+
+box-shadow:
+
+0 14px 35px
+rgba(185,28,28,.08);
+
+}
+
+.cert-card-icon{
+
+width:44px;
+
+height:44px;
+
+border-radius:50%;
+
+background:#10B981;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:16px;
+
+font-weight:700;
+
+color:#FFFFFF;
+
+margin-bottom:24px;
+
+}
+
+.cert-learning-card h3{
+
+font-size:24px;
+
+font-weight:700;
+
+line-height:1.3;
+
+color:#111827;
+
+margin-bottom:16px;
+
+}
+
+.cert-learning-card p{
+
+font-size:16px;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+.cert-learning-cta{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.cert-primary-btn{
+
+padding:
+
+16px 28px;
+
+border-radius:14px;
+
+background:#B91C1C;
+
+color:#FFFFFF;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.cert-primary-btn:hover{
+
+background:#EA3037;
+
+transform:
+
+translateY(-2px);
+
+}
+
+.cert-secondary-btn{
+
+padding:
+
+16px 28px;
+
+border-radius:14px;
+
+border:
+
+1px solid #E5E7EB;
+
+background:#FFFFFF;
+
+color:#111827;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.cert-secondary-btn:hover{
+
+border-color:#B91C1C;
+
+color:#B91C1C;
+
+}
+
+/* ======================
+TABLET
+====================== */
+
+@media(max-width:992px){
+
+.cert-learning-grid{
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+}
+
+.cert-learning-head h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* ======================
+MOBILE
+====================== */
+
+@media(max-width:768px){
+
+.cert-learning-path-section{
+
+padding:70px 0;
+
+}
+
+.cert-learning-grid{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+.cert-learning-head{
+
+margin-bottom:40px;
+
+}
+
+.cert-learning-head h2{
+
+font-size:28px;
+
+}
+
+.cert-learning-head p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.cert-learning-card{
+
+padding:28px;
+
+}
+
+.cert-learning-card h3{
+
+font-size:20px;
+
+}
+
+.cert-learning-card p{
+
+font-size:15px;
+
+}
+
+.cert-learning-cta{
+
+flex-direction:column;
+
+}
+
+.cert-primary-btn,
+
+.cert-secondary-btn{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}    
+    
+/* ==========================================
+ENTERPRISE TEAM TRAINING
+========================================== */
+
+.enterprise-team-training{
+
+padding:100px 0;
+
+background:#F9FAFB;
+
+}
+
+.enterprise-team-wrapper{
+
+display:grid;
+
+grid-template-columns:
+
+1.1fr .9fr;
+
+gap:60px;
+
+align-items:start;
+
+padding:60px;
+
+background:#FFFFFF;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:34px;
+
+box-shadow:
+
+0 12px 40px
+rgba(0,0,0,.04);
+
+}
+
+/* LABEL */
+
+.enterprise-label{
+
+display:inline-flex;
+
+padding:
+
+8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:22px;
+
+}
+
+/* LEFT */
+
+.enterprise-team-left h2{
+
+font-size:42px;
+
+line-height:1.15;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:24px;
+
+max-width:680px;
+
+}
+
+.enterprise-team-left p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+margin-bottom:18px;
+
+max-width:720px;
+
+}
+
+/* RIGHT */
+
+.enterprise-team-right{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+/* FEATURE */
+
+.enterprise-feature{
+
+display:flex;
+
+gap:14px;
+
+align-items:flex-start;
+
+padding:18px 22px;
+
+background:#FFFFFF;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:18px;
+
+transition:.25s;
+
+}
+
+.enterprise-feature:hover{
+
+transform:
+
+translateY(-3px);
+
+border-color:#B91C1C;
+
+box-shadow:
+
+0 12px 25px
+rgba(185,28,28,.08);
+
+}
+
+.enterprise-icon{
+
+width:32px;
+
+height:32px;
+
+border-radius:50%;
+
+background:#10B981;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:14px;
+
+font-weight:700;
+
+color:#FFFFFF;
+
+flex-shrink:0;
+
+margin-top:2px;
+
+}
+
+.enterprise-feature span{
+
+font-size:16px;
+
+line-height:1.65;
+
+font-weight:600;
+
+color:#111827;
+
+}
+
+/* ===========================
+CTA BOX
+=========================== */
+
+.enterprise-cta-box{
+
+margin-top:38px;
+
+padding:30px;
+
+background:
+
+linear-gradient(
+180deg,
+#FFFFFF,
+#F9FAFB
+);
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:26px;
+
+}
+
+.enterprise-cta-box h3{
+
+font-size:24px;
+
+font-weight:800;
+
+line-height:1.3;
+
+color:#111827;
+
+margin-bottom:14px;
+
+}
+
+.enterprise-cta-box p{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:#4B5563;
+
+margin-bottom:24px;
+
+max-width:540px;
+
+}
+
+/* CTA ACTIONS */
+
+.enterprise-cta-actions{
+
+display:flex;
+
+gap:14px;
+
+flex-wrap:wrap;
+
+}
+
+/* PRIMARY */
+
+.enterprise-cta-actions .btn-primary{
+
+height:54px;
+
+padding:
+
+0 24px;
+
+border:none;
+
+border-radius:14px;
+
+background:#B91C1C;
+
+color:#FFFFFF;
+
+font-size:15px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.25s;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.enterprise-cta-actions .btn-primary:hover{
+
+background:#EA3037;
+
+transform:
+
+translateY(-2px);
+
+}
+
+/* SECONDARY */
+
+.enterprise-secondary-btn{
+
+height:54px;
+
+padding:
+
+0 24px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:14px;
+
+background:#FFFFFF;
+
+color:#111827;
+
+font-size:15px;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.enterprise-secondary-btn:hover{
+
+border-color:#B91C1C;
+
+color:#B91C1C;
+
+background:
+
+rgba(185,28,28,.02);
+
+}
+
+/* =====================
+TABLET
+===================== */
+
+@media(max-width:992px){
+
+.enterprise-team-wrapper{
+
+grid-template-columns:1fr;
+
+padding:42px;
+
+gap:42px;
+
+}
+
+.enterprise-team-left h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* =====================
+MOBILE
+===================== */
+
+@media(max-width:768px){
+
+.enterprise-team-training{
+
+padding:70px 0;
+
+}
+
+.enterprise-team-wrapper{
+
+padding:28px;
+
+border-radius:24px;
+
+gap:30px;
+
+}
+
+.enterprise-team-left h2{
+
+font-size:28px;
+
+line-height:1.2;
+
+}
+
+.enterprise-team-left p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.enterprise-feature{
+
+padding:16px;
+
+gap:12px;
+
+}
+
+.enterprise-feature span{
+
+font-size:15px;
+
+}
+
+.enterprise-icon{
+
+width:28px;
+
+height:28px;
+
+font-size:12px;
+
+}
+
+.enterprise-cta-box{
+
+padding:22px;
+
+margin-top:28px;
+
+}
+
+.enterprise-cta-box h3{
+
+font-size:20px;
+
+}
+
+.enterprise-cta-box p{
+
+font-size:15px;
+
+}
+
+.enterprise-cta-actions{
+
+flex-direction:column;
+
+}
+
+.enterprise-cta-actions .btn-primary,
+
+.enterprise-secondary-btn{
+
+width:100%;
+
+}
+
+}   
+    
+/* ==========================================
+PREREQUISITES + SYSTEM REQUIREMENTS
+========================================== */
+
+.grid-2{
+
+display:grid;
+
+grid-template-columns:
+
+1fr 1fr;
+
+gap:42px;
+
+align-items:start;
+
+}
+
+/* CARD */
+
+.grid-2 > div{
+
+padding:42px;
+
+background:#FFFFFF;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:28px;
+
+box-shadow:
+
+0 8px 24px
+rgba(0,0,0,.04);
+
+transition:.25s;
+
+height:100%;
+
+}
+
+.grid-2 > div:hover{
+
+transform:
+
+translateY(-4px);
+
+border-color:#B91C1C;
+
+box-shadow:
+
+0 18px 40px
+rgba(185,28,28,.08);
+
+}
+
+/* MAIN H2 */
+
+.grid-2 h2{
+
+font-size:42px;
+
+line-height:1.15;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:28px;
+
+max-width:520px;
+
+}
+
+/* H3 */
+
+.grid-2 h3{
+
+font-size:24px;
+
+font-weight:700;
+
+line-height:1.3;
+
+color:#111827;
+
+margin-bottom:16px;
+
+}
+
+/* BODY */
+
+.grid-2 p{
+
+font-size:17px;
+
+line-height:1.85;
+
+color:#4B5563;
+
+margin-bottom:28px;
+
+max-width:640px;
+
+}
+
+/* CHECKLIST */
+
+.checklist{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+/* ITEM */
+
+.check{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:14px;
+
+padding:16px 18px;
+
+border:
+
+1px solid #E5E7EB;
+
+border-radius:16px;
+
+background:#F9FAFB;
+
+font-size:15px;
+
+font-weight:600;
+
+line-height:1.65;
+
+color:#111827;
+
+transition:.2s;
+
+}
+
+.check:hover{
+
+border-color:#B91C1C;
+
+background:
+
+rgba(185,28,28,.02);
+
+}
+
+/* ICON */
+
+.check svg{
+
+width:18px;
+
+height:18px;
+
+flex-shrink:0;
+
+color:#10B981;
+
+margin-top:2px;
+
+stroke-width:2.5;
+
+}
+
+/* LEFT TITLE SPACING */
+
+.grid-2 > div:first-child h3{
+
+margin-top:10px;
+
+}
+
+/* TABLET */
+
+@media(max-width:992px){
+
+.grid-2{
+
+grid-template-columns:1fr;
+
+gap:28px;
+
+}
+
+.grid-2 h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.grid-2{
+
+gap:22px;
+
+}
+
+.grid-2 > div{
+
+padding:26px;
+
+border-radius:22px;
+
+}
+
+.grid-2 h2{
+
+font-size:28px;
+
+margin-bottom:22px;
+
+}
+
+.grid-2 h3{
+
+font-size:20px;
+
+margin-bottom:14px;
+
+}
+
+.grid-2 p{
+
+font-size:15px;
+
+line-height:1.75;
+
+margin-bottom:22px;
+
+}
+
+.check{
+
+padding:14px;
+
+font-size:14px;
+
+gap:12px;
+
+}
+
+.check svg{
+
+width:16px;
+
+height:16px;
+
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+.grid-2 > div{
+
+padding:22px;
+
+}
+
+.grid-2 h2{
+
+font-size:24px;
+
+}
+
+}    
+    
+    
+/* ==========================================
+TRUSTED BY PROFESSIONALS
+========================================== */
+
+.trusted-section{
+
+padding:20px 0;
+
+background:#FFFFFF;
+
+overflow:hidden;
+
+}
+
+.trusted-head{
+
+text-align:center;
+
+max-width:760px;
+
+margin:auto;
+
+margin-bottom:50px;
+
+}
+
+.trusted-label{
+
+display:inline-flex;
+
+padding:
+
+8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:18px;
+
+}
+
+.trusted-head h2{
+
+font-size:42px;
+
+font-weight:800;
+
+line-height:1.15;
+
+color:#111827;
+
+margin-bottom:18px;
+
+}
+
+.trusted-head p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+/* SLIDER */
+
+.trusted-slider{
+
+position:relative;
+
+overflow:hidden;
+
+mask-image:
+linear-gradient(
+to right,
+transparent,
+black 10%,
+black 90%,
+transparent
+);
+
+-webkit-mask-image:
+linear-gradient(
+to right,
+transparent,
+black 10%,
+black 90%,
+transparent
+);
+
+}
+
+.trusted-track{
+
+display:flex;
+
+align-items:center;
+
+gap:70px;
+
+width:max-content;
+
+animation:
+trustedScroll 30s linear infinite;
+
+}
+
+.trusted-logo{
+
+flex-shrink:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:20px;
+
+opacity:.75;
+
+transition:.25s;
+
+}
+
+.trusted-logo:hover{
+
+opacity:1;
+
+transform:scale(1.05);
+
+}
+
+.trusted-logo img{
+
+height:28px;
+
+width:auto;
+
+object-fit:contain;
+
+filter:
+
+grayscale(100%);
+
+transition:.25s;
+
+}
+
+.trusted-logo:hover img{
+
+filter:none;
+
+}
+
+/* ANIMATION */
+
+@keyframes trustedScroll{
+
+from{
+
+transform:
+translateX(0);
+
+}
+
+to{
+
+transform:
+translateX(-50%);
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.trusted-section{
+
+padding:20px 0;
+
+}
+
+.trusted-head h2{
+
+font-size:28px;
+
+}
+
+.trusted-head p{
+
+font-size:16px;
+
+}
+
+.trusted-track{
+
+gap:40px;
+
+}
+
+.trusted-logo img{
+
+height:20px;
+
+}
+
+}  
+    
+.hero{
+    padding:40px 0;
+}  
+    
+/* ==========================================
+INCLUDED WITH THIS TRAINING
+========================================== */
+
+.training-included-section{
+
+padding:100px 0;
+
+background:#F9FAFB;
+
+}
+
+.training-included-head{
+
+text-align:center;
+
+max-width:760px;
+
+margin:auto;
+
+margin-bottom:50px;
+
+}
+
+.training-included-label{
+
+display:inline-flex;
+
+padding:
+8px 16px;
+
+border-radius:999px;
+
+background:
+rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:18px;
+
+}
+
+.training-included-head h2{
+
+font-size:42px;
+
+font-weight:800;
+
+line-height:1.15;
+
+color:#111827;
+
+margin-bottom:18px;
+
+}
+
+.training-included-head p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+/* GRID */
+
+.training-benefits-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:22px;
+
+margin-bottom:40px;
+
+}
+
+/* CARD */
+
+.training-benefit-card{
+
+background:#FFFFFF;
+
+border:
+1px solid #E5E7EB;
+
+border-radius:24px;
+
+padding:24px;
+
+transition:.25s;
+
+}
+
+.training-benefit-card:hover{
+
+transform:
+translateY(-5px);
+
+border-color:#B91C1C;
+
+box-shadow:
+0 14px 30px rgba(185,28,28,.08);
+
+}
+
+/* TOP */
+
+.training-benefit-top{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+margin-bottom:20px;
+
+}
+
+.training-benefit-icon{
+
+width:52px;
+
+height:52px;
+
+border-radius:16px;
+
+background:
+rgba(185,28,28,.08);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#B91C1C;
+
+flex-shrink:0;
+
+}
+
+.training-benefit-icon svg{
+
+width:24px;
+
+height:24px;
+
+}
+
+.training-benefit-top h3{
+
+font-size:18px;
+
+font-weight:700;
+
+line-height:1.4;
+
+color:#111827;
+
+}
+
+/* DESCRIPTION */
+
+.training-benefit-point{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:10px;
+
+font-size:15px;
+
+line-height:1.7;
+
+color:#4B5563;
+
+}
+
+.training-benefit-point svg{
+
+width:16px;
+
+height:16px;
+
+color:#10B981;
+
+flex-shrink:0;
+
+margin-top:4px;
+
+}
+
+/* NOTE */
+
+.training-included-note{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+padding:18px 24px;
+
+border-radius:18px;
+
+background:#FFFFFF;
+
+border:
+1px solid #E5E7EB;
+
+max-width:950px;
+
+margin:auto;
+
+text-align:center;
+
+font-size:15px;
+
+line-height:1.7;
+
+color:#6B7280;
+
+}
+
+.training-included-note svg{
+
+width:18px;
+
+height:18px;
+
+color:#1E3A8A;
+
+flex-shrink:0;
+
+}
+
+/* TABLET */
+
+@media(max-width:992px){
+
+.training-benefits-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.training-included-head h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.training-included-section{
+
+padding:70px 0;
+
+}
+
+.training-included-head{
+
+margin-bottom:40px;
+
+}
+
+.training-included-head h2{
+
+font-size:28px;
+
+}
+
+.training-included-head p{
+
+font-size:16px;
+
+}
+
+.training-benefits-grid{
+
+grid-template-columns:1fr;
+
+gap:16px;
+
+}
+
+.training-benefit-card{
+
+padding:20px;
+
+}
+
+.training-benefit-top{
+
+margin-bottom:14px;
+
+}
+
+.training-benefit-icon{
+
+width:46px;
+
+height:46px;
+
+}
+
+.training-benefit-top h3{
+
+font-size:17px;
+
+}
+
+.training-benefit-point{
+
+font-size:14px;
+
+}
+
+.training-included-note{
+
+padding:16px;
+
+flex-direction:column;
+
+font-size:14px;
+
+}
+
+}   
+.wheel-layout{
+
+display:grid;
+
+grid-template-columns:450px 1fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+.training-wheel{
+
+width:420px;
+height:420px;
+
+position:relative;
+
+margin:auto;
+
+}
+
+.wheel-center{
+
+position:absolute;
+
+left:50%;
+top:50%;
+
+transform:translate(-50%,-50%);
+
+width:160px;
+height:160px;
+
+border-radius:50%;
+
+background:#B91C1C;
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+font-weight:800;
+
+z-index:10;
+
+}
+
+.wheel-node{
+
+position:absolute;
+
+width:110px;
+height:110px;
+
+border-radius:50%;
+
+border:2px solid #E5E7EB;
+
+background:#fff;
+
+cursor:pointer;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.wheel-node.active{
+
+border-color:#B91C1C;
+
+box-shadow:0 10px 30px rgba(185,28,28,.15);
+
+}
+
+.wheel-node:nth-child(2){
+top:-10px;
+left:155px;
+}
+
+.wheel-node:nth-child(3){
+top:70px;
+right:-10px;
+}
+
+.wheel-node:nth-child(4){
+bottom:70px;
+right:-10px;
+}
+
+.wheel-node:nth-child(5){
+bottom:-10px;
+left:155px;
+}
+
+.wheel-node:nth-child(6){
+bottom:70px;
+left:-10px;
+}
+
+.wheel-node:nth-child(7){
+top:70px;
+left:-10px;
+}
+
+.wheel-content-panel{
+
+background:#fff;
+
+border:1px solid #E5E7EB;
+
+border-radius:30px;
+
+padding:50px;
+
+min-height:300px;
+
+}
+
+.wheel-content{
+
+display:none;
+
+}
+
+.wheel-content.active{
+
+display:block;
+
+animation:fadeIn .3s ease;
+
+}
+
+.wheel-content h3{
+
+font-size:32px;
+
+margin-bottom:20px;
+
+}
+
+.wheel-content p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+ma    
+
+}
+
+.wheel-mobile{
+
+display:none;
+
+}
+
+@media(max-width:768px){
+
+.wheel-layout{
+
+display:none;
+
+}
+
+.wheel-mobile{
+
+display:block;
+
+}
+
+.wheel-mobile-item{
+
+border:1px solid #E5E7EB;
+
+border-radius:18px;
+
+margin-bottom:12px;
+
+overflow:hidden;
+
+}
+
+.wheel-mobile-item button{
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+background:#fff;
+
+font-weight:700;
+
+display:flex;
+
+gap:12px;
+
+align-items:center;
+
+text-align:left;
+
+cursor:pointer;
+
+}
+
+.wheel-mobile-item button span{
+
+width:34px;
+height:34px;
+
+border-radius:50%;
+
+background:#B91C1C;
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:12px;
+
+}
+
+.wheel-mobile-content{
+
+display:none;
+
+padding:18px;
+
+border-top:1px solid #E5E7EB;
+
+line-height:1.8;
+
+color:#4B5563;
+
+}
+
+.wheel-mobile-item.active .wheel-mobile-content{
+
+display:block;
+
+}
+
+}    
+    
+    .wheel-head p{
+        padding-bottom: 40px;
+    }  
+    
+.bootcamp-explorer-section{
+
+padding:100px 0;
+
+background:#F9FAFB;
+
+}
+
+.bootcamp-explorer-head{
+
+max-width:850px;
+
+margin:auto;
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.bootcamp-label{
+
+display:inline-flex;
+
+padding:8px 16px;
+
+border-radius:999px;
+
+background:rgba(185,28,28,.08);
+
+color:#B91C1C;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+margin-bottom:18px;
+
+}
+
+.bootcamp-explorer-head h2{
+
+font-size:42px;
+
+font-weight:800;
+
+margin-bottom:20px;
+
+}
+
+.bootcamp-explorer-head p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+}
+
+/* LAYOUT */
+
+.bootcamp-layout{
+
+display:grid;
+
+grid-template-columns:340px 1fr;
+
+gap:30px;
+
+margin-bottom:50px;
+
+}
+
+/* MENU */
+
+.bootcamp-menu{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.bootcamp-tab{
+
+padding:24px;
+
+border:1px solid #E5E7EB;
+
+background:#fff;
+
+border-radius:24px;
+
+cursor:pointer;
+
+display:flex;
+
+gap:16px;
+
+text-align:left;
+
+transition:.3s;
+
+}
+
+.bootcamp-tab.active{
+
+border-color:#B91C1C;
+
+box-shadow:0 10px 30px rgba(185,28,28,.08);
+
+}
+
+.bootcamp-number{
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+background:#B91C1C;
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:800;
+
+flex-shrink:0;
+
+}
+
+.bootcamp-tab h3{
+
+font-size:22px;
+
+margin-bottom:6px;
+
+}
+
+.bootcamp-tab p{
+
+font-size:14px;
+
+color:#6B7280;
+
+}
+
+/* PANEL */
+
+.bootcamp-panel{
+
+background:#fff;
+
+border:1px solid #E5E7EB;
+
+border-radius:30px;
+
+padding:40px;
+
+}
+
+.bootcamp-content{
+
+display:none;
+
+}
+
+.bootcamp-content.active{
+
+display:block;
+
+}
+
+.bootcamp-content h3{
+
+font-size:34px;
+
+margin-bottom:18px;
+
+}
+
+.bootcamp-content p{
+
+line-height:1.9;
+
+margin-bottom:24px;
+
+color:#4B5563;
+
+}
+
+.bootcamp-content ul{
+
+margin-bottom:30px;
+
+padding-left:20px;
+
+}
+
+.bootcamp-content li{
+
+margin-bottom:12px;
+
+}
+
+.bootcamp-btn{
+
+display:inline-flex;
+
+padding:14px 24px;
+
+border-radius:14px;
+
+background:#B91C1C;
+
+color:#fff;
+
+font-weight:700;
+
+text-decoration:none;
+
+}
+
+/* TRUST */
+
+.bootcamp-trust{
+
+background:#fff;
+
+padding:40px;
+
+border-radius:30px;
+
+margin-bottom:40px;
+
+border:1px solid #E5E7EB;
+
+}
+
+.bootcamp-trust h3{
+
+font-size:30px;
+
+margin-bottom:24px;
+
+}
+
+.bootcamp-trust-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:16px;
+
+}
+
+.bootcamp-trust-grid div{
+
+padding:16px;
+
+background:#F9FAFB;
+
+border-radius:14px;
+
+}
+
+/* CTA */
+
+.bootcamp-cta{
+
+text-align:center;
+
+padding:50px;
+
+border-radius:30px;
+
+background:linear-gradient(
+135deg,
+#2B2B50,
+#1E3A8A
+);
+
+}
+
+.bootcamp-cta h3{
+
+font-size:34px;
+
+color:#fff;
+
+margin-bottom:16px;
+
+}
+
+.bootcamp-cta p{
+
+max-width:760px;
+
+margin:auto;
+
+color:#CBD5E1;
+
+line-height:1.9;
+
+margin-bottom:26px;
+
+}
+
+.bootcamp-final-btn{
+
+display:inline-flex;
+
+padding:16px 28px;
+
+border-radius:14px;
+
+background:#fff;
+
+color:#111827;
+
+font-weight:800;
+
+text-decoration:none;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.bootcamp-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.bootcamp-trust-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.bootcamp-panel{
+
+padding:24px;
+
+}
+
+.bootcamp-content h3{
+
+font-size:26px;
+
+}
+
+}    
+</style>
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+<nav class="container nav">
+
+<a class="logo">
+ALTERED SECURITY
+</a>
+
+<div class="nav-links">
+
+<a href="#learn">Learn</a>
+
+<a href="#content">Modules</a>
+
+<a href="#faq">FAQ</a>
+
+</div>
+
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<span class="eyebrow">
+Enterprise Active Directory Training
+</span>
+
+<h1>
+
+Active Directory Security Training for Red and Blue Teams
+
+</h1>
+
+<p>
+Active Directory remains one of the most important security control planes in enterprise environments. This hands-on training helps security teams understand how real AD attack paths are discovered, abused, monitored, and defended in a controlled lab environment.
+
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn btn-primary" onclick="openTeamTrainingModal()">
+Request Team Training
+</button>
+
+<button class="btn btn-secondary">
+Download Syllabus
+</button>
+
+</div>
+<div class="delivery-signal">
+
+This training is also available as Attacking and Defending Active Directory - Basic Edition as a bootcamp and on-demand class
+
+</div>
+</div>
+
+<aside class="hero-card">
+
+<h3>
+
+Training Coverage
+
+</h3>
+
+<div class="coverage-grid">
+
+<div>
+
+<i data-lucide="search"></i>
+
+AD Enumeration
+
+</div>
+
+<div>
+
+<i data-lucide="trending-up"></i>
+
+Privilege Escalation
+
+</div>
+
+<div>
+
+<i data-lucide="shield"></i>
+
+Kerberos Attacks
+
+</div>
+
+<div>
+
+<i data-lucide="network"></i>
+
+Trust Abuse
+
+</div>
+
+<div>
+
+<i data-lucide="git-branch"></i>
+
+Cross Forest Abuse
+
+</div>
+
+<div>
+
+<i data-lucide="database"></i>
+
+Persistence
+
+</div>
+
+<div>
+
+<i data-lucide="eye"></i>
+
+Monitoring
+
+</div>
+
+</div>
+
+</aside>
+</div>
+
+</section>
+
+<section class="trust">
+
+<div class="container trust-grid">
+
+<div class="trust-item">
+<i data-lucide="check-circle"></i>
+Realistic Enterprise AD Lab</div>
+
+<div class="trust-item">
+<i data-lucide="check-circle"></i>
+Red + Blue Team Relevance
+</div>
+
+<div class="trust-item">
+<i data-lucide="check-circle"></i>
+Hands-On Attack and Defense Methodology
+</div>
+
+<div class="trust-item">
+<i data-lucide="check-circle"></i>
+Built From Real Red Team Tradecraft
+</div>
+
+</div>
+
+</section>
+<section class="trusted-section">
+
+<div class="container">
+
+<div class="trusted-slider">
+
+<div class="trusted-track">
+
+<!-- SET 1 -->
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_a8f72ea2af084571b3646b13855f3ba0~mv2.png/v1/fill/w_162,h_29,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sony.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_f0d7f2f030b54a7ead4b4ba7ceba80c5~mv2.png/v1/fill/w_111,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ibm.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_d3209451b43a496da4ca26f313bf7bff~mv2.png/v1/fill/w_178,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sis.png">
+</div>
+
+<!-- DUPLICATE FOR INFINITE LOOP -->
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_a8f72ea2af084571b3646b13855f3ba0~mv2.png/v1/fill/w_162,h_29,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sony.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_f0d7f2f030b54a7ead4b4ba7ceba80c5~mv2.png/v1/fill/w_111,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ibm.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png">
+</div>
+
+<div class="trusted-logo">
+<img src="https://static.wixstatic.com/media/470c31_d3209451b43a496da4ca26f313bf7bff~mv2.png/v1/fill/w_178,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sis.png">
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="ad-security-teams-section">
+
+<div class="container">
+
+<div class="ad-security-wrapper">
+
+<div class="ad-security-content">
+
+<span class="ad-security-label">
+
+TEAM-BASED SECURITY UPSKILLING
+</span>
+
+<h2>
+
+Active Directory Training for Security Teams
+
+</h2>
+
+<p>
+
+This training is built for security teams that need practical Active Directory attack-and-defense capability across offensive, defensive, SOC, detection, and infrastructure roles.
+
+<p>Participants learn how identity-based attacks move through enterprise Windows environments, how AD attack paths are discovered and chained, and where defenders can improve monitoring, detection, hardening, and response.
+</p><p>
+The result is a shared technical baseline: red teams gain repeatable AD attack methodology, while blue teams and SOC teams gain better context for investigation, detection engineering, and defensive validation.
+</p>
+
+<p>
+
+
+</p>
+
+</div>
+
+<div class="ad-security-points">
+
+<div class="ad-security-item">
+
+<div class="ad-security-check">
+
+✓
+
+</div>
+
+<div>
+
+Build a shared understanding of enterprise AD attack paths
+</div>
+
+</div>
+
+<div class="ad-security-item">
+
+<div class="ad-security-check">
+
+✓
+
+</div>
+
+<div>
+
+Practice realistic privilege escalation and trust abuse scenarios
+</div>
+
+</div>
+
+<div class="ad-security-item">
+
+<div class="ad-security-check">
+
+✓
+
+</div>
+
+<div>
+
+Connect offensive techniques to detection and response opportunities
+
+</div>
+
+</div>
+
+<div class="ad-security-item">
+
+<div class="ad-security-check">
+
+✓
+
+</div>
+
+<div>
+
+Improve collaboration across red, blue, SOC, and infrastructure teams
+
+</div>
+
+</div>
+
+<div class="ad-security-item">
+
+<div class="ad-security-check">
+
+✓
+
+</div>
+
+<div>
+
+Train with hands-on labs instead of slide-only instruction
+
+</div>
+
+</div>
+
+<div class="ad-security-item">
+
+<div class="ad-security-check">
+
+✓
+
+</div>
+
+<div>
+
+Support private cohorts, team delivery, and structured learning paths
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+    
+
+<section class="training-wheel-section">
+
+<div class="container">
+
+<div class="wheel-head">
+
+<span class="wheel-label">
+
+HOW WE BUILD OUR TRAINING
+
+</span>
+
+<h2>
+
+From Research to Enterprise-Ready Training
+
+</h2>
+
+<p>
+
+Every module, lab, and exercise follows a structured development process designed around real-world enterprise security challenges.
+
+</p>
+
+</div>
+
+<!-- DESKTOP -->
+
+<div class="wheel-layout">
+
+<!-- LEFT -->
+
+<div class="training-wheel">
+
+<div class="wheel-center">
+
+<div class="wheel-center">
+
+From Research to Training       
+
+</div>
+
+</div>
+
+<button class="wheel-node active"
+onclick="showWheelContent(1,this)">
+
+<span>01</span>
+
+Research
+
+</button>
+
+<button class="wheel-node"
+onclick="showWheelContent(2,this)">
+
+<span>02</span>
+
+Engagements
+
+</button>
+
+<button class="wheel-node"
+onclick="showWheelContent(3,this)">
+
+<span>03</span>
+
+Labs
+
+</button>
+
+<button class="wheel-node"
+onclick="showWheelContent(4,this)">
+
+<span>04</span>
+
+Validation
+
+</button>
+
+<button class="wheel-node"
+onclick="showWheelContent(5,this)">
+
+<span>05</span>
+
+Updates
+
+</button>
+
+<button class="wheel-node"
+onclick="showWheelContent(6,this)">
+
+<span>06</span>
+
+Feedback
+
+</button>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="wheel-content-panel">
+
+<div class="wheel-content active"
+id="wheel-content-1">
+
+<h3>
+
+Research-Driven Content
+
+</h3>
+
+<p>
+
+Training content is built from ongoing security research, emerging attack techniques, detection bypasses, and enterprise security challenges across Active Directory, Azure, cloud security, and identity platforms.
+
+</p>
+
+</div>
+
+<div class="wheel-content"
+id="wheel-content-2">
+
+<h3>
+
+Built from Enterprise Engagements
+
+</h3>
+
+<p>
+
+Lessons learned from Red Team operations, penetration tests, cloud security assessments, and adversary simulations help shape the techniques and scenarios covered in the training.
+
+</p>
+
+</div>
+
+<div class="wheel-content"
+id="wheel-content-3">
+
+<h3>
+
+Enterprise Lab Design
+
+</h3>
+
+<p>
+
+Labs are built to simulate realistic enterprise environments with modern operating systems, identity platforms, trust relationships, and production-like configurations.
+
+</p>
+
+</div>
+
+<div class="wheel-content"
+id="wheel-content-4">
+
+<h3>
+
+Validated Attack Techniques
+
+</h3>
+
+<p>
+
+Every attack path, privilege escalation technique, detection bypass, and security workflow is tested and validated before becoming part of the course.
+
+</p>
+
+</div>
+
+<div class="wheel-content"
+id="wheel-content-5">
+
+<h3>
+
+Continuously Updated
+
+</h3>
+
+<p>
+
+Training content and labs are regularly updated to reflect changes in enterprise technologies, cloud platforms, operating systems, and attack methodologies.
+
+</p>
+
+</div>
+
+<div class="wheel-content"
+id="wheel-content-6">
+
+<h3>
+
+Refined Through Practitioner Feedback
+
+</h3>
+
+<p>
+
+Feedback from enterprise teams, certification candidates, and security professionals continuously improves the learning experience.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MOBILE ACCORDION -->
+
+<div class="wheel-mobile">
+
+<div class="wheel-mobile-item">
+
+<button onclick="toggleWheelMobile(this)">
+
+<span>01</span>
+
+Research-Driven Content
+
+</button>
+
+<div class="wheel-mobile-content">
+
+Training content is built from ongoing security research, emerging attack techniques, detection bypasses, and enterprise security challenges.
+
+</div>
+
+</div>
+
+<div class="wheel-mobile-item">
+
+<button onclick="toggleWheelMobile(this)">
+
+<span>02</span>
+
+Built from Enterprise Engagements
+
+</button>
+
+<div class="wheel-mobile-content">
+
+Lessons learned from Red Team operations, penetration tests, and adversary simulations shape the training.
+
+</div>
+
+</div>
+
+<div class="wheel-mobile-item">
+
+<button onclick="toggleWheelMobile(this)">
+
+<span>03</span>
+
+Enterprise Lab Design
+
+</button>
+
+<div class="wheel-mobile-content">
+
+Labs simulate realistic enterprise environments with modern identity and security technologies.
+
+</div>
+
+</div>
+
+<div class="wheel-mobile-item">
+
+<button onclick="toggleWheelMobile(this)">
+
+<span>04</span>
+
+Validated Attack Techniques
+
+</button>
+
+<div class="wheel-mobile-content">
+
+Every attack path and workflow is validated before inclusion in training.
+
+</div>
+
+</div>
+
+<div class="wheel-mobile-item">
+
+<button onclick="toggleWheelMobile(this)">
+
+<span>05</span>
+
+Continuously Updated
+
+</button>
+
+<div class="wheel-mobile-content">
+
+Content and labs evolve alongside modern enterprise technologies.
+
+</div>
+
+</div>
+
+<div class="wheel-mobile-item">
+
+<button onclick="toggleWheelMobile(this)">
+
+<span>06</span>
+
+Practitioner Feedback
+
+</button>
+
+<div class="wheel-mobile-content">
+
+Participant feedback helps improve the training experience over time.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="learn" class="alt">
+
+<div class="container">
+
+<div class="section-head">
+
+<h2>
+What Your Team Will Learn
+
+</h2>
+
+<p>
+
+Build practical Active Directory attack-and-defense skills through hands-on labs covering enumeration, privilege escalation, Kerberos abuse, trust relationships, persistence, monitoring, and defensive validation.
+
+
+</p>
+
+</div>
+
+<div class="grid-3 learn-grid">
+
+<article class="card learn-card">
+
+<div class="learn-icon">
+
+<i data-lucide="search"></i>
+
+</div>
+
+<h3>
+
+Active Directory Enumeration
+
+
+
+</h3>
+
+<p>
+
+Map users, groups, sessions, ACLs, domains, forests, and trust relationships to understand how AD attack paths are discovered.
+
+
+</p>
+
+</article>
+
+<article class="card learn-card">
+
+<div class="learn-icon">
+
+<i data-lucide="trending-up"></i>
+
+</div>
+
+<h3>
+
+Privilege Escalation
+
+</h3>
+
+<p>
+
+Understand how delegation issues, excessive privileges, misconfigurations, and exposed credentials can lead to domain-level escalation.
+
+
+</p>
+
+</article>
+
+<article class="card learn-card">
+
+<div class="learn-icon">
+
+<i data-lucide="shield"></i>
+
+</div>
+
+<h3>
+
+Kerberos Abuse and Defense
+
+
+</h3>
+
+<p>
+
+Learn how Kerberos ticket abuse, service account exposure, delegation settings, and authentication flows affect both attack paths and detection.
+
+
+</p>
+
+</article>
+
+<article class="card learn-card">
+
+<div class="learn-icon">
+
+<i data-lucide="network"></i>
+
+</div>
+
+<h3>
+
+Trust Relationship Abuse
+
+
+
+</h3>
+
+<p>
+
+Analyze domain and forest trusts, cross-forest relationships, and privilege boundaries that can expand AD compromise paths.
+
+
+</p>
+
+</article>
+
+<article class="card learn-card">
+
+<div class="learn-icon">
+
+<i data-lucide="database"></i>
+
+</div>
+
+<h3>
+
+Persistence and Control Validation
+
+
+
+</h3>
+
+<p>
+
+Study persistence concepts such as ACL abuse, GPO abuse, DCShadow, and WMI persistence in an authorized lab with defensive validation context.
+
+
+</p>
+
+</article>
+
+<article class="card learn-card">
+
+<div class="learn-icon">
+
+<i data-lucide="shield-check"></i>
+
+</div>
+
+<h3>
+
+Monitoring, Detection, and Defense
+
+
+</h3>
+
+<p>
+
+Connect AD attack behavior to monitoring opportunities, detection logic, hardening priorities, and response workflows.
+
+
+</p>
+
+</article>
+
+</div>
+
+<div class="eeat-signal">
+
+<div class="eeat-line"></div>
+
+<p>
+
+Built from real-world red team engagements and enterprise security assessments, with offensive techniques taught in the context of authorized testing, monitoring, and defense.
+
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section class="attack-techniques">
+
+<div class="container">
+
+<div class="section-head">
+
+<h2>
+
+Active Directory Techniques Covered in the Training
+
+</h2>
+
+<p>
+Each technique is covered in the context of authorized training, defensive understanding, and enterprise security improvement. The course helps teams understand how AD attack paths are built, how privilege is expanded, and where monitoring or hardening can reduce risk.    
+    </p>
+</div>
+
+<div class="tech-group">
+
+<h3 class="tech-label attack">
+
+Attack Path and Credential Techniques
+
+</h3>
+
+<div class="pill-grid">
+
+<span class="pill attack-pill">
+
+AD Enumeration
+
+</span>
+
+<span class="pill attack-pill">
+
+Golden Ticket
+
+</span>
+
+<span class="pill attack-pill">
+
+Silver Ticket
+
+</span>
+
+<span class="pill attack-pill">
+
+DCSync
+
+</span>
+
+<span class="pill attack-pill">
+
+Over-PTH
+
+</span>
+
+<span class="pill attack-pill">
+
+DCShadow
+
+</span>
+
+<span class="pill attack-pill">
+
+Persistence
+
+</span>
+
+</div>
+
+</div>
+
+<div class="tech-group">
+
+<h3 class="tech-label privilege">
+
+Privilege Escalation and Trust Abuse
+
+
+
+</h3>
+
+<div class="pill-grid">
+
+<span class="pill privilege-pill">
+
+Privilege Escalation
+
+</span>
+
+<span class="pill privilege-pill">
+
+Trust Abuse
+
+</span>
+
+<span class="pill privilege-pill">
+
+Cross Forest Trust Abuse
+
+</span>
+
+<span class="pill privilege-pill">
+
+Delegation Abuse
+
+</span>
+
+<span class="pill privilege-pill">
+
+Credential Replay
+
+</span>
+
+</div>
+
+</div>
+
+<div class="tech-group">
+
+<h3 class="tech-label defense">
+
+Monitoring, Defense, and Validation
+</h3>
+
+<div class="pill-grid">
+
+<span class="pill defense-pill">
+
+Monitoring AD
+
+</span>
+
+<span class="pill defense-pill">
+
+Defense Bypass
+
+</span>
+
+<span class="pill defense-pill">
+
+Azure Integration
+
+</span>
+
+</div>
+
+</div>
+
+<div class="attack-proof">
+
+<div class="attack-line"></div>
+
+<p>
+
+Techniques are taught with context around authorized assessment, defensive visibility, hardening decisions, and enterprise control validation.
+
+
+</p>
+
+</div>
+
+</div>
+
+</section>    
+<section class="training-methodology">
+
+<div class="container">
+
+<div class="section-head">
+
+<h2>
+
+Training Methodology
+
+</h2>
+
+<p>
+
+Learn enterprise Active Directory attack and defense techniques through hands-on methodology focused on practical attack paths, enterprise tradecraft, and real-world offensive security workflows.
+
+</p>
+
+</div>
+
+<div class="grid-3 methodology-grid">
+
+<article class="card methodology-card">
+
+<div class="method-icon">
+
+<i data-lucide="flask-conical"></i>
+
+</div>
+
+<h3>
+
+Scenario-Based Learning
+
+
+
+</h3>
+
+<p>
+
+Work through structured Active Directory scenarios that connect concepts, lab actions, evidence, and defensive takeaways.
+
+
+</p>
+
+</article>
+
+<article class="card methodology-card">
+
+<div class="method-icon">
+
+<i data-lucide="workflow"></i>
+
+</div>
+
+<h3>
+
+Methodology Over Tools
+
+</h3>
+
+<p>
+
+Focus on repeatable assessment logic and decision-making instead of depending only on specific tools or scripts.
+
+
+</p>
+
+</article>
+
+<article class="card methodology-card">
+
+<div class="method-icon">
+
+<i data-lucide="terminal-square"></i>
+
+</div>
+
+<h3>
+
+Native Windows Tradecraft
+
+</h3>
+
+<p>
+
+Understand how PowerShell and built-in Windows capabilities are used during authorized assessments and how defenders can reason about visibility.
+
+
+</p>
+
+</article>
+
+<article class="card methodology-card">
+
+<div class="method-icon">
+
+<i data-lucide="building-2"></i>
+
+</div>
+
+<h3>
+
+Realistic Security Scenarios
+
+
+
+</h3>
+
+<p>
+
+Practice techniques and defensive concepts based on patterns commonly seen in enterprise AD assessments and red team exercises.
+
+
+</p>
+
+</article>
+
+<article class="card methodology-card">
+
+<div class="method-icon">
+
+<i data-lucide="git-branch-plus"></i>
+
+</div>
+
+<h3>
+
+Attack Path Progression
+
+
+
+</h3>
+
+<p>
+
+Follow how AD attack paths develop from enumeration to privilege escalation, trust abuse, persistence concepts, and defensive validation.
+
+    
+</p>
+
+</article>
+
+<article class="card methodology-highlight">
+
+<div class="highlight-top">
+
+<i data-lucide="shield-check"></i>
+
+Enterprise Active Directory Focus
+
+</div>
+
+<h3>
+
+Practical Enterprise Methodology
+
+</h3>
+
+<p>
+
+Build a shared way for red, blue, SOC, detection, and infrastructure teams to reason about Active Directory risk.
+
+</p>
+
+<ul>
+
+<li>
+
+PowerShell tradecraft
+
+</li>
+
+<li>
+
+Trust relationship analysis
+
+</li>
+
+<li>
+
+Enterprise attack paths
+
+</li>
+
+<li>
+
+Detection visibility concepts
+
+</li>
+
+</ul>
+
+</article>
+
+</div>
+
+<div class="method-proof">
+
+<div class="proof-line"></div>
+
+<p>
+
+The methodology helps teams connect offensive technique, defensive evidence, and remediation decisions instead of treating AD security as isolated commands or tools.
+
+</p>
+
+</div>
+
+</div>
+
+</section>    
+<section class="team-outcomes-section">
+
+<div class="container">
+
+<div class="team-outcomes-head">
+
+<span class="team-outcomes-label">
+
+TEAM CAPABILITY OUTCOMES
+
+</span>
+
+<h2>
+
+What Your Team Can Do After Training
+
+</h2>
+
+<p>
+After the training, participants should be able to evaluate Active Directory risk from both offensive and defensive perspectives. The focus is on understanding how attack paths are discovered, how techniques are chained, and where teams can improve monitoring, hardening, detection, and response.
+
+This makes the training useful for red teams, blue teams, SOC analysts, detection engineers, and infrastructure security teams that need a shared technical baseline.
+
+
+</p>
+
+</div>
+
+<div class="team-outcomes-grid">
+
+<div class="team-outcome-card">
+
+<div class="team-outcome-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Map AD Attack Paths
+
+
+
+</h3>
+
+<p>
+
+Map users, groups, ACLs, sessions, trusts, and privileges to understand how escalation paths form across Active Directory environments.
+
+
+</p>
+
+</div>
+
+<div class="team-outcome-card">
+
+<div class="team-outcome-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Identify Escalation Risks
+
+
+</h3>
+
+<p>
+
+Recognize common privilege escalation paths caused by delegation issues, excessive permissions, exposed credentials, and AD misconfigurations.
+
+
+</p>
+
+</div>
+
+<div class="team-outcome-card">
+
+<div class="team-outcome-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Understand Kerberos Abuse
+
+
+</h3>
+
+<p>
+
+Explain how Kerberos ticket abuse, service account exposure, delegation settings, and authentication flows affect AD security.
+
+
+</p>
+
+</div>
+
+<div class="team-outcome-card">
+
+<div class="team-outcome-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Analyze Trust and Identity Risk
+
+
+</h3>
+
+<p>
+
+Assess domain trusts, forest relationships, privileged identities, and credential exposure that can increase the impact of compromise.
+
+
+</p>
+
+</div>
+
+<div class="team-outcome-card">
+
+<div class="team-outcome-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Validate Persistence and Hardening Gaps
+
+
+</h3>
+
+<p>
+
+Understand persistence concepts in an authorized lab and connect them to hardening priorities, monitoring coverage, and control validation.
+
+
+</p>
+
+</div>
+
+<div class="team-outcome-card">
+
+<div class="team-outcome-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Improve Detection Visibility
+
+
+</h3>
+
+<p>
+
+Connect AD attack behavior to logs, signals, suspicious privilege use, identity activity, and detection engineering opportunities.
+
+
+</p>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</section>
+<section
+id="content"
+class="course-content-section"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<h2>
+
+Course Content
+
+</h2>
+
+<p>
+
+The training is organized into practical modules that move from Active Directory enumeration and attack path discovery to privilege escalation, Kerberos abuse, trust relationships, persistence concepts, monitoring, and defensive validation.
+
+Each module combines technical concepts with hands-on lab practice so teams can understand both offensive methodology and defensive visibility
+</p>
+
+</div>
+
+<div class="accordion curriculum">
+
+<button
+class="acc-btn"
+aria-expanded="false"
+>
+
+<span>
+
+Module I — Enumeration, Offensive PowerShell and .NET Tradecraft
+
+</span>
+
+<i
+data-lucide="plus"
+></i>
+
+</button>
+
+<div class="acc-panel">
+
+<div class="topic-grid">
+
+<span>Active Directory Enumeration</span>
+
+<span>Enterprise Domain Enumeration</span>
+
+<span>Trust and Privilege Mapping</span>
+
+<span>Group Policy Enumeration</span>
+
+<span>ACL Enumeration</span>
+
+<span>BloodHound Operations</span>
+
+<span>PowerShell Tradecraft</span>
+
+<span>PowerShell Security Bypass</span>
+
+<span>AMSI Bypass</span>
+
+<span>CLM Bypass</span>
+
+<span>.NET Tradecraft</span>
+
+<span>In-Memory Execution</span>
+
+</div>
+
+</div>
+
+<button
+class="acc-btn"
+aria-expanded="false"
+>
+
+<span>
+
+Module II — Privilege Escalation and Credential Operations
+
+</span>
+
+<i
+data-lucide="plus"
+></i>
+
+</button>
+
+<div class="acc-panel">
+
+<div class="topic-grid">
+
+<span>Local Privilege Escalation</span>
+
+<span>Domain Privilege Escalation</span>
+
+<span>Credential Replay Attacks</span>
+
+<span>Over-PTH</span>
+
+<span>Token Replay</span>
+
+<span>Credential Extraction</span>
+
+<span>Session Hunting</span>
+
+<span>Kerberoasting</span>
+
+<span>Constrained Delegation Abuse</span>
+
+<span>Unconstrained Delegation Abuse</span>
+
+<span>Protected Group Abuse</span>
+
+</div>
+
+</div>
+
+<button
+class="acc-btn"
+aria-expanded="false"
+>
+
+<span>
+
+Module III — Kerberos, Cross Trust Abuse and Domain Dominance
+
+</span>
+
+<i
+data-lucide="plus"
+></i>
+
+</button>
+
+<div class="acc-panel">
+
+<div class="topic-grid">
+
+<span>Kerberos Attacks</span>
+
+<span>Golden Ticket</span>
+
+<span>Silver Ticket</span>
+
+<span>Diamond Ticket</span>
+
+<span>Cross Forest Trust Abuse</span>
+
+<span>Trust Key Abuse</span>
+
+<span>Skeleton Key</span>
+
+<span>DCSync</span>
+
+<span>AdminSDHolder Abuse</span>
+
+<span>SQL Server Cross Trust Abuse</span>
+
+</div>
+
+</div>
+
+<button
+class="acc-btn"
+aria-expanded="false"
+>
+
+<span>
+
+Module IV — Persistence, Monitoring and Defense Evasion
+
+</span>
+
+<i
+data-lucide="plus"
+></i>
+
+</button>
+
+<div class="acc-panel">
+
+<div class="topic-grid">
+
+<span>Persistence Techniques</span>
+
+<span>DCShadow</span>
+
+<span>ACL Abuse</span>
+
+<span>MDE Detection Bypass</span>
+
+<span>MDI Detection Bypass</span>
+
+<span>Monitoring Active Directory</span>
+
+<span>Architecture Hardening</span>
+
+<span>Deception Techniques</span>
+
+<span>Defensive Monitoring</span>
+
+<span>Enterprise Defense Controls</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="curriculum-proof">
+
+<div class="proof-line"></div>
+
+<p>
+
+Modules are structured to help teams connect AD attack paths, privilege escalation, Kerberos abuse, trust relationships, monitoring visibility, and hardening decisions in a controlled lab environment.
+
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section>
+
+<div class="container grid-2">
+
+<div>
+
+<h2>
+Prerequisites and System Requirements
+</h2>
+<h3>Recommended Prerequisites</h3>
+<p>Participants should be comfortable with basic security testing concepts and familiar with how Active Directory environments are structured.</p>
+    
+<div class="checklist">
+
+<div class="check">
+<i data-lucide="check"></i>
+Basic Penetration Testing
+</div>
+
+<div class="check">
+<i data-lucide="check"></i>
+Basic Active Directory Knowledge
+</div>
+
+<div class="check">
+<i data-lucide="check"></i>
+Familiarity with Windows command-line usage
+</div>
+    
+<div class="check">
+<i data-lucide="check"></i>
+Basic understanding of users, groups, domains, and authentication
+</div>
+</div>
+
+</div>
+
+<div>
+
+<h3>
+System Requirements
+</h3>
+<p>Participants need a system that can connect reliably to the lab environment during training.
+
+</p>
+<div class="checklist">
+
+<div class="check">
+<i data-lucide="check"></i>
+4GB RAM minimum
+</div>
+
+<div class="check">
+<i data-lucide="check"></i>
+VPN Access
+</div>
+
+<div class="check">
+<i data-lucide="check"></i>
+RDP Capability
+</div>
+<div class="check">
+<i data-lucide="check"></i>
+Stable internet connection
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="alt lab-environment">
+
+<div class="container">
+
+<div class="section-head">
+
+<h2>
+
+Hands-On Active Directory Labs for Security Teams
+
+
+
+</h2>
+
+<p>
+
+Participants practice in a controlled Active Directory lab designed to simulate realistic Windows identity environments, trust relationships, privilege boundaries, and attack paths.
+
+The lab gives teams a shared environment to work through offensive techniques, defensive visibility, monitoring decisions, and hardening discussions without using a production network.
+</p>
+
+</div>
+
+<div class="grid-4 lab-grid">
+
+<article class="card lab-card">
+
+<div class="lab-icon">
+
+<i data-lucide="building-2"></i>
+
+</div>
+
+<h3>
+
+Multiple Domains
+
+</h3>
+
+<p>
+
+Practice enumeration and privilege escalation across enterprise domains.
+
+</p>
+
+</article>
+
+<article class="card lab-card">
+
+<div class="lab-icon">
+
+<i data-lucide="git-branch"></i>
+
+</div>
+
+<h3>
+
+Multiple Forests
+
+</h3>
+
+<p>
+
+Understand forest boundaries and cross-forest attack techniques.
+
+</p>
+
+</article>
+
+<article class="card lab-card">
+
+<div class="lab-icon">
+
+<i data-lucide="network"></i>
+
+</div>
+
+<h3>
+
+Trust Relationships
+
+</h3>
+
+<p>
+
+Map and abuse trust relationships in enterprise environments.
+
+</p>
+
+</article>
+
+<article class="card lab-card">
+
+<div class="lab-icon">
+
+<i data-lucide="route"></i>
+
+</div>
+
+<h3>
+
+AD Attack Paths
+
+</h3>
+
+<p>
+
+Identify attack chains and privilege escalation opportunities.
+
+</p>
+
+</article>
+
+<article class="card lab-card">
+
+<div class="lab-icon">
+
+<i data-lucide="terminal"></i>
+
+</div>
+
+<h3>
+
+Native Windows Tradecraft
+
+
+</h3>
+
+<p>
+
+Use PowerShell and built-in Windows capabilities to understand methodology beyond tool dependency.
+
+
+</p>
+
+</article>
+
+<article class="card lab-card">
+
+<div class="lab-icon">
+
+<i data-lucide="calendar-days"></i>
+
+</div>
+
+<h3>
+
+One Month Lab Access
+
+</h3>
+
+<p>
+
+Continue practicing exercises, reviewing concepts, and reinforcing team learning after the training sessions.
+
+
+</p>
+
+</article>
+
+<article class="card lab-card">
+
+<div class="lab-icon">
+
+<i data-lucide="server"></i>
+
+</div>
+
+<h3>
+
+Guided Lab Exercises
+
+</h3>
+
+<p>
+
+Work through structured scenarios covering enumeration, privilege escalation, Kerberos, trust abuse, monitoring, and defense.
+
+
+</p>
+
+</article>
+
+<article class="card lab-card">
+
+<div class="lab-icon">
+
+<i data-lucide="flask-conical"></i>
+
+</div>
+
+<h3>
+
+Team-Based Practice
+
+</h3>
+
+<p>
+
+Give red, blue, SOC, detection, and infrastructure teams a shared technical environment for discussion and skill development.
+
+
+</p>
+
+</article>
+
+</div>
+
+<div class="lab-proof">
+
+<div class="proof-line"></div>
+
+<p>
+
+The lab is designed for authorized training and team-based learning, with realistic AD scenarios that connect attack paths to monitoring, detection, hardening, and response.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+    
+ 
+
+<section class="training-included-section">
+
+<div class="container">
+
+<div class="training-included-head">
+
+<span class="training-included-label">
+
+TRAINING BENEFITS
+
+</span>
+
+<h2>
+
+Included With This Training
+
+</h2>
+
+<p>
+
+Access the resources, labs, and support needed to continue learning beyond the classroom and build practical Active Directory security skills.
+
+</p>
+
+</div>
+
+<div class="training-benefits-grid">
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="book-open"></i>
+
+</div>
+
+<h3>
+
+Course Material
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Structured training content for guided learning.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="server"></i>
+
+</div>
+
+<h3>
+
+Lab Access
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Practice techniques in a dedicated AD lab environment.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="play-circle"></i>
+
+</div>
+
+<h3>
+
+Recorded Sessions
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Review lessons and demonstrations after training.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="file-text"></i>
+
+</div>
+
+<h3>
+
+Lab Manual
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Step-by-step guides for exercises and lab tasks.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="target"></i>
+
+</div>
+
+<h3>
+
+Learning Objectives
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Clear outcomes to measure skill progression.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="users"></i>
+
+</div>
+
+<h3>
+
+Community Access
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Engage with security professionals and peers.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="award"></i>
+
+</div>
+
+<h3>
+
+Certification Track
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Prepare for structured certification-based learning paths.
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ITEM -->
+
+<div class="training-benefit-card">
+
+<div class="training-benefit-top">
+
+<div class="training-benefit-icon">
+
+<i data-lucide="refresh-cw"></i>
+
+</div>
+
+<h3>
+
+Future Updates
+
+</h3>
+
+</div>
+
+<div class="training-benefit-point">
+
+<i data-lucide="check"></i>
+
+<span>
+
+Stay aligned with evolving training content and updates.
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="training-included-note">
+
+<i data-lucide="info"></i>
+
+<span>
+
+Availability may vary based on the selected training format (Live Training, Bootcamp, On-Demand, or Certification Bundle).
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="enterprise-team-training">
+
+<div class="container">
+
+<div class="enterprise-team-wrapper">
+
+<div class="enterprise-team-left">
+
+<span class="enterprise-label">
+
+ENTERPRISE TRAINING
+
+</span>
+
+<h2>
+
+Private Active Directory Training for Security Teams
+
+</h2>
+
+<p>
+
+Organizations can use this training to build practical Active Directory attack-and-defense capability across red team, blue team, SOC, detection, and infrastructure security roles.
+
+</p>
+
+<p>
+
+The course can support private cohorts, instructor-led delivery, hands-on lab access, and structured learning programs for teams that need a shared understanding of Active Directory attack paths, monitoring, hardening, and response.
+
+</p>
+
+<p>
+
+Designed for CISOs, security leaders, training managers, and technical team leads building long-term security capability.
+
+</p>
+
+<!-- CTA BLOCK -->
+
+<div class="enterprise-cta-box">
+
+<h3>
+
+Plan Active Directory Training for Your Team
+
+</h3>
+
+<p>
+
+Share your team size, skill level, and training goals so Altered Security can recommend the right delivery format.
+
+</p>
+
+<div class="enterprise-cta-actions">
+
+<button
+class="btn btn-primary"
+onclick="openTeamTrainingModal()">
+
+Request Team Training
+
+</button>
+
+<a
+href="#syllabus"
+
+class="enterprise-secondary-btn">
+
+Download Team Syllabus
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="enterprise-team-right">
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Private training for internal security teams
+
+</span>
+
+</div>
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Hands-on labs for every participant
+
+</span>
+
+</div>
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Instructor-led bootcamp and team delivery options
+
+</span>
+
+</div>
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Practical AD attack-and-defense methodology
+
+</span>
+
+</div>
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Useful for team upskilling and internal capability building
+
+</span>
+
+</div>
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Supports mixed red, blue, SOC, detection, and infrastructure teams
+
+</span>
+
+</div>
+
+<div class="enterprise-feature">
+
+<div class="enterprise-icon">
+
+✓
+
+</div>
+
+<span>
+
+Structured learning path with continued lab practice
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="cert-learning-path-section">
+
+<div class="container">
+
+<div class="cert-learning-head">
+
+<span class="cert-learning-label">
+
+CERTIFICATION READINESS
+
+</span>
+
+<h2>
+
+Certification Path and Skill Readiness
+
+</h2>
+
+<p>
+
+This training builds the practical Active Directory skills teams need before moving into deeper AD security work and certification-based learning paths such as CRTP, where applicable.
+</p>
+
+<p>
+
+Participants practice the core areas expected from serious AD security training: enumeration, privilege escalation, Kerberos abuse, trust relationships, persistence concepts, monitoring, and defensive validation.
+
+</p>
+
+</div>
+
+<div class="cert-learning-grid">
+
+<!-- CARD 1 -->
+
+<div class="cert-learning-card">
+
+<div class="cert-card-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Practical AD Skill Foundation
+
+</h3>
+
+<p>
+
+Build the hands-on foundation for Active Directory attack-and-defense work, including enumeration, escalation paths, Kerberos concepts, trust relationships, and monitoring.
+
+</p>
+
+</div>
+
+<!-- CARD 2 -->
+
+<div class="cert-learning-card">
+
+<div class="cert-card-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Certification-Aligned Practice
+
+</h3>
+
+<p>
+
+Use structured lab exercises to reinforce concepts commonly needed for advanced AD security certifications and practical assessment readiness.
+
+</p>
+
+</div>
+
+<!-- CARD 3 -->
+
+<div class="cert-learning-card">
+
+<div class="cert-card-icon">
+
+✓
+
+</div>
+
+<h3>
+
+Next-Step Learning Path
+
+</h3>
+
+<p>
+
+Continue into advanced Active Directory, red team, cloud identity, or enterprise adversary simulation training based on your team's role and maturity.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="cert-learning-cta">
+
+<a
+href="#certification-path"
+class="cert-primary-btn">
+
+Explore Certification Path
+
+</a>
+
+<a
+href="#team-training"
+class="cert-secondary-btn">
+
+Request Team Training Plan
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="why-ad">
+
+<div class="container">
+
+<div class="section-head">
+
+<h2>
+Why Enterprise Teams Need Active Directory Security Training
+</h2>
+
+<p>
+
+Active Directory is still one of the most important identity systems inside modern organizations. When AD is misconfigured or poorly monitored, attackers can chain together excessive privileges, weak delegation, exposed credentials, Kerberos abuse, and trust relationships to move deeper into the environment.
+    </p>
+<p>This training helps teams understand those attack paths in a controlled lab so they can improve assessment methodology, monitoring visibility, hardening priorities, and defensive response.
+</p>
+
+</div>
+
+<div class="grid-4">
+
+<article class="card why-card">
+
+<div class="why-icon">
+
+<i data-lucide="building-2"></i>
+
+</div>
+
+<h3>
+
+Enterprise AD Attack Paths
+
+</h3>
+
+<p>
+
+Understand how domains, forests, users, groups, sessions, ACLs, and privileges connect to create real attack paths inside Active Directory environments.
+
+
+</p>
+
+</article>
+
+<article class="card why-card">
+
+<div class="why-icon">
+
+<i data-lucide="shield"></i>
+
+</div>
+
+<h3>
+
+Kerberos and Delegation Risk
+
+
+
+</h3>
+
+<p>
+
+Learn how Kerberos tickets, delegation settings, service accounts, and authentication flows can create abuse paths and defensive monitoring opportunities.
+
+
+</p>
+
+</article>
+
+<article class="card why-card">
+
+<div class="why-icon">
+
+<i data-lucide="network"></i>
+
+</div>
+
+<h3>
+
+Trust Relationships and Privilege Exposure
+
+
+
+</h3>
+
+<p>
+
+Identify how domain trusts, forest trusts, excessive privileges, and weak segmentation can expand the impact of an AD compromise.
+
+
+</p>
+
+</article>
+
+<article class="card why-card">
+
+<div class="why-icon">
+
+<i data-lucide="terminal"></i>
+
+</div>
+
+<h3>
+
+PowerShell and Native Tradecraft
+
+
+
+</h3>
+
+<p>
+
+Understand how built-in Windows capabilities are used during authorized assessments, and how defenders can reason about visibility, controls, and detection.
+
+
+</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>    
+<section class="who-attend-section alt">
+
+<div class="container">
+
+<div class="section-head">
+
+<h2>
+
+Who Should Attend This Active Directory Security Training
+
+
+
+</h2>
+
+<p>
+
+This training is useful for teams that need hands-on experience with how Active Directory environments are attacked, monitored, defended, and hardened.
+
+It is especially valuable when offensive, defensive, SOC, detection, and infrastructure teams need a shared understanding of AD attack paths and identity-based risk.</p>
+
+</div>
+
+<div class="grid-4 audience-grid">
+<article class="card audience-card">
+
+<div class="audience-icon">
+
+<i data-lucide="users"></i>
+
+</div>
+
+<h3>
+
+Training Managers and Security Leaders
+
+</h3>
+
+<p>
+
+Practice AD enumeration, privilege escalation, trust abuse, Kerberos abuse, persistence concepts, and adversary emulation in a controlled lab.
+
+</p>
+
+</article>
+<article class="card audience-card">
+
+<div class="audience-icon">
+
+<i data-lucide="crosshair"></i>
+
+</div>
+
+<h3>
+
+Red Team Professionals
+
+</h3>
+
+<p>
+
+Conducting enterprise attack simulations and adversary emulation.
+
+</p>
+
+</article>
+
+<article class="card audience-card">
+
+<div class="audience-icon">
+
+<i data-lucide="bug"></i>
+
+</div>
+
+<h3>
+
+Penetration Testers
+
+</h3>
+
+<p>
+
+Improve Active Directory assessment methodology, attack path discovery, escalation reasoning, and reporting quality.
+
+
+</p>
+
+</article>
+
+<article class="card audience-card">
+
+<div class="audience-icon">
+
+<i data-lucide="shield-check"></i>
+
+</div>
+
+<h3>
+
+Blue Team Defenders
+
+</h3>
+
+<p>
+
+Understand attacker behavior in AD environments and connect it to monitoring, hardening, detection, and response.
+
+
+</p>
+
+</article>
+
+<article class="card audience-card">
+
+<div class="audience-icon">
+
+<i data-lucide="eye"></i>
+
+</div>
+
+<h3>
+
+SOC Analysts
+
+</h3>
+
+<p>
+
+Learn how identity-based attacks appear in logs, alerts, suspicious authentication activity, and privilege use patterns.
+
+
+</p>
+
+</article>
+
+<article class="card audience-card">
+
+<div class="audience-icon">
+
+<i data-lucide="cpu"></i>
+
+</div>
+
+<h3>
+
+Detection Engineers and Threat Hunters
+
+</h3>
+
+<p>
+
+Use AD attack behavior to improve detection logic, hunting hypotheses, alert context, and investigation workflows.
+
+
+</p>
+
+</article>
+
+<article class="card audience-card">
+
+<div class="audience-icon">
+
+<i data-lucide="server"></i>
+
+</div>
+
+<h3>
+
+Active Directory Administrators
+
+</h3>
+
+<p>
+
+Understand how misconfigurations, delegation issues, excessive privileges, and trust relationships create security risk.
+
+
+</p>
+
+</article>
+
+<article class="card audience-card">
+
+<div class="audience-icon">
+
+<i data-lucide="network"></i>
+
+</div>
+
+<h3>
+
+Infrastructure Security Teams
+
+</h3>
+
+<p>
+
+Improve identity security, privilege management, hardening priorities, and coordination with security operations teams.
+
+
+</p>
+
+</article>
+
+
+
+</div>
+
+<div class="audience-note">
+
+<div class="proof-line"></div>
+
+<p>
+
+Basic understanding of penetration testing and Active Directory concepts is recommended before attending.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section class="why-altered-v2">
+
+<div class="container">
+    <div class="section-head">
+<h2>
+
+Why Security Teams Choose Altered Security Training
+</h2>
+
+<p>
+
+Altered Security training is built for practitioners who need hands-on experience with real techniques, realistic lab scenarios, and enterprise attack paths.
+
+The focus is practical skill development, technical depth, and repeatable methodology that teams can apply to authorized assessments, defensive validation, and internal readiness programs.
+</p>
+    </div>
+<div class="stats-strip">
+
+<div class="stat-box">
+
+<h3>
+
+50,000+
+
+</h3>
+
+<p>
+
+security professionals trained
+
+</p>
+
+</div>
+
+<div class="stat-box">
+
+<h3>
+
+130+
+
+</h3>
+
+<p>
+
+countries reached
+
+</p>
+
+</div>
+
+<div class="stat-box">
+
+<h3>
+
+600+
+
+</h3>
+
+<p>
+
+organizations upskilled
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="why-layout">
+
+<div class="why-item">
+
+<div class="why-mini-icon">
+
+<i data-lucide="user-round-check"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Learn from Red Team Expert
+
+</h3>
+
+<p>
+
+Courses are taught by professionals actively working on real-world engagements — not just trainers.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="why-item">
+
+<div class="why-mini-icon">
+
+<i data-lucide="cpu"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Hands-on Enterprise Labs
+
+</h3>
+
+<p>
+
+Practice in enterprise-grade lab environments designed to simulate real infrastructure and attack paths.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="why-item">
+
+<div class="why-mini-icon">
+
+<i data-lucide="thumbs-up"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Built From Real Assessment Patterns
+
+</h3>
+
+<p>
+
+Training scenarios are informed by patterns seen in penetration tests, red team exercises, and enterprise security assessments.
+
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="why-item">
+
+<div class="why-mini-icon">
+
+<i data-lucide="shield-check"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Trusted by Global Security Teams
+
+</h3>
+
+<p>
+
+Used by red teamers, penetration testers, security engineers, and enterprise teams across global organizations.
+
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>  
+
+
+
+
+
+<section class="client-section">
+
+<div class="container">
+
+<div class="section-head">
+
+<h2>
+
+Trusted by Leading Organizations
+
+</h2>
+<p>Security professionals from global organizations have trained with Altered Security across red team, cloud, infrastructure, and Active Directory security programs.
+
+</p>
+</div>
+
+<div class="client-grid">
+
+<img
+loading="lazy"
+src="https://static.wixstatic.com/media/470c31_7fafa23a6e154914b4c8c9f527a0d8f0~mv2.png"
+alt="Offensive Security client logo"
+>
+
+<img
+loading="lazy"
+src="https://static.wixstatic.com/media/470c31_f0d7f2f030b54a7ead4b4ba7ceba80c5~mv2.png"
+alt="IBM client logo"
+>
+
+<img
+loading="lazy"
+src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png"
+alt="Deloitte client logo"
+>
+
+<img
+loading="lazy"
+src="https://static.wixstatic.com/media/470c31_a8f72ea2af084571b3646b13855f3ba0~mv2.png"
+alt="Sony client logo"
+>
+
+<img
+loading="lazy"
+src="https://static.wixstatic.com/media/470c31_d3209451b43a496da4ca26f313bf7bff~mv2.png"
+alt="SIS client logo"
+>
+
+<img
+loading="lazy"
+src="https://static.wixstatic.com/media/470c31_e2068ebd6e8249a99b272dd05b31d58f~mv2.png"
+alt="Salesforce client logo"
+>
+
+<img
+loading="lazy"
+src="https://static.wixstatic.com/media/470c31_047fc59bcd9d43d1b11b01f5639b0002~mv2.png"
+alt="BMO client logo"
+>
+
+</div>
+
+</div>
+
+</section>    
+    
+<section class="testimonial-section">
+
+<div class="container">
+
+<div class="section-head">
+
+<h2>
+
+What Learners Say About the Training
+
+</h2>
+
+</div>
+
+<div class="testimonial-card">
+
+<div class="quote-mark">
+
+"
+
+</div>
+
+<p>
+
+The training combined enterprise attack methodology with hands-on demonstrations and practical scenarios.
+
+</p>
+
+<div class="testimonial-author">
+
+<strong>
+
+RandomByte
+
+</strong>
+
+<span>
+
+Student, Attacking and Defending Active Directory
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section> 
+    
+
+<section id="faq" class="faq-section alt">
+
+<div class="container">
+
+<div class="section-head">
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
+
+<p>
+
+Answers to common questions about enterprise Active Directory attack and defense training, lab environments, methodology, and enterprise security concepts.
+
+</p>
+
+</div>
+
+<div class="faq-container">
+
+<button class="faq-btn">
+
+    <span>
+
+What is Active Directory security training?
+
+</span>
+
+<i data-lucide="plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Active Directory security training helps security teams understand how AD environments are assessed, attacked in authorized labs, monitored, defended, and hardened. This course covers enumeration, privilege escalation, Kerberos abuse, trust relationships, persistence concepts, monitoring, and defensive validation.
+</p>
+
+</div>
+
+<button class="faq-btn">
+
+<span>
+
+Is this Active Directory training hands-on?
+
+</span>
+
+<i data-lucide="plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Yes. Participants work through guided lab exercises in a realistic Active Directory environment designed around domains, forests, trust relationships, privilege escalation paths, and monitoring scenarios.
+
+
+</p>
+
+</div>
+
+
+
+<button class="faq-btn">
+
+<span>
+
+Do attendees get lab access?
+
+</span>
+
+<i data-lucide="plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Yes. Attendees receive one month of lab access for continued hands-on practice after the training sessions.
+
+
+</p>
+
+</div>
+
+<button class="faq-btn">
+
+<span>
+
+Is this course suitable for Red Team professionals?
+
+</span>
+
+<i data-lucide="plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Yes. Red Team professionals, penetration testers, SOC analysts, security engineers, defenders, and Active Directory administrators can benefit from this training.
+
+</p>
+
+</div>
+
+<button class="faq-btn">
+
+<span>
+
+Can this Active Directory training be delivered for a team?
+</span>
+
+<i data-lucide="plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Yes. The training can support team-based learning for red teams, blue teams, SOC analysts, detection engineers, infrastructure security teams, and Active Directory administrators.
+
+</p>
+
+</div>
+<button class="faq-btn">
+
+<span>
+
+ Is private Active Directory training available?</span>
+
+<i data-lucide="plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Yes. Private training can be used for organizations that want a focused cohort for their internal security team, with shared lab time, common methodology, and team-based learning goals.
+
+
+</p>
+
+</div>
+</div>
+
+</div>
+
+</section>
+<section class="final">
+
+<div class="container">
+
+<h2>
+
+Ready to Train Your Team on Active Directory Security?
+
+</h2>
+
+<p>
+
+Train red teams, blue teams, SOC analysts, detection engineers, and infrastructure security teams through hands-on Active Directory attack-and-defense labs.
+
+
+
+
+</p>
+
+<div class="final-buttons">
+
+<button class="btn btn-primary" onclick="openTeamTrainingModal()">
+
+Request Team Training
+
+</button>
+
+<button class="btn btn-secondary">
+
+Download Team Syllabus
+
+</button>
+
+</div>
+
+</div>
+
+</section>    
+<section class="bootcamp-explorer-section">
+
+<div class="container">
+
+<div class="bootcamp-explorer-head">
+
+<span class="bootcamp-label">
+
+START WITH A BOOTCAMP
+
+</span>
+
+<h2>
+
+Not Ready for a Full Training Yet?
+
+</h2>
+
+<p>
+
+Want to experience our training methodology, enterprise labs, and instructor-led learning before committing security team training program?
+
+</p>
+
+<p>
+
+Our hands-on bootcamps provide an opportunity to explore how we teach real-world attack techniques, design enterprise lab environments, and structure practical security training.
+
+</p>
+
+</div>
+
+<div class="bootcamp-layout">
+
+<!-- LEFT MENU -->
+
+<div class="bootcamp-menu">
+
+<button
+class="bootcamp-tab active"
+onclick="showBootcamp('crtp',this)">
+
+<span class="bootcamp-number">
+
+01
+
+</span>
+
+<div>
+
+<h3>CRTP Bootcamp</h3>
+
+<p>
+
+Active Directory Foundations
+
+</p>
+
+</div>
+
+</button>
+
+<button
+class="bootcamp-tab"
+onclick="showBootcamp('crte',this)">
+
+<span class="bootcamp-number">
+
+02
+
+</span>
+
+<div>
+
+<h3>CRTE Bootcamp</h3>
+
+<p>
+
+Enterprise Red Team Operations
+
+</p>
+
+</div>
+
+</button>
+
+</div>
+
+<!-- RIGHT PANEL -->
+
+<div class="bootcamp-panel">
+
+<div
+id="bootcamp-crtp"
+class="bootcamp-content active">
+
+<h3>
+
+Learn Active Directory Attacks and Tradecraft
+
+</h3>
+
+<p>
+
+Explore Active Directory enumeration, privilege escalation, Kerberos attacks, trust abuse, and enterprise attack paths through guided instructor-led sessions and hands-on labs.
+
+</p>
+
+<ul>
+
+<li>Active Directory Enumeration</li>
+
+<li>Kerberos Attack Techniques</li>
+
+<li>Privilege Escalation Paths</li>
+
+<li>Trust Abuse Scenarios</li>
+
+<li>Hands-On Enterprise Labs</li>
+
+</ul>
+
+<a href="#crtp" class="bootcamp-btn">
+
+View CRTP Bootcamp
+
+</a>
+
+</div>
+
+<div
+id="bootcamp-crte"
+class="bootcamp-content">
+
+<h3>
+
+Advance Your Enterprise Red Team Skills
+
+</h3>
+
+<p>
+
+Learn advanced Active Directory attacks, OPSEC-focused tradecraft, detection evasion, cross-forest attacks, and modern enterprise attack techniques used in Red Team engagements.
+
+</p>
+
+<ul>
+
+<li>OPSEC Focused Tradecraft</li>
+
+<li>Detection Evasion</li>
+
+<li>Cross-Forest Attacks</li>
+
+<li>Advanced Persistence</li>
+
+<li>Enterprise Red Team Techniques</li>
+
+</ul>
+
+<a href="#crte" class="bootcamp-btn">
+
+View CRTE Bootcamp
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TRUST -->
+
+<div class="bootcamp-trust">
+
+<h3>
+
+Why Start with a Bootcamp?
+
+</h3>
+
+<div class="bootcamp-trust-grid">
+
+<div>✓ Experience our training methodology</div>
+
+<div>✓ Explore enterprise-grade lab environments</div>
+
+<div>✓ Learn directly from course authors and researchers</div>
+
+<div>✓ Understand the depth of our certification programs</div>
+
+<div>✓ Evaluate course quality before pursuing advanced training</div>
+
+<div>✓ Gain practical experience through guided exercises and labs</div>
+
+</div>
+
+</div>
+
+<!-- CTA -->
+
+<div class="bootcamp-cta">
+
+<h3>
+
+Experience the Altered Security Learning Approach
+
+</h3>
+
+<p>
+
+See how our training combines research, enterprise security experience, hands-on labs, and real-world attack scenarios before committing to a full training track.
+
+</p>
+
+<a href="#bootcamps"
+class="bootcamp-final-btn">
+
+Explore All Bootcamps
+
+</a>
+
+</div>
+
+</div>
+
+</section>    
+<main class="learning-journey-section alt">
+
+<div class="container">
+
+<div class="section-head">
+
+<h2>
+
+Related Active Directory and Red Team Training Paths
+
+
+</h2>
+
+<p>
+
+Continue building practical security capability with certification paths, advanced Active Directory training, red team labs, and cloud identity security programs that complement this course.
+
+
+</p>
+
+</div>
+
+
+
+<div class="cert-grid">
+
+<article class="card cert-card">
+
+<div class="cert-icon">
+
+<i data-lucide="server"></i>
+
+</div>
+
+<h4>
+
+CRTP
+
+</h4>
+
+<p>
+
+Practice enterprise Active Directory attack and defense techniques in hands-on lab environments.
+
+</p>
+
+<a href="#">
+
+Explore CRTP
+
+<i data-lucide="arrow-right"></i>
+
+</a>
+
+</article>
+<article class="card cert-card">
+
+<div class="cert-icon">
+
+<i data-lucide="cloud"></i>
+
+</div>
+
+<h4>
+
+CRTE
+
+
+
+</h4>
+
+<p>
+
+Build enterprise red team methodology through practical attack scenarios and advanced lab-based learning.
+
+
+</p>
+
+<a href="#">
+
+Explore CRTE
+
+<i data-lucide="arrow-right"></i>
+
+</a>
+
+</article>
+
+<article class="card cert-card">
+
+<div class="cert-icon">
+
+<i data-lucide="crosshair"></i>
+
+</div>
+
+<h4>
+
+Advanced Active Directory Training
+
+
+</h4>
+
+<p>
+
+Move into deeper AD tradecraft, advanced attack paths, persistence concepts, monitoring, and defensive validation.
+
+
+</p>
+
+<a href="#">
+
+View Advanced AD Training
+
+<i data-lucide="arrow-right"></i>
+
+</a>
+
+</article>
+
+
+
+
+
+<article class="card cert-card">
+
+<div class="cert-icon">
+
+<i data-lucide="shield-check"></i>
+
+</div>
+
+<h4>
+
+Advanced Windows Tradecraft
+
+
+
+</h4>
+
+<p>
+
+Develop advanced Windows offensive methodology, evasion concepts, and operator tradecraft for authorized red team work.
+
+
+</p>
+
+<a href="#">
+
+View Training
+
+<i data-lucide="arrow-right"></i>
+
+</a>
+
+</article>
+
+ 
+</div>
+
+
+    </div>
+
+
+
+<section class="alt">
+
+<div class="container">
+
+<h2>
+Related Active Directory Security Resources
+</h2>
+<p>Explore related research and guides on Kerberos abuse, trust relationships, PowerShell tradecraft, and Active Directory attack paths.
+
+    </p>
+<div class="grid-3">
+
+<div class="blog">
+
+<span>Research Guide</span>
+
+<h3>
+Kerberos Enterprise Attack Paths
+</h3>
+
+</div>
+
+<div class="blog">
+
+<span>Research Guide</span>
+
+<h3>
+Trust Abuse Deep Dive
+</h3>
+
+</div>
+
+<div class="blog">
+
+<span>Technical Guide</span>
+
+<h3>
+PowerShell Tradecraft
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+</main>
+
+
+
+<div class="sticky-mobile">
+
+<button class="btn btn-primary" onclick="openTeamTrainingModal()">
+
+Request Team Training
+
+</button>
+
+</div>
+<!-- ====================================
+TEAM TRAINING LEAD MODAL
+==================================== -->
+
+<div
+class="team-training-modal"
+id="teamTrainingModal">
+
+<div
+class="team-training-box">
+
+<button
+class="team-modal-close"
+onclick="closeTeamTrainingModal()">
+
+✕
+
+</button>
+
+<div
+class="team-modal-head">
+
+<span>
+
+Enterprise Training
+
+</span>
+
+<h3>
+
+Request Team Training
+
+</h3>
+
+<p>
+
+Tell us about your team and training needs.
+
+</p>
+
+</div>
+
+<form
+class="team-training-form"
+onsubmit="submitTeamTraining(event)">
+
+<input
+type="text"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+placeholder="Work Email"
+required>
+
+<input
+type="text"
+placeholder="Company"
+required>
+
+<select required>
+
+<option value="">
+
+Team Size
+
+</option>
+
+<option>
+
+1–10
+
+</option>
+
+<option>
+
+11–25
+
+</option>
+
+<option>
+
+26–50
+
+</option>
+
+<option>
+
+51–100
+
+</option>
+
+<option>
+
+100+
+
+</option>
+
+</select>
+
+<select required>
+
+<option value="">
+
+Training Format
+
+</option>
+
+<option>
+
+Private Team Training
+
+</option>
+
+<option>
+
+Public Training
+
+</option>
+
+<option>
+
+On-Demand Learning
+
+</option>
+
+<option>
+
+Unsure
+
+</option>
+
+</select>
+
+<textarea
+rows="5"
+placeholder="Tell us about your requirements">
+
+</textarea>
+
+<button
+type="submit"
+class="team-submit-btn">
+
+Submit Request
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+<script>
+function openTeamTrainingModal(){
+
+document
+.getElementById(
+"teamTrainingModal"
+)
+.classList.add(
+"active"
+);
+
+document.body.style.overflow=
+"hidden";
+
+}
+
+function closeTeamTrainingModal(){
+
+document
+.getElementById(
+"teamTrainingModal"
+)
+.classList.remove(
+"active"
+);
+
+document.body.style.overflow=
+"";
+
+}
+
+function submitTeamTraining(e){
+
+e.preventDefault();
+
+alert(
+"Request submitted successfully. Our enterprise training team will contact you."
+);
+
+closeTeamTrainingModal();
+
+}    
+</script>
+<script>
+
+lucide.createIcons();
+
+document
+.querySelectorAll(".acc-btn")
+.forEach(button=>{
+
+button.onclick=()=>{
+
+const panel=
+button.nextElementSibling;
+
+const active=
+panel.classList.contains("active");
+
+document
+.querySelectorAll(".acc-panel")
+.forEach(x=>{
+
+x.classList.remove("active")
+
+});
+
+if(!active){
+
+panel.classList.add("active")
+
+}
+
+}
+
+});
+document
+.querySelectorAll(".curriculum .acc-btn")
+.forEach(button=>{
+
+button.onclick=()=>{
+
+button.classList.toggle("active")
+
+const panel=
+button.nextElementSibling
+
+panel.classList.toggle("active")
+
+}
+
+})
+    
+document
+.querySelectorAll(".faq-btn")
+.forEach(button=>{
+
+button.onclick=()=>{
+
+button.classList.toggle("active")
+
+const answer=
+button.nextElementSibling
+
+answer.classList.toggle("active")
+
+}
+
+})    
+</script>
+<script>
+
+const trustedTrack =
+document.querySelector(
+".trusted-track"
+);
+
+trustedTrack.addEventListener(
+"mouseenter",
+()=>{
+trustedTrack.style.animationPlayState =
+"paused";
+}
+);
+
+trustedTrack.addEventListener(
+"mouseleave",
+()=>{
+trustedTrack.style.animationPlayState =
+"running";
+}
+);
+
+</script>
+<script>
+function showWheelContent(id,button){
+
+document
+.querySelectorAll('.wheel-content')
+.forEach(el=>el.classList.remove('active'));
+
+document
+.querySelectorAll('.wheel-node')
+.forEach(el=>el.classList.remove('active'));
+
+document
+.getElementById(
+'wheel-content-'+id
+)
+.classList.add('active');
+
+button.classList.add('active');
+
+}
+
+function toggleWheelMobile(button){
+
+const item =
+button.parentElement;
+
+document
+.querySelectorAll(
+'.wheel-mobile-item'
+)
+.forEach(el=>{
+
+if(el !== item){
+
+el.classList.remove(
+'active'
+);
+
+}
+
+});
+
+item.classList.toggle(
+'active'
+);
+
+}
+    </script>    
+<script>
+    function showBootcamp(id,button){
+
+document
+.querySelectorAll('.bootcamp-content')
+.forEach(content=>{
+
+content.classList.remove(
+'active'
+);
+
+});
+
+document
+.querySelectorAll('.bootcamp-tab')
+.forEach(tab=>{
+
+tab.classList.remove(
+'active'
+);
+
+});
+
+document
+.getElementById(
+'bootcamp-'+id
+)
+.classList.add(
+'active'
+);
+
+button.classList.add(
+'active'
+);
+
+}
+    </script>    
+</body>
+</html>
