@@ -2106,21 +2106,28 @@ translateX(-50%);
 /* ==========================================
    TRUST SIGNAL STRIP
 ========================================== */
+/* Outer section remains white */
 
 .trust {
-  position: relative;
-  padding: 24px 0;
-  overflow: hidden;
-  background: var(--color-secondary, #2B2B50);
-  color: #ffffff;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 0;
+  padding: 0 0 16px;
+  background: #ffffff;
+  border: 0;
 }
+
+/* Navy background stays inside the container */
 
 .trust-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
+
+  margin-top: 0;
+  padding: 18px 20px;
+
+  background: var(--color-secondary, #2B2B50);
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
 }
 
 .trust-item {
