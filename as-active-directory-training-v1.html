@@ -7843,6 +7843,109 @@ translateX(-50%);
     height: 33px;
   }
 }
+    
+/* ==========================================
+   DETAILED COURSE MODULE CONTENT
+========================================== */
+.course-content-section .module-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 7px;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.course-content-section .module-details li {
+  position: relative;
+
+  min-height: 100%;
+  margin: 0;
+  padding: 10px 11px 10px 27px;
+
+  background: var(--color-bg-light, #F9FAFB);
+  border: 1px solid var(--color-border, #E5E7EB);
+  border-radius: 7px;
+
+  color: #374151;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+/* Red bullet instead of number */
+
+.course-content-section .module-details li::before {
+  content: "";
+
+  position: absolute;
+  top: 17px;
+  left: 12px;
+
+  width: 5px;
+  height: 5px;
+
+  background: var(--color-primary, #B91C1C);
+  border-radius: 50%;
+}
+
+.course-content-section .module-details li:hover {
+  background: #ffffff;
+  border-color: rgba(185, 28, 28, 0.28);
+  color: var(--color-secondary, #2B2B50);
+}
+
+/* Module panel requires slightly more width */
+
+.course-content-section .curriculum {
+  max-width: 1120px;
+}
+
+/* Open module panel */
+
+.course-content-section .curriculum .acc-panel {
+  padding: 15px;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 850px) {
+  .course-content-section .module-details {
+    grid-template-columns: 1fr;
+  }
+
+  .course-content-section .module-details li {
+    min-height: 0;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .course-content-section .curriculum .acc-panel {
+    padding: 10px;
+  }
+
+  .course-content-section .module-details {
+    gap: 6px;
+  }
+ .course-content-section .module-details li {
+    padding: 9px 9px 9px 25px;
+  }
+
+  .course-content-section .module-details li::before {
+    top: 15px;
+    left: 11px;
+  }
+}
 </style>
 </head>
 
@@ -8596,225 +8699,291 @@ The training focuses on practical Active Directory methodology and techniques th
 
 </section>
 <section
-id="content"
-class="course-content-section"
+  id="content"
+  class="course-content-section"
 >
 
-<div class="container">
+  <div class="container">
 
-<div class="section-head">
-<span class="team-outcomes-label">
-               Course Moduels
-            </span>
-<h2>
+    <div class="section-head">
 
-Course Content
+      <span class="team-outcomes-label">
+        Course Modules
+      </span>
 
-</h2>
+      <h2>
+        Course Content
+      </h2>
 
-<p>
-This training is structured into four practical modules covering Active Directory enumeration, trust and privileges mapping, privilege escalation, credential replay attacks, Kerberos attacks, cross-forest trust abuse, persistence, monitoring, defenses, and bypassing defenses. 
+      <p>
+        This training is structured into four practical modules covering Active Directory enumeration, trust and privileges mapping, privilege escalation, credential replay attacks, Kerberos attacks, cross-forest trust abuse, persistence, monitoring, defenses, and bypassing defenses.
+      </p>
 
-</p>
+    </div>
 
-</div>
+    <div class="accordion curriculum">
 
-<div class="accordion curriculum">
+      <!-- =====================================
+           MODULE I
+      ====================================== -->
 
-<button
-class="acc-btn"
-aria-expanded="false"
->
+      <button
+        type="button"
+        class="acc-btn"
+        aria-expanded="false"
+        aria-controls="module-one-content"
+      >
 
-<span>
+        <span>
+          Module I: Enumeration, Offensive PowerShell and .NET Tradecraft
+        </span>
 
-Module I — Enumeration, Offensive PowerShell and .NET Tradecraft
+        <i data-lucide="plus"></i>
 
-</span>
+      </button>
 
-<i
-data-lucide="plus"
-></i>
+      <div
+        id="module-one-content"
+        class="acc-panel"
+      >
 
-</button>
+        <ul class="module-details">
 
-<div class="acc-panel">
+          <li>
+            Enumerate useful information such as users, groups, group memberships, computers, user properties, trusts, and ACLs to map potential attack paths.
+          </li>
 
-<div class="topic-grid">
+          <li>
+            Learn and practice different local privilege escalation techniques on a Windows machine.
+          </li>
 
-<span>Active Directory Enumeration</span>
+          <li>
+            Hunt for local administrator privileges on machines in the target domain using multiple methods.
+          </li>
 
-<span>Enterprise Domain Enumeration</span>
+          <li>
+            Abuse enterprise applications to execute complex attack paths involving antivirus bypass and pivoting to different machines.
+          </li>
 
-<span>Trust and Privilege Mapping</span>
+          <li>
+            Learn how PowerShell tools can still be used for Active Directory enumeration.
+          </li>
 
-<span>Group Policy Enumeration</span>
+          <li>
+            Learn to modify existing tools to bypass Windows Defender.
+          </li>
 
-<span>ACL Enumeration</span>
+          <li>
+            Bypass PowerShell security controls and enhanced logging, including System-Wide Transcription, Antimalware Scan Interface (AMSI), Script Block Logging, and Constrained Language Mode (CLM).
+          </li>
 
-<span>BloodHound Operations</span>
+          <li>
+            Learn how to modify and use .NET tools to bypass Windows Defender and Microsoft Defender for Endpoint (MDE).
+          </li>
 
-<span>PowerShell Tradecraft</span>
+          <li>
+            Learn to use .NET loaders that can run assemblies in memory.
+          </li>
 
-<span>PowerShell Security Bypass</span>
+        </ul>
 
-<span>AMSI Bypass</span>
+      </div>
 
-<span>CLM Bypass</span>
+      <!-- =====================================
+           MODULE II
+      ====================================== -->
 
-<span>.NET Tradecraft</span>
+      <button
+        type="button"
+        class="acc-btn"
+        aria-expanded="false"
+        aria-controls="module-two-content"
+      >
 
-<span>In-Memory Execution</span>
+        <span>
+          Module II: Lateral Movement, Domain Privilege Escalation and Persistence
+        </span>
 
-</div>
+        <i data-lucide="plus"></i>
 
-</div>
+      </button>
 
-<button
-class="acc-btn"
-aria-expanded="false"
->
+      <div
+        id="module-two-content"
+        class="acc-panel"
+      >
 
-<span>
+        <ul class="module-details">
 
-Module II: Lateral Movement, Domain Privilege Escalation and Persistence
+          <li>
+            Find credentials and sessions belonging to highly privileged domain accounts, such as Domain Administrators, extract their credentials, and use credential replay attacks to escalate privileges while using built-in protocols for pivoting.
+          </li>
 
-</span>
+          <li>
+            Extract credentials from restricted environments where application allowlisting is enforced, abuse derivative local administrator privileges, and pivot to other machines to escalate privileges to the domain level.
+          </li>
 
-<i
-data-lucide="plus"
-></i>
+          <li>
+            Understand the classic Kerberoasting attack and its variants for privilege escalation.
+          </li>
 
-</button>
+          <li>
+            Understand and exploit Active Directory delegation issues.
+          </li>
 
-<div class="acc-panel">
+          <li>
+            Learn how to abuse privileges associated with Protected Groups to escalate privileges.
+          </li>
 
-<div class="topic-grid">
+          <li>
+            Abuse Kerberos to persist with Domain Administrator privileges and forge Golden, Diamond, and Silver tickets.
+          </li>
 
-<span>Local Privilege Escalation</span>
+          <li>
+            Subvert authentication at the domain level using Skeleton Key and custom Security Support Providers.
+          </li>
 
-<span>Domain Privilege Escalation</span>
+          <li>
+            Abuse the Directory Services Restore Mode administrator account for persistence.
+          </li>
 
-<span>Credential Replay Attacks</span>
+          <li>
+            Abuse protection mechanisms such as AdminSDHolder for persistence.
+          </li>
 
-<span>Over-PTH</span>
+        </ul>
 
-<span>Token Replay</span>
+      </div>
 
-<span>Credential Extraction</span>
+      <!-- =====================================
+           MODULE III
+      ====================================== -->
 
-<span>Session Hunting</span>
+      <button
+        type="button"
+        class="acc-btn"
+        aria-expanded="false"
+        aria-controls="module-three-content"
+      >
 
-<span>Kerberoasting</span>
+        <span>
+          Module III: Domain Dominance and Escalation to Enterprise Admins
+        </span>
 
-<span>Constrained Delegation Abuse</span>
+        <i data-lucide="plus"></i>
 
-<span>Unconstrained Delegation Abuse</span>
+      </button>
 
-<span>Protected Group Abuse</span>
+      <div
+        id="module-three-content"
+        class="acc-panel"
+      >
 
-</div>
+        <ul class="module-details">
 
-</div>
+          <li>
+            Abuse the minimum rights required for attacks such as DCSync by modifying ACLs on domain objects.
+          </li>
 
-<button
-class="acc-btn"
-aria-expanded="false"
->
+          <li>
+            Modify the host security descriptors of a domain controller to maintain persistence and execute commands without requiring Domain Administrator privileges.
+          </li>
 
-<span>
+          <li>
+            Elevate privileges from Domain Administrator in a child domain to Enterprise Administrator in the forest root by abusing trust keys and the KRBTGT account.
+          </li>
 
-Module III: Domain Dominance and Escalation to Enterprise Admins
+          <li>
+            Execute intra-forest trust attacks to access resources across the forest.
+          </li>
 
-</span>
+          <li>
+            Abuse database links to achieve code execution across the forest using databases.
+          </li>
 
-<i
-data-lucide="plus"
-></i>
+          <li>
+            Learn about Active Directory Certificate Services and execute some of the most widely used AD CS attacks.
+          </li>
 
-</button>
+          <li>
+            Execute attacks across domain trusts to escalate privileges to Enterprise Administrator.
+          </li>
 
-<div class="acc-panel">
+        </ul>
 
-<div class="topic-grid">
+      </div>
 
-<span>Kerberos Attacks</span>
+      <!-- =====================================
+           MODULE IV
+      ====================================== -->
 
-<span>Golden Ticket</span>
+      <button
+        type="button"
+        class="acc-btn"
+        aria-expanded="false"
+        aria-controls="module-four-content"
+      >
 
-<span>Silver Ticket</span>
+        <span>
+          Module IV: Monitoring, Architecture Changes, Bypassing MDE and MDI
+        </span>
 
-<span>Diamond Ticket</span>
+        <i data-lucide="plus"></i>
 
-<span>Cross Forest Trust Abuse</span>
+      </button>
 
-<span>Trust Key Abuse</span>
+      <div
+        id="module-four-content"
+        class="acc-panel"
+      >
 
-<span>Skeleton Key</span>
+        <ul class="module-details">
 
-<span>DCSync</span>
+          <li>
+            Learn about useful security events logged when the attacks discussed during the training are executed.
+          </li>
 
-<span>AdminSDHolder Abuse</span>
+          <li>
+            Explore architecture changes that can help organizations mitigate the discussed attacks, including temporary group membership, ACL auditing, LAPS, SID filtering, selective authentication, Credential Guard, Windows Defender Application Control, Protected Users, Privileged Access Workstations, tiered administration, and ESAE or Red Forest.
+          </li>
 
-<span>SQL Server Cross Trust Abuse</span>
+          <li>
+            Learn how Microsoft Advanced Threat Analytics and similar security tools detect domain attacks and explore techniques used to avoid or bypass those detections.
+          </li>
 
-</div>
+          <li>
+            Understand how deception can be effectively deployed as an Active Directory defense mechanism.
+          </li>
 
-</div>
+          <li>
+            Learn about Microsoft Defender for Endpoint and understand the telemetry and components MDE uses for detection.
+          </li>
 
-<button
-class="acc-btn"
-aria-expanded="false"
->
+          <li>
+            Execute an entire chain of attacks across a forest trust without triggering alerts from Microsoft Defender for Endpoint.
+          </li>
 
-<span>
+          <li>
+            Use the Microsoft security dashboard to verify MDE bypass techniques.
+          </li>
 
-Module IV: Monitoring, Architecture Changes, Bypassing MDE and MDI
+          <li>
+            Learn about Microsoft Defender for Identity and understand how MDI uses anomalous behavior to identify attacks.
+          </li>
 
-</span>
+          <li>
+            Bypass various Microsoft Defender for Identity detections throughout the course.
+          </li>
 
-<i
-data-lucide="plus"
-></i>
+        </ul>
 
-</button>
+      </div>
 
-<div class="acc-panel">
+    </div>
 
-<div class="topic-grid">
+  </div>
 
-<span>Persistence Techniques</span>
-
-<span>DCShadow</span>
-
-<span>ACL Abuse</span>
-
-<span>MDE Detection Bypass</span>
-
-<span>MDI Detection Bypass</span>
-
-<span>Monitoring Active Directory</span>
-
-<span>Architecture Hardening</span>
-
-<span>Deception Techniques</span>
-
-<span>Defensive Monitoring</span>
-
-<span>Enterprise Defense Controls</span>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-</div>
-
-</section>
-    <!--
+</section><!--
 <section class="alt lab-environment">
 
 <div class="container">
