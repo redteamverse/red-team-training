@@ -2095,260 +2095,7 @@ translateX(-50%);
   }
 }    
     
-    
-/* ==========================================
-   TRUST SIGNAL STRIP
-========================================== */
-/* Outer section remains white */
-
-.trust {
-  margin: 0;
-  padding: 0 0 16px;
-  background: #ffffff;
-  border: 0;
-}
-
-/* Navy background stays inside the container */
-
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
-
-  margin-top: 0;
-  padding: 18px 20px;
-
-  background: var(--color-secondary, #2B2B50);
-  border-radius: 0 0 10px 10px;
-  overflow: hidden;
-}
-
-.trust-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 40px;
-  padding: 0 20px;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.4;
-  text-align: left;
-}
-
-.trust-item + .trust-item {
-  border-left: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.trust-item svg {
-  width: 19px;
-  height: 19px;
-  flex: 0 0 19px;
-  color: var(--color-primary-light, #EA3037);
-  stroke-width: 2.4;
-}
-
-/* Tablet */
-
-@media (max-width: 1000px) {
-  .trust {
-    padding: 20px 0;
-  }
-
-  .trust-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 18px;
-  }
-
-  .trust-item {
-    justify-content: flex-start;
-  }
-
-  .trust-item:nth-child(3) {
-    border-left: 0;
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 600px) {
-  .trust {
-    padding: 20px 0;
-  }
-
-  .trust-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .trust-item {
-    justify-content: flex-start;
-    min-height: auto;
-    padding: 12px 0;
-    font-size: 13px;
-  }
-
-  .trust-item + .trust-item {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    border-left: 0;
-  }
-}    
-    
-    
-/* ==========================================
-   TRUSTED ORGANIZATIONS LOGO STRIP
-========================================== */
-
-.trusted-section {
-  padding: 22px 0;
-  overflow: hidden;
-  background: #ffffff;
-  border-bottom: 1px solid var(--color-border, #E5E7EB);
-}
-
-.trusted-slider {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Solid masks matching the white background */
-
-.trusted-slider::before,
-.trusted-slider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 2;
-  width: 24px;
-  background: #ffffff;
-  pointer-events: none;
-}
-
-.trusted-slider::before {
-  left: 0;
-}
-
-.trusted-slider::after {
-  right: 0;
-}
-
-.trusted-track {
-  display: flex;
-  width: max-content;
-  animation: trusted-logo-scroll 25s linear infinite;
-  will-change: transform;
-}
-
-.trusted-logo-set {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.trusted-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 210px;
-  height: 58px;
-  padding: 8px 28px;
-}
-
-.trusted-logo img {
-  display: block;
-  width: auto;
-  max-width: 150px;
-  max-height: 38px;
-  object-fit: contain;
-  opacity: 0.72;
-  filter: grayscale(100%);
-  transition:
-    opacity 0.2s ease,
-    filter 0.2s ease,
-    transform 0.2s ease;
-}
-
-.trusted-logo:hover img {
-  opacity: 1;
-  filter: grayscale(0%);
-  transform: scale(1.04);
-}
-
-.trusted-slider:hover .trusted-track {
-  animation-play-state: paused;
-}
-
-@keyframes trusted-logo-scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* Tablet */
-
-@media (max-width: 768px) {
-  .trusted-section {
-    padding: 18px 0;
-  }
-
-  .trusted-logo {
-    flex-basis: 170px;
-    height: 52px;
-    padding: 8px 22px;
-  }
-
-  .trusted-logo img {
-    max-width: 130px;
-    max-height: 34px;
-  }
-
-  .trusted-track {
-    animation-duration: 21s;
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 480px) {
-  .trusted-section {
-    padding: 15px 0;
-  }
-
-  .trusted-logo {
-    flex-basis: 145px;
-    height: 48px;
-    padding: 7px 18px;
-  }
-
-  .trusted-logo img {
-    max-width: 112px;
-    max-height: 30px;
-  }
-
-  .trusted-slider::before,
-  .trusted-slider::after {
-    width: 12px;
-  }
-
-  .trusted-track {
-    animation-duration: 18s;
-  }
-}
-
-/* Accessibility */
-
-@media (prefers-reduced-motion: reduce) {
-  .trusted-track {
-    animation-play-state: paused;
-  }
-}    
+ 
     
 
     
@@ -8565,7 +8312,323 @@ translateX(-50%);
     border-left: 0;
   }
 }    
+/* ==========================================
+   TRUSTED BRANDS SLIDER — FINAL
+========================================== */
 
+.trusted-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: var(--color-secondary, #2B2B50);
+  border: 0;
+  border-bottom: 3px solid var(--color-primary, #B91C1C);
+
+  overflow: hidden;
+}
+
+/* Text and slider remain on the same line */
+
+.trusted-section .trusted-inner {
+  display: grid;
+  grid-template-columns: 205px minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+
+  min-height: 106px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* ==========================================
+   FIXED TITLE
+========================================== */
+
+.trusted-section .trusted-title {
+  position: relative;
+  z-index: 3;
+
+  margin: 0;
+
+  color: #ffffff;
+  font-family: var(--font-heading, "Urbanist", sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   SLIDER VIEWPORT
+========================================== */
+/* Slider must provide the navy blending background */
+
+.trusted-section .trusted-slider {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+
+  background: var(--color-secondary, #2B2B50);
+
+  /* Remove this if it currently exists */
+  isolation: auto;
+}
+
+.trusted-section .trusted-track,
+.trusted-section .trusted-logo-set,
+.trusted-section .trusted-logo {
+  background: var(--color-secondary, #2B2B50) !important;
+}
+
+/* Correct treatment for logos with white backgrounds */
+
+.trusted-section .trusted-logo img {
+  display: block;
+
+  width: auto;
+  max-width: 145px;
+  max-height: 40px;
+  margin: 0;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: transparent !important;
+
+  /*
+   * White image background becomes black.
+   * Lighten blending replaces that black with the navy backdrop.
+   */
+  filter:
+    grayscale(100%)
+    invert(100%)
+    contrast(110%);
+
+  mix-blend-mode: lighten;
+
+  opacity: 0.68;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.trusted-section .trusted-logo:hover img {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/* Remove any old masks or overlays */
+
+.trusted-section .trusted-slider::before,
+.trusted-section .trusted-slider::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* ==========================================
+   MOVING TRACK
+========================================== */
+
+.trusted-section .trusted-track {
+  display: flex;
+  align-items: center;
+
+  width: max-content;
+  min-width: max-content;
+
+  background: transparent;
+
+  animation: trustedBrandsScroll 20s linear infinite;
+  will-change: transform;
+}
+
+/* Each set must be identical for a seamless loop */
+
+.trusted-section .trusted-logo-set {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  gap: 44px;
+  padding-right: 44px;
+
+  background: transparent;
+}
+
+/* ==========================================
+   INDIVIDUAL LOGO
+========================================== */
+
+.trusted-section .trusted-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 155px;
+
+  width: 155px;
+  height: 52px;
+  margin: 0;
+  padding: 5px 10px;
+
+  background: transparent;
+}
+
+/* ==========================================
+   LOGO IMAGE FIX
+========================================== */
+
+.trusted-section .trusted-logo img {
+  display: block;
+
+  width: auto;
+  max-width: 145px;
+  max-height: 40px;
+  margin: 0;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: transparent !important;
+
+  /*
+   * The supplied Wix images contain solid image backgrounds.
+   * Invert turns the white canvas black, and screen blending
+   * makes that black canvas disappear against the navy section.
+   */
+  filter:
+    grayscale(100%)
+    invert(100%)
+    contrast(115%);
+
+  mix-blend-mode: screen;
+
+  opacity: 0.62;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.trusted-section .trusted-logo:hover img {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/* Pause when the visitor hovers */
+
+.trusted-section .trusted-slider:hover .trusted-track {
+  animation-play-state: paused;
+}
+
+/* ==========================================
+   INFINITE MOVEMENT
+========================================== */
+
+@keyframes trustedBrandsScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+  .trusted-section .trusted-inner {
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 20px;
+
+    min-height: 94px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .trusted-section .trusted-title {
+    font-size: 14px;
+  }
+
+  .trusted-section .trusted-logo-set {
+    gap: 32px;
+    padding-right: 32px;
+  }
+
+  .trusted-section .trusted-logo {
+    flex-basis: 130px;
+    width: 130px;
+    height: 46px;
+  }
+
+  .trusted-section .trusted-logo img {
+    max-width: 120px;
+    max-height: 35px;
+  }
+}
+
+/* ==========================================
+   MOBILE — TITLE AND SLIDER ON SAME LINE
+========================================== */
+
+@media (max-width: 600px) {
+  .trusted-section {
+    border-bottom-width: 2px;
+  }
+
+  .trusted-section .trusted-inner {
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 12px;
+
+    min-height: 76px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  .trusted-section .trusted-title {
+    font-size: 11px;
+    line-height: 1.3;
+    white-space: normal;
+  }
+
+  .trusted-section .trusted-logo-set {
+    gap: 22px;
+    padding-right: 22px;
+  }
+
+  .trusted-section .trusted-logo {
+    flex-basis: 105px;
+    width: 105px;
+    height: 40px;
+    padding: 3px 6px;
+  }
+
+  .trusted-section .trusted-logo img {
+    max-width: 98px;
+    max-height: 30px;
+  }
+
+  .trusted-section .trusted-track {
+    animation-duration: 16s;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .trusted-section .trusted-track {
+    animation-play-state: paused;
+  }
+}
+    
 </style>
 </head>
 
@@ -10901,15 +10964,22 @@ Network Engineers
 </div>
 
 </section>
-<section class="trusted-section" aria-label="Organizations that trust Altered Security">
+<section
+  class="trusted-section"
+  aria-label="Organizations that trust Altered Security"
+>
 
-  <div class="container">
+  <div class="container trusted-inner">
+
+    <p class="trusted-title">
+      Trusted by Top Brands
+    </p>
 
     <div class="trusted-slider">
 
       <div class="trusted-track">
 
-        <!-- LOGO SET 1 -->
+        <!-- ORIGINAL LOGO SET -->
 
         <div class="trusted-logo-set">
 
@@ -10936,13 +11006,6 @@ Network Engineers
 
           <div class="trusted-logo">
             <img
-              src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png"
-              alt="Deloitte"
-            >
-          </div>
-
-          <div class="trusted-logo">
-            <img
               src="https://static.wixstatic.com/media/470c31_d3209451b43a496da4ca26f313bf7bff~mv2.png/v1/fill/w_178,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sis.png"
               alt="SIS"
             >
@@ -10950,9 +11013,12 @@ Network Engineers
 
         </div>
 
-        <!-- DUPLICATED SET FOR INFINITE MOVEMENT -->
+        <!-- DUPLICATE SET FOR LOOP -->
 
-        <div class="trusted-logo-set" aria-hidden="true">
+        <div
+          class="trusted-logo-set"
+          aria-hidden="true"
+        >
 
           <div class="trusted-logo">
             <img
@@ -10971,13 +11037,6 @@ Network Engineers
           <div class="trusted-logo">
             <img
               src="https://static.wixstatic.com/media/470c31_f0d7f2f030b54a7ead4b4ba7ceba80c5~mv2.png/v1/fill/w_111,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ibm.png"
-              alt=""
-            >
-          </div>
-
-          <div class="trusted-logo">
-            <img
-              src="https://static.wixstatic.com/media/470c31_6b3d8b5cc94e41e3b5e8493b7e2f1827~mv2.png/v1/crop/x_35,y_36,w_280,h_74/fill/w_189,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/deloitte.png"
               alt=""
             >
           </div>
