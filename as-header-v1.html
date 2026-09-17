@@ -206,6 +206,9 @@ button{
 .site-logo img{
     width:48px;
     height:auto;
+    filter:none !important;
+    mix-blend-mode:normal;
+    background:transparent;
 }
 
 .site-logo span{
@@ -393,16 +396,38 @@ button{
 /* Image-enhanced mega menus */
 
 .nav-item .mega-menu.mega-showcase{
-    width:680px;
-    grid-template-columns:250px minmax(0,1fr);
+    width:800px;
+    grid-template-columns:330px minmax(0,1fr);
     align-items:stretch;
-    gap:28px;
-    padding:24px;
+    gap:44px;
+    padding:26px;
 }
 
 .nav-item .mega-menu.mega-showcase.mega-showcase-wide{
-    width:920px;
-    grid-template-columns:240px minmax(0,1fr) minmax(0,1fr);
+    width:1000px;
+    grid-template-columns:330px minmax(0,1fr) minmax(0,1fr);
+}
+
+/* Desktop layout: menu content first, full-width image panel on the right */
+
+@media (min-width:1101px){
+    .nav-item .mega-menu.mega-showcase{
+        grid-template-columns:minmax(0,1fr) 330px;
+    }
+
+    .nav-item .mega-menu.mega-showcase.mega-showcase-wide{
+        grid-template-columns:minmax(0,1fr) minmax(0,1fr) 330px;
+    }
+
+    .nav-item .mega-menu.mega-showcase > .mega-visual-card{
+        order:2;
+    }
+
+    .nav-item .mega-menu.mega-showcase.company-menu{
+        width:720px;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:44px;
+    }
 }
 
 .mega-visual-card{
@@ -411,9 +436,9 @@ button{
     flex-direction:column;
 }
 
-.mega-visual-card img{
+.mega-visual-card > img{
     width:100%;
-    height:160px;
+    height:210px;
     padding:0;
     object-fit:contain;
     object-position:center;
@@ -422,18 +447,133 @@ button{
     background:#f8fafc;
 }
 
-.mega-visual-card.image-contain img{
+.mega-visual-card.image-contain > img{
     padding:0;
     object-fit:contain;
     object-position:center;
     background:#f8fafc;
 }
 
-.mega-visual-card.logo-visual img{
+.visual-image-frame{
+    --visual-image:none;
+    position:relative;
+    width:100%;
+    height:210px;
+    overflow:hidden;
+    isolation:isolate;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    background:transparent;
+}
+
+.visual-image-frame::before{
+    display:none;
+}
+
+.visual-image-frame::after{
+    display:none;
+}
+
+.visual-image-frame img{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100%;
+    padding:0;
+    object-fit:fill;
+    object-position:center;
+    border:0;
+    border-radius:13px;
+    background:transparent;
+}
+
+/* Consistent image dimensions across every visual mega menu */
+
+.mega-visual-card:not(.logo-visual) .visual-image-frame{
+    height:210px;
+    aspect-ratio:auto !important;
+}
+
+.mega-visual-card.logo-visual .visual-image-frame{
     height:112px;
-    padding:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#ffffff;
+}
+
+.mega-visual-card.logo-visual .visual-image-frame::before,
+.mega-visual-card.logo-visual .visual-image-frame::after{
+    display:none;
+}
+
+.mega-visual-card.logo-visual .visual-image-frame img{
+    position:static;
+    width:48px;
+    height:34px;
+    flex:0 0 48px;
+    padding:0;
     object-fit:contain;
-    background:#f8fafc;
+    border-radius:0;
+    background:#ffffff;
+    filter:none !important;
+    mix-blend-mode:normal;
+}
+
+/* Match the certificate frame to its source ratio: no bars and no crop */
+
+.mega-visual-card.certificate-visual > img{
+    height:auto;
+    aspect-ratio:295 / 219;
+}
+
+.mega-visual-card.certificate-visual .visual-image-frame{
+    height:auto;
+    aspect-ratio:295 / 219;
+    background:#ffffff;
+}
+
+.mega-visual-card.certificate-visual .visual-image-frame::before,
+.mega-visual-card.certificate-visual .visual-image-frame::after{
+    display:none;
+}
+
+.mega-visual-card.certificate-visual .visual-image-frame img{
+    padding:0;
+    object-fit:cover;
+    background:#ffffff;
+}
+
+/* Final shared frame rule: equal size, full image visible, no cropping */
+
+.mega-visual-card:not(.logo-visual) .visual-image-frame{
+    width:100%;
+    height:210px;
+    aspect-ratio:auto !important;
+}
+
+.mega-visual-card:not(.logo-visual) .visual-image-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Keep the panoramic Labs artwork proportional inside the shared frame */
+
+.mega-visual-card.red-labs-visual .visual-image-frame{
+    background:#02030a;
+}
+
+.mega-visual-card.red-labs-visual .visual-image-frame img{
+    object-fit:contain;
+    background:#02030a;
+}
+
+/* Preserve the complete certificate artwork without stretching */
+
+.mega-visual-card.certificate-visual .visual-image-frame img{
+    object-fit:contain;
+    background:#ffffff;
 }
 
 .mega-visual-card .visual-label{
@@ -506,6 +646,18 @@ button{
     transform:
     translateX(-50%)
     translateY(0);
+}
+
+/* Keep the first large dropdown inside the viewport */
+
+.nav-item:first-child .mega-menu{
+    left:-52px;
+    transform:translateY(20px);
+}
+
+.nav-item:first-child:hover .mega-menu,
+.nav-item:first-child:focus-within .mega-menu{
+    transform:translateY(0);
 }
 
 /* Keep the wide Company menu inside the viewport */
@@ -1393,7 +1545,7 @@ button{
 
                         <div class="mega-menu mega-showcase">
 
-                            <div class="mega-visual-card image-contain">
+                            <div class="mega-visual-card image-contain red-labs-visual">
                                 <img
                                     src="https://static.wixstatic.com/media/470c31_6a9d0f0bef574e8588631646b3ac726c~mv2.jpg/v1/fill/w_1600,h_423,al_c,q_85,enc_avif,quality_auto/470c31_6a9d0f0bef574e8588631646b3ac726c~mv2.jpg"
                                     alt="Altered Security Red Team Labs environment">
@@ -1411,7 +1563,7 @@ button{
                                <a href="#">CETP: Evasion Lab</a>
                                <a href="#">CARTP®: Azure Red Team Lab</a>                            
                                 <a href="#" class="mega-pill-link">
-                                    View Red Team Labs →
+                                  Red Team Labs →
                                 </a>
                             </div>
 
@@ -1450,12 +1602,12 @@ button{
 
                                 <h4>Red Team Certifications</h4>
 
-                                <a href="#">CRTP®</a>
-                                <a href="#">CRTE®</a>
-                                <a href="#">CETP</a>
-                                <a href="#">CARTP®</a>                                
+                                <a href="#">Certified Red Team Professional (CRTP®)</a>
+                                <a href="#">Certified Red Team Expert (CRTE®)</a>
+                                <a href="#">Certified Evasion Techniques Professional (CETP)</a>
+                                <a href="#">Certified by Altered Security Red Team Professional for Azure (CARTP®)</a>                                
                                 <a href="#" class="mega-pill-link">
-                                    View All Certifications →
+                                    Explore All Certifications →
                                 </a>
                             </div>
 
@@ -1480,7 +1632,7 @@ button{
 
                             <div class="mega-visual-card image-contain">
                                 <img
-                                    src="https://static.wixstatic.com/media/16cdd7_fbd4627ca16a44b4be50ae434e49b629~mv2.avif/v1/fill/w_372,h_457,al_c,q_80,enc_avif,quality_auto/Advanced%20Tradecraft%20Training.avif"
+                                    src="https://static.wixstatic.com/media/16cdd7_1f39e5206479421d82a8123705bec90e~mv2.avif/v1/fill/w_445,h_248,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/CAIRTP-Bootcamp.avif"
                                     alt="Advanced Tradecraft bootcamp training">
                                 <div class="visual-label">Instructor-Led Bootcamps</div>
                                 <p>Learn through live training and practical lab exercises.</p>
@@ -1517,7 +1669,7 @@ button{
 
                         </a>
 
-                        <div class="mega-menu mega-showcase mega-showcase-wide">
+                        <div class="mega-menu mega-showcase">
 
                             <div class="mega-visual-card">
                                 <img
@@ -1529,8 +1681,8 @@ button{
 
                             <div class="mega-column">
 
-                                <h4>Red Team Training</h4>
-
+                                <h4>Enterprise Red Team Training</h4>
+                                <a href="#">Corporate Security Training</a>
                                 <a href="#">Active Directory Attacks: Basic Edition</a>
                                 <a href="#">Active Directory Attacks: Advanced Edition</a>
                                 <a href="#">Cloud Attacks in Azure: Basic Edition</a>
@@ -1539,17 +1691,7 @@ button{
 
                             </div>
 
-                            <div class="mega-column">
-
-                                <h4>Enterprise Training</h4>
-
-                                <a href="#">Corporate Security Training</a>
-                                <a href="#">Private Team Training</a>
-                                <a href="#">Educational Partnerships</a>
-                                <a href="#">Custom Training Programs</a>
-                                <a href="#" class="mega-pill-link">View Enterprise Solutions →</a>
-
-                            </div>
+                          
 
                         </div>
 
@@ -1609,16 +1751,7 @@ button{
 
                         </a>
 
-   <div class="mega-menu mega-showcase mega-showcase-wide">
-
-        <div class="mega-visual-card logo-visual">
-            <img
-                src="https://static.wixstatic.com/media/16cdd7_4c90b32a2b5a46748995dc4047d8cd2b~mv2.avif/v1/fill/w_48,h_34,al_c,q_80,enc_avif,quality_auto/Altered-Security-Logo.avif"
-                alt="Altered Security logo">
-            <div class="visual-label">Altered Security</div>
-            <p>Hands-on enterprise security learning, labs, training, and certifications.</p>
-            
-        </div>
+   <div class="mega-menu mega-showcase company-menu">
 
         <div class="mega-column">
 
@@ -1933,6 +2066,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileClose = document.querySelector(".mobile-close");
     const mobileOverlay = document.querySelector(".mobile-overlay");
     const header = document.querySelector(".site-header");
+
+    /* ==========================
+       FULL-FRAME, UNCROPPED IMAGES
+    ========================== */
+
+    document.querySelectorAll(".mega-visual-card > img").forEach(img => {
+
+        const frame = document.createElement("div");
+        frame.className = "visual-image-frame";
+        frame.style.setProperty(
+            "--visual-image",
+            `url("${img.src.replace(/\"/g, "%22")}")`
+        );
+
+        img.parentNode.insertBefore(frame, img);
+        frame.appendChild(img);
+
+    });
 
     /* ==========================
        CONTEXTUAL MEGA-MENU ICONS
