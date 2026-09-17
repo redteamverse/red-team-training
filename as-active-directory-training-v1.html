@@ -8617,6 +8617,78 @@ translateX(-50%);
   }
 }
     
+/* HERO TRUST FEATURES — replace the existing styles */
+
+.hero-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 30px;
+  padding: 0;
+  background: transparent;
+}
+
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 64px;
+  padding: 14px 16px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  
+  border-radius: 8px;
+
+  color: #2b2b50;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 20px;
+
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+}
+
+.hero-trust-item svg {
+  width: 19px;
+  height: 19px;
+  min-width: 19px;
+  color: #c51d23;
+  stroke-width: 2.4;
+}
+
+.hero-trust-item span {
+  display: block;
+}
+
+/* Tablet */
+
+@media (max-width: 991px) {
+  .hero-trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 24px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 575px) {
+  .hero-trust-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .hero-trust-item {
+    min-height: auto;
+    padding: 12px 14px;
+    border-top-width: 1px;
+    border-left: 3px solid #2b2b50;
+    font-size: 13px;
+  }
+}
+    
+    
 </style>
 </head>
 
@@ -8692,8 +8764,6 @@ translateX(-50%);
       </aside>
 
     </div>
-
-    <!-- HERO TRUST SIGNALS -->
 
     <div class="hero-trust-grid">
 
