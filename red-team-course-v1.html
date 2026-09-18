@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red Team Training & Certifications</title>
+
+  <style>
+    /* =========================================================
+       DESIGN TOKENS — LOCKED (UI SYSTEM AUTHORITY)
+    ========================================================= */
+
+    :root {
+      /* Brand & Action */
+      --color-primary: #B91C1C;
+      --color-primary-light: #EA3037;
+      --color-secondary: #2B2B50;
+      --color-secondary-light: #1E3A8A;
+
+      /* Neutrals */
+      --color-text-main: #111827;
+      --color-text-muted: #6B7280;
+      --color-bg: #FFFFFF;
+      --color-bg-light: #F9FAFB;
+      --color-border: #E5E7EB;
+
+      /* Functional */
+      --color-success: #10B981;
+      --color-warning: #F59E0B;
+      --color-error: #EF4444;
+
+      /* Spacing */
+      --space-xs: 48px; 
+      --space-md: 72px; 
+      --space-lg: 96px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "inter", sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text-main);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    section {
+      padding: var(--space-lg) 24px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       TYPOGRAPHY (LOCKED)
+    ========================================================= */
+
+    h1 {
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }   
+
+    .lead {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.65;
+      max-width: 860px;      
+    }
+
+    .muted {
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+    .meta,
+    .card-meta,
+    .testimonial-meta {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--color-text-muted);
+    }
+     
+     ul {
+    margin-top: 12px;
+  }
+
+    ul li {
+    margin-bottom: 8px;
+      line-height: 1.55;
+  }
+.bg-navy h1 {
+  margin-bottom: 20px;
+}
+
+    /* =========================================================
+       LINKS & BUTTONS (STRICT)
+    ========================================================= */
+
+    a {
+      color: var(--color-secondary-light);
+      text-decoration: none;
+    }
+
+    .link-tertiary {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 2px;
+    }
+    
+    .link-tertiary:hover {
+     color: var(--color-primary-light);
+    }
+
+    
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-light);
+    }
+
+   .btn-secondary-hero {
+      background: transparent;
+      border: 1px solid #FFFFFF;
+      color: white
+    }
+    .btn-secondary-hero:hover {
+      background: var(--color-secondary-light);
+      color: #fff;
+    }
+  
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--color-secondary-light);
+      color: var(--color-secondary-light);
+    }
+
+    .btn-secondary:hover {
+      background: var(--color-secondary-light);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+
+    .btn-ghost:hover {
+      background: #fff;
+      color: var(--color-text-main);
+    }
+
+    /* =========================================================
+       CARDS (CONTAINERS ONLY)
+    ========================================================= */
+
+    .grid {
+      display: grid;
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+    
+    @media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+   @media (max-width: 640px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+  .card {
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 32px 28px 34px;
+    }
+  
+    /* ===============================
+   GLOBAL CARD TITLE STANDARD
+================================ */
+
+.card-title {
+  font-size: 16px;
+  line-height: 1.35;
+  margin-bottom: 10px;
+  color: var(--color-text-main);
+}
+
+.card-title strong {
+  font-weight: 600;
+}
+
+    
+    /* ===============================
+   CARD TERTIARY LINK SPACING
+================================ */
+
+.card-link {
+  margin-top: 0px; 
+  /* separation from body */
+}
+
+.card-link a {
+  font-size: 15px;    /* slightly quieter than body */
+}
+
+ /* ===============================
+   CERTIFICATION CARD REFINEMENTS
+================================ */
+
+.card-white {
+  background: #FFFFFF; /* Off-white section → white cards */
+}
+
+/* Title */
+.cert-title {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  color: var(--color-text-main);
+}
+
+/* Tags container */
+.cert-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+    
+/* Individual tag */
+.cert-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: transparent;
+}
+    
+    /* Meta line */
+.card-meta {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+    
+/* Description spacing */
+.card .muted {
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+    /* CTA separation */
+.card-action {
+  margin-top: 0;
+}
+    
+    /* ===============================
+   AUTHORITY CARD TITLES
+================================ */
+
+    .authority-title {
+      margin-bottom: 6px;
+      font-size: 16px;          /* Body / authority line size */
+      line-height: 1.4;
+      color: var(--color-text-main);
+    }
+
+    .authority-title strong {
+      font-weight: 600;         /* Authority, not heading */
+    }
+    
+
+    /* =========================================================
+       BACKGROUNDS
+    ========================================================= */
+
+    .bg-navy {
+      background: var(--color-secondary);
+      color: #fff;
+    }
+
+    .bg-light {
+      background: var(--color-bg-light);
+    }
+
+    .bg-white {
+      background: var(--color-bg);
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .cta-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    /* ===============================
+   HERO AUTHORITY STRIP
+================================ */
+
+.hero-authority {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+}
+
+.hero-authority .divider {
+  width: 4px;
+  height: 4px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* Mobile tightening (no custom margins) */
+@media (max-width: 768px) {
+  .hero-authority {
+    gap: 12px;
+    font-size: 15px;
+  }
+}
+/* ===============================
+   SECTION EYEBROW (REFINED)
+================================ */
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;                 /* more editorial spacing */
+  margin-bottom: 20px;      /* more separation from H2 */
+}
+
+.eyebrow-line {
+  width: 20px;              /* slightly shorter */
+  height: 1.5px;            /* visually lighter */
+  background-color: var(--color-primary);
+  opacity: 0.9;             /* subtle restraint */
+  flex-shrink: 0;
+}
+
+.eyebrow-text {
+  font-size: 13px;          /* quieter than body */
+  font-weight: 500;
+  letter-spacing: 0.18em;   /* THIS is key */
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* ===============================
+   INSTRUCTOR / AUTHORITY SECTION
+================================ */
+
+.authority-list {
+  margin-top: 16px;
+  padding-left: 18px;
+  color: var(--color-text-muted);
+}
+
+.authority-list li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.authority-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* ===============================
+   TESTIMONIALS (ENTERPRISE STYLE)
+================================ */
+
+.testimonial-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-main);
+  margin-bottom: 16px;
+}
+
+.testimonial-meta {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+  
+/* ===============================
+   TRUST LOGOS (MINIMAL, QUIET)
+================================ */
+
+.logo-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 40px;
+  align-items: center;
+  justify-items: center;
+}
+
+.logo-grid img {
+  max-height: 40px;
+  max-width: 140px;
+  opacity: 0.65;           /* quiet confidence */
+  filter: grayscale(100%);
+}
+/* =========================================================
+   HERO — FINAL BALANCED ENTERPRISE LAYOUT
+========================================================= */
+
+.hero-section {
+  background: #2B2B50;
+  padding: 96px 0;
+  overflow: hidden;
+}
+
+.hero-section .container {
+  position: relative;
+}
+
+/* GRID: text anchored, image flexible */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+/* -------------------------------
+   LEFT: TEXT BLOCK
+-------------------------------- */
+
+.hero-left {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-meta {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E5E7EB;
+  margin-bottom: 16px;
+}
+
+.hero-left h1 {
+  margin-bottom: 24px;
+}
+
+.hero-lead {
+  margin-bottom: 28px;   /* slightly tighter */
+  line-height: 1.65;
+  color: #FFFFFF;
+}
+
+.hero-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px 0;
+}
+
+.hero-features li {
+  margin-bottom: 14px;
+  line-height: 1.6;
+  color: #E5E7EB;
+}
+
+.hero-features li strong {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* CTA */
+.cta-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* -------------------------------
+   RIGHT: DIAGRAM (CORRECTLY ANCHORED)
+-------------------------------- */
+
+.hero-right {
+  position: relative;
+  min-height: 520px; /* IMPORTANT: gives vertical canvas */
+}
+
+/* The diagram itself */
+.hero-diagram {
+  position: absolute;
+
+  /* 🔑 CRITICAL FIX */
+  top: 190px;        /* anchors to lead + features block */
+  left: -20px;   /* pulls diagram into hero space */
+
+  width: 800px;     /* big and readable */
+  max-width: none;
+  height: auto;
+  opacity: 0.95;
+  border-radius: 10px;
+}
+    
+.card-narrow {
+  max-width: 720px;
+  padding: 32px 40px;
+}
+
+/* -------------------------------
+   RESPONSIVE
+-------------------------------- */
+
+@media (max-width: 1200px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right {
+    margin-top: 48px;
+    min-height: auto;
+  }
+
+  .hero-diagram {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+    }
+/* Card stays vertical */
+.cert-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Diagram preview */
+.diagram-preview {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+
+  height: 190px;
+  padding: 6px;
+  margin-bottom: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.diagram-preview img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  display: block;
+}
+
+/* Simulates list */
+.cert-simulates {
+  font-size: 14px;
+  color: #6B7280;
+  margin: 8px 0 14px;
+  padding-left: 18px;
+}
+
+.cert-simulates li {
+  margin-bottom: 4px;
+}
+
+/* CTA always at bottom */
+.card-link {
+  margin-top: auto;
+}
+
+    
+  </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+SECTION 1 — HERO (2-COLUMN, ENTERPRISE)
+========================================================= -->
+<section class="bg-navy hero-section">
+  <div class="container">
+
+    <div class="hero-grid">
+
+      <!-- LEFT: CONTENT -->
+      <div class="hero-left">
+
+        <p class="hero-meta">
+          Hands-on Red Team training for real enterprise environments
+        </p>
+
+        <h1>
+          Red Team Training &amp; Certifications to Build Practical, Real-World Capabilities
+        </h1>
+
+        <p class="lead hero-lead">
+          This training is designed for professionals who want to move beyond isolated techniques and
+          understand how real Red Team operations are planned, executed, and measured.       
+        </p>
+
+        <ul class="hero-features">
+          <li>
+            <strong>Enterprise-aligned attack scenarios</strong> — Practice Red Team operations across
+            Active Directory and modern enterprise infrastructures used in production environments.
+          </li>
+          <li>
+            <strong>Outcome-driven learning structure</strong> — Each module is designed around measurable
+            skills, not disconnected tools, shortcuts, or isolated techniques.
+          </li>
+          <li>
+            <strong>Hands-on execution throughout</strong> — Learn by doing through guided labs that mirror
+            real Red Team engagement workflows.
+          </li>
+          <li>
+            <strong>Progressive skill development</strong> — Concepts build progressively from fundamentals
+            to advanced tradecraft, without gaps in skill coverage.
+          </li>
+        </ul>
+
+        <div class="cta-row">
+          <a href="#training-curriculum" class="btn btn-primary">
+           Get Red Team Certifications
+          </a>
+          <a href="#labs-structure" class="btn btn-secondary-hero">
+            Start Red Team Programs
+          </a>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: CONCEPTUAL DIAGRAM -->
+         <div class="hero-right hero-diagram-wrap">
+        <img
+          src="https://redteamverse.github.io/red-team-training/images/activedirectorylab.avif"
+          alt="Enterprise Red Team attack simulation diagram"
+          class="hero-diagram"
+        />
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- =========================================================
+SECTION 2 — AUTHORITY & TRUST (FINAL, COMPLETE)
+========================================================= -->
+  <section class="bg-light">
+  <div class="container">
+
+    <!-- Eyebrow -->
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">WHY ALTERED SECURITY</span>
+    </div>
+
+    <!-- Heading -->
+    <h2>Red Team Training Built Around Enterprise Reality</h2>
+
+    <!-- Lead -->
+    <p class="lead">
+      Altered Security designs Red Team certifications and training based on how adversaries actually operate inside enterprise environments — from identity abuse and lateral movement to persistence and long-term access.
+    </p>
+
+    <!-- Authority Grid -->
+    <div class="grid grid-2">
+
+      <div class="card" style="background:#FFFFFF;">
+        <p class="authority-title">
+          <strong>Certification Authority</strong>
+        </p>
+        <p class="muted">
+          Original creator of structured Red Team certification pathways
+        </p>
+      </div>
+
+      <div class="card" style="background:#FFFFFF;">
+        <p class="authority-title">
+          <strong>Practitioner-Led Instruction</strong>
+        </p>
+        <p class="muted">
+          Training rooted in real operational Red Team tradecraft
+        </p>
+      </div>
+
+      <div class="card" style="background:#FFFFFF;">
+        <p class="authority-title">
+          <strong>Enterprise-First Scope</strong>
+        </p>
+        <p class="muted">
+          Focused on Active Directory and cloud environments used in real enterprises
+        </p>
+      </div>
+
+      <div class="card" style="background:#FFFFFF;">
+        <p class="authority-title">
+          <strong>Progressive Skill Design</strong>
+        </p>
+        <p class="muted">
+          Learning built around progression, not isolated techniques
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Supporting Meta -->
+    <p class="meta" style="margin-top:32px; max-width:820px;">
+      Content and labs are continuously refined to reflect modern enterprise attack paths and defensive realities.
+    </p>
+
+  </div>
+</section>
+
+
+
+  
+<!-- =========================================================
+SECTION 3 — OFFERING ORIENTATION
+========================================================= -->
+<section class="bg-white">
+  <div class="container">
+    <div class="section-eyebrow">
+     <span class="eyebrow-line"></span>  
+     <span class="eyebrow-text">Training Models</span>
+    </div>
+    <h2>Certifications and Instructor-Led Training</h2>
+    <p class="lead">
+      Red Team learning is delivered through two clearly defined models: self-paced certifications for individual skill validation, and instructor-led training programs for guided execution and team enablement.
+    </p>
+
+    <div class="grid grid-2">
+      <div class="card" style="background:#F9FAFB;">
+        <p class="card-title"><strong>Certifications</strong></p>
+
+        <p class="muted">
+          Self-paced Red Team certifications designed for professionals who want to build and validate hands-on adversary simulation skills at their own pace.
+        </p>
+        <div class="card-link">
+          <a class="link-tertiary" href="#">Explore Red Team Certifications →</a>
+        </div>
+      </div>
+
+      <div class="card" style="background:#F9FAFB;">
+       <p class="card-title"><strong>Training Programs</strong></p>
+        <p class="muted">
+          Instructor-led Red Team training programs delivered through live bootcamps, virtual instruction, and private enterprise engagements.
+        </p>
+        <div class="card-link">
+        <a class="link-tertiary" href="#">View Training Programs →</a>
+        </div>  
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="bg-light" id="certifications">
+  <div class="container">
+
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">CERTIFICATION PORTFOLIO</span>
+    </div>
+
+    <h2>Enterprise-Focused Red Team Certifications</h2>
+
+    <p class="lead">
+      Each certification validates practical Red Team capability through hands-on
+      scenarios aligned with real enterprise attack behavior.
+    </p>
+
+    <div class="grid grid-3">
+
+      <!-- ================= CRTP ================= -->
+      <div class="card card-white cert-card">
+        <div class="diagram-preview">
+          <img
+            src="https://redteamverse.github.io/red-team-training/images/activedirectorylab.avif"
+            alt="CRTP Active Directory lab architecture"
+            loading="lazy"
+          />
+        </div>
+
+        <p class="cert-title"><strong>CRTP</strong></p>
+
+        <div class="cert-tags">
+          <span class="cert-tag">Foundation</span>
+          <span class="cert-tag">On-Prem</span>
+        </div>
+
+        <ul class="cert-simulates">
+          <li>Multi-domain Active Directory environment</li>
+          <li>Enterprise trust relationships</li>
+          <li>Realistic lateral movement paths</li>
+        </ul>
+
+        <p class="muted">
+          Enterprise-focused introduction to Active Directory Red Team attack paths.
+        </p>
+
+        <div class="card-link">
+          <a class="link-tertiary" href="#">View Certification →</a>
+        </div>
+      </div>
+
+      <!-- ================= CRTE ================= -->
+      <div class="card card-white cert-card">
+        <div class="diagram-preview">
+          <img
+            src="https://redteamverse.github.io/red-team-training/images/ads.avif"
+            alt="CRTE advanced Active Directory lab architecture"
+            loading="lazy"
+          />
+        </div>
+
+        <p class="cert-title"><strong>CRTE</strong></p>
+
+        <div class="cert-tags">
+          <span class="cert-tag">Advanced</span>
+          <span class="cert-tag">On-Prem</span>
+        </div>
+
+        <ul class="cert-simulates">
+          <li>Hardened enterprise AD infrastructure</li>
+          <li>Advanced detection and evasion controls</li>
+          <li>Stealth-focused Red Team operations</li>
+        </ul>
+
+        <p class="muted">
+          Advanced Red Team operations emphasizing stealth and evasion in enterprise AD environments.
+        </p>
+
+        <div class="card-link">
+          <a class="link-tertiary" href="#">View Certification →</a>
+        </div>
+      </div>
+
+      <!-- ================= CETP ================= -->
+      <div class="card card-white cert-card">
+        <div class="diagram-preview">
+          <img
+            src="https://redteamverse.github.io/red-team-training/images/gcb.avif"
+            alt="CETP enterprise adversary simulation architecture"
+            loading="lazy"
+          />
+        </div>
+
+        <p class="cert-title"><strong>CRTM</strong></p>
+
+        <div class="cert-tags">
+          <span class="cert-tag">Expert</span>
+          <span class="cert-tag">Enterprise</span>
+        </div>
+
+        <ul class="cert-simulates">
+          <li>Enterprise-scale adversary campaigns</li>
+          <li>Multi-forest and multi-network environments</li>
+          <li>Long-duration attack simulation</li>
+        </ul>
+
+        <p class="muted">
+          Campaign-driven adversary simulation at enterprise scale.
+        </p>
+
+        <div class="card-link">
+          <a class="link-tertiary" href="#">View Certification →</a>
+        </div>
+      </div>
+
+      <!-- ================= CARTP ================= -->
+      <div class="card card-white cert-card">
+        <div class="diagram-preview">
+          <img
+            src="https://redteamverse.github.io/red-team-training/images/5232.avif"
+            alt="CARTP Azure Active Directory lab architecture"
+            loading="lazy"
+          />
+        </div>
+
+        <p class="cert-title"><strong>CARTP</strong></p>
+
+        <div class="cert-tags">
+          <span class="cert-tag">Foundation</span>
+          <span class="cert-tag">Azure</span>
+        </div>
+
+        <ul class="cert-simulates">
+          <li>Azure AD identity and access environments</li>
+          <li>Cloud authentication abuse scenarios</li>
+          <li>Hybrid identity attack paths</li>
+        </ul>
+
+        <p class="muted">
+          Azure Red Team fundamentals focused on identity and access abuse.
+        </p>
+
+        <div class="card-link">
+          <a class="link-tertiary" href="#">View Certification →</a>
+        </div>
+      </div>
+
+      <!-- ================= CARTE ================= -->
+      <div class="card card-white cert-card">
+        <div class="diagram-preview">
+          <img
+            src="https://redteamverse.github.io/red-team-training/images/LabDiagram_edited.avif"
+            alt="CARTE advanced Azure Red Team lab architecture"
+            loading="lazy"
+          />
+        </div>
+
+        <p class="cert-title"><strong>CARTE</strong></p>
+
+        <div class="cert-tags">
+          <span class="cert-tag">Advanced</span>
+          <span class="cert-tag">Azure</span>
+        </div>
+
+        <ul class="cert-simulates">
+          <li>Enterprise Azure cloud environments</li>
+          <li>Advanced identity, persistence, and evasion</li>
+          <li>Cloud-scale Red Team operations</li>
+        </ul>
+
+        <p class="muted">
+          Advanced Azure Red Team operations in enterprise cloud environments.
+        </p>
+
+        <div class="card-link">
+          <a class="link-tertiary" href="#">View Certification →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-secondary" href="#">View All Certifications</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+SECTION 4 — LEARNING PATHS
+========================================================= -->
+<section class="bg-white">
+  <div class="container">
+    <div class="section-eyebrow">
+     <span class="eyebrow-line"></span>  
+     <span class="eyebrow-text">SKILL PROGRESSION</span>
+    </div>
+    <h2>Structured Red Team Learning Paths</h2>
+    <p class="lead">
+      Each certification fits into a defined progression based on environment, complexity, and operational depth — helping professionals advance logically without gaps.
+    </p>
+
+    <h3 style="margin-top:48px;">On-Prem / Active Directory Red Team Path</h3>
+    <div class="grid grid-3">
+      <div class="card" style="background:#F9FAFB;">
+        <p class="card-title"><strong>CRTP — Certified Red Team Professional</strong></p>      
+        <p class="muted">Build a strong foundation in identifying and exploiting real-world Active Directory attack paths used in enterprise environments.</p>
+        <div class="card-link">
+        <a class="link-tertiary" href="#">View Certification →</a>
+        </div>  
+      </div>
+
+      <div class="card" style="background:#F9FAFB;">
+        <p class="card-title"><strong>CRTE — Certified Red Team Expert</strong></p>      
+        <p class="muted">Execute advanced Red Team operations focused on stealth, evasion, and mature Active Directory abuse techniques.</p>
+        <div class="card-link">
+        <a class="link-tertiary" href="#">View Certification →</a>
+        </div>  
+      </div>
+
+      <div class="card" style="background:#F9FAFB;">
+        <p class="card-title"><strong>CETP — Certified Evasion Techniques Professional</strong></p>       
+        <p class="muted">Design and execute full-scale enterprise adversary simulations across complex, multi-domain environments.</p>
+        <div class="card-link">
+        <a class="link-tertiary" href="#">View Certification →</a>
+        </div>  
+      </div>
+    </div>
+
+    <h3 style="margin-top:48px;">Azure / Cloud Red Team Path</h3>
+    <div class="grid grid-2">
+      <div class="card" style="background:#F9FAFB;">
+        <p class="card-title"><strong>CARTP — Certified Azure Red Team Professional</strong></p>        
+        <p class="muted">Understand and exploit Azure identity and access attack paths from an adversary’s perspective.</p>
+        <a class="link-tertiary" href="#">View Certification →</a>
+      </div>
+
+      <div class="card" style="background:#F9FAFB;">
+        <p class="card-title"><strong>CARTE — Certified Azure Red Team Expert</strong></p>        
+        <p class="muted">Perform advanced Azure Red Team operations focused on persistence, privilege escalation, and evasion.</p>
+        <div class="card-link">
+        <a class="link-tertiary" href="#">View Certification →</a>
+        </div>  
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#">View Certifications</a>
+      <a class="btn btn-secondary" href="#">Explore Learning Path</a>
+    </div>
+  </div>
+</section>  
+
+<!-- =========================================================
+SECTION — TESTIMONIALS / OUTCOME VALIDATION
+========================================================= -->
+<section class="bg-light">
+  <div class="container">
+
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">OUTCOME VALIDATION</span>
+    </div>
+
+    <h2>Trusted by Security Professionals and Red Teams</h2>
+
+    <p class="lead">
+      Feedback from professionals and teams who have used these certifications and training programs to strengthen real-world Red Team operations.
+    </p>
+
+    <div class="grid grid-3">
+
+      <div class="card" style="background:#FFFFFF;">
+        <p class="testimonial-text">
+          “The certification forced me to think like a real adversary instead of following predefined steps. The labs reflected the kind of tradecraft we actually see in enterprise environments.”
+        </p>
+        <p class="testimonial-meta">
+          Senior Security Engineer · Internal Red Team
+        </p>
+      </div>
+
+      <div class="card" style="background:#FFFFFF;">
+        <p class="testimonial-text">
+          “This was one of the few Red Team trainings that focused on full attack paths rather than isolated techniques. It directly improved how we plan and execute simulations.”
+        </p>
+        <p class="testimonial-meta">
+          Red Team Lead · Financial Services Organization
+        </p>
+      </div>
+
+      <div class="card" style="background:#FFFFFF;">
+        <p class="testimonial-text">
+          “The labs and scenarios felt uncomfortably realistic — which is exactly what we needed. The training aligned well with how enterprise environments actually break.”
+        </p>
+        <p class="testimonial-meta">
+          Offensive Security Consultant
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+SECTION — TRUSTED BY ORGANIZATIONS
+========================================================= -->
+<section class="bg-light">
+  <div class="container">
+
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">TRUSTED BY</span>
+    </div>
+
+    <h2>Trusted by Security Teams Across Enterprises</h2>
+
+    <div class="logo-grid">
+      <img src="https://redteamverse.github.io/red-team-training/images/microsoft.png" alt="Microsoft">
+      <img src="https://redteamverse.github.io/red-team-training/images/security.png" alt="Security Organization">
+      <img src="https://redteamverse.github.io/red-team-training/images/tcs.jpg" alt="TCS">
+      <img src="https://redteamverse.github.io/red-team-training/images/wipro.png" alt="Wipro">
+      <img src="https://redteamverse.github.io/red-team-training/images/RS.jpg" alt="RS">
+    </div>
+
+  </div>
+</section>
+  
+
+<!-- =========================================================
+SECTION 6 — TRAINING PROGRAMS
+========================================================= -->
+<section class="bg-white">
+  <div class="container">
+
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">INSTRUCTOR-LED TRAINING</span>
+    </div>
+
+    <h2>Live, Virtual, and Enterprise Red Team Training</h2>
+
+    <p class="lead">
+      Instructor-led programs are designed for professionals and organizations that require guided execution, real-time feedback, and accelerated skill development.
+    </p>
+
+    <div class="grid grid-3">
+
+      <div class="card" style="background:#F9FAFB;">
+        <p class="card-title"><strong>Live Red Team Bootcamps</strong></p>
+        <p class="card-meta">Instructor-Led · Public Cohorts</p>
+        <p class="muted">
+          Intensive, live bootcamps aligned with Red Team certifications and delivered by experienced instructors.
+        </p>
+        <div class="card-action">
+          <a class="btn btn-secondary" href="#">Join Live Bootcamp</a>
+        </div>
+      </div>
+
+      <div class="card" style="background:#F9FAFB;">
+        <p class="card-title"><strong>Virtual Instructor-Led Training</strong></p>
+        <p class="card-meta">Remote Delivery · Team Training</p>
+        <p class="muted">
+          Live, remote Red Team training designed for distributed teams and global organizations delivered by experienced instructors..
+        </p>
+        <div class="card-action">
+          <a class="btn btn-secondary" href="#">Request Training Details</a>
+        </div>
+      </div>
+
+      <div class="card" style="background:#F9FAFB;">
+        <p class="card-title"><strong>In-Person &amp; Private Enterprise Training</strong></p>
+        <p class="card-meta">Custom · On-Site</p>
+        <p class="muted">
+          Customized Red Team training programs tailored to organizational maturity, threat models, and internal environments.
+        </p>
+        <div class="card-action">
+          <a class="btn btn-primary" href="#">Contact for Training</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+SECTION — INSTRUCTORS & CREATION AUTHORITY
+========================================================= -->
+<section class="bg-white">
+  <div class="container">
+
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">INSTRUCTORS & CREATION AUTHORITY</span>
+    </div>
+
+    <h2>Built and Taught by Practicing Red Team Operators</h2>
+
+    <p class="lead">
+      All Red Team certifications and training programs are created and delivered by practitioners with deep experience executing real-world adversary simulation in enterprise environments.
+    </p>
+
+    <div class="grid grid-2">
+
+      <!-- Instructor Card -->
+      <div class="card" style="background:#F9FAFB;">
+        <p class="card-title"><strong>Nikhil Mittal</strong></p>
+        <p class="card-meta">Lead Red Team Instructor · Certification Author</p>
+
+        <p class="muted">
+          Red Team practitioner with extensive experience designing and executing enterprise adversary simulations across Active Directory and cloud environments.
+        </p>
+
+        <ul class="authority-list">
+          <li>Original creator of CRTP, CRTE, CETP, CARTP, and CARTE certifications</li>
+          <li>Delivered Red Team training to thousands of security professionals globally</li>
+          <li>Speaker and trainer at leading security conferences and private enterprise engagements</li>
+        </ul>
+      </div>
+
+      <!-- Instructor Philosophy / System Card -->
+      <div class="card" style="background:#F9FAFB;">
+        <p class="card-title"><strong>Training Philosophy</strong></p>
+
+        <p class="muted">
+          Instruction is built around how real adversaries operate — not tool demonstrations or isolated techniques.
+        </p>
+
+        <ul class="authority-list">
+          <li>Enterprise-first adversary simulation</li>
+          <li>Focus on operational tradecraft, not shortcuts</li>
+          <li>Progressive skill development aligned with real attack paths</li>
+          <li>Labs designed to reflect modern enterprise environments</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+SECTION 7 — AUDIENCE FIT
+========================================================= -->
+<!-- =========================================================
+SECTION 7 — AUDIENCE FIT
+========================================================= -->
+<section class="bg-white">
+  <div class="container">
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>  
+      <span class="eyebrow-text">INTENDED AUDIENCE</span>
+    </div>
+
+    <h2>Who This Training Is Built For</h2>
+
+    <p class="lead">
+      This training is designed for professionals responsible for executing, validating, or leading offensive security operations in enterprise environments.
+    </p>
+
+    <div class="grid grid-1">
+      <div class="card card-narrow" style="background:#F9FAFB;">
+        <p class="card-title"><strong>Designed For</strong></p>
+        <ul class="muted">
+          <li>Working security professionals involved in offensive or adversary simulation roles</li>
+          <li>Red Team and penetration testing practitioners operating in enterprise contexts</li>
+          <li>Security engineers expanding into adversary simulation and threat emulation</li>
+          <li>Enterprise security teams and internal Red Teams building realistic attack capability</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+SECTION 8 — FINAL DECISION CTA
+========================================================= -->
+<section class="bg-navy">
+  <div class="container center">
+    <h2>Start Your Red Team Progression</h2>
+    <p class="lead" style="margin:16px auto 40px;">
+      Select the certification or training format that aligns with your experience level and operational goals.
+    </p>
+
+    <div class="cta-row" style="justify-content:center;">
+      <a class="btn btn-primary" href="#">View Certifications</a>      
+      <a class="link-tertiary" href="#" style="color:#fff;">Contact for Enterprise Training →</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
