@@ -603,27 +603,33 @@ button{
     font-weight:700;
 }
 
-.mega-visual-card .visual-link:hover{
-    color:#1d4ed8;
-}
+
 
 .mega-menu .mega-column > a:not(.mega-pill-link){
     gap:9px;
 }
 
-.menu-link-icon{
-    width:17px;
-    height:17px;
-    flex:0 0 17px;
-    color:#475569;
-    stroke-width:1.8;
-    transition:color .2s ease, transform .2s ease;
-}
+.menu-link-icon {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
 
-.mega-menu .mega-column > a:not(.mega-pill-link):hover .menu-link-icon{
-    color:#2563eb;
-    transform:translateX(1px);
+    color: #B91C1C;
+    stroke: #B91C1C;
+    stroke-width: 1.8;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
 }
+.mega-column
+> a:not(.mega-pill-link):hover
+.menu-link-icon {
+    color: #EA3037;
+    stroke: #EA3037;
+    transform: translateX(1px);
+}    
+
 
 .mega-showcase .mega-column{
     display:flex;
@@ -736,6 +742,88 @@ button{
     color: #2563eb;
 
     transform: translateX(4px);
+}
+
+/* Company social and support links */
+
+.company-contact-extra{
+    margin-top:2px;
+    padding:13px 14px;
+    border:1px solid rgba(43,43,80,.10);
+    border-radius:12px;
+    background:linear-gradient(135deg,rgba(43,43,80,.05),rgba(185,28,28,.035));
+}
+
+.company-socials{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    margin-bottom:11px;
+}
+
+.mega-column .company-social-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:34px;
+    height:34px;
+    padding:0;
+    margin:0;
+    border:1px solid rgba(43,43,80,.14);
+    border-radius:9px;
+    background:#ffffff;
+    color:#B91C1C;
+    font-size:12px;
+    font-weight:800;
+    line-height:1;
+}
+
+.mega-column .company-social-link:hover{
+    border-color:rgba(185,28,28,.24);
+    background:rgba(185,28,28,.055);
+    color:#EA3037;
+    transform:translateY(-1px);
+}
+
+.company-social-link svg{
+    width:16px;
+    height:16px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.mega-column .company-support-link{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:0;
+    margin:0;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    color:#2B2B50;
+    font-size:13px;
+    font-weight:650;
+    line-height:1.35;
+}
+
+.mega-column .company-support-link:hover{
+    border:0;
+    background:transparent;
+    color:#B91C1C;
+    transform:none;
+}
+
+.company-support-link svg{
+    width:16px;
+    height:16px;
+    flex:0 0 16px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.8;
 }
 
 
@@ -1461,6 +1549,116 @@ button{
     gap: 40px;
 
 }    
+
+/* ==========================
+   PROFESSIONAL MEGA-MENU LINKS
+========================== */
+
+.mega-showcase .mega-column h4{
+    margin-bottom:14px;
+    color:#2B2B50;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.mega-showcase .mega-column > a:not(.mega-pill-link){
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:11px;
+    width:100%;
+    min-height:44px;
+    margin-bottom:8px;
+    padding:9px 13px;
+    border:1px solid transparent;
+    border-radius:11px;
+    background:#f8fafc;
+    color:#111827;
+    font-size:14.5px;
+    font-weight:550;
+    line-height:1.35;
+    transform:none;
+    transition:
+        color .2s ease,
+        background-color .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.mega-showcase .mega-column > a:not(.mega-pill-link) .menu-link-icon{
+    width:17px;
+    height:17px;
+    flex:0 0 17px;
+    color:#B91C1C;
+    stroke:#B91C1C;
+    stroke-width:1.8;
+    transition:color .2s ease,stroke .2s ease,transform .2s ease;
+}
+
+.mega-showcase .mega-column > a:not(.mega-pill-link):hover,
+.mega-showcase .mega-column > a:not(.mega-pill-link):focus-visible{
+    border-color:rgba(185,28,28,.16);
+    background:rgba(185,28,28,.045);
+    color:#111827;
+    box-shadow:
+        inset 3px 0 0 #B91C1C,
+        0 4px 12px rgba(43,43,80,.04);
+    transform:none;
+}
+
+.mega-showcase .mega-column > a:not(.mega-pill-link):hover .menu-link-icon,
+.mega-showcase .mega-column > a:not(.mega-pill-link):focus-visible .menu-link-icon{
+    color:#EA3037;
+    stroke:#EA3037;
+    transform:scale(1.05);
+}
+
+.mega-showcase .mega-column > a:not(.mega-pill-link):focus-visible{
+    outline:2px solid rgba(185,28,28,.18);
+    outline-offset:2px;
+}
+
+.mega-showcase .mega-column > .mega-pill-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-height:44px;
+    margin-top:auto;
+    margin-bottom:0;
+    padding:11px 18px;
+    border:1px solid #B91C1C;
+    border-radius:10px;
+    background:#B91C1C;
+    color:#ffffff;
+    font-size:14px;
+    font-weight:700;
+    text-align:center;
+    box-shadow:0 6px 16px rgba(185,28,28,.14);
+    transition:
+        background-color .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+.mega-showcase .mega-column > .mega-pill-link:hover,
+.mega-showcase .mega-column > .mega-pill-link:focus-visible{
+    border-color:#EA3037;
+    background:#EA3037;
+    color:#ffffff;
+    box-shadow:0 9px 20px rgba(185,28,28,.20);
+    transform:translateY(-1px);
+}
+
+.mega-showcase .mega-column > .mega-pill-link:focus-visible{
+    outline:2px solid rgba(185,28,28,.25);
+    outline-offset:2px;
+}
+    
+    
     </style>    
 </head>
 <body>
@@ -1756,6 +1954,47 @@ button{
                                 <a href="#">News</a>
                                 <a href="#">Careers</a>
                                   <a href="#">Contact</a>
+
+                                  <div class="company-contact-extra">
+
+                                      <div class="company-socials" aria-label="Altered Security social links">
+
+                                          <a href="#" class="company-social-link" aria-label="X" title="X">
+                                              <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                  <path d="M5 4l14 16M19 4L5 20"></path>
+                                              </svg>
+                                          </a>
+
+                                          <a href="#" class="company-social-link" aria-label="LinkedIn" title="LinkedIn">in</a>
+
+                                          <a href="#" class="company-social-link" aria-label="Discord" title="Discord">
+                                              <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                  <path d="M7 8.5a12 12 0 0 1 10 0l1.5 8a10 10 0 0 1-3 1.5l-1-1.5a9 9 0 0 1-5 0L8.5 18a10 10 0 0 1-3-1.5z"></path>
+                                                  <path d="M9 13h.01M15 13h.01"></path>
+                                              </svg>
+                                          </a>
+
+                                          <a href="#" class="company-social-link" aria-label="Instagram" title="Instagram">
+                                              <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                  <rect x="4" y="4" width="16" height="16" rx="5"></rect>
+                                                  <circle cx="12" cy="12" r="3.5"></circle>
+                                                  <path d="M17.5 6.5h.01"></path>
+                                              </svg>
+                                          </a>
+
+                                          <a href="#" class="company-social-link" aria-label="Facebook" title="Facebook">f</a>
+
+                                      </div>
+
+                                      <a href="mailto:contact@alteredsecurity.com" class="company-support-link">
+                                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                                              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                                              <path d="m4 7 8 6 8-6"></path>
+                                          </svg>
+                                          contact@alteredsecurity.com
+                                      </a>
+
+                                  </div>
 
                             </div>
         <div class="mega-column">
