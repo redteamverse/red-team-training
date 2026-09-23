@@ -112,32 +112,30 @@
             class="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 border-l-[3px] border-brandRed pl-3 text-xs font-medium text-slate-600"
             aria-label="Training highlights"
           >
-            <span>Enterprise Environments</span>
-            <span class="text-slate-400" aria-hidden="true">•</span>
-            <span>Attack &amp; Defense</span>
-            <span class="text-slate-400" aria-hidden="true">•</span>
-            <span>Hands-On Training</span>
+            
           </div>
         </div>
 
         <!-- Enquiry Form -->
         <div
           id="ad-training-enquiry"
-          class="w-full rounded-[10px] border border-pageBorder bg-white p-5 shadow-[0_8px_24px_rgba(17,24,39,0.07)] sm:p-6 lg:justify-self-end"
+          class="w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_18px_45px_rgba(17,24,39,0.10)] lg:justify-self-end"
         >
-          <h2
-            class="font-heading text-[22px] font-extrabold leading-tight tracking-[-0.02em] text-heading"
-          >
-            Plan Training for Your Team
-          </h2>
+          <div class="bg-[#2B2B50] px-5 py-5 sm:px-7 sm:py-6">
+            <h2
+              class="font-heading text-[22px] font-extrabold leading-tight tracking-[-0.02em] text-white"
+            >
+              Plan Training for Your Team
+            </h2>
 
-          <p class="mt-2 text-[13px] leading-6 text-bodyText">
-            Share a few details and select the training you are interested in.
-          </p>
+            <p class="mt-2 text-[13px] leading-6 text-slate-300">
+              Share a few details and select the training you are interested in.
+            </p>
+          </div>
 
           <form
             id="training-form"
-            class="mt-[18px] grid grid-cols-1 gap-3 sm:grid-cols-2"
+            class="grid grid-cols-1 gap-x-4 gap-y-4 p-5 sm:grid-cols-2 sm:p-7"
             action="#"
             method="post"
           >
@@ -157,7 +155,7 @@
                 type="text"
                 autocomplete="name"
                 required
-                class="h-10 w-full rounded-md border border-slate-300 bg-white px-2.5 text-xs text-heading outline-none transition focus:border-brandNavy focus:ring-4 focus:ring-brandNavy/10"
+                class="h-11 w-full rounded-lg border border-slate-300 bg-offWhite px-3 text-[13px] text-heading outline-none transition duration-200 hover:border-slate-400 focus:border-brandRed focus:bg-white focus:ring-4 focus:ring-brandRed/10"
               >
             </div>
 
@@ -176,7 +174,7 @@
                 type="email"
                 autocomplete="email"
                 required
-                class="h-10 w-full rounded-md border border-slate-300 bg-white px-2.5 text-xs text-heading outline-none transition focus:border-brandNavy focus:ring-4 focus:ring-brandNavy/10"
+                class="h-11 w-full rounded-lg border border-slate-300 bg-offWhite px-3 text-[13px] text-heading outline-none transition duration-200 hover:border-slate-400 focus:border-brandRed focus:bg-white focus:ring-4 focus:ring-brandRed/10"
               >
             </div>
 
@@ -194,7 +192,7 @@
                 name="company"
                 type="text"
                 autocomplete="organization"
-                class="h-10 w-full rounded-md border border-slate-300 bg-white px-2.5 text-xs text-heading outline-none transition focus:border-brandNavy focus:ring-4 focus:ring-brandNavy/10"
+                class="h-11 w-full rounded-lg border border-slate-300 bg-offWhite px-3 text-[13px] text-heading outline-none transition duration-200 hover:border-slate-400 focus:border-brandRed focus:bg-white focus:ring-4 focus:ring-brandRed/10"
               >
             </div>
 
@@ -210,7 +208,7 @@
               <select
                 id="ad-team-size"
                 name="team_size"
-                class="h-10 w-full rounded-md border border-slate-300 bg-white px-2.5 text-xs text-heading outline-none transition focus:border-brandNavy focus:ring-4 focus:ring-brandNavy/10"
+                class="h-11 w-full rounded-lg border border-slate-300 bg-offWhite px-3 text-[13px] text-heading outline-none transition duration-200 hover:border-slate-400 focus:border-brandRed focus:bg-white focus:ring-4 focus:ring-brandRed/10"
               >
                 <option value="" selected>Select team size</option>
                 <option value="1-5">1–5</option>
@@ -233,7 +231,7 @@
                 id="ad-training-interest"
                 name="training_interest"
                 required
-                class="h-10 w-full rounded-md border border-slate-300 bg-white px-2.5 text-xs text-heading outline-none transition focus:border-brandNavy focus:ring-4 focus:ring-brandNavy/10"
+                class="h-11 w-full rounded-lg border border-slate-300 bg-offWhite px-3 text-[13px] text-heading outline-none transition duration-200 hover:border-slate-400 focus:border-brandRed focus:bg-white focus:ring-4 focus:ring-brandRed/10"
               >
                 <option value="" selected disabled>Select training</option>
                 <option value="basic">Basic Edition</option>
@@ -254,7 +252,7 @@
               <select
                 id="ad-delivery-preference"
                 name="delivery_preference"
-                class="h-10 w-full rounded-md border border-slate-300 bg-white px-2.5 text-xs text-heading outline-none transition focus:border-brandNavy focus:ring-4 focus:ring-brandNavy/10"
+                class="h-11 w-full rounded-lg border border-slate-300 bg-offWhite px-3 text-[13px] text-heading outline-none transition duration-200 hover:border-slate-400 focus:border-brandRed focus:bg-white focus:ring-4 focus:ring-brandRed/10"
               >
                 <option value="" selected>Select format</option>
                 <option value="private-team">Private Team Training</option>
@@ -278,14 +276,14 @@
                 name="training_requirements"
                 rows="3"
                 placeholder="Team size, preferred schedule or other requirements"
-                class="min-h-[72px] w-full resize-y rounded-md border border-slate-300 bg-white px-2.5 py-2 text-xs text-heading outline-none transition placeholder:text-slate-400 focus:border-brandNavy focus:ring-4 focus:ring-brandNavy/10"
+                class="min-h-[88px] w-full resize-y rounded-lg border border-slate-300 bg-offWhite px-3 py-2.5 text-[13px] text-heading outline-none transition duration-200 placeholder:text-slate-400 hover:border-slate-400 focus:border-brandRed focus:bg-white focus:ring-4 focus:ring-brandRed/10"
               ></textarea>
             </div>
 
             <!-- Submit -->
             <button
               type="submit"
-              class="min-h-[42px] w-full rounded-md border border-brandRed bg-brandRed px-4 text-xs font-bold text-white transition-colors duration-200 hover:border-brandRedHover hover:bg-brandRedHover focus:outline-none focus:ring-2 focus:ring-brandRed focus:ring-offset-2 sm:col-span-2"
+              class="min-h-11 w-full rounded-lg border border-brandRed bg-brandRed px-5 text-[13px] font-bold text-white shadow-sm transition-all duration-200 hover:border-brandRedHover hover:bg-brandRedHover hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brandRed focus:ring-offset-2 sm:col-span-2"
             >
               Get Started
             </button>
@@ -325,31 +323,34 @@
         </div>
 
         <!-- Training Cards -->
-        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
 
           <!-- Basic Training -->
           <article
-            class="flex min-w-0 flex-col rounded-[10px] border border-pageBorder bg-white p-5 sm:p-6 lg:p-[26px]"
+            class="group flex min-w-0 flex-col overflow-hidden rounded-xl border border-pageBorder bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(17,24,39,0.09)]"
           >
-            <span
-              class="mb-3 self-start rounded-[5px] bg-red-50 px-[9px] py-[5px] text-[10px] font-extrabold uppercase leading-tight tracking-[0.1em] text-brandRed"
-            >
-              Basic Edition
-            </span>
+            <div class="min-h-[132px] bg-[#2B2B50] p-5 sm:p-6">
+              <span
+                class="inline-flex rounded-[5px] bg-white/10 px-[9px] py-[5px] text-[10px] font-extrabold uppercase leading-tight tracking-[0.1em] text-white"
+              >
+                Basic Edition
+              </span>
 
-            <h3
-              class="font-heading text-xl font-bold leading-[1.35] tracking-[-0.015em] text-heading sm:text-[21px]"
-            >
-              Active Directory Attacks for Red and Blue Teams – Basic Edition
-            </h3>
+              <h3
+                class="mt-3 font-heading text-xl font-bold leading-[1.35] tracking-[-0.015em] text-white sm:text-[21px]"
+              >
+                Active Directory Attacks for Red and Blue Teams – Basic Edition
+              </h3>
+            </div>
 
-            <p class="mt-2.5 text-sm leading-7 text-bodyText">
-            This hands-on training helps security professionals build Active Directory attack and defense skills for enterprise environments, with a focus on methodology and techniques that can be applied from day one. 
-            </p>
+            <div class="flex flex-1 flex-col p-5 sm:p-6">
+              <p class="text-sm leading-7 text-bodyText">
+                This hands-on training helps security professionals build Active Directory attack and defense skills for enterprise environments, with a focus on methodology and techniques that can be applied from day one.
+              </p>
 
-            <div class="my-5 grid grid-cols-1 gap-2 sm:grid-cols-3">
+              <div class="my-5 grid grid-cols-3 divide-x divide-y divide-pageBorder overflow-hidden rounded-lg border border-pageBorder bg-offWhite sm:divide-y-0">
 
-              <div class="rounded-md border border-pageBorder bg-offWhite p-2.5">
+              <div class="min-w-0 p-3">
                 <span
                   class="block text-[9px] font-bold uppercase leading-tight tracking-[0.05em] text-mutedText"
                 >
@@ -363,7 +364,7 @@
                 </strong>
               </div>
 
-              <div class="rounded-md border border-pageBorder bg-offWhite p-2.5">
+              <div class="min-w-0 p-3">
                 <span
                   class="block text-[9px] font-bold uppercase leading-tight tracking-[0.05em] text-mutedText"
                 >
@@ -377,7 +378,7 @@
                 </strong>
               </div>
 
-              <div class="rounded-md border border-pageBorder bg-offWhite p-2.5">
+              <div class="min-w-0 p-3">
                 <span
                   class="block text-[9px] font-bold uppercase leading-tight tracking-[0.05em] text-mutedText"
                 >
@@ -390,39 +391,44 @@
                   Instructor-Led
                 </strong>
               </div>
-            </div>
+              </div>
 
             <!-- Replace # with the Basic Training page URL -->
-            <a
-              href="https://redteamverse.github.io/red-team-training/as-active-directory-training-v1.html"
-              class="mt-auto self-start text-[13px] font-bold text-brandRed transition-colors duration-200 hover:text-brandRedHover focus:outline-none focus:ring-2 focus:ring-brandRed focus:ring-offset-4"
-            >
-              Explore Basic Training →
-            </a>
+              <a
+                href="https://redteamverse.github.io/red-team-training/as-active-directory-training-v1.html"
+                class="mt-auto inline-flex min-h-11 items-center justify-center self-start rounded-lg border border-brandNavy bg-brandNavy px-[18px] text-[13px] font-bold text-white transition-all duration-200 hover:border-[#3B3B68] hover:bg-[#3B3B68] focus:outline-none focus:ring-2 focus:ring-brandNavy focus:ring-offset-2"
+              >
+                Explore Basic Training →
+              </a>
+            </div>
           </article>
 
           <!-- Advanced Training -->
           <article
-            class="flex min-w-0 flex-col rounded-[10px] border border-pageBorder bg-white p-5 sm:p-6 lg:p-[26px]"
+            class="group flex min-w-0 flex-col overflow-hidden rounded-xl border border-pageBorder bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(17,24,39,0.09)]"
           >
-            <span
-              class="mb-3 self-start rounded-[5px] bg-red-50 px-[9px] py-[5px] text-[10px] font-extrabold uppercase leading-tight tracking-[0.1em] text-brandRed"
-            >
-              Advanced Edition
-            </span>
+            <div class="min-h-[132px] bg-[#9F3A3A] p-5 sm:p-6">
+              <span
+                class="inline-flex rounded-[5px] bg-white/10 px-[9px] py-[5px] text-[10px] font-extrabold uppercase leading-tight tracking-[0.1em] text-white"
+              >
+                Advanced Edition
+              </span>
 
-            <h3
-              class="font-heading text-xl font-bold leading-[1.35] tracking-[-0.015em] text-heading sm:text-[21px]"
-            >
-              Active Directory Attacks for Red and Blue Teams – Advanced Edition
-            </h3>
+              <h3
+                class="mt-3 font-heading text-xl font-bold leading-[1.35] tracking-[-0.015em] text-white sm:text-[21px]"
+              >
+                Active Directory Attacks for Red and Blue Teams – Advanced Edition
+              </h3>
+            </div>
 
-            <p class="mt-2.5 text-sm leading-7 text-bodyText">
-This hands-on training helps security professionals build Active Directory attack and defense skills for enterprise environments, with a focus on methodology and techniques that can be applied from day one.             </p>
+            <div class="flex flex-1 flex-col p-5 sm:p-6">
+              <p class="text-sm leading-7 text-bodyText">
+                This hands-on training helps security professionals build Active Directory attack and defense skills for enterprise environments, with a focus on methodology and techniques that can be applied from day one.
+              </p>
 
-            <div class="my-5 grid grid-cols-1 gap-2 sm:grid-cols-3">
+              <div class="my-5 grid grid-cols-3 divide-x divide-y divide-pageBorder overflow-hidden rounded-lg border border-pageBorder bg-offWhite sm:divide-y-0">
 
-              <div class="rounded-md border border-pageBorder bg-offWhite p-2.5">
+              <div class="min-w-0 p-3">
                 <span
                   class="block text-[9px] font-bold uppercase leading-tight tracking-[0.05em] text-mutedText"
                 >
@@ -430,13 +436,13 @@ This hands-on training helps security professionals build Active Directory attac
                 </span>
 
                 <strong
-                  class="mt-1 block text-xs font-bold leading-snug text-brandNavy"
+                  class="mt-1 block text-xs font-bold leading-snug text-[#9F3A3A]"
                 >
                   Advanced
                 </strong>
               </div>
 
-              <div class="rounded-md border border-pageBorder bg-offWhite p-2.5">
+              <div class="min-w-0 p-3">
                 <span
                   class="block text-[9px] font-bold uppercase leading-tight tracking-[0.05em] text-mutedText"
                 >
@@ -444,13 +450,13 @@ This hands-on training helps security professionals build Active Directory attac
                 </span>
 
                 <strong
-                  class="mt-1 block text-xs font-bold leading-snug text-brandNavy"
+                  class="mt-1 block text-xs font-bold leading-snug text-[#9F3A3A]"
                 >
                   1 Month
                 </strong>
               </div>
 
-              <div class="rounded-md border border-pageBorder bg-offWhite p-2.5">
+              <div class="min-w-0 p-3">
                 <span
                   class="block text-[9px] font-bold uppercase leading-tight tracking-[0.05em] text-mutedText"
                 >
@@ -458,27 +464,28 @@ This hands-on training helps security professionals build Active Directory attac
                 </span>
 
                 <strong
-                  class="mt-1 block text-xs font-bold leading-snug text-brandNavy"
+                  class="mt-1 block text-xs font-bold leading-snug text-[#9F3A3A]"
                 >
                   Instructor-Led
                 </strong>
               </div>
-            </div>
+              </div>
 
             <!-- Replace # with the Advanced Training page URL -->
-            <a
-              href="#"
-              class="mt-auto self-start text-[13px] font-bold text-brandRed transition-colors duration-200 hover:text-brandRedHover focus:outline-none focus:ring-2 focus:ring-brandRed focus:ring-offset-4"
-            >
-              Explore Advanced Training →
-            </a>
+              <a
+                href="#"
+                class="mt-auto inline-flex min-h-11 items-center justify-center self-start rounded-lg border border-[#9F3A3A] bg-[#9F3A3A] px-[18px] text-[13px] font-bold text-white transition-all duration-200 hover:border-[#B45353] hover:bg-[#B45353] focus:outline-none focus:ring-2 focus:ring-[#9F3A3A] focus:ring-offset-2"
+              >
+                Explore Advanced Training →
+              </a>
+            </div>
           </article>
         </div>
       </div>
     </section>
     
 <!-- SECTION 04 — BASIC VS ADVANCED TRAINING -->
-<section id="training-comparison" class="bg-[#F9FAFB] py-12 sm:py-14 lg:py-[66px]">
+<section id="training-comparison" class="border-y border-pageBorder bg-white py-12 sm:py-14 lg:py-[66px]">
   <div class="mx-auto w-full max-w-[1240px] px-4 sm:px-6">
 
     <!-- Section Heading -->
@@ -492,7 +499,7 @@ This hands-on training helps security professionals build Active Directory attac
         Basic vs Advanced — Which Training Is Right for You?
       </h2>
 
-      <p class="mt-3 font-['Inter'] text-sm leading-7 text-[#4B5563]">
+      <p class="mt-3 max-w-[760px] font-['Inter'] text-sm leading-7 text-[#4B5563]">
         Both training options focus more on methodology and techniques than
         tools and are based on real world penetration tests and Red Team
         engagements for highly secured environments.
@@ -500,12 +507,12 @@ This hands-on training helps security professionals build Active Directory attac
     </div>
 
     <!-- Comparison Cards -->
-    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+    <div class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
 
       <!-- Basic Edition -->
-      <article class="flex flex-col rounded-[10px] border border-[#E5E7EB] bg-white p-5 sm:p-6 lg:p-7">
-        <div class="border-b border-[#E5E7EB] pb-5">
-          <span class="inline-flex rounded-[5px] bg-red-50 px-2.5 py-1.5 font-['Inter'] text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#B91C1C]">
+      <article class="flex min-w-0 flex-col overflow-hidden rounded-xl border border-[#E5E7EB] border-t-4 border-t-[#2B2B50] bg-white shadow-[0_10px_30px_rgba(17,24,39,0.06)]">
+        <div class="border-b border-[#E5E7EB] bg-white p-5 sm:p-6">
+          <span class="inline-flex rounded-[5px] bg-[#EEEEF4] px-2.5 py-1.5 font-['Inter'] text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#2B2B50]">
             Basic Edition
           </span>
 
@@ -514,7 +521,7 @@ This hands-on training helps security professionals build Active Directory attac
           </h3>
         </div>
 
-        <ul class="mt-5 space-y-3">
+        <ul class="grid grid-cols-1 gap-x-6 gap-y-1 p-5 [&_li>span:first-child]:!bg-[#2B2B50] sm:grid-cols-2 sm:p-6">
 
           <li class="flex items-start gap-3">
             <span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#B91C1C]"></span>
@@ -590,16 +597,16 @@ This hands-on training helps security professionals build Active Directory attac
 
         <a
           href="#"
-          class="mt-6 inline-flex min-h-11 items-center justify-center self-start rounded-[7px] border border-[#B91C1C] bg-[#B91C1C] px-[18px] font-['Inter'] text-[13px] font-bold text-white transition-colors duration-200 hover:border-[#EA3037] hover:bg-[#EA3037] focus:outline-none focus:ring-2 focus:ring-[#B91C1C] focus:ring-offset-2"
+          class="mx-5 mb-5 mt-auto inline-flex min-h-11 items-center justify-center self-start rounded-[7px] border border-[#2B2B50] bg-[#2B2B50] px-[18px] font-['Inter'] text-[13px] font-bold text-white transition-colors duration-200 hover:border-[#3B3B68] hover:bg-[#3B3B68] focus:outline-none focus:ring-2 focus:ring-[#2B2B50] focus:ring-offset-2 sm:mx-6 sm:mb-6"
         >
           Explore Basic Training
         </a>
       </article>
 
       <!-- Advanced Edition -->
-      <article class="flex flex-col rounded-[10px] border border-[#E5E7EB] bg-white p-5 sm:p-6 lg:p-7">
-        <div class="border-b border-[#E5E7EB] pb-5">
-          <span class="inline-flex rounded-[5px] bg-[#2B2B50] px-2.5 py-1.5 font-['Inter'] text-[10px] font-extrabold uppercase tracking-[0.1em] text-white">
+      <article class="flex min-w-0 flex-col overflow-hidden rounded-xl border border-[#E5E7EB] border-t-4 border-t-[#9F3A3A] bg-white shadow-[0_10px_30px_rgba(17,24,39,0.06)]">
+        <div class="border-b border-[#E5E7EB] bg-white p-5 sm:p-6">
+          <span class="inline-flex rounded-[5px] bg-[#F7ECEC] px-2.5 py-1.5 font-['Inter'] text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#9F3A3A]">
             Advanced Edition
           </span>
 
@@ -608,7 +615,7 @@ This hands-on training helps security professionals build Active Directory attac
           </h3>
         </div>
 
-        <ul class="mt-5 space-y-3">
+        <ul class="grid grid-cols-1 gap-x-6 gap-y-1 p-5 [&_li>span:first-child]:!bg-[#9F3A3A] sm:grid-cols-2 sm:p-6">
 
           <li class="flex items-start gap-3">
             <span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#B91C1C]"></span>
@@ -684,7 +691,7 @@ This hands-on training helps security professionals build Active Directory attac
 
         <a
           href="#"
-          class="mt-6 inline-flex min-h-11 items-center justify-center self-start rounded-[7px] border border-[#2B2B50] bg-[#2B2B50] px-[18px] font-['Inter'] text-[13px] font-bold text-white transition-colors duration-200 hover:border-[#B91C1C] hover:bg-[#B91C1C] focus:outline-none focus:ring-2 focus:ring-[#2B2B50] focus:ring-offset-2"
+          class="mx-5 mb-5 mt-auto inline-flex min-h-11 items-center justify-center self-start rounded-[7px] border border-[#9F3A3A] bg-[#9F3A3A] px-[18px] font-['Inter'] text-[13px] font-bold text-white transition-colors duration-200 hover:border-[#B45353] hover:bg-[#B45353] focus:outline-none focus:ring-2 focus:ring-[#9F3A3A] focus:ring-offset-2 sm:mx-6 sm:mb-6"
         >
           Explore Advanced Training
         </a>
