@@ -1,0 +1,476 @@
+
+<section id="as-training-pricing-v3">
+  <style>
+    #as-training-pricing-v3 {
+      --as-red: #C1121F;
+      --as-red-hover: #A50F1A;
+      --as-blue: #2563EB;
+      --as-blue-bg: #EFF6FF;
+      --as-blue-border: #BFDBFE;
+      --as-blue-text: #1E40AF;
+      --as-navy: #16163F;
+      --as-text: #111827;
+      --as-muted: #6B7280;
+      --as-border: #E5E7EB;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--as-text);
+      background: #FFFFFF;
+      padding: 64px 20px;
+    }
+
+    #as-training-pricing-v3 * {
+      box-sizing: border-box;
+    }
+
+    #as-training-pricing-v3 .as-pricing-container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    #as-training-pricing-v3 .as-pricing-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    #as-training-pricing-v3 .as-eyebrow {
+      display: inline-block;
+      color: var(--as-red);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    #as-training-pricing-v3 .as-main-title {
+      margin: 0;
+      color: #111827;
+      font-size: clamp(30px, 4vw, 40px);
+      font-weight: 750;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    #as-training-pricing-v3 .as-pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    #as-training-pricing-v3 .as-pricing-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 32px;
+      background: #FFFFFF;
+      border: 1px solid var(--as-border);
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(17, 24, 39, 0.045);
+    }
+
+    #as-training-pricing-v3 .as-pricing-card--enterprise {
+      border: 2px solid var(--as-red);
+      padding: 31px;
+    }
+
+    #as-training-pricing-v3 .as-plan-badge {
+      position: absolute;
+      top: -14px;
+      right: 22px;
+      padding: 7px 13px;
+      border-radius: 5px;
+      background: var(--as-red);
+      color: #FFFFFF;
+      font-size: 11px;
+      line-height: 1.2;
+      font-weight: 750;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+    }
+
+    #as-training-pricing-v3 .as-plan-title {
+      margin: 0 0 10px;
+      color: var(--as-navy);
+      font-size: 25px;
+      line-height: 1.25;
+      font-weight: 750;
+      letter-spacing: -0.025em;
+    }
+
+    #as-training-pricing-v3 .as-plan-description {
+      margin: 0 0 22px;
+      color: var(--as-muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    #as-training-pricing-v3 .as-price-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+
+    #as-training-pricing-v3 .as-price {
+      color: var(--as-text);
+      font-size: clamp(34px, 4vw, 42px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    #as-training-pricing-v3 .as-price-unit {
+      color: var(--as-muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    #as-training-pricing-v3 .as-savings {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 23px;
+      padding: 12px 14px;
+      background: var(--as-blue-bg);
+      border: 1px solid var(--as-blue-border);
+      border-radius: 7px;
+    }
+
+    #as-training-pricing-v3 .as-savings-percent {
+      color: var(--as-blue);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    #as-training-pricing-v3 .as-savings-copy {
+      color: var(--as-blue-text);
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    #as-training-pricing-v3 .as-minimum {
+      margin: 0 0 20px;
+      color: var(--as-muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    #as-training-pricing-v3 .as-minimum strong {
+      color: var(--as-text);
+      font-weight: 700;
+    }
+
+    #as-training-pricing-v3 .as-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 0 0 24px;
+      padding: 0;
+      list-style: none;
+    }
+
+    #as-training-pricing-v3 .as-features li {
+      position: relative;
+      padding-left: 17px;
+      color: #374151;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    #as-training-pricing-v3 .as-features li::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--as-red);
+      border-radius: 50%;
+    }
+
+    #as-training-pricing-v3 .as-features .as-savings-feature {
+      color: var(--as-blue-text);
+      font-weight: 650;
+    }
+
+    #as-training-pricing-v3 .as-course-divider {
+      height: 1px;
+      margin: 0 0 22px;
+      background: var(--as-border);
+    }
+
+    #as-training-pricing-v3 .as-course-title {
+      margin: 0 0 15px;
+      color: var(--as-navy);
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 750;
+    }
+
+    #as-training-pricing-v3 .as-course-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+      margin-bottom: 28px;
+    }
+
+    #as-training-pricing-v3 .as-course-code {
+      display: flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 9px 10px;
+      border: 1px solid var(--as-border);
+      border-radius: 6px;
+      background: #FFFFFF;
+      color: #374151;
+      font-size: 12px;
+      font-weight: 650;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    #as-training-pricing-v3 .as-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      min-height: 48px;
+      margin-top: auto;
+      padding: 13px 20px;
+      border: 1px solid var(--as-red);
+      border-radius: 6px;
+      background: #FFFFFF;
+      color: var(--as-red);
+      font-size: 14px;
+      font-weight: 750;
+      text-decoration: none;
+      text-align: center;
+      transition: background 160ms ease, color 160ms ease,
+                  border-color 160ms ease;
+    }
+
+    #as-training-pricing-v3 .as-cta:hover {
+      background: var(--as-red);
+      color: #FFFFFF;
+    }
+
+    #as-training-pricing-v3 .as-cta--primary {
+      background: var(--as-red);
+      color: #FFFFFF;
+    }
+
+    #as-training-pricing-v3 .as-cta--primary:hover {
+      background: var(--as-red-hover);
+      border-color: var(--as-red-hover);
+    }
+
+    #as-training-pricing-v3 .as-cta svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 760px) {
+      #as-training-pricing-v3 {
+        padding: 46px 16px;
+      }
+
+      #as-training-pricing-v3 .as-pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      #as-training-pricing-v3 .as-pricing-header {
+        margin-bottom: 32px;
+      }
+
+      #as-training-pricing-v3 .as-pricing-card,
+      #as-training-pricing-v3 .as-pricing-card--enterprise {
+        padding: 27px 22px;
+      }
+
+      #as-training-pricing-v3 .as-plan-badge {
+        right: 16px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      #as-training-pricing-v3 .as-pricing-card,
+      #as-training-pricing-v3 .as-pricing-card--enterprise {
+        padding: 25px 17px;
+      }
+
+      #as-training-pricing-v3 .as-course-grid {
+        gap: 7px;
+      }
+
+      #as-training-pricing-v3 .as-course-code {
+        padding: 8px;
+        font-size: 11px;
+      }
+    }
+  </style>
+
+  <div class="as-pricing-container">
+    <header class="as-pricing-header">
+      <span class="as-eyebrow">Plan</span>
+      <h2 class="as-main-title">Training Plans &amp; Pricing</h2>
+    </header>
+
+    <div class="as-pricing-grid">
+
+      <!-- Business Plan -->
+      <article class="as-pricing-card">
+        <h3 class="as-plan-title">Business</h3>
+
+        <p class="as-plan-description">
+          Includes one year of access to on-premises, Azure cloud, and
+          enterprise AI training courses, associated hands-on labs,
+          and certification exam attempts.
+        </p>
+
+        <div class="as-price-row">
+          <span class="as-price">$1,599</span>
+          <span class="as-price-unit">/ seat / year</span>
+        </div>
+
+        <div class="as-savings">
+          <span class="as-savings-percent">30% Savings</span>
+          <span class="as-savings-copy">
+            Less than individual course purchases
+          </span>
+        </div>
+
+        <p class="as-minimum">
+          Minimum purchase: <strong>10 seats</strong>
+        </p>
+
+        <ul class="as-features">
+          <li>Access to any 5 courses</li>
+          <li>30 days of hands-on lab access</li>
+          <li>Course material included</li>
+          <li class="as-savings-saving">
+            30% savings compared to individual purchases
+          </li>
+        </ul>
+
+        <div class="as-course-divider"></div>
+
+        <h4 class="as-course-title">Available Courses</h4>
+
+        <div class="as-course-grid">
+          <span class="as-course-code">ACPT</span>
+          <span class="as-course-code">CRTP</span>
+          <span class="as-course-code">CRTE</span>
+          <span class="as-course-code">CRTM</span>
+          <span class="as-course-code">CESP-ADCS</span>
+          <span class="as-course-code">CARTP</span>
+          <span class="as-course-code">CARTE</span>
+          <span class="as-course-code">CAIRTP</span>
+          <span class="as-course-code">CETP</span>
+        </div>
+
+        <a class="as-cta" href="#contact" data-plan="Business">
+          Enquire Now
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 5l7 7-7 7"
+              stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Enterprise Plan -->
+      <article class="as-pricing-card as-pricing-card--enterprise">
+        <span class="as-plan-badge">Full Course Access</span>
+
+        <h3 class="as-plan-title">Enterprise</h3>
+
+        <p class="as-plan-description">
+          Includes one year of access to on-premises, Azure cloud, and
+          enterprise AI training courses, associated hands-on labs,
+          and certification exam attempts.
+        </p>
+
+        <div class="as-price-row">
+          <span class="as-price">$1,999</span>
+          <span class="as-price-unit">/ seat / year</span>
+        </div>
+
+        <div class="as-savings">
+          <span class="as-savings-percent">40% Savings</span>
+          <span class="as-savings-copy">
+            Less than individual course purchases
+          </span>
+        </div>
+
+        <p class="as-minimum">
+          Minimum purchase: <strong>20 seats</strong>
+        </p>
+
+        <ul class="as-features">
+          <li>Access to all courses</li>
+          <li>30 days of hands-on lab access</li>
+          <li>Course material included</li>
+          <li class="as-savings-saving">
+            40% savings compared to individual purchases
+          </li>
+        </ul>
+
+        <div class="as-course-divider"></div>
+
+        <h4 class="as-course-title">Included Courses</h4>
+
+        <div class="as-course-grid">
+          <span class="as-course-code">ACPT</span>
+          <span class="as-course-code">CRTP</span>
+          <span class="as-course-code">CRTE</span>
+          <span class="as-course-code">CRTM</span>
+          <span class="as-course-code">CESP-ADCS</span>
+          <span class="as-course-code">CARTP</span>
+          <span class="as-course-code">CARTE</span>
+          <span class="as-course-code">CAIRTP</span>
+          <span class="as-course-code">CETP</span>
+        </div>
+
+        <a class="as-cta as-cta--primary" href="#contact" data-plan="Enterprise">
+          Enquire Now
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 5l7 7-7 7"
+              stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const section = document.getElementById("as-training-pricing-v3");
+      if (!section) return;
+
+      section.querySelectorAll("[data-plan]").forEach(function (link) {
+        link.addEventListener("click", function () {
+          const plan = link.getAttribute("data-plan");
+
+          try {
+            const url = new URL(window.location.href);
+            url.searchParams.set("plan", plan);
+            window.history.replaceState({}, "", url.toString());
+          } catch (error) {
+            // Keep the contact link usable if URL updates are unavailable.
+          }
+        });
+      });
+    })();
+  </script>
+</section>
