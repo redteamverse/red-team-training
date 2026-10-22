@@ -1,0 +1,2562 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altered Security Header</title>
+<style>
+  
+  /* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    color:#111827;
+    background:#ffffff;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+button{
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+/* ==========================
+   VARIABLES
+========================== */
+
+:root{
+
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+
+    --text:#111827;
+    --muted:#64748b;
+
+    --border:#e5e7eb;
+
+    --white:#ffffff;
+
+    --radius:18px;
+
+    --shadow:
+    0 20px 60px rgba(0,0,0,.08);
+
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+    width:min(1280px, calc(100% - 40px));
+    margin:auto;
+}
+
+/* ==========================
+   ANNOUNCEMENT BAR
+========================== */
+
+.announcement-bar{
+
+    background:#07122d;
+    color:#fff;
+
+    min-height:44px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    padding:0 50px;
+}
+
+.announcement-slider{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.offer-nav{
+
+    color:#fff;
+    background:none;
+    border:none;
+    width:20px;
+
+    font-size:16px;
+    cursor:pointer;
+
+    opacity:.8;
+}
+
+.offer-nav:hover{
+    opacity:1;
+}
+
+#offerText{
+
+    font-size:14px;
+    font-weight:500;
+
+    white-space:nowrap;
+}
+
+.announcement-close{
+
+    position:absolute;
+    right:16px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#fff;
+    background:none;
+    border:none;
+
+    cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .announcement-bar{
+
+        padding:10px 40px 10px 12px;
+
+        font-size:12px;
+
+        line-height:1.4;
+    }
+
+    .announcement-content{
+
+        gap:8px;
+    }
+}  
+/* ==========================
+   HEADER
+========================== */
+
+.site-header{
+
+    position:sticky;
+    top:0;
+
+    background:#fff;
+
+    border-bottom:1px solid var(--border);
+
+    z-index:9999;
+}
+
+.header-inner{
+
+    height:82px;
+
+    display:grid;
+
+    grid-template-columns:
+    auto 1fr auto;
+
+    align-items:center;
+
+    gap:40px;
+}
+
+/* ==========================
+   LOGO
+========================== */
+
+.site-logo{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    flex-shrink:0;
+}
+
+.site-logo img{
+    width:48px;
+    height:auto;
+    filter:none !important;
+    mix-blend-mode:normal;
+    background:transparent;
+}
+
+.site-logo span{
+
+    font-size:18px;
+    font-weight:700;
+    color:var(--text);
+}
+
+/* ==========================
+   DESKTOP NAVIGATION
+========================== */
+
+.desktop-nav{
+    justify-self:center;
+}
+
+.nav-list{
+
+    display:flex;
+    align-items:center;
+
+    gap:28px;
+
+    list-style:none;
+}
+
+.nav-item{
+    position:relative;
+}
+
+.nav-item > a{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:4px;
+
+    font-size:15.5px;
+    font-weight:750;
+    letter-spacing:-.015em;
+    white-space:nowrap;
+
+    color:#0b1220;
+
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+
+    height:82px;
+
+    transition:color .2s ease;
+}
+
+.nav-item > a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:17px;
+    height:2px;
+    border-radius:999px;
+    background:var(--primary);
+    transform:scaleX(0);
+    transform-origin:center;
+    transition:transform .2s ease;
+}
+
+.nav-item:hover > a,
+.nav-item:focus-within > a{
+    color:var(--primary);
+}
+
+.nav-item:hover > a::after,
+.nav-item:focus-within > a::after{
+    transform:scaleX(1);
+}
+
+.nav-item > a:focus-visible{
+    outline:2px solid rgba(37,99,235,.35);
+    outline-offset:4px;
+    border-radius:4px;
+}
+
+/* ==========================
+   ARROW
+========================== */
+
+.nav-arrow{
+    display:inline-block;
+    width:6px;
+    height:6px;
+    margin-left:0;
+    border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;
+    font-size:0;
+    line-height:0;
+    opacity:.55;
+    transform:rotate(45deg) translateY(-1px);
+    transform-origin:center;
+    transition:transform .2s ease, opacity .2s ease, color .2s ease;
+}
+
+.nav-item:hover .nav-arrow{
+    transform:rotate(225deg) translate(-1px,-1px);
+    opacity:.8;
+    color:#2563eb;
+}
+
+/* ==========================
+   CTA
+========================== */
+
+.header-btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 22px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-radius:12px;
+
+    font-size:14px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.header-btn:hover{
+    background:var(--primary-dark);
+}
+
+/* ==========================
+   MEGA MENU
+========================== */
+
+.mega-menu{
+
+    position:absolute;
+
+    top:100%;
+    left:50%;
+    margin-top: 4px;
+    transform:
+    translateX(-50%)
+    translateY(20px);
+
+    width:900px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:30px;
+
+      box-shadow:
+    0 20px 45px rgba(2,6,23,.12);
+
+    display:grid;
+
+    gap:30px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s ease;
+}
+
+
+
+/* Small Menus */
+
+.nav-item .mega-menu{
+
+    width:320px;
+
+    grid-template-columns:1fr;
+}
+
+/* Image-enhanced mega menus */
+
+.nav-item .mega-menu.mega-showcase{
+    width:800px;
+    grid-template-columns:330px minmax(0,1fr);
+    align-items:stretch;
+    gap:44px;
+    padding:26px;
+}
+
+.nav-item .mega-menu.mega-showcase.mega-showcase-wide{
+    width:1000px;
+    grid-template-columns:330px minmax(0,1fr) minmax(0,1fr);
+}
+
+/* Desktop layout: menu content first, full-width image panel on the right */
+
+@media (min-width:1101px){
+    .nav-item .mega-menu.mega-showcase{
+        grid-template-columns:minmax(0,1fr) 330px;
+    }
+
+    .nav-item .mega-menu.mega-showcase.mega-showcase-wide{
+        grid-template-columns:minmax(0,1fr) minmax(0,1fr) 330px;
+    }
+
+    .nav-item .mega-menu.mega-showcase > .mega-visual-card{
+        order:2;
+    }
+
+    .nav-item .mega-menu.mega-showcase.company-menu{
+        width:720px;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:44px;
+    }
+}
+
+.mega-visual-card{
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+}
+
+.mega-visual-card > img{
+    width:100%;
+    height:210px;
+    padding:0;
+    object-fit:contain;
+    object-position:center;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    background:#f8fafc;
+}
+
+.mega-visual-card.image-contain > img{
+    padding:0;
+    object-fit:contain;
+    object-position:center;
+    background:#f8fafc;
+}
+
+.visual-image-frame{
+    --visual-image:none;
+    position:relative;
+    width:100%;
+    height:210px;
+    overflow:hidden;
+    isolation:isolate;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    background:transparent;
+}
+
+.visual-image-frame::before{
+    display:none;
+}
+
+.visual-image-frame::after{
+    display:none;
+}
+
+.visual-image-frame img{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100%;
+    padding:0;
+    object-fit:fill;
+    object-position:center;
+    border:0;
+    border-radius:13px;
+    background:transparent;
+}
+
+/* Consistent image dimensions across every visual mega menu */
+
+.mega-visual-card:not(.logo-visual) .visual-image-frame{
+    height:210px;
+    aspect-ratio:auto !important;
+}
+
+.mega-visual-card.logo-visual .visual-image-frame{
+    height:112px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#ffffff;
+}
+
+.mega-visual-card.logo-visual .visual-image-frame::before,
+.mega-visual-card.logo-visual .visual-image-frame::after{
+    display:none;
+}
+
+.mega-visual-card.logo-visual .visual-image-frame img{
+    position:static;
+    width:48px;
+    height:34px;
+    flex:0 0 48px;
+    padding:0;
+    object-fit:contain;
+    border-radius:0;
+    background:#ffffff;
+    filter:none !important;
+    mix-blend-mode:normal;
+}
+
+/* Match the certificate frame to its source ratio: no bars and no crop */
+
+.mega-visual-card.certificate-visual > img{
+    height:auto;
+    aspect-ratio:295 / 219;
+}
+
+.mega-visual-card.certificate-visual .visual-image-frame{
+    height:auto;
+    aspect-ratio:295 / 219;
+    background:#ffffff;
+}
+
+.mega-visual-card.certificate-visual .visual-image-frame::before,
+.mega-visual-card.certificate-visual .visual-image-frame::after{
+    display:none;
+}
+
+.mega-visual-card.certificate-visual .visual-image-frame img{
+    padding:0;
+    object-fit:cover;
+    background:#ffffff;
+}
+
+/* Final shared frame rule: equal size, full image visible, no cropping */
+
+.mega-visual-card:not(.logo-visual) .visual-image-frame{
+    width:100%;
+    height:210px;
+    aspect-ratio:auto !important;
+}
+
+.mega-visual-card:not(.logo-visual) .visual-image-frame img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+/* Keep the panoramic Labs artwork proportional inside the shared frame */
+
+.mega-visual-card.red-labs-visual .visual-image-frame{
+    background:#02030a;
+}
+
+.mega-visual-card.red-labs-visual .visual-image-frame img{
+    object-fit:contain;
+    background:#02030a;
+}
+
+/* Preserve the complete certificate artwork without stretching */
+
+.mega-visual-card.certificate-visual .visual-image-frame img{
+    object-fit:contain;
+    background:#ffffff;
+}
+
+.mega-visual-card .visual-label{
+    margin-top:14px;
+    color:#0f172a;
+    font-size:14px;
+    font-weight:700;
+    line-height:1.35;
+}
+
+.mega-visual-card p{
+    margin-top:6px;
+    color:#64748b;
+    font-size:12px;
+    line-height:1.5;
+}
+
+.mega-visual-card .visual-link{
+    display:inline-flex;
+    align-items:center;
+    align-self:flex-start;
+    gap:6px;
+    margin-top:auto;
+    padding-top:12px;
+    color:#2563eb;
+    font-size:13px;
+    font-weight:700;
+}
+
+
+
+.mega-menu .mega-column > a:not(.mega-pill-link){
+    gap:9px;
+}
+
+.menu-link-icon {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
+
+    color: #B91C1C;
+    stroke: #B91C1C;
+    stroke-width: 1.8;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+.mega-column
+> a:not(.mega-pill-link):hover
+.menu-link-icon {
+    color: #EA3037;
+    stroke: #EA3037;
+    transform: translateX(1px);
+}    
+
+
+.mega-showcase .mega-column{
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+}
+
+.mega-showcase .mega-column > .mega-pill-link{
+    margin-top:auto;
+    margin-bottom:0;
+}
+
+/* Hover */
+
+.nav-item:hover .mega-menu{
+
+    opacity:1;
+    visibility:visible;
+
+    transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+/* Keep the first large dropdown inside the viewport */
+
+.nav-item:first-child .mega-menu{
+    left:-52px;
+    transform:translateY(20px);
+}
+
+.nav-item:first-child:hover .mega-menu,
+.nav-item:first-child:focus-within .mega-menu{
+    transform:translateY(0);
+}
+
+/* Keep the wide Company menu inside the viewport */
+
+.nav-item:last-child .mega-menu{
+    left:auto;
+    right:0;
+    transform:translateY(20px);
+}
+
+.nav-item:last-child:hover .mega-menu,
+.nav-item:last-child:focus-within .mega-menu{
+    transform:translateY(0);
+}
+
+/* ==========================
+   MEGA COLUMN
+========================== */
+
+.mega-column h4{
+
+    font-size:13px;
+
+    color:var(--muted);
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    margin-bottom:16px;
+}
+
+.mega-column a {
+
+    display: flex;
+
+    align-items: center;
+
+     padding: 10px 14px;
+    border-radius: 10px;
+
+    margin-bottom: 8px;
+
+    border: 1px solid transparent;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    color: #0f172a;
+
+    font-weight: 500;
+
+    transition: all .25s ease;
+}
+
+.mega-training{
+
+    display:grid;
+    width: 420px;
+    grid-template-columns:
+    minmax(260px,1fr)
+    minmax(260px,1fr)
+    minmax(260px,1fr);
+
+    gap:40px;
+}
+    
+
+.mega-column a:hover {
+
+    background: #f1f5f9;
+
+    border-color: #cbd5e1;
+
+    color: #2563eb;
+
+    transform: translateX(4px);
+}
+
+/* Company social and support links */
+
+.company-contact-extra{
+    margin-top:2px;
+    padding:13px 14px;
+    border:1px solid rgba(43,43,80,.10);
+    border-radius:12px;
+    background:linear-gradient(135deg,rgba(43,43,80,.05),rgba(185,28,28,.035));
+}
+
+.company-socials{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    margin-bottom:11px;
+}
+
+.mega-column .company-social-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:34px;
+    height:34px;
+    padding:0;
+    margin:0;
+    border:1px solid rgba(43,43,80,.14);
+    border-radius:9px;
+    background:#ffffff;
+    color:#B91C1C;
+    font-size:12px;
+    font-weight:800;
+    line-height:1;
+}
+
+.mega-column .company-social-link:hover{
+    border-color:rgba(185,28,28,.24);
+    background:rgba(185,28,28,.055);
+    color:#EA3037;
+    transform:translateY(-1px);
+}
+
+.company-social-link svg{
+    width:16px;
+    height:16px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.mega-column .company-support-link{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:0;
+    margin:0;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    color:#2B2B50;
+    font-size:13px;
+    font-weight:650;
+    line-height:1.35;
+}
+
+.mega-column .company-support-link:hover{
+    border:0;
+    background:transparent;
+    color:#B91C1C;
+    transform:none;
+}
+
+.company-support-link svg{
+    width:16px;
+    height:16px;
+    flex:0 0 16px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.8;
+}
+
+
+
+/* ==========================
+   FEATURE CARD
+========================== */
+
+.mega-feature{
+
+    background:#f8fafc;
+
+    padding:24px;
+
+    border-radius:16px;
+}
+
+.mega-feature h3{
+
+    font-size:18px;
+
+    margin-bottom:10px;
+}
+
+.mega-feature p{
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+    margin-bottom:18px;
+}
+
+.feature-btn{
+
+    display:inline-flex;
+
+    padding:12px 16px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-radius:10px;
+
+    font-size:14px;
+    font-weight:600;
+}
+
+/* ==========================
+   MOBILE BUTTON
+========================== */
+
+.mobile-menu-btn{
+    display:none;
+}
+
+.mobile-actions{
+    display:none;
+}
+
+/* ==========================
+   MOBILE DRAWER
+========================== */
+
+.mobile-nav{
+
+    position:fixed;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    max-width:380px;
+
+    height:100vh;
+
+    background:#fff;
+
+    z-index:99999;
+
+    transition:.35s ease;
+}
+
+.mobile-nav.active{
+    left:0;
+}
+
+.mobile-nav-header{
+
+    height:80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+
+    padding:0 24px;
+
+    border-bottom:1px solid var(--border);
+}
+
+.mobile-close{
+
+    font-size:28px;
+}
+
+.mobile-nav-body{
+
+    padding:20px;
+}
+
+
+
+.mobile-cta{
+
+    margin-top:20px;
+
+    justify-content:center !important;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-radius:12px;
+
+    border:none !important;
+}
+
+.mobile-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:99998;
+}
+
+.mobile-overlay.active{
+
+    opacity:1;
+    visibility:visible;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width:1100px){
+
+    .desktop-nav,
+    .header-actions{
+
+        display:none;
+    }
+
+    .mobile-menu-btn{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:5px;
+    }
+
+    .mobile-menu-btn span{
+
+        width:22px;
+        height:2px;
+
+        background:#111827;
+    }
+
+    .mobile-actions{
+
+        display:flex;
+        align-items:center;
+        gap:12px;
+    }
+
+    .mobile-cart{
+
+        font-size:20px;
+        line-height:1;
+    }
+
+    .header-inner{
+
+        grid-template-columns:
+        40px 1fr 40px;
+    }
+
+    .site-logo{
+
+        justify-self:center;
+    }
+
+   
+}
+@media (max-width:1100px){
+
+    .site-logo{
+
+        display:flex;
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:2px;
+    }
+
+    .site-logo img{
+
+        width:36px;
+    }
+
+    .logo-name{
+
+        display:block;
+
+       font-size:10px;
+    font-weight:500;
+    letter-spacing:.02em;
+
+        color:#111827;
+
+        line-height:1;
+    }
+
+}
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:768px){
+
+    .container{
+
+        width:calc(100% - 32px);
+    }
+
+    .header-inner{
+
+        height:78px;
+    }
+
+    .site-logo img{
+
+        width:42px;
+    }
+    
+    
+}
+    
+/* ==========================
+   MOBILE ACCORDION MENU
+========================== */
+
+.mobile-nav-item {
+    border-bottom: none;
+    margin-bottom: 8px;
+}
+
+.mobile-submenu-toggle {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 16px 18px;
+
+    margin-bottom: 8px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #111827;
+
+    transition: all .25s ease;
+
+}
+
+
+.mobile-submenu-toggle:hover {
+
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+
+}
+
+.mobile-submenu-toggle span{
+    display:inline-block;
+    width:7px;
+    height:7px;
+    margin-left:12px;
+    border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;
+    font-size:0;
+    line-height:0;
+    opacity:.55;
+    transform:rotate(45deg) translateY(-1px);
+    transform-origin:center;
+    transition:transform .2s ease, opacity .2s ease;
+}
+
+.mobile-submenu-toggle.active span{
+    transform:rotate(225deg) translate(-1px,-1px);
+    opacity:.8;
+}
+
+.mobile-submenu{
+
+    display:none;
+
+    padding:0 0 12px 18px;
+}
+
+.mobile-submenu.active{
+
+    display:block;
+}
+
+/* ==========================
+   MOBILE SUBMENU CARD LINKS
+========================== */
+
+.mobile-submenu a {
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 12px 16px;
+
+    margin-bottom: 8px;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    border: 1px solid transparent;
+
+    color: #0f172a;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: all .25s ease;
+
+}
+
+
+/* Hover & Active */
+
+.mobile-submenu a:hover {
+
+    background: #f1f5f9;
+
+    border-color: #cbd5e1;
+
+    color: #2563eb;
+
+    transform: translateX(4px);
+
+}
+
+/* ==========================
+   MOBILE SINGLE LINK ITEM
+========================== */
+
+.mobile-link {
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    padding: 16px 18px;
+
+    margin-bottom: 8px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #111827;
+
+    transition: all .25s ease;
+
+}
+
+
+/* Hover Effect */
+
+.mobile-link:hover {
+
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+
+    color: #2563eb;
+
+    transform: translateX(4px);
+
+}   
+/* CTA */
+
+.mobile-cta{
+
+    display:flex !important;
+
+    justify-content:center !important;
+    align-items:center;
+
+    margin-top:24px;
+
+    padding:14px 20px;
+
+    background:#2563eb;
+
+    color:#fff !important;
+
+    border-radius:12px;
+
+    font-weight:700;
+}    
+    
+.mobile-nav-header{
+
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 20px;
+
+    border-bottom:1px solid #e5e7eb;
+}
+
+.mobile-drawer-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.mobile-drawer-logo img{
+
+    width:36px;
+    height:auto;
+}
+
+.mobile-drawer-logo span{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#111827;
+}
+
+.mobile-close{
+
+    font-size:28px;
+
+    color:#111827;
+}    
+   
+.mega-pill-link{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+    text-align: center;
+
+    width:100%;
+    min-height:44px;
+    margin-top:20px;
+    padding:12px 18px;
+    border:1px solid #B91C1C;
+    background:#B91C1C;
+    color:#ffffff;
+    border-radius:10px;
+    box-shadow:0 6px 16px rgba(185,28,28,.16);
+    transition:background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.mega-column .mega-pill-link:hover,
+.mobile-submenu .mega-pill-link:hover{
+
+    background:#EA3037;
+    border-color:#EA3037;
+    color:#ffffff;
+    transform:translateY(-1px);
+    box-shadow:0 9px 20px rgba(185,28,28,.22);
+}    
+
+@media (min-width:1101px) and (max-width:1240px){
+    .nav-list{
+        gap:20px;
+    }
+
+    .nav-item > a{
+        font-size:15px;
+    }
+}
+    
+/* ==========================
+   DESKTOP CART
+========================== */
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+
+/* Cart */
+
+.header-cart{
+
+    position:relative;
+
+    width:44px;
+
+    height:44px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    font-size:22px;
+
+    color:#0f172a;
+
+    transition:all .25s ease;
+}
+
+
+.header-cart:hover{
+
+    background:#f1f5f9;
+
+    border-color:#cbd5e1;
+
+    transform:translateY(-2px);
+}
+
+
+/* Cart notification */
+
+.cart-count{
+
+    position:absolute;
+
+    top:-5px;
+
+    right:-5px;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}    
+    
+.mobile-cart {
+
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+
+.cart-count {
+
+    position: absolute;
+
+    top: -6px;
+    right: -6px;
+
+    width: 18px;
+    height: 18px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+    
+@media (max-width:1100px) {
+    .header-cart {
+        display: none;
+    }
+}    
+    
+@media (max-width:1100px) {
+
+    .desktop-nav,
+    .header-actions {
+        display: none !important;
+    }
+
+    .mobile-actions {
+        display: flex !important;
+        align-items: center;
+    }
+
+}    
+    
+.mobile-submenu-title {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #64748b;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+
+    margin: 16px 0 10px;
+
+    padding-left: 4px;
+
+}    
+    
+.mega-resources {
+
+    width: 600px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 40px;
+
+}    
+
+/* ==========================
+   PROFESSIONAL MEGA-MENU LINKS
+========================== */
+
+.mega-showcase .mega-column h4{
+    margin-bottom:14px;
+    color:#2B2B50;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.mega-showcase .mega-column > a:not(.mega-pill-link){
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:11px;
+    width:100%;
+    min-height:44px;
+    margin-bottom:8px;
+    padding:9px 13px;
+    border:1px solid transparent;
+    border-radius:11px;
+    background:#f8fafc;
+    color:#111827;
+    font-size:14.5px;
+    font-weight:550;
+    line-height:1.35;
+    transform:none;
+    transition:
+        color .2s ease,
+        background-color .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.mega-showcase .mega-column > a:not(.mega-pill-link) .menu-link-icon{
+    width:17px;
+    height:17px;
+    flex:0 0 17px;
+    color:#B91C1C;
+    stroke:#B91C1C;
+    stroke-width:1.8;
+    transition:color .2s ease,stroke .2s ease,transform .2s ease;
+}
+
+.mega-showcase .mega-column > a:not(.mega-pill-link):hover,
+.mega-showcase .mega-column > a:not(.mega-pill-link):focus-visible{
+    border-color:rgba(185,28,28,.16);
+    background:rgba(185,28,28,.045);
+    color:#111827;
+    box-shadow:
+        inset 3px 0 0 #B91C1C,
+        0 4px 12px rgba(43,43,80,.04);
+    transform:none;
+}
+
+.mega-showcase .mega-column > a:not(.mega-pill-link):hover .menu-link-icon,
+.mega-showcase .mega-column > a:not(.mega-pill-link):focus-visible .menu-link-icon{
+    color:#EA3037;
+    stroke:#EA3037;
+    transform:scale(1.05);
+}
+
+.mega-showcase .mega-column > a:not(.mega-pill-link):focus-visible{
+    outline:2px solid rgba(185,28,28,.18);
+    outline-offset:2px;
+}
+
+.mega-showcase .mega-column > .mega-pill-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-height:44px;
+    margin-top:auto;
+    margin-bottom:0;
+    padding:11px 18px;
+    border:1px solid #B91C1C;
+    border-radius:10px;
+    background:#B91C1C;
+    color:#ffffff;
+    font-size:14px;
+    font-weight:700;
+    text-align:center;
+    box-shadow:0 6px 16px rgba(185,28,28,.14);
+    transition:
+        background-color .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+.mega-showcase .mega-column > .mega-pill-link:hover,
+.mega-showcase .mega-column > .mega-pill-link:focus-visible{
+    border-color:#EA3037;
+    background:#EA3037;
+    color:#ffffff;
+    box-shadow:0 9px 20px rgba(185,28,28,.20);
+    transform:translateY(-1px);
+}
+
+.mega-showcase .mega-column > .mega-pill-link:focus-visible{
+    outline:2px solid rgba(185,28,28,.25);
+    outline-offset:2px;
+}
+    
+    
+    </style>    
+</head>
+<body>
+<!-- TOP BAR -->
+
+<!-- Announcement Bar -->
+
+<div class="announcement-bar" id="announcementBar">
+
+    <div class="announcement-slider">
+
+        <button class="offer-nav prev-offer" id="prevOffer">
+             ‹
+        </button>
+
+        <span id="offerText">
+            🏆 Earn Industry Recognized Certifications
+        </span>
+
+        <button class="offer-nav next-offer" id="nextOffer">
+             ›
+        </button>
+
+    </div>
+
+    <button class="announcement-close" id="announcementClose">
+        ✕
+    </button>
+
+</div>
+<header class="site-header">
+
+    <div class="container">
+
+        <div class="header-inner">
+
+            <!-- Mobile Menu Button -->
+
+            <button class="mobile-menu-btn" aria-label="Open Menu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+            <!-- Logo -->
+
+            <a href="/" class="site-logo">
+
+    <img
+        src="https://static.wixstatic.com/media/52db83_dd3dab7bcbdf45609df5faa9c62d9a54~mv2.png/v1/fill/w_48,h_34,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/AS2.png"
+        alt="Altered Security">
+
+    <div class="logo-text">
+
+        <span class="logo-name">
+            Altered Security
+        </span>
+
+    </div>
+
+</a>
+
+            <!-- Desktop Navigation -->
+
+            <nav class="desktop-nav">
+
+                <ul class="nav-list">
+
+                    <!-- Labs -->
+
+                    <li class="nav-item has-mega">
+
+                        <a href="#">
+
+                            Red Team Labs
+
+                            <span class="nav-arrow">⌃</span>
+
+                        </a>
+
+                        <div class="mega-menu mega-showcase">
+
+                            <div class="mega-visual-card image-contain red-labs-visual">
+                                <img
+                                    src="https://static.wixstatic.com/media/470c31_6a9d0f0bef574e8588631646b3ac726c~mv2.jpg/v1/fill/w_1600,h_423,al_c,q_85,enc_avif,quality_auto/470c31_6a9d0f0bef574e8588631646b3ac726c~mv2.jpg"
+                                    alt="Altered Security Red Team Labs environment">
+                                <div class="visual-label">Enterprise Red Team labs</div>
+                                <p>Learn and practice On-prem, AI, and Azure Red team and enterprise security skills.</p>
+                                
+                            </div>
+
+                            <div class="mega-column">
+
+                                <h4>Red Team Labs</h4>
+
+                               <a href="#">CRTP®: Attacking and Defending Active Directory Lab</a>
+                               <a href="#">CRTE®: Advanced Red Team Lab</a>
+                               <a href="#">CETP: Evasion Lab</a>
+                               <a href="#">CARTP®: Azure Red Team Lab</a>                            
+                                <a href="#" class="mega-pill-link">
+                                 Purchase Red Team Labs →
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                    <!-- Training -->
+
+                 
+
+                    <!-- Certifications -->
+
+                    <li class="nav-item has-mega">
+
+                        <a href="#">
+
+                            Certifications
+
+                            <span class="nav-arrow">⌃</span>
+
+                        </a>
+
+                        <div class="mega-menu mega-showcase">
+
+                            <div class="mega-visual-card">
+                                <img
+                                    src="https://static.wixstatic.com/media/16cdd7_5c77a98a85f248bfb000bc704d9e5f81~mv2.png/v1/fill/w_295,h_219,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/CRTP-Certificate.png"
+                                    alt="CRTP certification certificate">
+                                <div class="visual-label">Industry-Recognized Certifications</div>
+                                <p>Ear Industry-Recognized Red Team Certifications</p>
+                                <a href="https://www.alteredsecurity.com/post/redlabs" class="visual-link">Certifications Vision →</a>
+                            </div>
+
+                            <div class="mega-column">
+
+                                <h4>Red Team Certifications</h4>
+
+                                <a href="#">Certified Red Team Professional (CRTP®)</a>
+                                <a href="#">Certified Red Team Expert (CRTE®)</a>
+                                <a href="#">Certified Evasion Techniques Professional (CETP)</a>
+                                <a href="#">Certified by Altered Security Red Team Professional for Azure (CARTP®)</a>                                
+                                <a href="#" class="mega-pill-link">
+                                    Explore All Certifications →
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </li>
+                    
+                    
+                    <!-- Bootcamps -->
+
+                    <li class="nav-item has-mega">
+
+                        <a href="#">
+
+                            Bootcamps
+
+                            <span class="nav-arrow">⌃</span>
+
+                        </a>
+
+                        <div class="mega-menu mega-showcase">
+
+                            <div class="mega-visual-card image-contain">
+                                <img
+                                    src="https://static.wixstatic.com/media/16cdd7_1f39e5206479421d82a8123705bec90e~mv2.avif/v1/fill/w_445,h_248,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/CAIRTP-Bootcamp.avif"
+                                    alt="Advanced Tradecraft bootcamp training">
+                                <div class="visual-label">Instructor-Led Bootcamps</div>
+                                <p>Learn through live training and practical lab exercises.</p>
+                                
+                            </div>
+
+                            <div class="mega-column">
+
+                                <h4>Red Team Bootcamps</h4>
+
+                                <a href="#">Attacking and Defending Active Directory: Beginner's Edition  </a>                                                              
+                                <a href="#">AI Red Team Tactics for M365, Copilot and Enterprise AI</a>
+                                <a href="#">Cloud Red Team Tactics for Attacking and Defending Azure: Beginner's Edition</a>                            
+                                 <a href="#" class="mega-pill-link">
+                                    View All Bootcamps →
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </li>
+                    
+                    
+                    <!-- Training + Enterprise -->
+
+                    <li class="nav-item has-mega">
+
+                        <a href="#">
+
+                            Enterprise
+
+                            <span class="nav-arrow">⌃</span>
+
+                        </a>
+
+                        <div class="mega-menu mega-showcase">
+
+                            <div class="mega-visual-card">
+                                <img
+                                    src="https://static.wixstatic.com/media/16cdd7_b7a9683368d740068824f2b7161f5627~mv2.avif/v1/fill/w_631,h_347,al_c,q_80,enc_avif,quality_auto/teaching.avif"
+                                    alt="Altered Security instructor-led red team training">
+                                <div class="visual-label">Hands-On Red Team Training</div>
+                                <p>Build practical attack and defense skills in enterprise-grade labs.</p>
+                            </div>
+
+                            <div class="mega-column">
+                                <h4>Enterprise Red Team Training</h4>
+                                <a href="#">Corporate Security Training</a>
+                                <a href="#">Active Directory Attacks for Red and Blue Teams: Basic Edition</a>                                
+                                <a href="#">Cloud attacks for Red and Blue Teams in Azure Basic Edition</a>
+                                <a href="#">Advanced Windows Tradecraft</a>
+                                <a href="#" class="mega-pill-link">View Trainings →</a>
+                            </div>                         
+
+                        </div>
+
+                    </li>
+
+
+                    <!-- Resources -->
+
+                   <li class="nav-item has-mega">
+
+         <a href="#">
+
+        Events
+
+        <span class="nav-arrow">⌃</span>
+        
+
+    </a>
+
+  <div class="mega-menu mega-showcase">
+
+        <div class="mega-visual-card">
+            <img
+                src="https://static.wixstatic.com/media/16cdd7_cdde9d27497340d5b7e27129da517f3f~mv2.webp"
+                alt="Altered Security community security event">
+            <div class="visual-label">Events & Community</div>
+            <p>Meet, learn, and practice with the red team community through live events.</p>
+           
+        </div>
+
+        <div class="mega-column">
+
+                                <h4>Events</h4>
+
+                                 <a href="#">AltSecCON</a>
+        <a href="#">Upcoming Events</a>
+        <a href="#">Workshops</a>
+        <a href="#">Webinars</a>
+
+                            </div>
+    
+
+
+    </div>
+
+</li>
+
+                    <!-- Company -->
+
+                    <li class="nav-item has-mega">
+
+                        <a href="#">
+
+                            Company
+
+                            <span class="nav-arrow">⌃</span>
+
+                        </a>
+
+   <div class="mega-menu mega-showcase company-menu">
+
+        <div class="mega-column">
+
+                                <h4>Company</h4>
+
+                                <a href="#">About Us</a>                             
+                                <a href="#">Testimonials</a>
+                                <a href="#">News</a>
+                                <a href="#">Careers</a>
+                                  <a href="#">Contact</a>
+
+                                  <div class="company-contact-extra">
+
+                                      <div class="company-socials" aria-label="Altered Security social links">
+
+                                          <a href="#" class="company-social-link" aria-label="X" title="X">
+                                              <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                  <path d="M5 4l14 16M19 4L5 20"></path>
+                                              </svg>
+                                          </a>
+
+                                          <a href="#" class="company-social-link" aria-label="LinkedIn" title="LinkedIn">in</a>
+
+                                          <a href="#" class="company-social-link" aria-label="Discord" title="Discord">
+                                              <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                  <path d="M7 8.5a12 12 0 0 1 10 0l1.5 8a10 10 0 0 1-3 1.5l-1-1.5a9 9 0 0 1-5 0L8.5 18a10 10 0 0 1-3-1.5z"></path>
+                                                  <path d="M9 13h.01M15 13h.01"></path>
+                                              </svg>
+                                          </a>
+
+                                          <a href="#" class="company-social-link" aria-label="Instagram" title="Instagram">
+                                              <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                  <rect x="4" y="4" width="16" height="16" rx="5"></rect>
+                                                  <circle cx="12" cy="12" r="3.5"></circle>
+                                                  <path d="M17.5 6.5h.01"></path>
+                                              </svg>
+                                          </a>
+
+                                          <a href="#" class="company-social-link" aria-label="Facebook" title="Facebook">f</a>
+
+                                      </div>
+
+                                      <a href="mailto:contact@alteredsecurity.com" class="company-support-link">
+                                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                                              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                                              <path d="m4 7 8 6 8-6"></path>
+                                          </svg>
+                                          contact@alteredsecurity.com
+                                      </a>
+
+                                  </div>
+
+                            </div>
+        <div class="mega-column">
+
+            <h4>
+                Resources
+            </h4>
+
+            <a href="#">
+                Blog
+            </a>
+
+            <a href="#">
+                Research
+            </a>
+
+            <a href="#">
+                Case Studies
+            </a>
+
+            <a href="#">
+                Videos
+            </a>
+
+            <a href="#">
+                Free Labs
+            </a>
+
+            <a href="#">
+                FAQ
+            </a>
+
+        </div>
+    </div>
+                    </li>
+
+                 
+                </ul>
+
+            </nav>
+
+            <!-- Desktop CTA -->
+
+            <div class="header-actions">
+
+    <a href="#" class="header-cart" aria-label="Shopping Cart">
+
+        🛒
+
+        <span class="cart-count">
+            2
+        </span>
+
+    </a>
+
+    <a href="#" class="header-btn">
+        Get Certified
+    </a>
+
+</div>
+
+            <!-- Mobile Cart -->
+<div class="mobile-actions">
+
+    <button class="mobile-cart" aria-label="Cart">
+
+        🛒
+
+        <span class="cart-count">
+            2
+        </span>
+
+    </button>
+
+</div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- MOBILE DRAWER -->
+
+<aside class="mobile-nav">
+
+    <div class="mobile-nav-header">
+
+    <a href="/" class="mobile-drawer-logo">
+
+        <img
+            src="https://static.wixstatic.com/media/52db83_dd3dab7bcbdf45609df5faa9c62d9a54~mv2.png/v1/fill/w_48,h_34,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/AS2.png"
+            alt="Altered Security">
+
+        <span>
+            Altered Security
+        </span>
+
+    </a>
+
+    <button class="mobile-close">
+
+        ✕
+
+    </button>
+
+</div>
+
+    <div class="mobile-nav-body">
+
+    <!-- Labs -->
+
+    <div class="mobile-nav-item">
+
+        <button class="mobile-submenu-toggle">
+
+            Red Team Labs
+
+            <span>⌃</span>
+
+        </button>
+
+        <div class="mobile-submenu">
+
+            <a href="#">Attacking and Defending Active Directory Lab</a>
+            <a href="#">Advanced Red Team Lab</a>
+            <a href="#">Evasion Lab</a>
+            <a href="#">Azure Lab</a>      
+            
+            <a href="#" class="mega-pill-link">
+                                    View Red Team Labs →
+                                </a>
+        </div>
+
+    </div>
+ <!-- Certifications -->
+
+    <div class="mobile-nav-item">
+
+        <button class="mobile-submenu-toggle">
+
+       Certifications
+
+            <span>⌃</span>
+
+        </button>
+
+        <div class="mobile-submenu">
+
+            <a href="#">CRTP</a>
+            <a href="#">CRTE</a>
+            <a href="#">CETP</a>
+            <a href="#">CARTP</a>
+            <a href="#" class="mega-pill-link">
+                                    View Certifications →
+                                </a>
+
+        </div>
+
+    </div>
+        
+     <!-- Bootcamps -->
+    <div class="mobile-nav-item">
+
+        <button class="mobile-submenu-toggle">
+
+           Bootcamps
+
+            <span>⌃</span>
+
+        </button>
+
+        <div class="mobile-submenu">
+
+                 <a href="#">Active Directory Bootcamp</a>             
+                <a href="#">Advanced Windows Tradecraft Bootcamp</a>
+                <a href="#">Penetration Testing Bootcamp</a>
+                <a href="#">Azure Red Team Bootcamp</a>    
+                <a href="#" class="mega-pill-link">
+                View Bootcamps →
+                </a>
+
+        </div>
+
+    </div>        
+    <!-- Training -->
+
+    <div class="mobile-nav-item">
+
+        <button class="mobile-submenu-toggle">
+
+            Enterprise
+
+            <span>⌃</span>
+
+        </button>
+
+        <div class="mobile-submenu">
+
+            <div class="mobile-submenu-title">Red Team Training</div>
+            <a href="#">Active Directory Training</a>
+            <a href="#">Advanced Active Directory Training</a>
+            <a href="#">Advanced Windows Tradecraft</a>
+            <a href="#">Azure Security Training</a>
+            <a href="#" class="mega-pill-link">View Training →</a>
+
+            <div class="mobile-submenu-title">Enterprise</div>
+            <a href="#">Corporate Security Training</a>
+            <a href="#">Private Team Training</a>
+            <a href="#">Educational Partnerships</a>
+            <a href="#">Custom Training Programs</a>
+            <a href="#" class="mega-pill-link">View Enterprise Solutions →</a>
+
+        </div>
+
+    </div>
+   
+
+
+    <!-- Resources -->
+
+    <!-- Resources -->
+
+<div class="mobile-nav-item">
+
+    <button class="mobile-submenu-toggle">
+
+        Events
+
+        <span>⌃</span>
+
+    </button>
+
+    <div class="mobile-submenu">
+
+        <a href="#">AltSecCON</a>
+        <a href="#">Upcoming Events</a>
+        <a href="#">Workshops</a>
+        <a href="#">Webinars</a>
+
+    </div>
+
+</div>
+
+    <!-- Company -->
+
+    <div class="mobile-nav-item">
+
+        <button class="mobile-submenu-toggle">
+
+            Company
+
+            <span>⌃</span>
+
+        </button>
+
+        <div class="mobile-submenu">
+
+            <a href="#">About Us</a>    
+            <a href="#">Testimonials</a>
+            <a href="#">News</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+            <div class="mobile-submenu-title">Resources</div>
+            <a href="#">Blog</a>
+            <a href="#">Research</a>
+            <a href="#">Case Studies</a>
+            <a href="#">Videos</a>
+            <a href="#">Free Labs</a>
+            <a href="#">FAQ</a>
+        </div>
+
+    </div>
+
+    <a href="#" class="mobile-cta">
+
+        Get Certified
+
+    </a>
+
+</div>
+
+</aside>
+
+<div class="mobile-overlay"></div>
+    
+    
+
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<script>
+
+/* ==========================================
+   ALTERED SECURITY NAVIGATION
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const body = document.body;
+
+    const menuBtn = document.querySelector(".mobile-menu-btn");
+    const mobileNav = document.querySelector(".mobile-nav");
+    const mobileClose = document.querySelector(".mobile-close");
+    const mobileOverlay = document.querySelector(".mobile-overlay");
+    const header = document.querySelector(".site-header");
+
+    /* ==========================
+       FULL-FRAME, UNCROPPED IMAGES
+    ========================== */
+
+    document.querySelectorAll(".mega-visual-card > img").forEach(img => {
+
+        const frame = document.createElement("div");
+        frame.className = "visual-image-frame";
+        frame.style.setProperty(
+            "--visual-image",
+            `url("${img.src.replace(/\"/g, "%22")}")`
+        );
+
+        img.parentNode.insertBefore(frame, img);
+        frame.appendChild(img);
+
+    });
+
+    /* ==========================
+       CONTEXTUAL MEGA-MENU ICONS
+    ========================== */
+
+    function getMenuIcon(label) {
+
+        const text = label.toLowerCase();
+
+        if (text.includes("active directory") || text.includes("crtp")) return "network";
+        if (text.includes("advanced") || text.includes("crte")) return "shield-check";
+        if (text.includes("evasion") || text.includes("cetp") || text.includes("windows")) return "scan-line";
+        if (text.includes("azure") || text.includes("cloud") || text.includes("cartp")) return "cloud";
+        if (text.includes("ai") || text.includes("m365") || text.includes("copilot")) return "bot";
+        if (text.includes("corporate")) return "building-2";
+        if (text.includes("private team")) return "users";
+        if (text.includes("education")) return "graduation-cap";
+        if (text.includes("custom training")) return "settings-2";
+        if (text.includes("altseccon")) return "badge";
+        if (text.includes("upcoming")) return "calendar-days";
+        if (text.includes("workshop")) return "presentation";
+        if (text.includes("webinar") || text.includes("video")) return "video";
+        if (text.includes("about")) return "info";
+        if (text.includes("testimonial")) return "messages-square";
+        if (text.includes("news")) return "newspaper";
+        if (text.includes("career")) return "briefcase-business";
+        if (text.includes("contact")) return "mail";
+        if (text.includes("blog")) return "notebook-text";
+        if (text.includes("research")) return "flask-conical";
+        if (text.includes("case stud")) return "file-chart-column";
+        if (text.includes("free lab")) return "flask-conical";
+        if (text.includes("faq")) return "circle-help";
+
+        return "arrow-up-right";
+    }
+
+    document.querySelectorAll(".mega-menu .mega-column > a:not(.mega-pill-link)")
+        .forEach(link => {
+
+            const iconNode = document.createElement("i");
+            iconNode.className = "menu-link-icon";
+            iconNode.setAttribute("data-lucide", getMenuIcon(link.textContent));
+            iconNode.setAttribute("aria-hidden", "true");
+            iconNode.textContent = "•";
+            link.prepend(iconNode);
+
+        });
+
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
+    /* ==========================
+       OPEN MOBILE MENU
+    ========================== */
+
+    function openMenu() {
+
+        mobileNav.classList.add("active");
+
+        mobileOverlay.classList.add("active");
+
+        body.style.overflow = "hidden";
+    }
+
+    /* ==========================
+       CLOSE MOBILE MENU
+    ========================== */
+
+    function closeMenu() {
+
+        mobileNav.classList.remove("active");
+
+        mobileOverlay.classList.remove("active");
+
+        body.style.overflow = "";
+    }
+
+    /* ==========================
+       CLICK EVENTS
+    ========================== */
+
+    if (menuBtn) {
+
+        menuBtn.addEventListener("click", openMenu);
+
+    }
+
+    if (mobileClose) {
+
+        mobileClose.addEventListener("click", closeMenu);
+
+    }
+
+    if (mobileOverlay) {
+
+        mobileOverlay.addEventListener("click", closeMenu);
+
+    }
+
+    /* ==========================
+       ESC KEY CLOSE
+    ========================== */
+
+    document.addEventListener("keydown", function (e) {
+
+        if (e.key === "Escape") {
+
+            closeMenu();
+
+        }
+
+    });
+
+    /* ==========================
+       STICKY HEADER EFFECT
+    ========================== */
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 30) {
+
+            header.style.boxShadow =
+                "0 10px 40px rgba(0,0,0,.08)";
+
+        } else {
+
+            header.style.boxShadow = "none";
+
+        }
+
+    });
+
+});
+/* Announcement Close */
+
+const announcementClose =
+document.getElementById("announcementClose");
+
+const announcementBar =
+document.getElementById("announcementBar");
+
+if (announcementClose) {
+
+    announcementClose.addEventListener("click", () => {
+
+        announcementBar.style.display = "none";
+
+    });
+
+}
+    
+document.addEventListener("DOMContentLoaded", () => {
+
+    const offers = [
+        "🏆 Earn Industry Recognized Certifications",
+        "🚀 AltSecCON Registration Now Open",
+        "🔥 Red Team Bootcamp Starts Soon",
+        "☁️ Azure Security Training Enrollment Open",
+        "🎓 Save 20% on CRTP + CRTE Bundle"
+    ];
+
+    let current = 0;
+
+    const offerText = document.querySelector("#offerText");
+
+    const prevBtn = document.querySelector(".prev-offer");
+
+    const nextBtn = document.querySelector(".next-offer");
+
+    const closeBtn = document.querySelector(".announcement-close");
+
+    const bar = document.querySelector(".announcement-bar");
+
+    function updateOffer() {
+
+        offerText.textContent = offers[current];
+
+    }
+
+    nextBtn.addEventListener("click", () => {
+
+        current++;
+
+        if(current >= offers.length){
+            current = 0;
+        }
+
+        updateOffer();
+
+    });
+
+    prevBtn.addEventListener("click", () => {
+
+        current--;
+
+        if(current < 0){
+            current = offers.length - 1;
+        }
+
+        updateOffer();
+
+    });
+
+    closeBtn.addEventListener("click", () => {
+
+        bar.style.display = "none";
+
+    });
+
+    setInterval(() => {
+
+        current++;
+
+        if(current >= offers.length){
+            current = 0;
+        }
+
+        updateOffer();
+
+    }, 5000);
+const submenuButtons =
+document.querySelectorAll(".mobile-submenu-toggle");
+
+submenuButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const submenu =
+        button.nextElementSibling;
+
+        button.classList.toggle("active");
+
+        submenu.classList.toggle("active");
+
+    });
+
+});
+});
+</script>
+
+</body>
+</html>

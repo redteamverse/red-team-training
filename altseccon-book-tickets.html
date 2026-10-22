@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking</title>
+
+<style>
+
+:root{
+  --primary:#B91C1C;
+  --primary-light:#EA3037;
+  --bg:#fff;
+  --bg-light:#F9FAFB;
+  --border:#E5E7EB;
+  --text:#111827;
+}
+
+body{
+  margin:0;
+  font-family:system-ui;
+  background:var(--bg);
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* SUMMARY */
+.summary{
+  border:1px solid var(--border);
+  padding:20px;
+  border-radius:10px;
+  background:var(--bg-light);
+  margin-bottom:25px;
+}
+
+.summary-item{
+  display:flex;
+  justify-content:space-between;
+  margin:8px 0;
+}
+
+.remove{
+  color:red;
+  cursor:pointer;
+}
+
+/* TOGGLE */
+.toggle{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.toggle button{
+  padding:12px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.toggle .active{
+  background:var(--primary);
+  color:#fff;
+}
+
+/* COURSES */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+
+.course{
+  border:1px solid var(--border);
+  padding:15px;
+  border-radius:10px;
+  background:var(--bg-light);
+}
+
+.qty{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.qty button{
+  width:30px;
+  height:30px;
+  border:none;
+  background:var(--primary);
+  color:#fff;
+  border-radius:5px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.summary {
+  text-align: right;
+}
+    
+.btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.btn {
+  box-shadow: 0 4px 10px rgba(185, 28, 28, 0.2);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Book Your Ticket</h1>
+
+<!-- SUMMARY -->
+<div class="summary">
+  <h3>Your Selection</h3>
+  <div id="summaryList">Nothing selected</div>
+  <h2 id="total">₹0</h2>
+  <button class="btn">Proceed</button>
+</div>
+
+<!-- TOGGLE -->
+<div class="toggle">
+  <button class="active" data-type="training">Training Only</button>
+  <button data-type="combo">Training + Conference</button>
+  <button data-type="conference">Conference Only</button>
+</div>
+
+<!-- COURSES -->
+<div id="coursesSection">
+  <h3>Select Courses</h3>
+  <div class="grid" id="courses"></div>
+</div>
+
+<!-- CONFERENCE -->
+<div id="conferenceSection" style="display:none;">
+  <h3>Conference</h3>
+  <div class="qty">
+    <span>Quantity</span>
+    <div>
+      <button onclick="updateConf(-1)">-</button>
+      <span id="confQty">0</span>
+      <button onclick="updateConf(1)">+</button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+
+const courses = [
+  {
+    code:"CRTP",
+    name:"Active Directory Attacks for Red and Blue Teams - Beginner's Edition",
+    price:39999
+  },
+  {
+    code:"CRTE",
+    name:"Active Directory Attacks for Red and Blue Teams - Advanced Edition",
+    price:42999
+  },
+  {
+    code:"CETP",
+    name:"Evasion Techniques for Red Teams",
+    price:44999
+  },
+  {
+    code:"CARTP",
+    name:"Cloud Red Team Tactics for Attacking and Defending Azure - Beginner's Edition",
+    price:46999
+  },
+  {
+    code:"CARTE",
+    name:"Cloud Red Team Tactics for Attacking and Defending Azure - Advanced Edition",
+    price:48999
+  }
+];
+
+let type = "training";
+
+let selected = {
+  training:{},
+  combo:{},
+  conference:0
+};
+
+/* INIT */
+const container = document.getElementById("courses");
+
+courses.forEach(c=>{
+  selected.training[c.code]=0;
+  selected.combo[c.code]=0;
+});
+
+/* RENDER COURSES */
+function renderCourses(){
+  container.innerHTML = "";
+
+  courses.forEach(c=>{
+
+    let displayPrice = c.price;
+    let title = c.code;
+
+    if(type === "combo"){
+      displayPrice = c.price + 1000;
+      title = c.code + " Combo";
+    }
+
+    container.innerHTML += `
+    <div class="course">
+      <h4>${title}</h4>
+      <p>${c.name}</p>
+      <p><b>₹${displayPrice}</b></p>
+
+      <div class="qty">
+        <button onclick="update('${c.code}',-1)">-</button>
+        <span id="${c.code}">${selected[type][c.code]}</span>
+        <button onclick="update('${c.code}',1)">+</button>
+      </div>
+    </div>`;
+  });
+}
+
+/* UPDATE */
+function update(code,change){
+  let val = selected[type][code];
+  val = Math.max(0, Math.min(9, val + change));
+  selected[type][code] = val;
+
+  renderCourses();
+  renderSummary();
+}
+
+/* CONF */
+function updateConf(change){
+  selected.conference = Math.max(0, Math.min(9, selected.conference + change));
+  document.getElementById("confQty").innerText = selected.conference;
+  renderSummary();
+}
+
+/* REMOVE */
+function removeItem(mode, code){
+  if(mode === "conference"){
+    selected.conference = 0;
+    document.getElementById("confQty").innerText = 0;
+  } else {
+    selected[mode][code] = 0;
+  }
+  renderCourses();
+  renderSummary();
+}
+
+/* TOGGLE */
+document.querySelectorAll(".toggle button").forEach(btn=>{
+  btn.onclick = ()=>{
+    document.querySelectorAll(".toggle button").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+
+    type = btn.dataset.type;
+
+    document.getElementById("coursesSection").style.display =
+      type === "conference" ? "none" : "block";
+
+    document.getElementById("conferenceSection").style.display =
+      type === "conference" ? "block" : "none";
+
+    renderCourses();
+    renderSummary();
+  };
+});
+
+/* SUMMARY */
+function renderSummary(){
+
+  let html = "";
+  let total = 0;
+
+  courses.forEach(c=>{
+    let q = selected.training[c.code];
+    if(q>0){
+      let price = c.price*q;
+      total += price;
+      html += `<div class="summary-item">
+        ${c.code} x${q} = ₹${price}
+        <span class="remove" onclick="removeItem('training','${c.code}')">✖</span>
+      </div>`;
+    }
+  });
+
+  courses.forEach(c=>{
+    let q = selected.combo[c.code];
+    if(q>0){
+      let price = (c.price+1000)*q;
+      total += price;
+      html += `<div class="summary-item">
+        ${c.code} Combo x${q} = ₹${price}
+        <span class="remove" onclick="removeItem('combo','${c.code}')">✖</span>
+      </div>`;
+    }
+  });
+
+  if(selected.conference>0){
+    let price = selected.conference*10000;
+    total += price;
+    html += `<div class="summary-item">
+      Conference x${selected.conference} = ₹${price}
+      <span class="remove" onclick="removeItem('conference')">✖</span>
+    </div>`;
+  }
+
+  document.getElementById("summaryList").innerHTML =
+    html || "Nothing selected";
+
+  document.getElementById("total").innerText = "₹"+total;
+}
+
+/* INIT */
+renderCourses();
+renderSummary();
+
+</script>
+
+</body>
+</html>
